@@ -1,2 +1,300 @@
-# Trade_Theorist
-Repo for an app that analyzes day traders
+# Trade Theorist
+
+Trade Theorist is the research and reasoning component of a future decision-support system for trading. It creates versioned **Characters**: distinct investment minds formed by reading deliberately ordered curricula, distilling their reasoning, testing their theories, and recording how their decisions perform over time.
+
+The premise is that reading order matters. A first book supplies a Character's foundational instincts; later books are interpreted through that foundation, either extending it, qualifying it, or creating explicit tension. Two Characters can therefore read some of the same material and still arrive at different conclusions.
+
+This repository currently covers **Trade Theorist only**. It does not yet place trades, connect to a brokerage, or promise profitable results.
+
+> [!WARNING]
+> Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.
+
+## The future three-part system
+
+| Component | Responsibility | Produces | Must not do |
+| --- | --- | --- | --- |
+| **Trade Theorist** | Learns schools of thought, constructs falsifiable theories, debates opportunities, and makes timestamped recommendations | Theses, confidence, invalidation conditions, proposed actions, and abstentions | Send brokerage orders |
+| **Trader Analyzer** | Ingests public transaction disclosures and market context, estimates reporting delay, and tests explanations for observed trades | Delay-aware observations and candidate rationales | Treat a delayed disclosure as a real-time signal or claim to know a filer's intent |
+| **Trader User** | Applies portfolio and risk policy, obtains fresh quotes, and eventually simulates or executes approved orders | Orders, fills, positions, and an immutable ledger | Bypass exposure, loss, liquidity, or authorization limits |
+
+A shared evaluator should compare all three components and their combinations under the same budget, opportunity set, timestamps, fees, slippage, and risk limits.
+
+```text
+books + research ──> Trade Theorist ──> recommendations ──┐
+                                                        ├─> risk gate ─> paper broker ─> ledger
+public disclosures ─> Trader Analyzer ─> observations ──┘                    │
+                                                                             v
+                                              baselines + counterfactual evaluation
+```
+
+The boundary between recommendation and execution is intentional. A persuasive theory is not permission to risk capital.
+
+## What a Character is
+
+A Character is not a fictional writing style or a single prompt. It is a reproducible, inspectable state of mind with:
+
+- a **constitution**: foundational beliefs, favored evidence, risk philosophy, time horizon, and known biases;
+- an ordered **curriculum** with a reason for every book's position;
+- **learning checkpoints** that preserve what the Character believed before and after each source;
+- consolidated **memory** that a fresh task can load without rereading the whole library;
+- a versioned collection of **theory cards**;
+- an append-only record of forecasts, recommendations, abstentions, and outcomes;
+- a scorecard that separates luck, process quality, and realized performance.
+
+Characters may borrow techniques from other schools, but imports remain labeled with their origin. This protects useful specialization. A deliberately merged Character should be created as a separate experiment rather than silently averaging the specialists into one generic voice.
+
+### Character governance
+
+The initial operating model should be **one lead Character plus shadow advisers**:
+
+1. The lead makes the final recommendation quickly.
+2. Advisers independently submit a recommendation, confidence, and strongest objection.
+3. A risk governor—policy, not personality—can veto any action that violates hard limits.
+4. All recommendations are recorded, including those not selected, so counterfactual performance can be measured.
+5. Lead status is earned on a rolling, out-of-sample scorecard and can change only at scheduled reviews, not after one lucky trade.
+
+This retains the speed advantage of one decision-maker without discarding disagreement data.
+
+## The smallest useful theory
+
+Each theory should be reducible to a short causal chain without becoming a slogan. A theory card contains:
+
+```yaml
+position: "What the Character believes"
+minimal_logic_chain:
+  - "premise or observation"
+  - "causal step"
+  - "testable implication"
+scope: "assets, market regime, and time horizon"
+assumptions: []
+predicted_observables: []
+portfolio_implication: "buy, sell, size, wait, or abstain"
+invalidation_conditions: []
+strongest_counterarguments: []
+rebuttals: []
+confidence: 0.0
+evidence_and_citations: []
+character_and_version: ""
+created_at: ""
+```
+
+A rebuttal does not erase a counterargument. Both survive in the record. If a theory cannot state what would invalidate it, it is philosophy or narrative—not yet a trading theory.
+
+## Sequential learning protocol
+
+Book order is part of the experiment and must be preserved.
+
+1. **Register the source.** Record edition, author, publication details, curriculum position, intended lesson, and permitted storage/use. Prefer citations and concise notes over storing copyrighted books.
+2. **Freeze the prior.** Before reading, save the Character's current beliefs and its predictions about the source.
+3. **Extract faithfully.** Capture the author's claims, evidence, assumptions, definitions, and limits before critiquing them.
+4. **Assimilate through the Character.** State what the existing constitution accepts, rejects, or reinterprets—and why.
+5. **Run an adversarial pass.** Test the new claims against contrary evidence, alternative schools, data leakage, transaction costs, and regime dependence.
+6. **Write the memory delta.** Append the change; do not silently rewrite earlier beliefs. Contradictions remain visible.
+7. **Promote only reusable knowledge.** Update consolidated memory and theory cards with provenance back to source and checkpoint.
+8. **Pre-register tests.** Specify prediction, horizon, benchmark, failure condition, and evaluation window before seeing outcomes.
+
+Fresh tasks load the Character's constitution first, then its consolidated memory, active theories, and recent evaluation summary. Other schools' memories are loaded afterward and labeled as outside views. This gives the Character a stable bias without hiding contrary evidence.
+
+## Candidate schools of thought
+
+The sequences below are proposed curricula, not endorsements of every claim in every book. The first title is intentionally formative; later titles operationalize, broaden, or challenge the resulting mindset.
+
+### 1. The Index Steward — evidence-first passive allocation
+
+**Core position:** Most active strategies fail to overcome costs and uncertainty consistently, so low-cost diversification is the default use of long-horizon capital. Active trading must earn the right to displace that default.
+
+1. **The Little Book of Common Sense Investing — John C. Bogle.** Installs low cost, broad diversification, long horizons, and humility as the constitution.
+2. **A Random Walk Down Wall Street — Burton G. Malkiel.** Adds efficient-market skepticism toward forecasts and popular trading systems.
+3. **The Four Pillars of Investing — William J. Bernstein.** Broadens the model across theory, history, psychology, and the investment business.
+4. **The Psychology of Money — Morgan Housel.** Makes endurance, behavior, and personal risk capacity part of portfolio design.
+
+**Trading behavior:** Usually abstains. Acts as the benchmark and as a skeptical capital-allocation gate for every active Character. This school can run in the background without being mixed into the active trading budget.
+
+### 2. The Value Rationalist — price versus business value
+
+**Core position:** A security is a claim on an underlying business; opportunity appears when price diverges materially from conservatively estimated value.
+
+1. **The Intelligent Investor — Benjamin Graham.** Establishes margin of safety, Mr. Market, and investor-versus-speculator discipline.
+2. **The Essays of Warren Buffett — Warren E. Buffett, arranged by Lawrence A. Cunningham.** Extends value from cheap assets to business quality, management, and capital allocation.
+3. **Common Stocks and Uncommon Profits — Philip A. Fisher.** Forces the Graham-trained Character to incorporate qualitative growth and competitive durability.
+4. **Expectations Investing — Alfred Rappaport and Michael J. Mauboussin.** Converts valuation into a test of which future expectations are already embedded in price.
+
+**Trading behavior:** Patient, selective, and generally poorly suited to forced daily action. Intraday dislocations matter only when they change the price/value gap enough to justify costs and risk.
+
+### 3. The Systematic Trend Operator — follow, size, and exit
+
+**Core position:** Persistent price movement can be traded without predicting fundamentals, provided losses are cut, positions are sized consistently, and rules are followed.
+
+1. **Way of the Turtle — Curtis Faith.** Establishes explicit rules, breakout logic, position sizing, and disciplined execution.
+2. **Following the Trend — Andreas F. Clenow.** Reframes the intuition as a portfolio-level, testable systematic process.
+3. **Trading Systems and Methods — Perry J. Kaufman.** Expands the design vocabulary and exposes parameter and implementation choices.
+4. **Evidence-Based Technical Analysis — David Aronson.** Challenges the now-formed trend believer to demand statistical evidence and control data-mining bias.
+
+**Trading behavior:** Frequent abstention in directionless markets; enters only on defined signals and treats exit and sizing as part of the thesis.
+
+### 4. The Mean-Reversion Experimentalist — extremes tend to normalize
+
+**Core position:** Some short-horizon deviations from a conditional norm are temporary, but only after the norm, catalyst, execution cost, and failure regime are defined quantitatively.
+
+1. **Quantitative Trading — Ernest P. Chan.** Establishes research workflow, backtesting, implementation realism, and accessible statistical arbitrage concepts.
+2. **Algorithmic Trading — Ernest P. Chan.** Deepens mean-reversion and momentum strategy design with explicit rationales.
+3. **Machine Trading — Ernest P. Chan.** Adds regime awareness, feature construction, and a more modern research loop.
+4. **Advances in Financial Machine Learning — Marcos López de Prado.** Introduces stronger defenses against leakage, invalid cross-validation, and misleading backtests.
+
+**Trading behavior:** Demands data, executable prices, and a pre-registered test. Suspicious of any edge that disappears after spread, slippage, latency, borrow, and taxes.
+
+### 5. The Market Microstructure Mechanic — understand how orders become prices
+
+**Core position:** At intraday horizons, market structure, liquidity, order types, queue position, and adverse selection can dominate the apparent investment thesis.
+
+1. **Trading and Exchanges — Larry Harris.** Builds the foundational map of participants, orders, markets, liquidity, and why people trade.
+2. **Algorithmic Trading and DMA — Barry Johnson.** Turns that map into execution mechanics, benchmarks, and algorithm design.
+3. **Trades, Quotes and Prices — Jean-Philippe Bouchaud, Julius Bonart, Jonathan Donier, and Martin Gould.** Adds a quantitative treatment of order flow, impact, and price formation.
+4. **Market Microstructure in Practice — Charles-Albert Lehalle and Sophie Laruelle.** Connects theory to measurement, monitoring, and real execution constraints.
+
+**Trading behavior:** May reject an otherwise sound trade because the expected edge is smaller than its execution cost or because liquidity makes the observed price misleading.
+
+### 6. The Probabilistic Risk Skeptic — survive uncertainty first
+
+**Core position:** Outcomes mix skill, luck, and hidden risk. Survival, calibrated uncertainty, and avoidance of ruin come before maximizing headline return.
+
+1. **Fooled by Randomness — Nassim Nicholas Taleb.** Makes luck, survivorship bias, and asymmetric exposure the foundational suspicion.
+2. **Against the Gods — Peter L. Bernstein.** Adds the history and conceptual machinery of probability and risk.
+3. **Thinking in Bets — Annie Duke.** Separates decision quality from outcome quality and makes belief updating operational.
+4. **The Most Important Thing — Howard Marks.** Applies second-level thinking, cycles, defensive investing, and risk control to markets.
+
+**Trading behavior:** Sizes down, seeks convexity, records uncertainty, and vetoes strategies with hidden ruin paths. Best implemented partly as an independent risk governor so no alpha-seeking Character controls its own limits.
+
+### 7. The Event and Disclosure Detective — infer, do not merely copy
+
+**Core position:** Public events and filings can reveal incentives or changing expectations, but the tradeable object is the market's remaining mispricing after publication—not the stale action itself.
+
+1. **You Can Be a Stock Market Genius — Joel Greenblatt.** Establishes event-driven curiosity around spinoffs, restructurings, mergers, and unusual situations.
+2. **Quality of Earnings — Thornton L. O'glove.** Trains skepticism toward reported figures and teaches forensic reading.
+3. **Expectations Investing — Alfred Rappaport and Michael J. Mauboussin.** Frames the question as what the current price already assumes.
+4. **The Art of Execution — Lee Freeman-Shor.** Focuses attention on what investors do after an initial position, not just the entry story.
+
+**Trading behavior:** Treats a political figure's disclosed transaction as delayed evidence. It reconstructs the information available at the original trade and at disclosure time, generates multiple rationales, and tests whether any edge remains.
+
+## Recommended pilot Characters
+
+Start with three specialists rather than seven:
+
+| Role | Character | Why it belongs in the pilot |
+| --- | --- | --- |
+| Lead candidate / baseline | **Index Steward** | Establishes the opportunity cost of activity and prevents “doing something” from being mistaken for value |
+| Contrarian fundamental adviser | **Value Rationalist** | Supplies business reasoning and a long-horizon alternative to price-only explanations |
+| Active strategy candidate | **Systematic Trend Operator** | Produces explicit, testable rules and is structurally different from the first two |
+
+Add the **Market Microstructure Mechanic** before any serious intraday simulation, then add the **Probabilistic Risk Skeptic** as an independent governor. The **Event and Disclosure Detective** belongs at the interface with Trader Analyzer once trustworthy disclosure ingestion exists.
+
+The first merged Character should be created only after each specialist has a meaningful out-of-sample record. Its curriculum order, starting weights, and conflict rules must be pre-registered so the merge cannot be tuned to past winners.
+
+## Evaluation strategy
+
+Profit is necessary to call a trading system economically useful, but “green every calendar month” is a dangerous sole objective: it can reward leverage, hidden tail risk, and overtrading. Use a hierarchy:
+
+1. **Hard constraints:** no unauthorized live orders; no breach of capital, drawdown, exposure, leverage, liquidity, or data-freshness limits.
+2. **Primary research objective:** positive net performance over a predeclared out-of-sample window relative to appropriate baselines and risk taken.
+3. **Secondary objective:** monthly consistency, measured alongside drawdown and probability of ruin—not optimized in isolation.
+
+Every evaluation should include:
+
+- an uninvested cash or Treasury-like baseline appropriate to the period;
+- a low-cost broad-market buy-and-hold baseline;
+- identical starting cash and capital availability;
+- point-in-time data with no future or revised information leakage;
+- fees, spread, slippage, market impact, borrow availability, dividends, and corporate actions;
+- both selected and rejected recommendations;
+- return, volatility, maximum drawdown, turnover, exposure, hit rate, calibration, and tail loss;
+- enough trades and market regimes to distinguish a process from a lucky month.
+
+For public-official disclosures, preserve at least three timestamps: **transaction date**, **filing/publication date**, and **system ingestion date**. House and Senate rules generally allow covered transactions over $1,000 to be reported by the earlier of 30 days after notice or 45 days after the transaction. Therefore, backtests may act no earlier than the historical public-availability timestamp. See the official [House Periodic Transaction Report calculator](https://ethics.house.gov/periodic-transaction-report-calculator/) and [Senate financial disclosure guidance](https://www.ethics.senate.gov/public/index.cfm/financialdisclosure).
+
+## Safety and promotion gates
+
+Development advances one reversible stage at a time:
+
+```text
+offline unit tests
+  -> historical replay
+  -> walk-forward simulation
+  -> live-data shadow recommendations
+  -> paper trading
+  -> tiny-capital, human-approved pilot
+  -> bounded automation (separate approval)
+```
+
+Promotion requires predefined evidence, reproducibility, and owner approval. A later stage must never weaken these invariants:
+
+- secrets are kept out of the repository and logs;
+- research tasks cannot call brokerage execution endpoints;
+- the execution service accepts only schema-valid, policy-compliant orders;
+- stale, missing, conflicting, or anomalous data causes abstention;
+- an independent kill switch cancels new activity;
+- the ledger is immutable and reconciled against the broker;
+- model, prompt, Character, theory, data, and code versions accompany every decision;
+- simulated and live results are never mixed.
+
+Day-trading and margin rules are jurisdiction-, broker-, account-, and time-dependent. They must be checked again when a broker and account type are selected. Current U.S. background is available from the SEC's [Investor.gov margin-rules bulletin](https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/margin).
+
+## Planned repository map
+
+Only the README and decision register exist today. The following is the intended layout; directories should be created when their first real artifact is added rather than as empty scaffolding.
+
+```text
+Trade_Theorist/
+├── README.md                       # Vision, research method, and architecture map
+├── decisions/
+│   ├── APPROVALS.md                # Choices reserved for the owner
+│   └── records/                    # Accepted architecture and policy decisions
+├── docs/
+│   ├── architecture.md             # Detailed service and data-flow design
+│   ├── evaluation.md               # Metrics, baselines, and promotion criteria
+│   └── safety.md                   # Threat model and execution invariants
+├── library/
+│   ├── catalog/                    # Source metadata, rights, editions, and status
+│   └── notes/                      # Citation-linked notes; not unlicensed book copies
+├── characters/
+│   └── <character_id>/
+│       ├── constitution.md         # Stable identity and epistemic rules
+│       ├── curriculum.yaml         # Ordered sources and intended transformations
+│       ├── checkpoints/            # Append-only belief state after each source
+│       ├── memory/                 # Consolidated memory for fresh tasks
+│       ├── theories/               # Versioned theory cards
+│       └── evaluations/            # Character-specific scorecards
+├── schemas/                        # Machine-validated source, theory, and decision formats
+├── src/
+│   ├── ingest/                     # Source ingestion and provenance
+│   ├── learn/                      # Sequential reading and memory consolidation
+│   ├── theorize/                   # Theory generation and adversarial review
+│   ├── council/                    # Lead/adviser deliberation
+│   └── evaluate/                   # Replay and counterfactual scoring
+├── tests/                          # Unit, integration, leakage, and safety tests
+└── runs/                           # Reproducible manifests; large outputs stay external
+```
+
+Future Trader Analyzer and Trader User components should live in separate packages or repositories with explicit, versioned contracts. That separation reduces the chance that a research prompt can become an order by accident.
+
+## Near-term roadmap
+
+1. Resolve the owner choices in [`decisions/APPROVALS.md`](decisions/APPROVALS.md).
+2. Define schemas for sources, checkpoints, theory cards, recommendations, and evaluations.
+3. Create the Index Steward as the reference Character and ingest one book under the sequential protocol.
+4. Create the Value Rationalist and Systematic Trend Operator without sharing consolidated memory during their formative curricula.
+5. Build a deterministic theory-card validator and an append-only run manifest.
+6. Test Characters on historical decisions and forecasts before connecting live market data.
+7. Add live-data shadow mode, then paper trading, only after leakage and cost models pass review.
+
+## Definition of success
+
+Trade Theorist succeeds when it can answer, reproducibly:
+
+- What did each Character believe at the time?
+- Which sources and reasoning steps produced that belief?
+- What evidence would have changed its mind?
+- What action—or abstention—did it recommend using only then-available information?
+- How did that decision perform after realistic costs and against fair baselines?
+- Is the apparent edge stable out of sample, or better explained by luck, leakage, or hidden risk?
+
+The goal is not a chorus of confident personas. It is a small ecology of inspectable minds whose differences produce testable decisions—and a system disciplined enough to learn when none of them deserves the trade.
