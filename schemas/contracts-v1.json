@@ -1,0 +1,2859 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trade-theorist.local/schemas/contracts-v1.json",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/conversation"
+    },
+    {
+      "$ref": "#/$defs/model_call"
+    },
+    {
+      "$ref": "#/$defs/source"
+    },
+    {
+      "$ref": "#/$defs/experiment"
+    },
+    {
+      "$ref": "#/$defs/character"
+    },
+    {
+      "$ref": "#/$defs/portfolio"
+    },
+    {
+      "$ref": "#/$defs/checkpoint"
+    },
+    {
+      "$ref": "#/$defs/registration"
+    },
+    {
+      "$ref": "#/$defs/theory"
+    },
+    {
+      "$ref": "#/$defs/observation"
+    },
+    {
+      "$ref": "#/$defs/snapshot"
+    },
+    {
+      "$ref": "#/$defs/message"
+    },
+    {
+      "$ref": "#/$defs/recommendation"
+    },
+    {
+      "$ref": "#/$defs/policy"
+    },
+    {
+      "$ref": "#/$defs/ledger_event"
+    },
+    {
+      "$ref": "#/$defs/evaluation"
+    },
+    {
+      "$ref": "#/$defs/run_manifest"
+    }
+  ],
+  "$defs": {
+    "conversation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "conversation"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "participant_character_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "snapshot_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "participant_character_versions",
+        "snapshot_id",
+        "portfolio_id",
+        "deadline"
+      ],
+      "additionalProperties": false
+    },
+    "model_call": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "model_call"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "response_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "usage": {
+          "type": "object",
+          "properties": {
+            "input_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "output_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cost_usd": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "input_tokens",
+            "output_tokens",
+            "calls",
+            "cost_usd"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "model_id",
+        "prompt_version",
+        "input_hash",
+        "response_hash",
+        "source_ids",
+        "usage"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "source"
+        },
+        "experiment_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "isbn": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{13}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "next_check_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "access": {
+          "enum": [
+            "unknown",
+            "public_full_text",
+            "sample_only",
+            "library_loan",
+            "owned_copy",
+            "purchase_required",
+            "unavailable"
+          ]
+        },
+        "rights": {
+          "type": "object",
+          "properties": {
+            "reading": {
+              "enum": [
+                "unknown",
+                "permitted",
+                "denied"
+              ]
+            },
+            "machine_ingestion": {
+              "enum": [
+                "unknown",
+                "permitted",
+                "denied"
+              ]
+            },
+            "private_storage": {
+              "enum": [
+                "unknown",
+                "permitted",
+                "denied"
+              ]
+            },
+            "redistribution": {
+              "enum": [
+                "unknown",
+                "permitted",
+                "denied"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "reading",
+            "machine_ingestion",
+            "private_storage",
+            "redistribution",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "publication_eligibility": {
+          "enum": [
+            "unknown",
+            "metadata_only",
+            "derived_permitted",
+            "raw_permitted"
+          ]
+        },
+        "private_locator": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ingestion_status": {
+          "enum": [
+            "not_started",
+            "partial",
+            "complete",
+            "blocked"
+          ]
+        },
+        "blocker": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "title",
+        "authors",
+        "edition",
+        "isbn",
+        "publisher",
+        "locator",
+        "retrieved_at",
+        "checked_at",
+        "next_check_at",
+        "access",
+        "rights",
+        "publication_eligibility",
+        "private_locator",
+        "ingestion_status",
+        "blocker"
+      ],
+      "additionalProperties": false
+    },
+    "experiment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "experiment"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "council",
+            "character_portfolio"
+          ]
+        },
+        "regime": {
+          "enum": [
+            "fixture",
+            "historical_restricted",
+            "hindsight",
+            "forward_shadow",
+            "forward_paper"
+          ]
+        },
+        "character_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "policy_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "universe": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "instrument_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "symbol": {
+                "type": "string",
+                "minLength": 1
+              },
+              "asset_class": {
+                "enum": [
+                  "us_equity",
+                  "unleveraged_us_etf"
+                ]
+              },
+              "liquid": {
+                "const": true
+              },
+              "leveraged": {
+                "const": false
+              },
+              "inverse": {
+                "const": false
+              },
+              "sector": {
+                "type": "string",
+                "minLength": 1
+              },
+              "diversified": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "instrument_id",
+              "symbol",
+              "asset_class",
+              "liquid",
+              "leveraged",
+              "inverse",
+              "sector",
+              "diversified"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "baseline_cash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseline_fund": {
+          "type": "string",
+          "minLength": 1
+        },
+        "membership_basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_cadence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sizing_rules": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_feeds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "costs": {
+          "type": "object",
+          "properties": {
+            "fee_per_order": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "slippage_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "spread_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "fill_model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "corporate_actions": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "fee_per_order",
+            "slippage_bps",
+            "spread_bps",
+            "fill_model",
+            "corporate_actions"
+          ],
+          "additionalProperties": false
+        },
+        "start_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "development_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "validation_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "minimum_sessions": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minimum_forecasts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "advice": {
+          "enum": [
+            "none",
+            "bounded"
+          ]
+        },
+        "knowledge_cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "retrieval_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_limitations": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approval_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "mode",
+        "regime",
+        "character_versions",
+        "policy_id",
+        "universe",
+        "baseline_cash",
+        "baseline_fund",
+        "membership_basis",
+        "decision_cadence",
+        "sizing_rules",
+        "data_feeds",
+        "costs",
+        "start_at",
+        "end_at",
+        "development_end_at",
+        "validation_end_at",
+        "metrics",
+        "minimum_sessions",
+        "minimum_forecasts",
+        "advice",
+        "knowledge_cutoff",
+        "retrieval_policy",
+        "model_limitations",
+        "approval_ref"
+      ],
+      "additionalProperties": false
+    },
+    "character": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "character"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "character_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "constitution_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "curriculum_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "readiness": {
+          "enum": [
+            "not_ready",
+            "fixture_only",
+            "partial",
+            "ready"
+          ]
+        },
+        "foundation_source_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "character_id",
+        "version",
+        "constitution_hash",
+        "curriculum_hash",
+        "readiness",
+        "foundation_source_id"
+      ],
+      "additionalProperties": false
+    },
+    "portfolio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "portfolio"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "council",
+            "character_portfolio",
+            "baseline"
+          ]
+        },
+        "owner_character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "initial_cash": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+        },
+        "currency": {
+          "const": "USD"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "mode",
+        "owner_character_version",
+        "initial_cash",
+        "currency"
+      ],
+      "additionalProperties": false
+    },
+    "checkpoint": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "checkpoint"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "curriculum_position": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "section_index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prior_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prior_checkpoint_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accepted_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "source_id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                    },
+                    "locator": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "passage_hash": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "locator",
+                    "passage_hash"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "claim_id",
+              "text",
+              "citations"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "rejected_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "source_id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                    },
+                    "locator": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "passage_hash": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "locator",
+                    "passage_hash"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "claim_id",
+              "text",
+              "citations"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "memory_delta": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "consolidated_memory": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "source_id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                    },
+                    "locator": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "passage_hash": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "locator",
+                    "passage_hash"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "claim_id",
+              "text",
+              "citations"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "adversarial_review": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "reading_status": {
+          "enum": [
+            "partial",
+            "complete"
+          ]
+        },
+        "material_scope": {
+          "enum": [
+            "fixture",
+            "sample",
+            "full_book"
+          ]
+        },
+        "model_call_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "character_version",
+        "curriculum_position",
+        "section_index",
+        "source_ids",
+        "source_hash",
+        "prior_hash",
+        "prior_checkpoint_id",
+        "accepted_claims",
+        "rejected_claims",
+        "memory_delta",
+        "consolidated_memory",
+        "adversarial_review",
+        "reading_status",
+        "material_scope",
+        "model_call_id"
+      ],
+      "additionalProperties": false
+    },
+    "registration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "registration"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "prediction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "horizon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "benchmark": {
+          "type": "string",
+          "minLength": 1
+        },
+        "failure_condition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluation_start": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "evaluation_end": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "character_version",
+        "prediction",
+        "horizon",
+        "benchmark",
+        "failure_condition",
+        "evaluation_start",
+        "evaluation_end",
+        "metrics"
+      ],
+      "additionalProperties": false
+    },
+    "theory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "theory"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checkpoint_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "test_registration_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "position": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minimal_logic_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3,
+          "uniqueItems": true
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "predicted_observables": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "portfolio_implication": {
+          "enum": [
+            "buy",
+            "sell",
+            "size",
+            "wait",
+            "abstain"
+          ]
+        },
+        "invalidation_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "strongest_counterarguments": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "rebuttals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidence_and_citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "passage_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "source_id",
+              "locator",
+              "passage_hash"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "character_version",
+        "version",
+        "checkpoint_id",
+        "test_registration_id",
+        "position",
+        "minimal_logic_chain",
+        "scope",
+        "assumptions",
+        "predicted_observables",
+        "portfolio_implication",
+        "invalidation_conditions",
+        "strongest_counterarguments",
+        "rebuttals",
+        "confidence",
+        "evidence_and_citations"
+      ],
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "observation"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "instrument_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "asset_class": {
+          "enum": [
+            "us_equity",
+            "unleveraged_us_etf"
+          ]
+        },
+        "event_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "ingested_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "availability_evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "supersedes_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "superseded_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "feed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "units": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "quality": {
+          "enum": [
+            "eligible",
+            "quarantined",
+            "missing"
+          ]
+        },
+        "publication_eligibility": {
+          "enum": [
+            "unknown",
+            "private_only",
+            "derived_permitted",
+            "raw_permitted"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "instrument_id",
+        "asset_class",
+        "event_at",
+        "published_at",
+        "ingested_at",
+        "availability_evidence",
+        "revision",
+        "supersedes_id",
+        "superseded_at",
+        "feed",
+        "units",
+        "payload_hash",
+        "quality",
+        "publication_eligibility"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "snapshot"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "clock_policy": {
+          "type": "object",
+          "properties": {
+            "calendar": {
+              "type": "string",
+              "minLength": 1
+            },
+            "cadence": {
+              "type": "string",
+              "minLength": 1
+            },
+            "max_stale_sessions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "eligibility": {
+              "enum": [
+                "publication_and_ingestion",
+                "archived_publication"
+              ]
+            },
+            "missing_data": {
+              "enum": [
+                "halt_all",
+                "halt_affected"
+              ]
+            }
+          },
+          "required": [
+            "calendar",
+            "cadence",
+            "max_stale_sessions",
+            "eligibility",
+            "missing_data"
+          ],
+          "additionalProperties": false
+        },
+        "observation_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "observation_id",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "cutoff",
+        "clock_policy",
+        "observation_ids",
+        "exclusions",
+        "content_hash"
+      ],
+      "additionalProperties": false
+    },
+    "message": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "message"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "conversation_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "sender_character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "recipient_character_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "portfolio_context": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "available_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "reply_to": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "enum": [
+            "question",
+            "evidence",
+            "objection",
+            "reply",
+            "decision",
+            "retrospective"
+          ]
+        },
+        "question": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "related_theory_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "conversation_id",
+        "sender_character_version",
+        "recipient_character_ids",
+        "portfolio_context",
+        "snapshot_id",
+        "available_at",
+        "expires_at",
+        "reply_to",
+        "kind",
+        "question",
+        "body",
+        "evidence_ids",
+        "related_theory_ids"
+      ],
+      "additionalProperties": false
+    },
+    "recommendation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "recommendation"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "instrument_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "action": {
+          "enum": [
+            "buy",
+            "sell",
+            "hold",
+            "wait",
+            "abstain"
+          ]
+        },
+        "quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "horizon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confidence_event": {
+          "type": "string",
+          "minLength": 1
+        },
+        "invalidation_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "passage_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "source_id",
+              "locator",
+              "passage_hash"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "abstention_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "theory_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "character_version",
+        "portfolio_id",
+        "snapshot_id",
+        "instrument_id",
+        "action",
+        "quantity",
+        "horizon",
+        "confidence",
+        "confidence_event",
+        "invalidation_conditions",
+        "citations",
+        "expires_at",
+        "abstention_reason",
+        "theory_ids"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "policy"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "enum": [
+            "fixture",
+            "paper"
+          ]
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "universe": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "instrument_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "symbol": {
+                "type": "string",
+                "minLength": 1
+              },
+              "asset_class": {
+                "enum": [
+                  "us_equity",
+                  "unleveraged_us_etf"
+                ]
+              },
+              "liquid": {
+                "const": true
+              },
+              "leveraged": {
+                "const": false
+              },
+              "inverse": {
+                "const": false
+              },
+              "sector": {
+                "type": "string",
+                "minLength": 1
+              },
+              "diversified": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "instrument_id",
+              "symbol",
+              "asset_class",
+              "liquid",
+              "leveraged",
+              "inverse",
+              "sector",
+              "diversified"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "initial_cash": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "max_deployed_capital": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "company_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sector_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "diversified_etf_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "gross_exposure": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "daily_loss": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "drawdown": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "turnover": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "orders_per_session": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_quote_age_seconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_spread_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            }
+          },
+          "required": [
+            "initial_cash",
+            "max_deployed_capital",
+            "company_weight",
+            "sector_weight",
+            "diversified_etf_weight",
+            "gross_exposure",
+            "daily_loss",
+            "drawdown",
+            "turnover",
+            "orders_per_session",
+            "max_quote_age_seconds",
+            "max_spread_bps"
+          ],
+          "additionalProperties": false
+        },
+        "clock": {
+          "type": "object",
+          "properties": {
+            "calendar": {
+              "type": "string",
+              "minLength": 1
+            },
+            "cadence": {
+              "type": "string",
+              "minLength": 1
+            },
+            "max_stale_sessions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "eligibility": {
+              "enum": [
+                "publication_and_ingestion",
+                "archived_publication"
+              ]
+            },
+            "missing_data": {
+              "enum": [
+                "halt_all",
+                "halt_affected"
+              ]
+            }
+          },
+          "required": [
+            "calendar",
+            "cadence",
+            "max_stale_sessions",
+            "eligibility",
+            "missing_data"
+          ],
+          "additionalProperties": false
+        },
+        "costs": {
+          "type": "object",
+          "properties": {
+            "fee_per_order": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "slippage_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "spread_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "fill_model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "corporate_actions": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "fee_per_order",
+            "slippage_bps",
+            "spread_bps",
+            "fill_model",
+            "corporate_actions"
+          ],
+          "additionalProperties": false
+        },
+        "long_only": {
+          "const": true
+        },
+        "cash_only": {
+          "const": true
+        },
+        "approval_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approved_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "operator": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kill_switch_owner": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reconciliation_owner": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "incident_owner": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "version",
+        "stage",
+        "synthetic",
+        "universe",
+        "limits",
+        "clock",
+        "costs",
+        "long_only",
+        "cash_only",
+        "approval_ref",
+        "approved_at",
+        "operator",
+        "kill_switch_owner",
+        "reconciliation_owner",
+        "incident_owner"
+      ],
+      "additionalProperties": false
+    },
+    "ledger_event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "ledger_event"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "decision_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "order_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_kind": {
+          "enum": [
+            "funding",
+            "order",
+            "reservation",
+            "fill",
+            "cancellation",
+            "fee",
+            "distribution",
+            "split",
+            "correction",
+            "mark"
+          ]
+        },
+        "instrument_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quantity": {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "price": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fees": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+        },
+        "cash_delta": {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "event_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "simulation_model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "corrects_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "portfolio_id",
+        "decision_id",
+        "order_id",
+        "event_kind",
+        "instrument_id",
+        "quantity",
+        "price",
+        "fees",
+        "cash_delta",
+        "event_at",
+        "simulation_model_version",
+        "corrects_id"
+      ],
+      "additionalProperties": false
+    },
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "evaluation"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "window_start": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "window_end": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "eligible_sample": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "benchmark": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cost_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "null_reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "value",
+              "null_reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "evidence_status": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "source_run_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "window_start",
+        "window_end",
+        "eligible_sample",
+        "benchmark",
+        "cost_model",
+        "metrics",
+        "evidence_status",
+        "source_run_ids"
+      ],
+      "additionalProperties": false
+    },
+    "run_manifest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "run_manifest"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "council",
+            "character_portfolio",
+            "learning"
+          ]
+        },
+        "code_commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_revisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "character_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sampling": {
+          "type": "object",
+          "properties": {
+            "temperature": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "seed": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "temperature",
+            "seed"
+          ],
+          "additionalProperties": false
+        },
+        "market_cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "knowledge_cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "input_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "output_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phase_status": {
+          "type": "object",
+          "properties": {
+            "prepare": {
+              "enum": [
+                "pending",
+                "running",
+                "complete",
+                "failed"
+              ]
+            },
+            "execute": {
+              "enum": [
+                "pending",
+                "running",
+                "complete",
+                "failed"
+              ]
+            },
+            "export": {
+              "enum": [
+                "pending",
+                "running",
+                "complete",
+                "failed"
+              ]
+            }
+          },
+          "required": [
+            "prepare",
+            "execute",
+            "export"
+          ],
+          "additionalProperties": false
+        },
+        "usage": {
+          "type": "object",
+          "properties": {
+            "input_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "output_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cost_usd": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "input_tokens",
+            "output_tokens",
+            "calls",
+            "cost_usd"
+          ],
+          "additionalProperties": false
+        },
+        "failure": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "resume_from": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parent_run_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "mode",
+        "code_commit",
+        "policy_version",
+        "source_revisions",
+        "character_versions",
+        "model_id",
+        "prompt_version",
+        "sampling",
+        "market_cutoff",
+        "knowledge_cutoff",
+        "input_hash",
+        "output_hash",
+        "phase_status",
+        "usage",
+        "failure",
+        "resume_from",
+        "parent_run_id"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

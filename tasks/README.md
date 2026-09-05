@@ -1,6 +1,6 @@
 # Implementation task index
 
-Status: all 23 implementation tasks are planned. This revision delivers the system design and owner-decision update, not a running trading application. Start with TASK-001. Task numbers are stable; filenames also show recommended effort and model.
+Status (2026-09-05): TASK-001, TASK-002 and TASK-003 are implemented and verified. TASK-004's software and fixture path are implemented; real Index Steward learning remains blocked by permitted full-text acquisition. TASK-005–023 remain planned. See [foundation setup and acceptance evidence](../docs/foundation-implementation.md) and the individual task records. Task numbers are stable; filenames show recommended effort and model.
 
 ## How to use the queue
 

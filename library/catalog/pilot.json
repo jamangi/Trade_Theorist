@@ -1,0 +1,662 @@
+{
+  "schema_version": 1,
+  "audit_checked_at": "2026-09-05T20:29:13Z",
+  "sources": [
+    {
+      "id": "book:9781119404507",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "The Little Book of Common Sense Investing",
+      "authors": [
+        "John C. Bogle"
+      ],
+      "edition": "2nd edition, 2017, hardcover",
+      "isbn": "9781119404507",
+      "publisher": "Wiley",
+      "locator": "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9781324035435",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "A Random Walk Down Wall Street",
+      "authors": [
+        "Burton G. Malkiel"
+      ],
+      "edition": "13th edition, 2024 paperback",
+      "isbn": "9781324035435",
+      "publisher": "W. W. Norton",
+      "locator": "https://wwnorton.co.uk/books/9781324035435-a-random-walk-down-wall-street-04e7966c-6f5e-469f-a62e-69352a44ab82/formats",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://wwnorton.co.uk/books/9781324035435-a-random-walk-down-wall-street-04e7966c-6f5e-469f-a62e-69352a44ab82/formats",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9781264715916",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "The Four Pillars of Investing",
+      "authors": [
+        "William J. Bernstein"
+      ],
+      "edition": "2nd edition, 2023, print",
+      "isbn": "9781264715916",
+      "publisher": "McGraw Hill",
+      "locator": "https://www.mheducation.com/highered/mhp/product/four-pillars-investing-second-edition-lessons-building-winning-portfolio.html",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.mheducation.com/highered/mhp/product/four-pillars-investing-second-edition-lessons-building-winning-portfolio.html",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9780857197689",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "The Psychology of Money",
+      "authors": [
+        "Morgan Housel"
+      ],
+      "edition": "2020 paperback",
+      "isbn": "9780857197689",
+      "publisher": "Harriman House",
+      "locator": "https://www.harriman-house.com/authors/morgan-housel/the-psychology-of-money/9780857197689",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.harriman-house.com/authors/morgan-housel/the-psychology-of-money/9780857197689",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:intelligent-investor-unresolved",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "The Intelligent Investor",
+      "authors": [
+        "Benjamin Graham",
+        "Jason Zweig (commentary)"
+      ],
+      "edition": "Unresolved: revised edition product page does not render format ISBN",
+      "isbn": null,
+      "publisher": "HarperCollins",
+      "locator": "https://www.harpercollins.com/products/the-intelligent-investor-rev-ed-benjamin-graham",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "unknown",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.harpercollins.com/products/the-intelligent-investor-rev-ed-benjamin-graham",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "Resolve exact edition/ISBN. No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9781531017507",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "The Essays of Warren Buffett",
+      "authors": [
+        "Warren E. Buffett",
+        "Lawrence A. Cunningham (arranger)"
+      ],
+      "edition": "5th edition, 2019, paperback",
+      "isbn": "9781531017507",
+      "publisher": "Carolina Academic Press",
+      "locator": "https://cap-press.com/books/isbn/9781531017507/The-Essays-of-Warren-Buffett-Fifth-Edition",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "unavailable",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://cap-press.com/books/isbn/9781531017507/The-Essays-of-Warren-Buffett-Fifth-Edition",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9780471445500",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "Common Stocks and Uncommon Profits and Other Writings",
+      "authors": [
+        "Philip A. Fisher",
+        "Kenneth L. Fisher (introduction)"
+      ],
+      "edition": "2nd edition, 2003, softcover",
+      "isbn": "9780471445500",
+      "publisher": "Wiley",
+      "locator": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/common-stocks-and-uncommon-profits-and-other-writings-978-0-471-44550-0",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/common-stocks-and-uncommon-profits-and-other-writings-978-0-471-44550-0",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9780231554848",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "Expectations Investing",
+      "authors": [
+        "Michael J. Mauboussin",
+        "Alfred Rappaport"
+      ],
+      "edition": "Revised and updated, 2021, ebook",
+      "isbn": "9780231554848",
+      "publisher": "Columbia University Press",
+      "locator": "https://cup.columbia.edu/book/expectations-investing/9780231554848/",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://cup.columbia.edu/book/expectations-investing/9780231554848/",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9780071486644",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "Way of the Turtle",
+      "authors": [
+        "Curtis Faith"
+      ],
+      "edition": "1st edition, 2007, print",
+      "isbn": "9780071486644",
+      "publisher": "McGraw Hill",
+      "locator": "https://www.mheducation.com/highered/mhp/product/way-turtle-secret-methods-turned-ordinary-people-into-legendary-traders.html",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.mheducation.com/highered/mhp/product/way-turtle-secret-methods-turned-ordinary-people-into-legendary-traders.html",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9781119908982",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "Following the Trend",
+      "authors": [
+        "Andreas F. Clenow"
+      ],
+      "edition": "2nd edition, 2023, hardcover",
+      "isbn": "9781119908982",
+      "publisher": "Wiley",
+      "locator": "https://www.wiley-vch.de/de?isbn=978-1-119-90898-2&option=com_eshop&view=product",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.wiley-vch.de/de?isbn=978-1-119-90898-2&option=com_eshop&view=product",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9781119605355",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "Trading Systems and Methods",
+      "authors": [
+        "Perry J. Kaufman"
+      ],
+      "edition": "6th edition, 2019, hardcover",
+      "isbn": "9781119605355",
+      "publisher": "Wiley",
+      "locator": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/finance-investments-13fi/trading-13fi4/trading-systems-and-methods-978-1-119-60535-5",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/finance-investments-13fi/trading-13fi4/trading-systems-and-methods-978-1-119-60535-5",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9780470008744",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T20:29:13Z",
+      "contamination": "forward-insufficient",
+      "title": "Evidence-Based Technical Analysis",
+      "authors": [
+        "David Aronson"
+      ],
+      "edition": "1st edition, 2006, hardcover",
+      "isbn": "9780470008744",
+      "publisher": "Wiley",
+      "locator": "https://www.wiley-vch.de/en/?isbn=978-0-470-00874-4&option=com_eshop&view=product",
+      "retrieved_at": "2026-09-05T20:29:13Z",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "next_check_at": "2026-09-12T20:29:13Z",
+      "access": "purchase_required",
+      "rights": {
+        "reading": "unknown",
+        "machine_ingestion": "unknown",
+        "private_storage": "unknown",
+        "redistribution": "unknown",
+        "evidence": [
+          "https://www.wiley-vch.de/en/?isbn=978-0-470-00874-4&option=com_eshop&view=product",
+          "Publisher metadata/availability reviewed only; no title-specific content-use grant established."
+        ]
+      },
+      "publication_eligibility": "metadata_only",
+      "private_locator": null,
+      "ingestion_status": "blocked",
+      "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    }
+  ],
+  "assignments": [
+    {
+      "character_id": "index_steward",
+      "position": 1,
+      "source_id": "book:9781119404507",
+      "intended_lesson": "Form low-cost diversification, long horizons and humility.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "index_steward",
+      "position": 2,
+      "source_id": "book:9781324035435",
+      "intended_lesson": "Challenge forecasts with efficient-market skepticism.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "index_steward",
+      "position": 3,
+      "source_id": "book:9781264715916",
+      "intended_lesson": "Connect theory, history, psychology and investment business.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "index_steward",
+      "position": 4,
+      "source_id": "book:9780857197689",
+      "intended_lesson": "Include behavior and endurance in risk capacity.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 1,
+      "source_id": "book:intelligent-investor-unresolved",
+      "intended_lesson": "Form margin-of-safety and investor-versus-speculator discipline.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 2,
+      "source_id": "book:9781531017507",
+      "intended_lesson": "Add business quality, management and capital allocation.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 3,
+      "source_id": "book:9780471445500",
+      "intended_lesson": "Challenge asset-value instincts with qualitative growth and durability.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 4,
+      "source_id": "book:9780231554848",
+      "intended_lesson": "Test future expectations embedded in price.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 1,
+      "source_id": "book:9780071486644",
+      "intended_lesson": "Form explicit entry, sizing and exit discipline.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 2,
+      "source_id": "book:9781119908982",
+      "intended_lesson": "Turn trend intuition into testable portfolio rules.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 3,
+      "source_id": "book:9781119605355",
+      "intended_lesson": "Expand implementation choices and recognize parameter risk.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 4,
+      "source_id": "book:9780470008744",
+      "intended_lesson": "Challenge the formed trend believer with statistical and data-mining tests.",
+      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+    }
+  ],
+  "evidence": [
+    {
+      "source_id": "book:9781119404507",
+      "url": "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher lists this hardcover and a separate sample-chapter link. No full text acquired or machine-use grant established."
+    },
+    {
+      "source_id": "book:9781324035435",
+      "url": "https://wwnorton.co.uk/books/9781324035435-a-random-walk-down-wall-street-04e7966c-6f5e-469f-a62e-69352a44ab82/formats",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher lists paperback and separately identified ebook for purchase. Territorial distribution rights are not machine-use rights."
+    },
+    {
+      "source_id": "book:9781264715916",
+      "url": "https://www.mheducation.com/highered/mhp/product/four-pillars-investing-second-edition-lessons-building-winning-portfolio.html",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies print and ebook separately; sample requests are restricted to validated instructors."
+    },
+    {
+      "source_id": "book:9780857197689",
+      "url": "https://www.harriman-house.com/authors/morgan-housel/the-psychology-of-money/9780857197689",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies the paperback and purchase route; former harriman.house book URL redirects here. Rights enquiry is separate."
+    },
+    {
+      "source_id": "book:intelligent-investor-unresolved",
+      "url": "https://www.harpercollins.com/products/the-intelligent-investor-rev-ed-benjamin-graham",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Official revised-edition page exists, but rendered ISBN fields are unresolved placeholders and stock varies by format. Confirm exact edition and format before acquisition."
+    },
+    {
+      "source_id": "book:9781531017507",
+      "url": "https://cap-press.com/books/isbn/9781531017507/The-Essays-of-Warren-Buffett-Fifth-Edition",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies the fifth edition but marks this title no longer available. A contents/preview link is not the book; another lawful seller or library holding remains unverified."
+    },
+    {
+      "source_id": "book:9780471445500",
+      "url": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/common-stocks-and-uncommon-profits-and-other-writings-978-0-471-44550-0",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher lists the expanded volume for purchase and a sample link. The approved title is Part One; additional writings require explicit coverage labels."
+    },
+    {
+      "source_id": "book:9780231554848",
+      "url": "https://cup.columbia.edu/book/expectations-investing/9780231554848/",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies this ebook and EPUB/PDF purchase routes through its app. No ingestion or redistribution permission is inferred."
+    },
+    {
+      "source_id": "book:9780071486644",
+      "url": "https://www.mheducation.com/highered/mhp/product/way-turtle-secret-methods-turned-ordinary-people-into-legendary-traders.html",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies print and separate ebook. The instructor sample request is not general full-text availability."
+    },
+    {
+      "source_id": "book:9781119908982",
+      "url": "https://www.wiley-vch.de/de?isbn=978-1-119-90898-2&option=com_eshop&view=product",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies the English-language book on a German catalog page and links purchase/sample options. Futures coverage does not expand the approved tradable universe."
+    },
+    {
+      "source_id": "book:9781119605355",
+      "url": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/finance-investments-13fi/trading-13fi4/trading-systems-and-methods-978-1-119-60535-5",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies sixth edition hardcover, purchase and sample options. No source file acquired."
+    },
+    {
+      "source_id": "book:9780470008744",
+      "url": "https://www.wiley-vch.de/en/?isbn=978-0-470-00874-4&option=com_eshop&view=product",
+      "checked_at": "2026-09-05T20:29:13Z",
+      "method": "publisher page inspected via web tool; upstream cache may apply",
+      "summary": "Publisher identifies first edition hardcover and purchase/library-platform links. Institutional entitlement remains unverified."
+    }
+  ],
+  "review_queue": [
+    {
+      "source_id": "book:9781119404507",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9781324035435",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9781264715916",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9780857197689",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:intelligent-investor-unresolved",
+      "reason": "edition_unresolved",
+      "action": "Resolve exact edition/ISBN. No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9781531017507",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9780471445500",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9780231554848",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9780071486644",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9781119908982",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9781119605355",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9780470008744",
+      "reason": "access_and_permissions_needed",
+      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "source_id": "book:9780857197689",
+      "reason": "publisher_url_changed",
+      "action": "Confirm the new canonical URL and recheck permissions before ingestion; redirect observed from https://harriman.house/books/the-psychology-of-money/."
+    },
+    {
+      "source_id": "book:9781531017507",
+      "reason": "edition_unavailable_from_publisher",
+      "action": "Ask a library/bookseller about this exact ISBN, or record a deliberate edition update; do not replace the compiled essays with shareholder letters."
+    }
+  ]
+}

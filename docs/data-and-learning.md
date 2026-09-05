@@ -1,6 +1,6 @@
 # Data acquisition and the learning library
 
-Status: procurement and implementation design; sources checked 2026-09-05. No vendor account has been selected, subscription purchased, book acquired, or ingestion started.
+Status: procurement design with [catalog inventory and ordered-learning foundation implemented](foundation-implementation.md). See the [2026-09-05 title-specific audit](../library/catalog/ACCESS_REPORT.md) for current pilot edition/access findings. No vendor account has been selected, subscription purchased, book acquired, or real-source ingestion started; original synthetic passages demonstrate the learning software only.
 
 ## A cheap data path
 
@@ -38,7 +38,7 @@ Build one catalog record per exact edition, deduplicated across curricula. Prese
 
 On a user-triggered library refresh, scripts check cached known URLs and changed metadata. A link returning HTTP 200 does not verify a full book or its license. Human/model review handles new editions, ambiguous permission, and curriculum changes. Recheck immediately before ingestion and on changed access; avoid daily model searches for unchanged books. Never bypass access controls or substitute a summary for a supposedly read book.
 
-The approved twelve pilot curriculum slots remain unchanged. Their exact editions and current legal full-text availability have **not** been audited in this update; task 003 performs that inventory. Do not mark any pilot book as free without title-specific evidence. If the foundational book is unavailable, keep the Character blocked or create an explicitly different experimental fork, preserving the approved curriculum.
+The approved twelve pilot curriculum slots remain unchanged. Task 003 now records eleven exact edition candidates and one unresolved edition, with dated publisher evidence and separate permission blockers in the [catalog audit](../library/catalog/ACCESS_REPORT.md). No full text has been acquired or authorized for ingestion. Do not mark any pilot book as free without title-specific evidence. If the foundational book is unavailable, keep the Character blocked or create an explicitly different experimental fork, preserving the approved curriculum.
 
 Useful verified supplemental starting points are [Berkshire's shareholder-letter archive](https://www.berkshirehathaway.com/letters/letters.html), SEC filings, and Meadows' official essays. Berkshire's public letters are not the same edition or ordering as *The Essays of Warren Buffett*. They are not an automatic curriculum replacement. Project Gutenberg's [permission guidance](https://www.gutenberg.org/policy/permission) explains its U.S.-based scope; assess the individual work and jurisdiction rather than treating all old texts or translations as unrestricted.
 

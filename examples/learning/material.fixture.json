@@ -1,0 +1,18 @@
+{
+  "source_id": "source:original-arithmetic-fixture",
+  "scope": "fixture",
+  "completeness_verified": true,
+  "coverage_evidence": "Complete two-section project-authored fixture; not a book.",
+  "sections": [
+    {
+      "index": 1,
+      "locator": "fixture/section-1",
+      "text": "In this fictional arithmetic example, a basket earns 100 units before expenses. A cost of 4 units leaves 96 units. A cost of 1 unit leaves 99 units. The two baskets have identical gross proceeds."
+    },
+    {
+      "index": 2,
+      "locator": "fixture/section-2",
+      "text": "The identical-proceeds assumption can fail. In a separate fictional example, basket A earns 110 units and costs 4 units, leaving 106. Basket B earns 100 units and costs 1 unit, leaving 99. Cost alone does not determine the winner."
+    }
+  ]
+}

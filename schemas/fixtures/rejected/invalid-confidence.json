@@ -1,0 +1,43 @@
+{
+  "id": "theory:contract-fixture",
+  "schema_version": 1,
+  "record_type": "theory",
+  "experiment_id": "experiment:foundation-fixture",
+  "created_at": "2026-09-05T12:00:00Z",
+  "contamination": "fixture",
+  "character_version": "character:index-steward-fixture-v1",
+  "version": "fixture-v1",
+  "checkpoint_id": "checkpoint:contract-fixture",
+  "test_registration_id": "registration:contract-fixture",
+  "position": "Identical gross proceeds and lower costs leave more net units.",
+  "minimal_logic_chain": [
+    "Equal gross units",
+    "Subtract different costs",
+    "Lower costs leave more net units"
+  ],
+  "scope": "Original arithmetic fixture only",
+  "assumptions": [
+    "Gross proceeds equal"
+  ],
+  "predicted_observables": [
+    "Three-unit net difference"
+  ],
+  "portfolio_implication": "wait",
+  "invalidation_conditions": [
+    "Gross proceeds differ"
+  ],
+  "strongest_counterarguments": [
+    "Other costs or outcomes may differ"
+  ],
+  "rebuttals": [
+    "Limit the claim to the stated example"
+  ],
+  "confidence": 1.1,
+  "evidence_and_citations": [
+    {
+      "source_id": "source:original-arithmetic-fixture",
+      "locator": "fixture/section-1",
+      "passage_hash": "df91337b8631e26b6c1ca29bad788298df853122a2c53e9c7ba210ed6afdd0c7"
+    }
+  ]
+}

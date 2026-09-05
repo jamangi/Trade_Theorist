@@ -1,0 +1,48 @@
+{
+  "id": "policy:paper-template",
+  "schema_version": 1,
+  "record_type": "policy",
+  "experiment_id": "experiment:paper-template",
+  "created_at": "2026-09-05T12:00:00Z",
+  "contamination": "forward-insufficient",
+  "version": "fixture-v1",
+  "stage": "paper",
+  "synthetic": false,
+  "universe": [],
+  "limits": {
+    "initial_cash": null,
+    "max_deployed_capital": null,
+    "company_weight": null,
+    "sector_weight": null,
+    "diversified_etf_weight": null,
+    "gross_exposure": null,
+    "daily_loss": null,
+    "drawdown": null,
+    "turnover": null,
+    "orders_per_session": null,
+    "max_quote_age_seconds": null,
+    "max_spread_bps": null
+  },
+  "clock": {
+    "calendar": "synthetic-daily-v1",
+    "cadence": "daily_session",
+    "max_stale_sessions": 0,
+    "eligibility": "publication_and_ingestion",
+    "missing_data": "halt_all"
+  },
+  "costs": {
+    "fee_per_order": "0.00",
+    "slippage_bps": "5",
+    "spread_bps": "2",
+    "fill_model": "synthetic-next-open-v1",
+    "corporate_actions": "explicit_fixture_events"
+  },
+  "long_only": true,
+  "cash_only": true,
+  "approval_ref": null,
+  "approved_at": null,
+  "operator": null,
+  "kill_switch_owner": null,
+  "reconciliation_owner": null,
+  "incident_owner": null
+}

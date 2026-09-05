@@ -1,6 +1,6 @@
 # Architecture and experiment modes
 
-Status: proposed implementation extending the original README. Preserve the Trade Theorist / Trader Analyzer / Trader User boundary. The first implementation should be a small Python application with SQLite and explicit adapters, not a collection of independently deployed services. No runtime is included in this design update.
+Status: target architecture extending the original README. The [tasks 001–004 foundation](foundation-implementation.md) now implements contracts, SQLite and ordered learning; portfolio modes and the heartbeat below remain planned. Preserve the Trade Theorist / Trader Analyzer / Trader User boundary. The implementation begins as a small Python application with SQLite and explicit adapters.
 
 ## Two portfolio views, one research engine
 

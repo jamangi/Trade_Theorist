@@ -1,0 +1,243 @@
+[
+  {
+    "accepted_claims": [
+      {
+        "citations": [
+          {
+            "locator": "fixture/section-2",
+            "passage_hash": "5279587007a04979373e8da0cb00bfde452d308b766f372f042581a190d90aec",
+            "source_id": "source:original-arithmetic-fixture"
+          }
+        ],
+        "claim_id": "claim:learning-2",
+        "text": "Different gross proceeds can outweigh the cost advantage."
+      }
+    ],
+    "adversarial_review": [
+      "The baskets may have different gross proceeds; real comparisons need matched exposures and all costs."
+    ],
+    "character_version": "character:index-steward-fixture-v1",
+    "consolidated_memory": [
+      {
+        "citations": [
+          {
+            "locator": "fixture/section-1",
+            "passage_hash": "df91337b8631e26b6c1ca29bad788298df853122a2c53e9c7ba210ed6afdd0c7",
+            "source_id": "source:original-arithmetic-fixture"
+          }
+        ],
+        "claim_id": "claim:learning-1",
+        "text": "With identical gross proceeds, the cheaper basket retains three more units."
+      },
+      {
+        "citations": [
+          {
+            "locator": "fixture/section-2",
+            "passage_hash": "5279587007a04979373e8da0cb00bfde452d308b766f372f042581a190d90aec",
+            "source_id": "source:original-arithmetic-fixture"
+          }
+        ],
+        "claim_id": "claim:learning-2",
+        "text": "Different gross proceeds can outweigh the cost advantage."
+      }
+    ],
+    "contamination": "fixture",
+    "created_at": "2026-09-05T20:00:00Z",
+    "curriculum_position": 1,
+    "experiment_id": "experiment:foundation-fixture",
+    "id": "checkpoint:278fe08b05f7629e6512873333317c0fc8ad3b74c619c3bbd6b429be45fc5822",
+    "material_scope": "fixture",
+    "memory_delta": [
+      "Different gross proceeds can outweigh the cost advantage.",
+      "This is an original fixture, not evidence of reading Bogle."
+    ],
+    "model_call_id": "call:0a85ee24f2a24f40732f3fbb170ae9988e5ff9556405311a59322be6c7b67d2b",
+    "prior_checkpoint_id": "checkpoint:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
+    "prior_hash": "e25a8606c27876ec7d90f96de62c960825bbfacf99d300b96751eb3804d08a60",
+    "reading_status": "partial",
+    "record_type": "checkpoint",
+    "rejected_claims": [],
+    "schema_version": 1,
+    "section_index": 2,
+    "source_hash": "da02aef37812d40813ca3f232b920de8ae48fbe8e9d0aec0ca2a5f50c0f44285",
+    "source_ids": [
+      "source:original-arithmetic-fixture"
+    ]
+  },
+  {
+    "accepted_claims": [
+      {
+        "citations": [
+          {
+            "locator": "fixture/section-1",
+            "passage_hash": "df91337b8631e26b6c1ca29bad788298df853122a2c53e9c7ba210ed6afdd0c7",
+            "source_id": "source:original-arithmetic-fixture"
+          }
+        ],
+        "claim_id": "claim:learning-1",
+        "text": "With identical gross proceeds, the cheaper basket retains three more units."
+      }
+    ],
+    "adversarial_review": [
+      "The baskets may have different gross proceeds; real comparisons need matched exposures and all costs."
+    ],
+    "character_version": "character:index-steward-fixture-v1",
+    "consolidated_memory": [
+      {
+        "citations": [
+          {
+            "locator": "fixture/section-1",
+            "passage_hash": "df91337b8631e26b6c1ca29bad788298df853122a2c53e9c7ba210ed6afdd0c7",
+            "source_id": "source:original-arithmetic-fixture"
+          }
+        ],
+        "claim_id": "claim:learning-1",
+        "text": "With identical gross proceeds, the cheaper basket retains three more units."
+      }
+    ],
+    "contamination": "fixture",
+    "created_at": "2026-09-05T20:00:00Z",
+    "curriculum_position": 1,
+    "experiment_id": "experiment:foundation-fixture",
+    "id": "checkpoint:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
+    "material_scope": "fixture",
+    "memory_delta": [
+      "With identical gross proceeds, the cheaper basket retains three more units.",
+      "This is an original fixture, not evidence of reading Bogle."
+    ],
+    "model_call_id": "call:a6b8afb910818ee20775151af07f3f068a8177b15bc8229abebf025ad95860fa",
+    "prior_checkpoint_id": null,
+    "prior_hash": "1a548e7d274bb028a7c84d134b31b5a0a4f0fdc615e2a0c29a6d4fc1ba0d626b",
+    "reading_status": "partial",
+    "record_type": "checkpoint",
+    "rejected_claims": [],
+    "schema_version": 1,
+    "section_index": 1,
+    "source_hash": "da02aef37812d40813ca3f232b920de8ae48fbe8e9d0aec0ca2a5f50c0f44285",
+    "source_ids": [
+      "source:original-arithmetic-fixture"
+    ]
+  },
+  {
+    "benchmark": "Stated fictional basket",
+    "character_version": "character:index-steward-fixture-v1",
+    "contamination": "fixture",
+    "created_at": "2026-09-05T20:00:00Z",
+    "evaluation_end": "2099-02-03T00:00:00Z",
+    "evaluation_start": "2099-01-03T00:00:00Z",
+    "experiment_id": "experiment:foundation-fixture",
+    "failure_condition": "Computed net units differ from stated totals",
+    "horizon": "One synthetic arithmetic event",
+    "id": "registration:278fe08b05f7629e6512873333317c0fc8ad3b74c619c3bbd6b429be45fc5822",
+    "metrics": [
+      "net_units"
+    ],
+    "prediction": "Recompute and match the stated net units",
+    "record_type": "registration",
+    "schema_version": 1
+  },
+  {
+    "benchmark": "Stated fictional basket",
+    "character_version": "character:index-steward-fixture-v1",
+    "contamination": "fixture",
+    "created_at": "2026-09-05T20:00:00Z",
+    "evaluation_end": "2099-02-03T00:00:00Z",
+    "evaluation_start": "2099-01-03T00:00:00Z",
+    "experiment_id": "experiment:foundation-fixture",
+    "failure_condition": "Computed net units differ from stated totals",
+    "horizon": "One synthetic arithmetic event",
+    "id": "registration:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
+    "metrics": [
+      "net_units"
+    ],
+    "prediction": "Recompute and match the stated net units",
+    "record_type": "registration",
+    "schema_version": 1
+  },
+  {
+    "assumptions": [
+      "All costs and gross proceeds are specified"
+    ],
+    "character_version": "character:index-steward-fixture-v1",
+    "checkpoint_id": "checkpoint:278fe08b05f7629e6512873333317c0fc8ad3b74c619c3bbd6b429be45fc5822",
+    "confidence": 0.8,
+    "contamination": "fixture",
+    "created_at": "2026-09-05T20:00:00Z",
+    "evidence_and_citations": [
+      {
+        "locator": "fixture/section-2",
+        "passage_hash": "5279587007a04979373e8da0cb00bfde452d308b766f372f042581a190d90aec",
+        "source_id": "source:original-arithmetic-fixture"
+      }
+    ],
+    "experiment_id": "experiment:foundation-fixture",
+    "id": "theory:278fe08b05f7629e6512873333317c0fc8ad3b74c619c3bbd6b429be45fc5822",
+    "invalidation_conditions": [
+      "Missing cost or mismatched gross proceeds"
+    ],
+    "minimal_logic_chain": [
+      "Observe stated gross proceeds",
+      "Subtract the stated costs",
+      "Compare remaining units"
+    ],
+    "portfolio_implication": "wait",
+    "position": "Different gross proceeds can outweigh the cost advantage.",
+    "predicted_observables": [
+      "Net units equal gross units less costs"
+    ],
+    "rebuttals": [
+      "Restrict the theory to fixture arithmetic"
+    ],
+    "record_type": "theory",
+    "schema_version": 1,
+    "scope": "Two fictional baskets only",
+    "strongest_counterarguments": [
+      "Toy arithmetic does not establish an investable edge"
+    ],
+    "test_registration_id": "registration:278fe08b05f7629e6512873333317c0fc8ad3b74c619c3bbd6b429be45fc5822",
+    "version": "2"
+  },
+  {
+    "assumptions": [
+      "All costs and gross proceeds are specified"
+    ],
+    "character_version": "character:index-steward-fixture-v1",
+    "checkpoint_id": "checkpoint:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
+    "confidence": 0.8,
+    "contamination": "fixture",
+    "created_at": "2026-09-05T20:00:00Z",
+    "evidence_and_citations": [
+      {
+        "locator": "fixture/section-1",
+        "passage_hash": "df91337b8631e26b6c1ca29bad788298df853122a2c53e9c7ba210ed6afdd0c7",
+        "source_id": "source:original-arithmetic-fixture"
+      }
+    ],
+    "experiment_id": "experiment:foundation-fixture",
+    "id": "theory:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
+    "invalidation_conditions": [
+      "Missing cost or mismatched gross proceeds"
+    ],
+    "minimal_logic_chain": [
+      "Observe stated gross proceeds",
+      "Subtract the stated costs",
+      "Compare remaining units"
+    ],
+    "portfolio_implication": "wait",
+    "position": "With identical gross proceeds, the cheaper basket retains three more units.",
+    "predicted_observables": [
+      "Net units equal gross units less costs"
+    ],
+    "rebuttals": [
+      "Restrict the theory to fixture arithmetic"
+    ],
+    "record_type": "theory",
+    "schema_version": 1,
+    "scope": "Two fictional baskets only",
+    "strongest_counterarguments": [
+      "Toy arithmetic does not establish an investable edge"
+    ],
+    "test_registration_id": "registration:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
+    "version": "1"
+  }
+]

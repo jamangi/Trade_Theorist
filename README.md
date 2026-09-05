@@ -8,7 +8,9 @@ This repository currently covers **Trade Theorist only**. It does not yet place 
 
 ## Start here: the research observatory
 
-**Current status (2026-09-05): design and implementation backlog.** There is no running application, trained Character, market database, or published dashboard yet. The owner has approved the original recommended defaults, including Index Steward as the initial council lead. The next build will make learning, discussion, fictional portfolios, and outcomes observable while preserving the original component boundaries.
+**Current status (2026-09-05): foundation implemented, real learning blocked.** Tasks 001–003 provide validated contracts, SQLite persistence and the twelve-slot book catalog. Task 004 provides ordered learning and an offline fixture demonstration; Index Steward remains `not_ready` until its approved foundational book is acquired with permitted use. There is no market database, portfolio simulator or published dashboard yet. The owner has approved the original recommended defaults, including Index Steward as the initial council lead.
+
+See [foundation setup and acceptance evidence](docs/foundation-implementation.md) for installation, tests, the repeatable `foundation-demo` command, private storage and recovery. The [book-access audit](library/catalog/ACCESS_REPORT.md) identifies exact edition candidates and remaining blockers. The demonstration uses original synthetic passages and saved outputs, with no book acquisition, paid model calls or brokerage access.
 
 Two dashboard tabs will share one research engine: **Council**, where a chosen lead decides with shadow advice, and **Character portfolios**, where each ready Character controls a separate fictional budget. Being a lead in a personal research portfolio does not grant council leadership. Neither mode requires a Character to trade when its best decision is to wait.
 
@@ -24,7 +26,7 @@ Two dashboard tabs will share one research engine: **Council**, where a chosen l
 | [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks with Sol/Astra and effort recommendations, acceptance criteria, and roadmap mapping |
 | [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
 
-Start implementation with [TASK-001](tasks/TASK-001-high-Astra.md). The first useful release is a clearly labeled offline demonstration of both portfolio modes, mail, risk checks, and explanatory dashboards. Real learning and forward paper experiments follow when sources, data permissions, and stage gates are ready. Scripts handle repetitive acquisition and arithmetic; model calls handle bounded interpretation and learning.
+Continue fixture implementation with [TASK-005](tasks/TASK-005-high-Sol.md), using TASK-004's verified software interface under the queue's partial-dependency rule. Complete source access and real Index Steward learning before claiming trained specialists. The first full observatory release remains a clearly labeled offline demonstration of both portfolio modes, mail, risk checks, and explanatory dashboards. Real learning and forward paper experiments follow when sources, data permissions, and stage gates are ready. Scripts handle repetitive acquisition and arithmetic; model calls handle bounded interpretation and learning.
 
 > [!WARNING]
 > Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.
@@ -264,7 +266,7 @@ Day-trading and margin rules are jurisdiction-, broker-, account-, and time-depe
 
 ## Planned repository map
 
-The README, approval register, architecture decision, seven design documents, and task backlog exist today. Runtime directories below remain planned; create them when their first real artifact is added, rather than as empty scaffolding.
+The design documents and task backlog now accompany the Python foundation in `src/trade_theorist/`, versioned schemas and fixtures, the pilot catalog, Index Steward's design prior, examples and tests. In the target map below, ingestion, council, evaluation, simulation and dashboard modules remain planned; create them when their first real artifact is added, rather than as empty scaffolding.
 
 ```text
 Trade_Theorist/

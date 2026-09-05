@@ -1,0 +1,22 @@
+{
+  "id": "observation:fixture-1",
+  "schema_version": 1,
+  "record_type": "observation",
+  "experiment_id": "experiment:foundation-fixture",
+  "created_at": "2026-09-05T12:00:00Z",
+  "contamination": "fixture",
+  "instrument_id": "instrument:fixture-fund",
+  "asset_class": "unleveraged_us_etf",
+  "event_at": "2026-09-05T12:00:00Z",
+  "published_at": "2026-09-05T12:00:00-05:00",
+  "ingested_at": "2026-09-05T12:00:00Z",
+  "availability_evidence": "Synthetic event created with all three timestamps",
+  "revision": 1,
+  "supersedes_id": null,
+  "superseded_at": null,
+  "feed": "synthetic-v1",
+  "units": "USD",
+  "payload_hash": "cc82c0a462f2105457979c8bfb601019da1f964e77609303b41b83e2865001b1",
+  "quality": "eligible",
+  "publication_eligibility": "raw_permitted"
+}

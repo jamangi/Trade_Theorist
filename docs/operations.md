@@ -1,6 +1,6 @@
 # Running and maintaining the future application
 
-Status: operating design. Commands below are the interface to implement, not commands available today. Start implementation from [the task index](../tasks/README.md).
+Status: operating design with tasks 001–004 foundation now available. See [implemented setup, foundation-demo, catalog checks and recovery](foundation-implementation.md). The full observatory commands below remain planned unless explicitly documented there; `foundation-demo` tests learning/storage only. See [the task index](../tasks/README.md) for partial real-learning status.
 
 ## Intended local interface
 

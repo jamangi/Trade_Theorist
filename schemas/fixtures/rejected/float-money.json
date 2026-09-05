@@ -1,0 +1,59 @@
+{
+  "id": "policy:synthetic-v1",
+  "schema_version": 1,
+  "record_type": "policy",
+  "experiment_id": "experiment:foundation-fixture",
+  "created_at": "2026-09-05T12:00:00Z",
+  "contamination": "fixture",
+  "version": "fixture-v1",
+  "stage": "fixture",
+  "synthetic": true,
+  "universe": [
+    {
+      "instrument_id": "instrument:fixture-fund",
+      "symbol": "FIXTURE",
+      "asset_class": "unleveraged_us_etf",
+      "liquid": true,
+      "leveraged": false,
+      "inverse": false,
+      "sector": "diversified",
+      "diversified": true
+    }
+  ],
+  "limits": {
+    "initial_cash": 10000.0,
+    "max_deployed_capital": "10000.00",
+    "company_weight": 0.2,
+    "sector_weight": 0.4,
+    "diversified_etf_weight": 1.0,
+    "gross_exposure": 1.0,
+    "daily_loss": 0.02,
+    "drawdown": 0.1,
+    "turnover": 0.2,
+    "orders_per_session": 5,
+    "max_quote_age_seconds": 60,
+    "max_spread_bps": "20"
+  },
+  "clock": {
+    "calendar": "synthetic-daily-v1",
+    "cadence": "daily_session",
+    "max_stale_sessions": 0,
+    "eligibility": "publication_and_ingestion",
+    "missing_data": "halt_all"
+  },
+  "costs": {
+    "fee_per_order": "0.00",
+    "slippage_bps": "5",
+    "spread_bps": "2",
+    "fill_model": "synthetic-next-open-v1",
+    "corporate_actions": "explicit_fixture_events"
+  },
+  "long_only": true,
+  "cash_only": true,
+  "approval_ref": null,
+  "approved_at": null,
+  "operator": null,
+  "kill_switch_owner": null,
+  "reconciliation_owner": null,
+  "incident_owner": null
+}
