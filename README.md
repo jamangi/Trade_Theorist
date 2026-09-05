@@ -6,6 +6,26 @@ The premise is that reading order matters. A first book supplies a Character's f
 
 This repository currently covers **Trade Theorist only**. It does not yet place trades, connect to a brokerage, or promise profitable results.
 
+## Start here: the research observatory
+
+**Current status (2026-09-05): design and implementation backlog.** There is no running application, trained Character, market database, or published dashboard yet. The owner has approved the original recommended defaults, including Index Steward as the initial council lead. The next build will make learning, discussion, fictional portfolios, and outcomes observable while preserving the original component boundaries.
+
+Two dashboard tabs will share one research engine: **Council**, where a chosen lead decides with shadow advice, and **Character portfolios**, where each ready Character controls a separate fictional budget. Being a lead in a personal research portfolio does not grant council leadership. Neither mode requires a Character to trade when its best decision is to wait.
+
+| Read this | What you will find |
+| --- | --- |
+| [Systems model](docs/systems-model.md) | Meadows-style stocks, flows, feedback loops, delays, measures, and ways to refine the initial design |
+| [Architecture](docs/architecture.md) | Two portfolio modes, shared data, independent risk controls, storage contracts, and the heartbeat sequence |
+| [Discussion and Character life](docs/discussion.md) | Bounded mailbox conversations, readable exports, belief timelines, decision postcards, and a research notebook |
+| [Data and learning](docs/data-and-learning.md) | Cheap scripted ingestion, provider qualification, dated book-access checks, and ordered learning |
+| [Evaluation](docs/evaluation.md) | Fictional-money accounting, fair baselines, historical contamination, and forward paper evidence |
+| [Dashboard design](docs/dashboard.md) | At-a-glance performance and expandable answers to every success question below |
+| [Operating design](docs/operations.md) | Future setup, no-account demo, manual heartbeats, recovery, and usage controls |
+| [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks with Sol/Astra and effort recommendations, acceptance criteria, and roadmap mapping |
+| [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
+
+Start implementation with [TASK-001](tasks/TASK-001-high-Astra.md). The first useful release is a clearly labeled offline demonstration of both portfolio modes, mail, risk checks, and explanatory dashboards. Real learning and forward paper experiments follow when sources, data permissions, and stage gates are ready. Scripts handle repetitive acquisition and arithmetic; model calls handle bounded interpretation and learning.
+
 > [!WARNING]
 > Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.
 
@@ -45,15 +65,17 @@ Characters may borrow techniques from other schools, but imports remain labeled 
 
 ### Character governance
 
-The initial operating model should be **one lead Character plus shadow advisers**:
+The approved initial council operating model is **one lead Character plus shadow advisers**:
 
-1. The lead makes the final recommendation quickly.
-2. Advisers independently submit a recommendation, confidence, and strongest objection.
+1. The lead and advisers independently submit a recommendation, confidence, and strongest objection.
+2. Bounded discussion exposes relevant evidence and disagreement; the lead then makes the final recommendation by the deadline.
 3. A risk governor—policy, not personality—can veto any action that violates hard limits.
 4. All recommendations are recorded, including those not selected, so counterfactual performance can be measured.
 5. Lead status is earned on a rolling, out-of-sample scorecard and can change only at scheduled reviews, not after one lucky trade.
 
 This retains the speed advantage of one decision-maker without discarding disagreement data.
+
+The additional **Character portfolios** experiment gives each ready specialist separate fictional cash and the final recommendation for its own portfolio, under the same independent policy gate. It tests specialists with declared advice access without replacing the council. All Characters commit independent initial opinions before current-round peer discussion; mail is bounded and consensus is optional. See [the architecture](docs/architecture.md) and [discussion protocol](docs/discussion.md).
 
 ## The smallest useful theory
 
@@ -198,7 +220,7 @@ Profit is necessary to call a trading system economically useful, but “green e
 2. **Primary research objective:** positive net performance over a predeclared out-of-sample window relative to appropriate baselines and risk taken.
 3. **Secondary objective:** monthly consistency, measured alongside drawdown and probability of ruin—not optimized in isolation.
 
-Every evaluation should include:
+Every evaluation should include (and explicitly disclose unavailable inputs):
 
 - an uninvested cash or Treasury-like baseline appropriate to the period;
 - a low-cost broad-market buy-and-hold baseline;
@@ -208,6 +230,8 @@ Every evaluation should include:
 - both selected and rejected recommendations;
 - return, volatility, maximum drawdown, turnover, exposure, hit rate, calibration, and tail loss;
 - enough trades and market regimes to distinguish a process from a lucky month.
+
+For model-driven historical experiments, restricting retrieval cannot remove future knowledge already present in model weights or later curricula. Keep the requested **hindsight sandbox** separate from historical replay with restricted evidence and from forward shadow/paper records. Use forward decisions committed before their outcomes as the primary prospective evidence. See [information regimes and scoring](docs/evaluation.md).
 
 For public-official disclosures, preserve at least three timestamps: **transaction date**, **filing/publication date**, and **system ingestion date**. House and Senate rules generally allow covered transactions over $1,000 to be reported by the earlier of 30 days after notice or 45 days after the transaction. Therefore, backtests may act no earlier than the historical public-availability timestamp. See the official [House Periodic Transaction Report calculator](https://ethics.house.gov/periodic-transaction-report-calculator/) and [Senate financial disclosure guidance](https://www.ethics.senate.gov/public/index.cfm/financialdisclosure).
 
@@ -240,7 +264,7 @@ Day-trading and margin rules are jurisdiction-, broker-, account-, and time-depe
 
 ## Planned repository map
 
-Only the README and decision register exist today. The following is the intended layout; directories should be created when their first real artifact is added rather than as empty scaffolding.
+The README, approval register, architecture decision, seven design documents, and task backlog exist today. Runtime directories below remain planned; create them when their first real artifact is added, rather than as empty scaffolding.
 
 ```text
 Trade_Theorist/
@@ -249,9 +273,14 @@ Trade_Theorist/
 │   ├── APPROVALS.md                # Choices reserved for the owner
 │   └── records/                    # Accepted architecture and policy decisions
 ├── docs/
-│   ├── architecture.md             # Detailed service and data-flow design
+│   ├── systems-model.md            # Stocks, flows, feedback, measures, and refinement
+│   ├── architecture.md             # Modes, contracts, storage, heartbeat, and risk policy
+│   ├── discussion.md               # Mail protocol and observable Character life
+│   ├── data-and-learning.md        # Acquisition, source rights, and learning workflow
 │   ├── evaluation.md               # Metrics, baselines, and promotion criteria
-│   └── safety.md                   # Threat model and execution invariants
+│   ├── dashboard.md                # Two tabs and six expandable evidence answers
+│   └── operations.md               # Setup, usage, recovery, and future command interface
+├── tasks/                          # Dependency-ordered implementation task files
 ├── library/
 │   ├── catalog/                    # Source metadata, rights, editions, and status
 │   └── notes/                      # Citation-linked notes; not unlicensed book copies
@@ -262,14 +291,18 @@ Trade_Theorist/
 │       ├── checkpoints/            # Append-only belief state after each source
 │       ├── memory/                 # Consolidated memory for fresh tasks
 │       ├── theories/               # Versioned theory cards
-│       └── evaluations/            # Character-specific scorecards
+│       ├── evaluations/            # Character-specific scorecards
+│       └── mail/                   # Generated readable views of immutable mail events
 ├── schemas/                        # Machine-validated source, theory, and decision formats
 ├── src/
 │   ├── ingest/                     # Source ingestion and provenance
 │   ├── learn/                      # Sequential reading and memory consolidation
 │   ├── theorize/                   # Theory generation and adversarial review
 │   ├── council/                    # Lead/adviser deliberation
-│   └── evaluate/                   # Replay and counterfactual scoring
+│   ├── evaluate/                   # Replay and counterfactual scoring
+│   ├── adapters/trader_user_sim/   # Isolated simulated-execution contract
+│   └── export/                     # Allowlisted public dashboard data
+├── dashboard/                      # Planned read-only GitHub Pages report
 ├── tests/                          # Unit, integration, leakage, and safety tests
 └── runs/                           # Reproducible manifests; large outputs stay external
 ```
@@ -278,13 +311,15 @@ Future Trader Analyzer and Trader User components should live in separate packag
 
 ## Near-term roadmap
 
-1. Resolve the owner choices in [`decisions/APPROVALS.md`](decisions/APPROVALS.md).
-2. Define schemas for sources, checkpoints, theory cards, recommendations, and evaluations.
-3. Create the Index Steward as the reference Character and ingest one book under the sequential protocol.
-4. Create the Value Rationalist and Systematic Trend Operator without sharing consolidated memory during their formative curricula.
-5. Build a deterministic theory-card validator and an append-only run manifest.
-6. Test Characters on historical decisions and forecasts before connecting live market data.
-7. Add live-data shadow mode, then paper trading, only after leakage and cost models pass review.
+1. Define validated contracts, experiment policy, and append-only persistence (tasks 001–002); the original recommended defaults are now approved.
+2. Catalog exact book editions and access, implement sequential learning, and create the three pilot Characters without sharing formative memories (003–005).
+3. Build time-aware ingestion, fictional-money accounting, independent risk checks, and bounded mail (006–009).
+4. Connect both modes through a resumable heartbeat, honest evaluation, a two-tab dashboard, and a no-account offline demo (010–013).
+5. Qualify a market-data source, collect forward shadow decisions, review leakage/costs/recovery and paper policy, then run forward paper portfolios (014–017).
+6. Publish sanitized reports on GitHub Pages, add richer learning/social views, and optionally schedule the tested runner (018–020).
+7. Add microstructure/risk research, the disclosure interface, and later governance or merged-Character experiments only when their evidence prerequisites are met (021–023).
+
+The [task index](tasks/README.md) provides exact dependencies, model/effort recommendations, deliverables, and a mapping back to all seven original milestones. Numbers above group work; source access and real elapsed evaluation time remain explicit prerequisites. The existing [Definition of success](#definition-of-success) is unchanged and now maps directly to [six dashboard explanation panels](docs/dashboard.md).
 
 ## Definition of success
 
