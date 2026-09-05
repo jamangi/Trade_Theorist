@@ -3,6 +3,9 @@
   "$id": "https://trade-theorist.local/schemas/contracts-v1.json",
   "oneOf": [
     {
+      "$ref": "#/$defs/learning_session"
+    },
+    {
       "$ref": "#/$defs/conversation"
     },
     {
@@ -55,6 +58,82 @@
     }
   ],
   "$defs": {
+    "learning_session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "learning_session"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "mode": {
+          "const": "learning"
+        },
+        "character_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "authorization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "mode",
+        "character_versions",
+        "source_ids",
+        "authorization",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
     "conversation": {
       "type": "object",
       "properties": {
@@ -327,6 +406,7 @@
             "sample_only",
             "library_loan",
             "owned_copy",
+            "user_supplied",
             "purchase_required",
             "unavailable"
           ]

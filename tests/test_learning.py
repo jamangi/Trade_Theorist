@@ -9,6 +9,7 @@ from trade_theorist.contracts import ContractError, digest
 from trade_theorist.fixtures import base_records, CHAR, CONSTITUTION, CURRICULUM, EXP, MATERIAL, SOURCE, fixture_response
 from trade_theorist.learn import BoundedModel, Learner, RecordedProvider
 from trade_theorist.learn.model import AmbiguousCall, UsageExhausted
+from trade_theorist.learn.engine import citation_passage, request_for
 from trade_theorist.storage import Store
 
 
@@ -56,6 +57,37 @@ class LearningTests(unittest.TestCase):
             self.assertEqual(claim["citations"][0]["passage_hash"], digest(section["text"]))
         self.assertEqual(second["reading_status"], "partial")
         self.store.verify()
+
+    def test_request_excludes_future_chapters_and_preserves_prior_predictions(self):
+        self.freeze(initial_prior=dict(constitution=CONSTITUTION, memory=[], predictions=["A prediction frozen before reading"]))
+        event = self.store.events(EXP, "learning.prior_frozen")[0]["payload"]
+        request = request_for(event["frozen"], MATERIAL["sections"][0], event["prior"], self.model.model_id, self.model.prompt_version)
+        self.assertNotIn(MATERIAL["sections"][1]["text"], json.dumps(request))
+        self.assertNotIn("sections", request["frozen"]["material"])
+        self.assertEqual(request["prior"]["predictions"], ["A prediction frozen before reading"])
+
+    def test_page_citation_cannot_borrow_text_from_another_page(self):
+        section = dict(locator="pdf/test/section-1", text="[PDF PAGE 7]\nFirst page only.\n[PDF PAGE 8]\nSecond page only.")
+        self.assertEqual(citation_passage(section, "pdf/test/section-1#page=7"), "First page only.")
+        self.assertNotIn("Second", citation_passage(section, "pdf/test/section-1#page=7"))
+        for locator in ("pdf/test/section-1#page=9", "pdf/test/section-2#page=7", "pdf/test/section-1#page=07"):
+            with self.subTest(locator=locator), self.assertRaises(ContractError):
+                citation_passage(section, locator)
+
+    def test_review_can_consolidate_without_promoting_a_new_theory(self):
+        for result in self.outputs.values():
+            result["response"].update(theory=None, test=None)
+        session = self.freeze()
+        self.learner.step(session)
+        second = self.learner.step(session)
+        self.assertEqual(len(second["consolidated_memory"]), 2)
+        self.assertFalse(any(r["record_type"] in ("theory", "registration") for r in self.store.records()))
+
+    def test_theory_without_a_test_fails(self):
+        for result in self.outputs.values():
+            result["response"]["test"] = None
+        with self.assertRaises(ContractError):
+            self.learner.step(self.freeze())
 
     def test_freeze_is_idempotent_and_preserves_actual_prior(self):
         session = self.freeze()

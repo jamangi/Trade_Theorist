@@ -134,7 +134,7 @@ class Store:
                 if previous["experiment_id"] != experiment_id or previous["kind"] != kind or previous["body"] != canonical(payload) or (created_at and previous["created_at"] != created_at):
                     raise ContractError("Event ID cannot be reused with different content")
                 return previous["content_hash"]
-            experiment = self.connection.execute("SELECT body FROM records WHERE id=? AND record_type='experiment'", (experiment_id,)).fetchone()
+            experiment = self.connection.execute("SELECT body FROM records WHERE id=? AND record_type IN ('experiment', 'learning_session')", (experiment_id,)).fetchone()
             if not experiment:
                 raise ContractError("Event experiment must be registered")
             timestamp = created_at or now()

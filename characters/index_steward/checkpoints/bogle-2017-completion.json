@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "character_id": "index_steward",
+  "status": "foundation_complete",
+  "readiness": "ready_for_foundation_research",
+  "curriculum_complete": false,
+  "books_read": 1,
+  "unread_positions": [
+    2,
+    3,
+    4
+  ],
+  "source_id": "book:9781119404521",
+  "source_pdf_sha256": "b5c2c3136dc2fda5b24a584b3ad23ffbc7ae9ed46c750155badfe1303d5e68e3",
+  "sections_completed": 21,
+  "final_checkpoint_id": "checkpoint:0caa62cbb3f3fdd511c183443fee754c95ccb05f72c14ddb99640769e9032c4f",
+  "completed_at": "2026-09-05T21:28:17.569173Z",
+  "bundle_hash": "09a3cc3aa1213185f6237bd16198b2d72b68141aff34d0369abbbb9ec585148e",
+  "review_hash": "25599dc2313f46710666f6008ff08e0854013adccef7ad548e8aca56f05e441e",
+  "prior_hash": "24467a7b27f0f13fcd89e80bb133f80a7b3b395dfda8df51035faeaee2df9d7c",
+  "curriculum_hash": "43d9c10524f86bc9de78ff6f8581d736777a559742e74a7f4a7b71d65a3505ee",
+  "executing_code": {
+    "code_commit": "6a601596ecd9eaacff91bdea8346b5ee211ac390",
+    "code_tree_hash": "f762237a159f11366777dc0b9ddc86bff0ce3e87b0faa12da8b28ab50dff6087",
+    "curriculum_hash": "43d9c10524f86bc9de78ff6f8581d736777a559742e74a7f4a7b71d65a3505ee",
+    "material_hash": "2169bd25329b4cfe68789bba09631e29ed7eca0d16ba83c61e54c3c043f2e8ca",
+    "prior_hash": "24467a7b27f0f13fcd89e80bb133f80a7b3b395dfda8df51035faeaee2df9d7c",
+    "review_hash": "25599dc2313f46710666f6008ff08e0854013adccef7ad548e8aca56f05e441e"
+  },
+  "contamination": "hindsight-contaminated",
+  "evaluation_status": "not_run",
+  "usage_scope": "Local import only; original Codex generation tokens, cost, exact snapshot and sampling unavailable."
+}

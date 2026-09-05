@@ -51,9 +51,9 @@
       "Different gross proceeds can outweigh the cost advantage.",
       "This is an original fixture, not evidence of reading Bogle."
     ],
-    "model_call_id": "call:0a85ee24f2a24f40732f3fbb170ae9988e5ff9556405311a59322be6c7b67d2b",
+    "model_call_id": "call:4bc2f589c2ff477322e7b237a99b11b3eba19de51150d57e942faf989e81d033",
     "prior_checkpoint_id": "checkpoint:780b65bcd686220ffa300a37c3d681a6deb4d6408e44950da891363741b41a77",
-    "prior_hash": "e25a8606c27876ec7d90f96de62c960825bbfacf99d300b96751eb3804d08a60",
+    "prior_hash": "6d0d58933b7ac5a5b843cbefccfc0c05deb5ee42dea87ca33a39c7e8369f68f6",
     "reading_status": "partial",
     "record_type": "checkpoint",
     "rejected_claims": [],
@@ -105,7 +105,7 @@
       "With identical gross proceeds, the cheaper basket retains three more units.",
       "This is an original fixture, not evidence of reading Bogle."
     ],
-    "model_call_id": "call:a6b8afb910818ee20775151af07f3f068a8177b15bc8229abebf025ad95860fa",
+    "model_call_id": "call:a0e81ec2f4ff5f09954c25c25f9e5207f4e3d54f2629f74832d2b11d7bb1ccee",
     "prior_checkpoint_id": null,
     "prior_hash": "1a548e7d274bb028a7c84d134b31b5a0a4f0fdc615e2a0c29a6d4fc1ba0d626b",
     "reading_status": "partial",

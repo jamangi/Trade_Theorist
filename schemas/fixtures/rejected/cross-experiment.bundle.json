@@ -509,5 +509,36 @@
     "source_run_ids": [
       "run:foundation-fixture"
     ]
+  },
+  {
+    "id": "learning-session:contract-fixture",
+    "schema_version": 1,
+    "record_type": "learning_session",
+    "experiment_id": "learning-session:contract-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "learning",
+    "character_versions": [
+      "character:learning-scope-fixture"
+    ],
+    "source_ids": [
+      "source:original-arithmetic-fixture"
+    ],
+    "authorization": "Original fixture only",
+    "provenance": "Synthetic non-trading scope example"
+  },
+  {
+    "id": "character:learning-scope-fixture",
+    "schema_version": 1,
+    "record_type": "character",
+    "experiment_id": "learning-session:contract-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "character_id": "learning_scope_fixture",
+    "version": "fixture-v1",
+    "constitution_hash": "36aa8a9957b87cc8f33cd82990442f7114f99a78d7bee1835c3c8dc3f766d4c5",
+    "curriculum_hash": "2b125947d7c079b2b3b33ed8c215b99f7f0e197c3e48b34aabe0978ffafa5ad5",
+    "readiness": "fixture_only",
+    "foundation_source_id": "source:original-arithmetic-fixture"
   }
 ]

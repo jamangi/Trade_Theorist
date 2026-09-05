@@ -1,6 +1,6 @@
 # Implementation task index
 
-Status (2026-09-05): TASK-001, TASK-002 and TASK-003 are implemented and verified. TASK-004's software and fixture path are implemented; real Index Steward learning remains blocked by permitted full-text acquisition. TASK-005–023 remain planned. See [foundation setup and acceptance evidence](../docs/foundation-implementation.md) and the individual task records. Task numbers are stable; filenames show recommended effort and model.
+Status (2026-09-05): TASK-001–004 are implemented and verified, including Index Steward's completed owner-supplied Bogle foundation. The remaining curriculum sources and other Characters are unread. TASK-005–023 remain planned. See [completed learning evidence](../docs/index-steward-foundation.md), [foundation setup](../docs/foundation-implementation.md) and the individual task records. Task numbers are stable; filenames show recommended effort and model.
 
 ## How to use the queue
 

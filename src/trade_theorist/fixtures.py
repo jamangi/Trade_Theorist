@@ -52,6 +52,12 @@ def complete_bundle():
     ledger = record("ledger_event", "ledger:fixture-funding", portfolio_id="portfolio:fixture-council", decision_id=None, order_id=None, event_kind="funding", instrument_id=None, quantity="0", price=None, fees="0.00", cash_delta="10000.00", event_at=TIME, simulation_model_version="fixture-v1", corrects_id=None)
     evaluation = record("evaluation", "evaluation:fixture-empty", window_start=TIME, window_end="2026-09-06T12:00:00Z", eligible_sample=0, benchmark="zero-yield fictional cash", cost_model="fixture-v1", metrics=[dict(name="hit_rate", value=None, null_reason="No closed positions")], evidence_status="fixture", source_run_ids=["run:foundation-fixture"])
     records.extend([observation, snapshot, conversation, call, checkpoint, registration, theory, recommendation, message, ledger, evaluation])
+    learning_scope = "learning-session:contract-fixture"
+    learning_character = record("character", "character:learning-scope-fixture", character_id="learning_scope_fixture", version="fixture-v1", constitution_hash=digest(CONSTITUTION), curriculum_hash=digest(CURRICULUM), readiness="fixture_only", foundation_source_id=SOURCE)
+    learning_character["experiment_id"] = learning_scope
+    learning = record("learning_session", learning_scope, mode="learning", character_versions=[learning_character["id"]], source_ids=[SOURCE], authorization="Original fixture only", provenance="Synthetic non-trading scope example")
+    learning["experiment_id"] = learning_scope
+    records.extend([learning, learning_character])
     validate_bundle(records)
     return records
 

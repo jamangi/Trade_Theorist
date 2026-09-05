@@ -1,0 +1,78 @@
+[
+  {
+    "benchmark": "S&P 500 total return in USD, with distributions reinvested. Freeze on 2026-09-30 the public eligible population of US-domiciled unleveraged open-end S&P 500 index mutual funds. One cheapest non-advisory share class purchasable for USD 10000 without another account per distinct underlying portfolio; break fee ties by ascending public fund identifier. Rank by stated annual expense ratio plus applicable entry/exit charges for that holding period, retain all closures and mergers, and split into quartiles with ties assigned by the same identifier. Require at least 20 distinct portfolios and five unrelated management organizations overall, otherwise inconclusive. Use equal initial capital and no later contributions. Missing terminal proceeds make the comparison inconclusive; never drop a failure.",
+    "character_version": "character:index-steward-bogle-2017-v1",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-05T21:28:16.930262Z",
+    "evaluation_end": "2027-10-01T00:00:00Z",
+    "evaluation_start": "2026-10-01T00:00:00Z",
+    "experiment_id": "learning-session:index-steward-bogle-2017-v1",
+    "failure_condition": "Lowest-cost minus highest-cost mean net total return is less than or equal to zero. Unavailable permissions, incomplete data, population below minimum, or mismatched exposure yield inconclusive/not-run, never a passing result.",
+    "horizon": "One prospective year; proposed research only. If inputs and approvals are not ready before the start, expire this registration and append a new one before any later window.",
+    "id": "registration:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9",
+    "metrics": [
+      "net_total_return_difference",
+      "net_tracking_shortfall",
+      "distinct_portfolios",
+      "closures_and_mergers",
+      "missing_observations"
+    ],
+    "prediction": "The mean net total return of the lowest prospective all-in-cost quartile exceeds that of the highest-cost quartile among the frozen eligible portfolios; no result has been observed.",
+    "record_type": "registration",
+    "schema_version": 1
+  },
+  {
+    "assumptions": [
+      "Fund mandates, fee schedules and investor eligibility are observable before evaluation begins.",
+      "Returns include reinvested distributions and all applicable entry, exit and recurring costs.",
+      "Securities lending, sampling, cash balances and operational differences may affect tracking independently of fees."
+    ],
+    "character_version": "character:index-steward-bogle-2017-v1",
+    "checkpoint_id": "checkpoint:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9",
+    "confidence": 0.7,
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-05T21:28:16.930262Z",
+    "evidence_and_citations": [
+      {
+        "locator": "pdf/book:9781119404521/section-14#page=192",
+        "passage_hash": "95e5ecfd64e469e4ee8467d31fdb5234b1db9acc86e2fc146bacd23cbb46f0b2",
+        "source_id": "book:9781119404521"
+      },
+      {
+        "locator": "pdf/book:9781119404521/section-14#page=189",
+        "passage_hash": "c10fc327fb5692195be735add43723a8b3051e3f2fdc50f4ad4fd6227c93f9e2",
+        "source_id": "book:9781119404521"
+      }
+    ],
+    "experiment_id": "learning-session:index-steward-bogle-2017-v1",
+    "id": "theory:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9",
+    "invalidation_conditions": [
+      "The lower-cost group does not achieve the predicted positive net-return difference over the registered window.",
+      "Exposure matching, fee eligibility, complete population coverage or independent fund count cannot be established; mark the test inconclusive rather than a success."
+    ],
+    "minimal_logic_chain": [
+      "Match index exposure and total-return conventions before comparing funds.",
+      "Recurring expenses subtract from the proceeds available to the investor.",
+      "Lower expenses should leave a smaller net tracking shortfall if other implementation differences do not offset them."
+    ],
+    "portfolio_implication": "abstain",
+    "position": "Among comparable funds tracking the same broad equity index, lower recurring costs should predict a smaller net return shortfall over a predeclared period.",
+    "predicted_observables": [
+      "The lower-cost quartile has a higher equal-weighted mean net total return, and hence a smaller shortfall to the same S&P 500 total-return benchmark, than the higher-cost quartile."
+    ],
+    "rebuttals": [
+      "Retain closures and mergers, compare only matched mandates, and count distinct portfolios rather than share classes.",
+      "Report the preregistered difference and implementation caveats even when they challenge the foundational prior."
+    ],
+    "record_type": "theory",
+    "schema_version": 1,
+    "scope": "Proposed prospective study of US-domiciled, USD, unleveraged open-end mutual funds tracking the S&P 500; no current investment recommendation or executed experiment.",
+    "strongest_counterarguments": [
+      "Tracking implementation and lending revenue can dominate a small fee difference over one year.",
+      "Share classes are correlated and a winner-survivor sample can create a spurious result.",
+      "One prospective year cannot establish universal or permanent superiority."
+    ],
+    "test_registration_id": "registration:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9",
+    "version": "14"
+  }
+]

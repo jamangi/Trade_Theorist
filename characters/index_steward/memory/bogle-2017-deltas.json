@@ -1,0 +1,275 @@
+[
+  {
+    "checkpoint_id": "checkpoint:648d45eea4e68f66e181638961ce64503fc7e0861119faafd72e8c750eb631d9",
+    "assimilation": [
+      "Replace the vague design preference for passive investing with a scoped claim about net participation in business returns. Preserve the distinction between an arithmetic identity and uncertain future returns."
+    ],
+    "adversarial_review": [
+      "The author discloses his role in creating Vanguard and index funds. Selected endorsements and historical studies are source-reported evidence, not independent validation. Diversification does not eliminate market risk, and the book's 2017 market sizes and forecasts are dated."
+    ],
+    "memory_delta": [
+      "A fair share of a negative market return is still a loss. The constitution must not interpret indexing as a capital guarantee."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:96b0287356eec26e1a1c16fcf99240a9fd3bd042e0dcca16212cb309042639d0",
+    "assimilation": [
+      "Require each proposed active action to identify both its redistribution edge and its additional costs. Use the aggregate accounting argument as the default hurdle, while allowing a specialist to present prospectively testable evidence."
+    ],
+    "adversarial_review": [
+      "A parable is not a controlled empirical study. It abstracts from liquidity, risk transfer, execution services and useful advice; benefits must be tested against their costs rather than ruled out by rhetoric."
+    ],
+    "memory_delta": [
+      "Trading activity is not itself value creation for investors in aggregate. Maintain separate process and net-outcome assessments."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:e0f987990ef16b8d2df743b7034ea48620ed8810ff4a7ce949349fec48709229",
+    "assimilation": [
+      "Separate income, earnings growth and valuation changes when explaining a return. Retain a long horizon and disclose any valuation assumption rather than extrapolating a historical total return."
+    ],
+    "adversarial_review": [
+      "The return decomposition is an approximation and the evidence is a retrospective US sample. Discount rates, earnings definitions and starting valuations matter. Long historical regularity does not establish a short-term mean-reversion trade or a fixed reversion deadline."
+    ],
+    "memory_delta": [
+      "Business performance and price performance can diverge for an investor's entire decision horizon. Use scenarios, not timing certainty."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:1a575950b9e1ee2a3bb38dd5420140c622b0407bd1c55ebef0524c13ba3cbd38",
+    "assimilation": [
+      "Adopt a simple broad-market baseline while requiring matched exposure, asset weighting, survival treatment and a frozen period for comparisons. Treat capitalization weighting as a practical default rather than a universal optimality proof."
+    ],
+    "adversarial_review": [
+      "An aggregate gross-return identity is not identical to an equal-weighted fund ranking. Index composition changes still create turnover. Historical SPIVA results are reported by the source and have not been independently reproduced here."
+    ],
+    "memory_delta": [
+      "Keep a falsifiable evidence rule even when the foundational author uses categorical language. Neither the total-market benchmark nor the S&P 500 is automatically suitable for every sleeve."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:64a36a09650062f146ec44d99ac4519af7b17d22edeea210b29abf43a5f7be37",
+    "assimilation": [
+      "Require all-in costs and compounded terminal wealth in comparisons, with nominal and real results separated. Explain opportunity cost as well as dollars explicitly paid."
+    ],
+    "adversarial_review": [
+      "The book's historical fee estimates are not current configuration values. The wealth gap includes foregone compounding, not just money collected by intermediaries. Exact real returns require a ratio of nominal growth to price growth rather than simple subtraction."
+    ],
+    "memory_delta": [
+      "Small recurring costs need a horizon-dependent wealth explanation. Numerical assumptions remain declared research inputs, never silently approved limits."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:5cd8aed23a44c1cf8e956af0b743d15576da99311098cad3a8b85f6fb25e206b",
+    "assimilation": [
+      "Make all-in costs an explicit screening input, not a substitute for exposure matching and complete population data. Store the sample caveat with the numerical claim."
+    ],
+    "adversarial_review": [
+      "Estimated turnover costs are not observed execution costs. Adding estimated costs back to returns is not an independent measurement of manager skill. Risk adjustment, survival selection and the distinction between cumulative gain and terminal wealth must remain visible."
+    ],
+    "memory_delta": [
+      "Prefer persistent, observable costs to winner rankings, but demand predeclared cost definitions and avoid treating this source's quartile association as a causal experiment."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:430b9cfbeb46d54404fb3b2c0472465bff6f044ebacb9d3ef7201d40c284a178",
+    "assimilation": [
+      "Require dividend treatment in every baseline and outcome calculation. Record income separately from capital gains and reinvestment rather than double-counting it."
+    ],
+    "adversarial_review": [
+      "Dividends are part of total return, not free additional wealth. Expense-to-yield ratios use dated, rounded figures and are not a reason to select high-yield stocks or bypass broad diversification. A historical payout path does not guarantee future income."
+    ],
+    "memory_delta": [
+      "A price-only benchmark is incomplete for a dividend-paying portfolio. Income stability must be stress-tested against cuts."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:6c7d8d0716471863dfee92f525d21ca808f3fdecf3d9674350de91529835f5fa",
+    "assimilation": [
+      "Separate strategy performance from investor cash-flow experience. Add adherence and turnover measures to process evaluation without penalizing every externally required withdrawal as an emotional error."
+    ],
+    "adversarial_review": [
+      "Different cash-flow paths can produce return gaps without proving irrationality or manager causation. The chapter's estimates and fund populations are historical and not interchangeable with the prior chapter's survivor sample."
+    ],
+    "memory_delta": [
+      "A fund's published return is not necessarily the return experienced by its investors. Freeze cash-flow conventions before comparing Characters."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:748610443d9ff83f616c382637b34e5bb9a4deb3d2243dda948bc31cb1ea463f",
+    "assimilation": [
+      "Record account treatment and distinguish recurring distributions from deferred realization. Compare after-tax wealth rather than minimizing the tax bill in isolation."
+    ],
+    "adversarial_review": [
+      "The tax rates, estimated tax drag and inheritance treatment are dated US examples, not current legal inputs. Different turnover definitions and the chapter's varying average tax-drag estimates require explicit assumptions. Tax efficiency does not mean exemption on eventual sale."
+    ],
+    "memory_delta": [
+      "An account's tax treatment changes the relevant cost model. Missing jurisdiction, account and realization assumptions preclude a precise after-tax comparison."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:58f8e239df9f8b226b17ddf24369e03c42cf4900c086c1410c2e4a2bfe3d28e4",
+    "assimilation": [
+      "Keep scenario inputs dated and evaluate the reasoning components independently of the final outcome. Lower assumed gross returns increase the significance of a fixed cost burden."
+    ],
+    "adversarial_review": [
+      "Correlation and variance explained are different quantities: a correlation of 0.95 does not itself mean 95% of variance explained. The historical chart and wealth-attribution arithmetic need independent reconstruction before numerical reuse. Bond maturity, default, reinvestment, duration and sale timing constrain yield-based forecasts."
+    ],
+    "memory_delta": [
+      "Forecast accuracy can conceal mistaken premises. Preserve forecast decomposition, uncertainty and nominal-versus-real conventions; do not reuse the author's 2017 allocation forecast as today's signal."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:9baf45a0caaffb907de2f3308fc3623ffaada77f221803c46a0fd6130e93ac58",
+    "assimilation": [
+      "Track the original opportunity set, mergers, liquidations, manager tenure and capacity. Evaluate a selection rule committed before outcomes rather than recommending a fund because its full history looks exceptional."
+    ],
+    "adversarial_review": [
+      "Closure is not automatically total loss or proof of underperformance; the author himself gives a strong-record closure example. Two selected cases cannot isolate the causal effect of size. The proportion of exceptional past funds is not an unconditional probability for every informed selection method."
+    ],
+    "memory_delta": [
+      "Endurance and capacity belong in process evaluation. Preserve extinct candidates so a future winner list cannot silently replace the original population."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:fd2da153dda88af09914b15be7bff04b08832640f59e71db12acf3c8fb28d75c",
+    "assimilation": [
+      "Add selection effects, multiple comparisons, attrition and style exposure to the challenge checklist. Assess stable process inputs and future evidence rather than promoting a Character after a brief winning streak."
+    ],
+    "adversarial_review": [
+      "Survivor percentages and unconditional transition probabilities have different denominators. The two studies share a middle period and are not independent replications. Rank changes do not by themselves prove identical expected returns, absence of skill, or a universal time required to establish skill."
+    ],
+    "memory_delta": [
+      "Regression is a statistical pattern, not a clock or an instruction to buy yesterday's losers. Keep luck-versus-process uncertainty explicit."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:42f799b4c6f5f3fbd56c708890bd0396b3bbc615e44d4b8a1878646e9f7e2bf4",
+    "assimilation": [
+      "Qualify the first chapter's intermediation skepticism: evaluate advice by the service delivered, incentive structure and all-in fee. A beneficial reduction in costly mistakes need not constitute security-selection alpha."
+    ],
+    "adversarial_review": [
+      "Sales-channel comparisons and selected failed products do not isolate adviser causation. Quoted fee thresholds and the discussion of a prospective 2017 fiduciary rule are historical, not present policy or current law. Compensation labels alone cannot eliminate conflicts."
+    ],
+    "memory_delta": [
+      "Advice can have value without beating an index. Record process benefits separately and compare them with their costs rather than dismissing all helpers."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9",
+    "assimilation": [
+      "Distinguish the index exposure from the vehicle used to obtain it. Compare matched portfolios after recurring and entry costs; treat simulations as conditional models requiring reproducible inputs."
+    ],
+    "adversarial_review": [
+      "A simulation's cumulative outperformance probability is not the probability of winning in every consecutive year, though the chapter juxtaposes them. Aggregation does not require perfectly efficient prices, but it also cannot disprove every specialist edge. Dated fee tables and inconsistent rounded expense comparisons are not live product data."
+    ],
+    "memory_delta": [
+      "The label index does not establish low cost or broad diversification. Specify the benchmark, implementation and definition of winning before evaluating a claim."
+    ],
+    "theory_id": "theory:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9"
+  },
+  {
+    "checkpoint_id": "checkpoint:cc654bc889270c3f6b1d25917246728c5d76027cfd9ce6727037867a9747b605",
+    "assimilation": [
+      "Separate the purposes of income, liability matching and risk control from return maximization. Demand duration and credit exposure alongside fees before evaluating a bond fund's result."
+    ],
+    "adversarial_review": [
+      "Bonds can lose value and need not offset stocks in every regime. Rolling historical windows overlap. The book explicitly distinguishes its constructed 50/50 government/corporate proxy from the total bond index, so their yields cannot be interchanged. Published 2017 yields, weights and ratings are not current inputs."
+    ],
+    "memory_delta": [
+      "Risk-adjusted evaluation of a bond sleeve requires more than a yield comparison. A broad bond index is a defined market segment, not a guarantee or the entire possible bond universe."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:80f16a7c6fde03ebe5072c579ed3f2d0290c251bcc0b74b319d3ea20f92b56fd",
+    "assimilation": [
+      "Evaluate the vehicle, exposure and investor behavior separately. Permit broad ETF implementation when its actual total costs and operational characteristics fit the mandate; do not infer an active trading instruction from intraday availability."
+    ],
+    "adversarial_review": [
+      "High market-wide turnover does not describe every holder and can include liquidity provision or hedging. A retrospectively selected set of best ETFs and aggregate flow gaps cannot establish harm for all ETF uses. Commission assumptions are historical; spread, execution and tax inputs must be specified anew."
+    ],
+    "memory_delta": [
+      "ETF is a structure, not a strategy. Narrow, leveraged or frequently traded exposure needs its own rationale and risk checks."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:370cb0fb375f95e75df29f563b731cc24e589df134fd30d426de413cea32a06b",
+    "assimilation": [
+      "Treat factor tilts as labeled departures requiring a causal rationale, all-in cost hurdle and frozen prospective test. Retain their strongest objections instead of dismissing them because they depart from the foundation."
+    ],
+    "adversarial_review": [
+      "A ten-year comparison of two products and a short value/growth reversal are not universal evidence. Sharpe estimates have uncertainty; high correlation does not imply identical exposures or outcomes. Risk compensation can differ from alpha, and capitalization weighting can itself concentrate exposure."
+    ],
+    "memory_delta": [
+      "A rules-based label does not eliminate model selection risk. Distinguish evidence against a particular product from proof against an entire school."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:c7aa16f2c0d834c9c5d0c81b483fcb1834d043ad777aa372d4bcd196f6cd046b",
+    "assimilation": [
+      "Make analytical capacity and required effort explicit when considering activity. Preserve the provenance chain for secondary quotations; they do not grant Value Rationalist or Index Steward a completed Graham assignment."
+    ],
+    "adversarial_review": [
+      "Authority and selected quotations do not independently validate a return claim. The book gives inconsistent first-index-fund dates in different passages, so chronology needs verification before reuse. A claim about the average manager does not settle every investor's requirements or every analyst's ability."
+    ],
+    "memory_delta": [
+      "Match ambition to demonstrable capacity. Distinguish reading Bogle's account of Graham from actually reading Graham."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:620bb9f3302039998ddd9c70ea72d45ea52ec4843cf4d53061ad940573f0f62a",
+    "assimilation": [
+      "Add liability coverage, forced-sale risk and adherence to allocation reasoning. Maintain a distinction between rebalancing to a frozen risk policy and changing that policy because of a market forecast."
+    ],
+    "adversarial_review": [
+      "Volatility alone is an incomplete risk measure. The low-cost lower-equity example depends on assumed stock and bond returns and does not instruct every investor to cut equity exposure. Allocation heuristics, GDP correlations and historical yield comparisons are not calibrated owner-approved policy."
+    ],
+    "memory_delta": [
+      "Select an allocation only after the mandate and risk capacity are specified. The cost argument supplies no universal 60/40, age-based or all-equity mandate."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:2cf7a02713e21282ce35f1d1ad56b17991c6d51510d1a9f19c3da1055196f5d9",
+    "assimilation": [
+      "Keep retirement cash flows, income resources and forced-sale exposure in the mandate. Treat international allocation as an unresolved concentration, currency and valuation choice, not a categorical ban imported from the author's preference."
+    ],
+    "adversarial_review": [
+      "A capitalized benefit stream is neither liquid nor interchangeable with tradable bonds. The Social Security example extending deferral to age 72, arbitrary valuation discount, retirement-account descriptions and contribution figures need primary-source verification before practical use. The withdrawal wording needs an explicit initial-capital versus current-balance convention. Historical US versus EAFE performance is period dependent and EAFE is not every non-US market."
+    ],
+    "memory_delta": [
+      "Do not copy age, benefit, tax or withdrawal heuristics into executable policy. A date on a retirement fund does not establish suitability, and the author's home bias remains a recorded tension with broad diversification."
+    ],
+    "theory_id": null
+  },
+  {
+    "checkpoint_id": "checkpoint:0caa62cbb3f3fdd511c183443fee754c95ccb05f72c14ddb99640769e9032c4f",
+    "assimilation": [
+      "Consolidate a low-activity, low-cost default with explicit risk and evidence limits. Waiting is a valid recommendation when no net advantage survives the comparison, but adherence must remain subordinate to a valid mandate and independent risk controls."
+    ],
+    "adversarial_review": [
+      "Repeated maxims and endorsements are not additional independent trials. The aggregate arithmetic cannot guarantee positive wealth growth, prove every discretionary strategy inferior, or justify unconditional investing despite urgent liabilities. The acknowledgments identify Vanguard-supported research and separate the author's opinions from current management's views."
+    ],
+    "memory_delta": [
+      "Retain the foundation as a falsifiable default, not a slogan. The book is read; profitable performance, current legal accuracy and prospective superiority remain unestablished."
+    ],
+    "theory_id": null
+  }
+]

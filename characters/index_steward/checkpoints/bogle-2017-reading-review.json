@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "source_id": "book:9781119404521",
+  "source_pdf_sha256": "b5c2c3136dc2fda5b24a584b3ad23ffbc7ae9ed46c750155badfe1303d5e68e3",
+  "review_method": "Codex read the supplied PDF text in source order after freezing the design prior; representative pages and cited figures are visually checked. Entries are original analysis, not independently replicated empirical findings.",
+  "sections": [
+    {
+      "number": 1, "title": "Introduction", "pdf_start": 17, "pdf_end": 34,
+      "claims": [
+        {"text": "Bogle frames a broad, low-cost, enduring market holding as a way to retain market returns while accepting market losses; his guarantee concerns relative participation, not positive absolute returns.", "page": 29, "anchor": "any interim", "disposition": "accept"},
+        {"text": "The book uses historical returns and assumed future business growth to motivate compounding; those examples do not establish a forward return promise.", "page": 20, "anchor": "Let’s assume", "disposition": "qualify"}
+      ],
+      "assimilation": "Replace the vague design preference for passive investing with a scoped claim about net participation in business returns. Preserve the distinction between an arithmetic identity and uncertain future returns.",
+      "adversarial_review": "The author discloses his role in creating Vanguard and index funds. Selected endorsements and historical studies are source-reported evidence, not independent validation. Diversification does not eliminate market risk, and the book's 2017 market sizes and forecasts are dated.",
+      "memory_delta": "A fair share of a negative market return is still a loss. The constitution must not interpret indexing as a capital guarantee."
+    },
+    {
+      "number": 2, "title": "Chapter 1: A Parable", "pdf_start": 35, "pdf_end": 42,
+      "claims": [
+        {"text": "In the closed-family parable, changing ownership among investors cannot increase their aggregate claim on business proceeds; intermediary fees and extra taxes reduce what the family retains.", "page": 37, "anchor": "capital gains taxes", "disposition": "accept"},
+        {"text": "Bogle derives a general preference for minimal intermediation from the aggregate cost argument, rather than establishing that every individual adviser or active strategy is worthless.", "page": 40, "anchor": "financial intermediation", "disposition": "qualify"}
+      ],
+      "assimilation": "Require each proposed active action to identify both its redistribution edge and its additional costs. Use the aggregate accounting argument as the default hurdle, while allowing a specialist to present prospectively testable evidence.",
+      "adversarial_review": "A parable is not a controlled empirical study. It abstracts from liquidity, risk transfer, execution services and useful advice; benefits must be tested against their costs rather than ruled out by rhetoric.",
+      "memory_delta": "Trading activity is not itself value creation for investors in aggregate. Maintain separate process and net-outcome assessments."
+    },
+    {
+      "number": 3, "title": "Chapter 2: Rational Exuberance", "pdf_start": 43, "pdf_end": 58,
+      "claims": [
+        {"text": "Bogle decomposes stock returns into dividend yield, earnings growth and a valuation-multiple component, distinguishing business results from changing investor expectations.", "page": 49, "anchor": "speculative return", "disposition": "accept"},
+        {"text": "He treats long-run business fundamentals as more dependable than short-run sentiment forecasts, while warning that historical returns containing valuation expansion are poor extrapolations.", "page": 48, "anchor": "deeply flawed guides", "disposition": "qualify"}
+      ],
+      "assimilation": "Separate income, earnings growth and valuation changes when explaining a return. Retain a long horizon and disclose any valuation assumption rather than extrapolating a historical total return.",
+      "adversarial_review": "The return decomposition is an approximation and the evidence is a retrospective US sample. Discount rates, earnings definitions and starting valuations matter. Long historical regularity does not establish a short-term mean-reversion trade or a fixed reversion deadline.",
+      "memory_delta": "Business performance and price performance can diverge for an investor's entire decision horizon. Use scenarios, not timing certainty."
+    },
+    {
+      "number": 4, "title": "Chapter 3: Cast Your Lot with Business", "pdf_start": 59, "pdf_end": 72,
+      "claims": [
+        {"text": "Capitalization weighting keeps portfolio weights aligned with changing relative prices without requiring a rebalance solely because those prices move.", "page": 60, "anchor": "stock prices", "disposition": "accept"},
+        {"text": "The book explicitly calls its S&P 500 versus total-market return comparison period dependent and recommends comparing active funds with indexes matching their strategies.", "page": 64, "anchor": "period dependent", "disposition": "accept"},
+        {"text": "The chapter says contrary data must be wrong if indexing does not win; the Character rejects using that rhetoric to dismiss valid, exposure-matched net evidence.", "page": 65, "anchor": "the data are wrong", "disposition": "reject"}
+      ],
+      "assimilation": "Adopt a simple broad-market baseline while requiring matched exposure, asset weighting, survival treatment and a frozen period for comparisons. Treat capitalization weighting as a practical default rather than a universal optimality proof.",
+      "adversarial_review": "An aggregate gross-return identity is not identical to an equal-weighted fund ranking. Index composition changes still create turnover. Historical SPIVA results are reported by the source and have not been independently reproduced here.",
+      "memory_delta": "Keep a falsifiable evidence rule even when the foundational author uses categorical language. Neither the total-market benchmark nor the S&P 500 is automatically suitable for every sleeve."
+    },
+    {
+      "number": 5, "title": "Chapter 4: Costs and Compounding", "pdf_start": 73, "pdf_end": 86,
+      "claims": [
+        {"text": "The chapter expands investment costs beyond expense ratios to sales charges, turnover, spreads, market impact and cash drag.", "page": 76, "anchor": "bid-ask spreads", "disposition": "accept"},
+        {"text": "The fifty-year example contrasts assumed 7% and 5% annual returns to demonstrate compounding cost drag; it is hypothetical rather than a forecast or a literal accounting of intermediary revenue.", "page": 80, "anchor": "Based on these assumptions", "disposition": "qualify"}
+      ],
+      "assimilation": "Require all-in costs and compounded terminal wealth in comparisons, with nominal and real results separated. Explain opportunity cost as well as dollars explicitly paid.",
+      "adversarial_review": "The book's historical fee estimates are not current configuration values. The wealth gap includes foregone compounding, not just money collected by intermediaries. Exact real returns require a ratio of nominal growth to price growth rather than simple subtraction.",
+      "memory_delta": "Small recurring costs need a horizon-dependent wealth explanation. Numerical assumptions remain declared research inputs, never silently approved limits."
+    },
+    {
+      "number": 6, "title": "Chapter 5: Focus on the Lowest-Cost Funds", "pdf_start": 87, "pdf_end": 98,
+      "claims": [
+        {"text": "Bogle presents recurring expenses and turnover costs as more persistent fund-selection inputs than recent performance rankings.", "page": 88, "anchor": "Costs go on forever", "disposition": "accept"},
+        {"text": "Exhibit 5.1 compares cost quartiles over 1991–2016 but explicitly includes only surviving funds; its reported advantage and risk-adjusted results therefore require that selection caveat.", "page": 92, "anchor": "survivorship bias", "disposition": "qualify"}
+      ],
+      "assimilation": "Make all-in costs an explicit screening input, not a substitute for exposure matching and complete population data. Store the sample caveat with the numerical claim.",
+      "adversarial_review": "Estimated turnover costs are not observed execution costs. Adding estimated costs back to returns is not an independent measurement of manager skill. Risk adjustment, survival selection and the distinction between cumulative gain and terminal wealth must remain visible.",
+      "memory_delta": "Prefer persistent, observable costs to winner rankings, but demand predeclared cost definitions and avoid treating this source's quartile association as a causal experiment."
+    },
+    {
+      "number": 7, "title": "Chapter 6: Dividends", "pdf_start": 99, "pdf_end": 106,
+      "claims": [
+        {"text": "The chapter distinguishes price appreciation from total return with dividends reinvested and shows that omission of distributions can substantially distort a long-horizon comparison.", "page": 100, "anchor": "with dividends reinvested", "disposition": "accept"},
+        {"text": "It documents several large historical dividend cuts despite describing dividends as comparatively stable, so dividend income cannot be treated as guaranteed.", "page": 100, "anchor": "significant drops", "disposition": "accept"}
+      ],
+      "assimilation": "Require dividend treatment in every baseline and outcome calculation. Record income separately from capital gains and reinvestment rather than double-counting it.",
+      "adversarial_review": "Dividends are part of total return, not free additional wealth. Expense-to-yield ratios use dated, rounded figures and are not a reason to select high-yield stocks or bypass broad diversification. A historical payout path does not guarantee future income.",
+      "memory_delta": "A price-only benchmark is incomplete for a dividend-paying portfolio. Income stability must be stress-tested against cuts."
+    },
+    {
+      "number": 8, "title": "Chapter 7: The Grand Illusion", "pdf_start": 107, "pdf_end": 118,
+      "claims": [
+        {"text": "Time-weighted fund returns and dollar-weighted investor experience answer different questions because the latter includes the timing and size of contributions and withdrawals.", "page": 108, "anchor": "dollar-weighted", "disposition": "accept"},
+        {"text": "Bogle attributes an additional investor return shortfall to timing and selection, while acknowledging that the precise estimated gap is uncertain.", "page": 111, "anchor": "no way to", "disposition": "qualify"}
+      ],
+      "assimilation": "Separate strategy performance from investor cash-flow experience. Add adherence and turnover measures to process evaluation without penalizing every externally required withdrawal as an emotional error.",
+      "adversarial_review": "Different cash-flow paths can produce return gaps without proving irrationality or manager causation. The chapter's estimates and fund populations are historical and not interchangeable with the prior chapter's survivor sample.",
+      "memory_delta": "A fund's published return is not necessarily the return experienced by its investors. Freeze cash-flow conventions before comparing Characters."
+    },
+    {
+      "number": 9, "title": "Chapter 8: Taxes Are Costs, Too", "pdf_start": 119, "pdf_end": 126,
+      "claims": [
+        {"text": "The chapter's turnover-related tax argument concerns taxable holdings and explicitly sets aside investors holding solely in tax-deferred accounts.", "page": 120, "anchor": "tax-deferred", "disposition": "accept"},
+        {"text": "Lower fees can leave more distributable dividend income and therefore more dividend tax even when the investor retains more income after tax.", "page": 124, "anchor": "dividend income", "disposition": "qualify"}
+      ],
+      "assimilation": "Record account treatment and distinguish recurring distributions from deferred realization. Compare after-tax wealth rather than minimizing the tax bill in isolation.",
+      "adversarial_review": "The tax rates, estimated tax drag and inheritance treatment are dated US examples, not current legal inputs. Different turnover definitions and the chapter's varying average tax-drag estimates require explicit assumptions. Tax efficiency does not mean exemption on eventual sale.",
+      "memory_delta": "An account's tax treatment changes the relevant cost model. Missing jurisdiction, account and realization assumptions preclude a precise after-tax comparison."
+    },
+    {
+      "number": 10, "title": "Chapter 9: When the Good Times No Longer Roll", "pdf_start": 127, "pdf_end": 144,
+      "claims": [
+        {"text": "Bogle labels his forward return estimate an informed guess and varies dividend, growth and terminal valuation assumptions; the figures are 2017 scenarios rather than current forecasts.", "page": 133, "anchor": "still a guess", "disposition": "qualify"},
+        {"text": "The chapter illustrates that a correct aggregate return forecast can result from offsetting errors in its investment-return and valuation components.", "page": 131, "anchor": "6.9", "disposition": "accept"},
+        {"text": "The high historical association between initial bond yields and subsequent returns is useful evidence but does not make a bond fund's quoted yield an unconditional guaranteed holding-period return.", "page": 135, "anchor": "0.95", "disposition": "qualify"}
+      ],
+      "assimilation": "Keep scenario inputs dated and evaluate the reasoning components independently of the final outcome. Lower assumed gross returns increase the significance of a fixed cost burden.",
+      "adversarial_review": "Correlation and variance explained are different quantities: a correlation of 0.95 does not itself mean 95% of variance explained. The historical chart and wealth-attribution arithmetic need independent reconstruction before numerical reuse. Bond maturity, default, reinvestment, duration and sale timing constrain yield-based forecasts.",
+      "memory_delta": "Forecast accuracy can conceal mistaken premises. Preserve forecast decomposition, uncertainty and nominal-versus-real conventions; do not reuse the author's 2017 allocation forecast as today's signal."
+    },
+    {
+      "number": 11, "title": "Chapter 10: Selecting Long-Term Winners", "pdf_start": 145, "pdf_end": 160,
+      "claims": [
+        {"text": "The chapter follows the starting population of funds, including closures, and shows that identifying surviving winners retrospectively differs from selecting them in advance.", "page": 146, "anchor": "355", "disposition": "accept"},
+        {"text": "The Magellan and Contrafund case histories suggest that manager changes and asset growth can alter the conditions behind an earlier record.", "page": 154, "anchor": "present size", "disposition": "qualify"}
+      ],
+      "assimilation": "Track the original opportunity set, mergers, liquidations, manager tenure and capacity. Evaluate a selection rule committed before outcomes rather than recommending a fund because its full history looks exceptional.",
+      "adversarial_review": "Closure is not automatically total loss or proof of underperformance; the author himself gives a strong-record closure example. Two selected cases cannot isolate the causal effect of size. The proportion of exceptional past funds is not an unconditional probability for every informed selection method.",
+      "memory_delta": "Endurance and capacity belong in process evaluation. Preserve extinct candidates so a future winner list cannot silently replace the original population."
+    },
+    {
+      "number": 12, "title": "Chapter 11: Reversion to the Mean", "pdf_start": 161, "pdf_end": 172,
+      "claims": [
+        {"text": "The book reports weak persistence in fund return rankings across consecutive five-year periods, with merged and closed funds retained as a separate outcome.", "page": 163, "anchor": "Merged/", "disposition": "accept"},
+        {"text": "Regression toward average observed performance cautions against treating an extreme recent rank as persistent skill, but does not establish that all skill is absent or supply a contrarian trading rule.", "page": 167, "anchor": "rare cases", "disposition": "qualify"}
+      ],
+      "assimilation": "Add selection effects, multiple comparisons, attrition and style exposure to the challenge checklist. Assess stable process inputs and future evidence rather than promoting a Character after a brief winning streak.",
+      "adversarial_review": "Survivor percentages and unconditional transition probabilities have different denominators. The two studies share a middle period and are not independent replications. Rank changes do not by themselves prove identical expected returns, absence of skill, or a universal time required to establish skill.",
+      "memory_delta": "Regression is a statistical pattern, not a clock or an instruction to buy yesterday's losers. Keep luck-versus-process uncertainty explicit."
+    },
+    {
+      "number": 13, "title": "Chapter 12: Seeking Advice to Select Funds?", "pdf_start": 173, "pdf_end": 186,
+      "claims": [
+        {"text": "Bogle distinguishes an adviser's possible planning, allocation and behavioral benefits from the separate claim of selecting market-beating funds.", "page": 174, "anchor": "other valuable services", "disposition": "accept"},
+        {"text": "The chapter acknowledges that its negative fund-selection evidence is dated or anecdotal and that intangible advisory benefits remain possible.", "page": 183, "anchor": "dated or anecdotal", "disposition": "accept"}
+      ],
+      "assimilation": "Qualify the first chapter's intermediation skepticism: evaluate advice by the service delivered, incentive structure and all-in fee. A beneficial reduction in costly mistakes need not constitute security-selection alpha.",
+      "adversarial_review": "Sales-channel comparisons and selected failed products do not isolate adviser causation. Quoted fee thresholds and the discussion of a prospective 2017 fiduciary rule are historical, not present policy or current law. Compensation labels alone cannot eliminate conflicts.",
+      "memory_delta": "Advice can have value without beating an index. Record process benefits separately and compare them with their costs rather than dismissing all helpers."
+    },
+    {
+      "number": 14, "title": "Chapter 13: Simplicity and Parsimony", "pdf_start": 187, "pdf_end": 200,
+      "claims": [
+        {"text": "Index products tracking substantially the same portfolio can deliver different net results because their expenses and sales charges differ.", "page": 192, "anchor": "not created equal", "disposition": "accept"},
+        {"text": "The chapter's simulated active-fund success probabilities depend on declared cost and return-process assumptions; they are not universal empirical odds for every investment rule.", "page": 189, "anchor": "assumptions", "disposition": "qualify"}
+      ],
+      "assimilation": "Distinguish the index exposure from the vehicle used to obtain it. Compare matched portfolios after recurring and entry costs; treat simulations as conditional models requiring reproducible inputs.",
+      "adversarial_review": "A simulation's cumulative outperformance probability is not the probability of winning in every consecutive year, though the chapter juxtaposes them. Aggregation does not require perfectly efficient prices, but it also cannot disprove every specialist edge. Dated fee tables and inconsistent rounded expense comparisons are not live product data.",
+      "memory_delta": "The label index does not establish low cost or broad diversification. Specify the benchmark, implementation and definition of winning before evaluating a claim.",
+      "theory": {
+        "position": "Among comparable funds tracking the same broad equity index, lower recurring costs should predict a smaller net return shortfall over a predeclared period.",
+        "minimal_logic_chain": ["Match index exposure and total-return conventions before comparing funds.", "Recurring expenses subtract from the proceeds available to the investor.", "Lower expenses should leave a smaller net tracking shortfall if other implementation differences do not offset them."],
+        "scope": "Proposed prospective study of US-domiciled, USD, unleveraged open-end mutual funds tracking the S&P 500; no current investment recommendation or executed experiment.",
+        "assumptions": ["Fund mandates, fee schedules and investor eligibility are observable before evaluation begins.", "Returns include reinvested distributions and all applicable entry, exit and recurring costs.", "Securities lending, sampling, cash balances and operational differences may affect tracking independently of fees."],
+        "predicted_observables": ["The lower-cost quartile has a higher equal-weighted mean net total return, and hence a smaller shortfall to the same S&P 500 total-return benchmark, than the higher-cost quartile."],
+        "portfolio_implication": "abstain",
+        "invalidation_conditions": ["The lower-cost group does not achieve the predicted positive net-return difference over the registered window.", "Exposure matching, fee eligibility, complete population coverage or independent fund count cannot be established; mark the test inconclusive rather than a success."],
+        "strongest_counterarguments": ["Tracking implementation and lending revenue can dominate a small fee difference over one year.", "Share classes are correlated and a winner-survivor sample can create a spurious result.", "One prospective year cannot establish universal or permanent superiority."],
+        "rebuttals": ["Retain closures and mergers, compare only matched mandates, and count distinct portfolios rather than share classes.", "Report the preregistered difference and implementation caveats even when they challenge the foundational prior."],
+        "confidence": 0.7
+      },
+      "test": {
+        "prediction": "The mean net total return of the lowest prospective all-in-cost quartile exceeds that of the highest-cost quartile among the frozen eligible portfolios; no result has been observed.",
+        "horizon": "One prospective year; proposed research only. If inputs and approvals are not ready before the start, expire this registration and append a new one before any later window.",
+        "benchmark": "S&P 500 total return in USD, with distributions reinvested. Freeze on 2026-09-30 the public eligible population of US-domiciled unleveraged open-end S&P 500 index mutual funds. One cheapest non-advisory share class purchasable for USD 10000 without another account per distinct underlying portfolio; break fee ties by ascending public fund identifier. Rank by stated annual expense ratio plus applicable entry/exit charges for that holding period, retain all closures and mergers, and split into quartiles with ties assigned by the same identifier. Require at least 20 distinct portfolios and five unrelated management organizations overall, otherwise inconclusive. Use equal initial capital and no later contributions. Missing terminal proceeds make the comparison inconclusive; never drop a failure.",
+        "failure_condition": "Lowest-cost minus highest-cost mean net total return is less than or equal to zero. Unavailable permissions, incomplete data, population below minimum, or mismatched exposure yield inconclusive/not-run, never a passing result.",
+        "evaluation_start": "2026-10-01T00:00:00Z",
+        "evaluation_end": "2027-10-01T00:00:00Z",
+        "metrics": ["net_total_return_difference", "net_tracking_shortfall", "distinct_portfolios", "closures_and_mergers", "missing_observations"]
+      }
+    },
+    {
+      "number": 15, "title": "Chapter 14: Bond Funds", "pdf_start": 201, "pdf_end": 212,
+      "claims": [
+        {"text": "Bonds may support allocation discipline and reduce portfolio volatility even when their expected long-run return is lower than stocks; the risk reduction is conditional on the exposures held.", "page": 203, "anchor": "volatility", "disposition": "qualify"},
+        {"text": "A higher bond-fund yield can reflect longer maturity or weaker credit rather than manager skill, so comparisons need matched maturity and credit quality.", "page": 206, "anchor": "credit quality", "disposition": "accept"}
+      ],
+      "assimilation": "Separate the purposes of income, liability matching and risk control from return maximization. Demand duration and credit exposure alongside fees before evaluating a bond fund's result.",
+      "adversarial_review": "Bonds can lose value and need not offset stocks in every regime. Rolling historical windows overlap. The book explicitly distinguishes its constructed 50/50 government/corporate proxy from the total bond index, so their yields cannot be interchanged. Published 2017 yields, weights and ratings are not current inputs.",
+      "memory_delta": "Risk-adjusted evaluation of a bond sleeve requires more than a yield comparison. A broad bond index is a defined market segment, not a guarantee or the entire possible bond universe."
+    },
+    {
+      "number": 16, "title": "Chapter 15: The Exchange-Traded Fund", "pdf_start": 213, "pdf_end": 228,
+      "claims": [
+        {"text": "Despite criticizing ETF speculation, Bogle explicitly permits long-term ownership of broad-market indexed ETFs.", "page": 214, "anchor": "nothing", "disposition": "accept"},
+        {"text": "A product's trading convenience and narrow exposure can encourage costly timing and concentration; these behavioral concerns must be distinguished from the wrapper's own portfolio costs.", "page": 225, "anchor": "tax efficiency", "disposition": "qualify"}
+      ],
+      "assimilation": "Evaluate the vehicle, exposure and investor behavior separately. Permit broad ETF implementation when its actual total costs and operational characteristics fit the mandate; do not infer an active trading instruction from intraday availability.",
+      "adversarial_review": "High market-wide turnover does not describe every holder and can include liquidity provision or hedging. A retrospectively selected set of best ETFs and aggregate flow gaps cannot establish harm for all ETF uses. Commission assumptions are historical; spread, execution and tax inputs must be specified anew.",
+      "memory_delta": "ETF is a structure, not a strategy. Narrow, leveraged or frequently traded exposure needs its own rationale and risk checks."
+    },
+    {
+      "number": 17, "title": "Chapter 16: Index Funds That Promise to Beat the Market", "pdf_start": 229, "pdf_end": 242,
+      "claims": [
+        {"text": "Rule-based factor weighting still makes an active exposure choice relative to a capitalization-weighted market, even if implementation is called passive.", "page": 233, "anchor": "active strategies", "disposition": "accept"},
+        {"text": "The chapter warns that selecting factor products using attractive historical results can embed data mining, while its own small set of comparisons cannot settle every factor strategy's future value.", "page": 235, "anchor": "data min-", "disposition": "qualify"}
+      ],
+      "assimilation": "Treat factor tilts as labeled departures requiring a causal rationale, all-in cost hurdle and frozen prospective test. Retain their strongest objections instead of dismissing them because they depart from the foundation.",
+      "adversarial_review": "A ten-year comparison of two products and a short value/growth reversal are not universal evidence. Sharpe estimates have uncertainty; high correlation does not imply identical exposures or outcomes. Risk compensation can differ from alpha, and capitalization weighting can itself concentrate exposure.",
+      "memory_delta": "A rules-based label does not eliminate model selection risk. Distinguish evidence against a particular product from proof against an entire school."
+    },
+    {
+      "number": 18, "title": "Chapter 17: Benjamin Graham and Indexing", "pdf_start": 243, "pdf_end": 256,
+      "claims": [
+        {"text": "Bogle presents Graham's distinction between a demanding businesslike active process and a diversified defensive approach suited to investors without that capacity.", "page": 244, "anchor": "defensive", "disposition": "accept"},
+        {"text": "The historical Graham interview and Buffett anecdote are evidence reported by Bogle, rather than independent reading of Graham's full work or a new source in this Character's curriculum.", "page": 255, "anchor": "dinner", "disposition": "qualify"}
+      ],
+      "assimilation": "Make analytical capacity and required effort explicit when considering activity. Preserve the provenance chain for secondary quotations; they do not grant Value Rationalist or Index Steward a completed Graham assignment.",
+      "adversarial_review": "Authority and selected quotations do not independently validate a return claim. The book gives inconsistent first-index-fund dates in different passages, so chronology needs verification before reuse. A claim about the average manager does not settle every investor's requirements or every analyst's ability.",
+      "memory_delta": "Match ambition to demonstrable capacity. Distinguish reading Bogle's account of Graham from actually reading Graham."
+    },
+    {
+      "number": 19, "title": "Chapter 18: Asset Allocation I", "pdf_start": 257, "pdf_end": 270,
+      "claims": [
+        {"text": "The chapter separates financial ability to bear risk from willingness to experience it, tying allocation to liabilities, available assets and time rather than a universal stock percentage.", "page": 262, "anchor": "ability", "disposition": "accept"},
+        {"text": "Fixed-allocation rebalancing is presented as a risk-control choice distinct from discretionary tactical timing; neither has a guaranteed return benefit.", "page": 265, "anchor": "limits", "disposition": "accept"},
+        {"text": "The chapter's statement that allocation explains 94% of differences in total returns is not accepted as a universal cross-investor or causal statistic without checking the original study's dependent variable and design.", "page": 259, "anchor": "94 percent", "disposition": "reject"}
+      ],
+      "assimilation": "Add liability coverage, forced-sale risk and adherence to allocation reasoning. Maintain a distinction between rebalancing to a frozen risk policy and changing that policy because of a market forecast.",
+      "adversarial_review": "Volatility alone is an incomplete risk measure. The low-cost lower-equity example depends on assumed stock and bond returns and does not instruct every investor to cut equity exposure. Allocation heuristics, GDP correlations and historical yield comparisons are not calibrated owner-approved policy.",
+      "memory_delta": "Select an allocation only after the mandate and risk capacity are specified. The cost argument supplies no universal 60/40, age-based or all-equity mandate."
+    },
+    {
+      "number": 20, "title": "Chapter 19: Asset Allocation II", "pdf_start": 271, "pdf_end": 292,
+      "claims": [
+        {"text": "Bogle calls age-based allocation a flexible starting heuristic and asks investors to inspect target-date funds' underlying holdings and costs.", "page": 274, "anchor": "rule of thumb", "disposition": "accept"},
+        {"text": "He favors US-only equity exposure but acknowledges that past relative outperformance may have changed valuations and leaves future international relative returns uncertain.", "page": 280, "anchor": "Who really knows", "disposition": "qualify"},
+        {"text": "The chapter supports a total-return withdrawal approach while explicitly declining to guarantee a fixed withdrawal rule's sustainability.", "page": 289, "anchor": "by no means guaranteed", "disposition": "accept"}
+      ],
+      "assimilation": "Keep retirement cash flows, income resources and forced-sale exposure in the mandate. Treat international allocation as an unresolved concentration, currency and valuation choice, not a categorical ban imported from the author's preference.",
+      "adversarial_review": "A capitalized benefit stream is neither liquid nor interchangeable with tradable bonds. The Social Security example extending deferral to age 72, arbitrary valuation discount, retirement-account descriptions and contribution figures need primary-source verification before practical use. The withdrawal wording needs an explicit initial-capital versus current-balance convention. Historical US versus EAFE performance is period dependent and EAFE is not every non-US market.",
+      "memory_delta": "Do not copy age, benefit, tax or withdrawal heuristics into executable policy. A date on a retirement fund does not establish suitability, and the author's home bias remains a recorded tension with broad diversification."
+    },
+    {
+      "number": 21, "title": "Chapter 20: Investment Advice That Meets the Test of Time", "pdf_start": 293, "pdf_end": 302,
+      "claims": [
+        {"text": "The conclusion reiterates regular saving, broad exposure, cost control and disciplined adherence while explicitly acknowledging uncertainty about future stock and bond returns.", "page": 294, "anchor": "never know", "disposition": "accept"},
+        {"text": "The claim that diversification leaves only market risk is too broad for an operational system: implementation, liquidity, liabilities and behavioral failures remain relevant.", "page": 295, "anchor": "Only market risk remains", "disposition": "reject"}
+      ],
+      "assimilation": "Consolidate a low-activity, low-cost default with explicit risk and evidence limits. Waiting is a valid recommendation when no net advantage survives the comparison, but adherence must remain subordinate to a valid mandate and independent risk controls.",
+      "adversarial_review": "Repeated maxims and endorsements are not additional independent trials. The aggregate arithmetic cannot guarantee positive wealth growth, prove every discretionary strategy inferior, or justify unconditional investing despite urgent liabilities. The acknowledgments identify Vanguard-supported research and separate the author's opinions from current management's views.",
+      "memory_delta": "Retain the foundation as a falsifiable default, not a slogan. The book is read; profitable performance, current legal accuracy and prospective superiority remain unestablished."
+    }
+  ]
+}

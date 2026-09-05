@@ -18,9 +18,13 @@ class LibraryTests(unittest.TestCase):
 
     def test_twelve_slots_exact_or_explicitly_unresolved(self):
         index = validate_catalog(self.catalog)
-        self.assertEqual(len(index), 12)
-        self.assertEqual(sum(s["isbn"] is not None for s in index.values()), 11)
-        self.assertTrue(all(s["ingestion_status"] == "blocked" for s in index.values()))
+        self.assertEqual(len(index), 13)  # Original hardcover candidate survives the format resolution.
+        self.assertEqual(sum(s["isbn"] is not None for s in index.values()), 12)
+        acquired = index["book:9781119404521"]
+        self.assertEqual(acquired["access"], "user_supplied")
+        self.assertEqual(acquired["ingestion_status"], "complete")
+        self.assertEqual(acquired["rights"]["redistribution"], "unknown")
+        self.assertTrue(all(s["ingestion_status"] == "blocked" for s in index.values() if s is not acquired))
 
     def test_deduplication_and_missing_evidence(self):
         bad = deepcopy(self.catalog)

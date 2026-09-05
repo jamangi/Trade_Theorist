@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "book:9781119404521",
+    "schema_version": 1,
+    "record_type": "source",
+    "experiment_id": null,
+    "created_at": "2026-09-05T21:23:48.289201Z",
+    "contamination": "hindsight-contaminated",
+    "title": "The Little Book of Common Sense Investing",
+    "authors": [
+      "John C. Bogle"
+    ],
+    "edition": "10th anniversary, updated and revised, 2017, ePDF (second edition)",
+    "isbn": "9781119404521",
+    "publisher": "John Wiley & Sons, Inc.",
+    "locator": "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+    "retrieved_at": "2026-09-05T21:04:41.499286Z",
+    "checked_at": "2026-09-05T21:23:48.289201Z",
+    "next_check_at": "2026-09-12T21:23:48.289201Z",
+    "access": "user_supplied",
+    "rights": {
+      "reading": "permitted",
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "redistribution": "unknown",
+      "evidence": [
+        "Owner supplied the PDF on 2026-09-05 and explicitly requested a local repository copy and completion of TASK-004. This authorizes this bounded analysis and private copy; it is not evidence of a publisher redistribution license.",
+        "Permission values describe the owner-authorized scope for the supplied content, not independently verified publisher licensing. Raw redistribution remains unestablished."
+      ]
+    },
+    "publication_eligibility": "derived_permitted",
+    "private_locator": "library/sources/private/bogle-2017-common-sense-investing.pdf",
+    "ingestion_status": "complete",
+    "blocker": null
+  },
+  "source_pdf_sha256": "b5c2c3136dc2fda5b24a584b3ad23ffbc7ae9ed46c750155badfe1303d5e68e3",
+  "authorization": "Owner supplied the PDF on 2026-09-05 and explicitly requested a local repository copy and completion of TASK-004. This authorizes this bounded analysis and private copy; it is not evidence of a publisher redistribution license.",
+  "provenance": "Original chapter review authored by the current Codex GPT-6-family session after a frozen design prior, reading the introduction and chapters in source order. Exact model snapshot, generation token counts, price and sampling settings are unavailable. The runtime deterministically imports that attributed review; it does not regenerate independent chapter reasoning. Model background knowledge and context carryover remain possible. All learning is hindsight-contaminated; no forward performance or current legal claims are established.",
+  "prior_hash": "24467a7b27f0f13fcd89e80bb133f80a7b3b395dfda8df51035faeaee2df9d7c",
+  "review_hash": "25599dc2313f46710666f6008ff08e0854013adccef7ad548e8aca56f05e441e",
+  "review_completed_at": "2026-09-05T21:23:48.289201Z",
+  "identification": {
+    "title_page": 9,
+    "copyright_page": 10,
+    "isbn_epdf": "9781119404521",
+    "isbn_hardcover": "9781119404507",
+    "copyright_year": 2017,
+    "assessment": "Appears to be the correct complete typeset edition: cover/title/copyright, contents, all 20 chapters and back matter agree. Publisher authenticity and provenance are not independently certified."
+  },
+  "coverage": {
+    "pdf_pages": 305,
+    "printed_main_pages": "1-270",
+    "substantive_ranges": [
+      [
+        17,
+        34
+      ],
+      [
+        35,
+        42
+      ],
+      [
+        43,
+        58
+      ],
+      [
+        59,
+        72
+      ],
+      [
+        73,
+        86
+      ],
+      [
+        87,
+        98
+      ],
+      [
+        99,
+        106
+      ],
+      [
+        107,
+        118
+      ],
+      [
+        119,
+        126
+      ],
+      [
+        127,
+        144
+      ],
+      [
+        145,
+        160
+      ],
+      [
+        161,
+        172
+      ],
+      [
+        173,
+        186
+      ],
+      [
+        187,
+        200
+      ],
+      [
+        201,
+        212
+      ],
+      [
+        213,
+        228
+      ],
+      [
+        229,
+        242
+      ],
+      [
+        243,
+        256
+      ],
+      [
+        257,
+        270
+      ],
+      [
+        271,
+        292
+      ],
+      [
+        293,
+        302
+      ]
+    ],
+    "substantive_sections": 21,
+    "front_matter": [
+      1,
+      16
+    ],
+    "acknowledgments": [
+      303,
+      304
+    ],
+    "eula_pointer_page": 305,
+    "body_text_read": "Introduction and all 20 chapters, in source order; source notes preserve claims and objections.",
+    "visually_checked_pdf_pages": [
+      1,
+      2,
+      9,
+      10,
+      92,
+      135,
+      163,
+      237,
+      259,
+      285
+    ],
+    "blank_or_no_text_pdf_pages": [
+      1,
+      2,
+      8,
+      12,
+      34,
+      58,
+      72,
+      106,
+      118,
+      242,
+      256,
+      270,
+      292,
+      302
+    ],
+    "extraction": "pypdf 6.10.0 default extraction; normalize whitespace per page; retain explicit PDF page markers for citations.",
+    "caveat": "Page 1 is a raster cover, page 2 is blank. Typesetting can split words and table cells; cited key exhibits were checked visually. Back matter inspected, not treated as additional investment learning."
+  }
+}

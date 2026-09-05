@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "audit_checked_at": "2026-09-05T20:29:13Z",
+  "audit_checked_at": "2026-09-05T21:23:48.289201Z",
   "sources": [
     {
       "id": "book:9781119404507",
@@ -413,15 +413,49 @@
       "private_locator": null,
       "ingestion_status": "blocked",
       "blocker": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
+    },
+    {
+      "id": "book:9781119404521",
+      "schema_version": 1,
+      "record_type": "source",
+      "experiment_id": null,
+      "created_at": "2026-09-05T21:23:48.289201Z",
+      "contamination": "hindsight-contaminated",
+      "title": "The Little Book of Common Sense Investing",
+      "authors": [
+        "John C. Bogle"
+      ],
+      "edition": "10th anniversary, updated and revised, 2017, ePDF (second edition)",
+      "isbn": "9781119404521",
+      "publisher": "John Wiley & Sons, Inc.",
+      "locator": "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+      "retrieved_at": "2026-09-05T21:04:41.499286Z",
+      "checked_at": "2026-09-05T21:23:48.289201Z",
+      "next_check_at": "2026-09-12T21:23:48.289201Z",
+      "access": "user_supplied",
+      "rights": {
+        "reading": "permitted",
+        "machine_ingestion": "permitted",
+        "private_storage": "permitted",
+        "redistribution": "unknown",
+        "evidence": [
+          "Owner supplied the PDF on 2026-09-05 and explicitly requested a local repository copy and completion of TASK-004. This authorizes this bounded analysis and private copy; it is not evidence of a publisher redistribution license.",
+          "Permission values describe the owner-authorized scope for the supplied content, not independently verified publisher licensing. Raw redistribution remains unestablished."
+        ]
+      },
+      "publication_eligibility": "derived_permitted",
+      "private_locator": "library/sources/private/bogle-2017-common-sense-investing.pdf",
+      "ingestion_status": "complete",
+      "blocker": null
     }
   ],
   "assignments": [
     {
       "character_id": "index_steward",
       "position": 1,
-      "source_id": "book:9781119404507",
+      "source_id": "book:9781119404521",
       "intended_lesson": "Form low-cost diversification, long horizons and humility.",
-      "edition_selection": "catalog candidate; confirm against acquired copy before learning"
+      "edition_selection": "Acquired ePDF format of the same approved 2017 foundation; hardcover candidate retained for audit"
     },
     {
       "character_id": "index_steward",
@@ -585,14 +619,16 @@
       "checked_at": "2026-09-05T20:29:13Z",
       "method": "publisher page inspected via web tool; upstream cache may apply",
       "summary": "Publisher identifies first edition hardcover and purchase/library-platform links. Institutional entitlement remains unverified."
+    },
+    {
+      "source_id": "book:9781119404521",
+      "url": "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+      "checked_at": "2026-09-05T21:23:48.289201Z",
+      "method": "Owner-supplied local PDF identity and full-text review; URL is related publisher metadata, not the evidence of permission",
+      "summary": "Supplied 2017 ePDF ISBN verified on PDF page 10; complete source coverage and owner authorization are recorded in bogle-2017-acquisition.json. Raw file remains local and ignored."
     }
   ],
   "review_queue": [
-    {
-      "source_id": "book:9781119404507",
-      "reason": "access_and_permissions_needed",
-      "action": "No permitted full-text file has been acquired; verify exact format, reading, machine ingestion, private storage and redistribution separately."
-    },
     {
       "source_id": "book:9781324035435",
       "reason": "access_and_permissions_needed",

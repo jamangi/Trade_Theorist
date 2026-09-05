@@ -19,5 +19,6 @@ runs/*
 market/
 characters/*/mail/
 library/notes/private/
+library/sources/private/
 .coverage
 .pytest_cache/

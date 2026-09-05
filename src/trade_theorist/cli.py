@@ -10,6 +10,7 @@ from .contracts import ContractError, digest, migrate_v0_theory, validate, valid
 from .fixtures import base_records, CHAR, CONSTITUTION, CURRICULUM, EXP, MATERIAL, SOURCE
 from .learn import BoundedModel, Learner, RecordedProvider
 from .learn.model import AmbiguousCall, UsageExhausted
+from .learn.reviewed import foundation_status
 from .library import AccessChecker, validate_catalog
 from .logging import public_log
 from .storage import Store, now
@@ -57,6 +58,7 @@ def main(argv=None):
     learn = commands.add_parser("learn", help="Show real Character readiness; use Python API for permitted source inputs")
     learn.add_argument("--character", choices=["index_steward"], required=True)
     learn.add_argument("--catalog", default="library/catalog/pilot.json")
+    learn.add_argument("--character-dir", default="characters/index_steward")
     args = parser.parse_args(argv)
     try:
         if args.command == "validate":
@@ -87,6 +89,9 @@ def main(argv=None):
             index = validate_catalog(catalog)
             slot = next(s for s in catalog["assignments"] if s["character_id"] == args.character and s["position"] == 1)
             source = index[slot["source_id"]]
+            if (Path(args.character_dir) / "checkpoints/bogle-2017-completion.json").exists():
+                print(json.dumps(foundation_status(args.character_dir, source["id"]), indent=2))
+                return 0
             print(json.dumps({"character": args.character, "status": "not_ready", "source_id": source["id"], "reason": source["blocker"] or "Register permitted source material and a reviewed model adapter through the learning API; no real model provider is configured."}, indent=2))
             return 2
     except (ContractError, ValueError, OSError, AmbiguousCall, UsageExhausted):

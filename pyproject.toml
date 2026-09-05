@@ -9,6 +9,9 @@ description = "Inspectable research contracts, persistence, and ordered learning
 requires-python = ">=3.11"
 dependencies = ["jsonschema==4.25.1"]
 
+[project.optional-dependencies]
+learning = ["pypdf==6.10.0"]
+
 [project.scripts]
 trade-theorist = "trade_theorist.cli:main"
 

@@ -1,10 +1,10 @@
 schema_version: 1
 character_id: index_steward
-status: blocked
-edition_status: catalog_candidates_pending_permitted_acquisition
+status: foundation_complete_remaining_books_unread
+edition_status: foundation_epdf_verified_other_slots_pending_acquisition
 slots:
   - position: 1
-    source_id: book:9781119404507
+    source_id: book:9781119404521
     title: The Little Book of Common Sense Investing
     intended_lesson: Form low-cost diversification, long horizons and humility.
   - position: 2

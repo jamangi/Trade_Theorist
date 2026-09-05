@@ -41,6 +41,9 @@ def validate(record):
         raise ContractError("Invalid contract at " + "/".join(map(str, errors[0].path)) + ": " + errors[0].validator)
     if kind != "source" and record["experiment_id"] is None:
         raise ContractError("Experiment scope required")
+    if kind == "learning_session":
+        if record["id"] != record["experiment_id"] or record["contamination"] not in ("fixture", "hindsight-contaminated"):
+            raise ContractError("Learning session requires its own non-prospective scope")
     if kind == "experiment":
         if record["id"] != record["experiment_id"]:
             raise ContractError("Experiment identity differs from scope")
@@ -80,7 +83,7 @@ def validate(record):
         if accepted & rejected or len(accepted) != len(record["accepted_claims"]) or len(rejected) != len(record["rejected_claims"]):
             raise ContractError("Claim dispositions must have distinct identities")
     if kind == "source" and record["ingestion_status"] in ("partial", "complete"):
-        if record["access"] not in ("public_full_text", "sample_only", "owned_copy", "library_loan") or any(record["rights"][k] != "permitted" for k in ("reading", "machine_ingestion", "private_storage")):
+        if record["access"] not in ("public_full_text", "sample_only", "owned_copy", "user_supplied", "library_loan") or any(record["rights"][k] != "permitted" for k in ("reading", "machine_ingestion", "private_storage")):
             raise ContractError("Ingested source requires access and permissions")
         if record["access"] == "sample_only" and record["ingestion_status"] == "complete":
             raise ContractError("Sample access cannot imply complete ingestion")
@@ -152,10 +155,17 @@ def validate_bundle(records):
 
     for record in records:
         if record["record_type"] != "source":
-            experiment = reference(record, record["experiment_id"], "experiment")
+            experiment = reference(record, record["experiment_id"], None)
+            if experiment["record_type"] not in ("experiment", "learning_session"):
+                raise ContractError("Scope must be an experiment or learning session")
+            if experiment["record_type"] == "learning_session":
+                if record["record_type"] not in ("learning_session", "character", "checkpoint", "registration", "theory", "model_call", "run_manifest"):
+                    raise ContractError("Learning scope cannot contain market or portfolio activity")
+                if record["record_type"] == "run_manifest" and record["mode"] != "learning":
+                    raise ContractError("Learning scope requires a learning run")
             if record["contamination"] != experiment["contamination"]:
                 raise ContractError("Evidence labels must match experiment")
-            instruments = {i["instrument_id"] for i in experiment["universe"]}
+            instruments = {i["instrument_id"] for i in experiment.get("universe", [])}
             if record.get("instrument_id") and record["instrument_id"] not in instruments:
                 raise ContractError("Instrument outside preregistered universe")
             if record.get("character_version") and record["character_version"] not in experiment["character_versions"]:
