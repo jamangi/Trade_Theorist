@@ -18,6 +18,8 @@ characters/ pilot artifacts; src/theorize/; recorded independent opinions and ma
 
 Demonstrate three independent fixture opinions and one real learned checkpoint per ready Character; blocked sources leave real readiness false. Missing citations, invalid quantities, and unsupported certainty are rejected. No claim that all four books were learned after one checkpoint.
 
+Source update (2026-09-05): Value and Trend foundation PDFs are present in the [current inventory](../library/catalog/INVENTORY_REPORT.md). Prepare and register the actual editions before learning. This task starts specialist learning; later books require additional ordered runs under the [full-curriculum completion criteria](../docs/character-training.md).
+
 ## Usage rationale
 
 Reuse the reviewed learning design; Sol handles distinct artifacts and structured output plumbing.

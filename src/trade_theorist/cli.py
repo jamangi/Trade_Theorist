@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -12,6 +13,7 @@ from .learn import BoundedModel, Learner, RecordedProvider
 from .learn.model import AmbiguousCall, UsageExhausted
 from .learn.reviewed import foundation_status
 from .library import AccessChecker, validate_catalog
+from .inventory import inventory_summary, verify_files
 from .logging import public_log
 from .storage import Store, now
 
@@ -51,8 +53,9 @@ def main(argv=None):
     demo.add_argument("--data-root", required=True)
     demo.add_argument("--outputs", default="examples/learning/recorded-outputs.fixture.json")
     library = commands.add_parser("library")
-    library.add_argument("action", choices=["report", "check"])
-    library.add_argument("--catalog", default="library/catalog/pilot.json")
+    library.add_argument("action", choices=["report", "check", "verify-files"])
+    library.add_argument("--catalog", help="Defaults to current inventory for report/verify-files, historical pilot for HTTP check")
+    library.add_argument("--books-root", help="Local PDF directory; defaults to TRADE_THEORIST_BOOKS_ROOT")
     library.add_argument("--data-root")
     library.add_argument("--force", action="store_true")
     learn = commands.add_parser("learn", help="Show real Character readiness; use Python API for permitted source inputs")
@@ -73,10 +76,28 @@ def main(argv=None):
         elif args.command == "foundation-demo":
             print(json.dumps(foundation_demo(args.data_root, args.outputs), indent=2))
         elif args.command == "library":
-            catalog = read(args.catalog)
+            catalog = read(args.catalog or ("library/catalog/pilot.json" if args.action == "check" else "library/catalog/characters.json"))
+            if catalog.get("catalog_type") == "local_book_inventory":
+                if args.action == "report":
+                    print(json.dumps(inventory_summary(catalog), indent=2))
+                elif args.action == "verify-files":
+                    root = args.books_root or os.environ.get("TRADE_THEORIST_BOOKS_ROOT")
+                    if not root:
+                        print("Set TRADE_THEORIST_BOOKS_ROOT or pass --books-root.", file=sys.stderr)
+                        return 2
+                    result = verify_files(catalog, root)
+                    print(json.dumps(result, indent=2))
+                    return 2 if any(f["status"] in ("missing", "changed") for f in result["files"]) else 0
+                else:
+                    print("Use verify-files for the local inventory; check is for publisher URLs in pilot.json.", file=sys.stderr)
+                    return 2
+                return 0
+            if args.action == "verify-files":
+                print("verify-files requires the local inventory catalog.", file=sys.stderr)
+                return 2
             validate_catalog(catalog)
             if args.action == "report":
-                print(json.dumps({"slots": len(catalog["assignments"]), "sources": len(catalog["sources"]), "review_queue": catalog["review_queue"]}, indent=2))
+                print(json.dumps({"scope": "pilot_publisher_candidates_and_frozen_bogle_source", "current_inventory": "library/catalog/characters.json", "slots": len(catalog["assignments"]), "sources": len(catalog["sources"]), "review_queue": catalog["review_queue"]}, indent=2))
             else:
                 with Store(args.data_root) as store:
                     checker = AccessChecker(store)

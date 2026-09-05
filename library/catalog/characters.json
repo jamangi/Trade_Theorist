@@ -1,0 +1,1101 @@
+{
+  "schema_version": 1,
+  "catalog_type": "local_book_inventory",
+  "checked_at": "2026-09-05T22:54:20.591485Z",
+  "books_root_environment": "TRADE_THEORIST_BOOKS_ROOT",
+  "scope": "Owner-requested local file inventory and identity review only. Raw books stay outside the public repository. This record grants no model-training, redistribution or Character-readiness status.",
+  "sources": [
+    {
+      "id": "local:malkiel-random-walk",
+      "title": "A Random Walk Down Wall Street",
+      "authors": [
+        "Burton G. Malkiel"
+      ],
+      "edition": "50th anniversary / 13th edition, copyright 2023, ebook rendering",
+      "observed_isbns": [
+        {
+          "isbn": "9781324035442",
+          "format": "ebook"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "A_Random_Walk_Down_Wall_Street_13th_Ed_-_Burton_G_Malkiel.pdf",
+        "sha256": "1900154d710f70f05cf3cbd3bca239295d1e8e97ddbeace14f963436076ff5f3",
+        "size_bytes": 21847905,
+        "page_count": 433
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          2,
+          4,
+          433
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Replaces the earlier 2024 paperback candidate with the supplied 2023 ebook edition. Full chapter/page coverage remains unverified."
+    },
+    {
+      "id": "local:lopez-de-prado-afml",
+      "title": "Advances in Financial Machine Learning",
+      "authors": [
+        "Marcos López de Prado"
+      ],
+      "edition": "2018, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9781119482086",
+          "format": "hardcover"
+        },
+        {
+          "isbn": "9781119482116",
+          "format": "ePDF"
+        },
+        {
+          "isbn": "9781119482109",
+          "format": "ePub"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Advances_in_Financial_Machine_Learning_-_Marcos_Lopez_de_Prado.pdf",
+        "sha256": "5775b354acaf1f2a704adbe9ac52175cb9c95777cf991b732fda25af045ec8b3",
+        "size_bytes": 15641590,
+        "page_count": 481
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Native-format identity and coverage must be pinned before learning; sample text is extractable."
+    },
+    {
+      "id": "local:bernstein-against-gods",
+      "title": "Against the Gods",
+      "authors": [
+        "Peter L. Bernstein"
+      ],
+      "edition": "Unresolved edition/format; title and author identified",
+      "observed_isbns": [],
+      "availability": "local_file",
+      "file": {
+        "name": "Against_the_Gods_-_Peter_L_Bernstein.pdf",
+        "sha256": "efaf7eba28e47c50a92cc6f29bc58c529ab75f2ebcf5449f02e95a3f7d4b5beb",
+        "size_bytes": 6093365,
+        "page_count": 468
+      },
+      "identity_evidence": {
+        "method": "Rendered cover/title review and text metadata search; edition/ISBN unresolved",
+        "pdf_pages": [
+          2,
+          4,
+          6,
+          7,
+          9,
+          10
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "layout_review_required",
+      "notes": "Title/author confirmed visually, but publication/ISBN details were not found in the identity search. Split title-page layout and converted text need review; do not infer complete coverage from 468 pages."
+    },
+    {
+      "id": "local:chan-algorithmic",
+      "title": "Algorithmic Trading",
+      "authors": [
+        "Ernest P. Chan"
+      ],
+      "edition": "2013, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9781118460146",
+          "format": "cloth, as printed in the PDF"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Algorithmic_Trading_-_Ernest_P_Chan.pdf",
+        "sha256": "1c8b27ebee9f35f964794013e8629e5343c23506fa890ad65783867e8b3518ba",
+        "size_bytes": 9243351,
+        "page_count": 225
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Only the print ISBN is observed; the PDF format identifier remains unresolved. Check tables, formulae and full coverage before learning."
+    },
+    {
+      "id": "local:johnson-dma",
+      "title": "Algorithmic Trading and DMA",
+      "authors": [
+        "Barry Johnson"
+      ],
+      "edition": "2010, 4Myeloma Press; scanned copy",
+      "observed_isbns": [],
+      "availability": "local_file",
+      "file": {
+        "name": "Algorithmic_Trading_and_DMA_-_Johnson.pdf",
+        "sha256": "edf978aaae7a53bb8d2850d2cb1283adc8eb32c477e01bc6fc505fe2fe8a09bb",
+        "size_bytes": 19828984,
+        "page_count": 595
+      },
+      "identity_evidence": {
+        "method": "Rendered cover, title and copyright pages reviewed visually; first 16 pages tested for text",
+        "pdf_pages": [
+          1,
+          3,
+          4
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "ocr_required",
+      "notes": "Cover/title/copyright verified visually. No text was extracted from the first 16 pages. OCR and page-by-page coverage checks are required; ISBN remains unresolved."
+    },
+    {
+      "id": "local:fisher-common-stocks",
+      "title": "Common Stocks and Uncommon Profits and Other Writings",
+      "authors": [
+        "Philip A. Fisher"
+      ],
+      "edition": "1996/2003 expanded volume, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9780471445500",
+          "format": "print ISBN 0-471-44550-9, normalized to ISBN-13"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Common_Stocks_and_Uncommon_Profits_and_Oth_-_Philip_A_Fisher.pdf",
+        "sha256": "1cdbcb1fc5e4b1d30a619d1c540e7d5893db9a62a1500979be0395ea6787d269",
+        "size_bytes": 1979066,
+        "page_count": 307
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "The requested title is Part One of an expanded volume. Label any additional writings separately in the coverage plan; native PDF ISBN unresolved."
+    },
+    {
+      "id": "local:aronson-evidence",
+      "title": "Evidence-Based Technical Analysis",
+      "authors": [
+        "David R. Aronson"
+      ],
+      "edition": "Copyright 2007, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9780470008744",
+          "format": "cloth"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Evidence-Based_Technical_Analysis_Applying_the_Scientific_Method_and_Statistical_Inference_to_Trading_Signals_-_David_Aaronson.pdf",
+        "sha256": "a9239928732876feb9f2deb00bfaa89f8fcc9f691359a5ed75552ba27223d9d1",
+        "size_bytes": 2158137,
+        "page_count": 528
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Internal copyright year is 2007; the earlier publisher listing used 2006. Preserve both observations rather than inventing a new edition. Full coverage remains unverified."
+    },
+    {
+      "id": "local:mauboussin-expectations",
+      "title": "Expectations Investing",
+      "authors": [
+        "Michael J. Mauboussin",
+        "Alfred Rappaport"
+      ],
+      "edition": "Revised and updated, 2021, Columbia University Press",
+      "observed_isbns": [
+        {
+          "isbn": "9780231203043",
+          "format": "hardback"
+        },
+        {
+          "isbn": "9780231554848",
+          "format": "ebook"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Expectations_Investing_-_Michael_Mauboussin.pdf",
+        "sha256": "ad1c2b69aa3554b72617128d987c5bddbd8cb6ed96ca2df37ffaec9b23b6bdc5",
+        "size_bytes": 1472766,
+        "page_count": 262
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "One file serves Value position 4 and Event position 3. Each Character must assimilate it separately through its own prior; no shared learned memory."
+    },
+    {
+      "id": "local:clenow-following-trend",
+      "title": "Following the Trend",
+      "authors": [
+        "Andreas F. Clenow"
+      ],
+      "edition": "2nd edition, 2023, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9781119908982",
+          "format": "hardback"
+        },
+        {
+          "isbn": "9781119908999",
+          "format": "ePDF"
+        },
+        {
+          "isbn": "9781119909002",
+          "format": "ePub"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Following_the_Trend_Diversified_Managed_Futures_Trading_-_Andreas_Clenow.pdf",
+        "sha256": "fcd93c122eff1f0c502d7c15df0460ec47dcc86264b4fca32d0cb2454ab39748",
+        "size_bytes": 8731773,
+        "page_count": 339
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Second edition confirmed internally despite the filename omitting its number. Futures content does not expand the approved experiment universe."
+    },
+    {
+      "id": "local:taleb-fooled",
+      "title": "Fooled by Randomness",
+      "authors": [
+        "Nassim Nicholas Taleb"
+      ],
+      "edition": "2004 revised work, Random House ebook; 2005 paperback history",
+      "observed_isbns": [
+        {
+          "isbn": "9781588367679",
+          "format": "eISBN"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Fooled_by_Randomness_-_Nassim_Nicholas_Taleb.pdf",
+        "sha256": "b93810d770cecaae8263a605ea04064001e17d8de1f10466edef7e083a7d8b0c",
+        "size_bytes": 2060339,
+        "page_count": 291
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          2,
+          291
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Copyright and ebook identity verified on the final PDF page. Full source coverage remains unverified."
+    },
+    {
+      "id": "local:chan-machine",
+      "title": "Machine Trading",
+      "authors": [
+        "Ernest P. Chan"
+      ],
+      "edition": "2017, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9781119219606",
+          "format": "hardcover"
+        },
+        {
+          "isbn": "9781119219675",
+          "format": "ePDF"
+        },
+        {
+          "isbn": "9781119219651",
+          "format": "ePub"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Machine_Trading_-_Ernest_P_Chan.pdf",
+        "sha256": "012e1fe8e728704c299b8bfdc7127c484faed9ca4d28f8efec1e1b2c53a862d1",
+        "size_bytes": 1463189,
+        "page_count": 267
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "layout_review_required",
+      "notes": "Text extraction contains joined words and production marks. Normalize with page fidelity checks, especially formulae; do not feed unchecked extraction into learning."
+    },
+    {
+      "id": "local:oglove-earnings",
+      "title": "Quality of Earnings",
+      "authors": [
+        "Thornton L. O’glove",
+        "Robert Sobel (with)"
+      ],
+      "edition": "Copyright 1987, The Free Press; scanned copy",
+      "observed_isbns": [
+        {
+          "isbn": "9780684863757",
+          "format": "print ISBN 0-684-86375-8, normalized to ISBN-13"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Quality_of_Earnings_-_Thornton_L_OGlove.pdf",
+        "sha256": "41c9df94ed448a5f96e5f3aa116f9fb296206bc7e04529cdb0b2286c8b379f56",
+        "size_bytes": 36243010,
+        "page_count": 231
+      },
+      "identity_evidence": {
+        "method": "Rendered cover, title and copyright pages reviewed visually; first 16 pages tested for text",
+        "pdf_pages": [
+          1,
+          4,
+          5,
+          6
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "ocr_required",
+      "notes": "Title, author, publisher and copyright page verified visually. First 16 pages yield no text; OCR and full coverage checks are required."
+    },
+    {
+      "id": "local:chan-quantitative",
+      "title": "Quantitative Trading",
+      "authors": [
+        "Ernest P. Chan"
+      ],
+      "edition": "2nd edition, 2021, Wiley; ebook rendering",
+      "observed_isbns": [
+        {
+          "isbn": "9781119800064",
+          "format": "hardback"
+        },
+        {
+          "isbn": "9781119800088",
+          "format": "ePDF"
+        },
+        {
+          "isbn": "9781119800071",
+          "format": "ePub"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Quantitative_Trading_-_Ernest_P_Chan.pdf",
+        "sha256": "001e2543b967697db29f17c8fc1e0b66d04eecc7cca830610e783ab21633e5d5",
+        "size_bytes": 2714916,
+        "page_count": 299
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          7,
+          8,
+          10
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Second edition confirmed from title/preface and copyright, not assumed to be the original 2009 book. Pin the supplied edition before learning."
+    },
+    {
+      "id": "local:bogle-common-sense",
+      "title": "The Little Book of Common Sense Investing",
+      "authors": [
+        "John C. Bogle"
+      ],
+      "edition": "10th anniversary / 2nd edition, 2017, Wiley ePDF",
+      "observed_isbns": [
+        {
+          "isbn": "9781119404521",
+          "format": "ePDF"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The-Little-Book-of-Common-Sense-Investing-PDF.pdf",
+        "sha256": "b5c2c3136dc2fda5b24a584b3ad23ffbc7ae9ed46c750155badfe1303d5e68e3",
+        "size_bytes": 2305644,
+        "page_count": 305
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          9,
+          10
+        ]
+      },
+      "coverage": "verified_in_prior_learning",
+      "text_status": "text_present",
+      "notes": "SHA-256 exactly matches the completed TASK-004 foundation source. Introduction and 20 chapters already have 21 reviewed checkpoints. This inventory adds no new reading.",
+      "prior_source_id": "book:9781119404521",
+      "learning_evidence": "characters/index_steward/checkpoints/bogle-2017-completion.json"
+    },
+    {
+      "id": "local:freeman-shor-execution",
+      "title": "The Art of Execution",
+      "authors": [
+        "Lee Freeman-Shor"
+      ],
+      "edition": "2015, Harriman House ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9780857195029",
+          "format": "ebook"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The_Art_of_Execution_How_the_worlds_best_investors_get_it_wrong_and_still_make_millions_-_Lee_Freeman-Shor.pdf",
+        "sha256": "3722e1a5b8aad2b752b3a08b045784a47c1f45f005f729925477f2927275df1f",
+        "size_bytes": 1080610,
+        "page_count": 105
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          2,
+          103
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Publishing details occur near the end. Full source coverage remains unverified."
+    },
+    {
+      "id": "local:buffett-essays",
+      "title": "The Essays of Warren Buffett",
+      "authors": [
+        "Warren E. Buffett",
+        "Lawrence A. Cunningham (selected, arranged and introduced)"
+      ],
+      "edition": "3rd edition, 2013, Carolina Academic Press ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9781611634471",
+          "format": "eISBN"
+        },
+        {
+          "isbn": "9781611634099",
+          "format": "print"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The_Essays_of_Warren_Buffett_-_Warren_Buffett.pdf",
+        "sha256": "693f090186622a7b01eee836a04b38da30bef15825ee0c8abe951726be666802",
+        "size_bytes": 2385189,
+        "page_count": 421
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          3,
+          4,
+          5
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Supplied third edition differs from the earlier fifth-edition 2019 candidate. Register the third edition explicitly in a new curriculum version; do not attribute later additions to it."
+    },
+    {
+      "id": "local:bernstein-four-pillars",
+      "title": "The Four Pillars of Investing",
+      "authors": [
+        "William J. Bernstein"
+      ],
+      "edition": "2nd edition, 2023, McGraw Hill ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9781264716425",
+          "format": "ebook"
+        },
+        {
+          "isbn": "9781264715916",
+          "format": "print"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The_Four_Pillars_of_Investing_2nd_Ed_-_William_Bernstein.pdf",
+        "sha256": "6d1357fe11f4849477b2c6ce8d31a12f11fb7a640c46aaf65942ccaf1822fb35",
+        "size_bytes": 10840817,
+        "page_count": 384
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          8,
+          9
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Second-edition ebook identity confirmed. Supplied format differs from the earlier print candidate; coverage remains unverified."
+    },
+    {
+      "id": "local:graham-intelligent",
+      "title": "The Intelligent Investor",
+      "authors": [
+        "Benjamin Graham",
+        "Jason Zweig (new commentary)"
+      ],
+      "edition": "Revised edition, June 2003 EPUB rendered as PDF, HarperCollins",
+      "observed_isbns": [
+        {
+          "isbn": "9780061745171",
+          "format": "eISBN of June 2003 EPUB edition"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The_intelligent_investor_-_Benjamin_Graham.pdf",
+        "sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+        "size_bytes": 5751056,
+        "page_count": 660
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          2,
+          596,
+          597
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Previously unresolved edition now identified internally. Keep Graham’s 1973 text and Zweig’s 2003 commentary attributed separately; verify coverage before learning."
+    },
+    {
+      "id": "local:marks-illuminated",
+      "title": "The Most Important Thing Illuminated",
+      "authors": [
+        "Howard Marks"
+      ],
+      "edition": "2013, annotated edition, Columbia University Press ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9780231530798",
+          "format": "eISBN"
+        },
+        {
+          "isbn": "9780231162845",
+          "format": "cloth"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The_Most_Important_Thing_Illuminated_-_Howard_Marks.pdf",
+        "sha256": "b01fb4c9ce3e1d1c22d4d33f808a3263d2d71d936ad88cf531222d0cca56eb75",
+        "size_bytes": 1744000,
+        "page_count": 238
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          4,
+          5
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Annotated Illuminated edition differs from the plain title in the design curriculum. Separate Marks’s text from guest annotations and record this scope in the new curriculum version."
+    },
+    {
+      "id": "local:housel-psychology",
+      "title": "The Psychology of Money",
+      "authors": [
+        "Morgan Housel"
+      ],
+      "edition": "2020, Harriman House ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9780857197696",
+          "format": "ebook"
+        },
+        {
+          "isbn": "9780857197689",
+          "format": "paperback"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "The_psychology_of_money_-_Morgan_housel.pdf",
+        "sha256": "41283e7f02106206920cc0dda82dd1d15e9f163878d156daaaf7ace370edf83f",
+        "size_bytes": 3106813,
+        "page_count": 197
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          1,
+          4,
+          196
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Ebook publishing details verified near the end. Replaces the earlier paperback candidate for future source registration; coverage remains unverified."
+    },
+    {
+      "id": "local:duke-bets",
+      "title": "Thinking in Bets",
+      "authors": [
+        "Annie Duke"
+      ],
+      "edition": "2018, Portfolio/Penguin; EPUB rendered as PDF",
+      "observed_isbns": [
+        {
+          "isbn": "9780735216358",
+          "format": "hardback"
+        },
+        {
+          "isbn": "9780735216365",
+          "format": "epub"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Thinking_in_Bets_-_Annie_duke.pdf",
+        "sha256": "8fa058defff504f82c099f23ff2a6bb8f56408fa41441c8315b673397facb884",
+        "size_bytes": 2861444,
+        "page_count": 248
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Copyright page labels the digital ISBN as EPUB. Do not label this converted file a native publisher ePDF; full coverage remains unverified."
+    },
+    {
+      "id": "local:harris-trading-exchanges",
+      "title": "Trading and Exchanges",
+      "authors": [
+        "Larry Harris"
+      ],
+      "edition": "March 2002 draft excerpts; NOT the complete published book",
+      "observed_isbns": [],
+      "availability": "local_file",
+      "file": {
+        "name": "Trading_and_Exchanges_-_Larry_Harris.pdf",
+        "sha256": "634ae031ffa3ae2fea70e7e3b561daf7186cc8152fbc35f6c6f43361977b01eb",
+        "size_bytes": 665789,
+        "page_count": 113
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          1,
+          9,
+          10,
+          21,
+          23,
+          25,
+          26,
+          108,
+          110,
+          111,
+          113
+        ]
+      },
+      "coverage": "partial",
+      "text_status": "text_present",
+      "notes": "113-page file contains chapter openings: for example chapter 3 ends at 3-3 on PDF page 25 and chapter 4 starts on page 26; later chapters similarly stop at page 3. The bibliography ends at B-3. Obtain a complete foundation copy or explicitly revise the foundation curriculum. Excerpts cannot satisfy full-book learning."
+    },
+    {
+      "id": "local:kaufman-systems",
+      "title": "Trading Systems and Methods",
+      "authors": [
+        "Perry J. Kaufman"
+      ],
+      "edition": "5th edition, 2013, Wiley",
+      "observed_isbns": [
+        {
+          "isbn": "9781118043561",
+          "format": "cloth"
+        },
+        {
+          "isbn": "9781118222249",
+          "format": "ebook, format unspecified"
+        },
+        {
+          "isbn": "9781118260920",
+          "format": "ebook, format unspecified"
+        },
+        {
+          "isbn": "9781118236031",
+          "format": "ebook, format unspecified"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Trading_Systems_n_Methods__Website_5th_Ed_-_Perry_J_Kaufman.pdf",
+        "sha256": "355ec7c138c6d3e03aa5704999b0ff78b8ff7116cc249a551120c4c014695010",
+        "size_bytes": 26731738,
+        "page_count": 1232
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Supplied fifth edition differs from the earlier sixth-edition 2019 candidate. Multiple ebook ISBNs are listed without a format mapping; do not guess which identifies the PDF."
+    },
+    {
+      "id": "local:faith-turtle",
+      "title": "Way of the Turtle",
+      "authors": [
+        "Curtis M. Faith"
+      ],
+      "edition": "2007, McGraw Hill ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9780071509466",
+          "format": "ebook"
+        },
+        {
+          "isbn": "9780071486644",
+          "format": "print"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "Way_of_the_Turtle_-_Curtis_Faith.pdf",
+        "sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+        "size_bytes": 4350290,
+        "page_count": 259
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          2,
+          3
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Ebook identity confirmed. Formative reading for Trend remains pending; possessing the file does not establish a checkpoint."
+    },
+    {
+      "id": "local:greenblatt-genius",
+      "title": "You Can Be a Stock Market Genius",
+      "authors": [
+        "Joel Greenblatt"
+      ],
+      "edition": "Copyright 1997; first Fireside edition 1999, Simon & Schuster ebook",
+      "observed_isbns": [
+        {
+          "isbn": "9781451628067",
+          "format": "eISBN"
+        }
+      ],
+      "availability": "local_file",
+      "file": {
+        "name": "You_Can_Be_a_Stock_Market_Genius_-_Joel_Greenblatt.pdf",
+        "sha256": "bbb993ba14a288fed1d14163a082f1aa8333c626cfed1d6a2db55a6ed944f7c1",
+        "size_bytes": 1150178,
+        "page_count": 172
+      },
+      "identity_evidence": {
+        "method": "PDF text identity review",
+        "pdf_pages": [
+          3,
+          4,
+          5
+        ]
+      },
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Ebook identity and edition history verified. Full source coverage remains unverified."
+    },
+    {
+      "id": "missing:bouchaud-trades-quotes-prices",
+      "title": "Trades, Quotes and Prices",
+      "authors": [
+        "Jean-Philippe Bouchaud",
+        "Julius Bonart",
+        "Jonathan Donier",
+        "Martin Gould"
+      ],
+      "edition": "Unresolved; no supplied copy",
+      "observed_isbns": [],
+      "availability": "missing",
+      "file": null,
+      "identity_evidence": null,
+      "coverage": "missing",
+      "text_status": "missing",
+      "notes": "No file in the supplied folder. Keep the original slot blocked; see docs/microstructure-alternatives.md for a proposed open-paper packet."
+    },
+    {
+      "id": "missing:lehalle-laruelle-practice",
+      "title": "Market Microstructure in Practice",
+      "authors": [
+        "Charles-Albert Lehalle",
+        "Sophie Laruelle"
+      ],
+      "edition": "Unresolved; no supplied copy",
+      "observed_isbns": [],
+      "availability": "missing",
+      "file": null,
+      "identity_evidence": null,
+      "coverage": "missing",
+      "text_status": "missing",
+      "notes": "No file in the supplied folder. Keep the original slot blocked; see docs/microstructure-alternatives.md for a proposed open-paper packet."
+    }
+  ],
+  "assignments": [
+    {
+      "character_id": "index_steward",
+      "position": 1,
+      "source_id": "local:bogle-common-sense",
+      "intended_lesson": "Form low-cost diversification, long horizons and humility.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "index_steward",
+      "position": 2,
+      "source_id": "local:malkiel-random-walk",
+      "intended_lesson": "Challenge forecasts with efficient-market skepticism.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "index_steward",
+      "position": 3,
+      "source_id": "local:bernstein-four-pillars",
+      "intended_lesson": "Connect theory, history, psychology and the investment business.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "index_steward",
+      "position": 4,
+      "source_id": "local:housel-psychology",
+      "intended_lesson": "Include behavior and endurance in risk capacity.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 1,
+      "source_id": "local:graham-intelligent",
+      "intended_lesson": "Form margin-of-safety and investor-versus-speculator discipline.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 2,
+      "source_id": "local:buffett-essays",
+      "intended_lesson": "Add business quality, management and capital allocation.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 3,
+      "source_id": "local:fisher-common-stocks",
+      "intended_lesson": "Challenge asset-value instincts with qualitative growth and durability.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "value_rationalist",
+      "position": 4,
+      "source_id": "local:mauboussin-expectations",
+      "intended_lesson": "Test future expectations embedded in price.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 1,
+      "source_id": "local:faith-turtle",
+      "intended_lesson": "Form explicit entry, sizing and exit discipline.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 2,
+      "source_id": "local:clenow-following-trend",
+      "intended_lesson": "Turn trend intuition into testable portfolio rules.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 3,
+      "source_id": "local:kaufman-systems",
+      "intended_lesson": "Expand implementation choices and recognize parameter risk.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "position": 4,
+      "source_id": "local:aronson-evidence",
+      "intended_lesson": "Challenge the formed trend believer with statistical and data-mining tests.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "mean_reversion_experimentalist",
+      "position": 1,
+      "source_id": "local:chan-quantitative",
+      "intended_lesson": "Form research workflow, backtesting and implementation realism.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "mean_reversion_experimentalist",
+      "position": 2,
+      "source_id": "local:chan-algorithmic",
+      "intended_lesson": "Deepen mean-reversion and momentum rationales.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "mean_reversion_experimentalist",
+      "position": 3,
+      "source_id": "local:chan-machine",
+      "intended_lesson": "Add regime awareness and feature construction.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "mean_reversion_experimentalist",
+      "position": 4,
+      "source_id": "local:lopez-de-prado-afml",
+      "intended_lesson": "Challenge models with leakage and cross-validation defenses.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 1,
+      "source_id": "local:harris-trading-exchanges",
+      "intended_lesson": "Form a map of participants, orders, markets and liquidity.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 2,
+      "source_id": "local:johnson-dma",
+      "intended_lesson": "Add execution mechanics, benchmarks and algorithm design.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 3,
+      "source_id": "missing:bouchaud-trades-quotes-prices",
+      "intended_lesson": "Quantify order flow, impact and price formation.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 4,
+      "source_id": "missing:lehalle-laruelle-practice",
+      "intended_lesson": "Connect theory to measurement, monitoring and execution constraints.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "probabilistic_risk_skeptic",
+      "position": 1,
+      "source_id": "local:taleb-fooled",
+      "intended_lesson": "Form skepticism about luck, survivorship and asymmetric exposure.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "probabilistic_risk_skeptic",
+      "position": 2,
+      "source_id": "local:bernstein-against-gods",
+      "intended_lesson": "Add the history and conceptual machinery of probability.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "probabilistic_risk_skeptic",
+      "position": 3,
+      "source_id": "local:duke-bets",
+      "intended_lesson": "Separate decision and outcome quality; update beliefs.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "probabilistic_risk_skeptic",
+      "position": 4,
+      "source_id": "local:marks-illuminated",
+      "intended_lesson": "Apply cycles, defensive investing and risk control.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "event_and_disclosure_detective",
+      "position": 1,
+      "source_id": "local:greenblatt-genius",
+      "intended_lesson": "Form special-situation and catalyst reasoning.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "event_and_disclosure_detective",
+      "position": 2,
+      "source_id": "local:oglove-earnings",
+      "intended_lesson": "Challenge reported earnings with forensic accounting.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "event_and_disclosure_detective",
+      "position": 3,
+      "source_id": "local:mauboussin-expectations",
+      "intended_lesson": "Test what the current price already assumes.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    },
+    {
+      "character_id": "event_and_disclosure_detective",
+      "position": 4,
+      "source_id": "local:freeman-shor-execution",
+      "intended_lesson": "Examine decisions after entry, including exits and adaptation.",
+      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    }
+  ]
+}

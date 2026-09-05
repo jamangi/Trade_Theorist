@@ -14,6 +14,8 @@ Specify the separate Trader Analyzer package contract for official House/Senate 
 
 Analyzer contract and fixture adapter; Event curriculum/source plan; delay-aware evaluation cases.
 
+Source update (2026-09-05): all four Event title slots have local files; Quality of Earnings needs OCR. Expectations Investing shares a file with Value, but learned interpretation must remain Character-specific. This task provides a source plan, not complete Event learning; see the [continuation map](../docs/character-training.md).
+
 ## Acceptance
 
 A transaction cannot influence a decision before public availability; unknown publication time stays ineligible; value ranges never become exact amounts; no unsupported motives or allegations. Show only contract-level fixtures until trustworthy ingestion exists.

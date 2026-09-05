@@ -64,6 +64,7 @@ if __name__ == "__main__":
     catalog = build()
     (directory / "pilot.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     lines = ["# Pilot book-access audit", "", "Updated 2026-09-05: the owner supplied Bogle's 2017 ePDF, ISBN 9781119404521. Identity, all 20 chapters and the introduction were reviewed. See [acquisition and scope](bogle-2017-acquisition.json) and [completed learning](../../docs/index-steward-foundation.md). The PDF stays local; public artifacts contain original analysis and citations. This bounded authorization is not a publisher redistribution grant.", "", "The original publisher metadata audit and hardcover candidate are retained. Thirteen source records cover twelve curriculum slots; all other book-access blockers remain. No additional book was bought or read.", "", "| Character / order | Edition candidate | Access finding and evidence |", "| --- | --- | --- |"]
+    lines[2:2] = ["**Historical pilot audit.** The later [all-Character local inventory](INVENTORY_REPORT.md) supersedes possession blockers below. The original edition candidates and Bogle source are retained for reproducibility; this report is not the current count of books on disk.", ""]
     for assignment in catalog["assignments"]:
         source = next(s for s in catalog["sources"] if s["id"] == assignment["source_id"])
         evidence = next(e for e in catalog["evidence"] if e["source_id"] == source["id"])
