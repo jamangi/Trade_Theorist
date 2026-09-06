@@ -1,5 +1,7 @@
 # TASK-017: Start forward paper portfolios and optional broker adapter
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 13](active/STEP-13-paper-portfolios.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high

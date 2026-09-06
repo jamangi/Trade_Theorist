@@ -1,5 +1,7 @@
 # TASK-011: Build honest evaluation and evidence grades
 
+> Historical task ID, retained for traceability. Remaining work is governed by [the ordered queue](README.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: implemented and verified (2026-09-06; fixture evaluation)
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high

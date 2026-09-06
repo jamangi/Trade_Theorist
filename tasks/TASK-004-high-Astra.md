@@ -1,5 +1,7 @@
 # TASK-004: Implement ordered learning and the reference Character
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 10](active/STEP-10-pilot-readiness.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: complete — software, fixture demonstration and real foundational source review verified (2026-09-05)
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high

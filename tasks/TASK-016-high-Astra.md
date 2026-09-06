@@ -1,5 +1,7 @@
 # TASK-016: Audit leakage, costs, recovery, and paper readiness
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 08](active/STEP-08-offline-preflight.md), [Step 12](active/STEP-12-readiness-audit.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high

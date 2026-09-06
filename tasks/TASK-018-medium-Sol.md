@@ -1,5 +1,7 @@
 # TASK-018: Package the private local observatory
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 05](active/STEP-05-local-package.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned replacement outcome; prior unimplemented GitHub Pages scope retired by META-001
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium

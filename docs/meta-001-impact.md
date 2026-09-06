@@ -1,5 +1,7 @@
 # META-001 impact and execution record
 
+> Subsequent queue refactor (2026-09-06): [ordered remaining work](../tasks/README.md) now starts at Step 01. Original TASK references below remain stable historical/contract references; [the crosswalk](../tasks/CROSSWALK.md) gives their active steps.
+
 Date: 2026-09-06. Audit baseline: `7681a34` on main. Status: architecture review executed; validation results are recorded below. No account, model, paper-order, paid-plan or deployment operation was performed.
 
 ## Outcome and improvements

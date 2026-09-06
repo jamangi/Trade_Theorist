@@ -1,6 +1,6 @@
 # Focused development and quiet validation
 
-Start with the requested `tasks/TASK-...md` files and their linked design documents.
+Start with [the active ordered queue](../tasks/README.md) and the requested active STEP brief. Original TASK files preserve historical evidence; they are not the active execution order. Read the brief's linked design documents.
 Use `rg --files src tests scripts` for the implementation map, then targeted symbol
 searches and short file slices. Do not print the entire library, schema fixture
 bundles, book transcripts or all test files to find a small interface. Generated

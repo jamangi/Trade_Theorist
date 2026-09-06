@@ -1,5 +1,7 @@
 # TASK-005: Create pilot specialists and structured recommendations
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 10](active/STEP-10-pilot-readiness.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: implemented and verified (2026-09-06)
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high

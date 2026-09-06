@@ -1,5 +1,7 @@
 # TASK-012: Build the two-tab performance dashboard
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 03](active/STEP-03-dashboard.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: v1 fixture dashboard implemented and verified; private v2 follow-up pending after META-001
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high

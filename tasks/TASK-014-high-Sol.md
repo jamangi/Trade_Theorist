@@ -1,5 +1,7 @@
 # TASK-014: Qualify a vendor and implement one market-data adapter
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 06](active/STEP-06-shared-requests.md), [Step 09](active/STEP-09-vendor-qualification.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: delayed SIP sample passed; shared request controls and production rights decision pending
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high

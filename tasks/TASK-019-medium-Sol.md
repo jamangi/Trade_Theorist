@@ -1,5 +1,7 @@
 # TASK-019: Add belief timelines and the research notebook
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 14](active/STEP-14-research-notebook.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium

@@ -1,5 +1,7 @@
 # META-001: Pivot to a local-first observatory and formalize Character performance
 
+> Subsequent queue refactor (2026-09-06): [ordered remaining work](../README.md) now starts at Step 01. Original TASK references below record META-001's execution; [the crosswalk](../CROSSWALK.md) maps active steps.
+
 - Status: complete (2026-09-06), within the bounded architecture/reference-contract scope below
 - Recommended model: GPT-6 Astra (`gpt-6-astra`)
 - Recommended effort: high

@@ -14,9 +14,11 @@ Here, learning means source-grounded reading, critique, versioned constitution c
 | Event and Disclosure Detective | TASK-022 | Curriculum/source plan and disclosure interface; full reading is not an acceptance criterion | 0 of 4 books |
 | Mean-Reversion Experimentalist | Not explicitly assigned a learning task | Later specialist expansion can be scoped through TASK-023 | 0 of 4 books |
 
+The [active queue](../tasks/README.md) exposes the real pilot readiness prerequisite in Step 10 and later Microstructure/Event scopes in Steps 16/17. The historical IDs above locate earlier evidence. Reading may continue earlier within its bounded authorization; Step 10 does not require all seven complete curricula.
+
 ## Completing an entire curriculum
 
-No existing task promises all required reading for every Character. After each Character's setup, additional bounded reading runs can use the TASK-004 engine; they need not wait for all 23 engineering tasks. Operational tasks retain their dependencies and readiness gates. Full Event and Mean-Reversion learning needs a separately scoped work item; cataloging material does not launch it.
+No existing task promises all required reading for every Character. After each Character's setup, additional bounded reading runs can use the TASK-004 engine; they need not wait for the remaining engineering sequence. Operational tasks retain their dependencies and readiness gates. Full Event and Mean-Reversion learning needs a separately scoped work item; cataloging material does not launch it.
 
 For each continuation:
 

@@ -1,5 +1,7 @@
 # ADR-004: Private observatory, versioned accounting, and attributable execution
 
+> Subsequent queue refactor (2026-09-06): [ordered remaining work](../../tasks/README.md) now starts at Step 01. Original TASK references below remain stable historical/contract references; [the crosswalk](../../tasks/CROSSWALK.md) gives their active steps.
+
 Date: 2026-09-06. Status: accepted architecture under the [approved META-001 defaults](../../tasks/meta-tasks/APPROVALS.md). Production migration is pending. This decision supersedes ADR-001's active public-dashboard target and amends ADR-003's delivery boundary; it does not replace vendor qualification or authorize requests/orders.
 
 ## Decision

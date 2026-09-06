@@ -25,12 +25,12 @@ Two dashboard tabs share one research engine: **Council**, where a chosen lead d
 | [Evaluation](docs/evaluation.md) | Fictional-money accounting, fair baselines, historical contamination, and forward paper evidence |
 | [Dashboard design](docs/dashboard.md) | At-a-glance performance and expandable answers to every success question below |
 | [Operating design](docs/operations.md) | Future setup, no-account demo, manual heartbeats, recovery, and usage controls |
-| [Implementation tasks](tasks/README.md) | 25 stable implementation tasks plus the completed local-first architecture meta-task with Sol/Astra guidance, acceptance criteria, and roadmap mapping |
+| [Implementation tasks](tasks/README.md) | 18 ordered remaining-work steps, with a crosswalk to 25 historical task IDs with Sol/Astra guidance, acceptance criteria, and roadmap mapping |
 | [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
 
-[META-001 is complete](docs/meta-001-impact.md). It adopts a private local UI with Individual/Monarchy presentation, precise portfolio accounting and opaque Monarchy-only broker attribution. The legacy exporter now refuses nonfixture data. [Start with TASK-024](tasks/meta-tasks/START-HERE.md) for additive contracts, then TASK-025 for production FIFO and flow-aware performance; private v2 UI integration follows. Current fixture tabs retain their v1 labels until TASK-012's follow-up. [TASK-014's shared request controls](tasks/TASK-014-high-Sol.md) and [TASK-015's request-budget integration](tasks/TASK-015-high-Sol.md) remain pending engineering work. The current adapter retries but does not proactively share a 200-calls/minute account budget; its no-op default sleeper and capped server wait also need correction. [TASK-016](tasks/TASK-016-high-Astra.md) has an offline rate-control preflight before forward operation or a larger coordinator-backed sample and a later full readiness audit after qualified forward evidence. The [task index](tasks/README.md#rate-control-follow-up-and-staged-gates) gives the order without introducing circular dependencies. Production v2 accounting, private UI integration and shared limiting remain pending; the architecture decision and fixture-only export protection are delivered.
+[META-001 is complete](docs/meta-001-impact.md). It adopts a private Individual/Monarchy UI, versioned accounting and opaque Monarchy-only broker attribution. The legacy exporter now refuses nonfixture data. The remaining work is now [a numbered execution sequence](tasks/README.md), starting with [Step 01: contracts and storage](tasks/active/STEP-01-contracts.md), then Step 02 accounting and Steps 03–05 private UI/commands/packaging. Steps 06–13 separately cover shared requests, offline forward integration, preflight, qualification, participant readiness, real observation, final audit and paper operation. Production changes remain pending; [the crosswalk](tasks/CROSSWALK.md) preserves original task identities and completed v1 evidence.
 
-Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, eligible Characters and stage gates.
+Learning reaches microstructure/risk specialists in Step 16 (historical TASK-021), and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, eligible Characters and stage gates.
 
 > [!WARNING]
 > Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.
@@ -325,15 +325,14 @@ Future Trader Analyzer and Trader User components should live in separate packag
 
 ## Near-term roadmap
 
-1. Define validated contracts, experiment policy, and append-only persistence (tasks 001–002); the original recommended defaults are now approved.
-2. Catalog exact book editions and access, implement sequential learning, and create the three pilot Characters without sharing formative memories (003–005). **Implemented; specialist foundations remain partial.**
-3. Build time-aware ingestion, fictional-money accounting, independent risk checks, and bounded mail (006–009). **Implemented for the fixture scope.**
-4. Connect both modes through a resumable heartbeat, honest evaluation, a two-tab dashboard, and a no-account offline demo (010–013). **Implemented and verified with synthetic fixtures.**
-5. Qualify a market-data source, collect forward shadow decisions, review leakage/costs/recovery and paper policy, then run forward paper portfolios (014–017). **Adapter and leakage controls implemented; real qualification/observations remain blocked.**
-6. Apply additive contracts and accounting repairs (024–025), integrate the private UI (012–013), package it locally (018), then add learning/social views and optional scheduling (019–020).
-7. Add microstructure/risk research, the disclosure interface, and later governance or merged-Character experiments only when their evidence prerequisites are met (021–023).
+The original contract, library, learning, ingestion, simulation, risk, mail, heartbeat and fixture-demo work is retained. Its completion evidence and partial real-source status remain in the [historical index](tasks/LEGACY-INDEX.md).
 
-The [task index](tasks/README.md) provides exact dependencies, model/effort recommendations, deliverables, and a mapping back to all seven original milestones. Numbers above group work; source access and real elapsed evaluation time remain explicit prerequisites. The existing [Definition of success](#definition-of-success) is unchanged and now maps directly to [six dashboard explanation panels](docs/dashboard.md).
+1. **Steps 01–05:** version contracts and persistence, prove accounting, integrate the private UI and commands, then package the local observatory.
+2. **Steps 06–08:** build shared request admission, connect forward snapshots, and pass offline adversarial preflight.
+3. **Steps 09–13:** qualify permitted data, verify eligible Character versions, gather real prospective observations, audit readiness, and operate only the approved paper workflow.
+4. **Steps 14–18:** add the notebook, optional scheduling, specialist/disclosure research, and an evidence-based governance review.
+
+Each [active task](tasks/README.md) explains its place in this order and its actual entry conditions. Source rights, owner decisions and real elapsed time remain gates; independent fixture work may proceed under the queue's blocker rule. The [Definition of success](#definition-of-success) still maps to [six dashboard explanation panels](docs/dashboard.md).
 
 ## Definition of success
 

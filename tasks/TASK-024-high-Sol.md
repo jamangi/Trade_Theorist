@@ -1,5 +1,7 @@
 # TASK-024: Add v2 portfolio identity, event and private-read-model contracts
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 01](active/STEP-01-contracts.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned; exact next implementation task after META-001
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high

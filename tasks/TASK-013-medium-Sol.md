@@ -1,5 +1,7 @@
 # TASK-013: Create the one-command demo and operating interface
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 04](active/STEP-04-commands.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: v1 offline interface implemented and verified; private v2 command integration pending after META-001
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium

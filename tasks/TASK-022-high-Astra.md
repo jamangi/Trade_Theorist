@@ -1,5 +1,7 @@
 # TASK-022: Define the disclosure-analysis interface
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 17](active/STEP-17-disclosures.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high

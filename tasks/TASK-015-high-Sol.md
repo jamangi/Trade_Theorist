@@ -1,5 +1,7 @@
 # TASK-015: Run forward shadow observations
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 07](active/STEP-07-forward-integration.md), [Step 10](active/STEP-10-pilot-readiness.md), [Step 11](active/STEP-11-forward-observation.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: base forward controls implemented; request-budget integration pending; real observations blocked
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high

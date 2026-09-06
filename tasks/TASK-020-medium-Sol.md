@@ -1,5 +1,7 @@
 # TASK-020: Add scheduled operation with bounded usage
 
+> Historical task ID, retained for traceability. Remaining work is governed by [Step 15](active/STEP-15-scheduler.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: planned
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium

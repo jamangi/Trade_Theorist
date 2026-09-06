@@ -1,5 +1,7 @@
 # TASK-001: Define validated contracts and experiment policy
 
+> Historical task ID, retained for traceability. Remaining work is governed by [the ordered queue](README.md). Original status and evidence below describe the earlier scope; old dependencies and next-task wording are not the active execution order.
+
 - Status: complete (2026-09-05)
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high

@@ -1,5 +1,7 @@
 # Portfolio and performance contract v2
 
+> Subsequent queue refactor (2026-09-06): [ordered remaining work](../tasks/README.md) now starts at Step 01. Original TASK references below remain stable historical/contract references; [the crosswalk](../tasks/CROSSWALK.md) gives their active steps.
+
 Date: 2026-09-06. Status: versioned design plus executable synthetic reference fixture; **not yet integrated with the production store, simulator or evaluator**. TASK-024 adds contracts/persistence; TASK-025 integrates accounting and evaluation. Existing `raw-next-open-ledger-v1` results keep their original average-cost meaning.
 
 ## Identity and execution basis
