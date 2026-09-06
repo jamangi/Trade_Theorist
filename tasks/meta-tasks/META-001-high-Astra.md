@@ -86,8 +86,11 @@ Use this owner-approved initial paper arrangement:
    cash/position ledger under the same risk and fill rules.
 3. Monarchy commits the lead's post-discussion decision to its own internal portfolio.
 4. Only Monarchy's approved order is submitted to the shared Alpaca paper account.
-5. A deterministic, nonsecret `client_order_id` maps the broker order to experiment,
-   portfolio and internal order IDs; the mapping and all order/fill updates are durable.
+5. For each Monarchy internal order separately authorized for broker submission,
+   generate an opaque, unique, nonsecret `client_order_id` and durably map it to that
+   internal order. The internal order already identifies its experiment, portfolio and
+   originating final recommendation. Individual-only simulated orders receive no Alpaca
+   client ID. Preserve every broker order/fill update against the mapping.
 6. Broker fills reconcile into Monarchy's ledger. Alpaca account values are shown only
    as aggregate reconciliation evidence, never as an Individual Character's return.
 
@@ -179,8 +182,11 @@ add a versioned repair task or explicit follow-up rather than rewriting history.
 - Every persisted/exported field has a publication classification and fail-closed default.
 - Individual and Monarchy portfolios cannot share cash, lots, P/L or performance despite
   sharing observations.
-- A paper order and every update can be traced from `client_order_id` to exactly one
-  internal portfolio/order without exposing Character commentary or secrets to Alpaca.
+- Every submitted Monarchy paper order and update can be traced from an opaque
+  `client_order_id` to exactly one internal order, and from there to exactly one
+  portfolio, experiment and originating final recommendation, without exposing those
+  local identifiers, Character commentary or secrets to Alpaca. Individual simulated
+  orders have no broker mapping or Alpaca client ID.
 - Aggregate broker equity and positions are never presented as independent Character
   performance.
 - Performance formulas, external-flow handling, lots, costs, corporate actions, stale
