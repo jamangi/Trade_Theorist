@@ -44,6 +44,14 @@ paper portfolio or dependent TASK-016 work was launched.
 
 ## Validation
 
+### Follow-up findings (2026-09-06)
+
+The results below describe the original bounded implementation, not shared quota compliance. Inspection at `29238ee` found no proactive account-wide limiter. The adapter's default sleeper is a no-op, numeric `Retry-After` is truncated at the configured delay cap (30 seconds by default), and resume checks validate feed/version without binding the full requested query. Existing recorded tests cover a seven-second header, not long/date cooldowns, production waiting or aggregate concurrent traffic.
+
+[TASK-014](../tasks/TASK-014-high-Sol.md) now requires the [shared request-budget contract](market-data-request-budget.md); [TASK-015](../tasks/TASK-015-high-Sol.md) requires manifest and shared-snapshot integration. Both extensions remain pending. [TASK-016](../tasks/TASK-016-high-Astra.md) must run an offline rate-control preflight before an authorized account sample, with its final readiness review later. This documentation update implements no limiter and collects no account evidence.
+
+### Original validation evidence
+
 Focused tests cover pagination and resume, feed pinning, 429 retry, entitlement denial,
 token loops, malformed payload quarantine, idempotence, revisions and gaps. Forward
 tests cover generic repository/mail/retrieval rejection, late qualified evidence,

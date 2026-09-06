@@ -45,6 +45,7 @@ rights are recorded as unavailable, not inferred from API access.
 | Requirement | Current conclusion |
 | --- | --- |
 | Explicit feed, bars, automation, pagination | Documented; adapter implemented |
+| Shared request-rate enforcement | Not implemented; required TASK-014 follow-up and TASK-016 offline preflight before account calls |
 | SIP whole-market coverage | Documented product capability; account entitlement not sampled |
 | IEX whole-market coverage | Not sufficient |
 | Provider publication timestamp on bars | Missing; forward receipt time is retained as the conservative first-demonstrated availability time |
@@ -61,8 +62,11 @@ requires a new decision record using the same checklist.
 
 Before status can change from conditional to selected:
 
-1. the owner authorizes account use and, if necessary, a paid plan;
-2. an authorized sample is collected with credentials outside Git;
-3. the generated quality report demonstrates the frozen universe, sessions, feed and
+1. TASK-014 implements the [shared request-budget contract](../../docs/market-data-request-budget.md), and TASK-016's narrow offline rate preflight passes (not its later full forward/paper review);
+2. the owner authorizes account use and, if necessary, a paid plan;
+3. an authorized bounded sample is collected through that coordinator with credentials outside Git, verifying applicable feed entitlement, observed rate behavior and headroom under the 200/min ceiling;
+4. the generated quality report demonstrates the frozen universe, sessions, feed and
    revision behavior without synthesized gaps; and
-4. license evidence explicitly covers intended retention, replay and reporting.
+5. license evidence explicitly covers intended retention, replay and reporting.
+
+The initial 180-attempt operating ceiling and cache/pacing design are engineering recommendations, not evidence of measured account capacity. Market Data limits, recent SIP entitlement and paper Trading API limits are distinct; the request-budget contract links the current primary sources. No quota extension or account authorization is granted by this amendment.

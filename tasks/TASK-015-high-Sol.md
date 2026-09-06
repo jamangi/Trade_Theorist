@@ -1,6 +1,6 @@
 # TASK-015: Run forward shadow observations
 
-- Status: controls implemented; real observations blocked
+- Status: base forward controls implemented; request-budget integration pending; real observations blocked
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
 - Dependencies: TASK-005, TASK-008, TASK-010, TASK-011, TASK-013, TASK-014
@@ -37,6 +37,12 @@ the Alpaca sample/rights gate in TASK-014 remains open, and no paid SIP plan is
 authorized. The offline provenance audit tests mechanics only. See the
 [implementation record](../docs/task-014-015-implementation.md).
 
-The bounded control implementation is complete; actual forward observation requires
-the stated prerequisites and real elapsed sessions. TASK-016 and ongoing runs were not
-implicitly launched.
+The original bounded control implementation is complete; the request-budget integration below remains pending. Actual forward observation also requires the stated prerequisites and real elapsed sessions. TASK-016 and ongoing runs were not implicitly launched.
+
+## Required follow-up: budgeted shared snapshots (2026-09-06)
+
+Consume TASK-014's [shared coordinator and cache](../docs/market-data-request-budget.md), not independent Character transports. Extend the frozen forward manifest with quota-policy/version ID, finite request/work budget, deadline, expected coverage, shared work references and frozen snapshot identity. Keep API request budgets separate from model/token budgets. Report estimates and actual attempts, retries, cache hits, shared-fetch reuse, wait duration, incomplete pages and deadline misses; count shared physical requests once at the coordinator.
+
+Plan a common snapshot before Character execution. Freeze only complete eligible coverage, or explicitly apply the preregistered partial-coverage policy equally to all paired consumers. A budget stopping pagination must not favor symbols on early pages. Quota waiting never relaxes evidence cutoffs; late data produces visible defer/abstention, not different data for a later Character. Reuse observations without crossing feed, entitlement, revision or decision-time boundaries.
+
+Acceptance: identical Character/mode requests share one fetch sequence; subsequent eligible cache reads cause zero Alpaca calls; exhausted budget and delayed completion retain identical snapshot IDs and honest status. Real account-backed work requires the new 014 controls, the 016 offline rate preflight and 014 sample/rights qualification. The full 016 audit remains later, after forward evidence; no cyclic dependency on its final completion is introduced.

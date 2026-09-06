@@ -33,6 +33,8 @@ Use structured logs with run/phase IDs and redacted error messages. Back up the 
 
 ## Usage policy
 
+Market-data request usage is distinct from model/token usage. The [shared request-budget contract](market-data-request-budget.md) specifies the pending TASK-014/015 extensions: manual commands, account samples, heartbeats and scheduled jobs share one quota coordinator and cache. Initial Market Data operation stays at 180 attempts per rolling minute below the owner's 200 maximum, counting all pages and retries. Doctor must identify missing policy/coordinator readiness; wait, deferred, incomplete and expired outcomes are visible. Server cooldowns survive restart and can defer work beyond a run deadline. Exports and dashboards read stored results. TASK-016's offline preflight must pass before account calls; its full review follows real forward evidence.
+
 Use scripts for mechanical work and deterministic template rendering for ordinary status text. Models receive changed evidence, relevant memory, and bounded recent context; cache results by complete input/version hashes. No agent runs merely because a timer fired when there is no new evidence, due decision, mail, or mature outcome. Record calls, input/output tokens, retries, and charges when available. Unknown charge data is unavailable, not zero.
 
 Development task model recommendations appear in filenames; runtime Character models are an independently pinned experiment setting. Changing a model changes the experiment version. Avoid using different reasoning budgets for competing Characters unless that difference is the preregistered question.

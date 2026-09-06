@@ -6,6 +6,14 @@ The [inventory](../library/catalog/INVENTORY_REPORT.md) covers all 31 active pos
 
 ## How to use the queue
 
+### Rate-control follow-up and staged gates
+
+The original 014 adapter and 015 forward-control evidence remains valid within its recorded scope, but **014 shared request admission and 015 request-budget integration are pending**. Start with those extensions rather than treating the adapter as ready for account-backed operation. The [request-budget contract](../docs/market-data-request-budget.md) is the common design reference: cache lookup and merged downloads first, shared admission immediately before every transport attempt, then immutable snapshot distribution. Keep the existing 23 IDs and model/effort assignments.
+
+Release order: **014 control code → 016 offline rate preflight → 014 authorized sample and qualification → 015 forward observations → 016 final readiness review → 017 paper operation**. The preflight is a bounded part of 016 using 014 code and existing 015 fixtures; it does not require real forward sessions. The dependency rows below describe full task completion, not that early subgate. Do not add full 016 as a dependency of 014/015. No account call is authorized by this backlog change.
+
+014 owns the shared limiter/cache and necessary extensions to the existing schema, persistence, ingestion, heartbeat and CLI interfaces from 001/002/006/010/013. 015 and 017 consume it; 020 coordinates jobs through it; 021 plans high-volume quotes/trades; 022 reuses event market windows. 018/019/023 consume stored results with zero ordinary Alpaca calls. 016 verifies all callers, retry/header behavior, complete pagination, crash recovery, budget visibility and separate paper Trading quotas. Initial operating policy is 180 attempts per rolling 60 seconds below the 200 maximum, including retries/pages—not 180 plus an extra retry pool.
+
 Open one task, check its dependencies and source-access/policy prerequisites, implement its bounded deliverables, and record acceptance evidence before marking it complete. IDs in dependency lists refer to the linked rows below. Tasks can be independent in the dependency graph; this does not automatically request parallel agents or create new Codex tasks.
 
 For fixture engineering, a dependency's implemented and verified software interface is sufficient even if its real-source learning deliverable is still blocked. Record that partial status explicitly; do not mark the whole prerequisite complete. Real-data and forward tasks require the actual source-grounded readiness and policy deliverables, not just the fixture interface. This lets the offline demo progress without pretending unavailable books have been read.
@@ -31,14 +39,14 @@ No blanket maximum effort. Start at the listed level; escalate a narrow unresolv
 | [TASK-011](TASK-011-high-Astra.md) | Build honest evaluation and evidence grades | Astra / high | 006, 007, 008, 010 |
 | [TASK-012](TASK-012-high-Sol.md) | Build the two-tab performance dashboard | Sol / high | 010, 011 |
 | [TASK-013](TASK-013-medium-Sol.md) | Create the one-command demo and operating interface | Sol / medium | 003, 004, 010, 011, 012 |
-| [TASK-014](TASK-014-high-Sol.md) | Qualify a vendor and implement one market-data adapter | Sol / high | 001, 006 |
+| [TASK-014](TASK-014-high-Sol.md) | Qualify a vendor and add shared market-data request controls | Sol / high | 001, 002, 006 |
 | [TASK-015](TASK-015-high-Sol.md) | Run forward shadow observations | Sol / high | 005, 008, 010, 011, 013, 014 |
-| [TASK-016](TASK-016-high-Astra.md) | Audit leakage, costs, recovery, and paper readiness | Astra / high | 011, 013, 015 |
+| [TASK-016](TASK-016-high-Astra.md) | Offline rate preflight, then full forward/paper readiness audit | Astra / high | 011, 013, 014, 015 |
 | [TASK-017](TASK-017-high-Sol.md) | Start forward paper portfolios and optional broker adapter | Sol / high | 007, 008, 014, 016 |
 | [TASK-018](TASK-018-medium-Sol.md) | Publish validated reports on GitHub Pages | Sol / medium | 012, 013, 014, 016 |
 | [TASK-019](TASK-019-medium-Sol.md) | Add belief timelines and the research notebook | Sol / medium | 004, 009, 011, 012, 013 |
-| [TASK-020](TASK-020-medium-Sol.md) | Add scheduled operation with bounded usage | Sol / medium | 013, 016, 017 |
-| [TASK-021](TASK-021-high-Astra.md) | Add microstructure and risk specialist research | Astra / high | 003, 004, 011, 016 |
+| [TASK-020](TASK-020-medium-Sol.md) | Add scheduled operation with bounded usage | Sol / medium | 013, 014, 016, 017 |
+| [TASK-021](TASK-021-high-Astra.md) | Add microstructure and risk specialist research | Astra / high | 003, 004, 011, 014, 016 |
 | [TASK-022](TASK-022-high-Astra.md) | Define the disclosure-analysis interface | Astra / high | 001, 006, 011, 014, 016 |
 | [TASK-023](TASK-023-high-Astra.md) | Review governance and preregister later experiments | Astra / high | 011, 017, 019 |
 
@@ -46,7 +54,7 @@ No blanket maximum effort. Start at the listed level; escalate a narrow unresolv
 
 1. **Contracts and persistence:** 001–002; catalog work 003 can start after contracts.
 2. **First useful offline observatory:** 004–013 using recorded/scripted fixture opinions where source access is blocked. Both portfolio modes, one conversation, honest scorecards, six explanation panels, and a no-account demo must work. Fixture delivery does not complete real Character learning requirements.
-3. **Prospective research:** 014–015 after the required trained Characters and data rights are ready. The duration of a forward trial is real elapsed market time; implementation cannot compress it.
+3. **Prospective research:** implement 014 shared controls and 015 budget integration, pass the 016 offline rate preflight, then qualify an authorized 014 sample before 015 account-backed observations. Required trained Characters and data rights must also be ready. The duration of a forward trial is real elapsed market time; implementation cannot compress it.
 4. **Paper readiness and public report:** 016 review, then 017 paper portfolios and 018 Pages publication. Public fixture reports may demonstrate the UI, but must not impersonate achieved forward results.
 5. **Human context and reliable operation:** 019 adds richer observable learning; 020 adds optional scheduling after operational gates. Neither is required to gather the first shadow observations.
 6. **Later research:** 021 before serious intraday work; 022 before disclosure-driven signals; 023 before merged Characters or revised governance. These are explicit follow-on tasks, not prerequisites for the useful daily pilot.

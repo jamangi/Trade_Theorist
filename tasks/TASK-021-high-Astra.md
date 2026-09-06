@@ -3,7 +3,7 @@
 - Status: planned
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high
-- Dependencies: TASK-003, TASK-004, TASK-011, TASK-016
+- Dependencies: TASK-003, TASK-004, TASK-011, TASK-014, TASK-016
 - Design: [evaluation.md](../docs/evaluation.md)
 
 ## Scope
@@ -25,3 +25,9 @@ Source update (2026-09-05): the owner [accepted](../decisions/records/ADR-002-mi
 Market execution assumptions and risk-model weaknesses need deeper reasoning; this is after the useful daily pilot.
 
 Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+
+## Data-volume feasibility under Basic (2026-09-06)
+
+Before quote/trade collection, estimate pages, payload volume, cadence, repair/retry work and completion time against TASK-014's [shared operating ceiling](../docs/market-data-request-budget.md). Batch and reuse missing windows; prefer a narrower preregistered universe or slower cadence when the workload cannot fit. Do not silently remove instruments mid-trial or bypass the limiter for research.
+
+Evaluate shared streaming only if actual feed entitlement and separate connection/symbol/subscription limits support the experiment. Streaming is not a loophole for real-time SIP under Basic; reconnects need bounded backoff and any REST gap repair uses shared admission. Start with daily REST until a measured need justifies streaming. Acceptance reports whether data arrives before the thesis expires and rejects intraday claims when Basic delay/coverage is inadequate. This adds a data feasibility requirement without changing accepted reading scope.

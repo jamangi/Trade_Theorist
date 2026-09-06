@@ -20,13 +20,16 @@ Two dashboard tabs share one research engine: **Council**, where a chosen lead d
 | [Architecture](docs/architecture.md) | Two portfolio modes, shared data, independent risk controls, storage contracts, and the heartbeat sequence |
 | [Discussion and Character life](docs/discussion.md) | Bounded mailbox conversations, readable exports, belief timelines, decision postcards, and a research notebook |
 | [Data and learning](docs/data-and-learning.md) | Cheap scripted ingestion, provider qualification, dated book-access checks, and ordered learning |
+| [Shared market-data request budget](docs/market-data-request-budget.md) | Required Task 14 follow-up: cache reuse, shared 200/min maximum with initial 180/min operating ceiling, and Task 16 preflight |
 | [Evaluation](docs/evaluation.md) | Fictional-money accounting, fair baselines, historical contamination, and forward paper evidence |
 | [Dashboard design](docs/dashboard.md) | At-a-glance performance and expandable answers to every success question below |
 | [Operating design](docs/operations.md) | Future setup, no-account demo, manual heartbeats, recovery, and usage controls |
 | [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks with Sol/Astra and effort recommendations, acceptance criteria, and roadmap mapping |
 | [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
 
-The next stage review is [TASK-016](tasks/TASK-016-high-Astra.md), but it cannot approve paper readiness while TASK-014's vendor evidence and TASK-015's real forward window remain blocked. Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, eligible Characters and stage gates.
+The next engineering work is [TASK-014's shared request controls](tasks/TASK-014-high-Sol.md) and [TASK-015's request-budget integration](tasks/TASK-015-high-Sol.md). The current adapter retries but does not proactively share a 200-calls/minute account budget; its no-op default sleeper and capped server wait also need correction. [TASK-016](tasks/TASK-016-high-Astra.md) now has an offline rate-control preflight before account use and a later full readiness audit after qualified forward evidence. The [task index](tasks/README.md#rate-control-follow-up-and-staged-gates) gives the order without introducing circular dependencies. These are pending implementation requirements, not a claim that a limiter is installed.
+
+Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, eligible Characters and stage gates.
 
 > [!WARNING]
 > Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.

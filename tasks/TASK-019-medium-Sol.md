@@ -23,3 +23,7 @@ A belief amendment links both versions; a postcard matches its saved decision; n
 These are useful views over existing events; keep implementation and ongoing usage modest.
 
 Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+
+## Result-only Character views (2026-09-06)
+
+Belief timelines, postcards, relationship views and notebooks consume stored events and [request-budget status](../docs/market-data-request-budget.md), without Alpaca clients or credentials. An owner question needing new market evidence becomes an explicit budgeted future research request through 014/015, not an incidental provider call while rendering a summary. Acceptance verifies zero Alpaca calls for ordinary summaries and preserves decision-time eligibility for any later separately admitted research.

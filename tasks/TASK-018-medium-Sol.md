@@ -23,3 +23,7 @@ Scan a deliberately secret-bearing private fixture to prove nothing sensitive is
 Static publishing and clear documentation need medium effort with a strict export contract.
 
 Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+
+## Result-only publication (2026-09-06)
+
+Read persisted evaluations and allowlisted [request-budget telemetry](../docs/market-data-request-budget.md). Neither the exporter, Pages build nor public browser receives Alpaca credentials or makes Alpaca calls. Show rate-delayed/stale/incomplete status from saved records; missing data is not a reason to fetch from the dashboard. Acceptance runs the export with a provider-call trap and confirms zero Alpaca requests, including page refresh and history selection.
