@@ -1,6 +1,6 @@
 # Step 02: Prove FIFO, flow-adjusted returns and attribution
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: implemented and verified 2026-09-06; Step 03 remains pending
 - Recommended model / effort: Astra / high
 - Historical coverage: [TASK-025](../TASK-025-high-Astra.md)
 - Queue: [ordered remaining work](../README.md)
@@ -43,3 +43,60 @@ Run the new v2 integration tests plus `scripts/check.py test_simulation test_ris
 Use the [focused validation workflow](../../docs/development.md). Record changed files, actual checks, evidence artifacts and remaining blockers here. For code changes, run relevant tests and the full suite once after focused checks pass; for UI changes, verify keyboard and narrow/wide layouts too. Original synthetic acceptance never substitutes for required real-source or elapsed-time evidence.
 
 Stop at this step's finished state. The default next item is [Step 03](STEP-03-dashboard.md); do not start it automatically. Follow the queue's blocker rule for independent work. Preserve historical completion claims. No account call, order, paid subscription, public market-data deployment or recurring work is authorized merely by this task brief.
+
+## Implementation evidence
+
+Added the separate production `adapters/trader_user_sim/v2.py` command/fill path,
+`evaluate/ledger_v2.py` FIFO/flow reducer, `evaluate/portfolio_v2.py` private reports,
+and `adapters/trader_user_sim/broker_v2.py` offline update/account reconciliation.
+Typed frozen plans, execution terms/receipts, costs, account checks and performance
+records extend `schema_v2.py` / `contracts_v2.py`; additive migration 004 gives plans,
+terms and result revisions durable uniqueness. V1 modules, database defaults and
+migrations 001–003 retain their original meaning/checksums. The existing storage
+upgrade test now expects the explicit v2 ceiling of four.
+
+The [implementation guide](../../docs/step-02-accounting.md) records the APIs,
+funding/risk denominators, correction semantics, baseline construction, private
+inputs and supported corporate actions. Cash-in-lieu, fractional settlement under
+a whole-share plan, pending-order split adjustment and ambiguous broker revisions
+remain explicit gaps requiring reconciliation. No automatic risk-halt clearing,
+account transport, new UI or real evidence claim is introduced.
+
+`scripts/build_step_02_fixtures.py` writes original synthetic evidence in
+[`examples/accounting-v2/`](../../examples/accounting-v2/): before/after stale
+reports, a resolvable typed input bundle, and side-by-side v1/v2 migration/replay
+evidence. Golden values match: cash **1188**, reserved **100**, FIFO basis **343**,
+realized **28**, income **3**, equity **1548**, dollar gain **48**, TWR **0.05750570**
+and drawdown **0.01901141**. Stale dependent values are null with reasons. The
+independent baseline matches flow timing/costs and yields TWR **0.20542373**.
+Before the flow, v1 average-cost basis/realized **333/18** and v2 FIFO **343/28**
+produce the same **1078** equity. V1 event/record hashes and replay survive explicit
+side-by-side conversion; unsupported legacy history creates no fabricated lots.
+
+## Actual validation
+
+- New accounting and broker tests cover the golden vector, withdrawals/refunding,
+  missing boundary/scheduled marks, multiple instruments, FIFO residuals, partial
+  fills/reservations/fees, dividend timing, split gaps, costs/baseline mismatch,
+  flow-neutral halts, as-known/restated corrections, isolation, duplicate/crash
+  recovery, cancellations, late cumulative updates, quarantine, timeouts and resets.
+- Focused `scripts/check.py test_accounting_v2 test_broker_v2 test_simulation
+  test_risk test_evaluation test_meta_contracts` passed all six modules. The final
+  two-module run passed in **4.9 seconds** after adding reservation/refunding and
+  corrected execution-mark regressions.
+- Final full suite: **205 tests across 23/23 modules passed in 29.4 seconds**.
+  The suite was rerun after the final execution-mark correction fix; all original
+  v1 tests remain included. Complete module logs stay in ignored `.local/test-logs/`.
+- The fixture builder and CLI bundle validator passed. Generated v2 schema matches
+  its source; field inventory drift check passed with **1,272 classified fields**.
+  `git diff --check` passed.
+
+The existing sequential test-process runner and compact fixture builder avoid
+dumping generated bundles/test output into the session. Development documentation
+now maps v2 modules to focused tests and the bounded accounting guide. Memory
+exhaustion was not reproduced; its original cause remains unmeasured.
+
+No bounded Step 02 blocker remains. The queue now points to Step 03's private
+Individual/Monarchy views, which have not been started. Real-source rights,
+participant qualification, elapsed-time evidence and paper operation retain their
+separate later gates.

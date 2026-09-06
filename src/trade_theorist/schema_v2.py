@@ -10,6 +10,8 @@ CLIENT = {"type": "string", "pattern": "^[a-f0-9]{32}$"}
 PRECISE = {"type": "string", "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,28})?$"}
 SOURCE = obj(rights_id=ID, source_event_ids=array(ID), source_hash=HASH)
 FLOW = obj(amount=MONEY, boundary_mark_ids=array(ID))
+VALUE = obj(value=nullable(SIGNED), reason=nullable(S), unit=enum("USD", "ratio", "count"))
+POINT = obj(at=UTC, equity=nullable(SIGNED), wealth=nullable(SIGNED), drawdown=nullable(SIGNED), reason=nullable(S))
 EVENTS = {
     "funding": FLOW, "contribution": FLOW, "withdrawal": FLOW,
     "segment_end": obj(reason=S),
@@ -32,6 +34,7 @@ EVENTS = {
                 observation_revision=POS, eligibility_cutoff=UTC, status=enum("eligible", "stale", "missing"),
                 reason=nullable(S), mark_policy_hash=HASH),
     "halt": obj(reason=S),
+    "reconciliation_gap": obj(reason=S, evidence_hash=HASH),
 }
 
 FIELDS = {
@@ -85,12 +88,41 @@ FIELDS = {
                               source_records_hash=HASH, source_migrations_hash=HASH, destination_identity=HASH,
                               source_event_versions=array(S), limitations=array(S, 1),
                               converted_event_ids=array(ID), gaps=array(obj(source_id=ID, code=S))),
+    "accounting_plan": dict(portfolio_id=ID, approved_at=UTC, approval_ref=S,
+        flows=array(obj(segment_id=ID, event_type=enum("funding", "contribution", "withdrawal"), effective_at=UTC, amount=MONEY)),
+        mark_schedule=array(UTC, 1), max_mark_age_seconds=N,
+        execution_model={"const": "eligible-next-event-v2"}, fee_per_share=MONEY, slippage_bps=DEC,
+        spread_bps=DEC, fractional_shares=BOOL, corporate_actions={"const": "explicit-raw-v2"},
+        baseline_portfolio_id=nullable(ID), baseline_construction=S),
+    "execution_terms": dict(portfolio_id=ID, segment_id=ID, order_id=ID, earliest_fill_at=UTC, expires_at=UTC, price_cap=DEC),
+    "execution_command": dict(portfolio_id=ID, input_hash=HASH, record_ids=array(ID), result_hash=HASH),
+    "operating_expense": dict(portfolio_id=ID, effective_at=UTC, category=enum("model", "data", "hosting", "learning", "development"),
+                              recurring=BOOL, amount=nullable(MONEY), reason=nullable(S)),
+    "account_reconciliation": dict(portfolio_id=ID, segment_id=ID, effective_at=UTC, observed_at=UTC, evidence_hash=HASH,
+        broker_cash=SIGNED, economic_cash=SIGNED, broker_positions=array(obj(instrument_id=ID, quantity=DEC)),
+        account_reset=BOOL, status=enum("matched", "halted"), differences=array(S)),
+    "performance_result": dict(portfolio_id=ID, segment_id=ID, accounting_plan_id=ID, projection_revision=POS,
+        effective_cutoff=UTC, receipt_cutoff=UTC, source_event_ids=array(ID, 1), source_chain_hash=HASH,
+        publication_class={"const": "private-owner-v2"}, execution_basis=BASIS, mode=MODE, owner_character_version=ID,
+        evidence_grade=CONTAMINATION, promotion_eligible={"const": False}, review_blockers=array(S, 1),
+        cash=SIGNED, reserved=DEC, available=SIGNED, initial_funding=DEC, net_external_flows=SIGNED,
+        fifo_basis=DEC, realized=SIGNED, income=SIGNED, fees=DEC, receivables=DEC, unallocated_expenses=DEC,
+        equity=VALUE, unrealized=VALUE, strategy_pnl=VALUE, twr=VALUE, max_drawdown=VALUE, volatility=VALUE,
+        turnover=VALUE, hit_rate=VALUE, lot_relief_win_rate=VALUE, recurring_expense=VALUE, one_time_expense=VALUE,
+        economics_pnl=VALUE, cash_baseline=VALUE, broad_market_baseline=VALUE, benchmark_status=S,
+        holdings=array(obj(instrument_id=ID, quantity=DEC, fifo_basis=DEC, value=nullable(SIGNED))),
+        history=array(POINT), flow_signature=HASH, comparison_hash=HASH, halted=BOOL, gaps=array(S),
+        closed_segments=array(obj(segment_id=ID, twr=nullable(SIGNED), reason=nullable(S))),
+        order_outcomes=array(obj(order_id=ID, filled_quantity=DEC, remaining_quantity=DEC, status=S)),
+        baseline_result_hash=nullable(HASH), operating_expense_ids=array(ID), definitions=array(S, 1)),
 }
 
 FIELD_CLASSES = {k: "private_strategy" for k in FIELDS}
 FIELD_CLASSES.update(source_rights="private_market_provenance", ledger_event="private_reconstructable",
                      lot="private_reconstructable", lot_relief="private_reconstructable", projection="private_reconstructable",
                      submission_mapping="private_attribution", outbox="private_attribution", broker_update="private_attribution")
+FIELD_CLASSES.update(performance_result="private_reconstructable", operating_expense="private_strategy")
+FIELD_CLASSES["account_reconciliation"] = "private_attribution"
 
 
 def schema():

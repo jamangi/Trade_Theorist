@@ -46,7 +46,7 @@ def inventory():
         key = path.rsplit("/", 1)[-1]
         if key in {"private_locator", "raw_response", "credentials", "api_key", "api_secret", "secret"}:
             category = "private_sensitive"
-        elif "broker-attribution" in path or any("/" + k + "/" in path for k in ("submission_mapping", "outbox", "broker_update", "v2_broker_bindings", "v2_quarantine")):
+        elif "broker-attribution" in path or any("/" + k + "/" in path for k in ("submission_mapping", "outbox", "broker_update", "account_reconciliation", "v2_broker_bindings", "v2_quarantine")):
             category = "private_attribution"
         elif key in {"price", "value", "quantity", "equity", "history", "holdings", "cash", "basis", "lots", "income", "fees", "metrics", "cumulative_notional", "cumulative_quantity"}:
             category = "private_reconstructable"

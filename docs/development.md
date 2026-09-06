@@ -6,7 +6,7 @@ searches and short file slices. Do not print the entire library, schema fixture
 bundles, book transcripts or all test files to find a small interface. Generated
 examples can be rebuilt and validated without reading their complete JSON output.
 
-Relevant paths for tasks 007–015:
+Relevant implementation and validation paths:
 
 | Work | Implementation | Tests |
 | --- | --- | --- |
@@ -15,6 +15,8 @@ Relevant paths for tasks 007–015:
 | Persistence/recovery | `src/trade_theorist/storage.py` | `test_storage` |
 | Input contracts | `src/trade_theorist/contracts.py`, `schema.py` | `test_contracts` |
 | Production v2 contracts/storage | `schema_v2.py`, `contracts_v2.py`, `storage_v2.py`, `migrate_v2.py` in the package | `test_contracts_v2`, `test_storage_v2` |
+| Persistent v2 FIFO/TWR | `adapters/trader_user_sim/v2.py`, `evaluate/ledger_v2.py`, `evaluate/portfolio_v2.py` in the package | `test_accounting_v2` |
+| Offline v2 broker reconciliation | `adapters/trader_user_sim/broker_v2.py` in the package | `test_broker_v2` |
 | Market evidence | `src/trade_theorist/ingest/market.py` | `test_ingest` |
 | Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
@@ -29,6 +31,7 @@ Use the environment's Python (on Windows, `.venv/Scripts/python.exe`):
 python scripts/check.py test_simulation test_risk
 python scripts/check.py test_evaluation test_export test_operations
 python scripts/check.py test_contracts_v2 test_storage_v2
+python scripts/check.py test_accounting_v2 test_broker_v2
 python scripts/check.py
 ```
 
@@ -54,3 +57,9 @@ checks. Historical orders in an individual portfolio also still grow with activi
 After focused tests pass, run the full suite once before delivery. Repeat only if
 further edits or an unresolved failure justify it. Record the validation results
 and any real-data blockers in the task files; do not open their dependents implicitly.
+
+For Step 02, `python scripts/build_step_02_fixtures.py` rebuilds and verifies the
+golden and v1/v2 side-by-side artifacts without printing their full JSON bundles.
+Use `python scripts/export_field_classification.py --check` to check schema/field
+inventory drift. [The accounting guide](step-02-accounting.md) gives the API map,
+math and unsupported cases, so subsequent work can begin with one bounded document.

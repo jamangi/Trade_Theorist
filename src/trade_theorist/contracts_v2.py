@@ -18,6 +18,8 @@ REFS = dict(rights_id="source_rights", policy_id="policy", character_versions="c
             replacement_id="ledger_event", corporate_action_ids="ledger_event", mapping_id="submission_mapping",
             previous_outbox_id="outbox", previous_projection_id="projection", previous_lot_revision_id="lot",
             lot_revision_id="lot")
+REFS["accounting_plan_id"] = "accounting_plan"
+REFS["operating_expense_ids"] = "operating_expense"
 
 
 def validate(record):
@@ -62,6 +64,20 @@ def validate(record):
             raise ContractError("Projection status requires a result or explicit gap")
         if record["status"] == "gap" and not record["null_reasons"]:
             raise ContractError("Gap requires reasons")
+    if kind == "operating_expense":
+        if (record["amount"] is None) != (record["reason"] is not None):
+            raise ContractError("Operating expense needs a value or explicit unknown reason")
+        if record["category"] in {"learning", "development"} and record["recurring"]:
+            raise ContractError("Learning/development cost must remain separately classified")
+    if kind == "account_reconciliation":
+        if len({p["instrument_id"] for p in record["broker_positions"]}) != len(record["broker_positions"]):
+            raise ContractError("Duplicate aggregate instrument")
+        if utc(record["effective_at"]) > utc(record["observed_at"]) or utc(record["observed_at"]) > utc(record["created_at"]):
+            raise ContractError("Invalid reconciliation timing")
+    if kind == "performance_result":
+        for metric in record.values():
+            if isinstance(metric, dict) and set(metric) == {"value", "reason", "unit"} and (metric["value"] is None) != (metric["reason"] is not None):
+                raise ContractError("Performance metric requires a value or explicit null reason")
     if kind == "ledger_event":
         p, event = record["payload"], record["event_type"]
         if event in {"funding", "contribution", "withdrawal", "fee", "dividend_entitlement", "dividend_payment", "cash_in_lieu"} and D(p["amount"]) <= 0:
@@ -91,7 +107,7 @@ def validate_references(record, lookup):
             target_portfolio = target["id"] if expected == "portfolio" else target.get("portfolio_id")
             if target_portfolio and target_portfolio != record["portfolio_id"]:
                 raise ContractError("Cross-portfolio v2 reference")
-        if record.get("segment_id") and target.get("segment_id") and target["segment_id"] != record["segment_id"]:
+        if record.get("segment_id") and target.get("segment_id") and target["segment_id"] != record["segment_id"] and not (kind in {"projection", "performance_result"} and expected == "ledger_event"):
             raise ContractError("Cross-segment v2 reference")
         return target
 
@@ -129,6 +145,28 @@ def validate_references(record, lookup):
         if any(record[k] != exp[k] for k in ("mode", "execution_basis", "policy_id")):
             raise ContractError("Portfolio/projection differs from experiment")
     portfolio = ref(record["portfolio_id"], "portfolio") if "portfolio_id" in record else None
+    if kind == "accounting_plan":
+        if utc(record["approved_at"]) > utc(exp["start_at"]) or utc(record["created_at"]) > utc(exp["start_at"]):
+            raise ContractError("Accounting/funding plan must be frozen before its window")
+        if sorted(record["mark_schedule"], key=utc) != record["mark_schedule"]:
+            raise ContractError("Mark schedule must be ordered")
+        if D(record["slippage_bps"]) + D(record["spread_bps"]) / 2 >= 10000:
+            raise ContractError("Invalid execution costs")
+        if record["contamination"] != "fixture" and record["approval_ref"] != ref(portfolio["policy_id"], "policy")["approval_ref"]:
+            raise ContractError("Funding plan needs recorded policy approval")
+    if kind == "execution_terms":
+        order = ref(record["order_id"], "order")
+        if not utc(order["created_at"]) < utc(record["earliest_fill_at"]) < utc(record["expires_at"]) or D(record["price_cap"]) <= 0:
+            raise ContractError("Execution terms require a later eligible event and expiry")
+    if kind == "performance_result":
+        if any(record[k] != portfolio[k] for k in ("mode", "execution_basis", "owner_character_version")):
+            raise ContractError("Result differs from its frozen portfolio")
+        if rights["private_replay"] != "permitted" or rights["private_read_model"] != "permitted":
+            raise ContractError("Private accounting rights unavailable")
+        for identifier in record["source_event_ids"]:
+            ref(identifier, "ledger_event")
+    if kind == "account_reconciliation" and (portfolio["mode"] != "council" or portfolio["execution_basis"] != "paper_broker"):
+        raise ContractError("Aggregate account evidence requires a Monarchy paper ledger")
     if kind in {"decision", "projection"}:
         owner_key = "character_version" if kind == "decision" else "owner_character_version"
         if record[owner_key] != ref(record["segment_id"], "funded_segment")["owner_character_version"]:

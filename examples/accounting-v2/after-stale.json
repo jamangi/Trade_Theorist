@@ -1,0 +1,283 @@
+{
+  "id": "performance:9734437b141aecfc2c233e7842c902317be94910d052c49c9ecb415491d928d9",
+  "schema_version": 2,
+  "record_type": "performance_result",
+  "experiment_id": "experiment:v2-fixture-golden",
+  "created_at": "2099-01-12T21:00:00Z",
+  "contamination": "fixture",
+  "field_class": "private_reconstructable",
+  "provenance": {
+    "rights_id": "rights:v2-fixture-golden",
+    "source_event_ids": [],
+    "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+  },
+  "portfolio_id": "portfolio:v2-fixture-golden",
+  "segment_id": "segment:v2-fixture-golden",
+  "accounting_plan_id": "plan:golden",
+  "projection_revision": 3,
+  "effective_cutoff": "2099-01-12T21:00:00Z",
+  "receipt_cutoff": "2099-01-12T21:00:00Z",
+  "source_event_ids": [
+    "fixture:golden-funding-1",
+    "fixture:golden-mark-3",
+    "fixture:golden-admitted-7",
+    "fixture:golden-reserved-8",
+    "fixture:golden-mark-10",
+    "fill-event:23e14f274ced05b94d2cb611d994b388646a24fad040b2618b8b9c6d9e23f9a5",
+    "fixture:golden-admitted-14",
+    "fixture:golden-reserved-15",
+    "fixture:golden-mark-17",
+    "fill-event:8c4319306e3f92709b12a7e3174533c1e8069b60a7d0c2edaea417024a1d9fc4",
+    "fixture:golden-admitted-21",
+    "fixture:golden-reserved-22",
+    "fixture:golden-mark-24",
+    "fill-event:d422008937ffbbed30ddf4f972464cfbbf1bf0e05071fab9c89c1f0bf25cca68",
+    "fixture:golden-mark-26",
+    "fixture:golden-dividend_entitlement-27",
+    "fixture:golden-mark-29",
+    "fixture:golden-dividend_payment-30",
+    "fixture:golden-mark-32",
+    "fixture:golden-split-33",
+    "fixture:golden-mark-35",
+    "fixture:golden-mark-37",
+    "fixture:golden-contribution-38",
+    "fixture:golden-mark-40",
+    "fixture:golden-admitted-44",
+    "fixture:golden-reserved-45",
+    "fixture:golden-mark-47",
+    "fixture:golden-mark-49",
+    "risk-halt:ba2f1d74867632a02e37fbb4e162c52743040a81fd90b3a6bb94c018d1e1c9a6"
+  ],
+  "source_chain_hash": "6ce56a141c39229d446fd21b758e93b96dfb7e9cbcbdcaca748ff6a6509bf13e",
+  "publication_class": "private-owner-v2",
+  "execution_basis": "simulated",
+  "mode": "character_portfolio",
+  "owner_character_version": "character:v2-fixture-golden",
+  "evidence_grade": "fixture",
+  "promotion_eligible": false,
+  "review_blockers": [
+    "No owner promotion review in this accounting path",
+    "Preregistered matured forecast and forward-window review remain required",
+    "Original synthetic accounting evidence only",
+    "Incomplete valuation or reconciliation",
+    "Risk or reconciliation halt remains active"
+  ],
+  "cash": "1188.00000000",
+  "reserved": "100.00000000",
+  "available": "1088.00000000",
+  "initial_funding": "1000.00000000",
+  "net_external_flows": "500.00000000",
+  "fifo_basis": "343.00000000",
+  "realized": "28.00000000",
+  "income": "3.00000000",
+  "fees": "5.00000000",
+  "receivables": "0.00000000",
+  "unallocated_expenses": "0.00000000",
+  "equity": {
+    "value": null,
+    "reason": "Missing eligible marks or unreconciled accounting",
+    "unit": "USD"
+  },
+  "unrealized": {
+    "value": null,
+    "reason": "Insufficient eligible evidence",
+    "unit": "USD"
+  },
+  "strategy_pnl": {
+    "value": null,
+    "reason": "Insufficient eligible evidence",
+    "unit": "USD"
+  },
+  "twr": {
+    "value": null,
+    "reason": "Missing eligible NAV or exact flow-boundary valuation",
+    "unit": "ratio"
+  },
+  "max_drawdown": {
+    "value": null,
+    "reason": "Incomplete declared wealth schedule",
+    "unit": "ratio"
+  },
+  "volatility": {
+    "value": null,
+    "reason": "At least two complete scheduled returns required",
+    "unit": "ratio"
+  },
+  "turnover": {
+    "value": null,
+    "reason": "Missing positive mean scheduled equity",
+    "unit": "ratio"
+  },
+  "hit_rate": {
+    "value": null,
+    "reason": "No fully closed positions",
+    "unit": "ratio"
+  },
+  "lot_relief_win_rate": {
+    "value": "1.00000000",
+    "reason": null,
+    "unit": "ratio"
+  },
+  "recurring_expense": {
+    "value": "0.00000000",
+    "reason": null,
+    "unit": "USD"
+  },
+  "one_time_expense": {
+    "value": "0.00000000",
+    "reason": null,
+    "unit": "USD"
+  },
+  "economics_pnl": {
+    "value": null,
+    "reason": "Unknown P/L or recurring cost",
+    "unit": "USD"
+  },
+  "cash_baseline": {
+    "value": "0.00000000",
+    "reason": null,
+    "unit": "ratio"
+  },
+  "broad_market_baseline": {
+    "value": null,
+    "reason": "Missing eligible NAV or exact flow-boundary valuation",
+    "unit": "ratio"
+  },
+  "benchmark_status": "matched flow timing, costs, window and execution basis",
+  "holdings": [
+    {
+      "instrument_id": "instrument:fixture-fund",
+      "quantity": "6.00000000",
+      "fifo_basis": "343.00000000",
+      "value": null
+    }
+  ],
+  "history": [
+    {
+      "at": "2099-01-01T21:00:00Z",
+      "equity": "1000.00000000",
+      "wealth": "1.00000000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-02T21:00:00Z",
+      "equity": "998.00000000",
+      "wealth": "0.99800000",
+      "drawdown": "0.00200000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-03T21:00:00Z",
+      "equity": "1036.00000000",
+      "wealth": "1.03600000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-04T21:00:00Z",
+      "equity": "1075.00000000",
+      "wealth": "1.07500000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-05T21:00:00Z",
+      "equity": "1075.00000000",
+      "wealth": "1.07500000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-06T21:00:00Z",
+      "equity": "1075.00000000",
+      "wealth": "1.07500000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-07T21:00:00Z",
+      "equity": "1075.00000000",
+      "wealth": "1.07500000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-08T21:00:00Z",
+      "equity": "1078.00000000",
+      "wealth": "1.07800000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-09T21:00:00Z",
+      "equity": "1578.00000000",
+      "wealth": "1.07800000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-10T21:00:00Z",
+      "equity": "1578.00000000",
+      "wealth": "1.07800000",
+      "drawdown": "0.00000000",
+      "reason": null
+    },
+    {
+      "at": "2099-01-11T21:00:00Z",
+      "equity": "1548.00000000",
+      "wealth": "1.05750570",
+      "drawdown": "0.01901141",
+      "reason": null
+    },
+    {
+      "at": "2099-01-12T21:00:00Z",
+      "equity": null,
+      "wealth": null,
+      "drawdown": null,
+      "reason": "Missing eligible mark, flow-boundary NAV or reconciled accounting"
+    }
+  ],
+  "flow_signature": "633a264ee291c7c69c30b10a96047f62c15b0860d054737d3abbcd47ffe909a8",
+  "comparison_hash": "62d24bd383752cc0fb24458f0b1286fcb289f860ba7fe37885900d6b63993831",
+  "halted": true,
+  "gaps": [],
+  "closed_segments": [],
+  "order_outcomes": [
+    {
+      "order_id": "fixture:golden-order-4",
+      "filled_quantity": "2.00000000",
+      "remaining_quantity": "0.00000000",
+      "status": "filled"
+    },
+    {
+      "order_id": "fixture:golden-order-11",
+      "filled_quantity": "2.00000000",
+      "remaining_quantity": "0.00000000",
+      "status": "filled"
+    },
+    {
+      "order_id": "fixture:golden-order-18",
+      "filled_quantity": "1.00000000",
+      "remaining_quantity": "0.00000000",
+      "status": "filled"
+    },
+    {
+      "order_id": "fixture:golden-order-41",
+      "filled_quantity": "0.00000000",
+      "remaining_quantity": "1.00000000",
+      "status": "pending"
+    }
+  ],
+  "baseline_result_hash": "faa4d0f1aeaf936d5eb226b7dff1fb0d384e27c1c513d8fbf67572769113fb00",
+  "operating_expense_ids": [],
+  "definitions": [
+    "FIFO basis includes acquisition fees; disposal fees reduce realized P/L once.",
+    "TWR links exact eligible flow-boundary NAV; drawdown follows its wealth index.",
+    "Turnover is gross traded notional / mean equity on the declared schedule; volatility is unannualized sample deviation.",
+    "Closed-position hit rate and individual FIFO relief win rate are separate samples.",
+    "Recurring operating costs are separate from trading TWR; economics P/L deducts them once.",
+    "Baselines: zero-interest cash and Independent broad-market synthetic basket; buy at next eligible event, retain later contributions as cash",
+    "No aggregation across execution bases or funded/Character segments."
+  ]
+}

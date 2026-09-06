@@ -38,7 +38,7 @@ class V2StorageTests(unittest.TestCase):
             self.assertEqual(new.verify()["v1"], before)
             self.assertEqual(list(map(tuple, new.connection.execute("SELECT * FROM schema_migrations WHERE version<3"))), hashes)
         with V2Store(path, synthetic=True) as reopened:
-            self.assertEqual(reopened.connection.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0], 3)
+            self.assertEqual(reopened.connection.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0], V2Store.schema_ceiling)
 
     def test_atomic_bundles_hashes_identity_and_immutable_rows(self):
         records = bundle()

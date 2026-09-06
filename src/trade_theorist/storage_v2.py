@@ -11,7 +11,7 @@ from .storage import Store, now
 
 
 class V2Store(Store):
-    schema_ceiling = 3
+    schema_ceiling = 4
 
     def v2_record(self, identifier):
         row = self.connection.execute("SELECT body FROM v2_records WHERE id=?", (identifier,)).fetchone()

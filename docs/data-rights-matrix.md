@@ -16,7 +16,7 @@ The support page's full article was visible in the official search result, while
 
 ## Field-level policy
 
-[field-classification-v1.json](../schemas/meta-001/field-classification-v1.json) enumerates the exact declared fields from persisted v1 records, the current dashboard format, synthetic performance/attribution contracts and Step 01's operational v2 records/storage columns. Regenerate with `python scripts/export_field_classification.py`; `--check` detects drift. Nested arrays retain wildcard field paths. Unknown fields and open-ended event payloads are private/unclassified and denied public/Git export, so an undeclared payload key cannot inherit permission from its container.
+[field-classification-v1.json](../schemas/meta-001/field-classification-v1.json) enumerates the exact declared fields from persisted v1 records, the current dashboard format, synthetic performance/attribution contracts and Steps 01–02's operational v2 records/storage columns, including private accounting results and reconciliation evidence. Step 02 checks source permissions for replay and result construction; browser exposure remains a later step. Regenerate with `python scripts/export_field_classification.py`; `--check` detects drift. Nested arrays retain wildcard field paths. Unknown fields and open-ended event payloads are private/unclassified and denied public/Git export, so an undeclared payload key cannot inherit permission from its container.
 
 | Fields / examples | Local raw/private storage | Private owner read model | Git/public default |
 | --- | --- | --- | --- |

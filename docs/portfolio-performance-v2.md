@@ -2,7 +2,7 @@
 
 > Subsequent queue refactor (2026-09-06): [ordered remaining work](../tasks/README.md) now starts at Step 01. Original TASK references below remain stable historical/contract references; [the crosswalk](../tasks/CROSSWALK.md) gives their active steps.
 
-Date: 2026-09-06. Status: versioned design plus executable synthetic reference fixture. [Step 01](step-01-contracts.md) now implements operational v2 contracts and explicit persistence with a checked synthetic migration boundary. **FIFO/TWR calculations are not yet integrated with the simulator or evaluator**; Step 02 owns that work. Existing `raw-next-open-ledger-v1` results keep their original average-cost meaning.
+Date: 2026-09-06. Status: versioned design with implemented production contracts, accounting and offline reconciliation. [Step 01](step-01-contracts.md) implements operational v2 contracts and explicit persistence with a checked synthetic migration boundary. [Step 02](step-02-accounting.md) integrates persistent FIFO/TWR with a separate simulator/evaluator and proves the golden vector and offline broker attribution. Private UI and real operational readiness remain pending. Existing `raw-next-open-ledger-v1` results keep their original average-cost meaning.
 
 ## Identity and execution basis
 
