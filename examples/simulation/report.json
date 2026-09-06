@@ -1,0 +1,90 @@
+{
+  "evidence": "fixture",
+  "description": "Scripted engineering examples; no real Character learning, recommendations or performance",
+  "portfolios": [
+    {
+      "portfolio_id": "portfolio:fixture-council-council",
+      "experiment_id": "experiment:foundation-fixture-council",
+      "mode": "council",
+      "evidence": "fixture",
+      "cash": "8997.90",
+      "reserved": "0",
+      "available_cash": "8997.90",
+      "positions": {
+        "instrument:fixture-fund": "10"
+      },
+      "equity": "10017.90",
+      "realized": "0",
+      "unrealized": "17.90",
+      "income": "0",
+      "fees": "1.00",
+      "receivables": "0",
+      "stale_instruments": [],
+      "halted": false,
+      "model": "raw-next-open-ledger-v1"
+    },
+    {
+      "portfolio_id": "portfolio:fixture-council-index",
+      "experiment_id": "experiment:foundation-fixture-index",
+      "mode": "character_portfolio",
+      "evidence": "fixture",
+      "cash": "8997.90",
+      "reserved": "0",
+      "available_cash": "8997.90",
+      "positions": {
+        "instrument:fixture-fund": "10"
+      },
+      "equity": "10017.90",
+      "realized": "0",
+      "unrealized": "17.90",
+      "income": "0",
+      "fees": "1.00",
+      "receivables": "0",
+      "stale_instruments": [],
+      "halted": false,
+      "model": "raw-next-open-ledger-v1"
+    },
+    {
+      "portfolio_id": "portfolio:fixture-council-value",
+      "experiment_id": "experiment:foundation-fixture-value",
+      "mode": "character_portfolio",
+      "evidence": "fixture",
+      "cash": "8997.90",
+      "reserved": "0",
+      "available_cash": "8997.90",
+      "positions": {
+        "instrument:fixture-fund": "10"
+      },
+      "equity": "10017.90",
+      "realized": "0",
+      "unrealized": "17.90",
+      "income": "0",
+      "fees": "1.00",
+      "receivables": "0",
+      "stale_instruments": [],
+      "halted": false,
+      "model": "raw-next-open-ledger-v1"
+    },
+    {
+      "portfolio_id": "portfolio:fixture-council-trend",
+      "experiment_id": "experiment:foundation-fixture-trend",
+      "mode": "character_portfolio",
+      "evidence": "fixture",
+      "cash": "8997.90",
+      "reserved": "0",
+      "available_cash": "8997.90",
+      "positions": {
+        "instrument:fixture-fund": "10"
+      },
+      "equity": "10017.90",
+      "realized": "0",
+      "unrealized": "17.90",
+      "income": "0",
+      "fees": "1.00",
+      "receivables": "0",
+      "stale_instruments": [],
+      "halted": false,
+      "model": "raw-next-open-ledger-v1"
+    }
+  ]
+}

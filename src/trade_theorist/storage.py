@@ -106,6 +106,16 @@ class Store:
     def records(self):
         return [json.loads(row[0]) for row in self.connection.execute("SELECT body FROM records ORDER BY id")]
 
+    def record(self, identifier, kind=None):
+        """Read one immutable record without loading the library or learning history."""
+        row = self.connection.execute("SELECT body FROM records WHERE id=?", (identifier,)).fetchone()
+        if row is None:
+            raise ContractError("Record not found")
+        record = json.loads(row[0])
+        if kind is not None and record["record_type"] != kind:
+            raise ContractError("Unexpected record type")
+        return record
+
     def put_records(self, records):
         records = list(records)
         with self.transaction():
@@ -148,17 +158,22 @@ class Store:
             return content_hash
 
     def events(self, experiment_id=None, kind=None):
+        return list(self.iter_events(experiment_id, kind))
+
+    def iter_events(self, experiment_id=None, kind=None, *, portfolio_id=None):
+        """Stream events; optional portfolio filtering happens in SQLite."""
         query, values = "SELECT * FROM events WHERE 1=1", []
         for name, value in (("experiment_id", experiment_id), ("kind", kind)):
             if value is not None:
                 query += f" AND {name}=?"
                 values.append(value)
-        result = []
+        if portfolio_id is not None:
+            query += " AND json_extract(body, '$.portfolio_id')=?"
+            values.append(portfolio_id)
         for row in self.connection.execute(query + " ORDER BY sequence", values):
             item = dict(row)
             item["payload"] = json.loads(item.pop("body"))
-            result.append(item)
-        return result
+            yield item
 
     def verify(self):
         if self.connection.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
@@ -169,16 +184,18 @@ class Store:
             if digest(json.loads(row[0])) != row[1]:
                 raise ContractError("Record hash mismatch")
         previous_hash = "0" * 64
-        for event in self.events():
+        event_count = 0
+        for event in self.iter_events():
             envelope = {k: event[k] for k in ("id", "experiment_id", "kind", "created_at", "payload", "previous_hash")}
             if event["previous_hash"] != previous_hash or digest(envelope) != event["content_hash"]:
                 raise ContractError("Event hash chain mismatch")
             previous_hash = event["content_hash"]
-        return {"records": len(records), "events": len(self.events()), "tip": previous_hash}
+            event_count += 1
+        return {"records": len(records), "events": event_count, "tip": previous_hash}
 
     def replay(self, experiment_id, reducer, initial):
         self.verify()
-        for event in self.events(experiment_id):
+        for event in self.iter_events(experiment_id):
             initial = reducer(initial, event)
         return initial
 

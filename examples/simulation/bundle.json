@@ -1,0 +1,1067 @@
+[
+  {
+    "id": "source:original-arithmetic-fixture",
+    "schema_version": 1,
+    "record_type": "source",
+    "experiment_id": null,
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "title": "Original arithmetic fixture",
+    "authors": [
+      "Trade Theorist project"
+    ],
+    "edition": "fixture-v1",
+    "isbn": null,
+    "publisher": "Trade Theorist project",
+    "locator": "fixture://arithmetic-v1",
+    "retrieved_at": "2026-09-05T12:00:00Z",
+    "checked_at": "2026-09-05T12:00:00Z",
+    "next_check_at": "2099-01-01T00:00:00Z",
+    "access": "public_full_text",
+    "rights": {
+      "reading": "permitted",
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "redistribution": "permitted",
+      "evidence": [
+        "Original synthetic project text created for software tests; no third-party book text."
+      ]
+    },
+    "publication_eligibility": "raw_permitted",
+    "private_locator": null,
+    "ingestion_status": "not_started",
+    "blocker": null
+  },
+  {
+    "id": "policy:synthetic-v1-council",
+    "schema_version": 1,
+    "record_type": "policy",
+    "experiment_id": "experiment:foundation-fixture-council",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "version": "fixture-v1",
+    "stage": "fixture",
+    "synthetic": true,
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "limits": {
+      "initial_cash": "10000.00",
+      "max_deployed_capital": "10000.00",
+      "company_weight": 0.2,
+      "sector_weight": 0.4,
+      "diversified_etf_weight": 1.0,
+      "gross_exposure": 1.0,
+      "daily_loss": 0.02,
+      "drawdown": 0.1,
+      "turnover": 0.2,
+      "orders_per_session": 5,
+      "max_quote_age_seconds": 60,
+      "max_spread_bps": "20"
+    },
+    "clock": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "long_only": true,
+    "cash_only": true,
+    "approval_ref": "fixture-engineering-only-task-008",
+    "approved_at": "2026-09-05T12:00:00Z",
+    "operator": "fixture-owner",
+    "kill_switch_owner": "fixture-owner",
+    "reconciliation_owner": "fixture-owner",
+    "incident_owner": "fixture-owner"
+  },
+  {
+    "id": "character:index-steward-fixture-v1-council",
+    "schema_version": 1,
+    "record_type": "character",
+    "experiment_id": "experiment:foundation-fixture-council",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "character_id": "council_simulation_fixture",
+    "version": "fixture-v1",
+    "constitution_hash": "36aa8a9957b87cc8f33cd82990442f7114f99a78d7bee1835c3c8dc3f766d4c5",
+    "curriculum_hash": "2b125947d7c079b2b3b33ed8c215b99f7f0e197c3e48b34aabe0978ffafa5ad5",
+    "readiness": "fixture_only",
+    "foundation_source_id": "source:original-arithmetic-fixture"
+  },
+  {
+    "id": "experiment:foundation-fixture-council",
+    "schema_version": 1,
+    "record_type": "experiment",
+    "experiment_id": "experiment:foundation-fixture-council",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "council",
+    "regime": "fixture",
+    "character_versions": [
+      "character:index-steward-fixture-v1-council"
+    ],
+    "policy_id": "policy:synthetic-v1-council",
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "baseline_cash": "zero-yield fictional cash",
+    "baseline_fund": "FIXTURE broad basket; not a real fund",
+    "membership_basis": "synthetic fixed instrument",
+    "decision_cadence": "daily_session",
+    "sizing_rules": "fixture policy only",
+    "data_feeds": [
+      "synthetic-v1"
+    ],
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "start_at": "2099-01-03T00:00:00Z",
+    "end_at": "2099-02-03T00:00:00Z",
+    "development_end_at": "2099-01-01T00:00:00Z",
+    "validation_end_at": "2099-01-02T00:00:00Z",
+    "metrics": [
+      "net_return",
+      "drawdown",
+      "calibration"
+    ],
+    "minimum_sessions": 2,
+    "minimum_forecasts": 2,
+    "advice": "none",
+    "knowledge_cutoff": "2026-09-05T12:00:00Z",
+    "retrieval_policy": "Original fixtures only; no external retrieval",
+    "model_limitations": "Recorded synthetic outputs, no evidence of source learning or performance",
+    "approval_ref": "synthetic-test-only"
+  },
+  {
+    "id": "portfolio:fixture-council-council",
+    "schema_version": 1,
+    "record_type": "portfolio",
+    "experiment_id": "experiment:foundation-fixture-council",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "council",
+    "owner_character_version": "character:index-steward-fixture-v1-council",
+    "initial_cash": "10000.00",
+    "currency": "USD"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-council",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "observation:sim-council-3",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-03T21:00:00Z",
+    "published_at": "2099-01-03T21:00:00Z",
+    "ingested_at": "2099-01-03T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-council",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "snapshot:sim-council-3",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-03T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-council-3"
+    ],
+    "exclusions": [],
+    "content_hash": "eaab7d2785b4a6cc20ff6137f50b9db2ec789637cc75217f173fe025126c3a6d"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-council",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "observation:sim-council-4",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-04T21:00:00Z",
+    "published_at": "2099-01-04T21:00:00Z",
+    "ingested_at": "2099-01-04T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b2e9dfc3bfb83673b0b608b4356013a4e48e6b54f6531c881b1136d7e3338bff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-council",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "snapshot:sim-council-4",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-04T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-council-4"
+    ],
+    "exclusions": [],
+    "content_hash": "b8fc7253a07a51f2c7a143cd81ca18c8267a76cdc0785ac36e47abea6d37f823"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "recommendation",
+    "experiment_id": "experiment:foundation-fixture-council",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "recommendation:sim-council",
+    "character_version": "character:index-steward-fixture-v1-council",
+    "portfolio_id": "portfolio:fixture-council-council",
+    "snapshot_id": "snapshot:sim-council-3",
+    "instrument_id": "instrument:fixture-fund",
+    "action": "buy",
+    "quantity": "10",
+    "horizon": "one fixture session",
+    "confidence": 0.5,
+    "confidence_event": "fixture close above fill",
+    "invalidation_conditions": [
+      "Missing eligible raw bar or policy rejection"
+    ],
+    "expires_at": "2099-01-05T00:00:00Z",
+    "citations": [
+      {
+        "source_id": "source:original-arithmetic-fixture",
+        "locator": "fixture/section-1",
+        "passage_hash": "b9aa942bb9949165e4971621700c2f27383f566a225ca96e0167d3f50d49316f"
+      }
+    ],
+    "abstention_reason": null,
+    "theory_ids": []
+  },
+  {
+    "id": "policy:synthetic-v1-index",
+    "schema_version": 1,
+    "record_type": "policy",
+    "experiment_id": "experiment:foundation-fixture-index",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "version": "fixture-v1",
+    "stage": "fixture",
+    "synthetic": true,
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "limits": {
+      "initial_cash": "10000.00",
+      "max_deployed_capital": "10000.00",
+      "company_weight": 0.2,
+      "sector_weight": 0.4,
+      "diversified_etf_weight": 1.0,
+      "gross_exposure": 1.0,
+      "daily_loss": 0.02,
+      "drawdown": 0.1,
+      "turnover": 0.2,
+      "orders_per_session": 5,
+      "max_quote_age_seconds": 60,
+      "max_spread_bps": "20"
+    },
+    "clock": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "long_only": true,
+    "cash_only": true,
+    "approval_ref": "fixture-engineering-only-task-008",
+    "approved_at": "2026-09-05T12:00:00Z",
+    "operator": "fixture-owner",
+    "kill_switch_owner": "fixture-owner",
+    "reconciliation_owner": "fixture-owner",
+    "incident_owner": "fixture-owner"
+  },
+  {
+    "id": "character:index-steward-fixture-v1-index",
+    "schema_version": 1,
+    "record_type": "character",
+    "experiment_id": "experiment:foundation-fixture-index",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "character_id": "index_simulation_fixture",
+    "version": "fixture-v1",
+    "constitution_hash": "36aa8a9957b87cc8f33cd82990442f7114f99a78d7bee1835c3c8dc3f766d4c5",
+    "curriculum_hash": "2b125947d7c079b2b3b33ed8c215b99f7f0e197c3e48b34aabe0978ffafa5ad5",
+    "readiness": "fixture_only",
+    "foundation_source_id": "source:original-arithmetic-fixture"
+  },
+  {
+    "id": "experiment:foundation-fixture-index",
+    "schema_version": 1,
+    "record_type": "experiment",
+    "experiment_id": "experiment:foundation-fixture-index",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "character_portfolio",
+    "regime": "fixture",
+    "character_versions": [
+      "character:index-steward-fixture-v1-index"
+    ],
+    "policy_id": "policy:synthetic-v1-index",
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "baseline_cash": "zero-yield fictional cash",
+    "baseline_fund": "FIXTURE broad basket; not a real fund",
+    "membership_basis": "synthetic fixed instrument",
+    "decision_cadence": "daily_session",
+    "sizing_rules": "fixture policy only",
+    "data_feeds": [
+      "synthetic-v1"
+    ],
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "start_at": "2099-01-03T00:00:00Z",
+    "end_at": "2099-02-03T00:00:00Z",
+    "development_end_at": "2099-01-01T00:00:00Z",
+    "validation_end_at": "2099-01-02T00:00:00Z",
+    "metrics": [
+      "net_return",
+      "drawdown",
+      "calibration"
+    ],
+    "minimum_sessions": 2,
+    "minimum_forecasts": 2,
+    "advice": "none",
+    "knowledge_cutoff": "2026-09-05T12:00:00Z",
+    "retrieval_policy": "Original fixtures only; no external retrieval",
+    "model_limitations": "Recorded synthetic outputs, no evidence of source learning or performance",
+    "approval_ref": "synthetic-test-only"
+  },
+  {
+    "id": "portfolio:fixture-council-index",
+    "schema_version": 1,
+    "record_type": "portfolio",
+    "experiment_id": "experiment:foundation-fixture-index",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "character_portfolio",
+    "owner_character_version": "character:index-steward-fixture-v1-index",
+    "initial_cash": "10000.00",
+    "currency": "USD"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-index",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "observation:sim-index-3",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-03T21:00:00Z",
+    "published_at": "2099-01-03T21:00:00Z",
+    "ingested_at": "2099-01-03T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-index",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "snapshot:sim-index-3",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-03T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-index-3"
+    ],
+    "exclusions": [],
+    "content_hash": "14513511f91b6ebcc1b15c33281f5e739c6118eff55f7aadc2922bbd8939b8a9"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-index",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "observation:sim-index-4",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-04T21:00:00Z",
+    "published_at": "2099-01-04T21:00:00Z",
+    "ingested_at": "2099-01-04T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b2e9dfc3bfb83673b0b608b4356013a4e48e6b54f6531c881b1136d7e3338bff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-index",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "snapshot:sim-index-4",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-04T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-index-4"
+    ],
+    "exclusions": [],
+    "content_hash": "ef679a06e8ab7620c2f0f7287f27a7770458d71db1c48d1ec3220578fd919cf0"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "recommendation",
+    "experiment_id": "experiment:foundation-fixture-index",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "recommendation:sim-index",
+    "character_version": "character:index-steward-fixture-v1-index",
+    "portfolio_id": "portfolio:fixture-council-index",
+    "snapshot_id": "snapshot:sim-index-3",
+    "instrument_id": "instrument:fixture-fund",
+    "action": "buy",
+    "quantity": "10",
+    "horizon": "one fixture session",
+    "confidence": 0.5,
+    "confidence_event": "fixture close above fill",
+    "invalidation_conditions": [
+      "Missing eligible raw bar or policy rejection"
+    ],
+    "expires_at": "2099-01-05T00:00:00Z",
+    "citations": [
+      {
+        "source_id": "source:original-arithmetic-fixture",
+        "locator": "fixture/section-1",
+        "passage_hash": "b9aa942bb9949165e4971621700c2f27383f566a225ca96e0167d3f50d49316f"
+      }
+    ],
+    "abstention_reason": null,
+    "theory_ids": []
+  },
+  {
+    "id": "policy:synthetic-v1-value",
+    "schema_version": 1,
+    "record_type": "policy",
+    "experiment_id": "experiment:foundation-fixture-value",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "version": "fixture-v1",
+    "stage": "fixture",
+    "synthetic": true,
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "limits": {
+      "initial_cash": "10000.00",
+      "max_deployed_capital": "10000.00",
+      "company_weight": 0.2,
+      "sector_weight": 0.4,
+      "diversified_etf_weight": 1.0,
+      "gross_exposure": 1.0,
+      "daily_loss": 0.02,
+      "drawdown": 0.1,
+      "turnover": 0.2,
+      "orders_per_session": 5,
+      "max_quote_age_seconds": 60,
+      "max_spread_bps": "20"
+    },
+    "clock": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "long_only": true,
+    "cash_only": true,
+    "approval_ref": "fixture-engineering-only-task-008",
+    "approved_at": "2026-09-05T12:00:00Z",
+    "operator": "fixture-owner",
+    "kill_switch_owner": "fixture-owner",
+    "reconciliation_owner": "fixture-owner",
+    "incident_owner": "fixture-owner"
+  },
+  {
+    "id": "character:index-steward-fixture-v1-value",
+    "schema_version": 1,
+    "record_type": "character",
+    "experiment_id": "experiment:foundation-fixture-value",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "character_id": "value_simulation_fixture",
+    "version": "fixture-v1",
+    "constitution_hash": "36aa8a9957b87cc8f33cd82990442f7114f99a78d7bee1835c3c8dc3f766d4c5",
+    "curriculum_hash": "2b125947d7c079b2b3b33ed8c215b99f7f0e197c3e48b34aabe0978ffafa5ad5",
+    "readiness": "fixture_only",
+    "foundation_source_id": "source:original-arithmetic-fixture"
+  },
+  {
+    "id": "experiment:foundation-fixture-value",
+    "schema_version": 1,
+    "record_type": "experiment",
+    "experiment_id": "experiment:foundation-fixture-value",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "character_portfolio",
+    "regime": "fixture",
+    "character_versions": [
+      "character:index-steward-fixture-v1-value"
+    ],
+    "policy_id": "policy:synthetic-v1-value",
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "baseline_cash": "zero-yield fictional cash",
+    "baseline_fund": "FIXTURE broad basket; not a real fund",
+    "membership_basis": "synthetic fixed instrument",
+    "decision_cadence": "daily_session",
+    "sizing_rules": "fixture policy only",
+    "data_feeds": [
+      "synthetic-v1"
+    ],
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "start_at": "2099-01-03T00:00:00Z",
+    "end_at": "2099-02-03T00:00:00Z",
+    "development_end_at": "2099-01-01T00:00:00Z",
+    "validation_end_at": "2099-01-02T00:00:00Z",
+    "metrics": [
+      "net_return",
+      "drawdown",
+      "calibration"
+    ],
+    "minimum_sessions": 2,
+    "minimum_forecasts": 2,
+    "advice": "none",
+    "knowledge_cutoff": "2026-09-05T12:00:00Z",
+    "retrieval_policy": "Original fixtures only; no external retrieval",
+    "model_limitations": "Recorded synthetic outputs, no evidence of source learning or performance",
+    "approval_ref": "synthetic-test-only"
+  },
+  {
+    "id": "portfolio:fixture-council-value",
+    "schema_version": 1,
+    "record_type": "portfolio",
+    "experiment_id": "experiment:foundation-fixture-value",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "character_portfolio",
+    "owner_character_version": "character:index-steward-fixture-v1-value",
+    "initial_cash": "10000.00",
+    "currency": "USD"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-value",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "observation:sim-value-3",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-03T21:00:00Z",
+    "published_at": "2099-01-03T21:00:00Z",
+    "ingested_at": "2099-01-03T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-value",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "snapshot:sim-value-3",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-03T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-value-3"
+    ],
+    "exclusions": [],
+    "content_hash": "c6f33bfe72b96d96e0dc5ddaf948762d54300c6bc54ecef2d7ae8d8fa85ca0d4"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-value",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "observation:sim-value-4",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-04T21:00:00Z",
+    "published_at": "2099-01-04T21:00:00Z",
+    "ingested_at": "2099-01-04T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b2e9dfc3bfb83673b0b608b4356013a4e48e6b54f6531c881b1136d7e3338bff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-value",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "snapshot:sim-value-4",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-04T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-value-4"
+    ],
+    "exclusions": [],
+    "content_hash": "a25f6fef2c598567152ad9e48640f682599b49a3fd8c73367d94fe34ea734ff9"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "recommendation",
+    "experiment_id": "experiment:foundation-fixture-value",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "recommendation:sim-value",
+    "character_version": "character:index-steward-fixture-v1-value",
+    "portfolio_id": "portfolio:fixture-council-value",
+    "snapshot_id": "snapshot:sim-value-3",
+    "instrument_id": "instrument:fixture-fund",
+    "action": "buy",
+    "quantity": "10",
+    "horizon": "one fixture session",
+    "confidence": 0.5,
+    "confidence_event": "fixture close above fill",
+    "invalidation_conditions": [
+      "Missing eligible raw bar or policy rejection"
+    ],
+    "expires_at": "2099-01-05T00:00:00Z",
+    "citations": [
+      {
+        "source_id": "source:original-arithmetic-fixture",
+        "locator": "fixture/section-1",
+        "passage_hash": "b9aa942bb9949165e4971621700c2f27383f566a225ca96e0167d3f50d49316f"
+      }
+    ],
+    "abstention_reason": null,
+    "theory_ids": []
+  },
+  {
+    "id": "policy:synthetic-v1-trend",
+    "schema_version": 1,
+    "record_type": "policy",
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "version": "fixture-v1",
+    "stage": "fixture",
+    "synthetic": true,
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "limits": {
+      "initial_cash": "10000.00",
+      "max_deployed_capital": "10000.00",
+      "company_weight": 0.2,
+      "sector_weight": 0.4,
+      "diversified_etf_weight": 1.0,
+      "gross_exposure": 1.0,
+      "daily_loss": 0.02,
+      "drawdown": 0.1,
+      "turnover": 0.2,
+      "orders_per_session": 5,
+      "max_quote_age_seconds": 60,
+      "max_spread_bps": "20"
+    },
+    "clock": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "long_only": true,
+    "cash_only": true,
+    "approval_ref": "fixture-engineering-only-task-008",
+    "approved_at": "2026-09-05T12:00:00Z",
+    "operator": "fixture-owner",
+    "kill_switch_owner": "fixture-owner",
+    "reconciliation_owner": "fixture-owner",
+    "incident_owner": "fixture-owner"
+  },
+  {
+    "id": "character:index-steward-fixture-v1-trend",
+    "schema_version": 1,
+    "record_type": "character",
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "character_id": "trend_simulation_fixture",
+    "version": "fixture-v1",
+    "constitution_hash": "36aa8a9957b87cc8f33cd82990442f7114f99a78d7bee1835c3c8dc3f766d4c5",
+    "curriculum_hash": "2b125947d7c079b2b3b33ed8c215b99f7f0e197c3e48b34aabe0978ffafa5ad5",
+    "readiness": "fixture_only",
+    "foundation_source_id": "source:original-arithmetic-fixture"
+  },
+  {
+    "id": "experiment:foundation-fixture-trend",
+    "schema_version": 1,
+    "record_type": "experiment",
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "character_portfolio",
+    "regime": "fixture",
+    "character_versions": [
+      "character:index-steward-fixture-v1-trend"
+    ],
+    "policy_id": "policy:synthetic-v1-trend",
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "baseline_cash": "zero-yield fictional cash",
+    "baseline_fund": "FIXTURE broad basket; not a real fund",
+    "membership_basis": "synthetic fixed instrument",
+    "decision_cadence": "daily_session",
+    "sizing_rules": "fixture policy only",
+    "data_feeds": [
+      "synthetic-v1"
+    ],
+    "costs": {
+      "fee_per_order": "1.00",
+      "slippage_bps": "10",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "start_at": "2099-01-03T00:00:00Z",
+    "end_at": "2099-02-03T00:00:00Z",
+    "development_end_at": "2099-01-01T00:00:00Z",
+    "validation_end_at": "2099-01-02T00:00:00Z",
+    "metrics": [
+      "net_return",
+      "drawdown",
+      "calibration"
+    ],
+    "minimum_sessions": 2,
+    "minimum_forecasts": 2,
+    "advice": "none",
+    "knowledge_cutoff": "2026-09-05T12:00:00Z",
+    "retrieval_policy": "Original fixtures only; no external retrieval",
+    "model_limitations": "Recorded synthetic outputs, no evidence of source learning or performance",
+    "approval_ref": "synthetic-test-only"
+  },
+  {
+    "id": "portfolio:fixture-council-trend",
+    "schema_version": 1,
+    "record_type": "portfolio",
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "character_portfolio",
+    "owner_character_version": "character:index-steward-fixture-v1-trend",
+    "initial_cash": "10000.00",
+    "currency": "USD"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "observation:sim-trend-3",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-03T21:00:00Z",
+    "published_at": "2099-01-03T21:00:00Z",
+    "ingested_at": "2099-01-03T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "snapshot:sim-trend-3",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-03T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-trend-3"
+    ],
+    "exclusions": [],
+    "content_hash": "0cd2643ba92695da7bca5943622be122f2a063e62afb15e0b38658e52dc2a3e9"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "observation:sim-trend-4",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2099-01-04T21:00:00Z",
+    "published_at": "2099-01-04T21:00:00Z",
+    "ingested_at": "2099-01-04T21:00:00Z",
+    "availability_evidence": "Original synthetic simulation bar",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-v1",
+    "units": "USD",
+    "payload_hash": "b2e9dfc3bfb83673b0b608b4356013a4e48e6b54f6531c881b1136d7e3338bff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "contamination": "fixture",
+    "created_at": "2099-01-04T21:02:00Z",
+    "id": "snapshot:sim-trend-4",
+    "record_type": "snapshot",
+    "cutoff": "2099-01-04T21:02:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:sim-trend-4"
+    ],
+    "exclusions": [],
+    "content_hash": "eb7c7522ab57390fa851c32822cbac69e12e2fb20e45772deda0c1984bd37e1a"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "recommendation",
+    "experiment_id": "experiment:foundation-fixture-trend",
+    "contamination": "fixture",
+    "created_at": "2099-01-03T21:02:00Z",
+    "id": "recommendation:sim-trend",
+    "character_version": "character:index-steward-fixture-v1-trend",
+    "portfolio_id": "portfolio:fixture-council-trend",
+    "snapshot_id": "snapshot:sim-trend-3",
+    "instrument_id": "instrument:fixture-fund",
+    "action": "buy",
+    "quantity": "10",
+    "horizon": "one fixture session",
+    "confidence": 0.5,
+    "confidence_event": "fixture close above fill",
+    "invalidation_conditions": [
+      "Missing eligible raw bar or policy rejection"
+    ],
+    "expires_at": "2099-01-05T00:00:00Z",
+    "citations": [
+      {
+        "source_id": "source:original-arithmetic-fixture",
+        "locator": "fixture/section-1",
+        "passage_hash": "b9aa942bb9949165e4971621700c2f27383f566a225ca96e0167d3f50d49316f"
+      }
+    ],
+    "abstention_reason": null,
+    "theory_ids": []
+  }
+]

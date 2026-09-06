@@ -271,7 +271,7 @@ Day-trading and margin rules are jurisdiction-, broker-, account-, and time-depe
 
 ## Planned repository map
 
-The design documents and task backlog accompany the Python implementation in `src/trade_theorist/`, versioned schemas, three Character directories, fixture opinions, ingestion snapshots and tests. In the target map below, council, evaluation, simulation and dashboard modules remain planned; create them when their first real artifact is added.
+The design documents and task backlog accompany the Python implementation in `src/trade_theorist/`, versioned schemas, three Character directories, fixture opinions, ingestion snapshots, simulation portfolios and deterministic risk controls. See [tasks 007–008](docs/task-007-008-implementation.md) for accounting and execution, and [focused development](docs/development.md) for quiet tests with saved failure logs. In the target map below, council, evaluation and dashboard modules remain planned; create them when their first real artifact is added.
 
 ```text
 Trade_Theorist/

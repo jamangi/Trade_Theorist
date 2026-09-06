@@ -37,6 +37,20 @@ class StorageTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             self.store.backup(backup)
 
+    def test_targeted_record_and_streamed_portfolio_reads(self):
+        self.assertEqual(self.store.record(EXP, "experiment")["id"], EXP)
+        with self.assertRaises(ContractError):
+            self.store.record(EXP, "portfolio")
+        with self.assertRaises(ContractError):
+            self.store.record("record:missing")
+        for number, portfolio in enumerate(("portfolio:one", "portfolio:two", "portfolio:one")):
+            self.store.append(f"event:stream-{number}", EXP, "simulation", {"portfolio_id": portfolio})
+        stream = self.store.iter_events(EXP, "simulation", portfolio_id="portfolio:one")
+        self.assertIs(iter(stream), stream)
+        self.assertEqual([e["id"] for e in stream], ["event:stream-0", "event:stream-2"])
+        self.assertEqual(self.store.events(EXP), list(self.store.iter_events(EXP)))
+        self.assertEqual(self.store.verify()["events"], 3)
+
     def test_records_and_events_cannot_be_changed_or_deleted(self):
         self.store.put_records(base_records())
         self.assertEqual(len(self.store.records()), len(base_records()))

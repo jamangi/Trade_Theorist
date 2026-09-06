@@ -1,6 +1,6 @@
 # TASK-007: Build fictional portfolios and the simulation ledger
 
-- Status: planned
+- Status: implemented and verified (2026-09-06; fixture execution)
 - Recommended model: GPT-6 Astra (gpt-6-astra)
 - Recommended effort: high
 - Dependencies: TASK-001, TASK-002, TASK-006
@@ -23,3 +23,29 @@ Use hand-calculated buy/sell/fee/dividend/split examples; prevent negative cash,
 Accounting and timing errors can invalidate all apparent performance; invest in strong reasoning and adversarial examples.
 
 Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+
+## Implementation and validation
+
+Implemented `src/trade_theorist/adapters/trader_user_sim/` with event-derived cash,
+reservations, orders, raw next-open fills, fees, average cost basis, dividend
+entitlement/payment, splits, cancellation/expiry, marks and reconciliation. Policy,
+calendar and execution assumptions are pinned. Four checked-in fixture portfolios
+have separate experiment/portfolio IDs and equal $10,000 seeds. Nonfixture execution
+requires recorded paper policy and explicit nonfixture execution assumptions.
+
+Evidence: `python scripts/check.py test_simulation test_risk test_storage` passes;
+hand calculations cover buy/sell fees and slippage, dividend entitlement after a
+sale, splits and restored equity. Adversarial cases prevent negative cash, reserved
+cash reuse, duplicate fills, short positions, same-close/future fills, adjusted-bar
+mixing, stale opening marks, clock reversal and cross-mode/owner execution. An
+interruption after a fill rolls back the complete transaction. The fixture rebuild
+produces cash $8,997.90 and equity $10,017.90 in each isolated portfolio.
+
+See [implementation/API and boundaries](../docs/task-007-008-implementation.md) and
+[quiet validation workflow](../docs/development.md). No bounded fixture blocker.
+Final full-suite validation: 97 tests passed across 11 modules in 6.4 seconds;
+existing/new fixture bundles validate and the diff whitespace check passes.
+Real vendor/calendar qualification, complete real paper approval and readiness
+review remain later prerequisites; no live endpoint, ongoing run or dependent task
+was launched. Arbitrary corrections and fractional cash-in-lieu are unsupported
+and rejected explicitly.

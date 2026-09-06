@@ -1,6 +1,6 @@
 # Architecture and experiment modes
 
-Status: target architecture extending the original README. Tasks 001–006 now implement contracts, SQLite, ordered learning, partial Value/Trend specialists, bounded opinions and point-in-time permitted-CSV ingestion; portfolio modes and the heartbeat below remain planned. See [foundation](foundation-implementation.md) and [tasks 005–006](task-005-006-implementation.md). Preserve the Trade Theorist / Trader Analyzer / Trader User boundary.
+Status: target architecture extending the original README. Tasks 001–008 now implement contracts, SQLite, ordered learning, partial Value/Trend specialists, bounded opinions, point-in-time permitted-CSV ingestion, isolated simulation portfolios and independent risk enforcement. The heartbeat below remains planned. See [foundation](foundation-implementation.md), [tasks 005–006](task-005-006-implementation.md) and [tasks 007–008](task-007-008-implementation.md). Preserve the Trade Theorist / Trader Analyzer / Trader User boundary.
 
 ## Two portfolio views, one research engine
 
