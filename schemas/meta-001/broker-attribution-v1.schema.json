@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Broker attribution v1 synthetic acceptance envelope; no submission authority",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": "broker-attribution-v1-reference"
+    },
+    "provenance": {
+      "const": "original-synthetic"
+    },
+    "portfolio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experiment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "const": "council"
+        },
+        "execution_basis": {
+          "const": "paper_broker"
+        },
+        "owner_character_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "experiment_id",
+        "mode",
+        "execution_basis",
+        "owner_character_version"
+      ],
+      "additionalProperties": false
+    },
+    "order": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experiment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "portfolio_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "final_recommendation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policy_approval_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quantity": {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+        },
+        "side": {
+          "enum": [
+            "buy",
+            "sell"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "experiment_id",
+        "portfolio_id",
+        "final_recommendation_id",
+        "snapshot_id",
+        "policy_approval_ref",
+        "quantity",
+        "side"
+      ],
+      "additionalProperties": false
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "internal_order_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "client_order_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{32}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "internal_order_id",
+        "client_order_id",
+        "created_at"
+      ],
+      "additionalProperties": false
+    },
+    "updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "client_order_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          },
+          "broker_order_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effective_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "cumulative_quantity": {
+            "type": "string",
+            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+          },
+          "cumulative_notional": {
+            "type": "string",
+            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+          },
+          "cumulative_fees": {
+            "type": "string",
+            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "partially_filled",
+              "filled",
+              "canceled",
+              "rejected",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "event_id",
+          "client_order_id",
+          "broker_order_id",
+          "effective_at",
+          "observed_at",
+          "cumulative_quantity",
+          "cumulative_notional",
+          "cumulative_fees",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract_version",
+    "provenance",
+    "portfolio",
+    "order",
+    "mapping",
+    "updates"
+  ],
+  "additionalProperties": false
+}

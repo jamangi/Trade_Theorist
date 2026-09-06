@@ -4,6 +4,8 @@ Status: target architecture extending the original README. Tasks 001–013 imple
 
 ## Two portfolio views, one research engine
 
+META-001 adopted [ADR-004](../decisions/records/ADR-004-local-observatory.md). Visible names become Individual/Monarchy; actual serialized modes stay `character_portfolio`/`council`. The current v1 runtime remains average-cost/no-external-flow; [TASK-024/025](../tasks/meta-tasks/START-HERE.md) add explicit versions before private UI integration. [Performance v2](portfolio-performance-v2.md) governs FIFO, receivables, exact TWR and separate simulated-versus-paper ledgers. No schema or private owner database is migrated by the architecture review.
+
 | Mode | Who decides? | Capital | Discussion | Meaning |
 | --- | --- | --- | --- | --- |
 | Council | Index Steward initially leads; Value and Trend submit shadows | One separately identified fictional portfolio | Independent opinions, then bounded advice | Tests governed team decisions |
@@ -25,7 +27,7 @@ Both modes reuse the same preparation and independent opinion where inputs genui
 | `council` | Mail delivery, deadlines, final decisions | Events, conversations, read receipts |
 | `evaluate` | Costs, baselines, mature outcomes, comparisons | Reproducible scorecards and evidence summaries |
 | `adapters/trader_user_sim` | Apply policy-approved simulated orders | Append-only orders/fills/cash/position events |
-| `export` | Build allowlisted public reports | Versioned dashboard JSON and readable artifacts |
+| `export` | Existing fixture-only reports; proposed distinct private v2 read model | Versioned, classified dashboard JSON and readable artifacts |
 | `cli` | Doctor, ingest, learn, heartbeat, evaluate, export | Run manifest and clear status |
 
 SQLite is the single-writer operational store for the local pilot; database migrations are versioned. Keep raw licensed payloads and the database under a configured private data root outside Git. Use ordinary JSON snapshots first; introduce partitioned Parquet only when measured volume warrants it. `/market/` is an optional local view of snapshot manifests, never a second independently editable source of truth.
@@ -74,4 +76,4 @@ An eligible daily snapshot must cover the latest completed expected session; mis
 
 ## Delivery boundary
 
-GitHub Pages will host exported public reports; the local/private runner owns data, keys, and writes. No database credentials or model API keys enter the browser. A future authenticated control service can trigger runs; the first dashboard is read-only. The proposed implementation sequence is in [tasks](../tasks/README.md).
+The approved target is a local/private read-only bundle with a loopback-only service, owned by TASK-018 after TASK-012/013 integration. GitHub Pages is retired from the active real-data roadmap. The private runner owns data, keys and writes; browser code receives only validated permitted read-model fields. Real raw and reconstructable data is denied public export under the [rights matrix](data-rights-matrix.md). Existing synthetic demos remain available. Follow [START-HERE](../tasks/meta-tasks/START-HERE.md) for the additive migration sequence.

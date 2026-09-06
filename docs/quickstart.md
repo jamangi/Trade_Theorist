@@ -58,3 +58,7 @@ complete logs stay in ignored `.local/test-logs/`.
 
 See the [operating runbook](runbook.md) for individual commands, source learning,
 CSV ingestion, evaluation, recovery, export boundaries and current limitations.
+
+## META-001 boundary
+
+This demo uses original synthetic fixtures. Its public directory name and current Council/Character portfolios labels belong to v1. The exporter refuses nonfixture sources; private real-data reporting is not yet implemented. [ADR-004](../decisions/records/ADR-004-local-observatory.md) retires public Pages and targets Individual/Monarchy labels through the [024/025 repair sequence](../tasks/meta-tasks/START-HERE.md). Local use does not itself establish source retention or replay rights.

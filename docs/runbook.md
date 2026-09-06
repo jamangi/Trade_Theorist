@@ -103,8 +103,9 @@ into a new private root and verify/reconcile before continuing.
 Exports contain a strict allowlist: metrics, dates, identities, short generated
 summaries and approved fixture provenance. They exclude raw bars/books, private
 reflections, full mail bodies, prompts, account identifiers and credentials.
-Restricted evidence produces a private-inspection label rather than a broken
-public link. The browser validates the same schema and SHA-256 content hash before
+META-001 restricts this v1 path to original synthetic fixture stores and fixture-only
+records/reports; nonfixture export is refused before output creation. A private-inspection
+label alone does not make real derived values safe to publish. The browser validates the same schema and SHA-256 content hash before
 rendering, uses text nodes for content, and exposes no mutation endpoint.
 
 Assets are content-addressed. A final atomic replacement of `public/index.html`
@@ -112,5 +113,6 @@ publishes the completed local build; a validation or pre-handoff failure keeps t
 previous entry. The current report exposes up to 20 historical cutoffs, and normal
 retention keeps 20 owned asset versions. Inaccessible/unrecognized folders are left
 alone. The private event database and all-trial registry are never pruned by export.
-Serve only `public`, never the data root. Publication to GitHub Pages remains task
-018; these commands do not deploy a website.
+Serve only `public`, never the data root. TASK-018's public Pages outcome is retired under
+[ADR-004](../decisions/records/ADR-004-local-observatory.md). Private v2 export and hardened
+local serving remain pending 012/013/018; these commands do not deploy a website.

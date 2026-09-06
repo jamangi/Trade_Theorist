@@ -27,3 +27,9 @@ Record validation evidence and remaining blockers here when implemented. Complet
 ## Result-only Character views (2026-09-06)
 
 Belief timelines, postcards, relationship views and notebooks consume stored events and [request-budget status](../docs/market-data-request-budget.md), without Alpaca clients or credentials. An owner question needing new market evidence becomes an explicit budgeted future research request through 014/015, not an incidental provider call while rendering a summary. Acceptance verifies zero Alpaca calls for ordinary summaries and preserves decision-time eligibility for any later separately admitted research.
+
+## META-001 follow-up (2026-09-06)
+
+Use the private v2 read model and field classifications for Individual/Monarchy views. Preserve authored reflections and failed trials; measure useful exchanges through frozen decision comparisons, not message volume. Existing result-only/no-Alpaca rules remain.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

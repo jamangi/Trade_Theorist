@@ -1,0 +1,50 @@
+{
+  "contract_version": "broker-attribution-v1-reference",
+  "provenance": "original-synthetic",
+  "portfolio": {
+    "id": "portfolio:meta-monarchy-paper",
+    "experiment_id": "experiment:meta-paper",
+    "mode": "council",
+    "execution_basis": "paper_broker",
+    "owner_character_version": "character:synthetic-lead-v1"
+  },
+  "order": {
+    "id": "order:meta-paper",
+    "experiment_id": "experiment:meta-paper",
+    "portfolio_id": "portfolio:meta-monarchy-paper",
+    "final_recommendation_id": "recommendation:meta-final",
+    "snapshot_id": "snapshot:meta-shared",
+    "policy_approval_ref": "fixture-only-not-real-approval",
+    "quantity": "3",
+    "side": "buy"
+  },
+  "mapping": {
+    "internal_order_id": "order:meta-paper",
+    "client_order_id": "0123456789abcdef0123456789abcdef",
+    "created_at": "2099-01-01T20:00:00Z"
+  },
+  "updates": [
+    {
+      "event_id": "update:meta-1",
+      "client_order_id": "0123456789abcdef0123456789abcdef",
+      "broker_order_id": "fictional-broker-order",
+      "effective_at": "2099-01-01T20:01:00Z",
+      "observed_at": "2099-01-01T20:01:01Z",
+      "cumulative_quantity": "1",
+      "cumulative_notional": "100",
+      "cumulative_fees": "1",
+      "status": "partially_filled"
+    },
+    {
+      "event_id": "update:meta-2",
+      "client_order_id": "0123456789abcdef0123456789abcdef",
+      "broker_order_id": "fictional-broker-order",
+      "effective_at": "2099-01-01T20:02:00Z",
+      "observed_at": "2099-01-01T20:02:01Z",
+      "cumulative_quantity": "3",
+      "cumulative_notional": "302",
+      "cumulative_fees": "2",
+      "status": "filled"
+    }
+  ]
+}

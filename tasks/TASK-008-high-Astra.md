@@ -49,3 +49,9 @@ existing/new fixture bundles validate and the diff whitespace check passes.
 No bounded fixture blocker. The actual owner-approved numeric paper policy remains
 unresolved for later paper readiness; source learning and forward trials were not
 advanced by these engineering fixtures. No dependent or ongoing run was launched.
+
+## META-001 follow-up (2026-09-06)
+
+Preserve the completed independent governor. TASK-025 integrates v2 equity, receivables, external flows and reservations without resetting loss limits or halts through deposits. New risk-policy values retain their owner gate.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

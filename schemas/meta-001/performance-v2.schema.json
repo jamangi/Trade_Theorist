@@ -1,0 +1,796 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Performance v2 synthetic acceptance envelope; not a migrated production record schema",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": "performance-v2-reference"
+    },
+    "provenance": {
+      "const": "original-synthetic"
+    },
+    "portfolio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experiment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "enum": [
+            "council",
+            "character_portfolio"
+          ]
+        },
+        "owner_character_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_basis": {
+          "const": "simulated"
+        },
+        "currency": {
+          "const": "USD"
+        },
+        "lot_method": {
+          "const": "FIFO"
+        }
+      },
+      "required": [
+        "id",
+        "experiment_id",
+        "mode",
+        "owner_character_version",
+        "execution_basis",
+        "currency",
+        "lot_method"
+      ],
+      "additionalProperties": false
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "funding"
+              },
+              "amount": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "amount"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "buy"
+              },
+              "order_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "instrument_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "quantity": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              },
+              "price": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              },
+              "fee": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "order_id",
+              "instrument_id",
+              "quantity",
+              "price",
+              "fee"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "sell"
+              },
+              "order_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "instrument_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "quantity": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              },
+              "price": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              },
+              "fee": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "order_id",
+              "instrument_id",
+              "quantity",
+              "price",
+              "fee"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "dividend_ex"
+              },
+              "action_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "instrument_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "per_share": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "action_id",
+              "instrument_id",
+              "per_share"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "dividend_pay"
+              },
+              "action_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "action_id"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "split"
+              },
+              "action_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "instrument_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ratio": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "action_id",
+              "instrument_id",
+              "ratio"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "mark"
+              },
+              "instrument_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "price": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "status": {
+                "enum": [
+                  "eligible",
+                  "stale",
+                  "missing"
+                ]
+              },
+              "feed": {
+                "const": "synthetic-v1"
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "instrument_id",
+              "price",
+              "status",
+              "feed",
+              "revision"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "contribution"
+              },
+              "amount": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "amount"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "withdrawal"
+              },
+              "amount": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "amount"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "reserve"
+              },
+              "order_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount": {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "order_id",
+              "amount"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "portfolio_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "kind": {
+                "const": "release"
+              },
+              "order_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "portfolio_id",
+              "experiment_id",
+              "at",
+              "observed_at",
+              "kind",
+              "order_id"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "expected": {
+      "type": "object",
+      "properties": {
+        "before_stale": {
+          "type": "object",
+          "properties": {
+            "cash": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "reserved": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "available": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "quantity": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "basis": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "realized": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "unrealized": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "income": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "fees": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "equity": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "strategy_pnl": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "twr": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "max_drawdown": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "net_external_flows": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "lots": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lot_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quantity": {
+                    "type": "string",
+                    "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                  }
+                },
+                "required": [
+                  "lot_id",
+                  "quantity",
+                  "basis"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "cash",
+            "reserved",
+            "available",
+            "quantity",
+            "basis",
+            "realized",
+            "unrealized",
+            "income",
+            "fees",
+            "equity",
+            "strategy_pnl",
+            "twr",
+            "max_drawdown",
+            "net_external_flows",
+            "lots"
+          ],
+          "additionalProperties": false
+        },
+        "after_stale": {
+          "type": "object",
+          "properties": {
+            "cash": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+            },
+            "equity": {
+              "type": "null"
+            },
+            "unrealized": {
+              "type": "null"
+            },
+            "strategy_pnl": {
+              "type": "null"
+            },
+            "twr": {
+              "type": "null"
+            },
+            "reason": {
+              "const": "stale_or_missing_mark"
+            }
+          },
+          "required": [
+            "cash",
+            "equity",
+            "unrealized",
+            "strategy_pnl",
+            "twr",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "before_stale",
+        "after_stale"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "contract_version",
+    "provenance",
+    "portfolio",
+    "events",
+    "expected"
+  ],
+  "additionalProperties": false
+}

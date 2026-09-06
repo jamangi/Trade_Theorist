@@ -6,17 +6,14 @@ as complete or launch market-data, model, paper-order or live-order activity.
 
 ## Start here
 
-Run [META-001](META-001-high-Astra.md) with GPT-6 Astra at high reasoning effort
-before implementing public deployment or paper-account portfolio attribution. It must
-inspect the repository as it exists on `main`, reconcile the local/private data boundary
-with the dashboard plan, define Character performance precisely, and produce
-`START-HERE.md` naming the first bounded implementation task after the review.
+[META-001](META-001-high-Astra.md) is complete within its bounded architecture scope.
+Read [START-HERE](START-HERE.md): the exact next task is TASK-024, additive v2 contracts
+and persistence, followed by TASK-025's accounting integration. The [impact report](../../docs/meta-001-impact.md)
+records findings, executable reference evidence and pending implementation.
 
-The current expectation is that contracts introduced around TASK-002 and TASK-007 may
-need additive revisions, while the first user-visible repair affects TASK-012's dashboard
-boundary. META-001 must verify that rather than assume it. Preserve stable task IDs and
-historical evidence; prefer versioned migrations or new repair tasks over rewriting what
-earlier commits actually proved.
+Existing v1 evidence is preserved. The exporter now refuses nonfixture sources;
+production FIFO/TWR, private v2 UI and broker attribution remain implementation tasks.
+TASK-018 now packages the private local observatory; public Pages deployment is retired.
 
 The owner-approved defaults are recorded in [APPROVALS.md](APPROVALS.md). Any new
 choice discovered by META-001 must be added there unchecked with a recommendation; the
@@ -26,7 +23,7 @@ meta-task may not silently expand the recorded approval.
 
 | Meta-task | Outcome | Model / effort | Status |
 | --- | --- | --- | --- |
-| [META-001](META-001-high-Astra.md) | Local-first UI, data-publication boundary, Character sub-ledgers and roadmap repair | GPT-6 Astra / high | Ready; defaults approved |
+| [META-001](META-001-high-Astra.md) | Local-first UI, data-publication boundary, Character sub-ledgers and roadmap repair | GPT-6 Astra / high | Complete (2026-09-06); next TASK-024 |
 
 ## Required completion pattern
 

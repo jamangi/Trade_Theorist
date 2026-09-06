@@ -3,10 +3,12 @@
 - Status: delayed SIP sample passed; shared request controls and production rights decision pending
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
-- Dependencies: TASK-001, TASK-002, TASK-006
+- Dependencies: TASK-001, TASK-002, TASK-006, TASK-024
 - Design: [data-and-learning.md](../docs/data-and-learning.md)
 
 ## Scope
+
+META-001 retains the shared request-control work. Integrate new provenance/rights/quota references with TASK-024's additive contracts; limiter unit tests can run independently against existing fixtures. Keep eligible delayed SIP observations private and do not infer private retention/replay/model-processing permission from authentication. No public dashboard dependency remains. Full production qualification still needs the 016 preflight, measured coverage and applicable rights evidence.
 
 Evaluate Alpaca first against the source capability checklist using current official terms and an authorized sample. Record storage/replay/public-display permissions and missing historical features. Keep final vendor selection deferred until this evidence exists; use an alternative only through a recorded choice. Build pagination, rate limiting, retries, resume and feed identity.
 

@@ -1,17 +1,19 @@
 # Implementation task index
 
-Status (2026-09-06): TASK-001–013 are implemented and verified within their recorded scope. TASK-014's base Alpaca adapter and TASK-015's base prospective controls are implemented. A regenerated paper credential authenticated and a small delayed historical SIP sample passed, but production vendor selection and real forward observations remain explicitly blocked by shared request controls, data-rights evidence, eligible Character versions, and real elapsed time. Current/latest SIP is not entitled. Index Steward's owner-supplied Bogle foundation is complete; Value and Trend each have one real opening checkpoint but remain partial and ineligible for real recommendations. Permitted-CSV ingestion, independent fixture opinions, isolated simulation, risk controls, bounded mail, resumable heartbeat, evaluation, a read-only dashboard and the offline operating interface are implemented. TASK-016–023 remain planned. **Before public deployment or paper-account attribution work, execute [META-001](meta-tasks/META-001-high-Astra.md) to reconcile the local/private UI boundary, Individual/Monarchy modes and canonical performance accounting.** See [completed Index learning](../docs/index-steward-foundation.md), [tasks 005–006 evidence](../docs/task-005-006-implementation.md), [tasks 007–008 evidence](../docs/task-007-008-implementation.md), [tasks 009–010 evidence](../docs/task-009-010-implementation.md), [tasks 011–013 evidence](../docs/task-011-013-implementation.md), [tasks 014–015 evidence](../docs/task-014-015-implementation.md) and the individual task records. Start the [offline demo](../docs/quickstart.md) or use the [focused reading and quiet validation workflow](../docs/development.md). Task numbers are stable; filenames show recommended effort and model.
+Status (2026-09-06): TASK-001–013 are implemented and verified within their recorded scope. TASK-014's base Alpaca adapter and TASK-015's base prospective controls are implemented. A regenerated paper credential authenticated and a small delayed historical SIP sample passed, but production vendor selection and real forward observations remain explicitly blocked by shared request controls, data-rights evidence, eligible Character versions, and real elapsed time. Current/latest SIP is not entitled. Index Steward's owner-supplied Bogle foundation is complete; Value and Trend each have one real opening checkpoint but remain partial and ineligible for real recommendations. Permitted-CSV ingestion, independent fixture opinions, isolated simulation, risk controls, bounded mail, resumable heartbeat, evaluation, a read-only dashboard and the offline operating interface are implemented. TASK-016–023 remain planned. **[META-001](meta-tasks/META-001-high-Astra.md) is complete: [start with TASK-024](meta-tasks/START-HERE.md), then TASK-025.** Private v2 integration remains pending; historical v1 evidence is preserved. See [completed Index learning](../docs/index-steward-foundation.md), [tasks 005–006 evidence](../docs/task-005-006-implementation.md), [tasks 007–008 evidence](../docs/task-007-008-implementation.md), [tasks 009–010 evidence](../docs/task-009-010-implementation.md), [tasks 011–013 evidence](../docs/task-011-013-implementation.md), [tasks 014–015 evidence](../docs/task-014-015-implementation.md) and the individual task records. Start the [offline demo](../docs/quickstart.md) or use the [focused reading and quiet validation workflow](../docs/development.md). Task numbers are stable; filenames show recommended effort and model.
 
 ## Architecture meta-task gate
 
 The [meta-task index](meta-tasks/README.md) contains architecture reviews that can repair
 the task graph without erasing historical completion evidence. [META-001](meta-tasks/META-001-high-Astra.md)
-is now the task starting point for the proposed local-first pivot. It will determine the
-earliest affected contract, produce an exact `START-HERE.md`, and recommend amendments
-to TASK-012–018 and any earlier additive schema migrations. The approved defaults and
+identified TASK-001's contracts and TASK-002's persistence as the earliest affected boundary.
+It produced [START-HERE](meta-tasks/START-HERE.md), [an impact report](../docs/meta-001-impact.md)
+and bounded repairs 024/025. TASK-012–018 now consume the local/private architecture.
+The legacy export is fixture-only; production v2 accounting and private UI remain pending.
+The approved defaults and
 boundary of that authority are in the [meta-task approval register](meta-tasks/APPROVALS.md).
 
-The current safe expectation is a local/private single-page UI with **Individual** and
+The adopted target is a local/private single-page UI with **Individual** and
 **Monarchy** tabs. Alpaca account state remains aggregate; per-Character performance is
 computed from isolated internal ledgers. Alpaca `client_order_id` can trace a submitted
 order to an internal strategy, but it does not create separate broker portfolios.
@@ -34,7 +36,7 @@ keep `.env` out of Git.
 
 The Alpaca paper dashboard represents one aggregate external account. Characters retain
 separate cash, holdings and performance in the canonical internal ledgers. A future
-paper adapter may tag orders with portfolio identities for reconciliation, but Alpaca's
+Monarchy-only paper adapter uses opaque IDs mapped privately to internal orders for reconciliation, but Alpaca's
 account equity and net positions must never be reported as one Character's isolated
 performance.
 
@@ -44,7 +46,7 @@ The [inventory](../library/catalog/INVENTORY_REPORT.md) covers all 31 active pos
 
 ### Rate-control follow-up and staged gates
 
-The original 014 adapter and 015 forward-control evidence remains valid within its recorded scope, but **014 shared request admission and 015 request-budget integration are pending**. Start with those extensions rather than treating the adapter as ready for routine account-backed or forward operation. The [request-budget contract](../docs/market-data-request-budget.md) is the common design reference: cache lookup and merged downloads first, shared admission immediately before every transport attempt, then immutable snapshot distribution. Keep the existing 23 IDs and model/effort assignments.
+The original 014 adapter and 015 forward-control evidence remains valid within its recorded scope, but **014 shared request admission and 015 request-budget integration are pending**. Start with contract repair 024, then 025; 014 limiter fixture work can proceed against existing interfaces before v2 integration. Routine account-backed operation remains blocked. The [request-budget contract](../docs/market-data-request-budget.md) is the common design reference: cache lookup and merged downloads first, shared admission immediately before every transport attempt, then immutable snapshot distribution. Preserve IDs 001–023 and model/effort assignments; META-001 adds 024/025.
 
 Release order: **014 control code → 016 offline rate preflight → 014 coordinator-backed qualification sample → 015 forward observations → 016 final readiness review → 017 paper operation**. The preflight is a bounded part of 016 using 014 code and existing 015 fixtures; it does not require real forward sessions. The dependency rows below describe full task completion, not that early subgate. Do not add full 016 as a dependency of 014/015. The initial manually bounded credential check does not skip these stages, and no additional account call is authorized by this backlog change.
 
@@ -73,26 +75,28 @@ No blanket maximum effort. Start at the listed level; escalate a narrow unresolv
 | [TASK-009](TASK-009-high-Sol.md) | Implement event-backed mail and bounded deliberation | Sol / high | 001, 002, 005 |
 | [TASK-010](TASK-010-high-Sol.md) | Connect both modes through a resumable heartbeat | Sol / high | 005, 006, 007, 008, 009 |
 | [TASK-011](TASK-011-high-Astra.md) | Build honest evaluation and evidence grades | Astra / high | 006, 007, 008, 010 |
-| [TASK-012](TASK-012-high-Sol.md) | Build the two-tab performance dashboard | Sol / high | 010, 011 |
+| [TASK-012](TASK-012-high-Sol.md) | Build the two-tab performance dashboard | Sol / high | 010, 011, 025 |
 | [TASK-013](TASK-013-medium-Sol.md) | Create the one-command demo and operating interface | Sol / medium | 003, 004, 010, 011, 012 |
-| [TASK-014](TASK-014-high-Sol.md) | Qualify a vendor and add shared market-data request controls | Sol / high | 001, 002, 006 |
-| [TASK-015](TASK-015-high-Sol.md) | Run forward shadow observations | Sol / high | 005, 008, 010, 011, 013, 014 |
+| [TASK-014](TASK-014-high-Sol.md) | Qualify a vendor and add shared market-data request controls | Sol / high | 001, 002, 006, 024 |
+| [TASK-015](TASK-015-high-Sol.md) | Run forward shadow observations | Sol / high | 005, 008, 010, 011, 013, 014, 025 |
 | [TASK-016](TASK-016-high-Astra.md) | Offline rate preflight, then full forward/paper readiness audit | Astra / high | 011, 013, 014, 015 |
-| [TASK-017](TASK-017-high-Sol.md) | Start forward paper portfolios and optional broker adapter | Sol / high | 007, 008, 014, 016 |
-| [TASK-018](TASK-018-medium-Sol.md) | Public Pages scope paused for META-001 rights/local-first review | Sol / medium | 012, 013, 014, 016 |
+| [TASK-017](TASK-017-high-Sol.md) | Start forward paper portfolios and optional broker adapter | Sol / high | 007, 008, 014, 016, 025 |
+| [TASK-018](TASK-018-medium-Sol.md) | Package the private local observatory | Sol / medium | 012, 013, 024, 025 |
 | [TASK-019](TASK-019-medium-Sol.md) | Add belief timelines and the research notebook | Sol / medium | 004, 009, 011, 012, 013 |
 | [TASK-020](TASK-020-medium-Sol.md) | Add scheduled operation with bounded usage | Sol / medium | 013, 014, 016, 017 |
 | [TASK-021](TASK-021-high-Astra.md) | Add microstructure and risk specialist research | Astra / high | 003, 004, 011, 014, 016 |
 | [TASK-022](TASK-022-high-Astra.md) | Define the disclosure-analysis interface | Astra / high | 001, 006, 011, 014, 016 |
 | [TASK-023](TASK-023-high-Astra.md) | Review governance and preregister later experiments | Astra / high | 011, 017, 019 |
+| [TASK-024](TASK-024-high-Sol.md) | Add v2 portfolio/event contracts and private persistence | Sol / high | 001, 002, 007, 008, 011 |
+| [TASK-025](TASK-025-high-Astra.md) | Integrate FIFO, flow-aware performance and offline reconciliation | Astra / high | 007, 008, 011, 024 |
 
 ## Delivery milestones
 
 1. **Contracts and persistence:** 001–002; catalog work 003 can start after contracts.
 2. **First useful offline observatory:** 004–013 using recorded/scripted fixture opinions where source access is blocked. Both portfolio modes, one conversation, honest scorecards, six explanation panels, and a no-account demo must work. Fixture delivery does not complete real Character learning requirements.
-3. **Architecture reconciliation:** execute META-001 before public deployment or paper-attribution work; follow its `START-HERE.md` and approved migrations without rewriting completed evidence.
+3. **Architecture reconciliation:** META-001 complete. Follow 024 → 025 → 012 → 013 → 018 for additive contracts, canonical accounting and the private owner UI. Historical v1 evidence remains valid.
 4. **Prospective research:** implement 014 shared controls and 015 budget integration, pass the 016 offline rate preflight, then qualify an authorized 014 sample before 015 account-backed observations. Required trained Characters and data rights must also be ready. The duration of a forward trial is real elapsed market time; implementation cannot compress it.
-5. **Paper readiness and owner UI:** 016 review, then 017 paper operation; META-001 decides whether 018 is retired or replaced by local packaging. Public fixture reports may demonstrate mechanics only and must not impersonate achieved forward results.
+5. **Paper readiness:** 016 final review, then separately authorized 017 Monarchy paper operation. TASK-018 provides private local packaging and can be verified on synthetic data without waiting for real paper readiness.
 6. **Human context and reliable operation:** 019 adds richer observable learning; 020 adds optional scheduling after operational gates. Neither is required to gather the first shadow observations.
 7. **Later research:** 021 before serious intraday work; 022 before disclosure-driven signals; 023 before merged Characters or revised governance. These are explicit follow-on tasks, not prerequisites for the useful daily pilot.
 

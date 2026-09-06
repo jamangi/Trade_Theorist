@@ -49,3 +49,9 @@ Real vendor/calendar qualification, complete real paper approval and readiness
 review remain later prerequisites; no live endpoint, ongoing run or dependent task
 was launched. Arbitrary corrections and fractional cash-in-lieu are unsupported
 and rejected explicitly.
+
+## META-001 follow-up (2026-09-06)
+
+The completed v1 simulator uses proportional average-cost relief. TASK-025 adds production FIFO lots, flow-aware accounting and corporate-action/correction projections after TASK-024. Earlier results retain their accounting version.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

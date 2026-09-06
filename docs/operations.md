@@ -13,7 +13,7 @@ Status: operating design with tasks 001–013 available within their recorded sc
 | `trade-theorist ingest --source <id>` | Fetch only missing observations and report coverage/quarantine |
 | `trade-theorist heartbeat --experiment <id>` | Advance one bounded cycle using pinned config; optional explicit ingest flag |
 | `trade-theorist evaluate --experiment <id>` | Resolve mature outcomes and reproduce scorecards from saved records |
-| `trade-theorist export --experiment <id>` | Validate and prepare an allowlisted public report |
+| `trade-theorist export --experiment <id>` | Validate an original synthetic v1 report; private v2 export follows 012/013 |
 
 Provide one documented Windows setup path, pinned dependencies, example nonsecret config, and a private data-root setting. A clean installation must be able to run the synthetic demo before acquiring books or credentials. The first real run requires legal source access, eligible trained Characters, market-data permissions, a complete experiment manifest, and approved numeric paper policy.
 

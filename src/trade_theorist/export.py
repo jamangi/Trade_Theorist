@@ -1,4 +1,8 @@
-"""Allowlisted, versioned dashboard exports. No private mail/reflections or raw bars."""
+"""Fixture-only v1 dashboard exports; private real-data exports require the v2 path.
+
+Even a report without raw bars can reconstruct prices from holdings value/quantity.
+The old public-summary format is therefore restricted to original synthetic stores.
+"""
 
 from importlib.resources import files
 import json
@@ -55,6 +59,8 @@ def validate_export(value):
     errors = list(Draft202012Validator(DASHBOARD_SCHEMA).iter_errors(value))
     if errors:
         raise ContractError("Invalid public export at " + "/".join(map(str, errors[0].path)))
+    if any(e["visibility"] != "fixture" for e in value["evidence"]):
+        raise ContractError("The v1 export supports synthetic fixtures only; private evidence is denied")
     unhashed = {k: v for k, v in value.items() if k != "content_hash"}
     if digest(unhashed) != value["content_hash"]:
         raise ContractError("Public export hash mismatch")
@@ -63,6 +69,8 @@ def validate_export(value):
         raise ContractError("Duplicate public evidence identity")
     for version in value["versions"]:
         for card in version["cards"]:
+            if card["regime"] != "fixture" or card["evidence_grade"] != "fixture":
+                raise ContractError("The v1 export supports synthetic fixtures only; real results remain private")
             if len(card["answers"]) != 6 or any(i not in evidence_ids for a in card["answers"] for i in a["evidence_ids"]):
                 raise ContractError("Six answers must reference existing allowlisted evidence")
             if card["evidence_grade"] == "forward-reviewed" and card["review_blockers"]:
@@ -74,6 +82,18 @@ def validate_export(value):
 
 
 def build_dashboard(store, *, as_of, experiment_id=None):
+    if not store.synthetic:
+        raise ContractError("The v1 export supports synthetic fixtures only; private export integration is pending")
+    # Check persisted provenance too: reopening a real store with --fixture is not
+    # permission to publish it. Stream the records instead of loading source books.
+    for row in store.connection.execute("SELECT body FROM records"):
+        record = json.loads(row[0])
+        if record["contamination"] != "fixture":
+            raise ContractError("The v1 export rejects stores containing non-fixture records")
+        if record["record_type"] == "observation" and record["feed"] != "synthetic-v1":
+            raise ContractError("The v1 export rejects non-synthetic observation feeds")
+        if record["record_type"] == "experiment" and (record["regime"] != "fixture" or record["data_feeds"] != ["synthetic-v1"]):
+            raise ContractError("The v1 export rejects non-synthetic experiments")
     reports = [e["payload"] for e in store.iter_events(kind="evaluation.report")
                if utc(e["created_at"]) <= utc(as_of) and (experiment_id is None or e["experiment_id"] == experiment_id)]
     reports = list({(r["trial_id"], r["as_of"]): r for r in reports}.values())
@@ -85,6 +105,8 @@ def build_dashboard(store, *, as_of, experiment_id=None):
                                     visibility="fixture" if fixture else "private", details=details if fixture else ["Restricted provenance. Inspect the saved record in private storage."])
         return identifier
     for report in reports:
+        if report["evidence_grade"] != "fixture" or report["regime"] != "fixture":
+            raise ContractError("The v1 export rejects non-fixture evaluation reports")
         fixture = report["evidence_grade"] == "fixture"
         cutoff = report["as_of"]
         character = store.record(report["owner_version"], "character")

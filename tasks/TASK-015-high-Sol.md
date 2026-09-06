@@ -3,10 +3,12 @@
 - Status: base forward controls implemented; request-budget integration pending; real observations blocked
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
-- Dependencies: TASK-005, TASK-008, TASK-010, TASK-011, TASK-013, TASK-014
+- Dependencies: TASK-005, TASK-008, TASK-010, TASK-011, TASK-013, TASK-014, TASK-025
 - Design: [evaluation.md](../docs/evaluation.md)
 
 ## Scope
+
+META-001 adds v2 portfolio/execution-basis identity and private report references. Use the same frozen opportunity set and matched simulated execution assumptions to compare Individual and Monarchy decisions. A broker-filled Monarchy series is distinct execution evidence. Freeze Character versions, baselines, external-flow policy, recurring cost attribution and stopping criteria before a trial. Unknown rights/readiness do not become acceptable because the UI is private. This follows TASK-025 without invalidating the existing fixture forward gates.
 
 Freeze a prospective experiment with actual eligible Character versions, allowed public-research retrieval, timestamps, horizon, and identical opportunity sets. Commit recommendations before outcomes; keep shadow mode free of broker orders. Surface readiness, gaps, usage, and immature outcomes in reports.
 

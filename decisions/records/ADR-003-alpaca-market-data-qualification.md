@@ -82,3 +82,7 @@ The initial 180-attempt operating ceiling and cache/pacing design are engineerin
 
 The sanitized [account check](../../examples/ingest/alpaca-account-access.2026-09-06.json)
 records the exact successful scope. Raw returned bars remain outside Git.
+
+## Subsequent architecture decision (2026-09-06)
+
+[ADR-004](ADR-004-local-observatory.md) supersedes public-hosting assumptions with a private local owner interface and versioned accounting repairs. It preserves this record's historical decisions and qualification evidence. The [rights matrix](../../docs/data-rights-matrix.md) keeps provider permission questions explicit; private deployment does not select a vendor or authorize account operations.

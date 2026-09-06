@@ -1,9 +1,9 @@
 # TASK-012: Build the two-tab performance dashboard
 
-- Status: implemented and verified (2026-09-06; local read-only dashboard)
+- Status: v1 fixture dashboard implemented and verified; private v2 follow-up pending after META-001
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
-- Dependencies: TASK-010, TASK-011
+- Dependencies: TASK-010, TASK-011, TASK-025
 - Design: [dashboard.md](../docs/dashboard.md)
 
 ## Scope
@@ -41,4 +41,10 @@ environment notes](../docs/task-011-013-implementation.md).
 
 No bounded fixture blocker. The local demo visibly claims fixture mechanics only;
 no cross-regime ranking, model call or trading control exists in the page. Public
-website deployment remains task 018 and was not started.
+website deployment was not started. That old TASK-018 outcome is now retired by [ADR-004](../decisions/records/ADR-004-local-observatory.md).
+
+## META-001 follow-up
+
+Reuse the implemented layout, six answers and accessibility behavior with a distinct `private-owner-v2` read model after TASK-025. Display Individual/Monarchy while retaining `character_portfolio`/`council` internally. Surface FIFO lots, total/available/reserved cash, dividend receivables, TWR and flow-neutral drawdown, external flows, recurring cost, mark freshness and reconciliation status. Private schema fields obey the [rights matrix](../docs/data-rights-matrix.md); no raw/real values enter the legacy fixture exporter.
+
+Filter by execution basis and Character version. Monarchy paper results and its matched simulated control remain separately identified; never rank Individual simulations against broker fills as a reasoning contest. Give real empty/unready states for untrained Characters. Validate mobile/keyboard use, all six answers and no network/model calls on interaction. This is a pending follow-up, not a new claim about the v1 browser tests.

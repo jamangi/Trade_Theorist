@@ -1,12 +1,14 @@
 # TASK-013: Create the one-command demo and operating interface
 
-- Status: implemented and verified (2026-09-06; offline operating interface)
+- Status: v1 offline interface implemented and verified; private v2 command integration pending after META-001
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium
 - Dependencies: TASK-003, TASK-004, TASK-010, TASK-011, TASK-012
 - Design: [operations.md](../docs/operations.md)
 
 ## Scope
+
+META-001 adds a follow-up after TASK-012's private v2 read model: commands must choose the schema/projection version explicitly, keep the v1 fixture demo working, use a private bundle root outside Git for real inputs, and report missing rights, migrations and reconciliation clearly. Doctor inspects prerequisites without exposing secrets or making account calls. TASK-018 owns hardened loopback serving; `--fixture` is not a license or a way to publish a private database. Preserve prior implementation evidence below.
 
 Implement doctor, library check, learn, ingest, heartbeat, evaluate, and export commands with plain status and resumable blockers. Provide a pinned Windows setup path, nonsecret example config, private data-root choice, and a synthetic demo with recorded/scripted opinions. Document exactly which features are available.
 

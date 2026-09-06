@@ -27,3 +27,9 @@ Record validation evidence and remaining blockers here when implemented. Complet
 ## Result-only review and capacity evidence (2026-09-06)
 
 Review persisted [request-budget measurements](../docs/market-data-request-budget.md): cache reuse, merged requests, wait time, 429s, deadline misses and the effect of delay on usable evidence. The review itself makes no Alpaca calls. New samples or a proposed change in universe/cadence go through a separately budgeted 014/015 experiment. Acceptance uses stored telemetry with provider access disabled; recommendations cannot raise the owner ceiling or rewrite past opportunity sets. Missing evidence is reported rather than fetched implicitly.
+
+## META-001 follow-up (2026-09-06)
+
+Preregister marginal after-cost value against matched no-advice and bounded-advice controls. Use v2 returns and identical execution assumptions; separate Monarchy broker-paper series. Report recurring data/inference costs separately from one-time learning costs, retain failed trials and freeze Character versions until scheduled review. Abstention and insufficient evidence remain valid; promotion does not authorize live capital.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

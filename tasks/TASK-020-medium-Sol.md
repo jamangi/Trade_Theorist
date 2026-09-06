@@ -29,3 +29,9 @@ Record validation evidence and remaining blockers here when implemented. Complet
 Submit all scheduled and manual downloads to TASK-014's [quota coordinator](../docs/market-data-request-budget.md); never instantiate a fresh limiter per job. Prevent duplicate ownership across processes. Prioritize fresh decision-critical snapshots over background backfill, with bounded queue age/fairness so postponed work does not silently starve. Persist budget/cooldown and page checkpoints across cancellation/restart; a deferred job resumes without replenishing its attempt budget.
 
 Acceptance: simultaneous manual and scheduled triggers preserve the combined rolling-window limit and merge matching requests. Retried pages consume shared allowance. Queue/deadline exhaustion gives a visible deferred/expired outcome. Resuming after market time passes cannot invent a historical decision or weaken freshness. Notify only on meaningful status changes under the existing notification policy; no model call is needed to wait for quota.
+
+## META-001 follow-up (2026-09-06)
+
+Package scheduled results through TASK-018's local/private boundary. Scheduling does not grant publication, account-call or order authority. Preserve shared quotas, job leases, recorded delays and bounded cost; do not invent missed decisions retrospectively.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

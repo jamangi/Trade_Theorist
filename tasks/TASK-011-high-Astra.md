@@ -43,3 +43,9 @@ See [implementation and validation](../docs/task-011-013-implementation.md) and
 
 No bounded fixture blocker. This task creates no evidence of real skill or completed
 forward trial, promotes no Character, and does not authorize paper/live execution.
+
+## META-001 follow-up (2026-09-06)
+
+The completed v1 evaluator covers its recorded no-external-flow scope. TASK-025 adds TWR, flow-neutral drawdown and matched execution comparisons. META-001 restricts the legacy exporter to original synthetic fixture stores; private v2 reporting follows TASK-012.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

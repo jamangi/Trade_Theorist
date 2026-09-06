@@ -56,3 +56,15 @@ public market-data display, an Alpaca account call or paper orders.
   private retention, internal replay, post-subscription retention and derived reporting.
   - Recommended: approve. API access alone is not treated as proof of every license
     right, and the current official prohibition on redistribution remains controlling.
+
+## Applied interpretations from META-001 (2026-09-06)
+
+These implement the checked defaults above; they are not additional approvals.
+
+- The actual stored mode is singular character_portfolio. The earlier plural spelling was prose drift; preserving the existing string fulfills the stable-identity choice.
+- ADR-004 selects a generated private bundle served by a hardened loopback service. TASK-018 implements it; no public host or account activity follows.
+- A separately identified simulated Monarchy control makes decision comparisons with Individuals fair. It submits no extra broker order and never shares its ledger with the broker-paper series.
+- Equity includes eligible distribution receivables. FIFO, exact external-flow TWR and flow-neutral drawdown implement the approved accounting choice.
+- META-001 applies the fixture-only legacy export guard and tests original synthetic reference contracts. Production migration remains TASK-024/025.
+
+No new choice blocks this review or TASK-024's synthetic implementation. Existing later-stage gates remain unresolved: provider retention/replay/model-processing rights, final vendor selection, numeric paper-risk limits and operational ownership, and explicit authorization for account-backed trials or orders. See the [rights matrix](../../docs/data-rights-matrix.md) and [root approval register](../../decisions/APPROVALS.md).

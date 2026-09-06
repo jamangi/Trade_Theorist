@@ -1,14 +1,14 @@
 # Dashboard and owner experience
 
-Status: the two-tab read-only dashboard is implemented for local sanitized fixture exports. See [implementation and browser validation](task-011-013-implementation.md) and [local preview setup](quickstart.md). Public GitHub Pages hosting remains task 018; the design below also describes future real-runner inputs.
+Status: the v1 two-tab fixture dashboard is implemented and now restricted to synthetic exports. Its existing labels remain Council/Character portfolios until TASK-012's follow-up. The approved v2 design below uses Individual/Monarchy, a private read model and local-only packaging under [ADR-004](../decisions/records/ADR-004-local-observatory.md). Public GitHub Pages deployment is retired from TASK-018. See [prior browser evidence](task-011-013-implementation.md), [local fixture setup](quickstart.md), and [the migration starting point](../tasks/meta-tasks/START-HERE.md).
 
 ## At a glance
 
 The header shows data-as-of time, last successful heartbeat, experiment window, information regime, paper/fixture label, quality status, usage, and any halt. “No data yet,” “Awaiting outcomes,” “Stale data,” “Character not ready,” and “Failed heartbeat” are distinct states. Never animate stale values as though they were current.
 
-**Council tab:** selected lead and version; council equity, cash, net return versus cash and index, drawdown, exposure, turnover, latest decision; adviser recommendations and governor result. Show whose objections were accepted or left unresolved. Lead history remains accessible.
+**Monarchy tab:** selected lead and version; portfolio equity, cash, after-cost TWR versus cash and index, flow-neutral drawdown, exposure, turnover, latest decision; adviser recommendations and governor result. Explain: one selected lead decides after bounded advice and deterministic risk checks. Keep internal mode `council`. Show whose objections were accepted or left unresolved; lead history remains accessible. Separate broker-paper and matched simulated-control series, with aggregate Alpaca values only in reconciliation details.
 
-**Character portfolios tab:** one row/card for every Character with readiness, curriculum progress, fictional equity, after-cost return, baseline difference, drawdown, exposure, trades/abstentions, matured forecasts, calibration sample, and evidence grade. Expand a row for holdings, equity/drawdown history, decisions, mail, and learning history. Filters select date window, experiment, version, horizon, and advice access. Do not rank hindsight experiments with forward ones or total capital across mutually exclusive variants.
+**Individual tab:** one row/card for every Character with readiness, curriculum progress, fictional equity, after-cost TWR, baseline difference, drawdown, exposure, trades/abstentions, matured forecasts, calibration sample, and evidence grade. Keep internal mode `character_portfolio`. Expand for FIFO lots/relief, average remaining basis, realized/unrealized P/L, available/reserved/total cash, distributions/receivables, external flows, mark provenance, decisions, mail and learning history. Filters include window, experiment, Character version, horizon, advice and execution basis. Do not rank hindsight with forward results or simulations with broker fills; do not total capital across alternative experiments.
 
 Each row has an accessible **Explain this result** button. Its panel provides short answers to the six success questions, with “not yet known” when evidence is missing. Use cached summaries generated when source records change, not a new model call on every click.
 
@@ -27,8 +27,8 @@ The fourth answer must admit when only historical availability is controlled and
 
 ```text
 Trade Theorist        PAPER / FORWARD        Data as of …       Health …
-[Council] [Character portfolios]            [Window] [Experiment]
-Equity · Net return / baselines · Drawdown · Exposure · Evidence grade
+[Individual] [Monarchy]        [Window] [Experiment] [Execution basis]
+Equity · After-cost TWR / baselines · Flow-neutral drawdown · Evidence grade
 Equity and drawdown over time, with a readable table alternative
 Character / role | Ready? | Net result | Risk | Evidence | Explain this result
 Expanded: Decisions | Beliefs | Learning | Mail | Historical versions
@@ -41,8 +41,8 @@ Charts share the same date range and comparable scales. Include keyboard-operabl
 
 Owner workflow on the local app: **Check setup → Check library → Import/refresh data → Run next heartbeat → View report**. Show missing prerequisites and estimated/limited usage before model work. Provide a no-model demo for understanding the pipeline. A run view distinguishes queued, running, partial, failed, and completed phases and gives a resumable action.
 
-[GitHub Pages is static hosting](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages); it does not run the Python engine or store private database writes. The public report is read-only. Its help panel explains how the owner starts a run locally; it must not expose a nonfunctional “trade” or “run” control. Later authenticated controls are a separate design task.
+The v2 report runs over a generated private bundle served by a loopback-only service; no public host is required. TASK-018 owns Host/Origin/path/asset controls. The read-only UI describes local owner commands without a fake trading/run button. Later authenticated write controls need a separately scoped design. Show recurring operating expense, unknown charges and reconciliation state alongside trading outcomes; definitions come from [performance v2](portfolio-performance-v2.md).
 
-Exports use an allowlist, schema version, build ID, source run IDs, generation time, redaction policy, and content hash. Keep private notes, account identifiers, raw licensed data, source books, prompts containing secrets, and credentials out. Public summaries can link to permitted repository artifacts; restricted evidence shows a provenance label and private-inspection instruction, not a broken public link. Preserve historical reports when allowed, with retention limits; publish atomically and keep the previous report if validation fails.
+Private exports use an allowlist, distinct schema/publication class, build/source IDs, generation time, eligible cutoffs and content hash. Browser code receives no credentials, general filesystem access, books or raw source responses. Include only permitted fields needed for owner inspection; every unknown field fails closed under the [rights matrix](data-rights-matrix.md). Preserve as-known and restated historical versions separately; atomic handoff keeps the previous valid local report on failure. Real raw or reconstructable data is never routed into the legacy synthetic/public format.
 
-Acceptance includes a mobile/keyboard walkthrough, correct zero-data and stale-data states, all six expandable answers, separation of modes, and a checked public export. A convincing mockup alone does not satisfy the working dashboard task.
+Acceptance includes a mobile/keyboard walkthrough, correct zero-data/stale/unready states, six expandable answers, execution-basis and mode separation, cash/flow/lot identities checked against the golden fixture, and a checked private bundle with local access controls. Private UI rendering makes no Alpaca or model call. A convincing mockup alone does not satisfy the working dashboard task.

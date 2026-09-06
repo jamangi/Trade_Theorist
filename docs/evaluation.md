@@ -54,3 +54,7 @@ Use evidence states: fixture, hindsight-contaminated, historical-qualified, forw
 Quarterly council leadership review remains the approved cadence. The reviewer checks after-cost relative performance, drawdown, calibration, data quality, rule breaches, horizon suitability, and regime coverage. A positive month or clearing the sample floor is insufficient. The owner authorizes promotion; policy cannot be rewritten by the contender. Paper-stage numeric policy and later live-capital decisions remain separately recorded in [approvals](../decisions/APPROVALS.md).
 
 Every dashboard must answer all six README success questions from frozen records; see the exact [dashboard mapping](dashboard.md).
+
+## Adopted v2 accounting follow-up
+
+The current v1 implementation and its no-external-flow results retain their version. [META-001](meta-001-impact.md) adds the [performance-v2 contract](portfolio-performance-v2.md): FIFO lots, receivables, exact flow-adjusted TWR and drawdown, eligible marks and execution-basis identity. Production integration is TASK-025 after TASK-024. Individual/Monarchy decision comparisons require a matched simulated control; broker-paper execution results are separately identified. Recurring operating cost and one-time research cost remain visible separately from trading return.

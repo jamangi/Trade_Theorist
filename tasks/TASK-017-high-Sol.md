@@ -3,10 +3,12 @@
 - Status: planned
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
-- Dependencies: TASK-007, TASK-008, TASK-014, TASK-016
+- Dependencies: TASK-007, TASK-008, TASK-014, TASK-016, TASK-025
 - Design: [evaluation.md](../docs/evaluation.md)
 
 ## Scope
+
+META-001 fixes the initial physical submission scope to **Monarchy only**, after separate order authorization. Individual portfolios remain independent internal simulations and never receive Alpaca client IDs. Use TASK-024/025's durable opaque mapping/outbox/update contracts. Do not encode local experiment/portfolio/Character IDs in `client_order_id`; resolve the opaque ID through the internal order to the final recommendation. Unknown submissions halt/reconcile instead of blind retry. Preserve partial fills through cancellation and reject unexplained aggregate account changes. Apply the [v2 performance contract](../docs/portfolio-performance-v2.md) and [ADR-004](../decisions/records/ADR-004-local-observatory.md), including a separately identified simulated Monarchy control for fair decision comparisons.
 
 Run both portfolio modes against fresh permitted data under the approved paper policy and preregistered fill assumptions. Optionally implement a paper-only broker adapter if separately selected and authorized; local simulated sleeves remain canonical for comparative experiments. Preserve distinct broker-versus-local results and reconciliation.
 

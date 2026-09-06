@@ -1,6 +1,6 @@
 # META-001: Pivot to a local-first observatory and formalize Character performance
 
-- Status: ready
+- Status: complete (2026-09-06), within the bounded architecture/reference-contract scope below
 - Recommended model: GPT-6 Astra (`gpt-6-astra`)
 - Recommended effort: high
 - Authority: repository owner's 2026-09-06 request to reconcile Alpaca data limits,
@@ -20,6 +20,16 @@ aggregate account statistics for strategy attribution.
 Produce a precise task starting point. Recover architectural integrity at the earliest
 affected contract without erasing valid completed work or pretending a design change was
 already implemented.
+
+### Refinements adopted for this execution
+
+Optimize the next implementation path for credible prospective, after-cost advantage over frozen baselines, not feature count or a profitable-looking dashboard. Track recurring operating cost separately from trading return, preserve failed trials, and require independent initial opinions and scheduled knowledge-version changes. Waiting can be a good decision; no monthly trade quota or automatic promotion follows a gain.
+
+Separate **decision comparison** from **execution comparison**. Individual simulated fills and Monarchy broker fills have different assumptions. Compare Characters and council using a matched simulated execution basis; show any Monarchy paper result as a separately identified reconciliation/execution series. Never overwrite hypothetical fills with broker fills or pool those ledgers. If no matched control exists, show results descriptively without ranking decision skill across execution bases.
+
+Account for unsettled distribution receivables and use flow-adjusted return/drawdown. An external deposit is not profit; a dividend payment settles an existing receivable rather than recognizing income twice. Audit the actual internal mode spelling before making migrations, even if older prose names it differently.
+
+Deliver an executable, original synthetic contract fixture and focused regression checks, plus a prioritized migration task. This remains a bounded architecture review: reference-contract tests do not imply a production ledger migration, a private UI implementation, or broker reconciliation is complete. Apply small protective corrections when the audit exposes a current publication escape; queue the full runtime migration explicitly. Finish with a deliverable/evidence table separating implemented protection, tested contract arithmetic, and pending integration. Stop expanding the review once the earliest repair and measurable acceptance are concrete.
 
 ## Starting facts to verify
 
@@ -125,7 +135,11 @@ Specify, version and test at least:
 
 Define formulas and null behavior. At minimum:
 
-`equity = available cash + reserved cash + sum(open quantity × eligible mark)`
+`total cash = available cash + reserved cash`
+
+`equity = total cash + eligible distribution receivables + sum(open quantity × eligible mark)`
+
+The initial long-only cash model has no borrowing liability. Any future liability support requires an explicit contract extension and subtracts liabilities from equity. Reservations are part of total cash, not additional wealth. An unvalued asset or receivable makes dependent equity unavailable.
 
 Dollar strategy P/L must remove net external contributions. Time-weighted return must
 split subperiods at external cash flows. Stale or missing marks make dependent values
@@ -177,6 +191,8 @@ add a versioned repair task or explicit follow-up rather than rewriting history.
 
 ## Acceptance
 
+The following are contract and roadmap obligations unless a deliverable explicitly records runtime implementation. Existing protection changes and the synthetic reference fixture must have executable tests; production migration, private UI packaging and broker reconciliation remain separately tracked tasks. No complete-system claim can be inferred from the meta-task's completion.
+
 - No real Alpaca-backed dashboard requires public hosting, and real raw/reconstructable
   market data cannot enter a public or Git export by default.
 - Every persisted/exported field has a publication classification and fail-closed default.
@@ -197,3 +213,11 @@ add a versioned repair task or explicit follow-up rather than rewriting history.
   safely without rediscovering this discussion.
 - No account call, order, subscription, deployment or public data publication occurs as
   part of META-001.
+
+## Completion evidence (2026-09-06)
+
+Executed against main at `7681a34`, using the already-approved defaults. The [impact report](../../docs/meta-001-impact.md) records preserved/amended/retired/new work and the revised dependency diagram. [ADR-004](../../decisions/records/ADR-004-local-observatory.md), the [rights matrix](../../docs/data-rights-matrix.md), [performance/attribution contract](../../docs/portfolio-performance-v2.md), synthetic schemas/fixtures and reference tests complete the design evidence. The legacy exporter now refuses nonfixture inputs and outputs, with regression coverage.
+
+The full suite passed **154 tests in 19 modules**. Both new JSON Schemas validate, all 632 declared field classifications match the generated inventory, and the 25-task graph is acyclic and consistent with its index. Local Markdown targets/anchors and Git whitespace checks passed. The current UI assets are unchanged; no new browser-rendering claim is made.
+
+[START-HERE](START-HERE.md) names **TASK-024** as the next bounded implementation task, then TASK-025. Production FIFO/TWR integration, private v2 UI and broker submission remain pending; reference arithmetic is not evidence of those implementations or trading performance. No new blocking approval was necessary for this review, and no account call, order, subscription or deployment occurred.

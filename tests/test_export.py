@@ -78,6 +78,39 @@ class ExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ContractError, "run evaluate first"):
                 build_dashboard(store, as_of=FINAL_CUTOFF)
 
+    def test_nonfixture_results_and_private_evidence_are_rejected(self):
+        for field, value in (("regime", "forward_paper"), ("evidence_grade", "forward-insufficient")):
+            broken = deepcopy(self.public)
+            broken["versions"][0]["cards"][0][field] = value
+            broken["content_hash"] = digest({k: v for k, v in broken.items() if k != "content_hash"})
+            with self.assertRaisesRegex(ContractError, "synthetic fixtures only"):
+                validate_export(broken)
+        broken = deepcopy(self.public)
+        broken["evidence"][0]["visibility"] = "private"
+        broken["content_hash"] = digest({k: v for k, v in broken.items() if k != "content_hash"})
+        with self.assertRaisesRegex(ContractError, "private evidence"):
+            validate_export(broken)
+
+    def test_private_store_cannot_write_a_public_bundle(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            with Store(root / "private") as store:
+                with self.assertRaisesRegex(ContractError, "synthetic fixtures only"):
+                    export_dashboard(store, root / "output", as_of=FINAL_CUTOFF)
+            self.assertFalse((root / "output").exists())
+
+    def test_fixture_flag_cannot_reclassify_persisted_private_records(self):
+        from trade_theorist.fixtures import base_records
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            private_source = deepcopy(next(r for r in base_records() if r["record_type"] == "source"))
+            private_source["contamination"] = "forward-insufficient"
+            with Store(root) as store:
+                store.put_records([private_source])
+            with Store(root, synthetic=True) as store:
+                with self.assertRaisesRegex(ContractError, "non-fixture records"):
+                    build_dashboard(store, as_of=FINAL_CUTOFF)
+
 
 if __name__ == "__main__":
     unittest.main()

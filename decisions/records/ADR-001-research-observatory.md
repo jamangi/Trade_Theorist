@@ -31,3 +31,7 @@ Defer merged Characters until specialist evidence exists; defer intraday claims 
 ## Implementation and review
 
 The [task index](../../tasks/README.md) replaces the original near-term sequence while preserving all seven original milestones. Each task defines dependencies, outputs, and observable acceptance. Revisit structure after measured queue, latency, cost, and outcome evidence from the first working cycle. The [systems model](../../docs/systems-model.md) records the initial hypotheses.
+
+## Subsequent architecture decision (2026-09-06)
+
+[ADR-004](ADR-004-local-observatory.md) supersedes public-hosting assumptions with a private local owner interface and versioned accounting repairs. It preserves this record's historical decisions and qualification evidence. The [rights matrix](../../docs/data-rights-matrix.md) keeps provider permission questions explicit; private deployment does not select a vendor or authorize account operations.

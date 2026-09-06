@@ -31,3 +31,9 @@ Record validation evidence and remaining blockers here when implemented. Complet
 Before quote/trade collection, estimate pages, payload volume, cadence, repair/retry work and completion time against TASK-014's [shared operating ceiling](../docs/market-data-request-budget.md). Batch and reuse missing windows; prefer a narrower preregistered universe or slower cadence when the workload cannot fit. Do not silently remove instruments mid-trial or bypass the limiter for research.
 
 Evaluate shared streaming only if actual feed entitlement and separate connection/symbol/subscription limits support the experiment. Streaming is not a loophole for real-time SIP under Basic; reconnects need bounded backoff and any REST gap repair uses shared admission. Start with daily REST until a measured need justifies streaming. Acceptance reports whether data arrives before the thesis expires and rejects intraday claims when Basic delay/coverage is inadequate. This adds a data feasibility requirement without changing accepted reading scope.
+
+## META-001 follow-up (2026-09-06)
+
+Retain the approved microstructure/risk curriculum and high-volume request budget. Evaluate execution hypotheses on matched opportunity sets, horizons, costs and execution bases using v2 accounting. Separate broker-paper execution studies from simulated Character rankings.
+
+See [the impact record](../docs/meta-001-impact.md) and [next task](meta-tasks/START-HERE.md).

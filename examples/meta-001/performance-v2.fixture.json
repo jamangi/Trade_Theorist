@@ -1,0 +1,190 @@
+{
+  "contract_version": "performance-v2-reference",
+  "provenance": "original-synthetic",
+  "portfolio": {
+    "id": "portfolio:meta-individual",
+    "experiment_id": "experiment:meta-reference",
+    "mode": "character_portfolio",
+    "owner_character_version": "character:synthetic-v1",
+    "execution_basis": "simulated",
+    "currency": "USD",
+    "lot_method": "FIFO"
+  },
+  "events": [
+    {
+      "id": "event:meta-1",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-01T21:00:00Z",
+      "observed_at": "2099-01-01T21:00:00Z",
+      "kind": "funding",
+      "amount": "1000"
+    },
+    {
+      "id": "event:meta-2",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-02T21:00:00Z",
+      "observed_at": "2099-01-02T21:00:00Z",
+      "kind": "buy",
+      "order_id": "order:buy-a",
+      "instrument_id": "instrument:fiction",
+      "quantity": "2",
+      "price": "100",
+      "fee": "2"
+    },
+    {
+      "id": "event:meta-3",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-03T21:00:00Z",
+      "observed_at": "2099-01-03T21:00:00Z",
+      "kind": "buy",
+      "order_id": "order:buy-b",
+      "instrument_id": "instrument:fiction",
+      "quantity": "2",
+      "price": "120",
+      "fee": "2"
+    },
+    {
+      "id": "event:meta-4",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-04T21:00:00Z",
+      "observed_at": "2099-01-04T21:00:00Z",
+      "kind": "sell",
+      "order_id": "order:sell-a",
+      "instrument_id": "instrument:fiction",
+      "quantity": "1",
+      "price": "130",
+      "fee": "1"
+    },
+    {
+      "id": "event:meta-5",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-05T21:00:00Z",
+      "observed_at": "2099-01-05T21:00:00Z",
+      "kind": "dividend_ex",
+      "action_id": "action:dividend-a",
+      "instrument_id": "instrument:fiction",
+      "per_share": "1"
+    },
+    {
+      "id": "event:meta-6",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-06T21:00:00Z",
+      "observed_at": "2099-01-06T21:00:00Z",
+      "kind": "dividend_pay",
+      "action_id": "action:dividend-a"
+    },
+    {
+      "id": "event:meta-7",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-07T21:00:00Z",
+      "observed_at": "2099-01-07T21:00:00Z",
+      "kind": "split",
+      "action_id": "action:split-a",
+      "instrument_id": "instrument:fiction",
+      "ratio": "2"
+    },
+    {
+      "id": "event:meta-8",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-08T21:00:00Z",
+      "observed_at": "2099-01-08T21:00:00Z",
+      "kind": "mark",
+      "instrument_id": "instrument:fiction",
+      "price": "65",
+      "status": "eligible",
+      "feed": "synthetic-v1",
+      "revision": 1
+    },
+    {
+      "id": "event:meta-9",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-09T21:00:00Z",
+      "observed_at": "2099-01-09T21:00:00Z",
+      "kind": "contribution",
+      "amount": "500"
+    },
+    {
+      "id": "event:meta-10",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-10T21:00:00Z",
+      "observed_at": "2099-01-10T21:00:00Z",
+      "kind": "reserve",
+      "order_id": "order:pending",
+      "amount": "100"
+    },
+    {
+      "id": "event:meta-11",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-11T21:00:00Z",
+      "observed_at": "2099-01-11T21:00:00Z",
+      "kind": "mark",
+      "instrument_id": "instrument:fiction",
+      "price": "60",
+      "status": "eligible",
+      "feed": "synthetic-v1",
+      "revision": 1
+    },
+    {
+      "id": "event:meta-12",
+      "portfolio_id": "portfolio:meta-individual",
+      "experiment_id": "experiment:meta-reference",
+      "at": "2099-01-12T21:00:00Z",
+      "observed_at": "2099-01-12T21:00:00Z",
+      "kind": "mark",
+      "instrument_id": "instrument:fiction",
+      "price": null,
+      "status": "stale",
+      "feed": "synthetic-v1",
+      "revision": 1
+    }
+  ],
+  "expected": {
+    "before_stale": {
+      "cash": "1188",
+      "reserved": "100",
+      "available": "1088",
+      "quantity": "6",
+      "basis": "343",
+      "realized": "28",
+      "unrealized": "17",
+      "income": "3",
+      "fees": "5",
+      "equity": "1548",
+      "strategy_pnl": "48",
+      "twr": "0.05750570",
+      "max_drawdown": "0.01901141",
+      "net_external_flows": "500",
+      "lots": [
+        {
+          "lot_id": "event:meta-2",
+          "quantity": "2",
+          "basis": "101"
+        },
+        {
+          "lot_id": "event:meta-3",
+          "quantity": "4",
+          "basis": "242"
+        }
+      ]
+    },
+    "after_stale": {
+      "cash": "1188",
+      "equity": null,
+      "unrealized": null,
+      "strategy_pnl": null,
+      "twr": null,
+      "reason": "stale_or_missing_mark"
+    }
+  }
+}

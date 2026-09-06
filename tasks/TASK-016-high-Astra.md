@@ -8,6 +8,8 @@
 
 ## Scope
 
+META-001 extends the final audit to TASK-024/025 migration integrity, FIFO/flow-neutral metrics, dividend receivables, execution-basis separation, opaque Monarchy-only mapping, private field classifications and local server boundaries. Require production replay of the golden vector, not just META-001's reference tests. Preserve the earlier offline rate preflight as a narrow partial gate that can use fixture code before real forward evidence. A private deployment is not a license grant, and reference-account arithmetic is not evidence of profit.
+
 Review the completed implementation against clock barriers, simulated accounting, source rights, public exports, model usage, crash recovery, hard limits, and baseline fairness. Review the proposed numeric paper policy and obtain a recorded owner decision before paper execution. Distinguish engineering readiness from statistical evidence.
 
 ## Deliverables
