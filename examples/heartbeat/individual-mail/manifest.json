@@ -1,0 +1,14 @@
+{
+  "generated_at": "2099-01-03T21:10:00Z",
+  "conversation_id": "conversation:heartbeat-individual",
+  "source_event_ids": [
+    "mail-open:a7b1e43148232a2d95cea9bbd3c3051d163dadced86aa4d7fdf8396c66ef2c8f",
+    "mail-initial:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d",
+    "mail-final:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d"
+  ],
+  "files": [
+    "characters/individual_owner_fixture/mail/EVENTS.md",
+    "characters/individual_owner_fixture/mail/conversations/conversation-heartbeat-individual/CONVERSATIONAL_SUMMARY.md",
+    "characters/individual_owner_fixture/mail/conversations/conversation-heartbeat-individual/RESPONSES_SO_FAR.md"
+  ]
+}

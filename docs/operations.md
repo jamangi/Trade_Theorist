@@ -1,6 +1,6 @@
 # Running and maintaining the future application
 
-Status: operating design with tasks 001–006 now available. See [foundation setup and recovery](foundation-implementation.md) and [specialist/ingestion evidence](task-005-006-implementation.md). The full observatory commands below remain planned unless explicitly documented there; current demos test learning, opinions and ingestion without portfolio execution. See [the task index](../tasks/README.md) for partial real-learning status.
+Status: operating design with tasks 001–010 now available. See [foundation setup and recovery](foundation-implementation.md), [specialist/ingestion evidence](task-005-006-implementation.md), [simulation/risk evidence](task-007-008-implementation.md) and [mail/heartbeat evidence](task-009-010-implementation.md). The command interface below remains planned unless explicitly documented there; the current scripted fixture exercises both portfolio modes, bounded mail, policy rejection, queued simulation and crash recovery without a live endpoint. See [the task index](../tasks/README.md) for partial real-learning status.
 
 ## Intended local interface
 

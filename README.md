@@ -8,9 +8,9 @@ This repository currently covers **Trade Theorist only**. It does not yet place 
 
 ## Start here: the research observatory
 
-**Current status (2026-09-06): tasks 001–006 complete.** Validated contracts, SQLite persistence, the library catalog, ordered learning, structured independent opinions and time-aware permitted-CSV ingestion are implemented. The [current inventory](library/catalog/INVENTORY_REPORT.md) covers all seven Characters. Index Steward's Bogle foundation is complete. Value Rationalist and Systematic Trend Operator each have one real, cited opening checkpoint, but neither has completed its first book or may issue real recommendations. Synthetic fixtures demonstrate three independent opinions, revisions and historical snapshots without claiming an edge. There is no approved market-data vendor, portfolio simulator or published dashboard yet. The owner has approved the original recommended defaults, including Index Steward as initial council lead.
+**Current status (2026-09-06): tasks 001–010 complete.** Validated contracts, SQLite persistence, the library catalog, ordered learning, structured independent opinions, time-aware permitted-CSV ingestion, isolated simulation portfolios, independent risk controls, event-backed council mail and a crash-resumable heartbeat are implemented. The [current inventory](library/catalog/INVENTORY_REPORT.md) covers all seven Characters. Index Steward's Bogle foundation is complete. Value Rationalist and Systematic Trend Operator each have one real, cited opening checkpoint, but neither has completed its first book or may issue real recommendations. Synthetic fixtures now demonstrate both portfolio modes, a bounded disagreement, abstention, deterministic risk rejection and one queued simulated order without claiming an edge. There is no approved market-data vendor, honest outcome evaluator or published dashboard yet. The owner has approved the original recommended defaults, including Index Steward as initial council lead.
 
-See [Index Steward's completed reading](docs/index-steward-foundation.md), the partial [Value](characters/value_rationalist/README.md) and [Trend](characters/systematic_trend_operator/README.md) Characters, and the [tasks 005–006 implementation record](docs/task-005-006-implementation.md). Source PDFs stay local; public artifacts contain metadata, original analysis and citation hashes. The separate fixture paths use only original synthetic data and saved opinions.
+See [Index Steward's completed reading](docs/index-steward-foundation.md), the partial [Value](characters/value_rationalist/README.md) and [Trend](characters/systematic_trend_operator/README.md) Characters, and the [tasks 009–010 implementation record](docs/task-009-010-implementation.md). Source PDFs stay local; public artifacts contain metadata, original analysis and citation hashes. The separate fixture paths use only original synthetic data and saved opinions.
 
 Two dashboard tabs will share one research engine: **Council**, where a chosen lead decides with shadow advice, and **Character portfolios**, where each ready Character controls a separate fictional budget. Being a lead in a personal research portfolio does not grant council leadership. Neither mode requires a Character to trade when its best decision is to wait.
 
@@ -26,7 +26,7 @@ Two dashboard tabs will share one research engine: **Council**, where a chosen l
 | [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks with Sol/Astra and effort recommendations, acceptance criteria, and roadmap mapping |
 | [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
 
-The next implementation task is [TASK-007](tasks/TASK-007-high-Astra.md): fictional portfolios and the simulation ledger. Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, trained Characters and stage gates.
+The next implementation task is [TASK-011](tasks/TASK-011-high-Astra.md): honest evaluation and evidence grades. Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, trained Characters and stage gates.
 
 > [!WARNING]
 > Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.
@@ -269,9 +269,9 @@ Promotion requires predefined evidence, reproducibility, and owner approval. A l
 
 Day-trading and margin rules are jurisdiction-, broker-, account-, and time-dependent. They must be checked again when a broker and account type are selected. Current U.S. background is available from the SEC's [Investor.gov margin-rules bulletin](https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/margin).
 
-## Planned repository map
+## Repository map
 
-The design documents and task backlog accompany the Python implementation in `src/trade_theorist/`, versioned schemas, three Character directories, fixture opinions, ingestion snapshots, simulation portfolios and deterministic risk controls. See [tasks 007–008](docs/task-007-008-implementation.md) for accounting and execution, and [focused development](docs/development.md) for quiet tests with saved failure logs. In the target map below, council, evaluation and dashboard modules remain planned; create them when their first real artifact is added.
+The design documents and task backlog accompany the Python implementation in `src/trade_theorist/`, versioned schemas, three Character directories, fixture opinions, ingestion snapshots, simulation portfolios, deterministic risk controls, council mail and the heartbeat. See [tasks 007–008](docs/task-007-008-implementation.md) for accounting and execution, [tasks 009–010](docs/task-009-010-implementation.md) for deliberation and recovery, and [focused development](docs/development.md) for quiet tests with saved failure logs. Evaluation, dashboard and public-export modules remain planned.
 
 ```text
 Trade_Theorist/
@@ -301,14 +301,15 @@ Trade_Theorist/
 │       ├── evaluations/            # Character-specific scorecards
 │       └── mail/                   # Generated readable views of immutable mail events
 ├── schemas/                        # Machine-validated source, theory, and decision formats
-├── src/
+├── src/trade_theorist/
 │   ├── ingest/                     # Source ingestion and provenance
 │   ├── learn/                      # Sequential reading and memory consolidation
 │   ├── theorize/                   # Theory generation and adversarial review
-│   ├── council/                    # Lead/adviser deliberation
-│   ├── evaluate/                   # Replay and counterfactual scoring
+│   ├── council/                    # Implemented bounded event-backed deliberation
+│   ├── heartbeat/                  # Implemented locks, phase recovery, and call reuse
 │   ├── adapters/trader_user_sim/   # Isolated simulated-execution contract
-│   └── export/                     # Allowlisted public dashboard data
+│   ├── evaluate/                   # Planned replay and counterfactual scoring
+│   └── export/                     # Planned allowlisted public dashboard data
 ├── dashboard/                      # Planned read-only GitHub Pages report
 ├── tests/                          # Unit, integration, leakage, and safety tests
 └── runs/                           # Reproducible manifests; large outputs stay external
@@ -320,8 +321,8 @@ Future Trader Analyzer and Trader User components should live in separate packag
 
 1. Define validated contracts, experiment policy, and append-only persistence (tasks 001–002); the original recommended defaults are now approved.
 2. Catalog exact book editions and access, implement sequential learning, and create the three pilot Characters without sharing formative memories (003–005). **Implemented; specialist foundations remain partial.**
-3. Build time-aware ingestion, fictional-money accounting, independent risk checks, and bounded mail (006–009). **Ingestion implemented; 007–009 remain.**
-4. Connect both modes through a resumable heartbeat, honest evaluation, a two-tab dashboard, and a no-account offline demo (010–013).
+3. Build time-aware ingestion, fictional-money accounting, independent risk checks, and bounded mail (006–009). **Implemented for the fixture scope.**
+4. Connect both modes through a resumable heartbeat, honest evaluation, a two-tab dashboard, and a no-account offline demo (010–013). **Heartbeat implemented; 011–013 remain.**
 5. Qualify a market-data source, collect forward shadow decisions, review leakage/costs/recovery and paper policy, then run forward paper portfolios (014–017).
 6. Publish sanitized reports on GitHub Pages, add richer learning/social views, and optionally schedule the tested runner (018–020).
 7. Add microstructure/risk research, the disclosure interface, and later governance or merged-Character experiments only when their evidence prerequisites are met (021–023).

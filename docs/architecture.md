@@ -1,6 +1,6 @@
 # Architecture and experiment modes
 
-Status: target architecture extending the original README. Tasks 001–008 now implement contracts, SQLite, ordered learning, partial Value/Trend specialists, bounded opinions, point-in-time permitted-CSV ingestion, isolated simulation portfolios and independent risk enforcement. The heartbeat below remains planned. See [foundation](foundation-implementation.md), [tasks 005–006](task-005-006-implementation.md) and [tasks 007–008](task-007-008-implementation.md). Preserve the Trade Theorist / Trader Analyzer / Trader User boundary.
+Status: target architecture extending the original README. Tasks 001–010 now implement contracts, SQLite, ordered learning, partial Value/Trend specialists, bounded opinions, point-in-time permitted-CSV ingestion, isolated simulation portfolios, independent risk enforcement, event-backed council mail and the resumable fixture heartbeat below. See [foundation](foundation-implementation.md), [tasks 005–006](task-005-006-implementation.md), [tasks 007–008](task-007-008-implementation.md) and [tasks 009–010](task-009-010-implementation.md). Outcome evaluation, dashboard and operating interface remain later tasks. Preserve the Trade Theorist / Trader Analyzer / Trader User boundary.
 
 ## Two portfolio views, one research engine
 
@@ -64,7 +64,7 @@ A heartbeat is an explicit application action, initially owner-triggered. It is 
 8. Append execution events when their event time arrives; reconcile cash/positions; compute available outcomes.
 9. Export a complete report atomically. Keep the previous valid report if export fails. Release lock.
 
-Each phase has `pending/running/complete/failed` state. Retrying an ID reuses committed outputs and cannot duplicate mail, model charges for completed calls, orders, or fills. An ambiguous model-call failure may incur a charge; record it and cap retries. Partial work is visible and never reported as a complete experiment. Learning promotions occur between frozen evaluation windows, not as silent in-window memory updates.
+Each phase has `pending/running/complete/failed` state. The implementation uses ten durable checkpoints corresponding to snapshot, mark, mail, opinions, deliberation, decisions, risk, queue, evaluation handoff and export handoff. Retrying an ID reuses committed outputs and cannot duplicate mail, model charges for completed calls, orders, or fills. An ambiguous model-call failure may incur a charge and is not automatically retried. Partial work is visible and never reported as a complete experiment. Learning promotions occur between frozen evaluation windows, not as silent in-window memory updates. See the [implemented fixture and recovery evidence](task-009-010-implementation.md).
 
 ## Proposed pilot parameters
 

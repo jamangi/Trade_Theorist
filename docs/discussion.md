@@ -1,6 +1,6 @@
 # Mail, deliberation, and observable Character life
 
-Status: protocol design. Mail is internal Character-to-Character data, not external email or messages to people.
+Status: protocol implemented for bounded fixture experiments in Task 009. Mail is internal Character-to-Character data, not external email or messages to people. See the [implementation and acceptance evidence](task-009-010-implementation.md).
 
 ## Message contract
 

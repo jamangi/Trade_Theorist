@@ -1,0 +1,302 @@
+{
+  "fixture_only": true,
+  "description": "Scripted engineering evidence; no real Character readiness, market edge or live order authority.",
+  "council": {
+    "run_id": "run:heartbeat-council",
+    "plan_hash": "dcbcdd941f97c0694d21535ee712189cec13fc08344ce7e2541b3033c821269a",
+    "phases": {
+      "freeze_snapshot": {
+        "snapshot_id": "snapshot:heartbeat-council",
+        "snapshot_hash": "cd48440bbc90cd729192e06554219b4272a75060160262a9e7cd8aa464079932",
+        "cutoff": "2099-01-03T21:02:00Z"
+      },
+      "mark_portfolio": {
+        "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+        "portfolio_state": {
+          "cash": "10000.00",
+          "reserved": "0",
+          "available_cash": "10000.00",
+          "positions": {},
+          "equity": "10000.00",
+          "realized": "0",
+          "unrealized": "0",
+          "income": "0",
+          "fees": "0",
+          "receivables": "0",
+          "stale_instruments": [],
+          "halted": false,
+          "model": "raw-next-open-ledger-v1"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208"
+      },
+      "deliver_mail": {
+        "delivered": []
+      },
+      "independent_opinions": {
+        "recommendation_ids": [
+          "recommendation:heartbeat-council-initial-0",
+          "recommendation:heartbeat-council-initial-1",
+          "recommendation:heartbeat-council-initial-2"
+        ],
+        "model_call_ids": [
+          "call:b87bd75c49c647fe5a22f2769a70e3c7ee5eef3c7e6827f3941ada68bfc78260",
+          "call:b9b91439e2230c0b47cb11c8519d6bbc0518dd9d80cb6fbd6a04d0ea7889cb8f",
+          "call:3af5a6a53e1d94a67496e43e35d0d82a466b4e07cd15d42a64eb1b5022727b24"
+        ],
+        "commits": [
+          {
+            "conversation_id": "conversation:heartbeat-council",
+            "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+            "recommendation_id": "recommendation:heartbeat-council-initial-0",
+            "recommendation_hash": "8766024ada8b2eda63cf49ab544ee28cda6ed7b68997a589155713fb7882015b",
+            "committed_at": "2099-01-03T21:05:00Z"
+          },
+          {
+            "conversation_id": "conversation:heartbeat-council",
+            "character_version": "character:value-adviser-fixture-council",
+            "recommendation_id": "recommendation:heartbeat-council-initial-1",
+            "recommendation_hash": "3df341fe9803b8a79f4c85e2f4a9ac373b67fc53c9e20988db6052577f9c3dea",
+            "committed_at": "2099-01-03T21:05:00Z"
+          },
+          {
+            "conversation_id": "conversation:heartbeat-council",
+            "character_version": "character:trend-adviser-fixture-council",
+            "recommendation_id": "recommendation:heartbeat-council-initial-2",
+            "recommendation_hash": "bde7b7f1248b1f01dd807461dbf531797048f19da8877403fd3c32f8b4497824",
+            "committed_at": "2099-01-03T21:05:00Z"
+          }
+        ],
+        "usage": {
+          "admitted_calls": 3,
+          "reserved_tokens": 6508,
+          "completed_calls": 3,
+          "input_tokens": 120,
+          "output_tokens": 24
+        }
+      },
+      "deliberation": {
+        "question_ids": [
+          "message:heartbeat-heartbeat-council-question"
+        ],
+        "reply_ids": [
+          "message:heartbeat-heartbeat-council-reply-0",
+          "message:heartbeat-heartbeat-council-reply-1"
+        ],
+        "objection_ids": [
+          "message:heartbeat-heartbeat-council-objection"
+        ],
+        "rounds": 1
+      },
+      "final_decisions": {
+        "recommendation_ids": [
+          "recommendation:heartbeat-council-final"
+        ],
+        "commits": [
+          {
+            "conversation_id": "conversation:heartbeat-council",
+            "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+            "recommendation_id": "recommendation:heartbeat-council-final",
+            "recommendation_hash": "45d9531d28019662d9a29434c3d1cfd5e197a6b90906c3a542defaee862b846c",
+            "considered_message_ids": [
+              "message:heartbeat-heartbeat-council-reply-0",
+              "message:heartbeat-heartbeat-council-reply-1"
+            ],
+            "committed_at": "2099-01-03T21:09:00Z"
+          }
+        ],
+        "initial_abstentions": [
+          "recommendation:heartbeat-council-initial-0",
+          "recommendation:heartbeat-council-initial-1"
+        ]
+      },
+      "risk_gate": {
+        "checks": [
+          {
+            "recommendation_id": "recommendation:heartbeat-council-final",
+            "status": "rejected",
+            "reasons": [
+              "turnover"
+            ],
+            "policy_id": "policy:synthetic-v1-heartbeat-council"
+          }
+        ]
+      },
+      "queue_execution": {
+        "orders": [],
+        "not_queued": [
+          {
+            "recommendation_id": "recommendation:heartbeat-council-final",
+            "reasons": [
+              "turnover"
+            ]
+          }
+        ]
+      },
+      "evaluation_handoff": {
+        "handoff_event_id": "evaluation-handoff:3b7fd97583020afd2fc93063aa91fbdaa7a8c9ffc445ae269a1f18f7ba36972d",
+        "status": "pending_next_eligible_event"
+      },
+      "export_handoff": {
+        "manifest_hash": "8347815a9d3ff6f1b1e5466666116608ce08a64a396507cc14c80bbf5928b36e",
+        "files": 16,
+        "destination_name": "council-mail",
+        "source_event_ids": [
+          "mail-open:79f825b7e68aebceccde3507dfd544e946da966c39301e3d059c92210cfef993",
+          "mail-initial:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a",
+          "mail-initial:e5940db1310032d4ed33d2ba69fbe37e522faecf5936606ab6f7e347b1674dbd",
+          "mail-initial:ddb81f3c5fa5950e9ede20411deba5e75e06ef868ac534e7580297c54f3b6f1e",
+          "mail-authored:11b0917f91818086165beff8295934a151a4fe44e274312cbc10d021f86410f2",
+          "mail-delivery:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+          "mail-read:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+          "mail-authored:79b61c8f6b855b5a45dfb55638d9b4a9ffa512cd50eb1980c24a8ad55c2cf235",
+          "mail-delivery:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+          "mail-read:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+          "mail-delivery:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+          "mail-read:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+          "mail-authored:9bf138aa01b2fb049904baada54bab9724d4a8ba4229670d9b03eaeba05cd5f4",
+          "mail-delivery:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+          "mail-read:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+          "mail-authored:7fb98daa4d76c97ffe1d32979729617c0ff6f32b4fa9daa9b21d02a582067c17",
+          "mail-delivery:3cbd7c0b1a8b18bbad4becf5923e5667586a3141372104fd7d1516b02431f9bb",
+          "mail-reflection:015ef2a0faab2924e1df69d91ea0b4a9199f84b843d106864bc496bbf9283df9",
+          "mail-final:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a"
+        ]
+      }
+    },
+    "output_hash": "e219bed6d01e1b254df3b9f4d98d6a7f1656e79ca733b39cf255746d9be76801"
+  },
+  "individual": {
+    "run_id": "run:heartbeat-individual",
+    "plan_hash": "cf87b2254ef4c867aad3fee970f4cc9232982395d1c42b93bdb8a8834d7bb796",
+    "phases": {
+      "freeze_snapshot": {
+        "snapshot_id": "snapshot:heartbeat-individual",
+        "snapshot_hash": "e20b066ce28afd85792a1bd04998e94b553bd7467dd9bfe5cd6bdafd56424d23",
+        "cutoff": "2099-01-03T21:02:00Z"
+      },
+      "mark_portfolio": {
+        "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+        "portfolio_state": {
+          "cash": "10000.00",
+          "reserved": "0",
+          "available_cash": "10000.00",
+          "positions": {},
+          "equity": "10000.00",
+          "realized": "0",
+          "unrealized": "0",
+          "income": "0",
+          "fees": "0",
+          "receivables": "0",
+          "stale_instruments": [],
+          "halted": false,
+          "model": "raw-next-open-ledger-v1"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208"
+      },
+      "deliver_mail": {
+        "delivered": []
+      },
+      "independent_opinions": {
+        "recommendation_ids": [
+          "recommendation:heartbeat-individual-initial-0"
+        ],
+        "model_call_ids": [
+          "call:01ef0c0705924c8f364def682c00f3fd2c4968796048107a226120488d391fe4"
+        ],
+        "commits": [
+          {
+            "conversation_id": "conversation:heartbeat-individual",
+            "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+            "recommendation_id": "recommendation:heartbeat-individual-initial-0",
+            "recommendation_hash": "a2b532ce870f8f0d23e9ba6730711fcad6b7ffe292e6123c3299b26c6c5f1ecd",
+            "committed_at": "2099-01-03T21:05:00Z"
+          }
+        ],
+        "usage": {
+          "admitted_calls": 1,
+          "reserved_tokens": 2193,
+          "completed_calls": 1,
+          "input_tokens": 40,
+          "output_tokens": 8
+        }
+      },
+      "deliberation": {
+        "question_ids": [],
+        "reply_ids": [],
+        "objection_ids": [],
+        "rounds": 0
+      },
+      "final_decisions": {
+        "recommendation_ids": [
+          "recommendation:heartbeat-individual-final"
+        ],
+        "commits": [
+          {
+            "conversation_id": "conversation:heartbeat-individual",
+            "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+            "recommendation_id": "recommendation:heartbeat-individual-final",
+            "recommendation_hash": "ec6b6a43b8c6dc0d686f8d7d300596178b076c2c9dcf46d6e992eeaf95f1388d",
+            "considered_message_ids": [],
+            "committed_at": "2099-01-03T21:09:00Z"
+          }
+        ],
+        "initial_abstentions": []
+      },
+      "risk_gate": {
+        "checks": [
+          {
+            "recommendation_id": "recommendation:heartbeat-individual-final",
+            "status": "approved",
+            "reasons": [],
+            "policy_id": "policy:synthetic-v1-heartbeat-individual"
+          }
+        ]
+      },
+      "queue_execution": {
+        "orders": [
+          {
+            "status": "pending",
+            "order_id": "order:3f65453262435e0a0c4e0efad4a0a1bfc6d40b8363cfa99dcfaf8a5663d03158",
+            "reserved": "1001.00"
+          }
+        ],
+        "not_queued": []
+      },
+      "evaluation_handoff": {
+        "handoff_event_id": "evaluation-handoff:7ab3724a12da54deba4cf3f00e89f991538cbb654a4830f23fa0a3dfb70c6570",
+        "status": "pending_next_eligible_event"
+      },
+      "export_handoff": {
+        "manifest_hash": "a5c5d8696219a1a734c9f0a3f70510d78559745ea08758ee5cbb92a8ed2c159a",
+        "files": 4,
+        "destination_name": "individual-mail",
+        "source_event_ids": [
+          "mail-open:a7b1e43148232a2d95cea9bbd3c3051d163dadced86aa4d7fdf8396c66ef2c8f",
+          "mail-initial:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d",
+          "mail-final:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d"
+        ]
+      }
+    },
+    "output_hash": "9de518639e5771b58b11bdecc3ed214ce9fa3615402c2085d6a7a9fcc69401e8"
+  },
+  "provider_calls": {
+    "council": 3,
+    "individual": 1
+  },
+  "integrity": {
+    "records": 33,
+    "events": 88,
+    "hash_chain_verified": true
+  },
+  "isolation": {
+    "experiment_ids": [
+      "experiment:foundation-fixture-heartbeat-council",
+      "experiment:foundation-fixture-heartbeat-individual"
+    ],
+    "portfolio_ids": [
+      "portfolio:fixture-council-heartbeat-council",
+      "portfolio:fixture-council-heartbeat-individual"
+    ],
+    "private_reflection_experiment": "experiment:foundation-fixture-heartbeat-council"
+  }
+}

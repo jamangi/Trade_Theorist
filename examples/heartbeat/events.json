@@ -1,0 +1,1476 @@
+[
+  {
+    "id": "mail-open:79f825b7e68aebceccde3507dfd544e946da966c39301e3d059c92210cfef993",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.opened",
+    "payload": {
+      "bounds": {
+        "final_revisions_per_character": 1,
+        "max_words_per_message": 500,
+        "max_words_per_reflection": 500,
+        "questions_per_character": 1,
+        "recipients_per_question": 2,
+        "replies_per_recipient": 1,
+        "total_messages": 24
+      },
+      "bounds_hash": "f6eb65268b477df2cd7769f40436642e24a994bd06872484a61747e26d3f2781",
+      "conversation_id": "conversation:heartbeat-council"
+    }
+  },
+  {
+    "id": "sim:bc13c344c447c545adeefea6884b6dd4396f43bedefe477d54aaaea2e0188f0f",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "simulation",
+    "payload": {
+      "amount": "10000.00",
+      "at": "2099-01-03T00:00:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+      "type": "funding",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "sim-command:a6957890e4b0af7b466e68ece4658877b2e9cd4d7dd140ffa9b8afdcf5019552",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T00:00:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+      "request_hash": "a907e4faffc8d4770b38544f811ea588d5524799658aa677293edc6907c75a48",
+      "result": {
+        "status": "funding"
+      },
+      "type": "command",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "heartbeat-lock:3b7fd97583020afd2fc93063aa91fbdaa7a8c9ffc445ae269a1f18f7ba36972d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "heartbeat.locked",
+    "payload": {
+      "acquired_at": "2099-01-03T21:10:00Z",
+      "plan_hash": "dcbcdd941f97c0694d21535ee712189cec13fc08344ce7e2541b3033c821269a",
+      "run_id": "run:heartbeat-council"
+    }
+  },
+  {
+    "id": "phase:143e79618eee3f423088004069fe6080247d7189dee356ec3f403224bbbbd62d:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "46eab620de1f13188e8accfd1c9ee77460379a1f897274973da2980c929c1ce1",
+      "phase_id": "phase:143e79618eee3f423088004069fe6080247d7189dee356ec3f403224bbbbd62d"
+    }
+  },
+  {
+    "id": "phase:143e79618eee3f423088004069fe6080247d7189dee356ec3f403224bbbbd62d:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "46eab620de1f13188e8accfd1c9ee77460379a1f897274973da2980c929c1ce1",
+      "output": {
+        "cutoff": "2099-01-03T21:02:00Z",
+        "snapshot_hash": "cd48440bbc90cd729192e06554219b4272a75060160262a9e7cd8aa464079932",
+        "snapshot_id": "snapshot:heartbeat-council"
+      },
+      "output_hash": "57ee4ce735fa978adfb83a88a267e74e271b6f270fcc55c72e70961fdf881524",
+      "phase_id": "phase:143e79618eee3f423088004069fe6080247d7189dee356ec3f403224bbbbd62d"
+    }
+  },
+  {
+    "id": "phase:95825795b0723e45f201805ab60e600c23deb117284cf98f09dc66e80c0e915e:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "45697f4a852b982d87764d7efce0a480fdc856ca44e6721a748c19dd4d969d1a",
+      "phase_id": "phase:95825795b0723e45f201805ab60e600c23deb117284cf98f09dc66e80c0e915e"
+    }
+  },
+  {
+    "id": "sim:7e9d9927ba51e6e13a04a0fcae69638be508b4a98b4f5f3accdd3f532091935d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T21:02:00Z",
+      "marks": {
+        "instrument:fixture-fund": {
+          "at": "2099-01-03T21:00:00Z",
+          "observation_id": "observation:heartbeat-council",
+          "phase": "close",
+          "price": "100",
+          "session": "2099-01-03"
+        }
+      },
+      "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+      "session": "2099-01-03",
+      "snapshot_id": "snapshot:heartbeat-council",
+      "type": "mark",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "sim-command:af7f60d3d8f86478c1f771b743c520c7ba743c6baa7d2a2a2988b4d817751b4c",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T21:02:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+      "request_hash": "fd4ef3f48345754bc8b8c680e27eb10919bf96864960ce1c6ad5f9b305871db7",
+      "result": {
+        "available_cash": "10000.00",
+        "cash": "10000.00",
+        "equity": "10000.00",
+        "fees": "0",
+        "halted": false,
+        "income": "0",
+        "model": "raw-next-open-ledger-v1",
+        "positions": {},
+        "realized": "0",
+        "receivables": "0",
+        "reserved": "0",
+        "stale_instruments": [],
+        "unrealized": "0"
+      },
+      "type": "command",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "phase:95825795b0723e45f201805ab60e600c23deb117284cf98f09dc66e80c0e915e:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "45697f4a852b982d87764d7efce0a480fdc856ca44e6721a748c19dd4d969d1a",
+      "output": {
+        "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+        "portfolio_state": {
+          "available_cash": "10000.00",
+          "cash": "10000.00",
+          "equity": "10000.00",
+          "fees": "0",
+          "halted": false,
+          "income": "0",
+          "model": "raw-next-open-ledger-v1",
+          "positions": {},
+          "realized": "0",
+          "receivables": "0",
+          "reserved": "0",
+          "stale_instruments": [],
+          "unrealized": "0"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208"
+      },
+      "output_hash": "049aae5c3ec36b3d95b85d26815461dcafeb14a59bc20530342a14381f9310f6",
+      "phase_id": "phase:95825795b0723e45f201805ab60e600c23deb117284cf98f09dc66e80c0e915e"
+    }
+  },
+  {
+    "id": "phase:02f4bdf19ab070bb97237ebbece2264f6b63d770c3d10cab9d56687c95976752:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "d153a651d158ecd8a6927192e59439630614b42d3d6ad975c8a656cebb112d14",
+      "phase_id": "phase:02f4bdf19ab070bb97237ebbece2264f6b63d770c3d10cab9d56687c95976752"
+    }
+  },
+  {
+    "id": "phase:02f4bdf19ab070bb97237ebbece2264f6b63d770c3d10cab9d56687c95976752:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "d153a651d158ecd8a6927192e59439630614b42d3d6ad975c8a656cebb112d14",
+      "output": {
+        "delivered": []
+      },
+      "output_hash": "48290c6c46de3fd5c7aa7cea062a0b035dd40b553f0368f10abb6dc3f46b0323",
+      "phase_id": "phase:02f4bdf19ab070bb97237ebbece2264f6b63d770c3d10cab9d56687c95976752"
+    }
+  },
+  {
+    "id": "budget:de808a7c191727f277485623b2def6c7080da06b83d01032e7431f5be8067ac8",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.budget",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "max_calls": 3,
+      "max_output_tokens": 1024,
+      "max_tokens": 100000,
+      "model_id": "recorded-heartbeat-fixture-v1",
+      "prompt_version": "independent-opinion-v1"
+    }
+  },
+  {
+    "id": "call:b87bd75c49c647fe5a22f2769a70e3c7ee5eef3c7e6827f3941ada68bfc78260:started",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.started",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "input_hash": "3c733d02635683fe2f235a23d035b52859c2a14f92379b7b68461993bc2e94fa",
+      "max_output_tokens": 1024,
+      "request": {
+        "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+        "expected_recommendation_id": "recommendation:heartbeat-council-initial-0",
+        "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+        "knowledge_hash": "67bdd1f918c0537bfe10bbbadb68c5f82d31023c839225cb822d6f1a4aa450ae",
+        "model_id": "recorded-heartbeat-fixture-v1",
+        "output_schema_version": "recommendation-v1",
+        "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+        "portfolio_state": {
+          "available_cash": "10000.00",
+          "cash": "10000.00",
+          "equity": "10000.00",
+          "fees": "0",
+          "halted": false,
+          "income": "0",
+          "model": "raw-next-open-ledger-v1",
+          "positions": {},
+          "realized": "0",
+          "receivables": "0",
+          "reserved": "0",
+          "stale_instruments": [],
+          "unrealized": "0"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208",
+        "prompt_version": "independent-opinion-v1",
+        "sampling": {
+          "seed": 0,
+          "temperature": 0
+        },
+        "snapshot_hash": "cd48440bbc90cd729192e06554219b4272a75060160262a9e7cd8aa464079932",
+        "snapshot_id": "snapshot:heartbeat-council",
+        "source_ids": [
+          "source:original-arithmetic-fixture"
+        ],
+        "source_revision": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+        "tools": []
+      },
+      "reserved_tokens": 2178
+    }
+  },
+  {
+    "id": "call:b87bd75c49c647fe5a22f2769a70e3c7ee5eef3c7e6827f3941ada68bfc78260:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.complete",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "input_hash": "3c733d02635683fe2f235a23d035b52859c2a14f92379b7b68461993bc2e94fa",
+      "response": {
+        "recommendation_id": "recommendation:heartbeat-council-initial-0"
+      },
+      "usage": {
+        "calls": 1,
+        "cost_usd": "0.00",
+        "input_tokens": 40,
+        "output_tokens": 8
+      }
+    }
+  },
+  {
+    "id": "call:b9b91439e2230c0b47cb11c8519d6bbc0518dd9d80cb6fbd6a04d0ea7889cb8f:started",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.started",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "input_hash": "20c529197a2eb305a56965d6b8af20184e5e094e3ded0e182d5d1c08c0cb16eb",
+      "max_output_tokens": 1024,
+      "request": {
+        "character_version": "character:value-adviser-fixture-council",
+        "expected_recommendation_id": "recommendation:heartbeat-council-initial-1",
+        "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+        "knowledge_hash": "67bdd1f918c0537bfe10bbbadb68c5f82d31023c839225cb822d6f1a4aa450ae",
+        "model_id": "recorded-heartbeat-fixture-v1",
+        "output_schema_version": "recommendation-v1",
+        "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+        "portfolio_state": {
+          "available_cash": "10000.00",
+          "cash": "10000.00",
+          "equity": "10000.00",
+          "fees": "0",
+          "halted": false,
+          "income": "0",
+          "model": "raw-next-open-ledger-v1",
+          "positions": {},
+          "realized": "0",
+          "receivables": "0",
+          "reserved": "0",
+          "stale_instruments": [],
+          "unrealized": "0"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208",
+        "prompt_version": "independent-opinion-v1",
+        "sampling": {
+          "seed": 0,
+          "temperature": 0
+        },
+        "snapshot_hash": "cd48440bbc90cd729192e06554219b4272a75060160262a9e7cd8aa464079932",
+        "snapshot_id": "snapshot:heartbeat-council",
+        "source_ids": [
+          "source:original-arithmetic-fixture"
+        ],
+        "source_revision": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+        "tools": []
+      },
+      "reserved_tokens": 2165
+    }
+  },
+  {
+    "id": "call:b9b91439e2230c0b47cb11c8519d6bbc0518dd9d80cb6fbd6a04d0ea7889cb8f:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.complete",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "input_hash": "20c529197a2eb305a56965d6b8af20184e5e094e3ded0e182d5d1c08c0cb16eb",
+      "response": {
+        "recommendation_id": "recommendation:heartbeat-council-initial-1"
+      },
+      "usage": {
+        "calls": 1,
+        "cost_usd": "0.00",
+        "input_tokens": 40,
+        "output_tokens": 8
+      }
+    }
+  },
+  {
+    "id": "call:3af5a6a53e1d94a67496e43e35d0d82a466b4e07cd15d42a64eb1b5022727b24:started",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.started",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "input_hash": "7a017d6b099350678d41baff4557921882e97ce413f0bb6e62cc77f8cba251ce",
+      "max_output_tokens": 1024,
+      "request": {
+        "character_version": "character:trend-adviser-fixture-council",
+        "expected_recommendation_id": "recommendation:heartbeat-council-initial-2",
+        "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+        "knowledge_hash": "67bdd1f918c0537bfe10bbbadb68c5f82d31023c839225cb822d6f1a4aa450ae",
+        "model_id": "recorded-heartbeat-fixture-v1",
+        "output_schema_version": "recommendation-v1",
+        "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+        "portfolio_state": {
+          "available_cash": "10000.00",
+          "cash": "10000.00",
+          "equity": "10000.00",
+          "fees": "0",
+          "halted": false,
+          "income": "0",
+          "model": "raw-next-open-ledger-v1",
+          "positions": {},
+          "realized": "0",
+          "receivables": "0",
+          "reserved": "0",
+          "stale_instruments": [],
+          "unrealized": "0"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208",
+        "prompt_version": "independent-opinion-v1",
+        "sampling": {
+          "seed": 0,
+          "temperature": 0
+        },
+        "snapshot_hash": "cd48440bbc90cd729192e06554219b4272a75060160262a9e7cd8aa464079932",
+        "snapshot_id": "snapshot:heartbeat-council",
+        "source_ids": [
+          "source:original-arithmetic-fixture"
+        ],
+        "source_revision": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+        "tools": []
+      },
+      "reserved_tokens": 2165
+    }
+  },
+  {
+    "id": "call:3af5a6a53e1d94a67496e43e35d0d82a466b4e07cd15d42a64eb1b5022727b24:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "model.complete",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-council",
+      "input_hash": "7a017d6b099350678d41baff4557921882e97ce413f0bb6e62cc77f8cba251ce",
+      "response": {
+        "recommendation_id": "recommendation:heartbeat-council-initial-2"
+      },
+      "usage": {
+        "calls": 1,
+        "cost_usd": "0.00",
+        "input_tokens": 40,
+        "output_tokens": 8
+      }
+    }
+  },
+  {
+    "id": "phase:983e2ec697e56785c8472aacb567c9b4ba6db64f2c82d88ba89c4264a0297eed:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "e59e85f0728fdb1da955fb024a52e7e3fc7720acf77ce3ee51c0d6096ab9ce39",
+      "phase_id": "phase:983e2ec697e56785c8472aacb567c9b4ba6db64f2c82d88ba89c4264a0297eed"
+    }
+  },
+  {
+    "id": "mail-initial:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.initial_committed",
+    "payload": {
+      "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+      "committed_at": "2099-01-03T21:05:00Z",
+      "conversation_id": "conversation:heartbeat-council",
+      "recommendation_hash": "8766024ada8b2eda63cf49ab544ee28cda6ed7b68997a589155713fb7882015b",
+      "recommendation_id": "recommendation:heartbeat-council-initial-0"
+    }
+  },
+  {
+    "id": "mail-initial:e5940db1310032d4ed33d2ba69fbe37e522faecf5936606ab6f7e347b1674dbd",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.initial_committed",
+    "payload": {
+      "character_version": "character:value-adviser-fixture-council",
+      "committed_at": "2099-01-03T21:05:00Z",
+      "conversation_id": "conversation:heartbeat-council",
+      "recommendation_hash": "3df341fe9803b8a79f4c85e2f4a9ac373b67fc53c9e20988db6052577f9c3dea",
+      "recommendation_id": "recommendation:heartbeat-council-initial-1"
+    }
+  },
+  {
+    "id": "mail-initial:ddb81f3c5fa5950e9ede20411deba5e75e06ef868ac534e7580297c54f3b6f1e",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.initial_committed",
+    "payload": {
+      "character_version": "character:trend-adviser-fixture-council",
+      "committed_at": "2099-01-03T21:05:00Z",
+      "conversation_id": "conversation:heartbeat-council",
+      "recommendation_hash": "bde7b7f1248b1f01dd807461dbf531797048f19da8877403fd3c32f8b4497824",
+      "recommendation_id": "recommendation:heartbeat-council-initial-2"
+    }
+  },
+  {
+    "id": "phase:983e2ec697e56785c8472aacb567c9b4ba6db64f2c82d88ba89c4264a0297eed:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "e59e85f0728fdb1da955fb024a52e7e3fc7720acf77ce3ee51c0d6096ab9ce39",
+      "output": {
+        "commits": [
+          {
+            "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+            "committed_at": "2099-01-03T21:05:00Z",
+            "conversation_id": "conversation:heartbeat-council",
+            "recommendation_hash": "8766024ada8b2eda63cf49ab544ee28cda6ed7b68997a589155713fb7882015b",
+            "recommendation_id": "recommendation:heartbeat-council-initial-0"
+          },
+          {
+            "character_version": "character:value-adviser-fixture-council",
+            "committed_at": "2099-01-03T21:05:00Z",
+            "conversation_id": "conversation:heartbeat-council",
+            "recommendation_hash": "3df341fe9803b8a79f4c85e2f4a9ac373b67fc53c9e20988db6052577f9c3dea",
+            "recommendation_id": "recommendation:heartbeat-council-initial-1"
+          },
+          {
+            "character_version": "character:trend-adviser-fixture-council",
+            "committed_at": "2099-01-03T21:05:00Z",
+            "conversation_id": "conversation:heartbeat-council",
+            "recommendation_hash": "bde7b7f1248b1f01dd807461dbf531797048f19da8877403fd3c32f8b4497824",
+            "recommendation_id": "recommendation:heartbeat-council-initial-2"
+          }
+        ],
+        "model_call_ids": [
+          "call:b87bd75c49c647fe5a22f2769a70e3c7ee5eef3c7e6827f3941ada68bfc78260",
+          "call:b9b91439e2230c0b47cb11c8519d6bbc0518dd9d80cb6fbd6a04d0ea7889cb8f",
+          "call:3af5a6a53e1d94a67496e43e35d0d82a466b4e07cd15d42a64eb1b5022727b24"
+        ],
+        "recommendation_ids": [
+          "recommendation:heartbeat-council-initial-0",
+          "recommendation:heartbeat-council-initial-1",
+          "recommendation:heartbeat-council-initial-2"
+        ],
+        "usage": {
+          "admitted_calls": 3,
+          "completed_calls": 3,
+          "input_tokens": 120,
+          "output_tokens": 24,
+          "reserved_tokens": 6508
+        }
+      },
+      "output_hash": "77aaa768504c15bf564ab5d1d93ba9ee1107c3b865cc9fac946a74505710a068",
+      "phase_id": "phase:983e2ec697e56785c8472aacb567c9b4ba6db64f2c82d88ba89c4264a0297eed"
+    }
+  },
+  {
+    "id": "phase:68ff5ba315999fce94b2ec0b4f0ee0f934af67a39b9f9b65c28d1eda78e30e84:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "695031f70479b591e91a35a7cf2b3262aec59e41b1bc340e31ee7d1b660d9a5a",
+      "phase_id": "phase:68ff5ba315999fce94b2ec0b4f0ee0f934af67a39b9f9b65c28d1eda78e30e84"
+    }
+  },
+  {
+    "id": "mail-authored:11b0917f91818086165beff8295934a151a4fe44e274312cbc10d021f86410f2",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.authored",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "message_hash": "295aa4f37aaad5f15f4f58d16363719cbb94800ddda4e0eb9ff29de9a5357da9",
+      "message_id": "message:heartbeat-heartbeat-council-question",
+      "title": "Should the council act on this signal?"
+    }
+  },
+  {
+    "id": "mail-delivery:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.delivered",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "delivered_at": "2099-01-03T21:06:00Z",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-question",
+      "recipient_character": "character:value-adviser-fixture-council"
+    }
+  },
+  {
+    "id": "mail-read:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.read",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-question",
+      "read_at": "2099-01-03T21:06:00Z",
+      "recipient_character": "character:value-adviser-fixture-council"
+    }
+  },
+  {
+    "id": "mail-authored:79b61c8f6b855b5a45dfb55638d9b4a9ffa512cd50eb1980c24a8ad55c2cf235",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.authored",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "message_hash": "bff4d191c10976c6e8cd2c7100c6f5a032eedd5b71f1a34d605c54a3e8428363",
+      "message_id": "message:heartbeat-heartbeat-council-reply-0",
+      "title": "Bounded adviser response"
+    }
+  },
+  {
+    "id": "mail-delivery:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.delivered",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "delivered_at": "2099-01-03T21:06:00Z",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-reply-0",
+      "recipient_character": "character:index-steward-fixture-v1-heartbeat-council"
+    }
+  },
+  {
+    "id": "mail-read:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.read",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-reply-0",
+      "read_at": "2099-01-03T21:06:00Z",
+      "recipient_character": "character:index-steward-fixture-v1-heartbeat-council"
+    }
+  },
+  {
+    "id": "mail-delivery:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.delivered",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "delivered_at": "2099-01-03T21:06:00Z",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-question",
+      "recipient_character": "character:trend-adviser-fixture-council"
+    }
+  },
+  {
+    "id": "mail-read:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.read",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-question",
+      "read_at": "2099-01-03T21:06:00Z",
+      "recipient_character": "character:trend-adviser-fixture-council"
+    }
+  },
+  {
+    "id": "mail-authored:9bf138aa01b2fb049904baada54bab9724d4a8ba4229670d9b03eaeba05cd5f4",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.authored",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "message_hash": "5199b545fc93e5c8a5c56880c3450cb0e00e68e8bc28a4f9bea64e6d147276a3",
+      "message_id": "message:heartbeat-heartbeat-council-reply-1",
+      "title": "Bounded adviser response"
+    }
+  },
+  {
+    "id": "mail-delivery:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.delivered",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "delivered_at": "2099-01-03T21:06:00Z",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-reply-1",
+      "recipient_character": "character:index-steward-fixture-v1-heartbeat-council"
+    }
+  },
+  {
+    "id": "mail-read:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.read",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-reply-1",
+      "read_at": "2099-01-03T21:06:00Z",
+      "recipient_character": "character:index-steward-fixture-v1-heartbeat-council"
+    }
+  },
+  {
+    "id": "mail-authored:7fb98daa4d76c97ffe1d32979729617c0ff6f32b4fa9daa9b21d02a582067c17",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.authored",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "message_hash": "822640181da441f97f34bc19384e53a99e43b696c443efb6b6b839a259f50e1f",
+      "message_id": "message:heartbeat-heartbeat-council-objection",
+      "title": "Outstanding valuation objection"
+    }
+  },
+  {
+    "id": "mail-delivery:3cbd7c0b1a8b18bbad4becf5923e5667586a3141372104fd7d1516b02431f9bb",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.delivered",
+    "payload": {
+      "conversation_id": "conversation:heartbeat-council",
+      "delivered_at": "2099-01-03T21:06:00Z",
+      "eligible_for_decision": true,
+      "message_id": "message:heartbeat-heartbeat-council-objection",
+      "recipient_character": "character:index-steward-fixture-v1-heartbeat-council"
+    }
+  },
+  {
+    "id": "mail-reflection:015ef2a0faab2924e1df69d91ea0b4a9199f84b843d106864bc496bbf9283df9",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.reflection",
+    "payload": {
+      "authored_at": "2099-01-03T21:06:00Z",
+      "body": "The valuation objection is useful but does not independently set the deterministic risk limit.",
+      "conversation_id": "conversation:heartbeat-council",
+      "private_to": "character:index-steward-fixture-v1-heartbeat-council",
+      "reflection_id": "reflection:heartbeat-council",
+      "source_message_ids": [
+        "message:heartbeat-heartbeat-council-objection"
+      ],
+      "subject_character": "character:value-adviser-fixture-council"
+    }
+  },
+  {
+    "id": "phase:68ff5ba315999fce94b2ec0b4f0ee0f934af67a39b9f9b65c28d1eda78e30e84:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "695031f70479b591e91a35a7cf2b3262aec59e41b1bc340e31ee7d1b660d9a5a",
+      "output": {
+        "objection_ids": [
+          "message:heartbeat-heartbeat-council-objection"
+        ],
+        "question_ids": [
+          "message:heartbeat-heartbeat-council-question"
+        ],
+        "reply_ids": [
+          "message:heartbeat-heartbeat-council-reply-0",
+          "message:heartbeat-heartbeat-council-reply-1"
+        ],
+        "rounds": 1
+      },
+      "output_hash": "1cb85b9cbcdbdbddbf0855014e2f724e894b40954dca35681aeb57446d83d3a8",
+      "phase_id": "phase:68ff5ba315999fce94b2ec0b4f0ee0f934af67a39b9f9b65c28d1eda78e30e84"
+    }
+  },
+  {
+    "id": "phase:5db612b33a340323e9160f6d462bdda35c0ff135895f2b9812a6e0005e28aa17:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "05b0205c9762303078856cae169bf53e603f736c0f22904978ef28e10499fb35",
+      "phase_id": "phase:5db612b33a340323e9160f6d462bdda35c0ff135895f2b9812a6e0005e28aa17"
+    }
+  },
+  {
+    "id": "mail-final:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "mail.final_committed",
+    "payload": {
+      "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+      "committed_at": "2099-01-03T21:09:00Z",
+      "considered_message_ids": [
+        "message:heartbeat-heartbeat-council-reply-0",
+        "message:heartbeat-heartbeat-council-reply-1"
+      ],
+      "conversation_id": "conversation:heartbeat-council",
+      "recommendation_hash": "45d9531d28019662d9a29434c3d1cfd5e197a6b90906c3a542defaee862b846c",
+      "recommendation_id": "recommendation:heartbeat-council-final"
+    }
+  },
+  {
+    "id": "phase:5db612b33a340323e9160f6d462bdda35c0ff135895f2b9812a6e0005e28aa17:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "05b0205c9762303078856cae169bf53e603f736c0f22904978ef28e10499fb35",
+      "output": {
+        "commits": [
+          {
+            "character_version": "character:index-steward-fixture-v1-heartbeat-council",
+            "committed_at": "2099-01-03T21:09:00Z",
+            "considered_message_ids": [
+              "message:heartbeat-heartbeat-council-reply-0",
+              "message:heartbeat-heartbeat-council-reply-1"
+            ],
+            "conversation_id": "conversation:heartbeat-council",
+            "recommendation_hash": "45d9531d28019662d9a29434c3d1cfd5e197a6b90906c3a542defaee862b846c",
+            "recommendation_id": "recommendation:heartbeat-council-final"
+          }
+        ],
+        "initial_abstentions": [
+          "recommendation:heartbeat-council-initial-0",
+          "recommendation:heartbeat-council-initial-1"
+        ],
+        "recommendation_ids": [
+          "recommendation:heartbeat-council-final"
+        ]
+      },
+      "output_hash": "12b8bd40eaf18366b41f2e37cc1aada1756dd6d24bbc85d73ca73c2ed169e744",
+      "phase_id": "phase:5db612b33a340323e9160f6d462bdda35c0ff135895f2b9812a6e0005e28aa17"
+    }
+  },
+  {
+    "id": "phase:786c9af7325887998f7ec9f7e71ffebb9782c956b9d86467d8945a256e00d0e1:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "485287b7dce500a30ee5abb021ec85d8dfda0f0255d40c545f9124125ad1f3da",
+      "phase_id": "phase:786c9af7325887998f7ec9f7e71ffebb9782c956b9d86467d8945a256e00d0e1"
+    }
+  },
+  {
+    "id": "phase:786c9af7325887998f7ec9f7e71ffebb9782c956b9d86467d8945a256e00d0e1:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "485287b7dce500a30ee5abb021ec85d8dfda0f0255d40c545f9124125ad1f3da",
+      "output": {
+        "checks": [
+          {
+            "policy_id": "policy:synthetic-v1-heartbeat-council",
+            "reasons": [
+              "turnover"
+            ],
+            "recommendation_id": "recommendation:heartbeat-council-final",
+            "status": "rejected"
+          }
+        ]
+      },
+      "output_hash": "44416183d3ad7474992f8ed8a91800f5190dcb77f950c652419983288f042f9c",
+      "phase_id": "phase:786c9af7325887998f7ec9f7e71ffebb9782c956b9d86467d8945a256e00d0e1"
+    }
+  },
+  {
+    "id": "phase:68e4fa4eff4bbe8d8c338ef7fb04eca0dcf5015926b573ca191878ceed3ca893:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "7300f80ed3a97a02440ea7cb17f8000ead4b04713482f3264322d8b746cbe2df",
+      "phase_id": "phase:68e4fa4eff4bbe8d8c338ef7fb04eca0dcf5015926b573ca191878ceed3ca893"
+    }
+  },
+  {
+    "id": "phase:68e4fa4eff4bbe8d8c338ef7fb04eca0dcf5015926b573ca191878ceed3ca893:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "7300f80ed3a97a02440ea7cb17f8000ead4b04713482f3264322d8b746cbe2df",
+      "output": {
+        "not_queued": [
+          {
+            "reasons": [
+              "turnover"
+            ],
+            "recommendation_id": "recommendation:heartbeat-council-final"
+          }
+        ],
+        "orders": []
+      },
+      "output_hash": "8dfafeedf3611632f8aa00306f0f299d3873a7a7fc0d6804d929600b239788e2",
+      "phase_id": "phase:68e4fa4eff4bbe8d8c338ef7fb04eca0dcf5015926b573ca191878ceed3ca893"
+    }
+  },
+  {
+    "id": "phase:068457c7db867fd5a7e3b2aad5854f9124208ba979efbdfca1389a7e9cb0c170:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "60386ab620adb87f0ae18974e56dfab46ef54ecb8b2c5db12965c2f5e02fe10c",
+      "phase_id": "phase:068457c7db867fd5a7e3b2aad5854f9124208ba979efbdfca1389a7e9cb0c170"
+    }
+  },
+  {
+    "id": "evaluation-handoff:3b7fd97583020afd2fc93063aa91fbdaa7a8c9ffc445ae269a1f18f7ba36972d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "evaluation.handoff",
+    "payload": {
+      "order_ids": [],
+      "portfolio_id": "portfolio:fixture-council-heartbeat-council",
+      "run_id": "run:heartbeat-council",
+      "snapshot_id": "snapshot:heartbeat-council",
+      "status": "pending_next_eligible_event"
+    }
+  },
+  {
+    "id": "phase:068457c7db867fd5a7e3b2aad5854f9124208ba979efbdfca1389a7e9cb0c170:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "60386ab620adb87f0ae18974e56dfab46ef54ecb8b2c5db12965c2f5e02fe10c",
+      "output": {
+        "handoff_event_id": "evaluation-handoff:3b7fd97583020afd2fc93063aa91fbdaa7a8c9ffc445ae269a1f18f7ba36972d",
+        "status": "pending_next_eligible_event"
+      },
+      "output_hash": "ba734288a00a2463d40e0f1977cd8e51a3aecea88f05daaea80f13cfb4cf4149",
+      "phase_id": "phase:068457c7db867fd5a7e3b2aad5854f9124208ba979efbdfca1389a7e9cb0c170"
+    }
+  },
+  {
+    "id": "phase:0386c95bcefec622a549bd66f8630fbfe99d8fce9bd1a0ff6a329885fdaf224e:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "f0d8e189acafcc4b48b7dee7a1fa3c87c0d81228608fc18a504ff4b7bc901f8f",
+      "phase_id": "phase:0386c95bcefec622a549bd66f8630fbfe99d8fce9bd1a0ff6a329885fdaf224e"
+    }
+  },
+  {
+    "id": "phase:0386c95bcefec622a549bd66f8630fbfe99d8fce9bd1a0ff6a329885fdaf224e:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "f0d8e189acafcc4b48b7dee7a1fa3c87c0d81228608fc18a504ff4b7bc901f8f",
+      "output": {
+        "destination_name": "council-mail",
+        "files": 16,
+        "manifest_hash": "8347815a9d3ff6f1b1e5466666116608ce08a64a396507cc14c80bbf5928b36e",
+        "source_event_ids": [
+          "mail-open:79f825b7e68aebceccde3507dfd544e946da966c39301e3d059c92210cfef993",
+          "mail-initial:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a",
+          "mail-initial:e5940db1310032d4ed33d2ba69fbe37e522faecf5936606ab6f7e347b1674dbd",
+          "mail-initial:ddb81f3c5fa5950e9ede20411deba5e75e06ef868ac534e7580297c54f3b6f1e",
+          "mail-authored:11b0917f91818086165beff8295934a151a4fe44e274312cbc10d021f86410f2",
+          "mail-delivery:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+          "mail-read:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+          "mail-authored:79b61c8f6b855b5a45dfb55638d9b4a9ffa512cd50eb1980c24a8ad55c2cf235",
+          "mail-delivery:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+          "mail-read:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+          "mail-delivery:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+          "mail-read:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+          "mail-authored:9bf138aa01b2fb049904baada54bab9724d4a8ba4229670d9b03eaeba05cd5f4",
+          "mail-delivery:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+          "mail-read:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+          "mail-authored:7fb98daa4d76c97ffe1d32979729617c0ff6f32b4fa9daa9b21d02a582067c17",
+          "mail-delivery:3cbd7c0b1a8b18bbad4becf5923e5667586a3141372104fd7d1516b02431f9bb",
+          "mail-reflection:015ef2a0faab2924e1df69d91ea0b4a9199f84b843d106864bc496bbf9283df9",
+          "mail-final:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a"
+        ]
+      },
+      "output_hash": "3755365e3813953c259acb35cee5957dba1b6f125f9de4cb98e64971707ab3bb",
+      "phase_id": "phase:0386c95bcefec622a549bd66f8630fbfe99d8fce9bd1a0ff6a329885fdaf224e"
+    }
+  },
+  {
+    "id": "heartbeat-release:3b7fd97583020afd2fc93063aa91fbdaa7a8c9ffc445ae269a1f18f7ba36972d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-council",
+    "kind": "heartbeat.released",
+    "payload": {
+      "plan_hash": "dcbcdd941f97c0694d21535ee712189cec13fc08344ce7e2541b3033c821269a",
+      "released_at": "2099-01-03T21:10:00Z",
+      "run_id": "run:heartbeat-council"
+    }
+  },
+  {
+    "id": "mail-open:a7b1e43148232a2d95cea9bbd3c3051d163dadced86aa4d7fdf8396c66ef2c8f",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "mail.opened",
+    "payload": {
+      "bounds": {
+        "final_revisions_per_character": 1,
+        "max_words_per_message": 500,
+        "max_words_per_reflection": 500,
+        "questions_per_character": 1,
+        "recipients_per_question": 2,
+        "replies_per_recipient": 1,
+        "total_messages": 24
+      },
+      "bounds_hash": "f6eb65268b477df2cd7769f40436642e24a994bd06872484a61747e26d3f2781",
+      "conversation_id": "conversation:heartbeat-individual"
+    }
+  },
+  {
+    "id": "sim:a2366415189748249bcef3a10ace9da27f2ee28d649e71512bab6436909e1aa3",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "simulation",
+    "payload": {
+      "amount": "10000.00",
+      "at": "2099-01-03T00:00:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "type": "funding",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "sim-command:59d53ea692f8e7ad7839855428f2d0204c099f46e0cdb41d0fdf5fc7440629a3",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T00:00:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "request_hash": "d077bf3e9077fe5db28ca8b6c6286ef832c1ae21f0b65aeb149a07e8ddcb8e43",
+      "result": {
+        "status": "funding"
+      },
+      "type": "command",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "heartbeat-lock:7ab3724a12da54deba4cf3f00e89f991538cbb654a4830f23fa0a3dfb70c6570",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "heartbeat.locked",
+    "payload": {
+      "acquired_at": "2099-01-03T21:10:00Z",
+      "plan_hash": "cf87b2254ef4c867aad3fee970f4cc9232982395d1c42b93bdb8a8834d7bb796",
+      "run_id": "run:heartbeat-individual"
+    }
+  },
+  {
+    "id": "phase:5441b628505838610dae04fee3e019f0c402025db2d23b8c5275a5b10d5e648d:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "2006dc647ee234883aa1c48e573773b394e5353a2ba9bf094e00100cd27baa2c",
+      "phase_id": "phase:5441b628505838610dae04fee3e019f0c402025db2d23b8c5275a5b10d5e648d"
+    }
+  },
+  {
+    "id": "phase:5441b628505838610dae04fee3e019f0c402025db2d23b8c5275a5b10d5e648d:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "2006dc647ee234883aa1c48e573773b394e5353a2ba9bf094e00100cd27baa2c",
+      "output": {
+        "cutoff": "2099-01-03T21:02:00Z",
+        "snapshot_hash": "e20b066ce28afd85792a1bd04998e94b553bd7467dd9bfe5cd6bdafd56424d23",
+        "snapshot_id": "snapshot:heartbeat-individual"
+      },
+      "output_hash": "a80158c005361fed155ebf6a7ba41ae31111dbcb452f82084dfb5bd1020779fc",
+      "phase_id": "phase:5441b628505838610dae04fee3e019f0c402025db2d23b8c5275a5b10d5e648d"
+    }
+  },
+  {
+    "id": "phase:73f8303ab10d6f72f1c02fed89289ea346a636e0934723176c4959bebceafcd4:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "ffd8873091be648030567ffbe68950c22faea7e30d4edf9bf0ad2a86eadc2163",
+      "phase_id": "phase:73f8303ab10d6f72f1c02fed89289ea346a636e0934723176c4959bebceafcd4"
+    }
+  },
+  {
+    "id": "sim:994f32a7c560a35669250e183f1c5d83c20d2989e170855efc8f71e7a45a36ba",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T21:02:00Z",
+      "marks": {
+        "instrument:fixture-fund": {
+          "at": "2099-01-03T21:00:00Z",
+          "observation_id": "observation:heartbeat-individual",
+          "phase": "close",
+          "price": "100",
+          "session": "2099-01-03"
+        }
+      },
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "session": "2099-01-03",
+      "snapshot_id": "snapshot:heartbeat-individual",
+      "type": "mark",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "sim-command:ce01df9418b1a2c4dc1c76b0cd09a7cf6bcbbcfa8f837b4eefa11b41729bc010",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T21:02:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "request_hash": "7f19f05e4313458efd45c81a30b97bb1f8f3e1e6361b9e9f5d2eefa27b0d6686",
+      "result": {
+        "available_cash": "10000.00",
+        "cash": "10000.00",
+        "equity": "10000.00",
+        "fees": "0",
+        "halted": false,
+        "income": "0",
+        "model": "raw-next-open-ledger-v1",
+        "positions": {},
+        "realized": "0",
+        "receivables": "0",
+        "reserved": "0",
+        "stale_instruments": [],
+        "unrealized": "0"
+      },
+      "type": "command",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "phase:73f8303ab10d6f72f1c02fed89289ea346a636e0934723176c4959bebceafcd4:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "ffd8873091be648030567ffbe68950c22faea7e30d4edf9bf0ad2a86eadc2163",
+      "output": {
+        "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+        "portfolio_state": {
+          "available_cash": "10000.00",
+          "cash": "10000.00",
+          "equity": "10000.00",
+          "fees": "0",
+          "halted": false,
+          "income": "0",
+          "model": "raw-next-open-ledger-v1",
+          "positions": {},
+          "realized": "0",
+          "receivables": "0",
+          "reserved": "0",
+          "stale_instruments": [],
+          "unrealized": "0"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208"
+      },
+      "output_hash": "1da9cd00f623c4266c1f25c2c72f8ab1bc5d13de77909faeca106aa85b160e46",
+      "phase_id": "phase:73f8303ab10d6f72f1c02fed89289ea346a636e0934723176c4959bebceafcd4"
+    }
+  },
+  {
+    "id": "phase:1049526f34789d2d12e317ab8229cf4512133447460679a03300fd70a9392706:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "5c50f3dc1a2d50128e6eee21d9bc3cf22c52768a6ceb2aec4f0d09f72f465669",
+      "phase_id": "phase:1049526f34789d2d12e317ab8229cf4512133447460679a03300fd70a9392706"
+    }
+  },
+  {
+    "id": "phase:1049526f34789d2d12e317ab8229cf4512133447460679a03300fd70a9392706:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "5c50f3dc1a2d50128e6eee21d9bc3cf22c52768a6ceb2aec4f0d09f72f465669",
+      "output": {
+        "delivered": []
+      },
+      "output_hash": "48290c6c46de3fd5c7aa7cea062a0b035dd40b553f0368f10abb6dc3f46b0323",
+      "phase_id": "phase:1049526f34789d2d12e317ab8229cf4512133447460679a03300fd70a9392706"
+    }
+  },
+  {
+    "id": "budget:1d3c9cf7cd854d5bb4252d94544dc63163de16a7dc7480567268ad9f77a60e29",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "model.budget",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-individual",
+      "max_calls": 1,
+      "max_output_tokens": 1024,
+      "max_tokens": 100000,
+      "model_id": "recorded-heartbeat-fixture-v1",
+      "prompt_version": "independent-opinion-v1"
+    }
+  },
+  {
+    "id": "call:01ef0c0705924c8f364def682c00f3fd2c4968796048107a226120488d391fe4:started",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "model.started",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-individual",
+      "input_hash": "a5ebbec8a84308fd58c8cea4b90a4b7751ab701871db529f703f4bda75ef3319",
+      "max_output_tokens": 1024,
+      "request": {
+        "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+        "expected_recommendation_id": "recommendation:heartbeat-individual-initial-0",
+        "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+        "knowledge_hash": "67bdd1f918c0537bfe10bbbadb68c5f82d31023c839225cb822d6f1a4aa450ae",
+        "model_id": "recorded-heartbeat-fixture-v1",
+        "output_schema_version": "recommendation-v1",
+        "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+        "portfolio_state": {
+          "available_cash": "10000.00",
+          "cash": "10000.00",
+          "equity": "10000.00",
+          "fees": "0",
+          "halted": false,
+          "income": "0",
+          "model": "raw-next-open-ledger-v1",
+          "positions": {},
+          "realized": "0",
+          "receivables": "0",
+          "reserved": "0",
+          "stale_instruments": [],
+          "unrealized": "0"
+        },
+        "portfolio_state_hash": "19dcb5b89ac7aab02df9b23c89efc8b1729f468c01563a879ef5b21321f85208",
+        "prompt_version": "independent-opinion-v1",
+        "sampling": {
+          "seed": 0,
+          "temperature": 0
+        },
+        "snapshot_hash": "e20b066ce28afd85792a1bd04998e94b553bd7467dd9bfe5cd6bdafd56424d23",
+        "snapshot_id": "snapshot:heartbeat-individual",
+        "source_ids": [
+          "source:original-arithmetic-fixture"
+        ],
+        "source_revision": "b9497874f19de3819afcaa38143f02a0a8bcea739d023aeef978bbc91c6dc7ff",
+        "tools": []
+      },
+      "reserved_tokens": 2193
+    }
+  },
+  {
+    "id": "call:01ef0c0705924c8f364def682c00f3fd2c4968796048107a226120488d391fe4:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "model.complete",
+    "payload": {
+      "budget_id": "budget:heartbeat-heartbeat-individual",
+      "input_hash": "a5ebbec8a84308fd58c8cea4b90a4b7751ab701871db529f703f4bda75ef3319",
+      "response": {
+        "recommendation_id": "recommendation:heartbeat-individual-initial-0"
+      },
+      "usage": {
+        "calls": 1,
+        "cost_usd": "0.00",
+        "input_tokens": 40,
+        "output_tokens": 8
+      }
+    }
+  },
+  {
+    "id": "phase:9f82233c054391e3d2619b24dcd0b998b5580d10975cdd81dee3e06a55b08ed9:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "0f9032fe30eacb875ef37875bb44e2f00763fcaa1345a563b99c51587d3f0e88",
+      "phase_id": "phase:9f82233c054391e3d2619b24dcd0b998b5580d10975cdd81dee3e06a55b08ed9"
+    }
+  },
+  {
+    "id": "mail-initial:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "mail.initial_committed",
+    "payload": {
+      "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+      "committed_at": "2099-01-03T21:05:00Z",
+      "conversation_id": "conversation:heartbeat-individual",
+      "recommendation_hash": "a2b532ce870f8f0d23e9ba6730711fcad6b7ffe292e6123c3299b26c6c5f1ecd",
+      "recommendation_id": "recommendation:heartbeat-individual-initial-0"
+    }
+  },
+  {
+    "id": "phase:9f82233c054391e3d2619b24dcd0b998b5580d10975cdd81dee3e06a55b08ed9:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "0f9032fe30eacb875ef37875bb44e2f00763fcaa1345a563b99c51587d3f0e88",
+      "output": {
+        "commits": [
+          {
+            "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+            "committed_at": "2099-01-03T21:05:00Z",
+            "conversation_id": "conversation:heartbeat-individual",
+            "recommendation_hash": "a2b532ce870f8f0d23e9ba6730711fcad6b7ffe292e6123c3299b26c6c5f1ecd",
+            "recommendation_id": "recommendation:heartbeat-individual-initial-0"
+          }
+        ],
+        "model_call_ids": [
+          "call:01ef0c0705924c8f364def682c00f3fd2c4968796048107a226120488d391fe4"
+        ],
+        "recommendation_ids": [
+          "recommendation:heartbeat-individual-initial-0"
+        ],
+        "usage": {
+          "admitted_calls": 1,
+          "completed_calls": 1,
+          "input_tokens": 40,
+          "output_tokens": 8,
+          "reserved_tokens": 2193
+        }
+      },
+      "output_hash": "cede3866aa793bdea554be77dcf362a201e60367434c7f48030e821a7261df96",
+      "phase_id": "phase:9f82233c054391e3d2619b24dcd0b998b5580d10975cdd81dee3e06a55b08ed9"
+    }
+  },
+  {
+    "id": "phase:1a7a485a642b92e47cf4c3258a238a6e67a3b0b38297f933dbf2774a626db228:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "789e2198d4281fb7b452d4ab9fc402db5006a8f298df761b8518916db50e6840",
+      "phase_id": "phase:1a7a485a642b92e47cf4c3258a238a6e67a3b0b38297f933dbf2774a626db228"
+    }
+  },
+  {
+    "id": "phase:1a7a485a642b92e47cf4c3258a238a6e67a3b0b38297f933dbf2774a626db228:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "789e2198d4281fb7b452d4ab9fc402db5006a8f298df761b8518916db50e6840",
+      "output": {
+        "objection_ids": [],
+        "question_ids": [],
+        "reply_ids": [],
+        "rounds": 0
+      },
+      "output_hash": "9d60d88b615db52b9299a62cede718ddaa2b2d11a7889ed44d8124ec90bf0682",
+      "phase_id": "phase:1a7a485a642b92e47cf4c3258a238a6e67a3b0b38297f933dbf2774a626db228"
+    }
+  },
+  {
+    "id": "phase:81702d6ebc6558fc5b51ee7c2b33758a2041eef24e00d86046878f3a518669a9:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "021d08ad8cef5cb5cdde1c8df4279edcf8a2994658434cfbb294dbfaf295079e",
+      "phase_id": "phase:81702d6ebc6558fc5b51ee7c2b33758a2041eef24e00d86046878f3a518669a9"
+    }
+  },
+  {
+    "id": "mail-final:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "mail.final_committed",
+    "payload": {
+      "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+      "committed_at": "2099-01-03T21:09:00Z",
+      "considered_message_ids": [],
+      "conversation_id": "conversation:heartbeat-individual",
+      "recommendation_hash": "ec6b6a43b8c6dc0d686f8d7d300596178b076c2c9dcf46d6e992eeaf95f1388d",
+      "recommendation_id": "recommendation:heartbeat-individual-final"
+    }
+  },
+  {
+    "id": "phase:81702d6ebc6558fc5b51ee7c2b33758a2041eef24e00d86046878f3a518669a9:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "021d08ad8cef5cb5cdde1c8df4279edcf8a2994658434cfbb294dbfaf295079e",
+      "output": {
+        "commits": [
+          {
+            "character_version": "character:index-steward-fixture-v1-heartbeat-individual",
+            "committed_at": "2099-01-03T21:09:00Z",
+            "considered_message_ids": [],
+            "conversation_id": "conversation:heartbeat-individual",
+            "recommendation_hash": "ec6b6a43b8c6dc0d686f8d7d300596178b076c2c9dcf46d6e992eeaf95f1388d",
+            "recommendation_id": "recommendation:heartbeat-individual-final"
+          }
+        ],
+        "initial_abstentions": [],
+        "recommendation_ids": [
+          "recommendation:heartbeat-individual-final"
+        ]
+      },
+      "output_hash": "1b11630b2ecbcfcf98e1b8d69c244ccfaa86ecfed5f58036587597b30371932a",
+      "phase_id": "phase:81702d6ebc6558fc5b51ee7c2b33758a2041eef24e00d86046878f3a518669a9"
+    }
+  },
+  {
+    "id": "phase:16529beaa049426a0487cd8482bf374b9c661138d62598e3768316836b1012f3:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "56dd35b2027c2e8217d9bc82fbc5668fd9c190c2d6fa6506c13c294b862126d6",
+      "phase_id": "phase:16529beaa049426a0487cd8482bf374b9c661138d62598e3768316836b1012f3"
+    }
+  },
+  {
+    "id": "phase:16529beaa049426a0487cd8482bf374b9c661138d62598e3768316836b1012f3:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "56dd35b2027c2e8217d9bc82fbc5668fd9c190c2d6fa6506c13c294b862126d6",
+      "output": {
+        "checks": [
+          {
+            "policy_id": "policy:synthetic-v1-heartbeat-individual",
+            "reasons": [],
+            "recommendation_id": "recommendation:heartbeat-individual-final",
+            "status": "approved"
+          }
+        ]
+      },
+      "output_hash": "3e29773e2e240849d04353dac30ac1f467aaf8ed6295ee45e9aa031caedf4b6c",
+      "phase_id": "phase:16529beaa049426a0487cd8482bf374b9c661138d62598e3768316836b1012f3"
+    }
+  },
+  {
+    "id": "phase:15040f8a70418a6ecbe701e03b62e5723f79bfb4d6e11af44b9f9f680f8b33e7:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "5d2f1cb75b2d1322cea86342212a712343edd944f6d9d90e5db640456aadd685",
+      "phase_id": "phase:15040f8a70418a6ecbe701e03b62e5723f79bfb4d6e11af44b9f9f680f8b33e7"
+    }
+  },
+  {
+    "id": "sim:88e58a9ac9064050bb6ee7db946a4020c118cdf61b1b3a9f9572555ad33be285",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T21:09:00Z",
+      "order": {
+        "decision_at": "2099-01-03T21:09:00Z",
+        "decision_id": "recommendation:heartbeat-individual-final",
+        "decision_session": "2099-01-03",
+        "expires_at": "2099-01-05T00:00:00Z",
+        "instrument_id": "instrument:fixture-fund",
+        "price_cap": "100",
+        "quantity": "10",
+        "reserved": "1001.00",
+        "side": "buy"
+      },
+      "order_id": "order:3f65453262435e0a0c4e0efad4a0a1bfc6d40b8363cfa99dcfaf8a5663d03158",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "session": "2099-01-03",
+      "type": "order",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "sim-command:eec9ee2fe54fdfbee63477da8eb675d1fcfbeb134d3ab9eb2b9fa81af283dbb6",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "simulation",
+    "payload": {
+      "at": "2099-01-03T21:09:00Z",
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "request_hash": "a63ebae13a73e5e7f90800f51ce4fbfd06231dead634991b017bc3f81b2080d9",
+      "result": {
+        "order_id": "order:3f65453262435e0a0c4e0efad4a0a1bfc6d40b8363cfa99dcfaf8a5663d03158",
+        "reserved": "1001.00",
+        "status": "pending"
+      },
+      "type": "command",
+      "version": "raw-next-open-ledger-v1"
+    }
+  },
+  {
+    "id": "phase:15040f8a70418a6ecbe701e03b62e5723f79bfb4d6e11af44b9f9f680f8b33e7:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "5d2f1cb75b2d1322cea86342212a712343edd944f6d9d90e5db640456aadd685",
+      "output": {
+        "not_queued": [],
+        "orders": [
+          {
+            "order_id": "order:3f65453262435e0a0c4e0efad4a0a1bfc6d40b8363cfa99dcfaf8a5663d03158",
+            "reserved": "1001.00",
+            "status": "pending"
+          }
+        ]
+      },
+      "output_hash": "dbac2e12aca407b057145296413044a830c91ddde7d6e85e9c2afe0d2b7db1a2",
+      "phase_id": "phase:15040f8a70418a6ecbe701e03b62e5723f79bfb4d6e11af44b9f9f680f8b33e7"
+    }
+  },
+  {
+    "id": "phase:68c6e8279ab05fc3eccd8f72f81327eec39303d66f7299fc0bfad9eae6eb0b7b:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "ed3c5d6efdfaa54aba5e72cd73fb7df2f7bbc95cd0f12560c98482db1c8da9e6",
+      "phase_id": "phase:68c6e8279ab05fc3eccd8f72f81327eec39303d66f7299fc0bfad9eae6eb0b7b"
+    }
+  },
+  {
+    "id": "evaluation-handoff:7ab3724a12da54deba4cf3f00e89f991538cbb654a4830f23fa0a3dfb70c6570",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "evaluation.handoff",
+    "payload": {
+      "order_ids": [
+        "order:3f65453262435e0a0c4e0efad4a0a1bfc6d40b8363cfa99dcfaf8a5663d03158"
+      ],
+      "portfolio_id": "portfolio:fixture-council-heartbeat-individual",
+      "run_id": "run:heartbeat-individual",
+      "snapshot_id": "snapshot:heartbeat-individual",
+      "status": "pending_next_eligible_event"
+    }
+  },
+  {
+    "id": "phase:68c6e8279ab05fc3eccd8f72f81327eec39303d66f7299fc0bfad9eae6eb0b7b:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "ed3c5d6efdfaa54aba5e72cd73fb7df2f7bbc95cd0f12560c98482db1c8da9e6",
+      "output": {
+        "handoff_event_id": "evaluation-handoff:7ab3724a12da54deba4cf3f00e89f991538cbb654a4830f23fa0a3dfb70c6570",
+        "status": "pending_next_eligible_event"
+      },
+      "output_hash": "ab45dea3f63288a990554e05c31ce3906171c183a9573343bee74283f4d74a27",
+      "phase_id": "phase:68c6e8279ab05fc3eccd8f72f81327eec39303d66f7299fc0bfad9eae6eb0b7b"
+    }
+  },
+  {
+    "id": "phase:f668e751169ad30c9e00ed10829352df89b2e1becdb1af02f76796b26154be3d:start:0",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.running",
+    "payload": {
+      "input_hash": "a9b73d944b1ae5697e9e71faa9793129fd735dbcca40f5091f906dd343c3157c",
+      "phase_id": "phase:f668e751169ad30c9e00ed10829352df89b2e1becdb1af02f76796b26154be3d"
+    }
+  },
+  {
+    "id": "phase:f668e751169ad30c9e00ed10829352df89b2e1becdb1af02f76796b26154be3d:complete",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "phase.complete",
+    "payload": {
+      "input_hash": "a9b73d944b1ae5697e9e71faa9793129fd735dbcca40f5091f906dd343c3157c",
+      "output": {
+        "destination_name": "individual-mail",
+        "files": 4,
+        "manifest_hash": "a5c5d8696219a1a734c9f0a3f70510d78559745ea08758ee5cbb92a8ed2c159a",
+        "source_event_ids": [
+          "mail-open:a7b1e43148232a2d95cea9bbd3c3051d163dadced86aa4d7fdf8396c66ef2c8f",
+          "mail-initial:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d",
+          "mail-final:47061377caa00f255443ded87c68f0a23ca2f8604ae432194fca9d5fd75c7b0d"
+        ]
+      },
+      "output_hash": "6bbe721a7c173d47bfdcc9a251da849e3f4f5db3215c274a0a795bfc035fc372",
+      "phase_id": "phase:f668e751169ad30c9e00ed10829352df89b2e1becdb1af02f76796b26154be3d"
+    }
+  },
+  {
+    "id": "heartbeat-release:7ab3724a12da54deba4cf3f00e89f991538cbb654a4830f23fa0a3dfb70c6570",
+    "experiment_id": "experiment:foundation-fixture-heartbeat-individual",
+    "kind": "heartbeat.released",
+    "payload": {
+      "plan_hash": "cf87b2254ef4c867aad3fee970f4cc9232982395d1c42b93bdb8a8834d7bb796",
+      "released_at": "2099-01-03T21:10:00Z",
+      "run_id": "run:heartbeat-individual"
+    }
+  }
+]

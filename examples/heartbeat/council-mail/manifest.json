@@ -1,0 +1,42 @@
+{
+  "generated_at": "2099-01-03T21:10:00Z",
+  "conversation_id": "conversation:heartbeat-council",
+  "source_event_ids": [
+    "mail-open:79f825b7e68aebceccde3507dfd544e946da966c39301e3d059c92210cfef993",
+    "mail-initial:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a",
+    "mail-initial:e5940db1310032d4ed33d2ba69fbe37e522faecf5936606ab6f7e347b1674dbd",
+    "mail-initial:ddb81f3c5fa5950e9ede20411deba5e75e06ef868ac534e7580297c54f3b6f1e",
+    "mail-authored:11b0917f91818086165beff8295934a151a4fe44e274312cbc10d021f86410f2",
+    "mail-delivery:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+    "mail-read:b06996c93a4fe60efecbd719823b210b76c44266dc8e039d6b8531ee9caad169",
+    "mail-authored:79b61c8f6b855b5a45dfb55638d9b4a9ffa512cd50eb1980c24a8ad55c2cf235",
+    "mail-delivery:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+    "mail-read:c92ad3295cd766d96b5aa6e9c2c38c9baa7e64a11af8208026327be815cf624d",
+    "mail-delivery:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+    "mail-read:b766cbcc0cbe77470c60a371503364dcd4fb11de3c392e39db5a278c75405d00",
+    "mail-authored:9bf138aa01b2fb049904baada54bab9724d4a8ba4229670d9b03eaeba05cd5f4",
+    "mail-delivery:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+    "mail-read:3825cb979adf101c8f75522e325d653d20743d6ea246a76500310b36369f7afa",
+    "mail-authored:7fb98daa4d76c97ffe1d32979729617c0ff6f32b4fa9daa9b21d02a582067c17",
+    "mail-delivery:3cbd7c0b1a8b18bbad4becf5923e5667586a3141372104fd7d1516b02431f9bb",
+    "mail-reflection:015ef2a0faab2924e1df69d91ea0b4a9199f84b843d106864bc496bbf9283df9",
+    "mail-final:6c282f5b262a431cd172e061c20a7378cfca20c7559549cdc97c315c8df72f9a"
+  ],
+  "files": [
+    "characters/council_lead_fixture/mail/EVENTS.md",
+    "characters/council_lead_fixture/mail/conversations/conversation-heartbeat-council/CONVERSATIONAL_SUMMARY.md",
+    "characters/council_lead_fixture/mail/conversations/conversation-heartbeat-council/RESPONSES_SO_FAR.md",
+    "characters/council_lead_fixture/mail/personal_thoughts/value_adviser_fixture/ANALYSIS.md",
+    "characters/council_lead_fixture/mail/read_mail/trend_adviser_fixture/message-heartbeat-heartbeat-council-reply-1.md",
+    "characters/council_lead_fixture/mail/read_mail/value_adviser_fixture/message-heartbeat-heartbeat-council-reply-0.md",
+    "characters/council_lead_fixture/mail/unread_mail/message-heartbeat-heartbeat-council-objection.md",
+    "characters/trend_adviser_fixture/mail/EVENTS.md",
+    "characters/trend_adviser_fixture/mail/conversations/conversation-heartbeat-council/CONVERSATIONAL_SUMMARY.md",
+    "characters/trend_adviser_fixture/mail/conversations/conversation-heartbeat-council/RESPONSES_SO_FAR.md",
+    "characters/trend_adviser_fixture/mail/read_mail/council_lead_fixture/message-heartbeat-heartbeat-council-question.md",
+    "characters/value_adviser_fixture/mail/EVENTS.md",
+    "characters/value_adviser_fixture/mail/conversations/conversation-heartbeat-council/CONVERSATIONAL_SUMMARY.md",
+    "characters/value_adviser_fixture/mail/conversations/conversation-heartbeat-council/RESPONSES_SO_FAR.md",
+    "characters/value_adviser_fixture/mail/read_mail/council_lead_fixture/message-heartbeat-heartbeat-council-question.md"
+  ]
+}
