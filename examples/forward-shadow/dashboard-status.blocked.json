@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "report_kind": "forward-shadow-status",
+  "manifest_id": "forward:pilot-candidate-2026-09-06",
+  "as_of": "2026-09-06T18:00:00Z",
+  "status": "blocked",
+  "evidence_grade": "forward-blocked",
+  "completed_sessions": 0,
+  "completed_session_closes": [],
+  "required_horizon_sessions": 60,
+  "committed_decisions": 0,
+  "matured_forecasts": 0,
+  "broker_orders": 0,
+  "model_usage": {
+    "calls": 0,
+    "tokens": 0,
+    "cost_usd": null
+  },
+  "opportunity_set_hash": "990bc37b4e11d33783a46962ade6d3c01d59757a01dd1892b7a6a1d9f8f13ed4",
+  "blockers": [
+    "No account-authorized Alpaca sample demonstrates required coverage.",
+    "Private storage, internal replay and derived reporting rights are unresolved.",
+    "No paid SIP subscription has been authorized.",
+    "Character index_steward has no eligible ready version.",
+    "Character value_rationalist has no eligible ready version.",
+    "Character systematic_trend_operator has no eligible ready version.",
+    "Only 0 real sessions elapsed; 60 required.",
+    "No pre-outcome shadow recommendation has been committed.",
+    "The preregistered real-time observation window has not elapsed.",
+    "No forecast horizon has matured with an eligible outcome."
+  ]
+}

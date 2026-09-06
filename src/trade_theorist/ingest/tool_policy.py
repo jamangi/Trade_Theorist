@@ -8,6 +8,13 @@ from ..contracts import ContractError
 
 
 NETWORK_TOOLS = frozenset({"web", "browser", "http", "market_data_live", "broker"})
+UNBOUNDED_FORWARD_TOOLS = frozenset({
+    "web", "browser", "http", "market_data_live", "broker", "repository",
+    "filesystem", "mail", "retrieval",
+})
+QUALIFIED_FORWARD_TOOLS = frozenset({
+    "calculator", "market_data_qualified", "public_research_qualified",
+})
 
 
 def allowed_tools(regime, requested=()):
@@ -17,7 +24,10 @@ def allowed_tools(regime, requested=()):
     if regime in ("fixture", "hindsight"):
         return requested - frozenset({"broker"})
     if regime in ("forward_shadow", "forward_paper"):
-        return requested - frozenset({"web", "browser", "broker"})
+        # Forward agents receive only typed adapters whose outputs are checked by
+        # the evidence gate. Generic repository/mail/network access could reveal
+        # outcomes written after the decision cutoff.
+        return requested & QUALIFIED_FORWARD_TOOLS
     raise ContractError("Unknown experiment regime")
 
 

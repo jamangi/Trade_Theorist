@@ -35,6 +35,8 @@ New numerical suggestions in the [architecture](../docs/architecture.md), discus
   - Recommended default: primary filings, exchange/broker specifications, official statistics, and peer-reviewed work outrank commentary; every derived claim retains provenance and retrieval time.
 - [x] **Market-data vendor and license.** Approved deferring selection until requirements exist, under the default below. No vendor selected; qualification and the actual decision are tracked in [TASK-014](../tasks/TASK-014-high-Sol.md).
   - Recommended default: postpone selection until schemas and evaluation needs are defined; require corporate actions, delistings, historical constituents, quotes, and publication timestamps where applicable.
+- [ ] **Alpaca account sample and data rights.** Authorize account-backed sampling only after confirming the intended plan and contract cover private storage, internal replay, and derived reporting. [ADR-003](records/ADR-003-alpaca-market-data-qualification.md) records the current gaps; the adapter and recorded fixtures do not select the vendor.
+- [ ] **Paid market-data subscription.** Authorize a specific plan and price before any purchase or paid SIP request. No subscription or spend is authorized by prior market-data deferral.
 
 ## Public-official analysis
 

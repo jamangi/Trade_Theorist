@@ -8,9 +8,9 @@ This repository currently covers **Trade Theorist only**. It does not yet place 
 
 ## Start here: the research observatory
 
-**Current status (2026-09-06): tasks 001–013 implement the offline research observatory.** Contracts, persistence, ordered learning, independent opinions, permitted-CSV ingestion, isolated simulation, risk controls, bounded council mail, resumable heartbeat, ledger-based evaluation and a read-only dashboard are implemented. Run the [one-command offline demo](docs/quickstart.md) after setup. The [current inventory](library/catalog/INVENTORY_REPORT.md) covers all seven Characters. Index Steward's Bogle foundation is complete. Value Rationalist and Systematic Trend Operator each have one real, cited opening checkpoint, but neither has completed its first book or may issue real recommendations. Synthetic fixtures demonstrate both portfolio modes and evidence handling without claiming an edge. Real vendor qualification, forward evidence and public website deployment remain pending. The owner has approved the original recommended defaults, including Index Steward as initial council lead.
+**Current status (2026-09-06): tasks 001–013 implement the offline research observatory; tasks 014–015 add a conditional Alpaca adapter and prospective evidence controls.** Contracts, persistence, ordered learning, independent opinions, permitted ingestion, isolated simulation, risk controls, bounded council mail, resumable heartbeat, ledger-based evaluation and a read-only dashboard are implemented. Run the [one-command offline demo](docs/quickstart.md) after setup. The [current inventory](library/catalog/INVENTORY_REPORT.md) covers all seven Characters. Index Steward's Bogle foundation is complete. Value Rationalist and Systematic Trend Operator each have one real, cited opening checkpoint, but neither has completed its first book or may issue real recommendations. Synthetic fixtures demonstrate both portfolio modes and evidence handling without claiming an edge. Production vendor qualification and real forward observations are blocked—not silently simulated—until account/license evidence, eligible Character versions and real elapsed sessions exist. No subscription, brokerage access or forward performance is claimed. The owner has approved the original recommended defaults, including Index Steward as initial council lead.
 
-See [Index Steward's completed reading](docs/index-steward-foundation.md), the partial [Value](characters/value_rationalist/README.md) and [Trend](characters/systematic_trend_operator/README.md) Characters, and the [tasks 009–010 implementation record](docs/task-009-010-implementation.md). Source PDFs stay local; public artifacts contain metadata, original analysis and citation hashes. The separate fixture paths use only original synthetic data and saved opinions.
+See [Index Steward's completed reading](docs/index-steward-foundation.md), the partial [Value](characters/value_rationalist/README.md) and [Trend](characters/systematic_trend_operator/README.md) Characters, the [tasks 009–010 implementation record](docs/task-009-010-implementation.md), and the [vendor/forward control record](docs/task-014-015-implementation.md). Source PDFs stay local; public artifacts contain metadata, original analysis and citation hashes. The separate fixture paths use only original synthetic data and saved opinions.
 
 Two dashboard tabs share one research engine: **Council**, where a chosen lead decides with shadow advice, and **Character portfolios**, where each ready Character controls a separate fictional budget. Being a lead in a personal research portfolio does not grant council leadership. Neither mode requires a Character to trade when its best decision is to wait. See [tasks 011–013 and validation](docs/task-011-013-implementation.md) for evaluation, dashboard and operating-interface details.
 
@@ -26,7 +26,7 @@ Two dashboard tabs share one research engine: **Council**, where a chosen lead d
 | [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks with Sol/Astra and effort recommendations, acceptance criteria, and roadmap mapping |
 | [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
 
-The next implementation task is [TASK-011](tasks/TASK-011-high-Astra.md): honest evaluation and evidence grades. Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, trained Characters and stage gates.
+The next stage review is [TASK-016](tasks/TASK-016-high-Astra.md), but it cannot approve paper readiness while TASK-014's vendor evidence and TASK-015's real forward window remain blocked. Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, eligible Characters and stage gates.
 
 > [!WARNING]
 > Trading can lose some or all deployed capital, and leverage can produce losses beyond the initial investment. “Make a profit each month” is an aspiration to evaluate, not a guarantee or a safe optimization target. Early development should use historical replay and paper trading. Live execution belongs behind explicit approval, legal/compliance review, and hard risk controls.
@@ -307,10 +307,11 @@ Trade_Theorist/
 │   ├── theorize/                   # Theory generation and adversarial review
 │   ├── council/                    # Implemented bounded event-backed deliberation
 │   ├── heartbeat/                  # Implemented locks, phase recovery, and call reuse
+│   ├── forward/                    # Prospective manifests and future-information gate
+│   ├── adapters/alpaca_market_data/# Conditional feed-pinned market-data adapter
 │   ├── adapters/trader_user_sim/   # Isolated simulated-execution contract
-│   ├── evaluate/                   # Planned replay and counterfactual scoring
-│   └── export/                     # Planned allowlisted public dashboard data
-├── dashboard/                      # Planned read-only GitHub Pages report
+│   ├── evaluate/                   # Implemented replay and counterfactual scoring
+│   └── export.py                   # Implemented allowlisted dashboard export
 ├── tests/                          # Unit, integration, leakage, and safety tests
 └── runs/                           # Reproducible manifests; large outputs stay external
 ```
@@ -323,7 +324,7 @@ Future Trader Analyzer and Trader User components should live in separate packag
 2. Catalog exact book editions and access, implement sequential learning, and create the three pilot Characters without sharing formative memories (003–005). **Implemented; specialist foundations remain partial.**
 3. Build time-aware ingestion, fictional-money accounting, independent risk checks, and bounded mail (006–009). **Implemented for the fixture scope.**
 4. Connect both modes through a resumable heartbeat, honest evaluation, a two-tab dashboard, and a no-account offline demo (010–013). **Implemented and verified with synthetic fixtures.**
-5. Qualify a market-data source, collect forward shadow decisions, review leakage/costs/recovery and paper policy, then run forward paper portfolios (014–017).
+5. Qualify a market-data source, collect forward shadow decisions, review leakage/costs/recovery and paper policy, then run forward paper portfolios (014–017). **Adapter and leakage controls implemented; real qualification/observations remain blocked.**
 6. Publish sanitized reports on GitHub Pages, add richer learning/social views, and optionally schedule the tested runner (018–020).
 7. Add microstructure/risk research, the disclosure interface, and later governance or merged-Character experiments only when their evidence prerequisites are met (021–023).
 

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "manifest_id": "forward:pilot-candidate-2026-09-06",
+  "mode": "forward_shadow",
+  "status": "blocked",
+  "frozen_at": "2026-09-06T18:00:00Z",
+  "start_at": "2026-09-08T13:30:00Z",
+  "end_at": "2026-12-05T00:00:00Z",
+  "horizon_sessions": 60,
+  "characters": [
+    {
+      "character_id": "index_steward",
+      "readiness": "partial",
+      "version_hash": null
+    },
+    {
+      "character_id": "value_rationalist",
+      "readiness": "partial",
+      "version_hash": null
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "readiness": "partial",
+      "version_hash": null
+    }
+  ],
+  "eligible_character_versions": [],
+  "opportunity_set": [
+    {
+      "instrument_id": "instrument:vti",
+      "asset_class": "unleveraged_us_etf",
+      "cadence": "daily_session"
+    }
+  ],
+  "opportunity_set_hash": "990bc37b4e11d33783a46962ade6d3c01d59757a01dd1892b7a6a1d9f8f13ed4",
+  "data_feed": "alpaca:sip:conditional-not-entitled",
+  "retrieval_policy": "Only qualified timestamp-preserving market/public-research adapters; no generic repo, mail, retrieval, web or HTTP access",
+  "allowed_tools": [
+    "calculator",
+    "market_data_qualified",
+    "public_research_qualified"
+  ],
+  "broker_orders_allowed": false,
+  "blockers": [
+    "No account-authorized Alpaca sample demonstrates required coverage.",
+    "Private storage, internal replay and derived reporting rights are unresolved.",
+    "No paid SIP subscription has been authorized.",
+    "Character index_steward has no eligible ready version.",
+    "Character value_rationalist has no eligible ready version.",
+    "Character systematic_trend_operator has no eligible ready version."
+  ],
+  "content_hash": "d4318926577c0c6c555e117dccd8448de84b4b621927c412fc64f16c432e7feb"
+}

@@ -1,0 +1,23 @@
+{
+  "source_id": "source:alpaca-market-data",
+  "feed": "sip",
+  "instruments": "Explicit US equity and ETF symbols; authorized sample pending",
+  "sessions": "Caller-pinned exchange calendar; provider sample pending",
+  "intervals": "Historical bars with explicit timeframe",
+  "event_timestamps": true,
+  "publication_timestamps": false,
+  "ingestion_timestamps": true,
+  "point_in_time_revisions": false,
+  "corporate_actions": true,
+  "dividends": true,
+  "delisted_instruments": false,
+  "historical_constituents": false,
+  "venue_coverage": true,
+  "storage_retention": false,
+  "automated_access": true,
+  "internal_replay": false,
+  "derived_publication": false,
+  "raw_redistribution": false,
+  "evidence": "Conditional reading of current official Alpaca documentation and agreement on 2026-09-06; false means absent or unproved, not necessarily prohibited",
+  "checked_at": "2026-09-06T18:00:00Z"
+}

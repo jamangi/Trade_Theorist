@@ -1,6 +1,6 @@
 # TASK-015: Run forward shadow observations
 
-- Status: planned
+- Status: controls implemented; real observations blocked
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
 - Dependencies: TASK-005, TASK-008, TASK-010, TASK-011, TASK-013, TASK-014
@@ -22,4 +22,21 @@ Demonstrate future information cannot be supplied via repository/mail/retrieval 
 
 Primarily operational integration; Sol high can maintain provenance and accurate status.
 
-Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+## Implementation evidence (2026-09-06)
+
+Implemented frozen forward manifests, qualified evidence envelopes, publication and
+ingestion cutoffs, opportunity-set equality, pre-outcome commit enforcement, shadow
+status reports and a forward-only tool allowlist. Tests demonstrate that generic
+repository, mail and retrieval outputs cannot enter a decision; late output from an
+otherwise qualified adapter is also rejected. Broker access is absent and reports
+record zero broker orders.
+
+The checked-in pilot manifest is blocked and reports zero real sessions and zero
+performance. No eligible `ready` Character version exists in the immutable contracts,
+the Alpaca sample/rights gate in TASK-014 remains open, and no paid SIP plan is
+authorized. The offline provenance audit tests mechanics only. See the
+[implementation record](../docs/task-014-015-implementation.md).
+
+The bounded control implementation is complete; actual forward observation requires
+the stated prerequisites and real elapsed sessions. TASK-016 and ongoing runs were not
+implicitly launched.

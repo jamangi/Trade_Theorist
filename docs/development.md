@@ -6,7 +6,7 @@ searches and short file slices. Do not print the entire library, schema fixture
 bundles, book transcripts or all test files to find a small interface. Generated
 examples can be rebuilt and validated without reading their complete JSON output.
 
-Relevant paths for tasks 007–013:
+Relevant paths for tasks 007–015:
 
 | Work | Implementation | Tests |
 | --- | --- | --- |
@@ -15,6 +15,8 @@ Relevant paths for tasks 007–013:
 | Persistence/recovery | `src/trade_theorist/storage.py` | `test_storage` |
 | Input contracts | `src/trade_theorist/contracts.py`, `schema.py` | `test_contracts` |
 | Market evidence | `src/trade_theorist/ingest/market.py` | `test_ingest` |
+| Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
+| Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
 | Metrics/forecast review | `src/trade_theorist/evaluate/` | `test_evaluation` |
 | Sanitized dashboard exports | `src/trade_theorist/export.py`, `dashboard/` | `test_export` |

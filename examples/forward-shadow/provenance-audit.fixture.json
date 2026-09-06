@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "report_kind": "forward-provenance-control-audit",
+  "evidence_grade": "fixture-control-test",
+  "checked_at": "2026-09-06T18:00:00Z",
+  "controls": {
+    "repository_output_rejected": true,
+    "mail_output_rejected": true,
+    "generic_retrieval_output_rejected": true,
+    "late_qualified_output_rejected": true,
+    "publication_and_ingestion_clocks_preserved": true,
+    "broker_tool_absent": true,
+    "identical_opportunity_set_hash_enforced": true,
+    "pre_cutoff_commit_enforced": true
+  },
+  "real_sessions_observed": 0,
+  "performance_claim": null,
+  "note": "Offline fixture test of controls only; see blocked pilot manifest for real-run prerequisites."
+}
