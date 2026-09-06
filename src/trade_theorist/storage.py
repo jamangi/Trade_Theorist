@@ -33,6 +33,8 @@ def private_root(path=None, *, synthetic=False):
 
 
 class Store:
+    # Existing v1 callers never opt an owner database into new accounting tables.
+    schema_ceiling = 2
     def __init__(self, root=None, *, synthetic=False):
         self.root = private_root(root, synthetic=synthetic)
         self.synthetic = synthetic
@@ -66,6 +68,8 @@ class Store:
                 if version in installed:
                     if installed[version] != checksum:
                         raise ContractError("Installed migration checksum mismatch")
+                    continue
+                if version > self.schema_ceiling:
                     continue
                 statement = ""
                 for line in sql.splitlines(keepends=True):
@@ -118,6 +122,8 @@ class Store:
 
     def put_records(self, records):
         records = list(records)
+        if any(r.get("schema_version") != 1 for r in records):
+            raise ContractError("Use explicit v2 storage for v2 records")
         with self.transaction():
             existing = {r["id"]: r for r in self.records()}
             additions = {}

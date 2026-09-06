@@ -1,0 +1,4695 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trade-theorist.local/schemas/contracts-v2.json",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/source_rights"
+    },
+    {
+      "$ref": "#/$defs/character"
+    },
+    {
+      "$ref": "#/$defs/policy"
+    },
+    {
+      "$ref": "#/$defs/experiment"
+    },
+    {
+      "$ref": "#/$defs/portfolio"
+    },
+    {
+      "$ref": "#/$defs/funded_segment"
+    },
+    {
+      "$ref": "#/$defs/decision"
+    },
+    {
+      "$ref": "#/$defs/order"
+    },
+    {
+      "$ref": "#/$defs/lot"
+    },
+    {
+      "$ref": "#/$defs/lot_relief"
+    },
+    {
+      "$ref": "#/$defs/projection"
+    },
+    {
+      "$ref": "#/$defs/submission_mapping"
+    },
+    {
+      "$ref": "#/$defs/outbox"
+    },
+    {
+      "$ref": "#/$defs/broker_update"
+    },
+    {
+      "$ref": "#/$defs/migration_lineage"
+    },
+    {
+      "$ref": "#/$defs/ledger_event"
+    }
+  ],
+  "$defs": {
+    "source_rights": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "source_rights"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_market_provenance"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "origin": {
+          "enum": [
+            "original_synthetic",
+            "licensed",
+            "owner_authored"
+          ]
+        },
+        "private_storage": {
+          "enum": [
+            "unknown",
+            "permitted",
+            "denied"
+          ]
+        },
+        "private_replay": {
+          "enum": [
+            "unknown",
+            "permitted",
+            "denied"
+          ]
+        },
+        "private_read_model": {
+          "enum": [
+            "unknown",
+            "permitted",
+            "denied"
+          ]
+        },
+        "public_output": {
+          "const": "denied"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "source_id",
+        "origin",
+        "private_storage",
+        "private_replay",
+        "private_read_model",
+        "public_output",
+        "evidence",
+        "reviewed_at"
+      ],
+      "additionalProperties": false
+    },
+    "character": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "character"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "character_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "constitution_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "curriculum_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "readiness": {
+          "enum": [
+            "not_ready",
+            "fixture_only",
+            "partial",
+            "ready"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "character_id",
+        "version",
+        "constitution_hash",
+        "curriculum_hash",
+        "readiness"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "policy"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "enum": [
+            "fixture",
+            "paper"
+          ]
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "universe": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "instrument_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "symbol": {
+                "type": "string",
+                "minLength": 1
+              },
+              "asset_class": {
+                "enum": [
+                  "us_equity",
+                  "unleveraged_us_etf"
+                ]
+              },
+              "liquid": {
+                "const": true
+              },
+              "leveraged": {
+                "const": false
+              },
+              "inverse": {
+                "const": false
+              },
+              "sector": {
+                "type": "string",
+                "minLength": 1
+              },
+              "diversified": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "instrument_id",
+              "symbol",
+              "asset_class",
+              "liquid",
+              "leveraged",
+              "inverse",
+              "sector",
+              "diversified"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "initial_cash": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "max_deployed_capital": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "company_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sector_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "diversified_etf_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "gross_exposure": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "daily_loss": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "drawdown": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "turnover": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "orders_per_session": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_quote_age_seconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_spread_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            }
+          },
+          "required": [
+            "initial_cash",
+            "max_deployed_capital",
+            "company_weight",
+            "sector_weight",
+            "diversified_etf_weight",
+            "gross_exposure",
+            "daily_loss",
+            "drawdown",
+            "turnover",
+            "orders_per_session",
+            "max_quote_age_seconds",
+            "max_spread_bps"
+          ],
+          "additionalProperties": false
+        },
+        "clock": {
+          "type": "object",
+          "properties": {
+            "calendar": {
+              "type": "string",
+              "minLength": 1
+            },
+            "cadence": {
+              "type": "string",
+              "minLength": 1
+            },
+            "max_stale_sessions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "eligibility": {
+              "enum": [
+                "publication_and_ingestion",
+                "archived_publication"
+              ]
+            },
+            "missing_data": {
+              "enum": [
+                "halt_all",
+                "halt_affected"
+              ]
+            }
+          },
+          "required": [
+            "calendar",
+            "cadence",
+            "max_stale_sessions",
+            "eligibility",
+            "missing_data"
+          ],
+          "additionalProperties": false
+        },
+        "costs": {
+          "type": "object",
+          "properties": {
+            "fee_per_order": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+            },
+            "slippage_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "spread_bps": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "fill_model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "corporate_actions": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "fee_per_order",
+            "slippage_bps",
+            "spread_bps",
+            "fill_model",
+            "corporate_actions"
+          ],
+          "additionalProperties": false
+        },
+        "long_only": {
+          "const": true
+        },
+        "cash_only": {
+          "const": true
+        },
+        "approval_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approved_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "operator": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kill_switch_owner": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reconciliation_owner": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "incident_owner": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "version",
+        "stage",
+        "synthetic",
+        "universe",
+        "limits",
+        "clock",
+        "costs",
+        "long_only",
+        "cash_only",
+        "approval_ref",
+        "approved_at",
+        "operator",
+        "kill_switch_owner",
+        "reconciliation_owner",
+        "incident_owner"
+      ],
+      "additionalProperties": false
+    },
+    "experiment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "experiment"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "mode": {
+          "enum": [
+            "character_portfolio",
+            "council"
+          ]
+        },
+        "execution_basis": {
+          "enum": [
+            "simulated",
+            "paper_broker"
+          ]
+        },
+        "character_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "policy_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "instrument_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "start_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "regime": {
+          "enum": [
+            "fixture",
+            "hindsight",
+            "historical_restricted",
+            "forward_shadow",
+            "forward_paper"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "mode",
+        "execution_basis",
+        "character_versions",
+        "policy_id",
+        "instrument_ids",
+        "start_at",
+        "end_at",
+        "regime"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "character_portfolio"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "execution_basis": {
+                "const": "simulated"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "portfolio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "portfolio"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "mode": {
+          "enum": [
+            "character_portfolio",
+            "council"
+          ]
+        },
+        "execution_basis": {
+          "enum": [
+            "simulated",
+            "paper_broker"
+          ]
+        },
+        "owner_character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "policy_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "currency": {
+          "const": "USD"
+        },
+        "role": {
+          "enum": [
+            "strategy",
+            "baseline",
+            "counterfactual",
+            "matched_control"
+          ]
+        },
+        "accounting_method": {
+          "const": "fifo-v2"
+        },
+        "return_method": {
+          "const": "exact-twr-v2"
+        },
+        "initialization": {
+          "enum": [
+            "new",
+            "conversion_gap"
+          ]
+        },
+        "legacy_portfolio_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "mode",
+        "execution_basis",
+        "owner_character_version",
+        "policy_id",
+        "currency",
+        "role",
+        "accounting_method",
+        "return_method",
+        "initialization",
+        "legacy_portfolio_id"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "character_portfolio"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "execution_basis": {
+                "const": "simulated"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "funded_segment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "funded_segment"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "owner_character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "previous_segment_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "start_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "reason": {
+          "enum": [
+            "initial",
+            "refunding",
+            "character_change"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "owner_character_version",
+        "ordinal",
+        "previous_segment_id",
+        "start_at",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "decision"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "instrument_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "side": {
+          "enum": [
+            "buy",
+            "sell"
+          ]
+        },
+        "quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "final": {
+          "const": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "character_version",
+        "snapshot_hash",
+        "instrument_id",
+        "side",
+        "quantity",
+        "final"
+      ],
+      "additionalProperties": false
+    },
+    "order": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "order"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "final_recommendation_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "instrument_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "execution_basis": {
+          "enum": [
+            "simulated",
+            "paper_broker"
+          ]
+        },
+        "side": {
+          "enum": [
+            "buy",
+            "sell"
+          ]
+        },
+        "quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "policy_approval_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "replaces_order_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "final_recommendation_id",
+        "instrument_id",
+        "execution_basis",
+        "side",
+        "quantity",
+        "policy_approval_ref",
+        "replaces_order_id"
+      ],
+      "additionalProperties": false
+    },
+    "lot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "lot"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_reconstructable"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "instrument_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "originating_fill_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "originating_order_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "acquired_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "original_quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "remaining_quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "original_basis": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,28})?$"
+        },
+        "remaining_basis": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,28})?$"
+        },
+        "corporate_action_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "projection_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "previous_lot_revision_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lot_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "instrument_id",
+        "originating_fill_id",
+        "originating_order_id",
+        "acquired_at",
+        "original_quantity",
+        "remaining_quantity",
+        "original_basis",
+        "remaining_basis",
+        "corporate_action_ids",
+        "projection_revision",
+        "previous_lot_revision_id",
+        "lot_id"
+      ],
+      "additionalProperties": false
+    },
+    "lot_relief": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "lot_relief"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_reconstructable"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "sale_fill_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "lot_revision_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "allocated_basis": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,28})?$"
+        },
+        "proceeds": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,28})?$"
+        },
+        "disposal_fees": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,28})?$"
+        },
+        "projection_revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "sale_fill_id",
+        "lot_revision_id",
+        "quantity",
+        "allocated_basis",
+        "proceeds",
+        "disposal_fees",
+        "projection_revision"
+      ],
+      "additionalProperties": false
+    },
+    "projection": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "projection"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_reconstructable"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "owner_character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "mode": {
+          "enum": [
+            "character_portfolio",
+            "council"
+          ]
+        },
+        "execution_basis": {
+          "enum": [
+            "simulated",
+            "paper_broker"
+          ]
+        },
+        "currency": {
+          "const": "USD"
+        },
+        "policy_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "source_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_chain_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "effective_cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "receipt_cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "mark_policy_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "accounting_method": {
+          "const": "fifo-v2"
+        },
+        "return_method": {
+          "const": "exact-twr-v2"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "previous_projection_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publication_class": {
+          "const": "private-owner-v2"
+        },
+        "status": {
+          "enum": [
+            "pending_calculation",
+            "complete",
+            "gap"
+          ]
+        },
+        "null_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "result_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "owner_character_version",
+        "mode",
+        "execution_basis",
+        "currency",
+        "policy_id",
+        "source_event_ids",
+        "source_chain_hash",
+        "effective_cutoff",
+        "receipt_cutoff",
+        "mark_policy_hash",
+        "accounting_method",
+        "return_method",
+        "revision",
+        "previous_projection_id",
+        "publication_class",
+        "status",
+        "null_reasons",
+        "result_hash"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "character_portfolio"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "execution_basis": {
+                "const": "simulated"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "submission_mapping": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "submission_mapping"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_attribution"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "internal_order_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "client_order_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{32}$"
+        },
+        "policy_approval_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "internal_order_id",
+        "client_order_id",
+        "policy_approval_ref"
+      ],
+      "additionalProperties": false
+    },
+    "outbox": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "outbox"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_attribution"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "mapping_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "internal_order_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "state": {
+          "enum": [
+            "prepared",
+            "unknown",
+            "acknowledged",
+            "cancelled",
+            "rejected"
+          ]
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "previous_outbox_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "request_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "action": {
+          "const": "submit_once"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "mapping_id",
+        "internal_order_id",
+        "state",
+        "revision",
+        "previous_outbox_id",
+        "request_hash",
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "broker_update": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "broker_update"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_attribution"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "mapping_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "provider_event_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "broker_order_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "cumulative_quantity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "cumulative_notional": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+        },
+        "cumulative_fees": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+        },
+        "incremental_fill_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "accepted",
+            "partially_filled",
+            "filled",
+            "cancelled",
+            "rejected",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "mapping_id",
+        "provider_event_id",
+        "broker_order_id",
+        "effective_at",
+        "observed_at",
+        "cumulative_quantity",
+        "cumulative_notional",
+        "cumulative_fees",
+        "incremental_fill_id",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "migration_lineage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "migration_lineage"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "conversion_version": {
+          "const": "v1-to-v2-boundary-1"
+        },
+        "source_chain_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_records_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_migrations_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "destination_identity": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_event_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "converted_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source_id",
+              "code"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "conversion_version",
+        "source_chain_hash",
+        "source_records_hash",
+        "source_migrations_hash",
+        "destination_identity",
+        "source_event_versions",
+        "limitations",
+        "converted_event_ids",
+        "gaps"
+      ],
+      "additionalProperties": false
+    },
+    "ledger_event": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "funding"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "boundary_mark_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "amount",
+                "boundary_mark_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "contribution"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "boundary_mark_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "amount",
+                "boundary_mark_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "withdrawal"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "boundary_mark_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "amount",
+                "boundary_mark_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "segment_end"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "order"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                }
+              },
+              "required": [
+                "order_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "reservation"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "cash": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "quantity": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                }
+              },
+              "required": [
+                "order_id",
+                "cash",
+                "quantity"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "release"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "reservation_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "cash": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "quantity": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "order_id",
+                "reservation_id",
+                "cash",
+                "quantity",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "fill"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "instrument_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "side": {
+                  "enum": [
+                    "buy",
+                    "sell"
+                  ]
+                },
+                "quantity": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "price": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "notional": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "fees": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "fee_treatment": {
+                  "enum": [
+                    "included",
+                    "separate"
+                  ]
+                },
+                "incremental_fill_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                }
+              },
+              "required": [
+                "order_id",
+                "instrument_id",
+                "side",
+                "quantity",
+                "price",
+                "notional",
+                "fees",
+                "fee_treatment",
+                "incremental_fill_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "fee"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "allocation": {
+                  "enum": [
+                    "acquisition",
+                    "disposal",
+                    "unallocated"
+                  ]
+                },
+                "fill_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "allocation",
+                "fill_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "dividend_entitlement"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "action_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "instrument_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "eligible_quantity": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "per_share": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                },
+                "ex_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "mark_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "policy_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "action_id",
+                "instrument_id",
+                "eligible_quantity",
+                "per_share",
+                "amount",
+                "ex_at",
+                "mark_id",
+                "policy_hash"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "dividend_payment"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "entitlement_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                }
+              },
+              "required": [
+                "entitlement_id",
+                "amount"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "split"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "action_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "instrument_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "numerator": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "denominator": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "mark_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "pending_orders": {
+                  "enum": [
+                    "none",
+                    "reconciled",
+                    "requires_reconciliation"
+                  ]
+                }
+              },
+              "required": [
+                "action_id",
+                "instrument_id",
+                "numerator",
+                "denominator",
+                "mark_id",
+                "pending_orders"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "cash_in_lieu"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "action_event_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "instrument_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "quantity": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "price": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "amount": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}$"
+                }
+              },
+              "required": [
+                "action_event_id",
+                "instrument_id",
+                "quantity",
+                "price",
+                "amount"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "correction"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "corrects_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "replacement_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "projection_revision": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "corrects_id",
+                "replacement_id",
+                "reason",
+                "projection_revision"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "mark"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "instrument_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "price": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "event_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "published_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "received_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "feed": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "adjustment": {
+                  "enum": [
+                    "raw",
+                    "split_adjusted",
+                    "total_return"
+                  ]
+                },
+                "observation_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "observation_revision": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "eligibility_cutoff": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "status": {
+                  "enum": [
+                    "eligible",
+                    "stale",
+                    "missing"
+                  ]
+                },
+                "reason": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "mark_policy_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "instrument_id",
+                "price",
+                "event_at",
+                "published_at",
+                "received_at",
+                "feed",
+                "adjustment",
+                "observation_id",
+                "observation_revision",
+                "eligibility_cutoff",
+                "status",
+                "reason",
+                "mark_policy_hash"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "schema_version": {
+              "const": 2
+            },
+            "record_type": {
+              "const": "ledger_event"
+            },
+            "experiment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "contamination": {
+              "enum": [
+                "fixture",
+                "hindsight-contaminated",
+                "historical-qualified",
+                "forward-insufficient",
+                "forward-reviewed"
+              ]
+            },
+            "field_class": {
+              "const": "private_reconstructable"
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "rights_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "source_event_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "source_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "rights_id",
+                "source_event_ids",
+                "source_hash"
+              ],
+              "additionalProperties": false
+            },
+            "portfolio_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "segment_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "effective_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "event_type": {
+              "const": "halt"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "schema_version",
+            "record_type",
+            "experiment_id",
+            "created_at",
+            "contamination",
+            "field_class",
+            "provenance",
+            "portfolio_id",
+            "segment_id",
+            "idempotency_key",
+            "sequence",
+            "effective_at",
+            "observed_at",
+            "event_type",
+            "payload"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

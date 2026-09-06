@@ -27,6 +27,11 @@ def utc(value):
 
 
 def validate(record):
+    if isinstance(record, dict) and record.get("schema_version") == 2:
+        from .contracts_v2 import validate as validate_v2
+        return validate_v2(record)
+    if not isinstance(record, dict) or record.get("schema_version") != 1:
+        raise ContractError("Unknown schema version")
     try:
         canonical(record)
     except (ValueError, TypeError) as exc:
@@ -138,6 +143,12 @@ REFS = {
 
 def validate_bundle(records):
     records = list(records)
+    versions = {r.get("schema_version") for r in records}
+    if versions == {2}:
+        from .contracts_v2 import validate_bundle as validate_v2_bundle
+        return validate_v2_bundle(records)
+    if versions - {1}:
+        raise ContractError("Mixed or unknown bundle versions; keep v1 and v2 separate")
     index = {}
     for record in records:
         validate(record)

@@ -14,6 +14,7 @@ Relevant paths for tasks 007–015:
 | Independent policy | `src/trade_theorist/risk.py` | `test_risk` |
 | Persistence/recovery | `src/trade_theorist/storage.py` | `test_storage` |
 | Input contracts | `src/trade_theorist/contracts.py`, `schema.py` | `test_contracts` |
+| Production v2 contracts/storage | `schema_v2.py`, `contracts_v2.py`, `storage_v2.py`, `migrate_v2.py` in the package | `test_contracts_v2`, `test_storage_v2` |
 | Market evidence | `src/trade_theorist/ingest/market.py` | `test_ingest` |
 | Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
@@ -27,10 +28,11 @@ Use the environment's Python (on Windows, `.venv/Scripts/python.exe`):
 ```text
 python scripts/check.py test_simulation test_risk
 python scripts/check.py test_evaluation test_export test_operations
+python scripts/check.py test_contracts_v2 test_storage_v2
 python scripts/check.py
 ```
 
-The first command runs only named modules; the second runs the complete suite.
+Commands naming modules run only those modules; the last runs the complete suite.
 Each module runs sequentially in its own process, releasing its Python memory on
 exit. Standard output and errors go directly to ignored `.local/test-logs/` files,
 without accumulating captured output in the parent. Console output is one result

@@ -1,0 +1,396 @@
+[
+  {
+    "id": "rights:v2-fixture",
+    "schema_version": 2,
+    "record_type": "source_rights",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_market_provenance",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "source_id": "source:original-v2-fixture",
+    "origin": "original_synthetic",
+    "private_storage": "permitted",
+    "private_replay": "permitted",
+    "private_read_model": "permitted",
+    "public_output": "denied",
+    "evidence": [
+      "Original project arithmetic; no provider observations"
+    ],
+    "reviewed_at": "2099-01-01T21:00:00Z"
+  },
+  {
+    "id": "policy:v2-fixture",
+    "schema_version": 2,
+    "record_type": "policy",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "version": "fixture-v1",
+    "stage": "fixture",
+    "synthetic": true,
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "limits": {
+      "initial_cash": "10000.00",
+      "max_deployed_capital": "10000.00",
+      "company_weight": 0.2,
+      "sector_weight": 0.4,
+      "diversified_etf_weight": 1.0,
+      "gross_exposure": 1.0,
+      "daily_loss": 0.02,
+      "drawdown": 0.1,
+      "turnover": 0.2,
+      "orders_per_session": 5,
+      "max_quote_age_seconds": 60,
+      "max_spread_bps": "20"
+    },
+    "clock": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "costs": {
+      "fee_per_order": "0.00",
+      "slippage_bps": "5",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "long_only": true,
+    "cash_only": true,
+    "approval_ref": null,
+    "approved_at": null,
+    "operator": null,
+    "kill_switch_owner": null,
+    "reconciliation_owner": null,
+    "incident_owner": null
+  },
+  {
+    "id": "character:v2-fixture",
+    "schema_version": 2,
+    "record_type": "character",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "character_id": "character:fixture",
+    "version": "fixture-v2",
+    "constitution_hash": "9021a48bcdcd2849b1aa7ad83147d5cf7ab34a50ab24770411957999198dcfc8",
+    "curriculum_hash": "c48ac9c30d8eede71efec9ac447c0ba40d4bd9d842f1b338ee873f4890aaddff",
+    "readiness": "fixture_only"
+  },
+  {
+    "id": "experiment:v2-fixture",
+    "schema_version": 2,
+    "record_type": "experiment",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "mode": "character_portfolio",
+    "execution_basis": "simulated",
+    "character_versions": [
+      "character:v2-fixture"
+    ],
+    "policy_id": "policy:v2-fixture",
+    "instrument_ids": [
+      "instrument:fixture-fund"
+    ],
+    "start_at": "2099-01-01T21:00:00Z",
+    "end_at": "2099-02-01T21:00:00Z",
+    "regime": "fixture"
+  },
+  {
+    "id": "portfolio:v2-fixture",
+    "schema_version": 2,
+    "record_type": "portfolio",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "mode": "character_portfolio",
+    "execution_basis": "simulated",
+    "owner_character_version": "character:v2-fixture",
+    "policy_id": "policy:v2-fixture",
+    "currency": "USD",
+    "role": "strategy",
+    "accounting_method": "fifo-v2",
+    "return_method": "exact-twr-v2",
+    "initialization": "new",
+    "legacy_portfolio_id": null
+  },
+  {
+    "id": "segment:v2-fixture",
+    "schema_version": 2,
+    "record_type": "funded_segment",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "owner_character_version": "character:v2-fixture",
+    "ordinal": 1,
+    "previous_segment_id": null,
+    "start_at": "2099-01-01T21:00:00Z",
+    "reason": "initial"
+  },
+  {
+    "id": "event:v2-funding",
+    "schema_version": 2,
+    "record_type": "ledger_event",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_reconstructable",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "sequence": 1,
+    "idempotency_key": "event:v2-funding",
+    "effective_at": "2099-01-01T21:00:00Z",
+    "observed_at": "2099-01-01T21:00:00Z",
+    "event_type": "funding",
+    "payload": {
+      "amount": "1000.00",
+      "boundary_mark_ids": []
+    }
+  },
+  {
+    "id": "decision:v2-buy",
+    "schema_version": 2,
+    "record_type": "decision",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "character_version": "character:v2-fixture",
+    "snapshot_hash": "d3afe37ee175efc827027fe4319d823a3e48e51ed5665cf7082c5e535028e57c",
+    "instrument_id": "instrument:fixture-fund",
+    "side": "buy",
+    "quantity": "2",
+    "final": true
+  },
+  {
+    "id": "order:v2-buy",
+    "schema_version": 2,
+    "record_type": "order",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_strategy",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "final_recommendation_id": "decision:v2-buy",
+    "instrument_id": "instrument:fixture-fund",
+    "execution_basis": "simulated",
+    "side": "buy",
+    "quantity": "2",
+    "policy_approval_ref": "original-fixture-only",
+    "replaces_order_id": null
+  },
+  {
+    "id": "event:v2-order",
+    "schema_version": 2,
+    "record_type": "ledger_event",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_reconstructable",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "sequence": 2,
+    "idempotency_key": "event:v2-order",
+    "effective_at": "2099-01-01T21:00:00Z",
+    "observed_at": "2099-01-01T21:00:00Z",
+    "event_type": "order",
+    "payload": {
+      "order_id": "order:v2-buy"
+    }
+  },
+  {
+    "id": "event:v2-reservation",
+    "schema_version": 2,
+    "record_type": "ledger_event",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_reconstructable",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "sequence": 3,
+    "idempotency_key": "event:v2-reservation",
+    "effective_at": "2099-01-01T21:00:00Z",
+    "observed_at": "2099-01-01T21:00:00Z",
+    "event_type": "reservation",
+    "payload": {
+      "order_id": "order:v2-buy",
+      "cash": "202.00",
+      "quantity": "0"
+    }
+  },
+  {
+    "id": "event:v2-mark",
+    "schema_version": 2,
+    "record_type": "ledger_event",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_reconstructable",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "sequence": 4,
+    "idempotency_key": "event:v2-mark",
+    "effective_at": "2099-01-01T21:00:00Z",
+    "observed_at": "2099-01-01T21:00:00Z",
+    "event_type": "mark",
+    "payload": {
+      "instrument_id": "instrument:fixture-fund",
+      "price": "100",
+      "event_at": "2099-01-01T21:00:00Z",
+      "published_at": "2099-01-01T21:00:00Z",
+      "received_at": "2099-01-01T21:00:00Z",
+      "feed": "original-synthetic-v2",
+      "adjustment": "raw",
+      "observation_id": "observation:original-v2",
+      "observation_revision": 1,
+      "eligibility_cutoff": "2099-01-01T21:00:00Z",
+      "status": "eligible",
+      "reason": null,
+      "mark_policy_hash": "eccf7f0acc52a7dc64ba5b8caa0bb214b8b9d946b40443ae337c9cf8e02bad71"
+    }
+  },
+  {
+    "id": "event:v2-fill",
+    "schema_version": 2,
+    "record_type": "ledger_event",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_reconstructable",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "sequence": 5,
+    "idempotency_key": "event:v2-fill",
+    "effective_at": "2099-01-01T21:00:00Z",
+    "observed_at": "2099-01-01T21:00:00Z",
+    "event_type": "fill",
+    "payload": {
+      "order_id": "order:v2-buy",
+      "instrument_id": "instrument:fixture-fund",
+      "side": "buy",
+      "quantity": "2",
+      "price": "100",
+      "notional": "200.00",
+      "fees": "2.00",
+      "fee_treatment": "included",
+      "incremental_fill_id": "fill:v2-buy"
+    }
+  },
+  {
+    "id": "lot:v2-buy-r1",
+    "schema_version": 2,
+    "record_type": "lot",
+    "experiment_id": "experiment:v2-fixture",
+    "created_at": "2099-01-01T21:00:00Z",
+    "contamination": "fixture",
+    "field_class": "private_reconstructable",
+    "provenance": {
+      "rights_id": "rights:v2-fixture",
+      "source_event_ids": [],
+      "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+    },
+    "portfolio_id": "portfolio:v2-fixture",
+    "segment_id": "segment:v2-fixture",
+    "instrument_id": "instrument:fixture-fund",
+    "originating_fill_id": "event:v2-fill",
+    "originating_order_id": "order:v2-buy",
+    "acquired_at": "2099-01-01T21:00:00Z",
+    "original_quantity": "2",
+    "remaining_quantity": "2",
+    "original_basis": "202",
+    "remaining_basis": "202",
+    "corporate_action_ids": [],
+    "projection_revision": 1,
+    "previous_lot_revision_id": null,
+    "lot_id": "lot:v2-buy"
+  }
+]

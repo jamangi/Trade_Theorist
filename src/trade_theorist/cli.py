@@ -167,8 +167,24 @@ def main(argv=None):
             command.add_argument("--csv")
             command.add_argument("--capability")
             command.add_argument("--sessions")
+    v2_export = commands.add_parser("export-v2-schema", help="Write operational v2 JSON Schema; no database is opened")
+    v2_export.add_argument("output")
+    v2_migrate = commands.add_parser("migrate-v2", help="Preview an explicitly selected synthetic v1 database")
+    v2_migrate.add_argument("--source", required=True, help="Absolute path to synthetic research.sqlite3")
+    v2_migrate.add_argument("--synthetic", action="store_true")
+    v2_migrate.add_argument("--destination", help="Separate absolute destination directory")
+    v2_migrate.add_argument("--apply", action="store_true", help="Explicitly write a side-by-side copy")
     args = parser.parse_args(argv)
     try:
+        if args.command == "export-v2-schema":
+            from .schema_v2 import schema as v2_schema
+            Path(args.output).write_text(json.dumps(v2_schema(), indent=2) + "\n", encoding="utf-8", newline="\n")
+            print("Wrote operational v2 schema.")
+            return 0
+        if args.command == "migrate-v2":
+            from .migrate_v2 import migrate
+            print(json.dumps(migrate(args.source, synthetic=args.synthetic, destination=args.destination, apply=args.apply), indent=2))
+            return 0
         if args.command in {"doctor", "demo", "ingest", "heartbeat", "evaluate", "export"}:
             return operator_command(args)
         if args.command == "validate":

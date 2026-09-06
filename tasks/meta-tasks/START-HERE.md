@@ -1,6 +1,6 @@
 # Start here after META-001
 
-Updated 2026-09-06. **Open [Step 01: version the portfolio contracts and storage](../active/STEP-01-contracts.md).** It contains the bounded brief, acceptance and handoff to Step 02.
+Updated 2026-09-06. **Step 01 is implemented and verified; next is [Step 02: accounting](../active/STEP-02-accounting.md).** [Step 01](../active/STEP-01-contracts.md) records the completed contract/storage scope and validation evidence.
 
 The [ordered remaining-work list](../README.md) now runs from Step 01 onward. Use it instead of jumping between historical task IDs. The [crosswalk](../CROSSWALK.md) preserves all original scopes and evidence.
 
@@ -16,4 +16,4 @@ The singular serialized name **character_portfolio** is already correct and rema
 
 META-001 is complete; see its [impact record](../../docs/meta-001-impact.md). Reference arithmetic is not a production migration. No new approval blocks Step 01's original-synthetic work. Later rights, trained-version, account-operation, paper-policy and elapsed-time gates are explicit in their own steps.
 
-Complete only Step 01 when asked to start it; record validation and stop with Step 02 identified. This queue refactor does not start implementation or account activity.
+Step 01 stopped at its contract/storage boundary. Step 02 has not been started; follow its bounded brief when requested. Updating this pointer does not start accounting implementation or account activity.

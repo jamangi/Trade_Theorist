@@ -1,0 +1,133 @@
+{
+  "preview": {
+    "conversion_version": "v1-to-v2-boundary-1",
+    "destination_identity": "28f8b2bdf928c440572d9328d8fa6a508a3f94c258c5323e0b7f43550831a50a",
+    "source_chain_hash": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9",
+    "source_records_hash": "dc3722d3b8bb1ddee3823012b49280ed2dd823d2cfd5ae6e53df557fde66ef63",
+    "source_migrations_hash": "e96c30a32b903e444702bca2d32f711fbc2c47287783e27ee8dd3f78c060f138",
+    "source_event_versions": [
+      "raw-next-open-ledger-v1"
+    ],
+    "preserved_v1": {
+      "records": 6,
+      "events": 1,
+      "tip": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9"
+    },
+    "planned_v2_records": 8,
+    "converted_event_ids": [
+      "v2:e0ab0031fd9b61659eb237bdf22c604af0959466a1da899b87752a67d06042ff"
+    ],
+    "gaps": [],
+    "limitations": [
+      "V1 records, hashes and average-cost replay remain authoritative in their original tables.",
+      "Only an isolated initial funding event can be converted without accounting replay.",
+      "Trading, flows and corporate actions require reviewed Step 02 replay; no lots or TWR are fabricated.",
+      "Synthetic opt-in is not a source license or permission to migrate owner data."
+    ],
+    "action": "dry_run",
+    "destination_written": false
+  },
+  "applied": {
+    "conversion_version": "v1-to-v2-boundary-1",
+    "destination_identity": "28f8b2bdf928c440572d9328d8fa6a508a3f94c258c5323e0b7f43550831a50a",
+    "source_chain_hash": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9",
+    "source_records_hash": "dc3722d3b8bb1ddee3823012b49280ed2dd823d2cfd5ae6e53df557fde66ef63",
+    "source_migrations_hash": "e96c30a32b903e444702bca2d32f711fbc2c47287783e27ee8dd3f78c060f138",
+    "source_event_versions": [
+      "raw-next-open-ledger-v1"
+    ],
+    "preserved_v1": {
+      "records": 6,
+      "events": 1,
+      "tip": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9"
+    },
+    "planned_v2_records": 8,
+    "converted_event_ids": [
+      "v2:e0ab0031fd9b61659eb237bdf22c604af0959466a1da899b87752a67d06042ff"
+    ],
+    "gaps": [],
+    "limitations": [
+      "V1 records, hashes and average-cost replay remain authoritative in their original tables.",
+      "Only an isolated initial funding event can be converted without accounting replay.",
+      "Trading, flows and corporate actions require reviewed Step 02 replay; no lots or TWR are fabricated.",
+      "Synthetic opt-in is not a source license or permission to migrate owner data."
+    ],
+    "action": "applied",
+    "destination_written": true
+  },
+  "repeated": {
+    "conversion_version": "v1-to-v2-boundary-1",
+    "destination_identity": "28f8b2bdf928c440572d9328d8fa6a508a3f94c258c5323e0b7f43550831a50a",
+    "source_chain_hash": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9",
+    "source_records_hash": "dc3722d3b8bb1ddee3823012b49280ed2dd823d2cfd5ae6e53df557fde66ef63",
+    "source_migrations_hash": "e96c30a32b903e444702bca2d32f711fbc2c47287783e27ee8dd3f78c060f138",
+    "source_event_versions": [
+      "raw-next-open-ledger-v1"
+    ],
+    "preserved_v1": {
+      "records": 6,
+      "events": 1,
+      "tip": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9"
+    },
+    "planned_v2_records": 8,
+    "converted_event_ids": [
+      "v2:e0ab0031fd9b61659eb237bdf22c604af0959466a1da899b87752a67d06042ff"
+    ],
+    "gaps": [],
+    "limitations": [
+      "V1 records, hashes and average-cost replay remain authoritative in their original tables.",
+      "Only an isolated initial funding event can be converted without accounting replay.",
+      "Trading, flows and corporate actions require reviewed Step 02 replay; no lots or TWR are fabricated.",
+      "Synthetic opt-in is not a source license or permission to migrate owner data."
+    ],
+    "action": "already_applied",
+    "destination_written": false
+  },
+  "gap_preview": {
+    "conversion_version": "v1-to-v2-boundary-1",
+    "destination_identity": "f3cf680d7d56288a8dbdac2f40f548a04e6c053504bc721ce7717f06e32d75e1",
+    "source_chain_hash": "97b39197a718cdde7673518f5a7b28f8f7c4f0b108b9e6a141ec3907a9d5e2cf",
+    "source_records_hash": "dc3722d3b8bb1ddee3823012b49280ed2dd823d2cfd5ae6e53df557fde66ef63",
+    "source_migrations_hash": "e96c30a32b903e444702bca2d32f711fbc2c47287783e27ee8dd3f78c060f138",
+    "source_event_versions": [
+      "raw-next-open-ledger-v1"
+    ],
+    "preserved_v1": {
+      "records": 6,
+      "events": 2,
+      "tip": "97b39197a718cdde7673518f5a7b28f8f7c4f0b108b9e6a141ec3907a9d5e2cf"
+    },
+    "planned_v2_records": 6,
+    "converted_event_ids": [],
+    "gaps": [
+      {
+        "source_id": "event:step-01-funding",
+        "code": "requires_accounting_replay"
+      },
+      {
+        "source_id": "event:step-01-gap",
+        "code": "requires_accounting_replay"
+      }
+    ],
+    "limitations": [
+      "V1 records, hashes and average-cost replay remain authoritative in their original tables.",
+      "Only an isolated initial funding event can be converted without accounting replay.",
+      "Trading, flows and corporate actions require reviewed Step 02 replay; no lots or TWR are fabricated.",
+      "Synthetic opt-in is not a source license or permission to migrate owner data."
+    ],
+    "action": "dry_run",
+    "destination_written": false
+  },
+  "verification": {
+    "v1": {
+      "records": 6,
+      "events": 1,
+      "tip": "b1a739e9d961c61cf7b58bb9ebc1da04f93778df6d3ea3d4f020bc62f96898f9"
+    },
+    "v2": {
+      "records": 8,
+      "tip": "9ef7e2fb1728d5da1949055e79635797771f703297e63b79c6f2ada10792b00f"
+    }
+  },
+  "v1_replay_equal": true
+}

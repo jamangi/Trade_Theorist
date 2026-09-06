@@ -1,6 +1,6 @@
 # Step 01: Version the portfolio contracts and storage
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: implemented and verified 2026-09-06; synthetic contract/storage scope
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-024](../TASK-024-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
@@ -41,3 +41,38 @@ Run `.venv/Scripts/python.exe scripts/check.py test_contracts test_storage test_
 Use the [focused validation workflow](../../docs/development.md). Record changed files, actual checks, evidence artifacts and remaining blockers here. For code changes, run relevant tests and the full suite once after focused checks pass; for UI changes, verify keyboard and narrow/wide layouts too. Original synthetic acceptance never substitutes for required real-source or elapsed-time evidence.
 
 Stop at this step's finished state. The default next item is [Step 02](STEP-02-accounting.md); do not start it automatically. Follow the queue's blocker rule for independent work. Preserve historical completion claims. No account call, order, paid subscription, public market-data deployment or recurring work is authorized merely by this task brief.
+
+## Implementation evidence
+
+Added operational `schema_v2.py` / `contracts_v2.py`, generated
+`schemas/contracts-v2.json`, explicit `storage_v2.py` and additive migration 003.
+V1 storage defaults, installed 001/002 checksums, hashes and average-cost replay
+remain unchanged. Typed identities, funded segments, events, lot/relief revisions,
+private projection metadata, source rights, opaque Monarchy mappings and atomic
+outbox/update contracts have reference checks and database uniqueness constraints.
+
+`migrate-v2` defaults to an explicitly selected synthetic read-only preview. Apply
+preserves the v1 database side by side, publishes only after validation, records
+source/destination lineage and reuses exact repeats. Unsupported history has explicit
+gaps and no fabricated lots or relabeled FIFO/TWR. `export-v2-schema` and the fixture
+builder provide reproducible outputs. Every new record/storage field is classified.
+
+See [implementation and operating detail](../../docs/step-01-contracts.md),
+[operational bundle](../../examples/contracts-v2/bundle.json),
+[migrated bundle](../../examples/contracts-v2/migrated.bundle.json) and
+[checked migration report](../../examples/contracts-v2/migration-report.json).
+
+Targeted validation passed all six requested/new modules in 6.4 seconds. New tests
+cover contract dispatch, mode/basis/owner isolation, private rights/classes,
+flow/mark/correction timestamps, duplicate fees, submission identity, late updates,
+quarantine, process-crash rollback, migration repeat/conflict/newer-version refusal,
+and preservation of an average-cost sale (18 realized, never relabeled FIFO's 28).
+Final full suite: **178 tests across 21/21 modules passed in 24.1 seconds**.
+`scripts/export_field_classification.py --check` passed with **1,048 declared
+fields classified** after intentional regeneration/review; CI now checks drift too. Both operational and
+migrated v2 bundles passed the CLI validator; `scripts/build_step_01_fixtures.py`
+reproduced the checked migration artifacts. `git diff --check` passed.
+
+No bounded Step 01 blocker remains. Step 02 owns arithmetic/reconciliation and has
+not been started. No owner database, account, order transport, UI or public-data
+publication was changed.

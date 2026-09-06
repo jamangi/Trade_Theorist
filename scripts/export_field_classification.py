@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from trade_theorist.schema import schema
+from trade_theorist.schema_v2 import schema as schema_v2
 from trade_theorist.export import DASHBOARD_SCHEMA
 
 
@@ -28,6 +29,14 @@ def inventory():
     fields = set()
     for kind, definition in schema()["$defs"].items():
         fields.update("contracts-v1/" + kind + path for path in paths(definition))
+    for kind, definition in schema_v2()["$defs"].items():
+        fields.update("contracts-v2/" + kind + path for path in paths(definition))
+    for table, columns in {
+        "v2_records": ("sequence", "id", "record_type", "experiment_id", "portfolio_id", "body", "previous_hash", "content_hash"),
+        "v2_broker_bindings": ("mapping_id", "broker_order_id"),
+        "v2_quarantine": ("content_hash", "reason", "observed_at"),
+    }.items():
+        fields.update("storage-v2/" + table + "/" + column for column in columns)
     fields.update("dashboard-v1" + path for path in paths(DASHBOARD_SCHEMA))
     for name in ("performance-v2", "broker-attribution-v1"):
         value = json.loads((ROOT / "schemas/meta-001" / (name + ".schema.json")).read_text())
@@ -37,11 +46,11 @@ def inventory():
         key = path.rsplit("/", 1)[-1]
         if key in {"private_locator", "raw_response", "credentials", "api_key", "api_secret", "secret"}:
             category = "private_sensitive"
-        elif "broker-attribution" in path:
+        elif "broker-attribution" in path or any("/" + k + "/" in path for k in ("submission_mapping", "outbox", "broker_update", "v2_broker_bindings", "v2_quarantine")):
             category = "private_attribution"
         elif key in {"price", "value", "quantity", "equity", "history", "holdings", "cash", "basis", "lots", "income", "fees", "metrics", "cumulative_notional", "cumulative_quantity"}:
             category = "private_reconstructable"
-        elif "/observation/" in path or "/snapshot/" in path:
+        elif "/observation/" in path or "/snapshot/" in path or "/source_rights/" in path:
             category = "private_market_provenance"
         else:
             category = "private_strategy"
