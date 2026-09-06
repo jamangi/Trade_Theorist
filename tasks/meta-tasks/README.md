@@ -18,15 +18,15 @@ boundary. META-001 must verify that rather than assume it. Preserve stable task 
 historical evidence; prefer versioned migrations or new repair tasks over rewriting what
 earlier commits actually proved.
 
-Open choices are collected in [APPROVALS.md](APPROVALS.md). META-001 may recommend
-answers and prepare exact approval text, but it may not silently approve them for the
-owner.
+The owner-approved defaults are recorded in [APPROVALS.md](APPROVALS.md). Any new
+choice discovered by META-001 must be added there unchecked with a recommendation; the
+meta-task may not silently expand the recorded approval.
 
 ## Meta-task index
 
 | Meta-task | Outcome | Model / effort | Status |
 | --- | --- | --- | --- |
-| [META-001](META-001-high-Astra.md) | Local-first UI, data-publication boundary, Character sub-ledgers and roadmap repair | GPT-6 Astra / high | Ready |
+| [META-001](META-001-high-Astra.md) | Local-first UI, data-publication boundary, Character sub-ledgers and roadmap repair | GPT-6 Astra / high | Ready; defaults approved |
 
 ## Required completion pattern
 

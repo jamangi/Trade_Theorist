@@ -8,8 +8,8 @@ The [meta-task index](meta-tasks/README.md) contains architecture reviews that c
 the task graph without erasing historical completion evidence. [META-001](meta-tasks/META-001-high-Astra.md)
 is now the task starting point for the proposed local-first pivot. It will determine the
 earliest affected contract, produce an exact `START-HERE.md`, and recommend amendments
-to TASK-012–018 and any earlier additive schema migrations. Owner choices remain in the
-[meta-task approval register](meta-tasks/APPROVALS.md).
+to TASK-012–018 and any earlier additive schema migrations. The approved defaults and
+boundary of that authority are in the [meta-task approval register](meta-tasks/APPROVALS.md).
 
 The current safe expectation is a local/private single-page UI with **Individual** and
 **Monarchy** tabs. Alpaca account state remains aggregate; per-Character performance is

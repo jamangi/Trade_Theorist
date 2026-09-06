@@ -5,8 +5,10 @@
 - Recommended effort: high
 - Authority: repository owner's 2026-09-06 request to reconcile Alpaca data limits,
   local UI, Individual/Monarchy modes and portfolio attribution
-- Does not authorize: paid subscriptions, new account calls, paper orders, live orders,
-  public Alpaca data, or approval of unchecked owner choices
+- Owner policy: all recommended defaults in [APPROVALS.md](APPROVALS.md) approved on
+  2026-09-06
+- Does not authorize: paid subscriptions, new account calls, paper orders, live orders
+  or public Alpaca data
 
 ## Objective
 
@@ -77,7 +79,7 @@ artifacts and ordinary source code are a distinct publication class.
 
 ### Attribution and execution
 
-Prefer this initial paper arrangement unless the owner approves another:
+Use this owner-approved initial paper arrangement:
 
 1. Every Character commits a decision against the same immutable eligible snapshot.
 2. Every Individual portfolio applies its own decision to a separate internal virtual
