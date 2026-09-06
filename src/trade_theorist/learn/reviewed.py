@@ -7,18 +7,36 @@ are explicitly selected records and original notes, never source page text.
 from pathlib import Path
 import hashlib
 import json
+import re
 
 from jsonschema import Draft202012Validator
 
 from ..contracts import ContractError, digest, validate_bundle
-from ..schema import S, POS, enum, obj
+from ..schema import S, POS, COMPLETABLE_SCOPES, enum, obj
 from .engine import OUTPUT, citation_passage
 
 
 REVIEW_CLAIM = obj(text=S, page=POS, anchor=S, disposition=enum("accept", "qualify", "reject"))
 
 
-def material_from_pdf(path, review, *, expected_pages, expected_ranges):
+def pages_from_transcript(path, *, expected_sha256, expected_pages):
+    """Load a pinned owner-supplied transcript without running OCR or learning.
+
+    The caller binds this derivative to its PDF through the inventory and verifies
+    source identity before reading. Page markers establish indexing, not OCR fidelity.
+    """
+    data = Path(path).read_bytes()
+    if hashlib.sha256(data).hexdigest() != expected_sha256:
+        raise ContractError("Transcript differs from its registered fingerprint")
+    text = data.decode("utf-8-sig")
+    markers = list(re.finditer(r"^===== Page ([0-9]+) =====[ \t]*\r?$", text, re.MULTILINE))
+    if type(expected_pages) is not int or expected_pages < 1 or [int(m.group(1)) for m in markers] != list(range(1, expected_pages + 1)):
+        raise ContractError("Transcript pages are missing, duplicated or reordered")
+    return [" ".join(text[m.end():markers[i + 1].start() if i + 1 < len(markers) else len(text)].split())
+            for i, m in enumerate(markers)]
+
+
+def material_from_pdf(path, review, *, expected_pages, expected_ranges, scope="full_book"):
     """Verify this exact locally reviewed edition before creating private sections.
 
     A matching file does not prove publisher authenticity or legal ownership.
@@ -33,15 +51,17 @@ def material_from_pdf(path, review, *, expected_pages, expected_ranges):
     if reader.is_encrypted or len(reader.pages) != expected_pages:
         raise ContractError("Unexpected encryption or page coverage")
     pages = [" ".join((page.extract_text() or "").split()) for page in reader.pages]
-    return material_from_pages(pages, review, expected_ranges=expected_ranges)
+    return material_from_pages(pages, review, expected_ranges=expected_ranges, scope=scope)
 
 
-def material_from_pages(pages, review, *, expected_ranges):
+def material_from_pages(pages, review, *, expected_ranges, scope="full_book"):
+    if scope not in COMPLETABLE_SCOPES:
+        raise ContractError("Unsupported reviewed material scope")
     sections = review["sections"]
     ranges = [(s["pdf_start"], s["pdf_end"]) for s in sections]
     if ranges != list(expected_ranges) or [s["number"] for s in sections] != list(range(1, len(sections) + 1)):
         raise ContractError("Review coverage is missing, duplicated or reordered")
-    material = dict(source_id=review["source_id"], scope="full_book", completeness_verified=True,
+    material = dict(source_id=review["source_id"], scope=scope, completeness_verified=True,
                     coverage_evidence="Exact PDF hash and page count checked against the attributed full-source review; substantive sections follow the reviewed contents map.", sections=[])
     for section in sections:
         start, end = section["pdf_start"], section["pdf_end"]

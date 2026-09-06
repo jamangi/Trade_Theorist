@@ -58,6 +58,8 @@ New numerical suggestions in the [architecture](../docs/architecture.md), discus
 
 ## Additional owner-requested direction
 
+- [x] Adopt the supplied five-paper Microstructure replacement sequence, retain the supplied Harris draft excerpts as the limited foundation, and use the two supplied OCR transcripts. No further material search is required for this revised plan. [ADR-002](records/ADR-002-microstructure-reading-scope.md) records exact order, scope and the distinction between material availability and completed learning.
+
 - [x] Preserve the council and plan a separate mode where each Character controls a fictional portfolio.
 - [x] Design inspectable discussion, learning, data acquisition, dashboards, and explicit historical-hindsight experiments without replacing the original boundaries.
 - [x] Turn the adapted roadmap into implementation task files with model/effort recommendations and update the root README.

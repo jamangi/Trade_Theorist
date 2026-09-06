@@ -7,7 +7,7 @@ import json
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-from .schema import schema
+from .schema import COMPLETABLE_SCOPES, schema
 
 
 class ContractError(ValueError):
@@ -74,7 +74,7 @@ def validate(record):
     if kind == "character" and record["contamination"] == "fixture" and record["readiness"] not in ("not_ready", "fixture_only"):
         raise ContractError("Fixture Character cannot claim real readiness")
     if kind == "checkpoint":
-        if record["reading_status"] == "complete" and record["material_scope"] != "full_book":
+        if record["reading_status"] == "complete" and record["material_scope"] not in COMPLETABLE_SCOPES:
             raise ContractError("Sample and fixture checkpoints must remain partial")
         if (record["material_scope"] == "fixture") != (record["contamination"] == "fixture"):
             raise ContractError("Checkpoint scope and evidence label mismatch")

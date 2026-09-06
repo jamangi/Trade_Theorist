@@ -24,16 +24,21 @@ class InventoryTests(unittest.TestCase):
 
     def test_acquisition_is_not_complete_coverage_or_learning(self):
         summary = inventory_summary(self.catalog)
-        self.assertEqual((summary["characters"], summary["slots"], summary["unique_titles"]), (7, 28, 27))
-        self.assertEqual((summary["local_files"], summary["slots_with_files"]), (25, 26))
-        self.assertEqual(summary["coverage"], {"unverified": 23, "partial": 1, "verified_in_prior_learning": 1, "missing": 2})
-        self.assertEqual(summary["text_status"]["ocr_required"], 2)
+        self.assertEqual((summary["characters"], summary["slots"], summary["unique_titles"]), (7, 31, 30))
+        self.assertEqual((summary["local_files"], summary["slots_with_files"]), (30, 31))
+        self.assertEqual(summary["coverage"], {"unverified": 28, "partial": 1, "verified_in_prior_learning": 1})
+        self.assertEqual(summary["text_status"]["transcript_available"], 2)
+        self.assertEqual((summary["transcript_files"], summary["retired_sources"]), (2, 2))
         self.assertFalse(summary["grants_learning_readiness"])
         index = validate_inventory(self.catalog)
         shared = [a for a in self.catalog["assignments"] if a["source_id"] == "local:mauboussin-expectations"]
         self.assertEqual({(a["character_id"], a["position"]) for a in shared}, {("value_rationalist", 4), ("event_and_disclosure_detective", 3)})
         harris = index["local:harris-trading-exchanges"]
         self.assertEqual((harris["file"]["page_count"], harris["coverage"]), (113, "partial"))
+        micro = [a for a in self.catalog["assignments"] if a["character_id"] == "market_microstructure_mechanic"]
+        self.assertEqual(micro[0]["material_scope"], "approved_excerpt")
+        self.assertEqual([a["material_scope"] for a in micro[2:]], ["full_paper"] * 5)
+        self.assertFalse(any(a["source_id"].startswith("missing:") for a in self.catalog["assignments"]))
         bogle = index["local:bogle-common-sense"]
         acquisition = json.loads((ROOT / "library/catalog/bogle-2017-acquisition.json").read_text(encoding="utf-8"))
         self.assertIn(bogle["file"]["sha256"], json.dumps(acquisition))
@@ -66,16 +71,45 @@ class InventoryTests(unittest.TestCase):
                     body = ("Synthetic file identity test: " + source["id"]).encode()
                     (Path(directory) / file["name"]).write_bytes(body)
                     file.update(size_bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
+                    transcript = source.get("transcript")
+                    if transcript:
+                        transcript["source_pdf_sha256"] = file["sha256"]
+                        transcript_body = ("Synthetic transcript: " + source["id"]).encode()
+                        target = Path(directory) / transcript["name"]
+                        target.parent.mkdir(exist_ok=True)
+                        target.write_bytes(transcript_body)
+                        transcript.update(size_bytes=len(transcript_body), sha256=hashlib.sha256(transcript_body).hexdigest())
             original = deepcopy(self.catalog)
             result = verify_files(self.catalog, directory)
-            self.assertEqual(sum(f["status"] == "verified" for f in result["files"]), 25)
-            self.assertEqual(sum(f["status"] == "not_acquired" for f in result["files"]), 2)
+            self.assertEqual(sum(f["status"] == "verified" for f in result["files"]), 32)
+            self.assertEqual(sum(f["status"] == "not_acquired" for f in result["files"]), 0)
             (Path(directory) / self.catalog["sources"][0]["file"]["name"]).write_bytes(b"changed")
             (Path(directory) / self.catalog["sources"][1]["file"]["name"]).unlink()
             result = verify_files(self.catalog, directory)
             self.assertEqual([f["status"] for f in result["files"][:2]], ["changed", "missing"])
             self.assertFalse(result["grants_learning_readiness"])
             self.assertEqual(self.catalog, original)
+            transcript = next(s["transcript"] for s in self.catalog["sources"] if s.get("transcript"))
+            (Path(directory) / transcript["name"]).write_bytes(b"damaged transcript")
+            checked = verify_files(self.catalog, directory)
+            self.assertTrue(any(f["artifact"] == "transcript" and f["status"] == "changed" for f in checked["files"]))
+
+    def test_transcript_binding_and_retired_assignments_are_validated(self):
+        for field, value in (("source_pdf_sha256", "0" * 64), ("page_markers", 1), ("page_sequence_verified", False), ("name", "transcripts/../../outside.txt")):
+            with self.subTest(field=field):
+                bad = deepcopy(self.catalog)
+                transcript = next(s["transcript"] for s in bad["sources"] if s.get("transcript"))
+                transcript[field] = value
+                with self.assertRaises(ContractError):
+                    validate_inventory(bad)
+        bad = deepcopy(self.catalog)
+        bad["assignments"][0]["source_id"] = bad["retired_sources"][0]["id"]
+        with self.assertRaises(ContractError):
+            validate_inventory(bad)
+        bad = deepcopy(self.catalog)
+        next(a for a in bad["assignments"] if a.get("material_scope") == "approved_excerpt").pop("scope_authorization")
+        with self.assertRaises(ContractError):
+            validate_inventory(bad)
 
     def test_paths_cannot_escape_explicit_books_root(self):
         for name in ("../outside.pdf", "..\\outside.pdf", "C:outside.pdf", "/outside.pdf"):
@@ -100,7 +134,7 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(report, render_report(self.catalog))
         with patch("trade_theorist.cli.read", return_value=self.catalog), redirect_stdout(StringIO()) as out:
             self.assertEqual(main(["library", "report"]), 0)
-        self.assertEqual(json.loads(out.getvalue())["slots"], 28)
+        self.assertEqual(json.loads(out.getvalue())["slots"], 31)
         with patch("trade_theorist.cli.read", return_value=self.catalog), patch.dict(os.environ, {}, clear=True), redirect_stderr(StringIO()):
             self.assertEqual(main(["library", "verify-files"]), 2)
             self.assertEqual(main(["library", "check"]), 2)

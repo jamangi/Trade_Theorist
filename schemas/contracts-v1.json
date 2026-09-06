@@ -1187,7 +1187,9 @@
           "enum": [
             "fixture",
             "sample",
-            "full_book"
+            "full_book",
+            "full_paper",
+            "approved_excerpt"
           ]
         },
         "model_call_id": {

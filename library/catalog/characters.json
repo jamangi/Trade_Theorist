@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "catalog_type": "local_book_inventory",
-  "checked_at": "2026-09-05T22:54:20.591485Z",
+  "checked_at": "2026-09-05T23:58:56.459561Z",
   "books_root_environment": "TRADE_THEORIST_BOOKS_ROOT",
   "scope": "Owner-requested local file inventory and identity review only. Raw books stay outside the public repository. This record grants no model-training, redistribution or Character-readiness status.",
   "sources": [
@@ -161,8 +161,33 @@
         ]
       },
       "coverage": "unverified",
-      "text_status": "ocr_required",
-      "notes": "Cover/title/copyright verified visually. No text was extracted from the first 16 pages. OCR and page-by-page coverage checks are required; ISBN remains unresolved."
+      "text_status": "transcript_available",
+      "notes": "Supplied transcript registered with all 595 sequential PDF page markers and a hash bound to this scan. Use it for reading; no fresh OCR is needed. Resolve ambiguous words, numbers and formulae against the PDF during ordinary learning. Full reading remains pending.",
+      "transcript": {
+        "name": "transcripts/Algorithmic_Trading_and_DMA_-_Johnson_scan.txt",
+        "sha256": "21734fc4842037da78cf72f56f2b1b18b4a52e609531bf2986992ec83591db31",
+        "size_bytes": 1651992,
+        "source_pdf_sha256": "edf978aaae7a53bb8d2850d2cb1283adc8eb32c477e01bc6fc505fe2fe8a09bb",
+        "page_markers": 595,
+        "page_sequence_verified": true,
+        "empty_pdf_pages": [
+          2,
+          14,
+          20,
+          22,
+          100,
+          102,
+          134,
+          208,
+          238,
+          240,
+          276,
+          296,
+          360
+        ],
+        "provenance": "Owner-supplied UTF-8 transcript; header identifies this PDF and local Tesseract OCR. OCR not rerun in this update.",
+        "quality_scope": "Identity pages and selected body/end text sampled; all page markers checked. OCR fidelity, equations and tables are not exhaustively certified."
+      }
     },
     {
       "id": "local:fisher-common-stocks",
@@ -402,8 +427,27 @@
         ]
       },
       "coverage": "unverified",
-      "text_status": "ocr_required",
-      "notes": "Title, author, publisher and copyright page verified visually. First 16 pages yield no text; OCR and full coverage checks are required."
+      "text_status": "transcript_available",
+      "notes": "Supplied transcript registered with all 231 sequential PDF page markers and a hash bound to this scan. Use it for reading; no fresh OCR is needed. Resolve ambiguous words, numbers and formulae against the PDF during ordinary learning. Full reading remains pending.",
+      "transcript": {
+        "name": "transcripts/Quality_of_Earnings_-_Thornton_L_OGlove_scan.txt",
+        "sha256": "2076bdeb048e58596660ac27f312d765b5570439f7a654a98e491a53d660a070",
+        "size_bytes": 462289,
+        "source_pdf_sha256": "41c9df94ed448a5f96e5f3aa116f9fb296206bc7e04529cdb0b2286c8b379f56",
+        "page_markers": 231,
+        "page_sequence_verified": true,
+        "empty_pdf_pages": [
+          2,
+          8,
+          218,
+          226,
+          228,
+          229,
+          231
+        ],
+        "provenance": "Owner-supplied UTF-8 transcript; header identifies this PDF and local Tesseract OCR. OCR not rerun in this update.",
+        "quality_scope": "Identity pages and selected body/end text sampled; all page markers checked. OCR fidelity, equations and tables are not exhaustively certified."
+      }
     },
     {
       "id": "local:chan-quantitative",
@@ -722,7 +766,7 @@
     },
     {
       "id": "local:harris-trading-exchanges",
-      "title": "Trading and Exchanges",
+      "title": "Trading and Exchanges (draft)",
       "authors": [
         "Larry Harris"
       ],
@@ -753,7 +797,7 @@
       },
       "coverage": "partial",
       "text_status": "text_present",
-      "notes": "113-page file contains chapter openings: for example chapter 3 ends at 3-3 on PDF page 25 and chapter 4 starts on page 26; later chapters similarly stop at page 3. The bibliography ends at B-3. Obtain a complete foundation copy or explicitly revise the foundation curriculum. Excerpts cannot satisfy full-book learning."
+      "notes": "Owner accepted the supplied 113-page March 2002 draft excerpts as the limited formative source. Read all supplied pages in order and retain omitted material as unknown. This is not full coverage of the published book; no further acquisition is required for the revised plan."
     },
     {
       "id": "local:kaufman-systems",
@@ -866,38 +910,163 @@
       "notes": "Ebook identity and edition history verified. Full source coverage remains unverified."
     },
     {
-      "id": "missing:bouchaud-trades-quotes-prices",
-      "title": "Trades, Quotes and Prices",
+      "id": "local:bouchaud-slow-digest",
+      "title": "How markets slowly digest changes in supply and demand",
       "authors": [
         "Jean-Philippe Bouchaud",
-        "Julius Bonart",
-        "Jonathan Donier",
-        "Martin Gould"
+        "J. Doyne Farmer",
+        "Fabrizio Lillo"
       ],
-      "edition": "Unresolved; no supplied copy",
+      "edition": "arXiv:0809.0822v1; stamp 2008-09-04; supplied PDF rendering",
       "observed_isbns": [],
-      "availability": "missing",
-      "file": null,
-      "identity_evidence": null,
-      "coverage": "missing",
-      "text_status": "missing",
-      "notes": "No file in the supplied folder. Keep the original slot blocked; see docs/microstructure-alternatives.md for a proposed open-paper packet."
+      "availability": "local_file",
+      "file": {
+        "name": "How_markets_slowly_digest_changes_in_supply_and_demand.pdf",
+        "sha256": "88facacf8ffb46ac369d34041086b55349d44ede4f4b94b0e19c096ed611891c",
+        "size_bytes": 2511080,
+        "page_count": 111
+      },
+      "identity_evidence": {
+        "method": "Local title/author/version-stamp and first/second/final-page text inspection; title pages visually checked for Gould and Lehalle.",
+        "pdf_pages": [
+          1,
+          2,
+          111
+        ]
+      },
+      "source_type": "paper",
+      "repository_url": "https://arxiv.org/abs/0809.0822v1",
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "First page arXiv stamp is 0809.0822v1, dated 4 September 2008. Supplied file has 111 pages ending in the bibliography. Identity audit only; full reading and citation review remain pending."
     },
     {
-      "id": "missing:lehalle-laruelle-practice",
-      "title": "Market Microstructure in Practice",
+      "id": "local:gould-limit-order-books",
+      "title": "Limit Order Books",
       "authors": [
-        "Charles-Albert Lehalle",
-        "Sophie Laruelle"
+        "Martin D. Gould",
+        "Mason A. Porter",
+        "Stacy Williams",
+        "Mark McDonald",
+        "Daniel J. Fenn",
+        "Sam D. Howison"
       ],
-      "edition": "Unresolved; no supplied copy",
+      "edition": "arXiv:1012.0349v4; stamp 2013-04-01; supplied PDF rendering",
       "observed_isbns": [],
-      "availability": "missing",
-      "file": null,
-      "identity_evidence": null,
-      "coverage": "missing",
-      "text_status": "missing",
-      "notes": "No file in the supplied folder. Keep the original slot blocked; see docs/microstructure-alternatives.md for a proposed open-paper packet."
+      "availability": "local_file",
+      "file": {
+        "name": "Limit_Order_Books.pdf",
+        "sha256": "7ac42422db565b2dee81238544efc51f2eb8066e2c7699d88a0b6c36cdf0959b",
+        "size_bytes": 5034163,
+        "page_count": 42
+      },
+      "identity_evidence": {
+        "method": "Local title/author/version-stamp and first/second/final-page text inspection; title pages visually checked for Gould and Lehalle.",
+        "pdf_pages": [
+          1,
+          2,
+          42
+        ]
+      },
+      "source_type": "paper",
+      "repository_url": "https://arxiv.org/abs/1012.0349v4",
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "First-page stamp identifies v4, dated 1 April 2013. 42-page file ends in an empirical-study table. Two-column reading order needs care when extracting passages. Identity audit only; full reading and citation review remain pending."
+    },
+    {
+      "id": "local:lehalle-intraday-process",
+      "title": "Market Microstructure Knowledge Needed for Controlling an Intra-Day Trading Process",
+      "authors": [
+        "Charles-Albert Lehalle"
+      ],
+      "edition": "arXiv:1302.4592v1; stamp 2013-02-19; supplied PDF rendering",
+      "observed_isbns": [],
+      "availability": "local_file",
+      "file": {
+        "name": "Market_Microstructure_Knowledge_Needed_for_Controlling_an_Intra-Day_Trading_Process.pdf",
+        "sha256": "2a69c3b45410aff517cf59c9dfb17da360452f89047023df9bab4cdf7b2a5134",
+        "size_bytes": 522297,
+        "page_count": 33
+      },
+      "identity_evidence": {
+        "method": "Local title/author/version-stamp and first/second/final-page text inspection; title pages visually checked for Gould and Lehalle.",
+        "pdf_pages": [
+          1,
+          2,
+          33
+        ]
+      },
+      "source_type": "paper",
+      "repository_url": "https://arxiv.org/abs/1302.4592v1",
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Stamp identifies v1 from 19 February 2013, but the rendered title date is 27 November 2024. Preserve both observations; do not infer a new research revision from the rendering date. 33 PDF pages. Identity audit only; full reading and citation review remain pending."
+    },
+    {
+      "id": "local:laruelle-liquidity-pools",
+      "title": "Optimal split of orders across liquidity pools: a stochastic algorithm approach",
+      "authors": [
+        "Sophie Laruelle",
+        "Charles-Albert Lehalle",
+        "Gilles Pagès"
+      ],
+      "edition": "arXiv:0910.1166v3; stamp 2010-05-31; supplied PDF rendering",
+      "observed_isbns": [],
+      "availability": "local_file",
+      "file": {
+        "name": "Optimal_split_of_orders_across_liquidity_pools_a_stochastic_algorithm_approach.pdf",
+        "sha256": "84033f3d6516aac28e96f4314b85d8e09d0ac2e1d1092f5887670ac9ae073159",
+        "size_bytes": 792219,
+        "page_count": 32
+      },
+      "identity_evidence": {
+        "method": "Local title/author/version-stamp and first/second/final-page text inspection; title pages visually checked for Gould and Lehalle.",
+        "pdf_pages": [
+          1,
+          2,
+          32
+        ]
+      },
+      "source_type": "paper",
+      "repository_url": "https://arxiv.org/abs/0910.1166v3",
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Stamp identifies v3 from 31 May 2010; title text says this version May 28, 2018. Record the supplied rendering by hash rather than assuming that displayed date is a different arXiv version. 32 PDF pages including appendix. Identity audit only; full reading and citation review remain pending."
+    },
+    {
+      "id": "local:azencott-online-tca",
+      "title": "Realtime market microstructure analysis: online Transaction Cost Analysis",
+      "authors": [
+        "Robert Azencott",
+        "Arjun Beri",
+        "Yutheeka Gadhyan",
+        "Nicolas Joseph",
+        "Charles-Albert Lehalle",
+        "Matthew Rowley"
+      ],
+      "edition": "arXiv:1302.6363v2; stamp 2013-03-01; supplied PDF rendering",
+      "observed_isbns": [],
+      "availability": "local_file",
+      "file": {
+        "name": "Realtime_market_microstructure_analysis_online_Transaction_Cost_Analysis.pdf",
+        "sha256": "c9dbaf0b3cb883d6e5618516bcdda5c2f274e5b219ff1d7c6fe70d38c123488a",
+        "size_bytes": 670833,
+        "page_count": 35
+      },
+      "identity_evidence": {
+        "method": "Local title/author/version-stamp and first/second/final-page text inspection; title pages visually checked for Gould and Lehalle.",
+        "pdf_pages": [
+          1,
+          2,
+          35
+        ]
+      },
+      "source_type": "paper",
+      "repository_url": "https://arxiv.org/abs/1302.6363v2",
+      "coverage": "unverified",
+      "text_status": "text_present",
+      "notes": "Stamp identifies v2 from 1 March 2013, with rendered title date 27 November 2024. This supplied rendering has 35 pages, unlike the earlier repository abstract count of 33; pin the actual file. Ends in references. Identity audit only; full reading and citation review remain pending."
     }
   ],
   "assignments": [
@@ -1017,29 +1186,57 @@
       "character_id": "market_microstructure_mechanic",
       "position": 1,
       "source_id": "local:harris-trading-exchanges",
-      "intended_lesson": "Form a map of participants, orders, markets and liquidity.",
-      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+      "intended_lesson": "Form an initial map of participants, orders and liquidity using the supplied draft; keep omitted material and uncertainty explicit.",
+      "selection": "Owner-adopted supplied-material curriculum v2; register a fresh Character version when learning starts.",
+      "material_scope": "approved_excerpt",
+      "scope_authorization": "Owner explicitly accepted the supplied Harris draft excerpts; ADR-002-microstructure-reading-scope."
     },
     {
       "character_id": "market_microstructure_mechanic",
       "position": 2,
       "source_id": "local:johnson-dma",
       "intended_lesson": "Add execution mechanics, benchmarks and algorithm design.",
-      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+      "selection": "Owner-adopted supplied-material curriculum v2; register a fresh Character version when learning starts."
     },
     {
       "character_id": "market_microstructure_mechanic",
       "position": 3,
-      "source_id": "missing:bouchaud-trades-quotes-prices",
-      "intended_lesson": "Quantify order flow, impact and price formation.",
-      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+      "source_id": "local:bouchaud-slow-digest",
+      "intended_lesson": "Quantify persistent order flow, liquidity, impact and price formation.",
+      "material_scope": "full_paper",
+      "selection": "Owner-adopted replacement paper; curriculum v2."
     },
     {
       "character_id": "market_microstructure_mechanic",
       "position": 4,
-      "source_id": "missing:lehalle-laruelle-practice",
-      "intended_lesson": "Connect theory to measurement, monitoring and execution constraints.",
-      "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+      "source_id": "local:gould-limit-order-books",
+      "intended_lesson": "Challenge order-book models with empirical properties, limitations and open questions.",
+      "material_scope": "full_paper",
+      "selection": "Owner-adopted replacement paper; curriculum v2."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 5,
+      "source_id": "local:lehalle-intraday-process",
+      "intended_lesson": "Connect market design to scheduling, routing and execution constraints.",
+      "material_scope": "full_paper",
+      "selection": "Owner-adopted replacement paper; curriculum v2."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 6,
+      "source_id": "local:laruelle-liquidity-pools",
+      "intended_lesson": "Allocate orders across venues and test routing assumptions.",
+      "material_scope": "full_paper",
+      "selection": "Owner-adopted replacement paper; curriculum v2."
+    },
+    {
+      "character_id": "market_microstructure_mechanic",
+      "position": 7,
+      "source_id": "local:azencott-online-tca",
+      "intended_lesson": "Monitor execution quality and diagnose underperforming orders.",
+      "material_scope": "full_paper",
+      "selection": "Owner-adopted replacement paper; curriculum v2."
     },
     {
       "character_id": "probabilistic_risk_skeptic",
@@ -1096,6 +1293,51 @@
       "source_id": "local:freeman-shor-execution",
       "intended_lesson": "Examine decisions after entry, including exits and adaptation.",
       "selection": "Supplied edition candidate for next version; no frozen learning curriculum changed."
+    }
+  ],
+  "curriculum_revision": {
+    "id": "microstructure-supplied-material-v2",
+    "authorization": "Owner request: adopt the five supplied papers as replacements for the two missing microstructure books, retain Trading and Exchanges (draft), and use supplied transcripts. No further material search requested.",
+    "previous_catalog_commit": "e0f9e8454665e74193def2aa19f791c60e3ca8ab",
+    "decision_record": "decisions/records/ADR-002-microstructure-reading-scope.md",
+    "learning_status": "No new Character reading completed by this inventory revision."
+  },
+  "retired_sources": [
+    {
+      "id": "missing:bouchaud-trades-quotes-prices",
+      "title": "Trades, Quotes and Prices",
+      "authors": [
+        "Jean-Philippe Bouchaud",
+        "Julius Bonart",
+        "Jonathan Donier",
+        "Martin Gould"
+      ],
+      "edition": "Unresolved; no supplied copy",
+      "observed_isbns": [],
+      "availability": "missing",
+      "file": null,
+      "identity_evidence": null,
+      "coverage": "missing",
+      "text_status": "missing",
+      "notes": "No file in the supplied folder. Keep the original slot blocked; see docs/microstructure-alternatives.md for a proposed open-paper packet.",
+      "retirement_reason": "Owner replaced this acquisition target with the supplied paper sequence in microstructure-supplied-material-v2. Historical title retained; no active acquisition blocker."
+    },
+    {
+      "id": "missing:lehalle-laruelle-practice",
+      "title": "Market Microstructure in Practice",
+      "authors": [
+        "Charles-Albert Lehalle",
+        "Sophie Laruelle"
+      ],
+      "edition": "Unresolved; no supplied copy",
+      "observed_isbns": [],
+      "availability": "missing",
+      "file": null,
+      "identity_evidence": null,
+      "coverage": "missing",
+      "text_status": "missing",
+      "notes": "No file in the supplied folder. Keep the original slot blocked; see docs/microstructure-alternatives.md for a proposed open-paper packet.",
+      "retirement_reason": "Owner replaced this acquisition target with the supplied paper sequence in microstructure-supplied-material-v2. Historical title retained; no active acquisition blocker."
     }
   ]
 }

@@ -26,6 +26,8 @@ Record validation evidence and remaining blockers here when implemented. Complet
 
 ## Implementation evidence
 
+Source-scope extension (2026-09-05): the [owner-adopted Microstructure revision](../decisions/records/ADR-002-microstructure-reading-scope.md) requires ordered completion of papers and accepted excerpts. The engine now pins these scopes in the curriculum, requires excerpt authority and reviewed declared coverage, and preserves scope in checkpoints. Generic samples/fixtures cannot become complete reading. Supplied transcripts can be loaded by exact hash and sequential page markers. This changes no frozen Bogle artifacts and performs no new Character learning.
+
 Delivered `src/trade_theorist/learn/`, Index Steward's [design-prior constitution](../characters/index_steward/constitution.md) and unchanged ordered [curriculum](../characters/index_steward/curriculum.yaml), plus original two-section material, recorded outputs, cited checkpoints/memory, authored assimilation/adversarial review and preregistered fixture theories in `examples/learning/`. Fixture identity is separate from the real Character. The foundation remains Bogle; no summary or alternate source was substituted.
 
 Tests pass for frozen priors, pinned source/constitution/curriculum hashes, exact locators and short supporting passages, ordered resume, duplicate prevention, changed-material rejection, source rights/recency, sample/full-book separation, interrupted response reuse, malformed citation rejection, ambiguous-call suppression and persistent usage caps. The two-section offline demo reruns without new responses or duplicate effects. See [workflow and evidence](../docs/foundation-implementation.md).

@@ -3,7 +3,7 @@
 from jsonschema import Draft202012Validator
 
 from ..contracts import ContractError, canonical, digest, utc, validate
-from ..schema import ID, S, STRINGS, CONF, obj, array, enum, nullable
+from ..schema import ID, S, STRINGS, CONF, COMPLETABLE_SCOPES, obj, array, enum, nullable
 from ..storage import now
 
 
@@ -55,13 +55,21 @@ class Learner:
             raise ContractError("Recheck source access before ingestion")
         if source["access"] not in ("public_full_text", "owned_copy", "user_supplied", "library_loan", "sample_only") or source["ingestion_status"] == "blocked":
             raise ContractError("Unacquired text cannot be learned")
-        material_schema = obj(source_id=ID, scope=enum("fixture", "sample", "full_book"), completeness_verified={"type": "boolean"}, coverage_evidence=S, sections=array(obj(index={"type": "integer", "minimum": 1}, locator=S, text=S), 1))
+        material_schema = obj(source_id=ID, scope=enum("fixture", "sample", *COMPLETABLE_SCOPES), completeness_verified={"type": "boolean"}, coverage_evidence=S, sections=array(obj(index={"type": "integer", "minimum": 1}, locator=S, text=S), 1))
         if not Draft202012Validator(material_schema).is_valid(material) or material["source_id"] != source_id:
             raise ContractError("Invalid source material manifest")
         if [s["index"] for s in material["sections"]] != list(range(1, len(material["sections"]) + 1)) or len({s["locator"] for s in material["sections"]}) != len(material["sections"]):
             raise ContractError("Source sections must be unique and ordered")
-        if material["scope"] == "full_book" and (source["access"] == "sample_only" or not material["completeness_verified"]):
-            raise ContractError("Sample or unverified coverage cannot become full-book reading")
+        scope = material["scope"]
+        slot = curriculum[position - 1]
+        if scope in ("full_paper", "approved_excerpt") and slot.get("material_scope") != scope:
+            raise ContractError("Paper or excerpt scope must be explicit in the pinned curriculum")
+        if slot.get("material_scope") and scope != slot["material_scope"]:
+            raise ContractError("Material scope differs from the pinned curriculum")
+        if scope == "approved_excerpt" and not (isinstance(slot.get("scope_authorization"), str) and slot["scope_authorization"].strip()):
+            raise ContractError("Excerpt completion needs recorded scope authorization")
+        if scope in COMPLETABLE_SCOPES and (not material["completeness_verified"] or (scope != "approved_excerpt" and source["access"] == "sample_only")):
+            raise ContractError("Sample or unverified coverage cannot become complete-source reading")
         if (material["scope"] == "fixture") != (character["contamination"] == "fixture"):
             raise ContractError("Fixture material requires a separate fixture Character")
         if material["scope"] != "fixture" and source["contamination"] == "fixture":
@@ -73,8 +81,11 @@ class Learner:
         with self.store.transaction():
             checkpoints = [r for r in self.store.records() if r["record_type"] == "checkpoint" and r["character_version"] == character_version]
             for earlier in range(1, position):
-                if not any(c["curriculum_position"] == earlier and c["reading_status"] == "complete" and c["material_scope"] == "full_book" for c in checkpoints):
-                    raise ContractError("Earlier curriculum book is incomplete")
+                expected = curriculum[earlier - 1]
+                if not any(c["curriculum_position"] == earlier and c["reading_status"] == "complete"
+                           and c["material_scope"] == expected.get("material_scope", "full_book")
+                           and c["source_ids"] == [expected["source_id"]] for c in checkpoints):
+                    raise ContractError("Earlier curriculum source is incomplete")
             earlier_checkpoints = sorted((c for c in checkpoints if c["curriculum_position"] < position), key=lambda c: (c["curriculum_position"], c["section_index"]))
             prior = earlier_checkpoints[-1] if earlier_checkpoints else {"constitution": constitution, "memory": [], "predictions": ["No source-grounded beliefs have been acquired yet."]}
             if initial_prior is not None:
@@ -131,7 +142,7 @@ class Learner:
         previous_memory = prior.get("consolidated_memory", [])
         if set(claims) & {c["claim_id"] for c in previous_memory}:
             raise ContractError("New claims cannot overwrite old claim IDs")
-        checkpoint = dict(base, id=checkpoint_id, record_type="checkpoint", character_version=frozen["character_version"], curriculum_position=frozen["position"], section_index=next_index, source_ids=[frozen["source_id"]], source_hash=frozen["source_hash"], prior_hash=digest(prior), prior_checkpoint_id=prior.get("id"), accepted_claims=[claims[i] for i in accepted], rejected_claims=[claims[i] for i in rejected], memory_delta=response["memory_delta"], consolidated_memory=previous_memory + [claims[i] for i in accepted], adversarial_review=response["adversarial_review"], reading_status="complete" if frozen["material"]["scope"] == "full_book" and next_index == len(frozen["material"]["sections"]) else "partial", material_scope=frozen["material"]["scope"], model_call_id=call_id)
+        checkpoint = dict(base, id=checkpoint_id, record_type="checkpoint", character_version=frozen["character_version"], curriculum_position=frozen["position"], section_index=next_index, source_ids=[frozen["source_id"]], source_hash=frozen["source_hash"], prior_hash=digest(prior), prior_checkpoint_id=prior.get("id"), accepted_claims=[claims[i] for i in accepted], rejected_claims=[claims[i] for i in rejected], memory_delta=response["memory_delta"], consolidated_memory=previous_memory + [claims[i] for i in accepted], adversarial_review=response["adversarial_review"], reading_status="complete" if frozen["material"]["scope"] in COMPLETABLE_SCOPES and next_index == len(frozen["material"]["sections"]) else "partial", material_scope=frozen["material"]["scope"], model_call_id=call_id)
         additions = [checkpoint]
         if response["theory"] is not None:
             registration = dict(base, id=registration_id, record_type="registration", character_version=frozen["character_version"], **response["test"])

@@ -15,3 +15,7 @@ The additive `learning_session` contract supplies a non-trading scope for source
 The schema validates a policy document's completeness, not the authenticity of a human signature or whether a market instrument really meets declared liquidity criteria. Paper operation is a later task with independent approval and data qualification. The synthetic policy carries proposed numbers only as test data. `examples/paper-policy.template.json` and `examples/preregistration.template.json` intentionally fail validation until their unresolved fields are filled and approved.
 
 Source citations contain source ID, actual section locator and passage hash. The learning engine also verifies short supporting quotations against the supplied private material. This proves locator/text consistency; substantive faithfulness and lawful source rights still require review. All fixture examples are original synthetic material and cannot establish real reading or investment performance.
+
+## Declared source completion
+
+The additive checkpoint scopes `full_paper` and `approved_excerpt` support the owner-adopted Microstructure curriculum. `reading_status: complete` means completion of the declared material scope; it is not synonymous with a full published book. Scope and excerpt authority are enforced against the pinned curriculum when learning starts. The engine requires reviewed declared coverage and exact predecessor source/scope completion. `sample` and `fixture` remain ineligible for completed reading. Existing full-book records and frozen Bogle artifacts are unchanged.

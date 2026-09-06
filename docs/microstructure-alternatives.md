@@ -1,23 +1,31 @@
-# Accessible options for the Microstructure curriculum
+# Adopted Microstructure reading packet
 
-Checked 2026-09-05. These are **proposed substitutes**, not acquired sources or completed learning. The supplied folder lacks Trades, Quotes and Prices and Market Microstructure in Practice. Its Trading and Exchanges file is a 113-page March 2002 draft excerpt collection; it is not a complete foundation. Algorithmic Trading and DMA is a 595-page scan with no extractable text in the first 16 pages.
+Updated 2026-09-05. The owner supplied and adopted all five papers below, accepted Trading and Exchanges (draft) as the limited foundation, and provided Johnson's OCR transcript. This is now the active plan under [ADR-002](../decisions/records/ADR-002-microstructure-reading-scope.md), not a proposal awaiting approval. No further material search is required.
 
-My recommendation is to obtain a complete Harris foundation, prepare Johnson with reviewed OCR, and consider the following author-deposited research packet for the two later positions. This is an inference about lesson coverage based on the primary repositories' abstracts and metadata, not a full-content equivalence review. These papers are freely accessible through arXiv's full-text links; they are not free copies of the missing books.
+The sequence is Harris's supplied 113-page draft excerpts, Johnson, then the five papers in this order. The two missing books remain historical acquisition targets and no longer block this plan.
 
-| Original slot | Proposed reading order | Intended lesson coverage |
-| --- | --- | --- |
-| 3: Trades, Quotes and Prices | 3a. Bouchaud, Farmer and Lillo, [How markets slowly digest changes in supply and demand](https://arxiv.org/abs/0809.0822v1), 2008, v1 | Persistent order flow, liquidity, market impact and price formation |
-| 3: Trades, Quotes and Prices | 3b. Gould, Porter, Williams, McDonald, Fenn and Howison, [Limit Order Books](https://arxiv.org/abs/1012.0349v4), 2013 revision, v4 | Empirical order-book properties, model limitations and unresolved questions |
-| 4: Market Microstructure in Practice | 4a. Lehalle, [Market Microstructure Knowledge Needed for Controlling an Intra-Day Trading Process](https://arxiv.org/abs/1302.4592v1), 2013, v1 | Market design, scheduling, routing and execution constraints |
-| 4: Market Microstructure in Practice | 4b. Laruelle, Lehalle and Pagès, [Optimal split of orders across liquidity pools: a stochastic algorithm approach](https://arxiv.org/abs/0910.1166v3), 2010 revision, v3 | Allocating orders across venues and testing routing assumptions |
-| 4: Market Microstructure in Practice | 4c. Azencott, Beri, Gadhyan, Joseph, Lehalle and Rowley, [Realtime market microstructure analysis: online Transaction Cost Analysis](https://arxiv.org/abs/1302.6363v2), 2013 revision, v2 | Monitoring execution quality and diagnosing underperforming orders |
+| Active position | Supplied paper / stamped version | PDF pages | Intended lesson |
+| --- | --- | --- | --- |
+| 3 | Bouchaud, Farmer and Lillo, [How markets slowly digest changes in supply and demand](https://arxiv.org/abs/0809.0822v1), 2008, v1 | 111 | Persistent order flow, liquidity, impact and price formation |
+| 4 | Gould and coauthors, [Limit Order Books](https://arxiv.org/abs/1012.0349v4), 2013 revision, v4 | 42 | Empirical order-book properties and model limitations |
+| 5 | Lehalle, [Market Microstructure Knowledge Needed for Controlling an Intra-Day Trading Process](https://arxiv.org/abs/1302.4592v1), 2013, v1 | 33 | Market design, scheduling, routing and execution constraints |
+| 6 | Laruelle, Lehalle and Pagès, [Optimal split of orders across liquidity pools: a stochastic algorithm approach](https://arxiv.org/abs/0910.1166v3), 2010 revision, v3 | 32 | Splitting orders across venues and testing routing assumptions |
+| 7 | Azencott and coauthors, [Realtime market microstructure analysis: online Transaction Cost Analysis](https://arxiv.org/abs/1302.6363v2), 2013 revision, v2 | 35 | Execution monitoring and underperformance diagnosis |
 
-The second packet includes work by both Lehalle and Laruelle. Lehalle's [institutional publication list](https://www.cmap.polytechnique.fr/~charles-albert.lehalle/publications/) also identifies the original book's 2013 and 2018 editions and related research. I did not establish a freely available authorized complete edition of either missing book.
+Positions 3–4 replace Trades, Quotes and Prices. Positions 5–7 replace Market Microstructure in Practice. The lesson mapping is the adopted design; it is not a claim of complete equivalence to either book.
 
-## Gaps that remain
+## Identity and transcript findings
 
-The papers overlap the intended lessons but do not reproduce the books' complete sequence, exercises, case studies or breadth. Their historical market descriptions are not current venue rules. Execution calibration still needs appropriate quote/order data, timestamps, fees, latency and out-of-sample checks. A literature packet cannot supply those operational inputs or prove a trading edge.
+The [catalog](../library/catalog/characters.json) pins each supplied PDF's SHA-256, size, title, authors, first-page arXiv version stamp and checked PDF pages. Titles, initial material and final pages were inspected for identity; this was not a complete reading pass.
 
-Before adopting the packet, record a new curriculum version with each paper as a separate ordered source and a lesson-coverage map. Pin the versions above and file hashes, record source-use scope, then complete the ordinary prior/checkpoint/adversarial-review process. Store source bodies privately; arXiv availability alone is not a blanket redistribution or model-training license. The current inventory intentionally retains the two original missing slots and does not silently substitute these papers.
+Some rendered title dates differ from the arXiv stamps: Lehalle and online TCA display November 27, 2024, while the liquidity-pools paper displays May 28, 2018. These dates are retained as observations, not silently promoted to different research versions. The supplied TCA PDF has 35 pages, rather than the 33 pages listed in the earlier repository abstract. Exact local file fingerprints take precedence for future citations.
 
-A complete Harris copy is still the first priority. If that cannot be obtained, a different formative source would change the Character's starting assumptions and needs an explicit foundation design revision, rather than treating excerpts as a whole book.
+Johnson's transcript has all 595 PDF page markers in order. O'glove's Quality of Earnings transcript, used by the Event Character, similarly has 231. Their hashes are bound to the original scans in the catalog. Blank text pages are listed explicitly. Identity and selected text were sampled; OCR word, numeric and equation accuracy is not exhaustively certified. Use the supplied transcripts and consult source pages when a passage is ambiguous; no new OCR job is needed.
+
+## Learning scope
+
+Harris remains an excerpt collection. The owner accepted reading all supplied pages as a limited foundation; missing published material stays unknown. Completion of this declared scope can advance the revised curriculum, but cannot be reported as reading the full published book.
+
+The engine now distinguishes complete books, complete papers and explicitly approved excerpts. Scope and excerpt authority must be pinned in the Character's curriculum, coverage must be reviewed, and sections must finish in order before the next source begins. Generic samples and fixtures still cannot become completed reading. No Character has learned these additions merely because they were registered.
+
+Historical market descriptions are not current venue rules, and the reading packet does not supply quote data or demonstrate a trading edge. Ordinary citation, coverage and evaluation checks remain part of the later work; they are not requests to find more books.

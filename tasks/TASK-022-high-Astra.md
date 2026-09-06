@@ -14,7 +14,7 @@ Specify the separate Trader Analyzer package contract for official House/Senate 
 
 Analyzer contract and fixture adapter; Event curriculum/source plan; delay-aware evaluation cases.
 
-Source update (2026-09-05): all four Event title slots have local files; Quality of Earnings needs OCR. Expectations Investing shares a file with Value, but learned interpretation must remain Character-specific. This task provides a source plan, not complete Event learning; see the [continuation map](../docs/character-training.md).
+Source update (2026-09-05): all four Event title slots have local files; Quality of Earnings now has a supplied transcript with 231 sequential PDF page markers; use it without generating replacement OCR. Expectations Investing shares a file with Value, but learned interpretation must remain Character-specific. This task provides a source plan, not complete Event learning; see the [continuation map](../docs/character-training.md).
 
 ## Acceptance
 

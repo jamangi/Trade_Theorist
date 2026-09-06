@@ -2,6 +2,7 @@
 
 from copy import deepcopy
 import json
+import hashlib
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -9,7 +10,7 @@ import unittest
 from trade_theorist.contracts import ContractError, digest, validate_bundle
 from trade_theorist.fixtures import base_records, CONSTITUTION
 from trade_theorist.learn import BoundedModel, Learner
-from trade_theorist.learn.reviewed import ReviewedTranscriptProvider, foundation_status, material_from_pages, write_once
+from trade_theorist.learn.reviewed import ReviewedTranscriptProvider, foundation_status, material_from_pages, pages_from_transcript, write_once
 from trade_theorist.storage import Store
 
 
@@ -66,6 +67,70 @@ class ReviewedLearningTests(unittest.TestCase):
         invalid[1]["contamination"] = "forward-reviewed"
         with self.assertRaises(ContractError):
             validate_bundle(invalid)
+
+    def test_approved_excerpt_then_paper_preserves_scope_and_order(self):
+        self.curriculum[0].update(material_scope="approved_excerpt", scope_authorization="Owner-approved original test excerpt")
+        second_id = "source:original-test-paper"
+        self.curriculum.append(dict(position=2, source_id=second_id, intended_lesson="Challenge the original excerpt", material_scope="full_paper"))
+        self.records[2]["curriculum_hash"] = digest(self.curriculum)
+        self.records[1]["source_ids"].append(second_id)
+        self.records.append(dict(self.records[0], id=second_id))
+        excerpt = material_from_pages(self.pages, self.review, expected_ranges=self.ranges, scope="approved_excerpt")
+        second_review = dict(self.review, source_id=second_id)
+        paper = material_from_pages(self.pages, second_review, expected_ranges=self.ranges, scope="full_paper")
+        providers = {self.review["source_id"]: ReviewedTranscriptProvider(self.review, excerpt, CONSTITUTION, self.curriculum),
+                     second_id: ReviewedTranscriptProvider(second_review, paper, CONSTITUTION, self.curriculum)}
+        def provider(request, max_output_tokens):
+            return providers[request["frozen"]["source_id"]](request, max_output_tokens)
+        with TemporaryDirectory() as directory, Store(directory) as store:
+            store.put_records(self.records)
+            model = BoundedModel(store, self.scope, provider, budget_id="budget:scope-test", model_id="review-import-test", prompt_version="scope-test", max_calls=4, max_tokens=100000, max_output_tokens=2000)
+            learner = Learner(store, model)
+            options = dict(character_version=self.char, curriculum=self.curriculum, constitution=CONSTITUTION)
+            first = learner.freeze(**options, material=excerpt, source_id=excerpt["source_id"], position=1)
+            learner.step(first)
+            with self.assertRaises(ContractError):
+                learner.freeze(**options, material=paper, source_id=second_id, position=2)
+            done = learner.step(first)
+            self.assertEqual((done["reading_status"], done["material_scope"]), ("complete", "approved_excerpt"))
+            second = learner.freeze(**options, material=paper, source_id=second_id, position=2)
+            next_checkpoint = learner.step(second)
+            self.assertEqual(next_checkpoint["prior_checkpoint_id"], done["id"])
+            final = learner.step(second)
+            self.assertEqual((final["reading_status"], final["material_scope"]), ("complete", "full_paper"))
+            store.verify()
+
+    def test_excerpt_requires_pinned_scope_authorization_and_coverage(self):
+        for case in ("scope_not_pinned", "no_authority", "incomplete", "full_book_mismatch"):
+            with self.subTest(case=case), TemporaryDirectory() as directory, Store(directory) as store:
+                curriculum = deepcopy(self.curriculum)
+                if case != "scope_not_pinned":
+                    curriculum[0]["material_scope"] = "approved_excerpt"
+                if case != "no_authority":
+                    curriculum[0]["scope_authorization"] = "Original test approval"
+                records = deepcopy(self.records)
+                records[2]["curriculum_hash"] = digest(curriculum)
+                store.put_records(records)
+                material = dict(self.material, scope="full_book" if case == "full_book_mismatch" else "approved_excerpt", completeness_verified=case != "incomplete")
+                learner = self.learner(store, lambda *_: self.fail("No model call is authorized by failed preparation"))
+                with self.assertRaises(ContractError):
+                    learner.freeze(character_version=self.char, curriculum=curriculum, constitution=CONSTITUTION, material=material, source_id=material["source_id"], position=1)
+
+    def test_transcript_hash_and_exact_page_sequence(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "original.txt"
+            original = b"Original test transcript\r\n===== Page 1 =====\r\nFirst page\r\n===== Page 2 =====\r\n"
+            path.write_bytes(original)
+            fingerprint = hashlib.sha256(original).hexdigest()
+            self.assertEqual(pages_from_transcript(path, expected_sha256=fingerprint, expected_pages=2), ["First page", ""])
+            path.write_bytes(original + b"changed")
+            with self.assertRaises(ContractError):
+                pages_from_transcript(path, expected_sha256=fingerprint, expected_pages=2)
+            for numbers in ([1], [1, 1], [2, 1], [1, 3]):
+                data = "\n".join(f"===== Page {n} =====\nOriginal text" for n in numbers).encode()
+                path.write_bytes(data)
+                with self.assertRaises(ContractError):
+                    pages_from_transcript(path, expected_sha256=hashlib.sha256(data).hexdigest(), expected_pages=2)
 
     def test_coverage_and_wrong_page_anchors_fail(self):
         changes = [lambda r: r["sections"].reverse(), lambda r: r["sections"].pop(), lambda r: r["sections"][0]["claims"][0].update(page=2), lambda r: r["sections"][0]["claims"][0].update(anchor="does not appear")]

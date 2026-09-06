@@ -44,6 +44,9 @@ LIMITS = obj(initial_cash=MONEY, max_deployed_capital=MONEY, company_weight=CONF
 CLOCK = obj(calendar=S, cadence=S, max_stale_sessions=N, eligibility=enum("publication_and_ingestion", "archived_publication"), missing_data=enum("halt_all", "halt_affected"))
 COSTS = obj(fee_per_order=MONEY, slippage_bps=DEC, spread_bps=DEC, fill_model=S, corporate_actions=S)
 
+COMPLETABLE_SCOPES = ("full_book", "full_paper", "approved_excerpt")
+
+
 FIELDS = {
     "learning_session": dict(mode={"const": "learning"}, character_versions=array(ID, 1), source_ids=array(ID, 1), authorization=S, provenance=S),
     "conversation": dict(participant_character_versions=array(ID, 1), snapshot_id=ID, portfolio_id=ID, deadline=UTC),
@@ -52,7 +55,7 @@ FIELDS = {
     "experiment": dict(mode=enum("council", "character_portfolio"), regime=enum("fixture", "historical_restricted", "hindsight", "forward_shadow", "forward_paper"), character_versions=array(ID, 1), policy_id=ID, universe=array(INSTRUMENT, 1), baseline_cash=S, baseline_fund=S, membership_basis=S, decision_cadence=S, sizing_rules=S, data_feeds=array(S, 1), costs=COSTS, start_at=UTC, end_at=UTC, development_end_at=UTC, validation_end_at=UTC, metrics=array(S, 1), minimum_sessions=POS, minimum_forecasts=POS, advice=enum("none", "bounded"), knowledge_cutoff=UTC, retrieval_policy=S, model_limitations=S, approval_ref=S),
     "character": dict(character_id=ID, version=S, constitution_hash=HASH, curriculum_hash=HASH, readiness=enum("not_ready", "fixture_only", "partial", "ready"), foundation_source_id=ID),
     "portfolio": dict(mode=enum("council", "character_portfolio", "baseline"), owner_character_version=ID, initial_cash=MONEY, currency={"const": "USD"}),
-    "checkpoint": dict(character_version=ID, curriculum_position=POS, section_index=POS, source_ids=array(ID, 1), source_hash=HASH, prior_hash=HASH, prior_checkpoint_id=nullable(ID), accepted_claims=array(CLAIM), rejected_claims=array(CLAIM), memory_delta=array(S, 1), consolidated_memory=array(CLAIM, 1), adversarial_review=array(S, 1), reading_status=enum("partial", "complete"), material_scope=enum("fixture", "sample", "full_book"), model_call_id=ID),
+    "checkpoint": dict(character_version=ID, curriculum_position=POS, section_index=POS, source_ids=array(ID, 1), source_hash=HASH, prior_hash=HASH, prior_checkpoint_id=nullable(ID), accepted_claims=array(CLAIM), rejected_claims=array(CLAIM), memory_delta=array(S, 1), consolidated_memory=array(CLAIM, 1), adversarial_review=array(S, 1), reading_status=enum("partial", "complete"), material_scope=enum("fixture", "sample", *COMPLETABLE_SCOPES), model_call_id=ID),
     "registration": dict(character_version=ID, prediction=S, horizon=S, benchmark=S, failure_condition=S, evaluation_start=UTC, evaluation_end=UTC, metrics=array(S, 1)),
     "theory": dict(character_version=ID, version=S, checkpoint_id=ID, test_registration_id=ID, position=S, minimal_logic_chain=array(S, 3), scope=S, assumptions=array(S, 1), predicted_observables=array(S, 1), portfolio_implication=enum("buy", "sell", "size", "wait", "abstain"), invalidation_conditions=array(S, 1), strongest_counterarguments=array(S, 1), rebuttals=STRINGS, confidence=CONF, evidence_and_citations=array(CITATION, 1)),
     "observation": dict(instrument_id=ID, asset_class=ASSET, event_at=UTC, published_at=UTC, ingested_at=UTC, availability_evidence=S, revision=POS, supersedes_id=nullable(ID), superseded_at=nullable(UTC), feed=S, units=S, payload_hash=HASH, quality=enum("eligible", "quarantined", "missing"), publication_eligibility=enum("unknown", "private_only", "derived_permitted", "raw_permitted")),

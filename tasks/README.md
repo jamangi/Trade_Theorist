@@ -2,7 +2,7 @@
 
 Status (2026-09-05): TASK-001–004 are implemented and verified, including Index Steward's completed owner-supplied Bogle foundation. The remaining curriculum sources and other Characters are unread. TASK-005–023 remain planned. See [completed learning evidence](../docs/index-steward-foundation.md), [foundation setup](../docs/foundation-implementation.md) and the individual task records. Task numbers are stable; filenames show recommended effort and model.
 
-The owner-supplied [book inventory](../library/catalog/INVENTORY_REPORT.md) now covers all seven Characters. Learning starts in 004 and expands in 005; 021 adds microstructure/risk, while 022 only plans Event sources. No task currently promises complete four-book learning for all Characters, and Mean-Reversion learning is not yet assigned. See the [training/continuation map](../docs/character-training.md). This catalog refresh does not complete or launch 005–023.
+The [inventory](../library/catalog/INVENTORY_REPORT.md) now covers all 31 active positions across seven Characters, including the [accepted Microstructure draft/paper sequence](../decisions/records/ADR-002-microstructure-reading-scope.md). Both scans have supplied transcripts; no more material search or replacement OCR is required. Learning starts in 004, expands in 005 and reaches microstructure/risk in 021; 022 only plans Event sources. Complete curricula still require additional ordered reading runs. Mean-Reversion learning is not yet assigned. See the [continuation map](../docs/character-training.md). This refresh does not launch 005–023.
 
 ## How to use the queue
 
