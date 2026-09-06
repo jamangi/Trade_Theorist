@@ -19,7 +19,7 @@
   "revision_count": 1,
   "quarantine_count": 0,
   "blockers": [
-    "No account-authorized Alpaca sample was supplied; fixture evidence cannot qualify required coverage.",
+    "This recorded-response fixture is not the separate account-authorized sample and cannot qualify required coverage.",
     "Expected market sessions are missing; no bars were synthesized.",
     "Private storage, internal replay and reporting rights remain unverified."
   ],

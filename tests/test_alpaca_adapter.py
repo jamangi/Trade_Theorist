@@ -6,6 +6,7 @@ import unittest
 from trade_theorist.adapters.alpaca_market_data import (
     AlpacaBarsAdapter, AlpacaError, EntitlementDenied, Response, quality_report,
 )
+from trade_theorist.contracts import digest
 from trade_theorist.ingest import (
     CSVMarketAdapter, RevisionBook, SessionCalendar, validate_capability,
 )
@@ -138,6 +139,12 @@ class AlpacaAdapterTests(unittest.TestCase):
         quality = json.loads((root / "examples/ingest/alpaca-quality.blocked.json").read_text())
         self.assertEqual(quality["coverage_status"], "blocked")
         self.assertEqual(quality["sample_kind"], "recorded_fixture")
+        account = json.loads((root / "examples/ingest/alpaca-account-access.2026-09-06.json").read_text())
+        self.assertEqual(account["content_hash"], digest({k: v for k, v in account.items() if k != "content_hash"}))
+        self.assertTrue(account["historical_sip"]["delayed_sip_sample_verified"])
+        self.assertFalse(account["latest_sip"]["entitled"])
+        self.assertEqual(account["paper_account"]["orders_submitted"], 0)
+        self.assertNotIn("account_id", json.dumps(account).lower())
 
 
 if __name__ == "__main__":

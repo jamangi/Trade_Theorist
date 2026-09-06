@@ -1,6 +1,6 @@
 # TASK-014: Qualify a vendor and implement one market-data adapter
 
-- Status: base adapter implemented; shared request controls pending; production qualification blocked
+- Status: delayed SIP sample passed; shared request controls and production rights decision pending
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
 - Dependencies: TASK-001, TASK-002, TASK-006
@@ -29,8 +29,14 @@ capability record, quality report and [ADR-003](../decisions/records/ADR-003-alp
 Pagination/resume, bounded 429/5xx retries, raw adjustment, response validation,
 idempotence, revisions, quarantine, gaps and fail-closed entitlement denial are tested.
 
-Production qualification remains blocked: no Alpaca credentials or account-authorized
-sample were supplied, required coverage is therefore unproved, and private storage,
+On 2026-09-06 regenerated paper credentials authenticated successfully. Explicit
+historical `feed=sip` requests ending 20 minutes before retrieval returned five daily
+bars for each of VTI, SPY and QQQ; current/latest SIP returned HTTP 403. The sanitized
+report contains no account identifier, credential or raw price, and no order was
+submitted.
+
+Production qualification remains blocked because the small sample does not prove all
+required coverage, shared request controls remain pending, and private storage,
 internal replay and reporting rights require owner/contract verification. No paid plan
 was authorized or purchased. No alternative vendor was selected. See the detailed
 [implementation record](../docs/task-014-015-implementation.md).
@@ -47,4 +53,4 @@ Correct the existing no-op default sleeper and truncated server wait: `_delay` c
 
 Bind resume state to the full canonical query, atomically checkpoint accepted pages, and preserve later-symbol coverage across pagination. Cache hits make zero provider calls; three consumers of one missing window share one fetch sequence. Ship validated policy/query/work telemetry contracts without keys or account secrets; doctor reports missing coordinator/policy readiness. Verify the applicable Basic feed entitlement separately from the request limit; no silent SIP/IEX or time-window fallback.
 
-Acceptance requires recorded-transport tests for these controls and TASK-016's **offline rate preflight** before any account-authorized sample. The preflight does not require full TASK-016 completion or a real TASK-015 window. Once it passes, collect only the separately authorized bounded sample to qualify entitlement, coverage, rights and measured headroom. A source/permission blocker remains a blocker; this task update does not authorize account calls.
+Acceptance requires recorded-transport tests for these controls and TASK-016's **offline rate preflight** before forward operation or any larger coordinator-backed sample. The preflight does not require full TASK-016 completion or a real TASK-015 window. The owner separately authorized the small read-only credential check recorded above; it does not qualify rate behavior, complete coverage or rights. A source/permission blocker remains a blocker.

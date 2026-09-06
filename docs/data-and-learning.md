@@ -1,6 +1,6 @@
 # Data acquisition and the learning library
 
-Status (2026-09-06): catalog, ordered learning and permitted-CSV point-in-time ingestion are implemented. The [current inventory](../library/catalog/INVENTORY_REPORT.md) records 30 PDFs and two transcripts covering all 31 active positions. Index Steward's Bogle foundation is complete; Value and Trend each have one partial opening checkpoint and remain ineligible for real recommendations. The owner adopted the limited Harris draft and five papers for Microstructure; missing original books are retired targets. No market-data vendor or subscription is selected. See [tasks 005–006 evidence](task-005-006-implementation.md).
+Status (2026-09-06): catalog, ordered learning and permitted-CSV point-in-time ingestion are implemented. The [current inventory](../library/catalog/INVENTORY_REPORT.md) records 30 PDFs and two transcripts covering all 31 active positions. Index Steward's Bogle foundation is complete; Value and Trend each have one partial opening checkpoint and remain ineligible for real recommendations. The owner adopted the limited Harris draft and five papers for Microstructure; missing original books are retired targets. No market-data vendor or subscription is selected. A bounded account-authorized check returned delayed historical SIP daily bars for VTI, SPY and QQQ; this does not select Alpaca or establish current SIP or data rights. See [tasks 014–015 evidence](task-014-015-implementation.md).
 
 ## A cheap data path
 
@@ -11,7 +11,7 @@ Ordinary scripts perform downloads, pagination, retries, normalization, hashing,
 | Candidate / source | Useful role | Limitation or decision still needed |
 | --- | --- | --- |
 | Permitted CSV and synthetic fixtures | Immediate deterministic development | Fixtures demonstrate mechanics, not an edge; real CSV needs provenance and rights |
-| Alpaca market-data API | Candidate for a small forward-data pilot | Feed entitlement, coverage, storage and display rights must be checked for the actual account |
+| Alpaca market-data API | Candidate for a small forward-data pilot; delayed SIP daily-bar sample passed | Current SIP, complete coverage, shared request control, storage and display rights remain unresolved |
 | Alpaca paper environment | Optional later execution-adapter validation | Separate simulation, not a substitute for internal per-Character ledgers or evidence of real fills |
 | SEC EDGAR APIs | Primary company filings and financial facts for Value/Event research | Preserve filing vintages; this does not provide stock prices or House/Senate transaction reports |
 | Broader licensed archival vendor, to be selected | Delistings, historical membership, corporate actions, quote coverage | Obtain a requirements-matched sample and rights record before choosing or paying |
@@ -24,7 +24,7 @@ The [SEC EDGAR API documentation](https://www.sec.gov/search-filings/edgar-appli
 
 An adapter declares instruments, sessions, intervals, feed, adjustment basis, pagination behavior, revisions, and missing-data semantics. Preserve raw content hashes and vendor request metadata. Keep credentials in local environment/secret storage. Use request timeouts, bounded exponential retry with jitter, rate-limit responses, resume watermarks, and a quarantine table. Never silently fall back from one feed to another.
 
-The [shared request-budget contract](market-data-request-budget.md) adds a required TASK-014 follow-up: cache/coalesce before fetching; centrally meter every page and retry under the 200/min maximum with an initial 180/min operating ceiling; persist quota state and full-query resume identity. All Characters and modes receive the same eligible frozen observations. Reactive 429 handling alone is insufficient, and rate compliance does not establish recent SIP entitlement. TASK-016's offline rate preflight precedes account sampling; account rights and qualification remain separate gates.
+The [shared request-budget contract](market-data-request-budget.md) adds a required TASK-014 follow-up: cache/coalesce before fetching; centrally meter every page and retry under the 200/min maximum with an initial 180/min operating ceiling; persist quota state and full-query resume identity. All Characters and modes receive the same eligible frozen observations. Reactive 429 handling alone is insufficient, and rate compliance does not establish recent SIP entitlement. TASK-016's offline rate preflight precedes forward operation and any larger coordinator-backed sample; the owner separately authorized the handful of read-only calls in the initial credential check. Account rights and qualification remain separate gates.
 
 Validate duplicate identity, timestamp timezone, expected sessions, nonnegative prices/volume, OHLC consistency, instrument mapping, splits/dividends, and unexpected gaps. Distinguish exchange closure from missing records. Quality failure blocks only the affected universe when the experiment policy explicitly permits partial coverage; otherwise abstain for the run. A backfill is a new revision, not an invisible repair of a published experiment.
 

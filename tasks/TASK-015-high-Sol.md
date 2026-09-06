@@ -33,8 +33,9 @@ record zero broker orders.
 
 The checked-in pilot manifest is blocked and reports zero real sessions and zero
 performance. No eligible `ready` Character version exists in the immutable contracts,
-the Alpaca sample/rights gate in TASK-014 remains open, and no paid SIP plan is
-authorized. The offline provenance audit tests mechanics only. See the
+the Alpaca shared-coordinator and rights gates in TASK-014 remain open, and current SIP
+is not entitled. A delayed historical SIP sample has passed, but no forward session
+has run. The offline provenance audit tests mechanics only. See the
 [implementation record](../docs/task-014-015-implementation.md).
 
 The original bounded control implementation is complete; the request-budget integration below remains pending. Actual forward observation also requires the stated prerequisites and real elapsed sessions. TASK-016 and ongoing runs were not implicitly launched.

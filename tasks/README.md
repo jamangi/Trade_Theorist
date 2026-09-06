@@ -1,6 +1,28 @@
 # Implementation task index
 
-Status (2026-09-06): TASK-001–013 are implemented and verified within their recorded scope. TASK-014's Alpaca adapter and TASK-015's prospective controls are also implemented, but production vendor qualification and real forward observations remain explicitly blocked by account/license evidence, eligible Character versions, and real elapsed time. Index Steward's owner-supplied Bogle foundation is complete; Value and Trend each have one real opening checkpoint but remain partial and ineligible for real recommendations. Permitted-CSV ingestion, independent fixture opinions, isolated simulation, risk controls, bounded mail, resumable heartbeat, evaluation, a read-only dashboard and the offline operating interface are implemented. TASK-016–023 remain planned. See [completed Index learning](../docs/index-steward-foundation.md), [tasks 005–006 evidence](../docs/task-005-006-implementation.md), [tasks 007–008 evidence](../docs/task-007-008-implementation.md), [tasks 009–010 evidence](../docs/task-009-010-implementation.md), [tasks 011–013 evidence](../docs/task-011-013-implementation.md), [tasks 014–015 evidence](../docs/task-014-015-implementation.md) and the individual task records. Start the [offline demo](../docs/quickstart.md) or use the [focused reading and quiet validation workflow](../docs/development.md). Task numbers are stable; filenames show recommended effort and model.
+Status (2026-09-06): TASK-001–013 are implemented and verified within their recorded scope. TASK-014's base Alpaca adapter and TASK-015's base prospective controls are implemented. A regenerated paper credential authenticated and a small delayed historical SIP sample passed, but production vendor selection and real forward observations remain explicitly blocked by shared request controls, data-rights evidence, eligible Character versions, and real elapsed time. Current/latest SIP is not entitled. Index Steward's owner-supplied Bogle foundation is complete; Value and Trend each have one real opening checkpoint but remain partial and ineligible for real recommendations. Permitted-CSV ingestion, independent fixture opinions, isolated simulation, risk controls, bounded mail, resumable heartbeat, evaluation, a read-only dashboard and the offline operating interface are implemented. TASK-016–023 remain planned. See [completed Index learning](../docs/index-steward-foundation.md), [tasks 005–006 evidence](../docs/task-005-006-implementation.md), [tasks 007–008 evidence](../docs/task-007-008-implementation.md), [tasks 009–010 evidence](../docs/task-009-010-implementation.md), [tasks 011–013 evidence](../docs/task-011-013-implementation.md), [tasks 014–015 evidence](../docs/task-014-015-implementation.md) and the individual task records. Start the [offline demo](../docs/quickstart.md) or use the [focused reading and quiet validation workflow](../docs/development.md). Task numbers are stable; filenames show recommended effort and model.
+
+## Local Alpaca credentials
+
+The real paper credential lives only in the ignored root `.env`; use
+[.env.example](../.env.example) for variable names. `APCA_API_BASE_URL` identifies
+the paper host, `APCA_API_DATA_URL` identifies the read-only data host, and
+`ALPACA_DATA_FEED` remains `sip`. Never paste credential values into a task, report,
+command, test, commit or screenshot. Rotate a credential immediately after accidental
+exposure.
+
+The 2026-09-06 bounded check authenticated the paper account and retrieved delayed
+historical SIP daily bars without submitting an order. The credential is not yet wired
+into an ordinary CLI command: future use must pass through TASK-014's pending shared
+quota coordinator and TASK-016's offline preflight, rather than a per-process client.
+The configured ceiling is recorded locally, while the root [ignore rules](../.gitignore)
+keep `.env` out of Git.
+
+The Alpaca paper dashboard represents one aggregate external account. Characters retain
+separate cash, holdings and performance in the canonical internal ledgers. A future
+paper adapter may tag orders with portfolio identities for reconciliation, but Alpaca's
+account equity and net positions must never be reported as one Character's isolated
+performance.
 
 The [inventory](../library/catalog/INVENTORY_REPORT.md) covers all 31 active positions across seven Characters, including the [accepted Microstructure draft/paper sequence](../decisions/records/ADR-002-microstructure-reading-scope.md). Both scans have supplied transcripts; no more material search or replacement OCR is required. Learning starts in 004, expands in 005 and reaches microstructure/risk in 021; 022 only plans Event sources. Complete curricula still require additional ordered reading runs. Mean-Reversion learning is not yet assigned. See the [continuation map](../docs/character-training.md). Completing these bounded fixture tasks does not complete real Character learning or launch ongoing runs.
 
@@ -8,9 +30,9 @@ The [inventory](../library/catalog/INVENTORY_REPORT.md) covers all 31 active pos
 
 ### Rate-control follow-up and staged gates
 
-The original 014 adapter and 015 forward-control evidence remains valid within its recorded scope, but **014 shared request admission and 015 request-budget integration are pending**. Start with those extensions rather than treating the adapter as ready for account-backed operation. The [request-budget contract](../docs/market-data-request-budget.md) is the common design reference: cache lookup and merged downloads first, shared admission immediately before every transport attempt, then immutable snapshot distribution. Keep the existing 23 IDs and model/effort assignments.
+The original 014 adapter and 015 forward-control evidence remains valid within its recorded scope, but **014 shared request admission and 015 request-budget integration are pending**. Start with those extensions rather than treating the adapter as ready for routine account-backed or forward operation. The [request-budget contract](../docs/market-data-request-budget.md) is the common design reference: cache lookup and merged downloads first, shared admission immediately before every transport attempt, then immutable snapshot distribution. Keep the existing 23 IDs and model/effort assignments.
 
-Release order: **014 control code → 016 offline rate preflight → 014 authorized sample and qualification → 015 forward observations → 016 final readiness review → 017 paper operation**. The preflight is a bounded part of 016 using 014 code and existing 015 fixtures; it does not require real forward sessions. The dependency rows below describe full task completion, not that early subgate. Do not add full 016 as a dependency of 014/015. No account call is authorized by this backlog change.
+Release order: **014 control code → 016 offline rate preflight → 014 coordinator-backed qualification sample → 015 forward observations → 016 final readiness review → 017 paper operation**. The preflight is a bounded part of 016 using 014 code and existing 015 fixtures; it does not require real forward sessions. The dependency rows below describe full task completion, not that early subgate. Do not add full 016 as a dependency of 014/015. The initial manually bounded credential check does not skip these stages, and no additional account call is authorized by this backlog change.
 
 014 owns the shared limiter/cache and necessary extensions to the existing schema, persistence, ingestion, heartbeat and CLI interfaces from 001/002/006/010/013. 015 and 017 consume it; 020 coordinates jobs through it; 021 plans high-volume quotes/trades; 022 reuses event market windows. 018/019/023 consume stored results with zero ordinary Alpaca calls. 016 verifies all callers, retry/header behavior, complete pagination, crash recovery, budget visibility and separate paper Trading quotas. Initial operating policy is 180 attempts per rolling 60 seconds below the 200 maximum, including retries/pages—not 180 plus an extra retry pool.
 

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "report_kind": "alpaca-account-access-check",
+  "checked_at": "2026-09-06T10:33:49.480793Z",
+  "credentials": "loaded from ignored local .env; identifiers omitted",
+  "paper_account": {
+    "http_status": 200,
+    "account_status": "ACTIVE",
+    "trading_blocked": false,
+    "orders_submitted": 0
+  },
+  "historical_sip": {
+    "http_status": 200,
+    "feed_requested": "sip",
+    "adjustment": "raw",
+    "request_end_delay_minutes": 20,
+    "symbols": {
+      "QQQ": 5,
+      "SPY": 5,
+      "VTI": 5
+    },
+    "first_timestamps": {
+      "QQQ": "2026-08-31T04:00:00Z",
+      "SPY": "2026-08-31T04:00:00Z",
+      "VTI": "2026-08-31T04:00:00Z"
+    },
+    "last_timestamps": {
+      "QQQ": "2026-09-04T04:00:00Z",
+      "SPY": "2026-09-04T04:00:00Z",
+      "VTI": "2026-09-04T04:00:00Z"
+    },
+    "pages": 1,
+    "delayed_sip_sample_verified": true
+  },
+  "latest_sip": {
+    "http_status": 403,
+    "entitled": false,
+    "body_omitted": true
+  },
+  "configured_rate_limit_per_minute": 200,
+  "scope": [
+    "Proves these regenerated credentials authenticated to the paper account.",
+    "Proves delayed historical SIP daily bars were returned for the sampled symbols and window.",
+    "Does not prove current SIP entitlement, all-symbol coverage, quote/trade coverage, historical completeness, storage rights, execution quality or investment performance."
+  ],
+  "content_hash": "06d44a04ecddeb644654c5bace2d9b0aaee285fc728fd16434654760f08dee0f"
+}

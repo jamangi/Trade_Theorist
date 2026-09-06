@@ -30,7 +30,7 @@ def main():
         "revision_count": 1,
         "quarantine_count": 0,
         "blockers": [
-            "No account-authorized Alpaca sample was supplied; fixture evidence cannot qualify required coverage.",
+            "This recorded-response fixture is not the separate account-authorized sample and cannot qualify required coverage.",
             "Expected market sessions are missing; no bars were synthesized.",
             "Private storage, internal replay and reporting rights remain unverified."
         ],
@@ -55,12 +55,12 @@ def main():
         opportunity_set=[
             {"instrument_id": "instrument:vti", "asset_class": "unleveraged_us_etf", "cadence": "daily_session"}
         ],
-        data_feed="alpaca:sip:conditional-not-entitled",
+        data_feed="alpaca:sip:basic-delayed-authorized-sample",
         retrieval_policy="Only qualified timestamp-preserving market/public-research adapters; no generic repo, mail, retrieval, web or HTTP access",
         source_blockers=[
-            "No account-authorized Alpaca sample demonstrates required coverage.",
+            "The small delayed SIP sample does not establish all required market-data coverage.",
             "Private storage, internal replay and derived reporting rights are unresolved.",
-            "No paid SIP subscription has been authorized."
+            "The shared request coordinator and offline rate preflight remain incomplete."
         ]
     )
     write("examples/forward-shadow/pilot-candidate.blocked.json", manifest)

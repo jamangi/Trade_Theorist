@@ -1,8 +1,9 @@
 # Tasks 014–015: vendor adapter and prospective shadow controls
 
-Implemented on 2026-09-06 as a bounded, offline qualification package. Real vendor
-selection and the real forward observation window remain blocked rather than being
-simulated or backdated.
+Implemented on 2026-09-06 as a bounded qualification package. Real vendor selection
+and the real forward observation window remain blocked rather than being simulated or
+backdated. A later owner-authorized read-only check established delayed historical SIP
+access within the exact scope below.
 
 ## TASK-014 result
 
@@ -16,9 +17,12 @@ and the quality report lists missing sessions instead of filling them.
 
 [ADR-003](../decisions/records/ADR-003-alpaca-market-data-qualification.md) records
 the official evidence and unresolved rights. The checked-in capability file uses
-`false` for every unproved capability. The recorded quality report is a mechanics
-fixture, not an account-authorized sample; required coverage is therefore blocked.
-No subscription, credential, account call or alternate vendor selection occurred.
+`false` for every unproved capability. The recorded-response quality report remains a
+mechanics fixture. A separate sanitized account check records successful paper
+authentication and five delayed historical SIP daily bars each for VTI, SPY and QQQ.
+Its latest SIP request returned HTTP 403. This proves that sample only—not current SIP,
+complete coverage or data rights. No order, subscription, raw-price commit or alternate
+vendor selection occurred.
 
 ## TASK-015 result
 
@@ -33,8 +37,8 @@ set. Shadow reports always report zero broker orders.
 
 The candidate pilot manifest is intentionally `blocked`: the immutable Character
 contracts do not yet contain eligible `ready` versions for the proposed participants,
-Alpaca coverage has not been sampled through an authorized account, and required data
-rights remain unresolved. Its dashboard-status report is `forward-blocked`, shows zero
+the shared request coordinator and required Alpaca data rights remain unresolved, and
+no real forward session has elapsed. Its dashboard-status report is `forward-blocked`, shows zero
 completed sessions and zero committed decisions, and retains every blocker. A separate
 offline fixture audit demonstrates the leakage controls without claiming an observed
 market session or performance.
@@ -48,7 +52,7 @@ paper portfolio or dependent TASK-016 work was launched.
 
 The results below describe the original bounded implementation, not shared quota compliance. Inspection at `29238ee` found no proactive account-wide limiter. The adapter's default sleeper is a no-op, numeric `Retry-After` is truncated at the configured delay cap (30 seconds by default), and resume checks validate feed/version without binding the full requested query. Existing recorded tests cover a seven-second header, not long/date cooldowns, production waiting or aggregate concurrent traffic.
 
-[TASK-014](../tasks/TASK-014-high-Sol.md) now requires the [shared request-budget contract](market-data-request-budget.md); [TASK-015](../tasks/TASK-015-high-Sol.md) requires manifest and shared-snapshot integration. Both extensions remain pending. [TASK-016](../tasks/TASK-016-high-Astra.md) must run an offline rate-control preflight before an authorized account sample, with its final readiness review later. This documentation update implements no limiter and collects no account evidence.
+[TASK-014](../tasks/TASK-014-high-Sol.md) now requires the [shared request-budget contract](market-data-request-budget.md); [TASK-015](../tasks/TASK-015-high-Sol.md) requires manifest and shared-snapshot integration. Both extensions remain pending. [TASK-016](../tasks/TASK-016-high-Astra.md) must run an offline rate-control preflight before forward operation or a larger coordinator-backed sample, with its final readiness review later. The owner separately authorized the small read-only credential check recorded here; its handful of requests do not satisfy coordinator or load-test acceptance, and no raw price entered Git.
 
 ### Original validation evidence
 

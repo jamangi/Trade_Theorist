@@ -1,8 +1,8 @@
 {
   "source_id": "source:alpaca-market-data",
   "feed": "sip",
-  "instruments": "Explicit US equity and ETF symbols; authorized sample pending",
-  "sessions": "Caller-pinned exchange calendar; provider sample pending",
+  "instruments": "Explicit US equity and ETF symbols; delayed SIP sample passed for VTI, SPY and QQQ",
+  "sessions": "Caller-pinned exchange calendar; five-session authorized daily-bar sample passed",
   "intervals": "Historical bars with explicit timeframe",
   "event_timestamps": true,
   "publication_timestamps": false,
@@ -18,6 +18,6 @@
   "internal_replay": false,
   "derived_publication": false,
   "raw_redistribution": false,
-  "evidence": "Conditional reading of current official Alpaca documentation and agreement on 2026-09-06; false means absent or unproved, not necessarily prohibited",
-  "checked_at": "2026-09-06T18:00:00Z"
+  "evidence": "Official Alpaca documentation plus sanitized account-authorized delayed historical SIP sample on 2026-09-06; false means absent or unproved, not necessarily prohibited",
+  "checked_at": "2026-09-06T10:33:49.480793Z"
 }

@@ -1,6 +1,6 @@
 # Shared market-data requests and the Basic-plan budget
 
-Status: required follow-up design, 2026-09-06. The current adapter does **not** implement this shared admission control. TASK-014 owns implementation, TASK-015 owns forward integration, and TASK-016 owns adversarial verification. This update changes the task contracts, not runtime behavior, credentials, vendor selection, or account-use authorization.
+Status: required follow-up design, 2026-09-06. The current adapter does **not** implement this shared admission control. TASK-014 owns implementation, TASK-015 owns forward integration, and TASK-016 owns adversarial verification. The owner separately authorized a handful of read-only calls that proved paper authentication and delayed historical SIP access; that check did not change runtime behavior, vendor selection or quota readiness.
 
 ## Limit, feed, and quota scope
 
@@ -64,7 +64,7 @@ Persist a shared not-before deadline after throttling, including when the affect
 | --- | --- |
 | 014 | Own shared admission, pacing, cache/in-flight merging, batching, query-bound resume, real waits, retry/header handling, durable quota state and telemetry |
 | 015 | Extend frozen run manifests with quota policy ID, work/request budget, deadline, expected coverage and snapshot ID; route all research consumers through 014 |
-| 016 | Perform an offline rate-control preflight before account calls; later complete the broader forward/paper readiness audit |
+| 016 | Perform an offline rate-control preflight before forward operation or larger coordinator-backed samples; later complete the broader forward/paper readiness audit |
 | 017 | Reuse shared frozen market evidence; independently meter any paper Trading API calls and reconcile ambiguous orders before retry |
 | 020 | Submit manual/scheduled work to the same coordinator, prioritize fresh decision-critical data over background backfill, and bound starvation/queue age |
 | 021 | Forecast quote/trade volume; narrow cadence/universe or use eligible streaming with separately verified connection/subscription limits; metered REST repair still applies |
@@ -73,7 +73,7 @@ Persist a shared not-before deadline after throttling, including when the affect
 
 Tasks 001/002/006/010/013 supply the existing schema, persistence, ingestion, heartbeat and CLI interfaces. Extend those interfaces as deliverables of 014/015, using migrations and updated tests; do not create independent limiters in those earlier tasks or rewrite their historical completion evidence.
 
-Release sequence: **014 control implementation → 016 offline rate preflight → 014 authorized sample/qualification → 015 account-backed forward work → 016 final readiness review → 017 paper operation**. The narrow 016 preflight requires the new 014 control code and existing fixture controls from 015, not a completed real forward window or vendor selection. This phased gate avoids a dependency cycle. The final 016 review still requires the full forward prerequisites. Nothing here authorizes account access or starts a sample.
+Release sequence: **014 control implementation → 016 offline rate preflight → 014 coordinator-backed qualification sample → 015 account-backed forward work → 016 final readiness review → 017 paper operation**. The narrow 016 preflight requires the new 014 control code and existing fixture controls from 015, not a completed real forward window or vendor selection. This phased gate avoids a dependency cycle. The final 016 review still requires the full forward prerequisites. The initial manually bounded check does not skip these stages.
 
 ## Required adversarial evidence
 
@@ -88,4 +88,4 @@ Use fake clocks and recorded transports rather than rate-limit stress against Al
 7. Provider metrics reconcile physical dispatches, retries, 429s, cache hits, merged subscribers, queue/wait duration, pages committed, coverage, deadline misses and remaining budget. Secrets and raw credentials never appear in manifests/public exports.
 8. Separate Market Data and paper Trading policies are exercised without accidental double budgets for one real quota. Export/notebook/review fixtures reject any attempted Alpaca transport access.
 
-The authorized sample later checks real endpoint entitlement, observed headers, small-workload throughput and headroom under the limiter. It is a bounded validation sample, not a load test. Record measurements and remaining external-caller uncertainty before claiming account-ready operation.
+The coordinator-backed sample later checks observed headers, small-workload throughput and headroom under the limiter beyond the already established delayed-SIP endpoint access. It is a bounded validation sample, not a load test. Record measurements and remaining external-caller uncertainty before claiming account-ready operation.

@@ -1,20 +1,27 @@
 # ADR-003: Alpaca market-data qualification remains conditional
 
 - Date checked: 2026-09-06
-- Status: conditional adapter implemented; vendor selection deferred
+- Status: delayed historical SIP sample passed; vendor selection deferred
 - Decision owner: repository owner for any subscription or license acceptance
 
 ## Decision
 
 Alpaca remains the first vendor candidate, but it is not selected as the production
-market-data source. The repository now contains a feed-pinned, transport-injected
-bars adapter and recorded-response tests. No credentials, account call, license
-acceptance or purchase occurred.
+market-data source. The repository contains a feed-pinned, transport-injected bars
+adapter and recorded-response tests. On 2026-09-06 the owner authorized a bounded
+read-only check using regenerated paper credentials. No credential value or account
+identifier was retained, no order was submitted, and no purchase occurred.
 
-A real forward experiment remains blocked until an account-authorized sample proves
-the required symbol/session coverage and the owner verifies contract rights for the
-intended private storage, internal replay and any derived or public reporting. Unknown
-rights are recorded as unavailable, not inferred from API access.
+The account authenticated successfully. Explicit `feed=sip` daily-bar requests ending
+20 minutes before retrieval returned five sessions for each of VTI, SPY and QQQ. An
+explicit latest SIP trade request returned HTTP 403. This proves delayed historical
+SIP access for the sampled endpoint, symbols and window—not current SIP entitlement,
+all-symbol coverage, quote/trade coverage, historical completeness or data rights.
+
+A real forward experiment remains blocked until the owner verifies contract rights for
+private storage, internal replay and any derived or public reporting and eligible
+Character versions exist. Unknown rights remain unavailable rather than being inferred
+from successful API access.
 
 ## Official evidence reviewed
 
@@ -45,8 +52,10 @@ rights are recorded as unavailable, not inferred from API access.
 | Requirement | Current conclusion |
 | --- | --- |
 | Explicit feed, bars, automation, pagination | Documented; adapter implemented |
-| Shared request-rate enforcement | Not implemented; required TASK-014 follow-up and TASK-016 offline preflight before account calls |
-| SIP whole-market coverage | Documented product capability; account entitlement not sampled |
+| Shared request-rate enforcement | Not implemented; required TASK-014 follow-up and TASK-016 offline preflight before forward operation |
+| Delayed historical SIP daily bars | Authorized sample passed for VTI, SPY and QQQ over five sessions |
+| Current/latest SIP | HTTP 403 in the authorized check; not entitled |
+| SIP whole-market coverage | Product capability documented; the small sample does not establish complete coverage |
 | IEX whole-market coverage | Not sufficient |
 | Provider publication timestamp on bars | Missing; forward receipt time is retained as the conservative first-demonstrated availability time |
 | Point-in-time revisions | Not demonstrated |
@@ -63,10 +72,13 @@ requires a new decision record using the same checklist.
 Before status can change from conditional to selected:
 
 1. TASK-014 implements the [shared request-budget contract](../../docs/market-data-request-budget.md), and TASK-016's narrow offline rate preflight passes (not its later full forward/paper review);
-2. the owner authorizes account use and, if necessary, a paid plan;
-3. an authorized bounded sample is collected through that coordinator with credentials outside Git, verifying applicable feed entitlement, observed rate behavior and headroom under the 200/min ceiling;
+2. the owner authorizes a paid plan if a preregistered strategy requires current SIP;
+3. a coordinator-backed follow-up sample verifies observed rate behavior and headroom under the 200/min ceiling;
 4. the generated quality report demonstrates the frozen universe, sessions, feed and
    revision behavior without synthesized gaps; and
 5. license evidence explicitly covers intended retention, replay and reporting.
 
-The initial 180-attempt operating ceiling and cache/pacing design are engineering recommendations, not evidence of measured account capacity. Market Data limits, recent SIP entitlement and paper Trading API limits are distinct; the request-budget contract links the current primary sources. No quota extension or account authorization is granted by this amendment.
+The initial 180-attempt operating ceiling and cache/pacing design are engineering recommendations, not evidence of measured account capacity. Market Data limits, recent SIP entitlement and paper Trading API limits are distinct; the request-budget contract links the current primary sources. The manual check used only a handful of calls and was not a load test or substitute for the pending coordinator preflight.
+
+The sanitized [account check](../../examples/ingest/alpaca-account-access.2026-09-06.json)
+records the exact successful scope. Raw returned bars remain outside Git.
