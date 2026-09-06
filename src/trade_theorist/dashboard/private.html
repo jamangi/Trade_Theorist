@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trade Theorist · Research observatory</title>
+  <meta name="description" content="Private Individual and Monarchy accounting with separate execution bases and saved evidence.">
+  <!--BASE-->
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script><script src="private.js" defer></script>
+</head>
+<body data-private-v2>
+  <a class="skip" href="#main">Skip to results</a>
+  <header><div class="brand"><span class="brand-mark" aria-hidden="true">T</span><span>Trade Theorist<small>Research observatory</small></span></div><span class="read-only">Private · read-only</span></header>
+  <div class="notice" id="notice">Saved evidence. No trading controls.</div>
+  <main id="main">
+    <div id="load-state" role="status">Loading private saved report…</div>
+    <div id="app" hidden>
+      <div class="toolbar"><div role="tablist" aria-label="Portfolio mode"><button id="council-tab" role="tab" aria-selected="true" aria-controls="results" data-mode="council">Monarchy</button><button id="characters-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="results" data-mode="character_portfolio">Individual</button></div><div class="filters"><label>Historical report<select id="version"></select></label><label>Portfolio window<select id="experiment"><option value="all">All in this mode</option></select></label><label>Execution basis<select id="basis"><option value="simulated">Simulated</option><option value="paper_broker">Broker paper</option></select></label><label>Character version<select id="character"><option value="all">All versions</option></select></label><label>Information regime<select id="regime"><option value="all">All, kept separate</option></select></label><label>Advice access<select id="advice"><option value="all">Any</option><option value="bounded">Bounded mail</option><option value="none">No mail</option></select></label><label>Horizon<select id="horizon"><option value="all">Any</option></select></label></div></div>
+      <section id="results" role="tabpanel" aria-labelledby="council-tab" tabindex="0"></section>
+      <section class="support"><details><summary>How to read these results</summary><p>Equity is cash plus eligible marked holdings and dividend receivables. FIFO acquisition fees enter basis; disposal fees reduce realized gain. TWR links returns at each external flow, so deposits and withdrawals are not investment gains or losses. Drawdown follows that flow-neutral wealth.</p><p>Charts show each portfolio's own dollars; deposits can change the equity line without changing TWR. Exact history is available in tables. Baselines require matching flow timing and costs. Trading TWR includes execution costs; recurring operating costs are shown separately. Missing values have reasons and are never treated as zero.</p><p>Turnover is gross traded notional divided by mean scheduled equity. Volatility is unannualized sample deviation. Closed-position hit rate and FIFO relief win rate use different samples. Brier measures matured forecast error; a lower value is better. Simulated and broker-paper results are separate observations, never a ranking of reasoning skill.</p></details><details><summary>About this saved view</summary><p>Filters, evidence panels and historical selection use the loaded report only. They cannot run models, contact an account or place an order. A new report is prepared through the local workflow. Missing learning, forecast or heartbeat records remain explicitly unknown.</p></details></section>
+      <section id="registry" class="support"></section>
+      <footer id="provenance"></footer>
+    </div>
+  </main>
+  <dialog id="evidence-dialog" aria-labelledby="evidence-title"><button id="close-evidence" class="close">Close evidence</button><h2 id="evidence-title">Saved evidence</h2><div id="evidence-body"></div></dialog>
+</body>
+</html>

@@ -14,7 +14,7 @@ def at(day, minute=0):
 
 class FixtureV2:
     def __init__(self, store, name="golden", *, mode="character_portfolio", basis="simulated", flows=None,
-                 baseline=None, role="strategy", fee="1.00", fractional=True, extra_instrument=False):
+                 baseline=None, role="strategy", fee="1.00", fractional=True, extra_instrument=False, readiness="fixture_only"):
         records = [r for r in bundle(mode=mode, basis=basis) if r["record_type"] in {"source_rights", "policy", "character", "experiment", "portfolio", "funded_segment"}]
         identities = {r["id"]: r["id"] + "-" + name for r in records}
         def replace(v):
@@ -22,6 +22,7 @@ class FixtureV2:
             if isinstance(v, list): return [replace(x) for x in v]
             return identities.get(v, v) if isinstance(v, str) else v
         records = [replace(r) for r in records]
+        next(r for r in records if r["record_type"] == "character")["readiness"] = readiness
         policy = next(r for r in records if r["record_type"] == "policy")
         policy["limits"].update(initial_cash="1000.00", max_deployed_capital="1000.00", turnover=1.0, daily_loss=0.5, drawdown=0.5)
         policy["costs"].update(fee_per_order="0.00", slippage_bps="0", spread_bps="0")
@@ -88,8 +89,8 @@ class FixtureV2:
         return self.engine.fill_order("command:" + digest([order, mark, quantity]), order, mark, quantity, at=at(day))
 
 
-def golden(store, *, name="golden", baseline=None, role="strategy"):
-    f = FixtureV2(store, name, baseline=baseline, role=role)
+def golden(store, *, name="golden", baseline=None, role="strategy", mode="character_portfolio"):
+    f = FixtureV2(store, name, baseline=baseline, role=role, mode=mode)
     f.event("funding", 1, amount="1000.00", boundary_mark_ids=[])
     f.mark(1, "100")
     first = f.order(1, "2", "100")

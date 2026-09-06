@@ -11,18 +11,18 @@ function openEvidence(id) { const item=data.evidence.find(e=>e.id===id); $("evid
 $("close-evidence").addEventListener("click",()=>$("evidence-dialog").close());
 function table(headers, rows) {const wrap=node("div",undefined,"table-scroll"),t=node("table"),head=node("thead"),tr=node("tr");wrap.tabIndex=0;wrap.setAttribute("role","region");wrap.setAttribute("aria-label","Scrollable table: "+headers.join(", "));for(const h of headers){const th=node("th",h);th.scope="col";tr.append(th);}head.append(tr);t.append(head);const body=node("tbody");for(const row of rows){const r=node("tr");for(const item of row){const td=node("td");td.append(item instanceof Node?item:document.createTextNode(String(item)));r.append(td);}body.append(r);}t.append(body);wrap.append(t);return wrap;}
 function svgNode(tag,attrs={}){const n=document.createElementNS("http://www.w3.org/2000/svg",tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;}
-function chart(card, baseline, kind="equity") {
+function chart(card, baseline, kind="equity", showCash=true) {
  const svg=svgNode("svg",{viewBox:"0 0 700 240",role:"img","aria-label":kind==="equity"?"Equity history in US dollars. Exact values follow in the table.":"Drawdown history. Missing values are gaps; exact values follow in the table.",class:"chart"});
  const points=card.history, all=points.map(p=>p[kind]).filter(v=>v!==null).map(Number);
- if(kind==="equity"){all.push(Number(card.initial_cash)); if(baseline)all.push(...baseline.history.map(p=>p.equity).filter(v=>v!==null).map(Number));}
+ if(kind==="equity"){if(showCash)all.push(Number(card.initial_cash)); if(baseline)all.push(...baseline.history.map(p=>p.equity).filter(v=>v!==null).map(Number));}
  if(!all.length){const text=svgNode("text",{x:65,y:95});text.textContent="No complete marks to plot";svg.append(text);return svg;}
  let lo=Math.min(...all),hi=Math.max(...all);const margin=Math.max((hi-lo)*.18,kind==="equity"?1:.0001);lo-=margin;hi+=margin;if(kind==="drawdown"){lo=0;hi=Math.max(.01,Math.max(...all)*1.15);}
  const x=i=>66+(points.length===1?0:i/(points.length-1)*610),y=v=>190-(Number(v)-lo)/(hi-lo)*160;
  for(let i=0;i<4;i++){const v=lo+(hi-lo)*i/3,yy=y(v);svg.append(svgNode("line",{x1:65,y1:yy,x2:680,y2:yy,stroke:"#e2e9ee"}));const text=svgNode("text",{x:0,y:yy+5});text.textContent=kind==="equity"?"$"+Math.round(v).toLocaleString("en-US"):(v*100).toFixed(2)+"%";svg.append(text);}
  function line(values,color,dashed=false){let path="",open=false;values.forEach((v,i)=>{if(v===null){open=false;return;}path+=(open?"L":"M")+x(i)+","+y(v)+" ";open=true;svg.append(svgNode("circle",{cx:x(i),cy:y(v),r:3,fill:color}));});svg.append(svgNode("path",{d:path,fill:"none",stroke:color,"stroke-width":2.5,...(dashed?{"stroke-dasharray":"6 5"}:{})}));}
- if(kind==="equity"){line(points.map(()=>card.initial_cash),"#8799a8",true);if(baseline)line(points.map(p=>baseline.history.find(b=>b.session===p.session)?.equity??null),"#7353a6");}
+ if(kind==="equity"){if(showCash)line(points.map(()=>card.initial_cash),"#8799a8",true);if(baseline)line(points.map(p=>baseline.history.find(b=>b.session===p.session)?.equity??null),"#7353a6");}
  line(points.map(p=>p[kind]),kind==="equity"?"#006d73":"#a33242");
- points.forEach((p,i)=>{const text=svgNode("text",{x:x(i),y:224,"text-anchor":i===0?"start":i===points.length-1?"end":"middle"});text.textContent=date(p.session);svg.append(text);});return svg;
+ points.forEach((p,i)=>{if(points.length>6 && i%Math.ceil(points.length/5)!==0 && i!==points.length-1)return;const text=svgNode("text",{x:x(i),y:224,"text-anchor":i===0?"start":i===points.length-1?"end":"middle"});text.textContent=date(p.session);svg.append(text);});return svg;
 }
 function metricBox(label,value,note){const el=node("div",undefined,"metric");el.append(node("div",label,"metric-label"),node("div",value,"metric-value"),node("div",note,"metric-note"));return el;}
 function details(card, version) {
@@ -43,8 +43,10 @@ function render(){const v=version(),root=$("results");root.replaceChildren();roo
  const registry=$("registry");registry.replaceChildren();const d=node("details");d.append(node("summary","Trial registry and out-of-sample review"),node("p","All declared trials remain visible, including failed or withdrawn trials. Meeting a sample floor does not authorize promotion."),table(["Trial","Role","Status"],data.registry.map(r=>[r.trial_id,r.role,r.status])));for(const c of data.comparisons)d.append(node("p",`Matched no-mail versus mail difference: ${metricValue(c.difference)}. ${c.interpretation}`));registry.append(d);
  $("provenance").textContent=`Data as of ${v.as_of} · Report generated ${data.generated_at} · ${data.redaction_policy} · ${data.source_run_ids.length} saved source runs. Historical versions retain their own evidence.`;
 }
+if(!document.body.hasAttribute("data-private-v2")){
 document.querySelectorAll("[role=tab]").forEach((tab,index,tabs)=>{tab.addEventListener("click",()=>{mode=tab.dataset.mode;selectedTrial=null;for(const t of tabs){t.setAttribute("aria-selected",String(t===tab));t.tabIndex=t===tab?0:-1;}updateFilters();render();});tab.addEventListener("keydown",event=>{let target;if(event.key==="ArrowRight")target=tabs[(index+1)%tabs.length];if(event.key==="ArrowLeft")target=tabs[(index+tabs.length-1)%tabs.length];if(event.key==="Home")target=tabs[0];if(event.key==="End")target=tabs[tabs.length-1];if(target){event.preventDefault();target.click();target.focus();}});});
 $("version").addEventListener("change",()=>{updateFilters();render();});for(const id of ["experiment","advice","horizon"])$(id).addEventListener("change",render);
+}
 function canonical(value){if(Array.isArray(value))return "["+value.map(canonical).join(",")+"]";if(value&&typeof value==="object")return "{"+Object.keys(value).sort().map(k=>JSON.stringify(k)+":"+canonical(value[k])).join(",")+"}";return JSON.stringify(value);}
 function conforms(value,schema){
  if(schema.anyOf)return schema.anyOf.some(s=>conforms(value,s));
@@ -68,4 +70,4 @@ async function verifyShape(d,schema){
  for(const version of d.versions)for(const card of version.cards){if(card.answers.length!==6||card.answers.some(a=>a.evidence_ids.some(id=>!evidence.has(id))))throw Error("Missing evidence");for(const m of [...Object.values(card.metrics),card.cash_baseline,card.index_baseline,card.operating_cost])if((m.value===null)===(m.reason===null))throw Error("Missing metric reason");}
 }
 async function load(){try{const responses=await Promise.all([fetch("report.json",{cache:"no-cache"}),fetch("schema.json",{cache:"no-cache"})]);if(responses.some(r=>!r.ok))throw Error("Report file missing");const [report,schema]=await Promise.all(responses.map(r=>r.json()));await verifyShape(report,schema);data=report;$("notice").textContent=data.notice;$("version").replaceChildren();data.versions.forEach((v,i)=>$("version").add(new Option(`${date(v.as_of)} · saved version`,String(i))));$("version").value=String(data.versions.length-1);updateFilters();render();$("load-state").hidden=true;$("app").hidden=false;}catch{const state=$("load-state");state.hidden=false;state.setAttribute("role","alert");state.replaceChildren(node("h1","Report unavailable"),node("p","The saved report is missing, incomplete or uses an unsupported format. Run evaluate and export locally, then open it with demo --serve and retry."));const retry=node("button","Retry saved report");retry.addEventListener("click",load);state.append(retry);$("app").hidden=true;}}
-load();
+if(!document.body.hasAttribute("data-private-v2"))load();

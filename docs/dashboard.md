@@ -1,6 +1,6 @@
 # Dashboard and owner experience
 
-Status: the v1 two-tab fixture dashboard is implemented and now restricted to synthetic exports. Its existing labels remain Council/Character portfolios until TASK-012's follow-up. The approved v2 design below uses Individual/Monarchy, a private read model and local-only packaging under [ADR-004](../decisions/records/ADR-004-local-observatory.md). Public GitHub Pages deployment is retired from TASK-018. See [prior browser evidence](task-011-013-implementation.md), [local fixture setup](quickstart.md), and [the migration starting point](../tasks/meta-tasks/START-HERE.md).
+Status: [Step 03](step-03-private-dashboard.md) implements the distinct private-owner-v2 read model and Individual/Monarchy views, reusing the existing layout, tables, charts and evidence dialog. The v1 Council/Character fixture page remains separate. Private command integration and hardened real-data serving belong to Steps 04–05; development browser acceptance uses original synthetic fixtures only. See the [standalone reproduction and API guide](step-03-private-dashboard.md) and [active queue](../tasks/README.md). The design below remains the owner-experience contract.
 
 ## At a glance
 

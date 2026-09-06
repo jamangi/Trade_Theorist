@@ -32,6 +32,14 @@ def validate(record):
     if errors:
         raise ContractError("Invalid v2 contract structure")
     kind = record["record_type"]
+    if kind == "inspection_context":
+        if utc(record["as_of"]) > utc(record["created_at"]) or record["learning_completed"] > record["learning_total"]:
+            raise ContractError("Invalid saved inspection context timing or progress")
+        if record["last_successful_heartbeat"] is not None and utc(record["last_successful_heartbeat"]) > utc(record["as_of"]):
+            raise ContractError("Saved context cannot claim a future heartbeat")
+        metric = record["forecasts"]["brier"]
+        if (metric["value"] is None) != (metric["reason"] is not None):
+            raise ContractError("Forecast metric needs a value or explicit unknown reason")
     if record["field_class"] != CLASSES[kind]:
         raise ContractError("Incorrect field classification")
     if record.get("mode") == "character_portfolio" and record.get("execution_basis") == "paper_broker":
@@ -145,6 +153,12 @@ def validate_references(record, lookup):
         if any(record[k] != exp[k] for k in ("mode", "execution_basis", "policy_id")):
             raise ContractError("Portfolio/projection differs from experiment")
     portfolio = ref(record["portfolio_id"], "portfolio") if "portfolio_id" in record else None
+    if kind == "inspection_context":
+        if record["character_version"] != portfolio["owner_character_version"]:
+            raise ContractError("Inspection context differs from frozen owner")
+        for advice in record["advice_log"]:
+            if advice["author_version"] not in exp["character_versions"]:
+                raise ContractError("Advice author outside frozen experiment")
     if kind == "accounting_plan":
         if utc(record["approved_at"]) > utc(exp["start_at"]) or utc(record["created_at"]) > utc(exp["start_at"]):
             raise ContractError("Accounting/funding plan must be frozen before its window")

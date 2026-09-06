@@ -7,6 +7,7 @@ from pathlib import Path
 from trade_theorist.schema import schema
 from trade_theorist.schema_v2 import schema as schema_v2
 from trade_theorist.export import DASHBOARD_SCHEMA
+from trade_theorist.export_v2 import PRIVATE_SCHEMA
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +39,7 @@ def inventory():
     }.items():
         fields.update("storage-v2/" + table + "/" + column for column in columns)
     fields.update("dashboard-v1" + path for path in paths(DASHBOARD_SCHEMA))
+    fields.update("private-owner-v2" + path for path in paths(PRIVATE_SCHEMA))
     for name in ("performance-v2", "broker-attribution-v1"):
         value = json.loads((ROOT / "schemas/meta-001" / (name + ".schema.json")).read_text())
         fields.update(name + path for path in paths(value))

@@ -38,6 +38,13 @@ EVENTS = {
 }
 
 FIELDS = {
+    "inspection_context": dict(portfolio_id=ID, segment_id=ID, character_version=ID, as_of=UTC,
+        label=S, horizon=S, advice=enum("none", "bounded"), belief=nullable(S), rationale=nullable(S), invalidation=nullable(S),
+        learning_statement=S, learning_completed=N, learning_total=N,
+        source_citations=array(obj(title=S, edition=S, locator=S)),
+        advice_log=array(obj(author_version=ID, kind=S, status=S, summary=S)),
+        forecasts=obj(matured=N, pending=N, unscorable=N, brier=VALUE), abstentions=N,
+        heartbeat_status=enum("no_data", "completed", "pending", "failed"), last_successful_heartbeat=nullable(UTC)),
     "source_rights": dict(source_id=ID, origin=enum("original_synthetic", "licensed", "owner_authored"),
                           private_storage=RIGHT, private_replay=RIGHT, private_read_model=RIGHT,
                           public_output={"const": "denied"}, evidence=array(S, 1), reviewed_at=UTC),

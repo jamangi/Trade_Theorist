@@ -23,6 +23,7 @@ Relevant implementation and validation paths:
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
 | Metrics/forecast review | `src/trade_theorist/evaluate/` | `test_evaluation` |
 | Sanitized dashboard exports | `src/trade_theorist/export.py`, `dashboard/` | `test_export` |
+| Private v2 dashboard | `src/trade_theorist/export_v2.py`, `dashboard/private.html`, `dashboard/private.js` | `test_export_v2`; [browser checklist](step-03-private-dashboard.md) |
 | Offline demo/operating CLI | `src/trade_theorist/operations.py`, `cli.py` | `test_operations` |
 
 Use the environment's Python (on Windows, `.venv/Scripts/python.exe`):
@@ -32,6 +33,7 @@ python scripts/check.py test_simulation test_risk
 python scripts/check.py test_evaluation test_export test_operations
 python scripts/check.py test_contracts_v2 test_storage_v2
 python scripts/check.py test_accounting_v2 test_broker_v2
+python scripts/check.py test_export_v2 test_export
 python scripts/check.py
 ```
 
@@ -63,3 +65,18 @@ golden and v1/v2 side-by-side artifacts without printing their full JSON bundles
 Use `python scripts/export_field_classification.py --check` to check schema/field
 inventory drift. [The accounting guide](step-02-accounting.md) gives the API map,
 math and unsupported cases, so subsequent work can begin with one bounded document.
+
+## Continue without conversation history
+
+The owner clarified that the reported memory issue is repeated “Optimizing the
+conversation” without progress, rather than a demonstrated Python RAM failure.
+Treat repository documentation as the handoff, not a cached conversation. Start
+with `tasks/README.md`, the requested active brief, and its implementation guide.
+Read only the relevant implementation slices and failing logs. Rebuild generated
+fixtures to validate them instead of printing the full JSON.
+
+For substantial work, maintain a short working note under `tasks/active/` with
+current decisions, files, exact next action and checks already run. Replace it with
+the final task evidence before delivery. Keep the queue and root README's next step
+current, and push authorized completed work so a fresh task can reproduce it from
+main. Historical TASK files retain evidence; they need not be reread as a transcript.

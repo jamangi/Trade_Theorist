@@ -3,6 +3,9 @@
   "$id": "https://trade-theorist.local/schemas/contracts-v2.json",
   "oneOf": [
     {
+      "$ref": "#/$defs/inspection_context"
+    },
+    {
       "$ref": "#/$defs/source_rights"
     },
     {
@@ -70,6 +73,325 @@
     }
   ],
   "$defs": {
+    "inspection_context": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "inspection_context"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "portfolio_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "character_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "horizon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "advice": {
+          "enum": [
+            "none",
+            "bounded"
+          ]
+        },
+        "belief": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rationale": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invalidation": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "learning_statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "learning_completed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "learning_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "edition": {
+                "type": "string",
+                "minLength": 1
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "title",
+              "edition",
+              "locator"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "advice_log": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "author_version": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "author_version",
+              "kind",
+              "status",
+              "summary"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "forecasts": {
+          "type": "object",
+          "properties": {
+            "matured": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pending": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unscorable": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "brier": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "reason": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "unit": {
+                  "enum": [
+                    "USD",
+                    "ratio",
+                    "count"
+                  ]
+                }
+              },
+              "required": [
+                "value",
+                "reason",
+                "unit"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "matured",
+            "pending",
+            "unscorable",
+            "brier"
+          ],
+          "additionalProperties": false
+        },
+        "abstentions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "heartbeat_status": {
+          "enum": [
+            "no_data",
+            "completed",
+            "pending",
+            "failed"
+          ]
+        },
+        "last_successful_heartbeat": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "portfolio_id",
+        "segment_id",
+        "character_version",
+        "as_of",
+        "label",
+        "horizon",
+        "advice",
+        "belief",
+        "rationale",
+        "invalidation",
+        "learning_statement",
+        "learning_completed",
+        "learning_total",
+        "source_citations",
+        "advice_log",
+        "forecasts",
+        "abstentions",
+        "heartbeat_status",
+        "last_successful_heartbeat"
+      ],
+      "additionalProperties": false
+    },
     "source_rights": {
       "type": "object",
       "properties": {

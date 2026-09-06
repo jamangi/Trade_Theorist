@@ -3,3 +3,10 @@
 @media(max-width:900px){.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.toolbar{align-items:start}.filters{width:100%}.heading{flex-direction:column}}
 @media(max-width:560px){header{padding:1rem}.read-only{display:none}.notice{padding:.7rem 1rem}main{padding:1rem}.filters{display:grid;grid-template-columns:1fr 1fr}select{max-width:none;width:100%;font-size:.875rem}.metric{padding:.9rem}.metric-value{font-size:1.55rem}.panel{padding:1rem}.heading h1{font-size:1.6rem}[role=tablist]{width:100%;gap:1.1rem}.grid{gap:1rem}.badge{font-size:.8rem}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* Private views share the original grid; long evidence labels wrap safely. */
+[data-private-v2] .status-line,[data-private-v2] .compact dd,[data-private-v2] .metric-note{overflow-wrap:anywhere}
+[data-private-v2] .compact{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+[data-private-v2] .metric-value{font-size:clamp(1.2rem,2.1vw,1.9rem)}
+[data-private-v2] .filters label{min-width:0}
+[data-private-v2] .panel+ .panel{margin-top:1.3rem}
