@@ -24,12 +24,24 @@ def operator_command(args):
     from .evaluate import Evaluator
     from .export import export_dashboard
     config = read(args.config) if args.config else {}
-    if set(config) - {"schema_version", "data_root", "fixture", "policy_path"} or config.get("schema_version", 1) != 1:
+    if not isinstance(config, dict) or set(config) - {"schema_version", "projection_version", "data_root", "private_bundle_root", "fixture", "policy_path"} or type(config.get("schema_version", 1)) is not int or config.get("schema_version", 1) != 1:
         raise ContractError("Unsupported operating configuration")
     if not isinstance(config.get("fixture", False), bool):
         raise ContractError("Fixture flag must be boolean")
+    if type(config.get("projection_version", 1)) is not int or config.get("projection_version", 1) not in (1, 2):
+        raise ContractError("Projection version must be 1 or 2")
+    if any(config.get(k) is not None and not isinstance(config[k], str) for k in ("data_root", "private_bundle_root", "policy_path")):
+        raise ContractError("Configured paths must be strings or null")
     root = args.data_root or config.get("data_root") or os.environ.get("TRADE_THEORIST_DATA_ROOT")
     fixture = args.fixture or config.get("fixture", False) or args.command == "demo"
+    version = args.projection_version or config.get("projection_version", 1)
+    output = args.output_root or config.get("private_bundle_root") or os.environ.get("TRADE_THEORIST_PRIVATE_BUNDLE_ROOT")
+    if version == 2:
+        from .operations_v2 import operator_command as operator_v2
+        return operator_v2(args, root, output, fixture=fixture)
+    if args.output_root or getattr(args, "portfolio", None) or getattr(args, "receipt_cutoff", None):
+        print("Blocked: --output-root, --portfolio and --receipt-cutoff require --projection-version 2. V1 export remains under data-root/public.")
+        return 2
     if args.command == "doctor":
         result = doctor(root, synthetic=fixture, policy_path=args.policy or config.get("policy_path"))
         print(json.dumps(result, indent=2))
@@ -152,6 +164,8 @@ def main(argv=None):
         command.add_argument("--data-root")
         command.add_argument("--fixture", action="store_true", help="Use explicitly synthetic storage")
         command.add_argument("--config", help="Nonsecret operator configuration JSON")
+        command.add_argument("--projection-version", type=int, choices=(1, 2), help="Select accounting/read model version; defaults to config or legacy v1")
+        command.add_argument("--output-root", help="Absolute private v2 bundle directory, separate from the database")
         if name == "doctor":
             command.add_argument("--policy")
         if name == "demo":
@@ -162,6 +176,9 @@ def main(argv=None):
         if name in {"evaluate", "export"}:
             command.add_argument("--experiment")
             command.add_argument("--as-of")
+        if name == "evaluate":
+            command.add_argument("--portfolio", help="Funded v2 portfolio ID")
+            command.add_argument("--receipt-cutoff", help="V2 information cutoff; defaults to --as-of")
         if name == "ingest":
             command.add_argument("--source", required=True)
             command.add_argument("--csv")
@@ -189,6 +206,11 @@ def main(argv=None):
             return operator_command(args)
         if args.command == "validate":
             value = read(args.path)
+            if isinstance(value, dict) and value.get("publication_class") == "private-owner-v2":
+                from .export_v2 import validate_private
+                validate_private(value)
+                print("Valid private v2 dashboard export and content hash.")
+                return 0
             if isinstance(value, dict) and "redaction_policy" in value:
                 from .export import validate_export
                 validate_export(value)

@@ -1,5 +1,11 @@
 # Running and maintaining the future application
 
+Steps 01–04 now implement explicit v2 accounting, private read models and offline
+commands. See [Step 04 commands](step-04-commands.md) for the current version/path
+contract and diagnostics. The design below includes future acquisition and trading
+work; its readiness gates do not prevent inspection of permitted saved data.
+Protected private browser serving is next in Step 05.
+
 Status: operating design with tasks 001–013 available within their recorded scope. Use the [Windows quickstart](quickstart.md) and [operating runbook](runbook.md) for exact implemented commands and recovery steps. The offline demo exercises both portfolio modes, bounded mail, policy rejection, simulation, evaluation, dashboard export and crash recovery without a live endpoint. The design below includes future real-provider operation, which remains gated. See [implementation evidence](task-011-013-implementation.md) and [the task index](../tasks/README.md) for partial real-learning status.
 
 ## Intended local interface
@@ -13,7 +19,7 @@ Status: operating design with tasks 001–013 available within their recorded sc
 | `trade-theorist ingest --source <id>` | Fetch only missing observations and report coverage/quarantine |
 | `trade-theorist heartbeat --experiment <id>` | Advance one bounded cycle using pinned config; optional explicit ingest flag |
 | `trade-theorist evaluate --experiment <id>` | Resolve mature outcomes and reproduce scorecards from saved records |
-| `trade-theorist export --experiment <id>` | Validate an original synthetic v1 report; private v2 export follows 012/013 |
+| `trade-theorist export --projection-version 2 --as-of <UTC> --data-root <path> --output-root <path>` | Validate/export permitted saved private v2 results; hardened serving remains Step 05 |
 
 Provide one documented Windows setup path, pinned dependencies, example nonsecret config, and a private data-root setting. A clean installation must be able to run the synthetic demo before acquiring books or credentials. The first real run requires legal source access, eligible trained Characters, market-data permissions, a complete experiment manifest, and approved numeric paper policy.
 

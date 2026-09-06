@@ -25,6 +25,7 @@ Relevant implementation and validation paths:
 | Sanitized dashboard exports | `src/trade_theorist/export.py`, `dashboard/` | `test_export` |
 | Private v2 dashboard | `src/trade_theorist/export_v2.py`, `dashboard/private.html`, `dashboard/private.js` | `test_export_v2`; [browser checklist](step-03-private-dashboard.md) |
 | Offline demo/operating CLI | `src/trade_theorist/operations.py`, `cli.py` | `test_operations` |
+| Private v2 commands and read-only diagnostics | `src/trade_theorist/operations_v2.py`, `cli.py` | `test_operations_v2`; [installed-package check](step-04-commands.md) |
 
 Use the environment's Python (on Windows, `.venv/Scripts/python.exe`):
 

@@ -1,6 +1,8 @@
 {
   "schema_version": 1,
+  "projection_version": 2,
   "data_root": null,
+  "private_bundle_root": null,
   "fixture": true,
-  "policy_path": "examples/paper-policy.template.json"
+  "policy_path": null
 }
