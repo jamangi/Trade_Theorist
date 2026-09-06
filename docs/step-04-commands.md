@@ -1,5 +1,10 @@
 # Step 04: explicit private commands
 
+Continuation: [Step 05](step-05-local-package.md) now implements protected `serve`
+and v2 `demo --serve`, a manifest and conservative retention. The installed check
+now includes loopback launch/assets/stop. Pending-serving statements below describe
+the Step 04 completion boundary.
+
 Implemented 2026-09-06. Start with the [Windows quickstart](quickstart.md) to run
 both versions. This is the bounded handoff for a fresh task; no conversation history
 or large generated JSON read is needed. Step 05 is next and owns protected serving.

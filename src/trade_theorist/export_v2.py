@@ -1,11 +1,8 @@
 """Allowlisted private owner read model. Reads saved evidence; never runs an agent."""
 from copy import deepcopy
 from decimal import Decimal as D
-from importlib.resources import files
 import json
-import os
 from pathlib import Path
-import tempfile
 
 from jsonschema import Draft202012Validator, FormatChecker
 from .contracts import ContractError, digest, utc
@@ -40,6 +37,8 @@ PRIVATE_SCHEMA = obj(schema_version={"const": 2}, publication_class={"const": "p
 def validate_private(report):
     errors = list(Draft202012Validator(PRIVATE_SCHEMA, format_checker=FormatChecker()).iter_errors(report))
     if errors: raise ContractError("Invalid private read model at " + "/".join(map(str, errors[0].path)))
+    from .private_bundle import reject_private_text
+    reject_private_text(report)
     if digest({k: v for k, v in report.items() if k != "content_hash"}) != report["content_hash"]:
         raise ContractError("Private report hash mismatch")
     evidence = {e["id"] for e in report["evidence"]}
@@ -211,30 +210,12 @@ def build_private(store, *, as_of):
         return validate_private(report)
 
 
-def export_private(store, destination, *, as_of, before_publish=None):
+def export_private(store, destination, *, as_of, before_publish=None, retain=20):
     report = build_private(store, as_of=as_of)
     root = Path(destination).resolve()
-    # Until Step 05 serving controls land, fixture preview is the only browser launch.
+    # Source origin, never the caller's fixture flag, controls repository output.
     original = all(store.v2_record(i)["contamination"] == "fixture" and store.v2_record(store.v2_record(i)["provenance"]["rights_id"])["origin"] == "original_synthetic" for i in report["source_record_ids"])
     if not original and any((p / ".git").exists() for p in (root, *root.parents)):
         raise ContractError("Real private bundles must be outside Git")
-    assets_root = files("trade_theorist").joinpath("dashboard")
-    assets = {name: assets_root.joinpath(name).read_text(encoding="utf-8") for name in ("style.css", "app.js", "private.js")}
-    html = assets_root.joinpath("private.html").read_text(encoding="utf-8")
-    assets.update({"schema.json": json.dumps(PRIVATE_SCHEMA), "report.json": json.dumps(report, ensure_ascii=False, indent=2)+"\n"})
-    version_id = digest([html, assets])
-    folder = root / "versions" / version_id
-    if not folder.resolve().is_relative_to(root): raise ContractError("Private asset path escapes destination")
-    folder.mkdir(parents=True, exist_ok=True)
-    for name, content in assets.items():
-        target = folder / name
-        if not target.resolve().is_relative_to(folder.resolve()): raise ContractError("Private asset path escapes version")
-        if target.exists() and target.read_text(encoding="utf-8") != content: raise ContractError("Immutable private asset changed")
-        target.write_text(content, encoding="utf-8", newline="\n")
-    if before_publish: before_publish()
-    with tempfile.NamedTemporaryFile("w", dir=root, encoding="utf-8", delete=False) as temp:
-        temp.write(html.replace("<!--BASE-->", f'<base href="versions/{version_id}/">'))
-        temporary = Path(temp.name)
-    try: os.replace(temporary, root / "index.html")
-    finally: temporary.unlink(missing_ok=True)
-    return root / "index.html"
+    from .private_bundle import publish
+    return publish(report, destination, before_publish=before_publish, keep=retain)

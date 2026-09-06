@@ -188,7 +188,7 @@ class PrivateOperatingTests(unittest.TestCase):
         self.assertEqual(index, (self.output / "index.html").read_bytes())
         self.assertEqual(self.invoke("demo", "--output-root", str(self.output))[0], 0)
 
-    def test_demo_refuses_existing_research_and_v2_serving_without_writes(self):
+    def test_demo_refuses_existing_research_and_in_git_serving_without_writes(self):
         foreign = Path(self.tmp.name) / "foreign"
         with V2Store(foreign, synthetic=True) as store:
             FixtureV2(store, "foreign")
@@ -198,7 +198,8 @@ class PrivateOperatingTests(unittest.TestCase):
         with ReadOnlyV2(foreign, synthetic=True) as store:
             self.assertEqual(before, store.verify())
         before = self.fingerprint()
-        self.assertEqual(self.invoke("demo", "--serve")[0], 2)
+        (Path(self.tmp.name) / ".git").mkdir()
+        self.assertEqual(self.invoke("demo", "--serve", "--output-root", str(self.output))[0], 1)
         self.assertEqual(before, self.fingerprint())
 
     def test_explicit_selection_and_cutoffs_fail_before_mutations(self):

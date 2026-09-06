@@ -26,8 +26,12 @@ def main():
         guard = root / "guard"
         guard.mkdir()
         (guard / "sitecustomize.py").write_text(
-            "import socket\ndef forbidden(*a, **kw): raise AssertionError('Network forbidden during installed check')\n"
-            "socket.socket.connect = forbidden\nsocket.socket.connect_ex = forbidden\nsocket.create_connection = forbidden\n")
+            "import socket\noriginal_connect = socket.socket.connect\n"
+            "def local_connect(sock, address):\n"
+            "    if address[0] != '127.0.0.1': raise AssertionError('External network forbidden during installed check')\n"
+            "    return original_connect(sock, address)\n"
+            "def forbidden(*a, **kw): raise AssertionError('Network forbidden during installed check')\n"
+            "socket.socket.connect = local_connect\nsocket.socket.connect_ex = forbidden\n")
         env = {k: v for k, v in os.environ.items() if not k.startswith(("TRADE_THEORIST_", "PYTHON", "PIP_"))}
         env.update(PYTHONPATH=str(guard), PYTHONNOUSERSITE="1", PIP_NO_INDEX="1", PIP_DISABLE_PIP_VERSION_CHECK="1")
         def run(name, command, expected=0, cwd=root):
@@ -67,6 +71,35 @@ def main():
             run(f"v{version}-validate", [cli, "validate", report])
             shutil.copyfile(report, logs / f"v{version}-report.json")
             evidence["versions"][str(version)] = dict(demo="passed", resume="passed", evaluate="passed", export="passed", doctor="passed", validate="passed", model_calls=demo["model_calls"])
+            if version == 2:
+                run("v2-bind-refused", [cli, "serve", *common, *output, "--host", "0.0.0.0"], expected=1)
+                launch_check = root / "check_server.py"
+                launch_check.write_text('''import http.client, sys
+from pathlib import Path
+from threading import Thread
+from trade_theorist.local_server import create_server
+with create_server(Path(sys.argv[1]), Path(sys.argv[2]), fixture=True, port=0) as server:
+    worker = Thread(target=server.serve_forever, kwargs={"poll_interval": 0.01}, daemon=True)
+    worker.start()
+    try:
+        for path, (_, expected) in server.routes.items():
+            connection = http.client.HTTPConnection("127.0.0.1", server.server_port, timeout=5)
+            try:
+                connection.request("GET", path)
+                response = connection.getresponse()
+                assert response.status == 200 and response.read() == expected
+                assert response.getheader("Cache-Control") == "no-store"
+            finally:
+                connection.close()
+    finally:
+        server.shutdown()
+        worker.join(5)
+        assert not worker.is_alive()
+assert server.socket.fileno() == -1
+print("Installed protected launch, all assets, and stop passed")
+''', encoding="utf-8")
+                run("v2-serve-stop", [python, launch_check, root / "data-v2", root / "bundle-v2"])
+                evidence["versions"]["2"]["protected_serve_stop"] = "passed"
         (logs / "evidence.json").write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
     print(f"PASS clean installed v1/v2 workflows, offline. Evidence and logs: {logs}")
 

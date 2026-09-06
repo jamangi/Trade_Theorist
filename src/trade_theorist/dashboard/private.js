@@ -56,6 +56,7 @@ document.querySelectorAll("[role=tab]").forEach((tab,index,tabs)=>{
 });
 $("version").addEventListener("change",()=>{privateSelected=null;privateFilters();renderPrivate();});
 for(const id of ["experiment","character","regime","basis","advice","horizon"])$(id).addEventListener("change",()=>{privateSelected=null;renderPrivate();});
+document.querySelector(".skip").addEventListener("click",event=>{event.preventDefault();$("main").focus();});
 async function loadPrivate(){try{
  const responses=await Promise.all([fetch("report.json",{cache:"no-store"}),fetch("schema.json",{cache:"no-store"})]);if(responses.some(r=>!r.ok))throw Error("Missing report");
  const [report,schema]=await Promise.all(responses.map(r=>r.json()));if(!conforms(report,schema)||report.publication_class!=="private-owner-v2")throw Error("Invalid private shape");

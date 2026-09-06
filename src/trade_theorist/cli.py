@@ -39,6 +39,9 @@ def operator_command(args):
     if version == 2:
         from .operations_v2 import operator_command as operator_v2
         return operator_v2(args, root, output, fixture=fixture)
+    if args.command == "serve":
+        print("Blocked: private serve requires --projection-version 2. Use demo --projection-version 1 --serve for the legacy fixture preview.")
+        return 2
     if args.output_root or getattr(args, "portfolio", None) or getattr(args, "receipt_cutoff", None):
         print("Blocked: --output-root, --portfolio and --receipt-cutoff require --projection-version 2. V1 export remains under data-root/public.")
         return 2
@@ -159,7 +162,7 @@ def main(argv=None):
     learn.add_argument("--plan", help="Reviewed learning plan with permitted records, material and recorded responses")
     learn.add_argument("--data-root")
     learn.add_argument("--fixture", action="store_true")
-    for name in ("doctor", "demo", "ingest", "heartbeat", "evaluate", "export"):
+    for name in ("doctor", "demo", "ingest", "heartbeat", "evaluate", "export", "serve"):
         command = commands.add_parser(name)
         command.add_argument("--data-root")
         command.add_argument("--fixture", action="store_true", help="Use explicitly synthetic storage")
@@ -171,6 +174,9 @@ def main(argv=None):
         if name == "demo":
             command.add_argument("--serve", action="store_true", help="Serve only the local public report on loopback")
             command.add_argument("--port", type=int, default=8765)
+        if name == "serve":
+            command.add_argument("--host", default="127.0.0.1", help="Only literal 127.0.0.1 is accepted")
+            command.add_argument("--port", type=int, default=8765, help="Use 0 for a free loopback port")
         if name in {"ingest", "heartbeat"}:
             command.add_argument("--experiment", required=True)
         if name in {"evaluate", "export"}:
@@ -202,7 +208,7 @@ def main(argv=None):
             from .migrate_v2 import migrate
             print(json.dumps(migrate(args.source, synthetic=args.synthetic, destination=args.destination, apply=args.apply), indent=2))
             return 0
-        if args.command in {"doctor", "demo", "ingest", "heartbeat", "evaluate", "export"}:
+        if args.command in {"doctor", "demo", "ingest", "heartbeat", "evaluate", "export", "serve"}:
             return operator_command(args)
         if args.command == "validate":
             value = read(args.path)

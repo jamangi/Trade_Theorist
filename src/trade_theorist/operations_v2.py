@@ -121,7 +121,7 @@ def doctor(root, output=None, *, fixture=False):
                         projection_version=2, migrations="001–004 verified", records=integrity["records"],
                         rights_records=len(rights), rights_unresolved=missing_rights, saved_evaluations=len(reports), paper_portfolios=len(paper),
                         reconciliation_incomplete=unreconciled, issues=issues, account_calls=0, model_calls=0,
-                        serving="Not started; hardened private serving belongs to Step 05.")
+                        serving="Not started; use serve --projection-version 2 with both roots to validate and launch a fixed private snapshot.")
     except Prerequisite as exc:
         return blocked(exc.code, exc.resume)
     except (ContractError, sqlite3.Error, OSError, ValueError):
@@ -154,7 +154,7 @@ def run_demo(root, output):
         report = export_private(store, destination, as_of=DEMO_CUTOFF)
         return dict(status="fixture_only", projection_version=2, report=str(report), portfolio=receipt["portfolio_id"],
                     as_of=DEMO_CUTOFF, account_calls=0, model_calls=0,
-                    resume="Repeat demo with the same roots; committed seed and evaluations are reused. Serving is Step 05.")
+                    resume="Repeat demo with the same roots; committed seed and evaluations are reused. Use --serve for the protected loopback view.")
 
 
 def operator_command(args, root, output, *, fixture):
@@ -164,11 +164,23 @@ def operator_command(args, root, output, *, fixture):
         if phase in {"ingest", "heartbeat"}:
             raise Prerequisite("v2_command_unavailable", "V2 ingest/heartbeat orchestration is not implemented. Use the documented v1 fixture command or saved v2 records through the production API; do not relabel v1 data.")
         if phase == "demo":
-            if args.serve:
-                raise Prerequisite("private_serving_pending", "Run demo --projection-version 2 without --serve to build the private fixture bundle. Step 05 owns hardened private serving; the v1 fixture preview remains available.")
             root = root or str(Path(os.environ.get("LOCALAPPDATA", Path.home())) / "TradeTheorist" / "fixture-demo-v2")
             output = output or str(Path(root) / "private-bundle")
+            if args.serve:
+                from .private_bundle import checked_path
+                from .local_server import validate_binding
+                checked_path(output, outside_git=True)
+                validate_binding("127.0.0.1", args.port)
             result = run_demo(root, output)
+            if args.serve:
+                from .local_server import serve
+                serve(root, output, fixture=True, port=args.port)
+        elif phase == "serve":
+            if not root or not output:
+                raise Prerequisite("missing_roots", "Pass absolute --data-root and --output-root (or configure both), then repeat serve --projection-version 2.")
+            from .local_server import serve
+            serve(root, output, fixture=fixture, host=args.host, port=args.port)
+            return 0
         elif phase == "doctor":
             result = doctor(root, output, fixture=fixture)
         else:
@@ -206,6 +218,7 @@ def operator_command(args, root, output, *, fixture):
     except (ContractError, ValueError, OSError, sqlite3.Error):
         actions = {"demo": "Repeat demo --projection-version 2 with the same roots. Atomic seed work and saved evaluations are reused; fix output access if only export failed.",
                    "evaluate": "Run doctor --projection-version 2, check the selected portfolio, frozen plan, rights and cutoffs, then repeat evaluate with the same arguments.",
-                   "export": "Run doctor --projection-version 2 with both roots. Resolve reported rights, migration or integrity blockers, check output access, then repeat export with the same cutoff."}
+                   "export": "Run doctor --projection-version 2 with both roots. Resolve reported rights, migration or integrity blockers, check output access, then repeat export with the same cutoff.",
+                   "serve": "Use 127.0.0.1 and an available port, an ordinary bundle directory outside Git, and its matching data root. Run doctor, re-export with the current package, then repeat serve --projection-version 2. No server started if validation failed."}
         print(json.dumps(dict(status="failed", projection_version=2, phase=phase, resume=actions.get(phase, "Repeat doctor --projection-version 2 with the same roots."))))
         return 1

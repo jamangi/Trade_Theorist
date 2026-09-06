@@ -5,13 +5,14 @@
   <title>Trade Theorist · Research observatory</title>
   <meta name="description" content="Private Individual and Monarchy accounting with separate execution bases and saved evidence.">
   <!--BASE-->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css"><script src="app.js" defer></script><script src="private.js" defer></script>
 </head>
 <body data-private-v2>
   <a class="skip" href="#main">Skip to results</a>
   <header><div class="brand"><span class="brand-mark" aria-hidden="true">T</span><span>Trade Theorist<small>Research observatory</small></span></div><span class="read-only">Private · read-only</span></header>
   <div class="notice" id="notice">Saved evidence. No trading controls.</div>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <div id="load-state" role="status">Loading private saved report…</div>
     <div id="app" hidden>
       <div class="toolbar"><div role="tablist" aria-label="Portfolio mode"><button id="council-tab" role="tab" aria-selected="true" aria-controls="results" data-mode="council">Monarchy</button><button id="characters-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="results" data-mode="character_portfolio">Individual</button></div><div class="filters"><label>Historical report<select id="version"></select></label><label>Portfolio window<select id="experiment"><option value="all">All in this mode</option></select></label><label>Execution basis<select id="basis"><option value="simulated">Simulated</option><option value="paper_broker">Broker paper</option></select></label><label>Character version<select id="character"><option value="all">All versions</option></select></label><label>Information regime<select id="regime"><option value="all">All, kept separate</option></select></label><label>Advice access<select id="advice"><option value="all">Any</option><option value="bounded">Bounded mail</option><option value="none">No mail</option></select></label><label>Horizon<select id="horizon"><option value="all">Any</option></select></label></div></div>

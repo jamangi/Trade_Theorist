@@ -60,9 +60,21 @@ values, separate simulated/paper results, missing marks and an unready Character
 above reproduces a restatement. Export includes all saved versions created by its
 cutoff. It rejects `--experiment` filtering and makes no source or account calls.
 
-**Step 05 owns browser launch and hardened private serving.** V2 `demo --serve`
-reports this missing capability before writing. The v1 preview above remains
-available. Repeat the same v2 demo command after interruption: a committed seed
+Step 05 now provides the protected launch path:
+
+```powershell
+& $tt serve --projection-version 2 --fixture --data-root $v2Data --output-root $v2Bundle
+```
+
+Open the printed address and stop with **Ctrl+C in this terminal**. Use `--port 0`
+to choose a free port. V2 `demo --serve` also builds and launches this protected
+view. Its bundle must be outside Git, even for fixtures. Each launch serves one
+validated snapshot: stop, evaluate/export and restart to load new evidence.
+Browser refresh alone does not reload disk changes. Other local processes/users
+can connect; loopback is not user authentication. See the [Step 05 guide](step-05-local-package.md)
+for exact admission and retention.
+
+The v1 preview remains available. Repeat the v2 demo after interruption: a committed seed
 and its evaluations are reused; export resumes independently. Use a new dedicated
 root for a changed recipe. The demo refuses unrelated existing research records.
 
@@ -96,13 +108,14 @@ complete logs stay in ignored `.local/test-logs/`.
 
 See the [operating runbook](runbook.md) for individual commands, source learning,
 CSV ingestion, evaluation, recovery, export boundaries and current limitations.
-The [Step 04 guide](step-04-commands.md) gives the version contract, file/test map
-and offline clean-installation check.
+The [Step 04 guide](step-04-commands.md) gives the version contract; the
+[Step 05 guide](step-05-local-package.md) adds protected serving, recovery and the
+offline clean-installation check.
 
 ## META-001 boundary
 
 Both demos use original synthetic fixtures. The public directory name and Council/
 Character portfolios labels belong to v1, whose exporter refuses nonfixture sources.
 Steps 03–04 implement permitted private v2 reporting with Individual/Monarchy labels.
-Protected serving remains Step 05. [ADR-004](../decisions/records/ADR-004-local-observatory.md)
+Step 05 implements protected serving for validated bundles. [ADR-004](../decisions/records/ADR-004-local-observatory.md)
 retires public Pages. Local use does not itself establish source retention or replay rights.

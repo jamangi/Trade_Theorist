@@ -5,7 +5,10 @@ and [Windows quickstart](quickstart.md) for their exact inputs. The table and so
 learning workflow below preserve the **legacy v1** interface. Pass
 `--projection-version 1` to select it explicitly. The compatibility default is v1;
 the updated example config explicitly selects v2. V2 doctor/export inspect an
-existing database read-only; serving private bundles remains Step 05.
+existing database read-only. [Step 05](step-05-local-package.md) implements protected
+`serve --projection-version 2 --data-root <path> --output-root <path>` and v2
+`demo --serve`. Use a bundle outside Git, open the printed address, stop with Ctrl+C.
+Export and restart for new evidence; the running snapshot never reloads disk.
 
 All commands below run locally. `demo` is the complete no-account recipe. `doctor`
 explains readiness; it does not grant it. An exit code of 0 means success, 2 means a
@@ -123,5 +126,7 @@ retention keeps 20 owned asset versions. Inaccessible/unrecognized folders are l
 alone. The private event database and all-trial registry are never pruned by export.
 Serve only `public`, never the data root. TASK-018's public Pages outcome is retired under
 [ADR-004](../decisions/records/ADR-004-local-observatory.md). Private v2 export is
-implemented in Steps 03–04 with a separate bundle root and no automatic pruning.
-Hardened local serving remains Step 05; these commands do not deploy a website.
+implemented in Steps 03–04 with a separate bundle root. Step 05 adds a manifest,
+protected serving and retention of 20 verified compatible versions, preserving
+unrelated/changed files. See its guide for the trust boundary and recovery rules.
+These commands do not deploy a public website.
