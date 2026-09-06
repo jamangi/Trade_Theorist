@@ -1,6 +1,20 @@
 # Implementation task index
 
-Status (2026-09-06): TASK-001–013 are implemented and verified within their recorded scope. TASK-014's base Alpaca adapter and TASK-015's base prospective controls are implemented. A regenerated paper credential authenticated and a small delayed historical SIP sample passed, but production vendor selection and real forward observations remain explicitly blocked by shared request controls, data-rights evidence, eligible Character versions, and real elapsed time. Current/latest SIP is not entitled. Index Steward's owner-supplied Bogle foundation is complete; Value and Trend each have one real opening checkpoint but remain partial and ineligible for real recommendations. Permitted-CSV ingestion, independent fixture opinions, isolated simulation, risk controls, bounded mail, resumable heartbeat, evaluation, a read-only dashboard and the offline operating interface are implemented. TASK-016–023 remain planned. See [completed Index learning](../docs/index-steward-foundation.md), [tasks 005–006 evidence](../docs/task-005-006-implementation.md), [tasks 007–008 evidence](../docs/task-007-008-implementation.md), [tasks 009–010 evidence](../docs/task-009-010-implementation.md), [tasks 011–013 evidence](../docs/task-011-013-implementation.md), [tasks 014–015 evidence](../docs/task-014-015-implementation.md) and the individual task records. Start the [offline demo](../docs/quickstart.md) or use the [focused reading and quiet validation workflow](../docs/development.md). Task numbers are stable; filenames show recommended effort and model.
+Status (2026-09-06): TASK-001–013 are implemented and verified within their recorded scope. TASK-014's base Alpaca adapter and TASK-015's base prospective controls are implemented. A regenerated paper credential authenticated and a small delayed historical SIP sample passed, but production vendor selection and real forward observations remain explicitly blocked by shared request controls, data-rights evidence, eligible Character versions, and real elapsed time. Current/latest SIP is not entitled. Index Steward's owner-supplied Bogle foundation is complete; Value and Trend each have one real opening checkpoint but remain partial and ineligible for real recommendations. Permitted-CSV ingestion, independent fixture opinions, isolated simulation, risk controls, bounded mail, resumable heartbeat, evaluation, a read-only dashboard and the offline operating interface are implemented. TASK-016–023 remain planned. **Before public deployment or paper-account attribution work, execute [META-001](meta-tasks/META-001-high-Astra.md) to reconcile the local/private UI boundary, Individual/Monarchy modes and canonical performance accounting.** See [completed Index learning](../docs/index-steward-foundation.md), [tasks 005–006 evidence](../docs/task-005-006-implementation.md), [tasks 007–008 evidence](../docs/task-007-008-implementation.md), [tasks 009–010 evidence](../docs/task-009-010-implementation.md), [tasks 011–013 evidence](../docs/task-011-013-implementation.md), [tasks 014–015 evidence](../docs/task-014-015-implementation.md) and the individual task records. Start the [offline demo](../docs/quickstart.md) or use the [focused reading and quiet validation workflow](../docs/development.md). Task numbers are stable; filenames show recommended effort and model.
+
+## Architecture meta-task gate
+
+The [meta-task index](meta-tasks/README.md) contains architecture reviews that can repair
+the task graph without erasing historical completion evidence. [META-001](meta-tasks/META-001-high-Astra.md)
+is now the task starting point for the proposed local-first pivot. It will determine the
+earliest affected contract, produce an exact `START-HERE.md`, and recommend amendments
+to TASK-012–018 and any earlier additive schema migrations. Owner choices remain in the
+[meta-task approval register](meta-tasks/APPROVALS.md).
+
+The current safe expectation is a local/private single-page UI with **Individual** and
+**Monarchy** tabs. Alpaca account state remains aggregate; per-Character performance is
+computed from isolated internal ledgers. Alpaca `client_order_id` can trace a submitted
+order to an internal strategy, but it does not create separate broker portfolios.
 
 ## Local Alpaca credentials
 
@@ -65,7 +79,7 @@ No blanket maximum effort. Start at the listed level; escalate a narrow unresolv
 | [TASK-015](TASK-015-high-Sol.md) | Run forward shadow observations | Sol / high | 005, 008, 010, 011, 013, 014 |
 | [TASK-016](TASK-016-high-Astra.md) | Offline rate preflight, then full forward/paper readiness audit | Astra / high | 011, 013, 014, 015 |
 | [TASK-017](TASK-017-high-Sol.md) | Start forward paper portfolios and optional broker adapter | Sol / high | 007, 008, 014, 016 |
-| [TASK-018](TASK-018-medium-Sol.md) | Publish validated reports on GitHub Pages | Sol / medium | 012, 013, 014, 016 |
+| [TASK-018](TASK-018-medium-Sol.md) | Public Pages scope paused for META-001 rights/local-first review | Sol / medium | 012, 013, 014, 016 |
 | [TASK-019](TASK-019-medium-Sol.md) | Add belief timelines and the research notebook | Sol / medium | 004, 009, 011, 012, 013 |
 | [TASK-020](TASK-020-medium-Sol.md) | Add scheduled operation with bounded usage | Sol / medium | 013, 014, 016, 017 |
 | [TASK-021](TASK-021-high-Astra.md) | Add microstructure and risk specialist research | Astra / high | 003, 004, 011, 014, 016 |
@@ -76,10 +90,11 @@ No blanket maximum effort. Start at the listed level; escalate a narrow unresolv
 
 1. **Contracts and persistence:** 001–002; catalog work 003 can start after contracts.
 2. **First useful offline observatory:** 004–013 using recorded/scripted fixture opinions where source access is blocked. Both portfolio modes, one conversation, honest scorecards, six explanation panels, and a no-account demo must work. Fixture delivery does not complete real Character learning requirements.
-3. **Prospective research:** implement 014 shared controls and 015 budget integration, pass the 016 offline rate preflight, then qualify an authorized 014 sample before 015 account-backed observations. Required trained Characters and data rights must also be ready. The duration of a forward trial is real elapsed market time; implementation cannot compress it.
-4. **Paper readiness and public report:** 016 review, then 017 paper portfolios and 018 Pages publication. Public fixture reports may demonstrate the UI, but must not impersonate achieved forward results.
-5. **Human context and reliable operation:** 019 adds richer observable learning; 020 adds optional scheduling after operational gates. Neither is required to gather the first shadow observations.
-6. **Later research:** 021 before serious intraday work; 022 before disclosure-driven signals; 023 before merged Characters or revised governance. These are explicit follow-on tasks, not prerequisites for the useful daily pilot.
+3. **Architecture reconciliation:** execute META-001 before public deployment or paper-attribution work; follow its `START-HERE.md` and approved migrations without rewriting completed evidence.
+4. **Prospective research:** implement 014 shared controls and 015 budget integration, pass the 016 offline rate preflight, then qualify an authorized 014 sample before 015 account-backed observations. Required trained Characters and data rights must also be ready. The duration of a forward trial is real elapsed market time; implementation cannot compress it.
+5. **Paper readiness and owner UI:** 016 review, then 017 paper operation; META-001 decides whether 018 is retired or replaced by local packaging. Public fixture reports may demonstrate mechanics only and must not impersonate achieved forward results.
+6. **Human context and reliable operation:** 019 adds richer observable learning; 020 adds optional scheduling after operational gates. Neither is required to gather the first shadow observations.
+7. **Later research:** 021 before serious intraday work; 022 before disclosure-driven signals; 023 before merged Characters or revised governance. These are explicit follow-on tasks, not prerequisites for the useful daily pilot.
 
 The first end-to-end fixture path is 001 → 002, with 003–009 prerequisites converging on 010 → 011 → 012 → 013. The first real paper path additionally requires verified learning, 014 → 015 → 016 → 017. Missing books or a vendor decision must not prevent fixture engineering, but must prevent claims that the dependent real experiment is complete.
 

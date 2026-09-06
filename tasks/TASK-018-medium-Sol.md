@@ -1,6 +1,6 @@
 # TASK-018: Publish validated reports on GitHub Pages
 
-- Status: planned
+- Status: planned; public deployment paused pending META-001 local/private rights review
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium
 - Dependencies: TASK-012, TASK-013, TASK-014, TASK-016
@@ -9,6 +9,11 @@
 ## Scope
 
 Build an allowlisted export and GitHub Pages workflow from sanitized artifacts. Verify rights for each public field; omit restricted source content and private reflections. Document private-runner versus public-site responsibilities, update timing, retention, and rollback. Publishing the dashboard is this task, not the planning revision.
+
+Do not begin this scope until [META-001](meta-tasks/META-001-high-Astra.md) decides
+whether it is retired, replaced by local/private packaging, or retained only for a
+separately approved synthetic or derived-only publication class. No real Alpaca-backed
+artifact is approved for public deployment by this task file.
 
 ## Deliverables
 

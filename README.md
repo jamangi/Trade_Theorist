@@ -24,10 +24,10 @@ Two dashboard tabs share one research engine: **Council**, where a chosen lead d
 | [Evaluation](docs/evaluation.md) | Fictional-money accounting, fair baselines, historical contamination, and forward paper evidence |
 | [Dashboard design](docs/dashboard.md) | At-a-glance performance and expandable answers to every success question below |
 | [Operating design](docs/operations.md) | Future setup, no-account demo, manual heartbeats, recovery, and usage controls |
-| [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks with Sol/Astra and effort recommendations, acceptance criteria, and roadmap mapping |
+| [Implementation tasks](tasks/README.md) | 23 dependency-ordered tasks plus a local-first architecture meta-task with Sol/Astra guidance, acceptance criteria, and roadmap mapping |
 | [Approved defaults](decisions/APPROVALS.md) / [architecture decision](decisions/records/ADR-001-research-observatory.md) | What is approved, what remains deferred, and which new parameters are still proposals |
 
-The next engineering work is [TASK-014's shared request controls](tasks/TASK-014-high-Sol.md) and [TASK-015's request-budget integration](tasks/TASK-015-high-Sol.md). The current adapter retries but does not proactively share a 200-calls/minute account budget; its no-op default sleeper and capped server wait also need correction. [TASK-016](tasks/TASK-016-high-Astra.md) now has an offline rate-control preflight before forward operation or a larger coordinator-backed sample and a later full readiness audit after qualified forward evidence. The [task index](tasks/README.md#rate-control-follow-up-and-staged-gates) gives the order without introducing circular dependencies. These are pending implementation requirements, not a claim that a limiter is installed.
+The next architecture step is [META-001](tasks/meta-tasks/META-001-high-Astra.md), which audits the proposed local/private UI boundary, Individual/Monarchy presentation, Character sub-ledgers and Alpaca order attribution before public deployment or paper-account attribution work. [TASK-014's shared request controls](tasks/TASK-014-high-Sol.md) and [TASK-015's request-budget integration](tasks/TASK-015-high-Sol.md) remain pending engineering work. The current adapter retries but does not proactively share a 200-calls/minute account budget; its no-op default sleeper and capped server wait also need correction. [TASK-016](tasks/TASK-016-high-Astra.md) has an offline rate-control preflight before forward operation or a larger coordinator-backed sample and a later full readiness audit after qualified forward evidence. The [task index](tasks/README.md#rate-control-follow-up-and-staged-gates) gives the order without introducing circular dependencies. These are pending requirements, not claims that the new architecture or limiter is installed.
 
 Learning reaches microstructure/risk specialists in TASK-021, and completing each curriculum still requires additional ordered runs. See [training scope and continuation](docs/character-training.md). The first full observatory release remains a clearly labeled offline demonstration. Forward paper experiments require a licensed vendor, eligible Characters and stage gates.
 
@@ -274,7 +274,7 @@ Day-trading and margin rules are jurisdiction-, broker-, account-, and time-depe
 
 ## Repository map
 
-The design documents and task backlog accompany the Python implementation in `src/trade_theorist/`, versioned schemas, three Character directories, fixture opinions, ingestion snapshots, simulation portfolios, deterministic risk controls, council mail and the heartbeat. See [tasks 007–008](docs/task-007-008-implementation.md) for accounting and execution, [tasks 009–010](docs/task-009-010-implementation.md) for deliberation and recovery, [tasks 011–013](docs/task-011-013-implementation.md) for evaluation and the local dashboard, and [focused development](docs/development.md) for quiet tests with saved failure logs. Sanitized exports are generated locally; public hosting remains task 018.
+The design documents and task backlog accompany the Python implementation in `src/trade_theorist/`, versioned schemas, three Character directories, fixture opinions, ingestion snapshots, simulation portfolios, deterministic risk controls, council mail and the heartbeat. See [tasks 007–008](docs/task-007-008-implementation.md) for accounting and execution, [tasks 009–010](docs/task-009-010-implementation.md) for deliberation and recovery, [tasks 011–013](docs/task-011-013-implementation.md) for evaluation and the local dashboard, and [focused development](docs/development.md) for quiet tests with saved failure logs. Sanitized exports are generated locally. Public hosting in task 018 is paused while [META-001](tasks/meta-tasks/META-001-high-Astra.md) determines the private-first publication boundary and exact repair starting point.
 
 ```text
 Trade_Theorist/
@@ -290,7 +290,8 @@ Trade_Theorist/
 │   ├── evaluation.md               # Metrics, baselines, and promotion criteria
 │   ├── dashboard.md                # Two tabs and six expandable evidence answers
 │   └── operations.md               # Setup, usage, recovery, and future command interface
-├── tasks/                          # Dependency-ordered implementation task files
+├── tasks/                          # Dependency-ordered implementation tasks
+│   └── meta-tasks/                   # Architecture audits, approvals, and next-task handoff
 ├── library/
 │   ├── catalog/                    # Source metadata, rights, editions, and status
 │   └── notes/                      # Citation-linked notes; not unlicensed book copies
