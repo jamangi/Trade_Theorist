@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "source_id": "book:9780071509466",
+  "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+  "reviewed_at": "2026-09-06T00:29:30Z",
+  "scope": "sample",
+  "sections": [
+    {
+      "number": 1,
+      "title": "Chapter 1: Risk Junkies",
+      "pdf_start": 25,
+      "pdf_end": 32,
+      "claims": [
+        {
+          "text": "Faith frames traders as participants who assume or transfer price and liquidity risk rather than as owners whose case rests on business value.",
+          "page": 25,
+          "anchor": "Traders care about price; essentially they buy and sell risk.",
+          "disposition": "accept"
+        },
+        {
+          "text": "The bid-ask spread is an immediate execution cost and compensation for liquidity provision, so a visible last price is not necessarily an executable price.",
+          "page": 27,
+          "anchor": "difference between these two prices is known as the spread",
+          "disposition": "accept"
+        },
+        {
+          "text": "The chapter describes price movement as emerging from changing willingness of heterogeneous buyers and sellers, including hedgers, scalpers and speculators.",
+          "page": 30,
+          "anchor": "Price movement is a function of the collective perception of buyers and sellers in a market",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The claim that electronic execution lowers costs and enables more frequent trading is historically plausible but requires current, instrument-specific spread, fee, impact and latency evidence.",
+          "page": 31,
+          "anchor": "Execution costs are lower, and this creates opportunities to trade using strategies that trade more frequently.",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Make risk transfer, executable bid/ask prices and participant heterogeneity part of the Character's foundation. Treat the market mechanism as context for later trend rules, not as a signal by itself.",
+      "adversarial_review": "This chapter is conceptual and anecdotal; it does not yet state or validate the Turtle entry, exit or sizing rules. Pit-era examples and the Southwest hedge are historical illustrations, not evidence of a current edge. Collective perception is not directly observable and can become an unfalsifiable explanation unless tied to predeclared price/volume measures.",
+      "memory_delta": "A trading thesis must identify which risk is being assumed, the executable spread and the participant/time horizon it expects to outlast. Price movement alone is an observation, not yet a complete trend system."
+    }
+  ]
+}

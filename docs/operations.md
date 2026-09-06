@@ -1,6 +1,6 @@
 # Running and maintaining the future application
 
-Status: operating design with tasks 001–004 foundation now available. See [implemented setup, foundation-demo, catalog checks and recovery](foundation-implementation.md). The full observatory commands below remain planned unless explicitly documented there; `foundation-demo` tests learning/storage only. See [the task index](../tasks/README.md) for partial real-learning status.
+Status: operating design with tasks 001–006 now available. See [foundation setup and recovery](foundation-implementation.md) and [specialist/ingestion evidence](task-005-006-implementation.md). The full observatory commands below remain planned unless explicitly documented there; current demos test learning, opinions and ingestion without portfolio execution. See [the task index](../tasks/README.md) for partial real-learning status.
 
 ## Intended local interface
 

@@ -1,0 +1,23 @@
+{
+  "source_id": "source:synthetic-csv-v1",
+  "feed": "synthetic-csv-v1",
+  "instruments": "Explicit fixture identifiers",
+  "sessions": "Explicit fixture calendar",
+  "intervals": "Daily OHLCV bars",
+  "event_timestamps": true,
+  "publication_timestamps": true,
+  "ingestion_timestamps": true,
+  "point_in_time_revisions": true,
+  "corporate_actions": true,
+  "dividends": true,
+  "delisted_instruments": true,
+  "historical_constituents": true,
+  "venue_coverage": true,
+  "storage_retention": true,
+  "automated_access": false,
+  "internal_replay": true,
+  "derived_publication": true,
+  "raw_redistribution": true,
+  "evidence": "Project-authored deterministic fixture; no vendor or market claim",
+  "checked_at": "2026-09-05T12:00:00Z"
+}

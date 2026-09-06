@@ -1,0 +1,352 @@
+[
+  {
+    "id": "character:index-steward-fixture-v1",
+    "schema_version": 1,
+    "record_type": "character",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "character_id": "index_steward_fixture",
+    "version": "fixture-v1",
+    "constitution_hash": "36aa8a9957b87cc8f33cd82990442f7114f99a78d7bee1835c3c8dc3f766d4c5",
+    "curriculum_hash": "2b125947d7c079b2b3b33ed8c215b99f7f0e197c3e48b34aabe0978ffafa5ad5",
+    "readiness": "fixture_only",
+    "foundation_source_id": "source:original-arithmetic-fixture"
+  },
+  {
+    "id": "experiment:foundation-fixture",
+    "schema_version": 1,
+    "record_type": "experiment",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "council",
+    "regime": "fixture",
+    "character_versions": [
+      "character:index-steward-fixture-v1"
+    ],
+    "policy_id": "policy:synthetic-v1",
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "baseline_cash": "zero-yield fictional cash",
+    "baseline_fund": "FIXTURE broad basket; not a real fund",
+    "membership_basis": "synthetic fixed instrument",
+    "decision_cadence": "daily_session",
+    "sizing_rules": "fixture policy only",
+    "data_feeds": [
+      "synthetic-v1"
+    ],
+    "costs": {
+      "fee_per_order": "0.00",
+      "slippage_bps": "5",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "start_at": "2099-01-03T00:00:00Z",
+    "end_at": "2099-02-03T00:00:00Z",
+    "development_end_at": "2099-01-01T00:00:00Z",
+    "validation_end_at": "2099-01-02T00:00:00Z",
+    "metrics": [
+      "net_return",
+      "drawdown",
+      "calibration"
+    ],
+    "minimum_sessions": 2,
+    "minimum_forecasts": 2,
+    "advice": "none",
+    "knowledge_cutoff": "2026-09-05T12:00:00Z",
+    "retrieval_policy": "Original fixtures only; no external retrieval",
+    "model_limitations": "Recorded synthetic outputs, no evidence of source learning or performance",
+    "approval_ref": "synthetic-test-only"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T20:02:00Z",
+    "contamination": "fixture",
+    "id": "observation:00c7c453e585d2a2d493010a0bde65acd8c7c59437d01aa2102aa5594ef4f8bb",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2026-09-05T20:00:00Z",
+    "published_at": "2026-09-05T20:01:00Z",
+    "ingested_at": "2026-09-05T20:02:00Z",
+    "availability_evidence": "Synthetic fixture release clock v1",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-csv-v1",
+    "units": "USD/raw",
+    "payload_hash": "28227fece4bff5ade908da6605609ec1762de5c3ecf1cb8c7fc1834c68600a82",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-06T01:01:00Z",
+    "contamination": "fixture",
+    "id": "observation:090cb6a838c673e94289967159dc18dff8316847ca661071024661bc16da8b76",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2026-09-05T20:00:00Z",
+    "published_at": "2026-09-06T01:00:00Z",
+    "ingested_at": "2026-09-06T01:01:00Z",
+    "availability_evidence": "Synthetic fixture release clock v1",
+    "revision": 2,
+    "supersedes_id": "observation:00c7c453e585d2a2d493010a0bde65acd8c7c59437d01aa2102aa5594ef4f8bb",
+    "superseded_at": null,
+    "feed": "synthetic-csv-v1",
+    "units": "USD/raw",
+    "payload_hash": "3622143428385e9cbdac85d31449a4c5a5a24a02a917435494d539ffb70e7eff",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-04T20:02:00Z",
+    "contamination": "fixture",
+    "id": "observation:85d4ff4a033abd3976b54e9a026615a660285871d4e37c5e118596f0375c2415",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2026-09-04T20:00:00Z",
+    "published_at": "2026-09-04T20:01:00Z",
+    "ingested_at": "2026-09-04T20:02:00Z",
+    "availability_evidence": "Synthetic fixture release clock v1",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-csv-v1",
+    "units": "USD/raw",
+    "payload_hash": "2418b30b8d2471ff6993d6fbdd8f51a3ebe0fbadd8c6c69b0eb0b145ba286b51",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-03T20:02:00Z",
+    "contamination": "fixture",
+    "id": "observation:f3bd7173aa03a2f070a5f1965f15f2f5aa75e454f31d1352260130f0a3292eba",
+    "record_type": "observation",
+    "instrument_id": "instrument:fixture-fund",
+    "asset_class": "unleveraged_us_etf",
+    "event_at": "2026-09-03T20:00:00Z",
+    "published_at": "2026-09-03T20:01:00Z",
+    "ingested_at": "2026-09-03T20:02:00Z",
+    "availability_evidence": "Synthetic fixture release clock v1",
+    "revision": 1,
+    "supersedes_id": null,
+    "superseded_at": null,
+    "feed": "synthetic-csv-v1",
+    "units": "USD/raw",
+    "payload_hash": "ba387c7bc5c2bba6e97558debd26499fcb946e4b3442c1993342f3c868ad09b7",
+    "quality": "eligible",
+    "publication_eligibility": "raw_permitted"
+  },
+  {
+    "id": "policy:synthetic-v1",
+    "schema_version": 1,
+    "record_type": "policy",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "version": "fixture-v1",
+    "stage": "fixture",
+    "synthetic": true,
+    "universe": [
+      {
+        "instrument_id": "instrument:fixture-fund",
+        "symbol": "FIXTURE",
+        "asset_class": "unleveraged_us_etf",
+        "liquid": true,
+        "leveraged": false,
+        "inverse": false,
+        "sector": "diversified",
+        "diversified": true
+      }
+    ],
+    "limits": {
+      "initial_cash": "10000.00",
+      "max_deployed_capital": "10000.00",
+      "company_weight": 0.2,
+      "sector_weight": 0.4,
+      "diversified_etf_weight": 1.0,
+      "gross_exposure": 1.0,
+      "daily_loss": 0.02,
+      "drawdown": 0.1,
+      "turnover": 0.2,
+      "orders_per_session": 5,
+      "max_quote_age_seconds": 60,
+      "max_spread_bps": "20"
+    },
+    "clock": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "costs": {
+      "fee_per_order": "0.00",
+      "slippage_bps": "5",
+      "spread_bps": "2",
+      "fill_model": "synthetic-next-open-v1",
+      "corporate_actions": "explicit_fixture_events"
+    },
+    "long_only": true,
+    "cash_only": true,
+    "approval_ref": null,
+    "approved_at": null,
+    "operator": null,
+    "kill_switch_owner": null,
+    "reconciliation_owner": null,
+    "incident_owner": null
+  },
+  {
+    "id": "portfolio:fixture-council",
+    "schema_version": 1,
+    "record_type": "portfolio",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "council",
+    "owner_character_version": "character:index-steward-fixture-v1",
+    "initial_cash": "10000.00",
+    "currency": "USD"
+  },
+  {
+    "id": "run:foundation-fixture",
+    "schema_version": 1,
+    "record_type": "run_manifest",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "mode": "learning",
+    "code_commit": "acdb8626539f3a70aa5f600ce86fb9b55c923d62",
+    "policy_version": "fixture-v1",
+    "source_revisions": [
+      "da02aef37812d40813ca3f232b920de8ae48fbe8e9d0aec0ca2a5f50c0f44285"
+    ],
+    "character_versions": [
+      "character:index-steward-fixture-v1"
+    ],
+    "model_id": "recorded-fixture-v1",
+    "prompt_version": "learning-v1",
+    "sampling": {
+      "temperature": 0,
+      "seed": 0
+    },
+    "market_cutoff": "2026-09-05T12:00:00Z",
+    "knowledge_cutoff": "2026-09-05T12:00:00Z",
+    "input_hash": "da02aef37812d40813ca3f232b920de8ae48fbe8e9d0aec0ca2a5f50c0f44285",
+    "output_hash": null,
+    "phase_status": {
+      "prepare": "pending",
+      "execute": "pending",
+      "export": "pending"
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "calls": 0,
+      "cost_usd": "0.00"
+    },
+    "failure": null,
+    "resume_from": null,
+    "parent_run_id": null
+  },
+  {
+    "id": "snapshot:5e84f1ad78a34ab22a44ebe985ad3f0211ae8a510e7ea5fa72ff071d5b9e6644",
+    "schema_version": 1,
+    "record_type": "snapshot",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-06T02:00:00Z",
+    "contamination": "fixture",
+    "cutoff": "2026-09-06T02:00:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:090cb6a838c673e94289967159dc18dff8316847ca661071024661bc16da8b76",
+      "observation:85d4ff4a033abd3976b54e9a026615a660285871d4e37c5e118596f0375c2415",
+      "observation:f3bd7173aa03a2f070a5f1965f15f2f5aa75e454f31d1352260130f0a3292eba"
+    ],
+    "exclusions": [],
+    "content_hash": "601bd700027ac8a99b0d3321a7e2ebcfeebddd89f5fe88782eb0e81d6c4dde68"
+  },
+  {
+    "id": "snapshot:7fc7d5ce68010589006b1416b831155dfea341253941fa6e6487486398182216",
+    "schema_version": 1,
+    "record_type": "snapshot",
+    "experiment_id": "experiment:foundation-fixture",
+    "created_at": "2026-09-05T23:00:00Z",
+    "contamination": "fixture",
+    "cutoff": "2026-09-05T23:00:00Z",
+    "clock_policy": {
+      "calendar": "synthetic-daily-v1",
+      "cadence": "daily_session",
+      "max_stale_sessions": 0,
+      "eligibility": "publication_and_ingestion",
+      "missing_data": "halt_all"
+    },
+    "observation_ids": [
+      "observation:00c7c453e585d2a2d493010a0bde65acd8c7c59437d01aa2102aa5594ef4f8bb",
+      "observation:85d4ff4a033abd3976b54e9a026615a660285871d4e37c5e118596f0375c2415",
+      "observation:f3bd7173aa03a2f070a5f1965f15f2f5aa75e454f31d1352260130f0a3292eba"
+    ],
+    "exclusions": [],
+    "content_hash": "eebd43fa71dc763793e76ac24e145463d8cd7ad908c1edfcc41619cb557e992a"
+  },
+  {
+    "id": "source:original-arithmetic-fixture",
+    "schema_version": 1,
+    "record_type": "source",
+    "experiment_id": null,
+    "created_at": "2026-09-05T12:00:00Z",
+    "contamination": "fixture",
+    "title": "Original arithmetic fixture",
+    "authors": [
+      "Trade Theorist project"
+    ],
+    "edition": "fixture-v1",
+    "isbn": null,
+    "publisher": "Trade Theorist project",
+    "locator": "fixture://arithmetic-v1",
+    "retrieved_at": "2026-09-05T12:00:00Z",
+    "checked_at": "2026-09-05T12:00:00Z",
+    "next_check_at": "2099-01-01T00:00:00Z",
+    "access": "public_full_text",
+    "rights": {
+      "reading": "permitted",
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "redistribution": "permitted",
+      "evidence": [
+        "Original synthetic project text created for software tests; no third-party book text."
+      ]
+    },
+    "publication_eligibility": "raw_permitted",
+    "private_locator": null,
+    "ingestion_status": "not_started",
+    "blocker": null
+  }
+]

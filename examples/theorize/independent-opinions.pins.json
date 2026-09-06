@@ -1,0 +1,56 @@
+{
+  "fixture_only": true,
+  "description": "Three independently constructed opinions over the same synthetic snapshot and portfolio; no real readiness or performance claim.",
+  "pins": [
+    {
+      "character_version": "character:index-steward-fixture-v1",
+      "recommendation_id": "recommendation:fe5b82f1c24101b12647480d138aac3e5eda0c1d672ba1e4d960a08d63bac2b3",
+      "request_hash": "4364798dcb28283edf7113da09a2da4bf1f43820e76a06c62ed3ecf86912af23",
+      "model_id": "recorded-fixture-opinion-v1",
+      "prompt_version": "independent-opinion-v1",
+      "knowledge_version": "theory:contract-fixture",
+      "knowledge_hash": "ed4794f81ba70584fc3948bd5af59a5e91ae0c50e8811bd8a963b20487973a3c",
+      "portfolio_state_hash": "84a1c3677413add31b89db5b25ff48c2f9a50b2b4981fd0e5fe866cf2e8c9866",
+      "snapshot_hash": "4bd7cbb565284f1ed8d640b5d50f83e2b9b654ba8987e636786cfda5949f45b2",
+      "evidence_hash": "bce7cb4615b14f9cc1dbd34fa2a9e846dd5f2d424953ca299e2b7c888a466fc4",
+      "expires_at": "2026-09-06T12:00:00Z",
+      "tools": [],
+      "forecast": null
+    },
+    {
+      "character_version": "character:value-rationalist-fixture-v1",
+      "recommendation_id": "recommendation:3dc2e007b450db2540506efca0bcd9f8cedfccd411752619408c195f7182089c",
+      "request_hash": "e1e72713725852aef375f3f1a8508ef27bcbdbbfa40039c0ca73737e91b41178",
+      "model_id": "recorded-fixture-opinion-v1",
+      "prompt_version": "independent-opinion-v1",
+      "knowledge_version": "theory:value-rationalist-fixture",
+      "knowledge_hash": "3beddc84d3c27987f00081ccf01d0131ef3eafd35b3162ea607ae3560fa9a272",
+      "portfolio_state_hash": "84a1c3677413add31b89db5b25ff48c2f9a50b2b4981fd0e5fe866cf2e8c9866",
+      "snapshot_hash": "4bd7cbb565284f1ed8d640b5d50f83e2b9b654ba8987e636786cfda5949f45b2",
+      "evidence_hash": "ecb6e6365f570ad5b0d6157474514b46009aca022af1dba388b86ffbf6f06321",
+      "expires_at": "2026-09-06T12:00:00Z",
+      "tools": [],
+      "forecast": null
+    },
+    {
+      "character_version": "character:systematic-trend-operator-fixture-v1",
+      "recommendation_id": "recommendation:744e93a44e10e3510d42e0da9cf8a437ed5934a572854ecd62da49929c4cab06",
+      "request_hash": "57ee8344ef94d9abc80dc1febff3588f8808fddefb4a1e8b143f48490c05d05e",
+      "model_id": "recorded-fixture-opinion-v1",
+      "prompt_version": "independent-opinion-v1",
+      "knowledge_version": "theory:systematic-trend-operator-fixture",
+      "knowledge_hash": "da63da49084dbfe92cda6d97e81ee8e0a2766d99a035da94e0d306f222cdc502",
+      "portfolio_state_hash": "84a1c3677413add31b89db5b25ff48c2f9a50b2b4981fd0e5fe866cf2e8c9866",
+      "snapshot_hash": "4bd7cbb565284f1ed8d640b5d50f83e2b9b654ba8987e636786cfda5949f45b2",
+      "evidence_hash": "0aa5745198dc9268d1df75e7f6a468990ed7af8d55c732ef020d008d802bfe1a",
+      "expires_at": "2026-09-06T12:00:00Z",
+      "tools": [],
+      "forecast": {
+        "proposition": "The fictional trend persists for five sessions",
+        "resolves_at": "2026-09-10T12:00:00Z",
+        "success_condition": "Synthetic terminal close exceeds the snapshot close",
+        "failure_condition": "Synthetic terminal close does not exceed the snapshot close"
+      }
+    }
+  ]
+}

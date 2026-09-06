@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-06T00:27:31.881216Z",
+  "authorization": "The owner supplied the local files and requested TASK-005 source-grounded analysis. This authorizes bounded private reading for the task, not redistribution.",
+  "provenance": "Local owner-supplied PDFs identified by file hash, page count, title/copyright evidence and visual inspection. Publisher authenticity and acquisition history were not independently certified.",
+  "characters": {
+    "value_rationalist": {
+      "source": {
+        "id": "book:9780061745171",
+        "schema_version": 1,
+        "record_type": "source",
+        "experiment_id": null,
+        "created_at": "2026-09-06T00:27:31.881216Z",
+        "contamination": "hindsight-contaminated",
+        "title": "The Intelligent Investor",
+        "authors": ["Benjamin Graham", "Jason Zweig (commentary)"],
+        "edition": "Revised edition; Graham's 1973 fourth revised text with 2003 Jason Zweig commentary; EPUB rendered as PDF",
+        "isbn": "9780061745171",
+        "publisher": "HarperCollins",
+        "locator": "owner-library://The_intelligent_investor_-_Benjamin_Graham.pdf",
+        "retrieved_at": "2026-09-06T00:27:31.881216Z",
+        "checked_at": "2026-09-06T00:27:31.881216Z",
+        "next_check_at": "2027-09-06T00:27:31.881216Z",
+        "access": "user_supplied",
+        "rights": {
+          "reading": "permitted",
+          "machine_ingestion": "permitted",
+          "private_storage": "permitted",
+          "redistribution": "denied",
+          "evidence": ["Owner supplied the local file and explicitly requested TASK-005 analysis; public export is limited to original notes and citation hashes."]
+        },
+        "publication_eligibility": "derived_permitted",
+        "private_locator": "owner-library/The_intelligent_investor_-_Benjamin_Graham.pdf",
+        "ingestion_status": "partial",
+        "blocker": "Only the introduction at PDF pages 17-31 has been reviewed; the remaining book is unread."
+      },
+      "pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+      "pdf_pages": 660,
+      "substantive_ranges": [[17, 31]],
+      "visual_checks": [2, 17]
+    },
+    "systematic_trend_operator": {
+      "source": {
+        "id": "book:9780071509466",
+        "schema_version": 1,
+        "record_type": "source",
+        "experiment_id": null,
+        "created_at": "2026-09-06T00:27:31.881216Z",
+        "contamination": "hindsight-contaminated",
+        "title": "Way of the Turtle",
+        "authors": ["Curtis M. Faith"],
+        "edition": "2007 McGraw-Hill ebook rendered as PDF",
+        "isbn": "9780071509466",
+        "publisher": "McGraw-Hill",
+        "locator": "owner-library://Way_of_the_Turtle_-_Curtis_Faith.pdf",
+        "retrieved_at": "2026-09-06T00:27:31.881216Z",
+        "checked_at": "2026-09-06T00:27:31.881216Z",
+        "next_check_at": "2027-09-06T00:27:31.881216Z",
+        "access": "user_supplied",
+        "rights": {
+          "reading": "permitted",
+          "machine_ingestion": "permitted",
+          "private_storage": "permitted",
+          "redistribution": "denied",
+          "evidence": ["Owner supplied the local file and explicitly requested TASK-005 analysis; public export is limited to original notes and citation hashes."]
+        },
+        "publication_eligibility": "derived_permitted",
+        "private_locator": "owner-library/Way_of_the_Turtle_-_Curtis_Faith.pdf",
+        "ingestion_status": "partial",
+        "blocker": "Only chapter 1 at PDF pages 25-32 has been reviewed; the remaining book is unread."
+      },
+      "pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+      "pdf_pages": 259,
+      "substantive_ranges": [[25, 32]],
+      "visual_checks": [2, 25]
+    }
+  }
+}

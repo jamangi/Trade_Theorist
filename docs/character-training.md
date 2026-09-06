@@ -1,14 +1,14 @@
 # When Character learning begins and finishes
 
-Updated 2026-09-05. Learning starts in **TASK-004**, which has already completed Index Steward's Bogle foundation. **TASK-005** starts the Value and Trend pilot specialists. Neither task automatically completes every Character's curriculum.
+Updated 2026-09-06. Learning starts in **TASK-004**, which completed Index Steward's Bogle foundation. **TASK-005** has now started the Value and Trend pilot specialists with one bounded opening checkpoint each. Neither task automatically completes every Character's curriculum.
 
 Here, learning means source-grounded reading, critique, versioned constitution changes, cited memory and theory cards. It is not fine-tuning model weights. Reading also does not establish profitable trading or prospective evaluation readiness.
 
 | Character | Where work starts in the current queue | What that task actually requires | Completed reading today |
 | --- | --- | --- | --- |
 | Index Steward | TASK-004 | Ordered-learning engine and first real foundation | 1 of 4 books: Bogle |
-| Value Rationalist | TASK-005 | Constitution/curriculum and at least one real checkpoint for a ready Character | 0 of 4 books |
-| Systematic Trend Operator | TASK-005 | Constitution/curriculum and at least one real checkpoint for a ready Character | 0 of 4 books |
+| Value Rationalist | TASK-005 | Constitution/curriculum and at least one real checkpoint while preserving readiness truth | 0 of 4 books; introduction checkpoint only |
+| Systematic Trend Operator | TASK-005 | Constitution/curriculum and at least one real checkpoint while preserving readiness truth | 0 of 4 books; chapter 1 checkpoint only |
 | Market Microstructure Mechanic | TASK-021, after 003, 004, 011 and 016 | Specialist checkpoints and execution research using the revised scope | 0 of 7 sources: draft excerpts, Johnson, five papers |
 | Probabilistic Risk Skeptic | TASK-021 | Specialist curricula/checkpoints and stress research | 0 of 4 books |
 | Event and Disclosure Detective | TASK-022 | Curriculum/source plan and disclosure interface; full reading is not an acceptance criterion | 0 of 4 books |

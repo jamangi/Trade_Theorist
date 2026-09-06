@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "character_id": "value_rationalist",
+  "status": "partial_foundation",
+  "real_readiness": false,
+  "recommendation_readiness": "fixture_only",
+  "curriculum_complete": false,
+  "books_read": 0,
+  "partial_books": 1,
+  "source_id": "book:9780061745171",
+  "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+  "sections_completed": 1,
+  "final_checkpoint_id": "checkpoint:0f421a7357f60f4e97c7a1d317911c3cedb408de9932ae44204c6783a934e941",
+  "bundle_hash": "3fbebd546565662d2c1be0388dd23251c3c3ab29078365e1ea432f40dbd52667",
+  "review_hash": "08094b472e72d7ef9d141a6f813cc0266d553c1c234c1743aa18405d70296080",
+  "prior_hash": "d8aa00e0ab3e3caf0e138c1effb291e69d0134f6adcce79f96bdcc36d669ff99",
+  "curriculum_hash": "e0b94a79b3f4ac8991b724a8a01e3f8ff0f56f962b1771567a8eebb4794a61e7",
+  "contamination": "hindsight-contaminated",
+  "evaluation_status": "not_run",
+  "blocker": "Only the introduction at PDF pages 17-31 has been reviewed; the remaining book is unread."
+}

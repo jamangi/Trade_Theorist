@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "character_id": "systematic_trend_operator",
+  "status": "partial_foundation",
+  "real_readiness": false,
+  "recommendation_readiness": "fixture_only",
+  "curriculum_complete": false,
+  "books_read": 0,
+  "partial_books": 1,
+  "source_id": "book:9780071509466",
+  "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+  "sections_completed": 1,
+  "final_checkpoint_id": "checkpoint:ff717c6d4f751a4408a3e808d58dae46deb8faff616bc9c3215160771d8b2e53",
+  "bundle_hash": "dd3df775251f5d51a5e2056bcc304e0649229a2176655a260e48ac15c7302d5c",
+  "review_hash": "211a0aff7cbedd01fcff86dbf29ed9267552f8fdb8785a8bf1be184c35b3f3ec",
+  "prior_hash": "8182f4f7035c39fd4695833578bb9382b33046c8be5a44d7fa67fd4f51cf9d73",
+  "curriculum_hash": "84358bc168e0700340330a6df8d34cad5091fae478217776e0bca7968c9ea87e",
+  "contamination": "hindsight-contaminated",
+  "evaluation_status": "not_run",
+  "blocker": "Only chapter 1 at PDF pages 25-32 has been reviewed; the remaining book is unread."
+}

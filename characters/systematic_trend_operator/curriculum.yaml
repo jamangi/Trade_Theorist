@@ -1,0 +1,19 @@
+character_id: systematic_trend_operator
+version: foundation-v1
+ordered_sources:
+  - position: 1
+    source_id: book:9780071509466
+    title: Way of the Turtle
+    status: partial
+  - position: 2
+    source_id: local:clenow-following-trend
+    title: Following the Trend
+    status: not_started
+  - position: 3
+    source_id: local:kaufman-systems
+    title: Trading Systems and Methods
+    status: not_started
+  - position: 4
+    source_id: local:aronson-evidence
+    title: Evidence-Based Technical Analysis
+    status: not_started

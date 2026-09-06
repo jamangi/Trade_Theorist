@@ -1,0 +1,54 @@
+{
+  "character_version": "character:value_rationalist-foundation-v1",
+  "checkpoint_id": "checkpoint:0f421a7357f60f4e97c7a1d317911c3cedb408de9932ae44204c6783a934e941",
+  "claims": [
+    {
+      "claim_id": "claim:review-f2f86c6895fb-s01-1",
+      "text": "Graham distinguishes a defensive investor by avoidance of serious error and frequent decisions, while an enterprising investor accepts sustained analytical work for a possible better average result.",
+      "citations": [
+        {
+          "source_id": "book:9780061745171",
+          "locator": "pdf/book:9780061745171/section-1#page=21",
+          "passage_hash": "4dc86cb00c62eb2743a96f732a7fc12e9e7bbecc712766e8c1c1bb06759237ae"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim:review-f2f86c6895fb-s01-2",
+      "text": "An industry's obvious physical growth does not by itself imply attractive investor profits because price, capacity, competition and already-shared expectations intervene.",
+      "citations": [
+        {
+          "source_id": "book:9780061745171",
+          "locator": "pdf/book:9780061745171/section-1#page=22",
+          "passage_hash": "b45d786baa43f6702eee2f391eb1adaefbc65dce3267f8ff55cf0aedea5e7223"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim:review-f2f86c6895fb-s01-3",
+      "text": "The introduction treats relating price paid to value offered as a central habit rather than treating a favorable business story as sufficient.",
+      "citations": [
+        {
+          "source_id": "book:9780061745171",
+          "locator": "pdf/book:9780061745171/section-1#page=23",
+          "passage_hash": "4c9009372b14e0e5712ad34da80f4299b035e35c6339815db2ede979203de343"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim:review-f2f86c6895fb-s01-4",
+      "text": "The introduction's simple defensive policy and warnings about active failure establish a burden of proof for activity, but its dated asset examples and performance assertions are not current executable rules.",
+      "citations": [
+        {
+          "source_id": "book:9780061745171",
+          "locator": "pdf/book:9780061745171/section-1#page=24",
+          "passage_hash": "048f97b400de5c156d660822d2358ecf2fcb15ae6242ff8b0aa5bdfe9ead8112"
+        }
+      ]
+    }
+  ],
+  "rejected_claims": [],
+  "memory_delta": [
+    "A compelling growth story is not an investment case until price, embedded expectations, downside and the owner's capacity are specified. Abstention is preferable to activity that lacks a defensible margin for error."
+  ]
+}

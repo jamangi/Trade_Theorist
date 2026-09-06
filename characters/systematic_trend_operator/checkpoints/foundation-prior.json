@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "character_id": "systematic_trend_operator",
+  "frozen_at": "2026-09-06T00:28:00Z",
+  "source_id": "book:9780071509466",
+  "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+  "constitution": "Systematic Trend Operator design prior. Treat rules, sizing and exits as one system; follow observable price behavior without pretending to predict fundamentals; act only on predeclared signals; expect many small losses; size for survival; include spread, slippage and liquidity; abstain when the rule or data is incomplete; preserve contrary evidence and regime limits. This is an untrained design prior, not knowledge attributed to Faith.",
+  "predictions_about_source": [
+    "The foundation will frame trading as the disciplined assumption and management of risk.",
+    "It will argue that simple rules are difficult to execute consistently.",
+    "Its historical anecdotes and execution claims will require independent testing before present use."
+  ]
+}

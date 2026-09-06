@@ -1,0 +1,22 @@
+[
+  {
+    "position": 1,
+    "source_id": "book:9780071509466",
+    "intended_lesson": "Form explicit entry, sizing and exit discipline."
+  },
+  {
+    "position": 2,
+    "source_id": "local:clenow-following-trend",
+    "intended_lesson": "Turn trend intuition into testable portfolio rules."
+  },
+  {
+    "position": 3,
+    "source_id": "local:kaufman-systems",
+    "intended_lesson": "Expand implementation choices and recognize parameter risk."
+  },
+  {
+    "position": 4,
+    "source_id": "local:aronson-evidence",
+    "intended_lesson": "Challenge the formed trend believer with statistical and data-mining tests."
+  }
+]

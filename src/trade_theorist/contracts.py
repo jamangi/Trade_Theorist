@@ -87,8 +87,17 @@ def validate(record):
             raise ContractError("Ingested source requires access and permissions")
         if record["access"] == "sample_only" and record["ingestion_status"] == "complete":
             raise ContractError("Sample access cannot imply complete ingestion")
-    if kind == "observation" and utc(record["published_at"]) > utc(record["ingested_at"]):
-        raise ContractError("Ingestion cannot precede publication")
+    if kind == "observation":
+        if utc(record["event_at"]) > utc(record["published_at"]):
+            raise ContractError("Publication cannot precede the observed event")
+        if utc(record["published_at"]) > utc(record["ingested_at"]):
+            raise ContractError("Ingestion cannot precede publication")
+        if record["availability_evidence"].strip().lower() in ("unknown", "undocumented", "none", "n/a"):
+            raise ContractError("Observation needs documented publication availability")
+        if record["revision"] == 1 and record["supersedes_id"] is not None:
+            raise ContractError("First revision cannot supersede another observation")
+        if record["revision"] > 1 and record["supersedes_id"] is None:
+            raise ContractError("Later revision must retain its predecessor")
     if kind == "recommendation":
         active = record["action"] in ("buy", "sell")
         if active and (record["instrument_id"] is None or Decimal(record["quantity"]) <= 0 or not record["citations"]):
@@ -97,6 +106,8 @@ def validate(record):
             raise ContractError("Inactive recommendation must have zero quantity")
         if record["action"] in ("wait", "abstain") and not record["abstention_reason"]:
             raise ContractError("Abstention requires a reason")
+        if record["confidence"] == 1:
+            raise ContractError("Absolute certainty is unsupported")
     if kind == "ledger_event":
         if record["event_kind"] == "fill" and any(record[k] is None for k in ("decision_id", "order_id", "instrument_id", "price")):
             raise ContractError("Fill requires order, decision, instrument and price")
@@ -187,10 +198,17 @@ def validate_bundle(records):
             if digest(observations) != record["content_hash"]:
                 raise ContractError("Snapshot hash mismatch")
             for observation in observations:
-                if observation["quality"] != "eligible" or utc(observation["published_at"]) > utc(record["cutoff"]):
+                if observation["quality"] != "eligible" or utc(observation["event_at"]) > utc(record["cutoff"]) or utc(observation["published_at"]) > utc(record["cutoff"]):
                     raise ContractError("Ineligible snapshot observation")
                 if record["clock_policy"]["eligibility"] == "publication_and_ingestion" and utc(observation["ingested_at"]) > utc(record["cutoff"]):
                     raise ContractError("Observation ingested after cutoff")
+                later = [candidate for candidate in index.values() if candidate.get("record_type") == "observation" and candidate.get("supersedes_id") == observation["id"]]
+                for candidate in later:
+                    known = utc(candidate["published_at"]) <= utc(record["cutoff"])
+                    if record["clock_policy"]["eligibility"] == "publication_and_ingestion":
+                        known = known and utc(candidate["ingested_at"]) <= utc(record["cutoff"])
+                    if known:
+                        raise ContractError("Snapshot retained a superseded observation")
         if record["record_type"] == "ledger_event" and record["order_id"] is not None:
             order = index[record["order_id"]]
             if order["event_kind"] != "order" or order["portfolio_id"] != record["portfolio_id"]:

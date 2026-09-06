@@ -1,0 +1,27 @@
+{
+  "fixture_only": true,
+  "before_revision": {
+    "instrument:fixture-fund": {
+      "status": "active",
+      "last_required_session": "2026-09-05",
+      "observed_sessions": [
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05"
+      ]
+    }
+  },
+  "after_revision": {
+    "instrument:fixture-fund": {
+      "status": "active",
+      "last_required_session": "2026-09-05",
+      "observed_sessions": [
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05"
+      ]
+    }
+  },
+  "before_snapshot_id": "snapshot:7fc7d5ce68010589006b1416b831155dfea341253941fa6e6487486398182216",
+  "after_snapshot_id": "snapshot:5e84f1ad78a34ab22a44ebe985ad3f0211ae8a510e7ea5fa72ff071d5b9e6644"
+}

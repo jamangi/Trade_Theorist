@@ -1,0 +1,249 @@
+[
+  {
+    "access": "user_supplied",
+    "authors": [
+      "Benjamin Graham",
+      "Jason Zweig (commentary)"
+    ],
+    "blocker": "Only the introduction at PDF pages 17-31 has been reviewed; the remaining book is unread.",
+    "checked_at": "2026-09-06T00:27:31.881216Z",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:27:31.881216Z",
+    "edition": "Revised edition; Graham's 1973 fourth revised text with 2003 Jason Zweig commentary; EPUB rendered as PDF",
+    "experiment_id": null,
+    "id": "book:9780061745171",
+    "ingestion_status": "partial",
+    "isbn": "9780061745171",
+    "locator": "owner-library://The_intelligent_investor_-_Benjamin_Graham.pdf",
+    "next_check_at": "2027-09-06T00:27:31.881216Z",
+    "private_locator": "owner-library/The_intelligent_investor_-_Benjamin_Graham.pdf",
+    "publication_eligibility": "derived_permitted",
+    "publisher": "HarperCollins",
+    "record_type": "source",
+    "retrieved_at": "2026-09-06T00:27:31.881216Z",
+    "rights": {
+      "evidence": [
+        "Owner supplied the local file and explicitly requested TASK-005 analysis; public export is limited to original notes and citation hashes."
+      ],
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "reading": "permitted",
+      "redistribution": "denied"
+    },
+    "schema_version": 1,
+    "title": "The Intelligent Investor"
+  },
+  {
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:30:13.235128Z",
+    "experiment_id": "learning-session:value_rationalist-foundation-v1",
+    "id": "call:8f8c4caf957e7b8dcd88af3f2886b13fc1d9378fec1b84b0c033a1bbc98b9ede",
+    "input_hash": "3d966a59516d6aeea1783d8f6b2750f9e19affca954d8a3d06dbd94d2e6fb875",
+    "model_id": "recorded-codex-source-review-v1",
+    "prompt_version": "learning-section-only-v2",
+    "record_type": "model_call",
+    "response_hash": "36b10f28bf9774f2eac740ee438f7e7a463456e4048f9ca5709c8d7476e45dbb",
+    "schema_version": 1,
+    "source_ids": [
+      "book:9780061745171"
+    ],
+    "usage": {
+      "calls": 1,
+      "cost_usd": "0.00",
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  {
+    "character_id": "value_rationalist",
+    "constitution_hash": "028dc447132535fa0e97aefccbe96c3f0b6a57860ec9397e9f9d9c0bcba0bf93",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:29:00Z",
+    "curriculum_hash": "e0b94a79b3f4ac8991b724a8a01e3f8ff0f56f962b1771567a8eebb4794a61e7",
+    "experiment_id": "learning-session:value_rationalist-foundation-v1",
+    "foundation_source_id": "book:9780061745171",
+    "id": "character:value_rationalist-foundation-v1",
+    "readiness": "partial",
+    "record_type": "character",
+    "schema_version": 1,
+    "version": "foundation-v1"
+  },
+  {
+    "accepted_claims": [
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=21",
+            "passage_hash": "4dc86cb00c62eb2743a96f732a7fc12e9e7bbecc712766e8c1c1bb06759237ae",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-1",
+        "text": "Graham distinguishes a defensive investor by avoidance of serious error and frequent decisions, while an enterprising investor accepts sustained analytical work for a possible better average result."
+      },
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=22",
+            "passage_hash": "b45d786baa43f6702eee2f391eb1adaefbc65dce3267f8ff55cf0aedea5e7223",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-2",
+        "text": "An industry's obvious physical growth does not by itself imply attractive investor profits because price, capacity, competition and already-shared expectations intervene."
+      },
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=23",
+            "passage_hash": "4c9009372b14e0e5712ad34da80f4299b035e35c6339815db2ede979203de343",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-3",
+        "text": "The introduction treats relating price paid to value offered as a central habit rather than treating a favorable business story as sufficient."
+      },
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=24",
+            "passage_hash": "048f97b400de5c156d660822d2358ecf2fcb15ae6242ff8b0aa5bdfe9ead8112",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-4",
+        "text": "The introduction's simple defensive policy and warnings about active failure establish a burden of proof for activity, but its dated asset examples and performance assertions are not current executable rules."
+      }
+    ],
+    "adversarial_review": [
+      "This bounded reading covers only the introduction and Zweig commentary, not Graham's full argument or the later margin-of-safety chapter. Historical airline, fund and market examples are selected and dated. The text's criticism of trend following is an asserted outside challenge for the Trend Character, not decisive empirical evidence here."
+    ],
+    "character_version": "character:value_rationalist-foundation-v1",
+    "consolidated_memory": [
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=21",
+            "passage_hash": "4dc86cb00c62eb2743a96f732a7fc12e9e7bbecc712766e8c1c1bb06759237ae",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-1",
+        "text": "Graham distinguishes a defensive investor by avoidance of serious error and frequent decisions, while an enterprising investor accepts sustained analytical work for a possible better average result."
+      },
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=22",
+            "passage_hash": "b45d786baa43f6702eee2f391eb1adaefbc65dce3267f8ff55cf0aedea5e7223",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-2",
+        "text": "An industry's obvious physical growth does not by itself imply attractive investor profits because price, capacity, competition and already-shared expectations intervene."
+      },
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=23",
+            "passage_hash": "4c9009372b14e0e5712ad34da80f4299b035e35c6339815db2ede979203de343",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-3",
+        "text": "The introduction treats relating price paid to value offered as a central habit rather than treating a favorable business story as sufficient."
+      },
+      {
+        "citations": [
+          {
+            "locator": "pdf/book:9780061745171/section-1#page=24",
+            "passage_hash": "048f97b400de5c156d660822d2358ecf2fcb15ae6242ff8b0aa5bdfe9ead8112",
+            "source_id": "book:9780061745171"
+          }
+        ],
+        "claim_id": "claim:review-f2f86c6895fb-s01-4",
+        "text": "The introduction's simple defensive policy and warnings about active failure establish a burden of proof for activity, but its dated asset examples and performance assertions are not current executable rules."
+      }
+    ],
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:30:13.235128Z",
+    "curriculum_position": 1,
+    "experiment_id": "learning-session:value_rationalist-foundation-v1",
+    "id": "checkpoint:0f421a7357f60f4e97c7a1d317911c3cedb408de9932ae44204c6783a934e941",
+    "material_scope": "sample",
+    "memory_delta": [
+      "A compelling growth story is not an investment case until price, embedded expectations, downside and the owner's capacity are specified. Abstention is preferable to activity that lacks a defensible margin for error."
+    ],
+    "model_call_id": "call:8f8c4caf957e7b8dcd88af3f2886b13fc1d9378fec1b84b0c033a1bbc98b9ede",
+    "prior_checkpoint_id": null,
+    "prior_hash": "22e06ee433367380d218cebe8797bf69c4fa457ad1140082ae774f7be23ef6e1",
+    "reading_status": "partial",
+    "record_type": "checkpoint",
+    "rejected_claims": [],
+    "schema_version": 1,
+    "section_index": 1,
+    "source_hash": "37b77c897be3e62e4e37d4856da23f88418886d3cbbbe197668929ce7e08c865",
+    "source_ids": [
+      "book:9780061745171"
+    ]
+  },
+  {
+    "authorization": "The owner supplied the local files and requested TASK-005 source-grounded analysis. This authorizes bounded private reading for the task, not redistribution.",
+    "character_versions": [
+      "character:value_rationalist-foundation-v1"
+    ],
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:29:00Z",
+    "experiment_id": "learning-session:value_rationalist-foundation-v1",
+    "id": "learning-session:value_rationalist-foundation-v1",
+    "mode": "learning",
+    "provenance": "Local owner-supplied PDFs identified by file hash, page count, title/copyright evidence and visual inspection. Publisher authenticity and acquisition history were not independently certified.",
+    "record_type": "learning_session",
+    "schema_version": 1,
+    "source_ids": [
+      "book:9780061745171"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "experiment_id": "learning-session:value_rationalist-foundation-v1",
+    "created_at": "2026-09-06T00:30:13.235128Z",
+    "contamination": "hindsight-contaminated",
+    "id": "run:value_rationalist-foundation-v1",
+    "record_type": "run_manifest",
+    "mode": "learning",
+    "code_commit": "4cce89810967fe57c114302b535973b895045b5d",
+    "policy_version": "not_applicable:learning_only",
+    "source_revisions": [
+      "37b77c897be3e62e4e37d4856da23f88418886d3cbbbe197668929ce7e08c865",
+      "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f"
+    ],
+    "character_versions": [
+      "character:value_rationalist-foundation-v1"
+    ],
+    "model_id": "recorded-codex-source-review-v1",
+    "prompt_version": "learning-section-only-v2",
+    "sampling": {
+      "temperature": 0,
+      "seed": 0
+    },
+    "market_cutoff": "2026-09-06T00:29:00Z",
+    "knowledge_cutoff": "2026-09-06T00:29:00Z",
+    "input_hash": "f55de6be4e5bbea9b9fba4e7348676bef1f45a724f506e707e40f2eab6554778",
+    "output_hash": "db00239029e6920c37999a6a63b1141c2619662020ae263f05e5cd5efd69b219",
+    "phase_status": {
+      "prepare": "complete",
+      "execute": "complete",
+      "export": "pending"
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "calls": 1,
+      "cost_usd": "0.00"
+    },
+    "failure": null,
+    "resume_from": null,
+    "parent_run_id": null
+  }
+]

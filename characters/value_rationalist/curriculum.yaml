@@ -1,0 +1,19 @@
+character_id: value_rationalist
+version: foundation-v1
+ordered_sources:
+  - position: 1
+    source_id: book:9780061745171
+    title: The Intelligent Investor
+    status: partial
+  - position: 2
+    source_id: local:buffett-essays
+    title: The Essays of Warren Buffett
+    status: not_started
+  - position: 3
+    source_id: local:fisher-common-stocks
+    title: Common Stocks and Uncommon Profits and Other Writings
+    status: not_started
+  - position: 4
+    source_id: local:mauboussin-expectations
+    title: Expectations Investing
+    status: not_started

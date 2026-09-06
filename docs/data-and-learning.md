@@ -1,6 +1,6 @@
 # Data acquisition and the learning library
 
-Status (2026-09-05): catalog and ordered learning are implemented. The [current inventory](../library/catalog/INVENTORY_REPORT.md) records 30 PDFs and two transcripts covering all 31 active positions. The owner adopted the limited Harris draft and five papers for Microstructure; missing original books are retired targets. No further material search or new OCR job is required. Only Index Steward's Bogle foundation has been learned; no market-data vendor or subscription is selected.
+Status (2026-09-06): catalog, ordered learning and permitted-CSV point-in-time ingestion are implemented. The [current inventory](../library/catalog/INVENTORY_REPORT.md) records 30 PDFs and two transcripts covering all 31 active positions. Index Steward's Bogle foundation is complete; Value and Trend each have one partial opening checkpoint and remain ineligible for real recommendations. The owner adopted the limited Harris draft and five papers for Microstructure; missing original books are retired targets. No market-data vendor or subscription is selected. See [tasks 005–006 evidence](task-005-006-implementation.md).
 
 ## A cheap data path
 

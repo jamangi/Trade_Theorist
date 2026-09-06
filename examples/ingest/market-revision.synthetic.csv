@@ -1,0 +1,2 @@
+kind,instrument_id,asset_class,session,event_at,published_at,ingested_at,availability_evidence,feed,publication_eligibility,adjustment,open,high,low,close,volume
+bar,instrument:fixture-fund,unleveraged_us_etf,2026-09-05,2026-09-05T20:00:00Z,2026-09-06T01:00:00Z,2026-09-06T01:01:00Z,Synthetic fixture release clock v1,synthetic-csv-v1,raw_permitted,raw,100,103,98,101.5,1000

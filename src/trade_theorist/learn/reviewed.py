@@ -55,14 +55,16 @@ def material_from_pdf(path, review, *, expected_pages, expected_ranges, scope="f
 
 
 def material_from_pages(pages, review, *, expected_ranges, scope="full_book"):
-    if scope not in COMPLETABLE_SCOPES:
+    if scope not in (*COMPLETABLE_SCOPES, "sample"):
         raise ContractError("Unsupported reviewed material scope")
     sections = review["sections"]
     ranges = [(s["pdf_start"], s["pdf_end"]) for s in sections]
     if ranges != list(expected_ranges) or [s["number"] for s in sections] != list(range(1, len(sections) + 1)):
         raise ContractError("Review coverage is missing, duplicated or reordered")
-    material = dict(source_id=review["source_id"], scope=scope, completeness_verified=True,
-                    coverage_evidence="Exact PDF hash and page count checked against the attributed full-source review; substantive sections follow the reviewed contents map.", sections=[])
+    complete = scope in COMPLETABLE_SCOPES
+    material = dict(source_id=review["source_id"], scope=scope, completeness_verified=complete,
+                    coverage_evidence=("Exact PDF hash and page count checked; substantive sections follow the attributed review map. "
+                                       + ("The declared material scope is complete." if complete else "This is a bounded partial reading, not complete-source coverage.")), sections=[])
     for section in sections:
         start, end = section["pdf_start"], section["pdf_end"]
         if not 1 <= start <= end <= len(pages) or not pages[start - 1].strip():
@@ -151,3 +153,27 @@ def foundation_status(character_dir, expected_source_id):
     if len(checkpoints) != len(review["sections"]) or completion["sections_completed"] != len(checkpoints) or [c["section_index"] for c in checkpoints] != list(range(1, len(checkpoints) + 1)):
         raise ContractError("Foundation has incomplete or reordered sections")
     return dict(character="index_steward", status="foundation_complete", sections_completed=len(checkpoints), books_read=1, curriculum_complete=False, unread_positions=[2, 3, 4], source_id=expected_source_id, evaluation_status="not_run", contamination="hindsight-contaminated")
+
+
+def specialist_status(character_dir):
+    """Validate a published bounded specialist checkpoint without promoting it."""
+    directory = Path(character_dir)
+    read = lambda path: json.loads(path.read_text(encoding="utf-8"))
+    status = read(directory / "checkpoints/foundation-status.json")
+    bundle = read(directory / "checkpoints/foundation.bundle.json")
+    index = validate_bundle(bundle)
+    if status["bundle_hash"] != digest(bundle):
+        raise ContractError("Specialist status does not match its bundle")
+    for field, path in (
+        ("prior_hash", "checkpoints/foundation-prior.json"),
+        ("review_hash", "checkpoints/foundation-reading-review.json"),
+        ("curriculum_hash", "curriculum.v1.json"),
+    ):
+        if status[field] != digest(read(directory / path)):
+            raise ContractError("Specialist readiness provenance changed")
+    checkpoint = index.get(status["final_checkpoint_id"])
+    if not checkpoint or checkpoint["reading_status"] != "partial" or checkpoint["material_scope"] != "sample":
+        raise ContractError("Specialist artifact incorrectly promotes partial learning")
+    if status["real_readiness"] is not False or status["books_read"] != 0 or status["curriculum_complete"] is not False:
+        raise ContractError("Specialist status overstates learning")
+    return status

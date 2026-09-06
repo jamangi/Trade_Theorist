@@ -1,0 +1,22 @@
+[
+  {
+    "position": 1,
+    "source_id": "book:9780061745171",
+    "intended_lesson": "Form margin-of-safety, price-versus-value and investor-versus-speculator discipline."
+  },
+  {
+    "position": 2,
+    "source_id": "local:buffett-essays",
+    "intended_lesson": "Add business quality, management and capital allocation."
+  },
+  {
+    "position": 3,
+    "source_id": "local:fisher-common-stocks",
+    "intended_lesson": "Challenge asset-value instincts with qualitative growth and durability."
+  },
+  {
+    "position": 4,
+    "source_id": "local:mauboussin-expectations",
+    "intended_lesson": "Test which future expectations are already embedded in price."
+  }
+]

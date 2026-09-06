@@ -1,0 +1,54 @@
+{
+  "character_version": "character:systematic_trend_operator-foundation-v1",
+  "checkpoint_id": "checkpoint:ff717c6d4f751a4408a3e808d58dae46deb8faff616bc9c3215160771d8b2e53",
+  "claims": [
+    {
+      "claim_id": "claim:review-2d7b59fb730d-s01-1",
+      "text": "Faith frames traders as participants who assume or transfer price and liquidity risk rather than as owners whose case rests on business value.",
+      "citations": [
+        {
+          "source_id": "book:9780071509466",
+          "locator": "pdf/book:9780071509466/section-1#page=25",
+          "passage_hash": "85d9f940a18648eb17fa5667bd603b387c3a7b341d100446c2bc6f115a5ea33c"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim:review-2d7b59fb730d-s01-2",
+      "text": "The bid-ask spread is an immediate execution cost and compensation for liquidity provision, so a visible last price is not necessarily an executable price.",
+      "citations": [
+        {
+          "source_id": "book:9780071509466",
+          "locator": "pdf/book:9780071509466/section-1#page=27",
+          "passage_hash": "882b688907b5987e887479b6075d221bc1d61fb1f9759f80846368ad4fd03faa"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim:review-2d7b59fb730d-s01-3",
+      "text": "The chapter describes price movement as emerging from changing willingness of heterogeneous buyers and sellers, including hedgers, scalpers and speculators.",
+      "citations": [
+        {
+          "source_id": "book:9780071509466",
+          "locator": "pdf/book:9780071509466/section-1#page=30",
+          "passage_hash": "f7b87b59e2647d1b6ad59408b3a25213876596a6b4ce5a8c0409b4c28d36bb2f"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim:review-2d7b59fb730d-s01-4",
+      "text": "The claim that electronic execution lowers costs and enables more frequent trading is historically plausible but requires current, instrument-specific spread, fee, impact and latency evidence.",
+      "citations": [
+        {
+          "source_id": "book:9780071509466",
+          "locator": "pdf/book:9780071509466/section-1#page=31",
+          "passage_hash": "b9e24322dc3aeceaf99d8b6c83670a410bbb3f2195641f8ef017cce64c86797d"
+        }
+      ]
+    }
+  ],
+  "rejected_claims": [],
+  "memory_delta": [
+    "A trading thesis must identify which risk is being assumed, the executable spread and the participant/time horizon it expects to outlast. Price movement alone is an observation, not yet a complete trend system."
+  ]
+}
