@@ -19,4 +19,4 @@ trade-theorist = "trade_theorist.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-trade_theorist = ["migrations/*.sql"]
+trade_theorist = ["migrations/*.sql", "dashboard/*.html", "dashboard/*.css", "dashboard/*.js"]

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "data_root": null,
+  "fixture": true,
+  "policy_path": "examples/paper-policy.template.json"
+}

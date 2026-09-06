@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trade Theorist · Research observatory</title>
+  <meta name="description" content="Read-only council and Character portfolio evidence, with explicit fixture and uncertainty labels.">
+  <!--BASE-->
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to results</a>
+  <header><div class="brand"><span class="brand-mark" aria-hidden="true">T</span><span>Trade Theorist<small>Research observatory</small></span></div><span class="read-only">Read-only · fictional capital</span></header>
+  <div class="notice" id="notice">Saved evidence. No trading controls.</div>
+  <main id="main">
+    <div id="load-state" role="status">Loading saved report…</div>
+    <div id="app" hidden>
+      <div class="toolbar"><div role="tablist" aria-label="Portfolio mode"><button id="council-tab" role="tab" aria-selected="true" aria-controls="results" data-mode="council">Council</button><button id="characters-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="results" data-mode="character_portfolio">Character portfolios</button></div><div class="filters"><label>Historical report<select id="version"></select></label><label>Experiment<select id="experiment"><option value="all">All in this mode</option></select></label><label>Advice access<select id="advice"><option value="all">Any</option><option value="bounded">Bounded mail</option><option value="none">No mail</option></select></label><label>Horizon<select id="horizon"><option value="all">Any</option></select></label></div></div>
+      <section id="results" role="tabpanel" aria-labelledby="council-tab" tabindex="0"></section>
+      <section class="support"><details><summary>How to read these results</summary><p>Net return includes fees and distributions once. Drawdown is loss from the highest recorded equity. Exposure is holdings value divided by equity. Turnover is absolute traded notional divided by mean daily equity. Volatility is daily, not annualized. Brier score measures binary-forecast error; lower is better, and only matured, scorable forecasts count.</p><p>Blank results have explicit reasons. Missing sessions are not bridged by invented returns. The cash baseline earns zero interest; the separately funded index baseline uses the same trading costs and dividend convention. Hindsight, fixture and forward trials are never ranked together.</p></details><details><summary>Run locally and resume work</summary><p>Check setup → check library → import permitted data → run a bounded heartbeat → evaluate → export. Use the local operating interface; this page cannot trade or start a model call.</p><code>trade-theorist doctor</code><br><code>trade-theorist demo --data-root &lt;absolute fixture folder&gt;</code><p>Repeat the same demo command after an interruption. Saved phase outputs, opinions and fills are reused. Real operation requires eligible learning, a qualified market source and approved paper policy.</p></details></section>
+      <section id="registry" class="support"></section>
+      <footer id="provenance"></footer>
+    </div>
+  </main>
+  <dialog id="evidence-dialog" aria-labelledby="evidence-title"><button id="close-evidence" class="close">Close evidence</button><h2 id="evidence-title">Saved evidence</h2><div id="evidence-body"></div></dialog>
+</body>
+</html>

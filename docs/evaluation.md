@@ -1,6 +1,6 @@
 # Experiments, fictional money, and fair evidence
 
-Status: evaluation specification. There are no trained Characters or performance results in this revision.
+Status: evaluation is implemented and verified with synthetic fixtures; see [task 011 evidence](task-011-013-implementation.md) and the [operating runbook](runbook.md). Source learning is recorded separately. No real forward performance or evidence of investment skill is claimed.
 
 ## Separate three information regimes
 

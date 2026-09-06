@@ -1,6 +1,6 @@
 # TASK-012: Build the two-tab performance dashboard
 
-- Status: planned
+- Status: implemented and verified (2026-09-06; local read-only dashboard)
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: high
 - Dependencies: TASK-010, TASK-011
@@ -23,3 +23,22 @@ Walk through both tabs on narrow and wide screens and with keyboard only; verify
 A specific product contract allows Sol to focus on implementation and visual verification.
 
 Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+
+## Implementation and evidence
+
+Implemented the packaged dashboard with Council/Character tabs, historical report
+selection, experiment/advice/horizon filters, equity/drawdown charts and exact table
+alternatives. It shows holdings, returns/baselines, costs, readiness, learning
+provenance, decisions/governor rejections, considered mail and unresolved objections.
+Each result has six expandable answers and working allowlisted evidence links.
+Schema and content hashes are checked before rendering; panels read saved data only.
+
+Browser checks covered both tabs in nominal 1280px and 390px local frames, no page
+horizontal overflow, arrow-key tabs, Tab focus, historical selection, six keyboard
+disclosures, evidence dialogs/Escape, stale Trend, pending forecasts, no-trade council,
+empty filters and missing-report recovery. See [validation details and browser
+environment notes](../docs/task-011-013-implementation.md).
+
+No bounded fixture blocker. The local demo visibly claims fixture mechanics only;
+no cross-regime ranking, model call or trading control exists in the page. Public
+website deployment remains task 018 and was not started.

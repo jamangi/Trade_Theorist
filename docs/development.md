@@ -6,7 +6,7 @@ searches and short file slices. Do not print the entire library, schema fixture
 bundles, book transcripts or all test files to find a small interface. Generated
 examples can be rebuilt and validated without reading their complete JSON output.
 
-Relevant paths for tasks 007–008:
+Relevant paths for tasks 007–013:
 
 | Work | Implementation | Tests |
 | --- | --- | --- |
@@ -15,11 +15,16 @@ Relevant paths for tasks 007–008:
 | Persistence/recovery | `src/trade_theorist/storage.py` | `test_storage` |
 | Input contracts | `src/trade_theorist/contracts.py`, `schema.py` | `test_contracts` |
 | Market evidence | `src/trade_theorist/ingest/market.py` | `test_ingest` |
+| Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
+| Metrics/forecast review | `src/trade_theorist/evaluate/` | `test_evaluation` |
+| Sanitized dashboard exports | `src/trade_theorist/export.py`, `dashboard/` | `test_export` |
+| Offline demo/operating CLI | `src/trade_theorist/operations.py`, `cli.py` | `test_operations` |
 
 Use the environment's Python (on Windows, `.venv/Scripts/python.exe`):
 
 ```text
 python scripts/check.py test_simulation test_risk
+python scripts/check.py test_evaluation test_export test_operations
 python scripts/check.py
 ```
 

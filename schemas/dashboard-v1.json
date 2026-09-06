@@ -1,0 +1,1116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "build_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "redaction_policy": {
+      "const": "public-summary-v1"
+    },
+    "source_run_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "report_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "trial_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "experiment_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "portfolio_id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "mode": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "regime": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence_grade": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "owner_version": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                "readiness": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "advice": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "horizon": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "as_of": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "window_start": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "window_end": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "equity": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "initial_cash": {
+                  "type": "string",
+                  "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "cash": {
+                  "type": "string",
+                  "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "reserved": {
+                  "type": "string",
+                  "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "fees": {
+                  "type": "string",
+                  "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "income": {
+                  "type": "string",
+                  "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                },
+                "halted": {
+                  "type": "boolean"
+                },
+                "metrics": {
+                  "type": "object",
+                  "properties": {
+                    "net_return": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "max_drawdown": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "turnover": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "hit_rate": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "worst_session": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "daily_volatility": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "gross_exposure": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "brier": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "reason": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "reason",
+                        "unit"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "net_return",
+                    "max_drawdown",
+                    "turnover",
+                    "hit_rate",
+                    "worst_session",
+                    "daily_volatility",
+                    "gross_exposure",
+                    "brier"
+                  ],
+                  "additionalProperties": false
+                },
+                "cash_baseline": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "reason": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "reason",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                },
+                "index_baseline": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "reason": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "reason",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                },
+                "history": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "session": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "equity": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "drawdown": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "reason": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "session",
+                      "equity",
+                      "drawdown",
+                      "reason"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "holdings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "symbol": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "quantity": {
+                        "type": "string",
+                        "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                      },
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "sector": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "symbol",
+                      "quantity",
+                      "value",
+                      "sector"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "decisions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                      },
+                      "at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "pattern": "Z$"
+                      },
+                      "author": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "action": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "quantity": {
+                        "type": "string",
+                        "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                      },
+                      "outcome": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "at",
+                      "author",
+                      "action",
+                      "quantity",
+                      "outcome"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "advice_log": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "status": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "kind",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "forecasts": {
+                  "type": "object",
+                  "properties": {
+                    "matured": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "pending": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "unscorable": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "matured",
+                    "pending",
+                    "unscorable"
+                  ],
+                  "additionalProperties": false
+                },
+                "fills": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "abstentions": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "trial_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "learning": {
+                  "type": "object",
+                  "properties": {
+                    "checkpoints": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "statement": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "checkpoints",
+                    "statement"
+                  ],
+                  "additionalProperties": false
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "question": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "answer": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "evidence_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                        },
+                        "minItems": 0,
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "question",
+                      "answer",
+                      "evidence_ids"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 6,
+                  "uniqueItems": true
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "review_blockers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "limitations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "operating_cost": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "reason": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "reason",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                },
+                "heartbeat_status": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "report_id",
+                "trial_id",
+                "experiment_id",
+                "portfolio_id",
+                "label",
+                "mode",
+                "role",
+                "regime",
+                "evidence_grade",
+                "owner_version",
+                "readiness",
+                "advice",
+                "horizon",
+                "as_of",
+                "window_start",
+                "window_end",
+                "equity",
+                "initial_cash",
+                "cash",
+                "reserved",
+                "fees",
+                "income",
+                "halted",
+                "metrics",
+                "cash_baseline",
+                "index_baseline",
+                "history",
+                "holdings",
+                "decisions",
+                "advice_log",
+                "forecasts",
+                "fills",
+                "abstentions",
+                "trial_count",
+                "learning",
+                "answers",
+                "evidence_ids",
+                "review_blockers",
+                "limitations",
+                "operating_cost",
+                "heartbeat_status"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "as_of",
+          "cards"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visibility": {
+            "enum": [
+              "fixture",
+              "private"
+            ]
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "label",
+          "visibility",
+          "details"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "no_mail": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "mail": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "regime": {
+            "type": "string",
+            "minLength": 1
+          },
+          "difference": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "value",
+              "reason",
+              "unit"
+            ],
+            "additionalProperties": false
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "no_mail",
+          "mail",
+          "regime",
+          "difference",
+          "interpretation"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "roster": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "registry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "trial_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "experiment_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "trial_id",
+          "experiment_id",
+          "role",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "notice": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "build_id",
+    "content_hash",
+    "generated_at",
+    "redaction_policy",
+    "source_run_ids",
+    "versions",
+    "evidence",
+    "comparisons",
+    "roster",
+    "registry",
+    "notice"
+  ],
+  "additionalProperties": false
+}

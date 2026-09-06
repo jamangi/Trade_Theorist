@@ -1,0 +1,32 @@
+{
+  "evidence": "original hand-calculated fixture",
+  "daily_series": {
+    "initial_cash": "1000",
+    "closing_equity": ["1000", "1100", "990"],
+    "absolute_traded_notional": "500",
+    "net_return": "-0.01",
+    "max_drawdown": "0.10",
+    "turnover": "0.48543689",
+    "explanation": "990 / 1000 - 1; 1 - 990 / 1100; 500 / ((1000 + 1100 + 990) / 3)"
+  },
+  "demo_index_and_value": {
+    "initial_cash": "10000",
+    "quantity": "10",
+    "fill_price": "100",
+    "fee": "1",
+    "dividend_per_share": "1",
+    "ending_mark": "99",
+    "ending_cash": "9009",
+    "ending_holdings_value": "990",
+    "ending_equity": "9999",
+    "net_return": "-0.0001",
+    "brier_score": "0.2025",
+    "explanation": "10000 - 10*100 - 1 + 10*1 + 10*99 = 9999; (0.55 - 1)^2 = 0.2025"
+  },
+  "zero_trade_case": {
+    "ending_equity": "10000",
+    "net_return": "0",
+    "hit_rate": null,
+    "hit_rate_reason": "No fully closed positions"
+  }
+}

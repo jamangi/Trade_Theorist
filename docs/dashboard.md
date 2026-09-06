@@ -1,6 +1,6 @@
 # Dashboard and owner experience
 
-Status: product specification, not an implemented or published website. Target: one GitHub Pages site with two primary tabs, fed by a private runner's sanitized exports.
+Status: the two-tab read-only dashboard is implemented for local sanitized fixture exports. See [implementation and browser validation](task-011-013-implementation.md) and [local preview setup](quickstart.md). Public GitHub Pages hosting remains task 018; the design below also describes future real-runner inputs.
 
 ## At a glance
 

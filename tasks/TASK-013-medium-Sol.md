@@ -1,6 +1,6 @@
 # TASK-013: Create the one-command demo and operating interface
 
-- Status: planned
+- Status: implemented and verified (2026-09-06; offline operating interface)
 - Recommended model: GPT-5.6 Sol (gpt-5.6-sol)
 - Recommended effort: medium
 - Dependencies: TASK-003, TASK-004, TASK-010, TASK-011, TASK-012
@@ -23,3 +23,24 @@ From a clean setup, run the demo without accounts/network/model calls and reprod
 Documentation and conventional command wiring can use medium effort once the engine is stable.
 
 Record validation evidence and remaining blockers here when implemented. Complete the bounded task; do not implicitly launch its dependents or spend on ongoing runs.
+
+## Implementation and evidence
+
+Added doctor, complete demo, permitted-CSV ingestion, bounded fixture heartbeat,
+evaluation and atomic local export commands. Existing library inspection/checks
+remain available; learn can inspect readiness or resume an explicit permitted plan
+with reviewed recorded responses. Missing real prerequisites produce plain blockers
+and safe retry instructions. Nonsecret config and explicit private-root selection
+are documented in the [Windows quickstart](../docs/quickstart.md) and
+[operating runbook](../docs/runbook.md).
+
+A fresh virtual environment installed pinned dependencies and the built wheel, then
+ran the isolated demo without source-path imports. The demo itself uses no account,
+network or external model; it reproduces both views, bounded mail, risk rejection,
+independent portfolios, costs/dividends and mature/pending/stale evidence. Tests
+confirm interruption/resumption, unchanged repeated demo state, CSV deduplication,
+reviewed-learning reuse, redacted errors and actionable doctor blockers.
+
+No bounded fixture blocker. Real-provider heartbeat orchestration remains gated by
+unfinished learning, vendor/calendar qualification and real paper approval/readiness.
+No live endpoint, scheduled work, paid model call or deployment was started.
