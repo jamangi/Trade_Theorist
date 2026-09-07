@@ -1,0 +1,21 @@
+{
+  "number": 20,
+  "title": "Chapter 19: Shareholders and Managements: Dividend Policy; Zweig commentary",
+  "pdf_start": 448,
+  "pdf_end": 466,
+  "claims": [
+    {"text": "Monitor management's operating performance and treatment of outside owners after purchase, using comparable businesses and proxy disclosures rather than reputation alone.", "page": 457, "anchor": "reasonably efficient", "disposition": "accept"},
+    {"text": "Retained earnings need a credible capital-allocation case; payout ratios should reflect reinvestment opportunities, financial resilience and shareholder needs rather than a universal two-thirds rule.", "page": 452, "anchor": "reinvested profits", "disposition": "qualify"},
+    {"text": "Stock dividends and splits change units and accounting presentation without inherently increasing an owner's economic share. Selling new shares reduces that ownership just as selling old shares does.", "page": 454, "anchor": "ownership interest", "disposition": "qualify"},
+    {"text": "Inspect related-party transactions for incompatible incentives and verify oversight; reported growth does not resolve a conflict between an executive as buyer and as the seller's representative.", "page": 458, "anchor": "personal income", "disposition": "accept"},
+    {"text": "Evaluate repurchases using price relative to value, net dilution, compensation and funding. Higher EPS after a buyback alone does not establish value creation.", "page": 463, "anchor": "shares are cheap", "disposition": "qualify"},
+    {"text": "Reject attributing a corporate collapse solely to an investor's failure to read the proxy. Disclosure review can reduce avoidable mistakes but cannot eliminate hidden fraud or business risk.", "page": 459, "anchor": "only person you should blame", "disposition": "reject"}
+  ],
+  "assimilation": "Ownership requires continued governance and capital-allocation review. Track reinvestment outcomes per diluted share, payouts, net buybacks, related parties and incentive terms. Treat historic tax treatment and market practices as dated descriptions requiring qualification before present use.",
+  "adversarial_review": "The decline in dividend payers includes changing firm composition; correlation between payout and later profits is not proof that forcing dividends causes better profits. Disastrous acquisitions are selected examples, and accounting impairments are not all cash spent that year. Excess cash can have insurance and option value. Stock dividends do not guarantee unchanged future per-share cash dividends. Repurchases may offset compensation dilution without being categorically sinister. The printed Oracle 484 million divided by 127 million shares does not yield 3.53; quarantine the inconsistent example. Option incentives depend on strike, vesting, holding and dividend protection: the assertion that dividends work only by dampening volatility is incomplete. Three-percent grants and five-year peer tests are policy proposals, not validated universal thresholds. Limited voting power, differing share classes and corporate liabilities constrain the rhetoric that each shareholder controls all company cash.",
+  "memory_delta": "Continue diligence after purchase. Require a reasoned choice among reinvestment, dividends and repurchases, measured per diluted share and against alternative uses. Inspect conflicts and compensation without assuming payouts, buybacks or proxy reading guarantee success.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [461],
+  "reading_provenance": "Read all PDF pages 448-466 and inspected figure 19-1, including payer/former-payer/never-paid categories."
+}

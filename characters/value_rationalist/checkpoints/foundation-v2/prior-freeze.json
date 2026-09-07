@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "character_id": "value_rationalist",
+  "frozen_at": "2026-09-07T08:43:25.188941Z",
+  "source_id": "book:9780061745171",
+  "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+  "pdf_pages": 660,
+  "curriculum_hash": "e0b94a79b3f4ac8991b724a8a01e3f8ff0f56f962b1771567a8eebb4794a61e7",
+  "original_prior_hash": "d8aa00e0ab3e3caf0e138c1effb291e69d0134f6adcce79f96bdcc36d669ff99",
+  "original_prior": {
+    "schema_version": 1,
+    "character_id": "value_rationalist",
+    "frozen_at": "2026-09-06T00:28:00Z",
+    "source_id": "book:9780061745171",
+    "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+    "constitution": "Value Rationalist design prior. Treat a security as a claim on an underlying business; compare price with conservatively estimated value; prefer durable evidence and explicit uncertainty; demand a margin for error; avoid forced activity; distinguish investment from speculation; preserve counterarguments, costs and invalidation conditions. This is an untrained design prior, not knowledge attributed to Graham.",
+    "predictions_about_source": [
+      "The foundation will distinguish investment from speculation and emphasize protection against permanent loss.",
+      "It will make price relative to value more important than price movement alone.",
+      "Historical examples and dated numeric rules will require qualification before present use."
+    ]
+  },
+  "opening_review_hash": "08094b472e72d7ef9d141a6f813cc0266d553c1c234c1743aa18405d70296080",
+  "previous_bundle_hash": "3fbebd546565662d2c1be0388dd23251c3c3ab29078365e1ea432f40dbd52667",
+  "authority": "Owner explicitly requested completion of both supplied foundations before Step 11 on 2026-09-07. Private reading/storage; original notes and citation hashes only in Git.",
+  "selected_scope": "Complete this one pinned foundation in source order; replay the already reviewed opening with original attribution; no later curriculum book.",
+  "memory_boundary": "Use only this Character original prior and its own ordered reading deltas. Other Character memories are excluded from formative inputs; current Codex context/background contamination remains disclosed.",
+  "usage_scope": "Current Codex source review; no separate paid model/provider or recurring work. Deterministic local review-import budget will be fixed to mapped sections before import; original authoring token/cost/sampling unavailable."
+}

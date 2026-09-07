@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "source_id": "book:9780071509466",
+  "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+  "scope": "full_book",
+  "pdf_pages": 259,
+  "sections": [
+    {
+      "number": 1,
+      "pdf_start": 11,
+      "pdf_end": 24
+    },
+    {
+      "number": 2,
+      "pdf_start": 25,
+      "pdf_end": 32
+    },
+    {
+      "number": 3,
+      "pdf_start": 33,
+      "pdf_end": 43
+    },
+    {
+      "number": 4,
+      "pdf_start": 44,
+      "pdf_end": 57
+    },
+    {
+      "number": 5,
+      "pdf_start": 58,
+      "pdf_end": 69
+    },
+    {
+      "number": 6,
+      "pdf_start": 70,
+      "pdf_end": 77
+    },
+    {
+      "number": 7,
+      "pdf_start": 78,
+      "pdf_end": 86
+    },
+    {
+      "number": 8,
+      "pdf_start": 87,
+      "pdf_end": 103
+    },
+    {
+      "number": 9,
+      "pdf_start": 104,
+      "pdf_end": 113
+    },
+    {
+      "number": 10,
+      "pdf_start": 114,
+      "pdf_end": 119
+    },
+    {
+      "number": 11,
+      "pdf_start": 120,
+      "pdf_end": 135
+    },
+    {
+      "number": 12,
+      "pdf_start": 136,
+      "pdf_end": 156
+    },
+    {
+      "number": 13,
+      "pdf_start": 157,
+      "pdf_end": 177
+    },
+    {
+      "number": 14,
+      "pdf_start": 178,
+      "pdf_end": 189
+    },
+    {
+      "number": 15,
+      "pdf_start": 190,
+      "pdf_end": 197
+    },
+    {
+      "number": 16,
+      "pdf_start": 198,
+      "pdf_end": 204
+    },
+    {
+      "number": 17,
+      "pdf_start": 205,
+      "pdf_end": 231
+    }
+  ],
+  "front_matter": [
+    1,
+    10
+  ],
+  "back_matter": [
+    232,
+    259
+  ],
+  "notes": "Section 1 covers foreword/preface/introduction, 2 replays original chapter 1 with explicit attribution, 3-15 cover chapters 2-14, 16 epilogue, 17 bonus rules. Front credits and back bibliography/index are inspected separately. Full source availability is not completed reading.",
+  "reading_status": "read_pending_import",
+  "completed_at": "2026-09-07T09:42:44.049412Z",
+  "coverage_attestation": "All new text 1-24 and 33-231 read in source order; original 25-32 opening explicitly replayed. Bibliography, index and end matter 232-259 inspected; figures/formulas/tables inspected as recorded per section. Full import and readiness audit pending."
+}

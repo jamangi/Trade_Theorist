@@ -1,0 +1,16 @@
+{
+  "number":14,"title":"Chapter 13: Bulletproof Systems","pdf_start":178,"pdf_end":189,
+  "claims":[
+    {"text":"A historical ranking can depend on the mixture of market conditions; too few regime transitions cannot establish a reliable cycle forecast.","page":179,"anchor":"do not have enough data","disposition":"accept"},
+    {"text":"Diversity of economically distinct exposures and simple adaptable rules can reduce dependence on a particular historical regime, subject to costs and changing correlations.","page":181,"anchor":"diversity and simplicity","disposition":"qualify"},
+    {"text":"Liquidity constraints can rationally exclude a market even when a later selected trade would have been highly profitable on paper.","page":184,"anchor":"very rational one","disposition":"accept"},
+    {"text":"A small order can still fail to execute during a liquidity vacuum; small account size does not eliminate market-wide fill risk.","page":185,"anchor":"no traders to take the other side","disposition":"accept"},
+    {"text":"Evaluate complementary strategies jointly with a common capital and exposure budget rather than selecting each solely by standalone return.","page":187,"anchor":"benefits of diversification","disposition":"qualify"},
+    {"text":"Reject the assurance that acknowledging uncertainty guarantees a program anticipates whatever happens or performs well in every future condition.","page":180,"anchor":"you are assured","disposition":"reject"}
+  ],
+  "assimilation":"Diversify within executable liquidity and capital constraints; test the combined portfolio and stressed dependence. Accept missed hindsight gains when they follow a defensible predeclared risk limit.",
+  "adversarial_review":"The three-class taxonomy and claims that members trade identically are broad untested assertions; fundamental and speculative forces coexist. Aggregation does not preclude persistent trends, and ETF applicability cannot be inferred from an old futures opinion. The dated minimum-capital and software-platform claims are not current specifications. The coffee counterfactual assumes fills, sizing and exit history despite admitted capacity concerns; the displayed chart exits after 65 bars, so it is not an independently specified original-rule result. Its initial stop differs from twice the prose N and equal profit per pyramided contract is an approximation. The combined long/short RAR exceeds either component without a clear shared capital normalization; do not read this as a free diversification gain. More systems bring operational costs and can all fail together. Source dating of the famous gold/silver peak is unverified and not accepted as a trading input. Ecological analogies do not prove that every simple strategy is robust.",
+  "memory_delta":"Diversification requires distinct exposures, feasible fills and normalized capital. Missed profits do not invalidate liquidity limits. No system is bulletproof; regime uncertainty and crowding remain even with simple rules.",
+  "theory":null,"test":null,"visual_checks":[184],
+  "reading_provenance":"Read all PDF pages 178-189 and inspected the coffee counterfactual chart."
+}

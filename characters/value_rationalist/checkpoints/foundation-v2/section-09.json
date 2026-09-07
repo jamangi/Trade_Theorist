@@ -1,0 +1,22 @@
+{
+  "number": 9,
+  "title": "Chapter 8: The Investor and Market Fluctuations; Zweig commentary",
+  "pdf_start": 183,
+  "pdf_end": 214,
+  "claims": [
+    {"text": "Distinguish appraising purchase value from forecasting the next quotation. Waiting for a better entry has foregone income and opportunity costs, which must enter any comparison.", "page": 185, "anchor": "offset his loss of dividend income", "disposition": "accept"},
+    {"text": "Retrospective trading formulas can fail as conditions or participation change; a published theoretical record may differ from decisions actually available in real time.", "page": 186, "anchor": "new conditions which the old formula no longer fits", "disposition": "accept"},
+    {"text": "A low price relative to book value still requires earnings support, financial strength and a credible continuing business; a fallen former bargain can become a permanently weaker enterprise.", "page": 192, "anchor": "does not become a sound investment merely", "disposition": "accept"},
+    {"text": "Treat a quotation as an available transaction price and information to examine, while forming an independent valuation from business reports. The option to wait depends on actual cash needs, financing and risk limits.", "page": 196, "anchor": "operations and financial position", "disposition": "qualify"},
+    {"text": "Reject the suggestion that a held stock has suffered no loss merely because an investor believes intrinsic value unchanged. Mark-to-market loss, liquidity capacity and opportunity cost remain real and must be reported separately from the valuation thesis.", "page": 195, "anchor": "as long as he held on to his shares he suffered no loss", "disposition": "reject"},
+    {"text": "High credit quality does not remove bond duration risk; convertibles additionally combine stock exposure and credit risk with interest-rate exposure.", "page": 201, "anchor": "three different factors", "disposition": "accept"},
+    {"text": "Reject unconditional claims that steadily buying through falling prices necessarily produces more wealth in the end. Such outcomes depend on future cash flows, survival, purchase capacity and horizon.", "page": 212, "anchor": "the more money you will make in the end", "disposition": "reject"}
+  ],
+  "assimilation": "Separate business appraisal, observable liquidation price and portfolio accounting. A decline initiates a thesis and liquidity review; it is neither proof of impairment nor proof of a bargain. Keep costs, risk limits and behavioral rules controllable, but acknowledge that return outcomes remain uncertain. Preregister the rules and retain failed signals rather than reconstructing them from hindsight.",
+  "adversarial_review": "The A&P sequel itself shows that a former strong business can deteriorate. An investor's ability to ignore quotations is conditional, not a defining privilege everyone possesses. Seven-year bonds can have material price risk. Book value need not capture productive intangibles or realizable asset value. The Inktomi narrative cannot identify mood as the only cause of repricing from revenue alone; acquisition price includes control and synergies. Figure 8-1 is a selected reversal sample, not a prospective rule. A Fahrenheit percentage analogy lacks an absolute zero. The tax-loss example assumes a repurchase price, oversimplifies tax circumstances, and does not create wealth equal to the lower new cost basis. No dated tax limits, medical mechanisms, guaranteed recovery or categorical ban on tested price signals is adopted as current fact.",
+  "memory_delta": "Preserve market-value losses in accounting even when the investment thesis survives. Review operations and liabilities after price shocks; control costs and forced-sale exposure. Treat historical formula failures and changing businesses as reasons for prospective evidence and thesis invalidation rules.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [200,206,207],
+  "reading_provenance": "Read all PDF pages 183-214, including the owner-contract example, and inspected table 8-1 and figure 8-1. No source tax or neuroscience assertion is certified as current."
+}

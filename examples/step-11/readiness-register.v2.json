@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "policy_id": "pilot-readiness:vti-daily-v2",
+  "policy_hash": "965ed05f8901ba6db6abc116daab36c0d7c874eea2f0c38ef4fb565fd70e7fd7",
+  "recorded_at": "2026-09-07T09:48:44.009543Z",
+  "predecessor_hash": "d0f541f98551e779a4e08d24787dec27abd4e1f793d3c01c04fd902d94eb84ee",
+  "participants": [
+    {
+      "character_id": "index_steward",
+      "eligible": true,
+      "decision": "ready",
+      "character_version": "character:index-steward-pilot-foundation-v1",
+      "version_hash": "bb288abfdf01afcff0892bfae6f17e20b48cb8dce14036974f6033835ea5cfbf",
+      "learning_character_version": "character:index-steward-bogle-2017-v1",
+      "learning_character_hash": "8a77543824f9cbfc474fe3bedd87b36817a447880c2aba34ffe2af7062953854",
+      "knowledge_checkpoint": "checkpoint:0caa62cbb3f3fdd511c183443fee754c95ccb05f72c14ddb99640769e9032c4f",
+      "knowledge_hash": "27285e44a751f2d0b75a1349a295713ce107267c5eab9b7a0492d8c6e0e826c8",
+      "reviewed_constitution": "characters/index_steward/constitution.v1.md",
+      "reviewed_constitution_hash": "9759f2c723c9f9844c61793ec5a1b4460a402ab52899af1e264fdadd27fa1a28",
+      "source_id": "book:9781119404521",
+      "source_pdf_sha256": "b5c2c3136dc2fda5b24a584b3ad23ffbc7ae9ed46c750155badfe1303d5e68e3",
+      "edition": "10th anniversary, updated and revised, 2017, ePDF (second edition)",
+      "material_scope": "full_book",
+      "sections_reviewed": 21,
+      "reviewed_ranges": [
+        [
+          17,
+          34
+        ],
+        [
+          35,
+          42
+        ],
+        [
+          43,
+          58
+        ],
+        [
+          59,
+          72
+        ],
+        [
+          73,
+          86
+        ],
+        [
+          87,
+          98
+        ],
+        [
+          99,
+          106
+        ],
+        [
+          107,
+          118
+        ],
+        [
+          119,
+          126
+        ],
+        [
+          127,
+          144
+        ],
+        [
+          145,
+          160
+        ],
+        [
+          161,
+          172
+        ],
+        [
+          173,
+          186
+        ],
+        [
+          187,
+          200
+        ],
+        [
+          201,
+          212
+        ],
+        [
+          213,
+          228
+        ],
+        [
+          229,
+          242
+        ],
+        [
+          243,
+          256
+        ],
+        [
+          257,
+          270
+        ],
+        [
+          271,
+          292
+        ],
+        [
+          293,
+          302
+        ]
+      ],
+      "books_completed": 1,
+      "curriculum_complete": false,
+      "unread_positions": [
+        2,
+        3,
+        4
+      ],
+      "foundation_remaining": null,
+      "role": "Initial council lead and independent broad-fund baseline reasoning, subject to independent policy; Bogle-grounded costs, diversification, long horizons and explicit abstention.",
+      "limitations": "The S&P 500 mutual-fund cost theory is not a VTI daily signal or evaluated result. Current fees, taxes, prices and fund properties need qualified current evidence.",
+      "contamination": "hindsight-contaminated",
+      "evaluation_status": "not_run",
+      "theory_ids": [
+        "theory:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9"
+      ],
+      "registration_ids": [
+        "registration:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9"
+      ],
+      "blockers": []
+    },
+    {
+      "character_id": "value_rationalist",
+      "eligible": true,
+      "decision": "ready",
+      "character_version": "character:value_rationalist-pilot-foundation-v2",
+      "version_hash": "31ee68607fc51b47502f653ed64b63f0ce26e897946b3ae5eabb7af37f1ec1da",
+      "learning_character_version": "character:value_rationalist-foundation-v2",
+      "learning_character_hash": "5550ad6dbca57129698f631f251cd27867c63aa8d21e75f9548d58f07788c6e1",
+      "knowledge_checkpoint": "checkpoint:ce1db05bebcb58fb048096eae5614e5673a672423c0f5cffd8dc6abc33f27b26",
+      "knowledge_hash": "3f77ea3da5f57b1146233a7b0498cdca8071a3bd8dbc87207dae98da1a19a712",
+      "reviewed_constitution": "characters/value_rationalist/constitution.foundation-v2.md",
+      "reviewed_constitution_hash": "e0bffd7242b97b98e53429489464f9242338a057ee49158056235a852a72244f",
+      "source_id": "book:9780061745171",
+      "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+      "material_scope": "full_book",
+      "sections_reviewed": 28,
+      "books_completed": 1,
+      "curriculum_complete": false,
+      "unread_positions": [
+        2,
+        3,
+        4
+      ],
+      "role": "Independent price-versus-value and margin-of-safety critique; abstain when a broad ETF's daily bars cannot support a valuation claim.",
+      "limitations": "Daily VTI bars alone do not establish business value or margin of safety. No forced active opinion.",
+      "contamination": "hindsight-contaminated",
+      "evaluation_status": "not_run",
+      "accepted_claims": 138,
+      "rejected_claims": 30,
+      "completion_hash": "0ba2e541a3c886ae3463d65d1d495226c390348553d5da5b3bd11aa4518cf932",
+      "learning_bundle_hash": "694ea3f8212d3d805c069fed44770b2464c1d6d1f92d891e65e2579faac5b33d",
+      "blockers": []
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "eligible": true,
+      "decision": "ready",
+      "character_version": "character:systematic_trend_operator-pilot-foundation-v2",
+      "version_hash": "87096fb23964c5b734e280b6182f4aa2781b91bc47f87aa9655432f9261e64f8",
+      "learning_character_version": "character:systematic_trend_operator-foundation-v2",
+      "learning_character_hash": "823692b70c3f31dbaad8eab7422783e0e03f36c69ef024ac490b34e416b25474",
+      "knowledge_checkpoint": "checkpoint:ebc15640aa4cb81c99482072961714799efaa74cf2b119f967300a0a12da060f",
+      "knowledge_hash": "0a64ce8c71c9631cb1e782e99943ba155f43ba70ab62ca8f26b2734f788a9d20",
+      "reviewed_constitution": "characters/systematic_trend_operator/constitution.foundation-v2.md",
+      "reviewed_constitution_hash": "3834e3f90caf6264b11969aa107ee8868edd02fe04102b2d318aa32b81f0f56e",
+      "source_id": "book:9780071509466",
+      "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+      "material_scope": "full_book",
+      "sections_reviewed": 17,
+      "books_completed": 1,
+      "curriculum_complete": false,
+      "unread_positions": [
+        2,
+        3,
+        4
+      ],
+      "role": "Independent trend-system research in shadow mode; require a preregistered entry, sizing, exit and invalidation rule before any active signal, otherwise abstain.",
+      "limitations": "Historical futures and execution anecdotes do not validate transfer to an unleveraged VTI daily system or establish current trading costs.",
+      "contamination": "hindsight-contaminated",
+      "evaluation_status": "not_run",
+      "accepted_claims": 83,
+      "rejected_claims": 12,
+      "completion_hash": "d8216359ebf14cab8532e181187ef4cb49d427471a7422bf8688223738ff3a01",
+      "learning_bundle_hash": "d6b82c168ffb3720aa61fccfeba7f22454b90c9d7a28b41276d1d4ba531c641d",
+      "blockers": []
+    }
+  ],
+  "participant_gate": "passed",
+  "eligible_character_versions": [
+    "character:index-steward-pilot-foundation-v1",
+    "character:value_rationalist-pilot-foundation-v2",
+    "character:systematic_trend_operator-pilot-foundation-v2"
+  ],
+  "version_bundles": {
+    "characters/value_rationalist/versions/pilot-foundation-v2.bundle.json": "b1e9ef3dba093d5c6133e98a92871c0f30bed6b26b13c83af3af18e02e4493fc",
+    "characters/systematic_trend_operator/versions/pilot-foundation-v2.bundle.json": "b205f85bad57eba4b674e0a1e72620867f9d48a52bf561716d3f7c3e21cdf5bd"
+  },
+  "step_11_status": "requires_real_integration_and_prospective_evidence",
+  "verification_limit": "Saved chain and attribution audit. Exact PDF anchors separately verified in private imports; no independent authoring replication or performance validation.",
+  "content_hash": "a3ea4118a68cadebf4f6815681513fb2873054171b9cb53413dc1735e859b4bf"
+}

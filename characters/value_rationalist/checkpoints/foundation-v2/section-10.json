@@ -1,0 +1,22 @@
+{
+  "number": 10,
+  "title": "Chapter 9: Investing in Investment Funds; Zweig commentary",
+  "pdf_start": 215,
+  "pdf_end": 240,
+  "claims": [
+    {"text": "A diversified fund can provide convenience and protection from poorly researched individual selections even when its aggregate return does not exceed the market. Evaluate service value separately from investment alpha.", "page": 217, "anchor": "served a useful purpose", "disposition": "qualify"},
+    {"text": "High past returns may reflect speculative exposure rather than repeatable skill. Compare comparable exposures and adverse periods, with the complete eligible population and accessible returns.", "page": 220, "anchor": "taking undue speculative risks", "disposition": "accept"},
+    {"text": "Do not mark restricted shares at an unrestricted public quote without reflecting transfer restrictions and realizable exit value.", "page": 223, "anchor": "illusory profit", "disposition": "accept"},
+    {"text": "A closed-end discount increases underlying assets obtained per dollar, but its investment merit depends on expenses, asset quality, leverage, liquidity and the future discount. The chapter's advantage calculation assumes equal portfolio performance and distributions.", "page": 225, "anchor": "Both sets of shares earn and pay", "disposition": "qualify"},
+    {"text": "Separate an incumbent manager's skill from changing personnel, growing assets and an incubated or temporarily fee-waived track record; each can break the continuity implied by a fund's name.", "page": 232, "anchor": "test-driving them privately", "disposition": "accept"},
+    {"text": "Use observable recurring expenses and strategy adherence as review inputs before performance rankings. Manager ownership and capacity discipline are incentive clues, not sufficient evidence of skill.", "page": 236, "anchor": "expenses are far more predictable", "disposition": "qualify"},
+    {"text": "Reject the suggestion that an out-of-favor investment style has an inevitable recovery. Patience requires a still-valid thesis and risk budget; a fixed holding period cannot guarantee vindication.", "page": 238, "anchor": "inevitable recovery", "disposition": "reject"}
+  ],
+  "assimilation": "Make fees, actual trading frictions, capacity, personnel and strategy drift explicit when evaluating delegated portfolios. A low-cost broad fund is a demanding baseline because it buys diversification economically; this cost argument is distinct from a promise about future returns. Separate time-weighted manager results from each investor's contribution and withdrawal experience.",
+  "adversarial_review": "Table 9-1 selects the largest funds at the end of the interval and weights one share each; this is not an unbiased investable cohort. Table 9-2 prints the 1967 S&P return as 23% while nearby prose says 11%; quarantine the conflict. Table 9-3 averages annual figures, which is not compound wealth. Figure 9-2 changes eligible counts across lookback lengths and does not itself isolate expense causality or include dissolved funds. Closed-end discounts can widen or persist, and NAV can be unreliable. The sample arithmetic ignores the timing/reinvestment of distributions. Low costs are a mechanical advantage conditional on comparable gross exposure, not an insurmountable proof every active fund loses. The source's expense caps, product availability, transaction commissions and legal thresholds are dated and not adopted as current inputs. A past worst quarter is no maximum-loss bound.",
+  "memory_delta": "Require continuity of manager, mandate, capacity and fee terms before relying on a historical fund record. Carry all ownership and execution costs; report investor cash-flow effects separately. Treat discount-to-NAV and ranking screens as conditional research inputs, retaining selection bias and failure cases.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [218,221,225,226,227,228,230],
+  "reading_provenance": "Read every PDF page 215-240 and visually inspected tables 9-1 through 9-5 and figure 9-1; figure 9-2's complete counts are in the read text."
+}

@@ -1,14 +1,14 @@
 # When Character learning begins and finishes
 
-Updated 2026-09-07 UTC after [Step 10's cited readiness review](step-10-pilot-readiness.md). Learning starts in **TASK-004**, which completed Index Steward's Bogle foundation. **TASK-005** started the Value and Trend pilot specialists with one bounded opening checkpoint each. Step 10 verified those records and appended a reconciled Index version; it performed no new source reading. Neither task automatically completes every Character's curriculum.
+Updated 2026-09-07 UTC after the owner-requested full Value/Trend foundations and [Step 11 integration](step-11-forward-observation.md). Learning starts in **TASK-004**, which completed Index Steward's Bogle foundation. **TASK-005** started the Value and Trend pilot specialists with one bounded opening checkpoint each. Step 10 verified those records and appended a reconciled Index version; it performed no new source reading. Neither task automatically completes every Character's curriculum.
 
 Here, learning means source-grounded reading, critique, versioned constitution changes, cited memory and theory cards. It is not fine-tuning model weights. Reading also does not establish profitable trading or prospective evaluation readiness.
 
 | Character | Where work starts in the current queue | What that task actually requires | Completed reading today |
 | --- | --- | --- | --- |
 | Index Steward | TASK-004 | Ordered-learning engine and first real foundation | 1 of 4 books: Bogle |
-| Value Rationalist | TASK-005 | Constitution/curriculum and at least one real checkpoint while preserving readiness truth | 0 of 4 books; introduction checkpoint only |
-| Systematic Trend Operator | TASK-005 | Constitution/curriculum and at least one real checkpoint while preserving readiness truth | 0 of 4 books; chapter 1 checkpoint only |
+| Value Rationalist | TASK-005 | Constitution/curriculum and at least one real checkpoint while preserving readiness truth | 1 of 4 books: Graham, 28 substantive units |
+| Systematic Trend Operator | TASK-005 | Constitution/curriculum and at least one real checkpoint while preserving readiness truth | 1 of 4 books: Faith, 17 substantive units |
 | Market Microstructure Mechanic | TASK-021, after 003, 004, 011 and 016 | Specialist checkpoints and execution research using the revised scope | 0 of 7 sources: draft excerpts, Johnson, five papers |
 | Probabilistic Risk Skeptic | TASK-021 | Specialist curricula/checkpoints and stress research | 0 of 4 books |
 | Event and Disclosure Detective | TASK-022 | Curriculum/source plan and disclosure interface; full reading is not an acceptance criterion | 0 of 4 books |
@@ -16,14 +16,7 @@ Here, learning means source-grounded reading, critique, versioned constitution c
 
 The [active queue](../tasks/README.md) exposes the real pilot readiness prerequisite in Step 10 and later Microstructure/Event scopes in Steps 16/17. The historical IDs above locate earlier evidence. Reading may continue earlier within its bounded authorization; Step 10 does not require all seven complete curricula.
 
-The [Step 10 register](../examples/step-10/readiness-register.v1.json) finds
-`character:index-steward-pilot-foundation-v1` eligible for the scoped Bogle-grounded
-participant-learning role. Value and Trend remain unready, so the three-participant
-gate and Step 11 remain blocked. Their next finite source units are Graham chapter 1
-with its commentary and Faith chapter 2. The [continuation guide](step-10-pilot-readiness.md#next-bounded-learning-work)
-pins editions, required outputs, usage authority and ceilings, and the fresh linked
-version needed to continue beyond an immutable one-section sample. Neither next
-unit alone completes a foundation. Historical learning artifacts are unchanged.
+The historical [Step 10 register](../examples/step-10/readiness-register.v1.json) remains an immutable record of the earlier blocked gate. The owner subsequently requested both full foundations. [Step 11's readiness register v2](../examples/step-11/readiness-register.v2.json) verifies Index's original eligible version and new `character:value_rationalist-pilot-foundation-v2` and `character:systematic_trend_operator-pilot-foundation-v2` versions. All three now pass the scoped participant-learning gate. See [coverage, import and provenance evidence](step-11-forward-observation.md). This does not complete later books or establish tested trading skill.
 
 ## Completing an entire curriculum
 

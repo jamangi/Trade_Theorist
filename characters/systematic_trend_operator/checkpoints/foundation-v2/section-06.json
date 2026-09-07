@@ -1,0 +1,21 @@
+{
+  "number": 6,
+  "title": "Chapter 5: Trading with an Edge",
+  "pdf_start": 70,
+  "pdf_end": 77,
+  "claims": [
+    {"text": "An exploitable advantage must survive all relevant costs, including commissions, slippage, data and computing, over the intended horizon.", "page": 70, "anchor": "costs of trading", "disposition": "accept"},
+    {"text": "Market eligibility, entry and exit rules interact; assess the complete strategy rather than optimizing a single attractive signal independently.", "page": 71, "anchor": "three components", "disposition": "accept"},
+    {"text": "The E-ratio compares mean volatility-normalized favorable and adverse excursions over a fixed horizon. It is an exploratory path statistic, not realized return or a probability of winning.", "page": 73, "anchor": "average volatility-adjusted MFE", "disposition": "qualify"},
+    {"text": "Entry behavior can differ by horizon. Freeze the evaluation interval before testing rather than selecting whichever later interval makes a signal look favorable.", "page": 74, "anchor": "over the time frame", "disposition": "accept"},
+    {"text": "The 50/300-day trend filter's historical improvement is a candidate hypothesis requiring independent validation, comparable eligible observations and complete trading costs.", "page": 75, "anchor": "from 1.20 to 1.33", "disposition": "qualify"},
+    {"text": "Evaluate exits by their effect on the entire system, including risk, capital reuse and subsequent entries; a realized trade does not capture every portfolio consequence of exiting.", "page": 77, "anchor": "performance of the entire system", "disposition": "qualify"}
+  ],
+  "assimilation": "Use excursion diagnostics to investigate a predeclared entry and its horizon. Keep entry-time ATR and filter values available before action; then test actual fills, stops, exits, costs and capital constraints. A high E-ratio is not permission to trade without a full expected-payoff case.",
+  "adversarial_review": "An average MFE exceeding average MAE does not prove a profitable executable strategy because extrema may occur in an unfavorable sequence and costs remain. Random balanced long/short directions yield a symmetry baseline; that does not establish that market prices themselves have equally likely upward and downward outcomes. Repeating 70,000 entries over the same historical paths does not create 70,000 independent market samples. Selected high-volume futures, overlapping horizons and repeated parameter tests require selection and dependence controls. Include only post-entry prices when computing entry-day excursions; an intraday entry cannot use earlier daily highs/lows as its subsequent path. Handle zero ATR and zero mean adverse excursion explicitly. Filter improvement may reflect changed exposure, and a smoother curve is not a confidence interval. The author's testing-platform role is a disclosed commercial interest. Post-exit prices can matter to opportunity cost and future trades even though they do not change the closed trade's P&L.",
+  "memory_delta": "Treat excursion ratios as diagnostics, fix horizons and lag all inputs, preserve sample dependence, and require a complete net-payoff strategy. Evaluate filters and exits through actual portfolio behavior with comparable exposure and explicit missing-data handling.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [72,75,76],
+  "reading_provenance": "Read all PDF pages 70-77 and inspected figures 5-1 through 5-3, including excursion definitions and the different vertical axis scales."
+}

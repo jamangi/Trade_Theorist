@@ -1,0 +1,14 @@
+{
+  "number": 10, "title": "Chapter 9: Turtle-Style Building Blocks", "pdf_start": 114, "pdf_end": 119,
+  "claims": [
+    {"text":"Indicators identify conditional opportunities; none reliably detects every trend or its end.","page":114,"anchor":"no building blocks that work all the time","disposition":"accept"},
+    {"text":"Breakout lookback length controls responsiveness and must be specified before testing, with the observation window ending before the decision.","page":115,"anchor":"highest high or the lowest low","disposition":"qualify"},
+    {"text":"Moving averages and volatility channels are reproducible price transformations; their complexity alone is not evidence of a better strategy.","page":117,"anchor":"greater potential for curve fitting","disposition":"accept"},
+    {"text":"A fixed holding period is a legitimate exit candidate to compare with price-dependent exits, but does not guarantee less drawdown.","page":117,"anchor":"simple time-based exit","disposition":"qualify"}
+  ],
+  "assimilation":"Prefer explicit, simple transformations and freeze lookbacks, initialization, volatility definitions and decision timing. Compare complete systems, not attractive indicators alone.",
+  "adversarial_review":"Selected charts cannot establish prospective edge. Page 117 describes the same crossover as both mid-June and early June; require dated observations rather than that prose. A moving average describes observed prices, not a verified latent market state. Time exits may miss trends or leave large interim losses. Different building blocks need not have equivalent turnover or risk even when tuned to similar responsiveness. The text promises simple lookbacks in chapter 10, which needs checking against actual listed systems.",
+  "memory_delta":"Use simple, explicitly lagged signals; indicator names do not specify executable strategies. Entry, exit, initialization and risk rules require joint evaluation.",
+  "theory":null,"test":null,"visual_checks":[116,118],
+  "reading_provenance":"Read all PDF pages 114-119 and inspected both indicator charts."
+}

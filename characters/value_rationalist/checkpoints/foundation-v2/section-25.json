@@ -1,0 +1,20 @@
+{
+  "number": 25,
+  "title": "Appended notes, first sequence",
+  "pdf_start": 599,
+  "pdf_end": 614,
+  "claims": [
+    {"text": "Graham's cited average return apparently excludes management fees, and the GEICO distribution went to shareholders. Preserve those accounting boundaries before comparing the fund or its investors with a benchmark.", "page": 600, "anchor": "management fees", "disposition": "qualify"},
+    {"text": "Do not score a forecast using a horizon supplied retrospectively by an editor. Freeze horizon, nominal or real measure and baseline before observing outcomes.", "page": 601, "anchor": "did not specify the time period", "disposition": "accept"},
+    {"text": "Reject a blanket claim that inflation-linked bonds immunize every investor against inflation losses. Purchase price, real yields, holding horizon, taxation and the investor's inflation basket matter.", "page": 602, "anchor": "effectively immunizing", "disposition": "reject"},
+    {"text": "Reject interpreting brokerage protection as an unconditional guarantee of every account's full value. Applicable protections, eligibility, limits and the nature of losses must be established separately.", "page": 606, "anchor": "full account values", "disposition": "reject"},
+    {"text": "A price discrepancy is useful only after execution costs and taxes; the displayed quote is not a guaranteed transaction price.", "page": 612, "anchor": "exact price currently quoted", "disposition": "accept"},
+    {"text": "Reject the note's inverted pension-return calculation. Investment gain divided by the appropriate capital base is a return; capital divided by gain is not.", "page": 613, "anchor": "Returns are approximated", "disposition": "reject"}
+  ],
+  "assimilation": "These notes materially qualify performance, protection and accounting claims. Keep financial gains, fees, distributions and publication dates explicit. Quarantine dimensional errors and overly broad guarantees instead of allowing them into quantitative policy.",
+  "adversarial_review": "A mean across stocks in successive years need not describe a single unchanged investable portfolio. The 15%-versus-14% growth example also changes the terminal multiple from 35 to 20, so its large price difference cannot be attributed solely to the growth change. The notes disclose Zweig's employment and options in AOL Time Warner; retain that author-interest context without treating it as automatic disproof. Negative operating cash and positive financing cash prompt investigation but can occur during rational investment. The mere legitimacy of an accounting method does not settle economic quality; Global Crossing's capitalization change needs timing and comparability review. The claims that most analysts merely guess and accounting footnotes are intentionally unreadable are rhetorical generalizations. Dates, credentials, tax carryforwards, service minimums and market counts are historical, not current operating specifications.",
+  "memory_delta": "Freeze forecast horizons and return definitions; identify gross versus net and fund versus distributed holdings. Include execution and tax friction, verify protection boundaries, and reject inverted calculations. Preserve author interests and mixed-assumption sensitivities.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read all PDF pages 599-614; pages 605-609 were reread after a tool output truncation."
+}

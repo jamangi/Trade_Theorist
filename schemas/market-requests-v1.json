@@ -135,126 +135,217 @@
       "additionalProperties": false
     },
     "market_query": {
-      "type": "object",
-      "properties": {
-        "schema_version": {
-          "const": 1
-        },
-        "record_type": {
-          "const": "market_query"
-        },
-        "provider": {
-          "const": "alpaca"
-        },
-        "endpoint": {
-          "const": "stock_bars"
-        },
-        "sharing_scope": {
-          "type": "string",
-          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
-        },
-        "rights_ref": {
-          "type": "string",
-          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
-        },
-        "feed": {
-          "enum": [
-            "iex",
-            "sip"
-          ]
-        },
-        "symbols": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "timeframe": {
-          "const": "1Day"
-        },
-        "start": {
-          "type": "string",
-          "format": "date-time",
-          "pattern": "Z$"
-        },
-        "end": {
-          "type": "string",
-          "format": "date-time",
-          "pattern": "Z$"
-        },
-        "adjustment": {
-          "enum": [
-            "raw",
-            "split",
-            "dividend",
-            "all"
-          ]
-        },
-        "asof": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
             },
-            {
-              "type": "null"
+            "record_type": {
+              "const": "market_query"
+            },
+            "provider": {
+              "const": "alpaca"
+            },
+            "endpoint": {
+              "const": "stock_bars"
+            },
+            "sharing_scope": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "rights_ref": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "feed": {
+              "enum": [
+                "iex",
+                "sip"
+              ]
+            },
+            "symbols": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "timeframe": {
+              "const": "1Day"
+            },
+            "start": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "end": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "adjustment": {
+              "enum": [
+                "raw",
+                "split",
+                "dividend",
+                "all"
+              ]
+            },
+            "asof": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "revision_policy": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "freshness_after": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "information_cutoff": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "expected_sessions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "page_limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10000
             }
-          ]
-        },
-        "revision_policy": {
-          "type": "string",
-          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
-        },
-        "freshness_after": {
-          "type": "string",
-          "format": "date-time",
-          "pattern": "Z$"
-        },
-        "information_cutoff": {
-          "type": "string",
-          "format": "date-time",
-          "pattern": "Z$"
-        },
-        "expected_sessions": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "date"
           },
-          "minItems": 1,
-          "uniqueItems": true
+          "required": [
+            "schema_version",
+            "record_type",
+            "provider",
+            "endpoint",
+            "sharing_scope",
+            "rights_ref",
+            "feed",
+            "symbols",
+            "timeframe",
+            "start",
+            "end",
+            "adjustment",
+            "asof",
+            "revision_policy",
+            "freshness_after",
+            "information_cutoff",
+            "expected_sessions",
+            "page_limit"
+          ],
+          "additionalProperties": false
         },
-        "page_limit": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 10000
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "record_type": {
+              "const": "market_query"
+            },
+            "provider": {
+              "const": "alpaca"
+            },
+            "endpoint": {
+              "const": "corporate_actions"
+            },
+            "sharing_scope": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "rights_ref": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "symbols": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "start": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "end": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "revision_policy": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "freshness_after": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "information_cutoff": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "data_quality": {
+              "const": "all"
+            },
+            "region": {
+              "const": "us"
+            },
+            "page_limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            }
+          },
+          "required": [
+            "schema_version",
+            "record_type",
+            "provider",
+            "endpoint",
+            "sharing_scope",
+            "rights_ref",
+            "symbols",
+            "start",
+            "end",
+            "revision_policy",
+            "freshness_after",
+            "information_cutoff",
+            "data_quality",
+            "region",
+            "page_limit"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "schema_version",
-        "record_type",
-        "provider",
-        "endpoint",
-        "sharing_scope",
-        "rights_ref",
-        "feed",
-        "symbols",
-        "timeframe",
-        "start",
-        "end",
-        "adjustment",
-        "asof",
-        "revision_policy",
-        "freshness_after",
-        "information_cutoff",
-        "expected_sessions",
-        "page_limit"
-      ],
-      "additionalProperties": false
+      ]
     },
     "request_telemetry": {
       "type": "object",

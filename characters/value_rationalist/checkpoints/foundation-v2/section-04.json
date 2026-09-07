@@ -1,0 +1,21 @@
+{
+  "number": 4,
+  "title": "Chapter 3: Stock-Market History and Early-1972 Valuation; Zweig commentary",
+  "pdf_start": 71,
+  "pdf_end": 92,
+  "claims": [
+    {"text": "Historical market appreciation must be separated from earnings, dividends and changes in valuation multiples; a long price advance is not itself a repeatable expected-return estimate.", "page": 75, "anchor": "change in the price/earnings ratios", "disposition": "accept"},
+    {"text": "Graham's own record includes overly cautious valuation judgments and uncertain timing; he judges consistent controlled exposure more useful than his market-level forecasts, which limits the use of valuation as a daily timing rule.", "page": 80, "anchor": "doubtful if they have been as useful", "disposition": "accept"},
+    {"text": "Early index histories can omit failed firms and splice unlike series. Treat Zweig's pre-1871 survivorship objection as a warning to audit historical population construction, not as an independently reproduced return estimate.", "page": 87, "anchor": "survivorship bias", "disposition": "qualify"},
+    {"text": "Returns at superficially similar historical valuation levels vary widely; the selected, overlapping ten-year observations in figure 3-1 do not establish a precise forecast or a trading threshold.", "page": 91, "anchor": "sometimes done very well", "disposition": "qualify"},
+    {"text": "The note under figure 3-1 describes earnings divided by index value while labeling the measure price/earnings; preserve this apparent inversion and do not implement the printed wording as a validated formula.", "page": 91, "anchor": "divided by December 31 index value", "disposition": "reject"},
+    {"text": "Reject an unconditional rule that higher share prices always mean greater investment risk: the useful comparison is price relative to changed business value, financing, alternatives and uncertainty, holding other determinants explicit.", "page": 85, "anchor": "It always has been", "disposition": "reject"}
+  ],
+  "assimilation": "Use valuation history to set a range of plausible outcomes and stress scenarios, not to infer the date of a reversal. Add a history-quality checklist covering universe changes, failed firms, dividends, inflation basis, overlapping windows and ratio definitions. Preserve Graham's mixed forecasting record alongside the commentary's favorable retrospective selection.",
+  "adversarial_review": "Zweig calls Graham prophetic after observing 1973-1974, but Graham listed multiple paths and acknowledged unhelpful prior caution. That is not clean forecast scoring. The early series use different index populations, and the selected P/E table conditions on a small number of correlated historical windows. Its descriptive ratio note is visibly inverted relative to its label; a source can be faithfully cited and still contain a technical error. Neither the historical 6% illustration nor fixed P/E cutoffs become current VTI inputs.",
+  "memory_delta": "Evaluate price against changing value and alternatives; distinguish a cautious valuation stance from a timed signal. Keep all prior forecasts, failed firms and overlapping windows visible, and verify ratio definitions before implementing them.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [72, 74, 76, 82, 91],
+  "reading_provenance": "Read all PDF pages 71-92 and inspected the rendered historical swing/earnings/yield tables, price chart and figure 3-1. The ratio-note inconsistency was confirmed on the source page."
+}

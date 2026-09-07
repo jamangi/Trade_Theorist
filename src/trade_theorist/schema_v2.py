@@ -141,6 +141,7 @@ def schema():
         return dict(id=ID, schema_version={"const": 2}, record_type={"const": kind}, experiment_id=ID,
                     created_at=UTC, contamination=CONTAMINATION, field_class={"const": FIELD_CLASSES[kind]}, provenance=SOURCE)
     definitions = {kind: obj(**common(kind), **fields) for kind, fields in FIELDS.items()}
+    definitions['forward_manifest']['required'].remove('real_context')
     definitions["ledger_event"] = {"oneOf": [obj(**common("ledger_event"), portfolio_id=ID, segment_id=ID,
         idempotency_key=ID, sequence=POS, effective_at=UTC, observed_at=UTC,
         event_type={"const": kind}, payload=payload) for kind, payload in EVENTS.items()]}

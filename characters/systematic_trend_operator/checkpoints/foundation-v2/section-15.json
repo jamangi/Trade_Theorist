@@ -1,0 +1,15 @@
+{
+  "number":15,"title":"Chapter 14: Mastering Your Demons","pdf_start":190,"pdf_end":197,
+  "claims":[
+    {"text":"Audit execution against a predeclared plan; a plan that cannot be followed consistently does not describe actual trading.","page":195,"anchor":"execute your plan","disposition":"accept"},
+    {"text":"Humility supports acknowledging uncertainty and separating a losing outcome from personal worth, without forbidding explicit probabilistic forecasts.","page":194,"anchor":"future as something that is unknowable","disposition":"qualify"},
+    {"text":"Historical research and paper practice can expose mistakes but do not recreate the experience or execution of risking real money.","page":196,"anchor":"not the same as practicing or paper trading","disposition":"accept"},
+    {"text":"The author explicitly limits his psychological expertise and says trend following is unsuitable for many people; treat his selected anecdotes accordingly.","page":196,"anchor":"not an expert in trading psychology","disposition":"accept"},
+    {"text":"Reject the claim that the Turtle story proves consistently following those principles will result in profitable trading for later users.","page":190,"anchor":"would result in profitable trading","disposition":"reject"}
+  ],
+  "assimilation":"Make process adherence measurable and maintain risk limits, explicit uncertainty and predeclared revision criteria. Use practice to uncover failures rather than to certify readiness for real capital.",
+  "adversarial_review":"A ping-pong result and retrospective attribution do not establish another person's psychology or cause of trading failure. Claimed immunity to bias is self-report. Discretionary traders can use disciplined processes, and systematic strategy selection itself involves judgment. Confidence from a famous teacher is authority-based, not independent validation. Consistent execution of a negative or decayed edge consistently loses money; revisions at scheduled checkpoints can be appropriate. The reported aggregate Turtle profit is not independently audited here. Do not substitute moral judgments about ego for checking data, costs, rule violations and market change.",
+  "memory_delta":"Measure compliance without equating confidence, humility or consistency with positive expectancy. Paper experience has limits; review assumptions and failures with explicit evidence rather than personality stories.",
+  "theory":null,"test":null,"visual_checks":[],
+  "reading_provenance":"Read all PDF pages 190-197; chapter contains narrative and concluding principles, no data figures."
+}

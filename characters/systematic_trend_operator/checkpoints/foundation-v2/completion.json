@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "character_id": "systematic_trend_operator",
+  "status": "foundation_complete",
+  "books_read": 1,
+  "curriculum_complete": false,
+  "unread_positions": [
+    2,
+    3,
+    4
+  ],
+  "source_id": "book:9780071509466",
+  "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+  "sections_completed": 17,
+  "completed_at": "2026-09-07T09:45:41.403995Z",
+  "final_checkpoint_id": "checkpoint:ebc15640aa4cb81c99482072961714799efaa74cf2b119f967300a0a12da060f",
+  "bundle_hash": "d6b82c168ffb3720aa61fccfeba7f22454b90c9d7a28b41276d1d4ba531c641d",
+  "memory_hash": "79fe241a6806abae426e3d8b5d2d060b887d926ba766ff6ff0ba73d616f902a9",
+  "review_hash": "fd3d2f81a2de99d92dc7e04dd75536d2f03e31830c57a02836cc550c80537142",
+  "prior_hash": "8182f4f7035c39fd4695833578bb9382b33046c8be5a44d7fa67fd4f51cf9d73",
+  "prior_freeze_hash": "0ed870d878ccee01fb95f960f7c829dc98ae0954c712746aac25d2304ef3f3bf",
+  "material_hash": "2f2d01b4562cf4ff418558d32bf7507a91e80953d93848d73a26b4912ce6364e",
+  "coverage_hash": "8f2105b18623a5ff3b5472f09c8bb2ea7b6c48fc3ff3d7669638543885955c3e",
+  "curriculum_hash": "84358bc168e0700340330a6df8d34cad5091fae478217776e0bca7968c9ea87e",
+  "budget_hash": "7c0d1c7872881eecb987d479de9feed247972c952141fce276fd515bc9728eb0",
+  "executing_code": {
+    "budget_hash": "7c0d1c7872881eecb987d479de9feed247972c952141fce276fd515bc9728eb0",
+    "code_commit": "a014d67f54838ceccacaed85547546630c8a43c0",
+    "code_tree_hash": "a8c9c2a12ae7367c9f82f7da2df115cf5512e8f3b6cb6ddd31edad24607c9a0c",
+    "coverage_hash": "8f2105b18623a5ff3b5472f09c8bb2ea7b6c48fc3ff3d7669638543885955c3e",
+    "curriculum_hash": "84358bc168e0700340330a6df8d34cad5091fae478217776e0bca7968c9ea87e",
+    "material_hash": "2f2d01b4562cf4ff418558d32bf7507a91e80953d93848d73a26b4912ce6364e",
+    "prior_freeze_hash": "0ed870d878ccee01fb95f960f7c829dc98ae0954c712746aac25d2304ef3f3bf",
+    "prior_hash": "8182f4f7035c39fd4695833578bb9382b33046c8be5a44d7fa67fd4f51cf9d73",
+    "review_hash": "fd3d2f81a2de99d92dc7e04dd75536d2f03e31830c57a02836cc550c80537142"
+  },
+  "contamination": "hindsight-contaminated",
+  "evaluation_status": "not_run",
+  "usage_scope": "Exact model snapshot, tokens, dollar cost and sampling unavailable. Zero usage in import records describes deterministic local import only.",
+  "acquisition_note": "Original source record retains its historical partial-ingestion state. This new completion records full reading; old records are unchanged."
+}

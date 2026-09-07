@@ -1,0 +1,20 @@
+{
+  "number": 7,
+  "title": "Chapter 6: Falling Off the Edge",
+  "pdf_start": 78,
+  "pdf_end": 86,
+  "claims": [
+    {"text": "Anchoring, recency and disposition effects are candidate explanations for reactions near prior highs and lows; price charts alone cannot establish the participants' motives.", "page": 79, "anchor": "three cognitive biases", "disposition": "qualify"},
+    {"text": "Support and resistance are conditional descriptions, not guaranteed barriers. Specify levels, tolerances, observation windows and failure rules before trading.", "page": 81, "anchor": "loose construct", "disposition": "accept"},
+    {"text": "Adding to a losing position increases exposure even when each additional entry looks cheaper. Recompute total dollar risk using actual contract sizes and aggregate quantities.", "page": 83, "anchor": "42,000 gallons", "disposition": "accept"},
+    {"text": "Trend entries and exits can use breaks of different lookback levels. A small distance to a planned invalidation point does not ensure a small executable loss.", "page": 85, "anchor": "small price difference", "disposition": "qualify"},
+    {"text": "Reject treating the selected chart as proof of statistically significant continuation after a break. The claim requires a defined universe, complete sample, null comparison and uncertainty estimate.", "page": 84, "anchor": "statistically significant tendency", "disposition": "reject"}
+  ],
+  "assimilation": "Turn visual descriptions into measurable candidate signals with dated inputs and explicit invalidation. Keep the distinction between a hypothesized mechanism and demonstrated net expectancy. Control aggregate exposure when a price approaches or crosses an observed level.",
+  "adversarial_review": "Support levels are labeled after the displayed paths are known, creating hindsight risk. Figure 6-2's horizontal axis says 2000 while the prose identifies a December 2006 heating-oil contract; quarantine this date conflict. The story that there are no buyers below a level cannot be literal for completed trades. A price may cross a level and later reverse, so breakout-versus-bounce is not a timeless binary event. Crowded stops and gaps can make execution worst where nominal invalidation distances look small. Behavioral explanations are not exhaustive: fundamentals, hedging and liquidity can produce similar paths. Loss estimates at 1.80 do not represent losses at the later 1.73 low. No universal trading edge follows from an asserted irrationality of other participants.",
+  "memory_delta": "Predeclare measurable levels and failure horizons, do not infer motives from chart shapes, and size additions against total exposure. Preserve date conflicts and test continuation independently; a nearby stop is not a guaranteed risk cap.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [79,82],
+  "reading_provenance": "Read all PDF pages 78-86 and inspected figures 6-1 and 6-2, including chart dates and price units."
+}

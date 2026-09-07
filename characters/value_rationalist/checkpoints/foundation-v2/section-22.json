@@ -1,0 +1,17 @@
+{
+  "number": 22,
+  "title": "Postscript and Zweig commentary",
+  "pdf_start": 484,
+  "pdf_end": 487,
+  "claims": [
+    {"text": "A single exceptional holding can dominate a long investment record. Preserve this concentration and outcome dependence when assessing the evidence for a broader method.", "page": 485, "anchor": "single investment decision", "disposition": "accept"},
+    {"text": "Distinguishing skill from luck in an exceptional result is difficult; preparation can improve opportunity handling without promising a repeatable windfall.", "page": 485, "anchor": "one lucky break", "disposition": "qualify"},
+    {"text": "Reject treating an estimated liquidation value equal to purchase cost as proof that a concentrated holding carried very little financial risk. Realization, liabilities and adverse change remain uncertain.", "page": 486, "anchor": "very little financial risk", "disposition": "reject"}
+  ],
+  "assimilation": "Retain the GEICO example as a disclosed exception to mechanical selling and broad diversification, not a newly validated concentration rule. Attribute outcomes to their actual sources and keep appraisal uncertainty visible even when an investment later succeeds.",
+  "adversarial_review": "The main text says roughly one-fifth of fund assets while commentary says 25%; retain the discrepancy pending source reconciliation. A negotiated half-interest with influence is not equivalent to an ordinary retail position. Exceptional eventual gains cannot certify initial risk, and holding after apparent overvaluation complicates a simple buy-cheap/sell-at-value interpretation. The book itself declines to promise a similar result to every disciplined investor.",
+  "memory_delta": "Audit performance concentration and distinguish accessible decisions from privileged deals. Do not retrofit a lucky or skillful outlier into a universal rule; retain exceptions and uncertainty alongside the core process.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read all PDF pages 484-487."
+}

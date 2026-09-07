@@ -1,0 +1,49 @@
+{
+  "status": "qualified_scoped_corporate_action_receipts",
+  "physical_attempts": 2,
+  "broker_orders": 0,
+  "external_model_calls": 0,
+  "manifest_hash": "cad7737dc05bcd92a2eed19dfabb08334358733b6bf7c6e4a0a50d4539b737e3",
+  "publication_time": "unknown; use actual receipt as earliest observed availability",
+  "limitation": "Terminal pagination does not certify absence of late announcements. Raw prices only; incomplete or unsupported events block dependent accounting. No prospective return evidence.",
+  "docs": [
+    "https://docs.alpaca.markets/us/reference/corporateactions-1",
+    "https://github.com/alpacahq/alpaca-py/blob/master/alpaca/data/models/corporate_actions.py"
+  ],
+  "dividend_controls_passed": true,
+  "split_control_passed": true,
+  "completed_at": "2026-09-07T09:57:08.206574Z",
+  "zero_additional_replay_requests": true,
+  "runs": [
+    {
+      "status": "complete",
+      "reason": "none",
+      "attempts": 1,
+      "pages": 1,
+      "throttles": 0,
+      "retries": 0,
+      "receipts": 7,
+      "supported_actions": 7,
+      "gaps": 0,
+      "symbols": [
+        "VTI",
+        "QQQ",
+        "SPY"
+      ]
+    },
+    {
+      "status": "complete",
+      "reason": "none",
+      "attempts": 1,
+      "pages": 1,
+      "throttles": 0,
+      "retries": 0,
+      "receipts": 2,
+      "supported_actions": 2,
+      "gaps": 0,
+      "symbols": [
+        "NVDA"
+      ]
+    }
+  ]
+}

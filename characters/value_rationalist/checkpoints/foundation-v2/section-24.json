@@ -1,0 +1,19 @@
+{
+  "number": 24,
+  "title": "Endnotes to introduction, chapters, postscript and appendices",
+  "pdf_start": 526,
+  "pdf_end": 550,
+  "claims": [
+    {"text": "An observed past growth classification is distinct from a forecast that a company will thrive; retain the measurement period and do not label future winners in advance.", "page": 534, "anchor": "wishful thinking", "disposition": "accept"},
+    {"text": "The illustrative growth formula explicitly does not estimate true value. Its resemblance to elaborate calculations does not validate those calculations or their assumptions.", "page": 538, "anchor": "approximates the results", "disposition": "accept"},
+    {"text": "The defensive screen's own later underperformance is counterevidence to guaranteed superiority and must remain attached to its assessment.", "page": 542, "anchor": "poorer than that of the DJIA", "disposition": "accept"},
+    {"text": "High business profitability can attract competition and erode future margins; evaluate barriers and competitive responses rather than extrapolating early success indefinitely.", "page": 546, "anchor": "new competition", "disposition": "qualify"},
+    {"text": "The postscript acknowledges that an enormous later gain depended on a small disputed accounting amount and luck; this weakens any inference that the original valuation precisely captured the outcome.", "page": 549, "anchor": "By dumb luck", "disposition": "accept"}
+  ],
+  "assimilation": "Attach these qualifications to the related chapters rather than treating notes as dispensable bibliography. Maintain publication chronology, split adjustments, tax assumptions and the difference between a quotation convention and an investable calculation.",
+  "adversarial_review": "The notes mix original historical writing with later editorial outcomes. A later correct forecast is not a calibrated forecasting record; successful recent Dow signals also qualify categorical dismissal of that method. Prospectus availability does not ensure completeness of economic truth or investor comprehension. Source references and missing extracted titles have not been independently retrieved. Claims about worse unlisted outcomes remain unverified. The phrase that screening guarantees money's worth remains too certain given appraisal risk. Competition can erode returns but defensible advantages can persist; neither direction is automatic.",
+  "memory_delta": "Keep explanatory notes, counterexamples and explicit formula limits linked to core claims. Separate measured growth from predicted growth, preserve failed screens, and treat competition and luck as unresolved sources of outcome variation.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read all PDF pages 526-550, including sparse note pages and the postscript qualification."
+}

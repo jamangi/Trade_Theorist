@@ -1,0 +1,22 @@
+{
+  "number": 5,
+  "title": "Chapter 4: Defensive Portfolio Policy; Zweig commentary",
+  "pdf_start": 93,
+  "pdf_end": 115,
+  "claims": [
+    {"text": "Portfolio policy depends on the owner's circumstances, cash needs and capacity for research and emotional discipline; age or a security's category alone cannot determine a suitable exposure.", "page": 107, "anchor": "fundamental circumstances of your life", "disposition": "accept"},
+    {"text": "Graham explicitly lacks reliable rules for shifting between his proposed stock-allocation extremes. A fixed rebalancing discipline can constrain exposure drift without claiming a market-turning forecast, but his percentages are examples rather than this project's risk policy.", "page": 95, "anchor": "no reliable rules", "disposition": "qualify"},
+    {"text": "More research effort does not ensure a greater realized return. Treat the chapter's ranking of passive and enterprising returns as an aspiration conditional on skill, opportunity and costs, limited by the prior chapter's competition warning.", "page": 93, "anchor": "maximum intelligence and skill", "disposition": "qualify"},
+    {"text": "A bond's yield must be evaluated with duration, credit, liquidity, tax treatment and call rights. A call can cap favorable price participation while leaving the holder exposed to unfavorable rate changes.", "page": 101, "anchor": "Call Provisions", "disposition": "accept"},
+    {"text": "Legal security form and contract terms matter: preferred stock, ordinary debt and income bonds have different payment obligations, priority, participation and maturity features, including exceptions to their usual forms.", "page": 103, "anchor": "innumerable departures", "disposition": "accept"},
+    {"text": "Do not accept the figure's bank-location-based insurance statement as executable product protection. It appears to mix money-market fund and deposit concepts; exact instrument and coverage terms require independent primary verification before use.", "page": 112, "anchor": "if purchased at an FDIC-member bank", "disposition": "reject"},
+    {"text": "A high dividend yield is not a sufficient purchase thesis: the business must remain sound and the price reasonable. Income labels do not replace analysis of loss exposure.", "page": 114, "anchor": "dividend income alone", "disposition": "accept"}
+  ],
+  "assimilation": "Make investor constraints an input to valuation-based policy rather than an afterthought. Separate contractual cash-flow safety, quoted-price variation and after-tax purchasing power. Research preferences may help choose a workflow, but do not entitle Value to take larger risks or claim a return advantage. Treat rebalancing as adherence to a predeclared allocation, not opportunistic reinterpretation of the latest prices.",
+  "adversarial_review": "The chapter and commentary contain dated 1972/2003 yields, tax brackets, product minimums and named-fund recommendations. The source's categorical municipal-bond advice ignores the need to compare actual after-tax yields and risk; preferred-stock rhetoric is broader than its own contract-specific discussion. The figure's insurance wording and the pooled mortgage-agency guarantees are quarantined for independent product/legal verification. Its age examples and six-month rebalancing suggestion are illustrations, not universal criteria or an authorized VTI pilot allocation.",
+  "memory_delta": "Bind exposure to liabilities and predeclared policy; analyze payment rights, call asymmetry and income quality. Do not equate effort with realized alpha, yield with safety, or a familiar institution with verified instrument protection.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [112],
+  "reading_provenance": "Read all PDF pages 93-115 and visually inspected figure 4-1 and its footnotes. Current product, tax and insurance claims were not operationally qualified."
+}

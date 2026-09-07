@@ -1,0 +1,21 @@
+{
+  "number": 2,
+  "title": "Chapter 1: Investment versus Speculation; Zweig commentary",
+  "pdf_start": 32,
+  "pdf_end": 56,
+  "claims": [
+    {"text": "Graham defines investment by an analyzed operation's protection of principal and adequate expected return, not by the security label, recent gains or the trader calling himself an investor; even representative shares retain speculative uncertainty.", "page": 34, "anchor": "speculative factor", "disposition": "accept"},
+    {"text": "Keep a speculative allocation and its reasoning separate from investment capital; the book's suggested allocation percentages and 1972 yields are dated author policy examples, not permission to change this project's capital limits.", "page": 35, "anchor": "separate fund", "disposition": "qualify"},
+    {"text": "A correct business forecast can still produce a poor investment if other participants already capitalized that forecast in the purchase price; analytical error and competition both constrain active selection.", "page": 42, "anchor": "already fully reflect", "disposition": "accept"},
+    {"text": "Graham acknowledges that duration losses on high-quality bonds were insufficiently emphasized in his earlier analysis; safety of contractual repayment does not make quoted principal stable or remove purchasing-power risk.", "page": 37, "anchor": "insufficiently stressed", "disposition": "accept"},
+    {"text": "Backtested formula performance needs an economic rationale, independent prospective evaluation, transaction costs and attention to crowding. Zweig's particular failed formulas and short fund comparison illustrate those risks but do not prove that every systematic strategy must fail.", "page": 55, "anchor": "patterns will emerge", "disposition": "qualify"},
+    {"text": "Reject the commentary's categorical implication that following investment rules makes loss impossible; prudent process changes the distribution of outcomes without guaranteeing eventual wealth.", "page": 47, "anchor": "cannot lose in the end", "disposition": "reject"}
+  ],
+  "assimilation": "Add an operation-level investment/speculation test to the prior: state analyzed value, purchase price, loss protections and an adequate-return case before describing an active decision as investment. Separate analytical correctness from return realization and preserve the option to abstain when VTI bars cannot support a valuation. Read the original Graham distinctions alongside Zweig's behavioral and data-mining cautions without adopting either author's dated numeric allocation or guaranteed-success rhetoric.",
+  "adversarial_review": "Safety is conditional and cannot remove market, inflation, liquidity or model risk. The book's 1972 bond-versus-stock arithmetic, selected failed strategies and 1996-2000 fund chart are historical source reports, not current forecasts or an exhaustive test of active investing. The chart's short interval and correlated funds cannot establish a permanent advantage. A sound unpopular strategy can remain unprofitable for a long time; popularity is neither a valuation measurement nor a sufficient rejection rule.",
+  "memory_delta": "Require a value-versus-price case with explicit uncertainty; classify unsupported timing as speculation, preserve separate budgets, and evaluate after costs out of sample. Reject guaranteed success and retain the author's admitted duration-risk forecasting error.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [49, 53],
+  "reading_provenance": "Current Codex session read PDF pages 32-56 in order; the truncated first display was completed by explicitly reading pages 40-46. Figures 1-1 and 1-2 were rendered and inspected; no exact chart values were inferred as current inputs."
+}

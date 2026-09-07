@@ -1,4 +1,4 @@
-"""Offline paired orchestration over the durable shared Market Data owner."""
+"""Paired orchestration over the durable shared Market Data owner."""
 from copy import deepcopy
 import json
 import math
@@ -22,14 +22,18 @@ def envelope(manifest, kind, identifier, at, **fields):
 
 
 def freeze_round(coordinator, *, manifest_id, participants, baseline, value, start_at, end_at,
-                 data_deadline, decision_at, max_request_attempts, model_budget, stopping_rule):
+                 data_deadline, decision_at, max_request_attempts, model_budget, stopping_rule,
+                 real_context=None, repo_root=None):
     """Freeze original v2 identities and policy before a single paired decision round.
 
     participants are (portfolio, accounting plan, funded segment) IDs; baseline is
-    (portfolio, accounting plan). This engineering path is explicitly fixture-only.
+    (portfolio, accounting plan). Real use additionally requires audited ancestry.
     """
-    if not coordinator.synthetic or isinstance(coordinator.transport, SingleAttemptTransport):
-        raise ContractError("Real forward operation requires the later qualification and eligibility gates")
+    real = not coordinator.synthetic
+    if real and (type(coordinator.transport) is not SingleAttemptTransport or real_context is None or repo_root is None):
+        raise ContractError("Real forward operation requires qualification and immutable eligibility")
+    if not real and (isinstance(coordinator.transport, SingleAttemptTransport) or real_context is not None):
+        raise ContractError('Synthetic operation cannot carry real qualification')
     q = query(value)
     with coordinator.db:
         store = coordinator.store
@@ -48,7 +52,11 @@ def freeze_round(coordinator, *, manifest_id, participants, baseline, value, sta
             estimate_is_bound=False, partial_coverage="require_complete", revision_rule="latest_received_before_cutoff", participants=[p[0] for p in peers],
             baseline_ref=base["id"], baseline_plan_ref=base_plan["id"], baseline_hash=digest(base), baseline_plan_hash=digest(base_plan),
             comparison_hash=digest(comparison(peers[0][1])), model_budget=deepcopy(model_budget), stopping_rule=deepcopy(stopping_rule),
-            publication_class="private-owner-v2", broker_orders_allowed=False, evidence_grade="fixture", promotion_eligible=False)
+            publication_class="private-owner-v2", broker_orders_allowed=False, evidence_grade='forward-insufficient' if real else 'fixture', promotion_eligible=False)
+        if real:
+            from .prospective import check_runtime_inputs
+            manifest['real_context'] = deepcopy(real_context)
+            check_runtime_inputs(repo_root,manifest)
         store.put_v2([manifest])
         return manifest
 
@@ -65,14 +73,23 @@ class RecordedDecisions:
 
 
 class ForwardRound:
-    def __init__(self, coordinator, manifest_id):
-        if not coordinator.synthetic or isinstance(coordinator.transport, SingleAttemptTransport):
-            raise ContractError("Step 07 is original-fixture integration only")
+    def __init__(self, coordinator, manifest_id, *, repo_root=None):
+        self.real = not coordinator.synthetic
+        if self.real and (type(coordinator.transport) is not SingleAttemptTransport or repo_root is None):
+            raise ContractError('Real forward runtime needs its qualified transport and pinned repository evidence')
+        if not self.real and isinstance(coordinator.transport, SingleAttemptTransport):
+            raise ContractError('Fixture cannot use live transport')
+        self.repo_root = repo_root
         self.owner, self.store = coordinator, coordinator.store
         with coordinator.db:
             self._manifest = self.store.v2_record(manifest_id)
             if self.manifest["record_type"] != "forward_manifest": raise ContractError("Expected forward manifest")
             validate_references(self.manifest, self.store.v2_record)
+            if self.manifest['evidence_grade'] != ('forward-insufficient' if self.real else 'fixture'):
+                raise ContractError('Coordinator and round evidence regimes differ')
+            if self.real:
+                from .prospective import check_runtime_inputs
+                check_runtime_inputs(repo_root,self.manifest)
             if digest(coordinator.policy) != self.manifest["quota_policy_hash"]:
                 raise ContractError("Shared owner differs from frozen quota policy")
             if not hasattr(coordinator, "_forward_locks"): coordinator._forward_locks = {}
@@ -98,6 +115,8 @@ class ForwardRound:
         """Fetch before Character execution, then atomically freeze one common result."""
         with self.lock:
             m = self.manifest
+            if self.real and self.owner.clock.wall() < utc(m['start_at']).timestamp():
+                raise ContractError('Prospective window has not started')
             saved = self._existing(m["snapshot_ref"])
             if saved: return saved
             work = self.owner.submit(m["query"], consumer=m["id"], max_attempts=m["max_request_attempts"], deadline=m["data_deadline"])
@@ -158,7 +177,12 @@ class ForwardRound:
         Reservation precedes callbacks. An interrupted reserved round abstains on
         restart rather than spending again or recreating historical decisions.
         """
-        if type(provider) is not RecordedDecisions:
+        if self.real:
+            from .prospective import FoundationRules, check_runtime_inputs
+            if type(provider) is not FoundationRules or provider.round is not self:
+                raise ContractError('Real round requires the frozen tools-free foundation runtime')
+            check_runtime_inputs(self.repo_root,self.manifest)
+        elif type(provider) is not RecordedDecisions:
             raise ContractError("Use the explicitly recorded offline Character provider")
         with self.lock:
             m = self.manifest
@@ -209,7 +233,7 @@ class ForwardRound:
             result = self._record("forward_result", result_id, snapshot_ref=snapshot["id"], snapshot_hash=digest(snapshot),
                 status="decided" if reason == "none" else "abstained", reason=reason, outcomes=outcomes,
                 model_calls=calls, model_tokens=tokens, calls_reserved=reserved_calls, tokens_reserved=reserved_tokens,
-                publication_class="private-owner-v2", evidence_grade="fixture", promotion_eligible=False, broker_orders=0)
+                publication_class="private-owner-v2", evidence_grade=m['evidence_grade'], promotion_eligible=False, broker_orders=0)
             try:
                 with self.owner.db, self.store.transaction():
                     self.store.put_v2([result])
@@ -230,8 +254,9 @@ class ForwardRound:
             progress = json.loads(row[0]) if row else None
             snapshot = self._existing(m["snapshot_ref"])
             result = self._existing("forward-result:" + digest(m["id"]))
-            return dict(publication_class="private-owner-v2", evidence_grade="fixture", promotion_eligible=False,
+            return dict(publication_class="private-owner-v2", evidence_grade=m['evidence_grade'], promotion_eligible=False,
                 manifest_id=m["id"], snapshot_id=m["snapshot_ref"], status=result["status"] if result else snapshot["status"] if snapshot else "deferred" if progress else "pending",
                 snapshot_hash=digest(snapshot) if snapshot else None, progress=progress, result=result,
-                account_calls=0, external_model_calls=0, broker_orders=0, completed_real_sessions=0,
-                blockers=["Original offline integration only; independent preflight, source qualification and real eligibility/elapsed evidence remain required."])
+                account_calls=progress['physical_usage']['attempts'] if self.real and progress else 0,
+                external_model_calls=0, broker_orders=0, completed_real_sessions=0,
+                blockers=["Round execution does not establish elapsed sessions or matured outcomes; inspect the separate observation report." if self.real else "Original offline integration only; independent preflight, source qualification and real eligibility/elapsed evidence remain required."])

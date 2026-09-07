@@ -1,0 +1,56 @@
+{
+  "number": 18,
+  "title": "Chapter 17: Four Extremely Instructive Case Histories; Zweig commentary",
+  "pdf_start": 391,
+  "pdf_end": 411,
+  "claims": [
+    {
+      "text": "Basic debt coverage, liquidity and operating comparisons can expose weaknesses obscured by size, reputation or a long dividend record. Perform these checks before elaborate forecasts.",
+      "page": 394,
+      "anchor": "do their elementary jobs",
+      "disposition": "accept"
+    },
+    {
+      "text": "Acquisition-driven expansion can increase sales while weakening the equity cushion and debt-service capacity; lending or underwriting by a prominent institution is not evidence that the capital structure is sound.",
+      "page": 396,
+      "anchor": "interest charges did not meet conservative standards",
+      "disposition": "accept"
+    },
+    {
+      "text": "Reconcile a takeover's economic equity, new obligations, warrants and accounting adjustments before interpreting accretion or a low displayed P/E.",
+      "page": 399,
+      "anchor": "did not allow for the large dilution factor",
+      "disposition": "accept"
+    },
+    {
+      "text": "Customer financing can concentrate both sales and credit exposure. Examine loans and guarantees when reported growth depends on counterparties that may not pay.",
+      "page": 406,
+      "anchor": "What if they ran out of cash to pay their debts",
+      "disposition": "accept"
+    },
+    {
+      "text": "Repeated acquisition and restructuring charges belong in the economic assessment of a serial acquirer's business model. Keep originally reported numbers and later restatements separately dated.",
+      "page": 408,
+      "anchor": "retroactively added",
+      "disposition": "accept"
+    },
+    {
+      "text": "Reject treating later-published year-end results as if they were public knowledge at the year-end quote. A historical warning analysis must enforce the actual availability dates.",
+      "page": 402,
+      "anchor": "year-end figures had not been published",
+      "disposition": "reject"
+    }
+  ],
+  "assimilation": "Use these failures to develop auditable questions about leverage, cash conversion, acquisition economics and earnings definitions. Keep publication dates with every fact: hindsight can teach a diagnostic but cannot create a historical decision. Separate share-sale proceeds paid to insiders from capital actually entering the business.",
+  "adversarial_review": "These are explicitly extreme failures selected after their outcomes, so they do not establish calibrated default probabilities or the false-positive rate of a screen. Similar annual bond-price ranges do not prove a costless simultaneous switch was executable. Paying no income tax can have legitimate explanations and does not alone prove false earnings. Software capitalization and goodwill require accounting and economic investigation, not categorical condemnation. Debt-financed buybacks may be poor capital allocation without being inherently fraudulent. Asset and revenue size alone do not determine fair merger ownership. Reserved options are contingent rather than certain future dilution. Accounting impairment is not necessarily a contemporaneous cash outflow. The authorial certainty about avoidable failures remains qualified by the information then available. Figure 17-2 on PDF page 407 prints a 2000 MORON row of 4175 that does not reconcile with its total of 2510; the caption units also conflict with the prose scale. Quarantine the printed row and units without silently correcting them.",
+  "memory_delta": "Prioritize debt service, liquidity, customer credit and complete acquisition claims. Preserve original disclosures and dated restatements. Learn diagnostic questions from failures without importing hindsight, unsupported fraud labels or certainty about future default.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [
+    395,
+    405,
+    407,
+    410
+  ],
+  "reading_provenance": "Read all PDF pages 391-411 and inspected table 17-1 and figures 17-1 through 17-3, including the units and original-reporting labels."
+}

@@ -1,0 +1,20 @@
+{
+  "number": 3,
+  "title": "Chapter 2: The Investor and Inflation; Zweig commentary",
+  "pdf_start": 57,
+  "pdf_end": 70,
+  "claims": [
+    {"text": "A stock cannot be preferable to a bond at every purchase price and yield; inflation exposure must be evaluated together with valuation, liabilities and the investor's horizon.", "page": 57, "anchor": "under all conditions", "disposition": "accept"},
+    {"text": "Nominal profit can coexist with a purchasing-power loss. Compare real as well as nominal outcomes, using an explicit measured inflation series and compatible time intervals rather than the book's dated numerical assumptions.", "page": 67, "anchor": "how much you keep after inflation", "disposition": "qualify"},
+    {"text": "Stocks are an imperfect inflation hedge: the commentary reports inflation shortfalls in some overlapping five-year windows, and short/intermediate drawdowns can affect an investor before any long-run protection materializes.", "page": 68, "anchor": "impressive, but imperfect", "disposition": "qualify"},
+    {"text": "Reject the statement that inflation can raise stock values only by raising the rate of earnings on capital as a complete valuation identity; changing nominal earnings, discount rates, accounting measurements and repricing complicate that inference.", "page": 61, "anchor": "The only way that inflation", "disposition": "reject"},
+    {"text": "Inflation-linked bonds and property exposure are mechanisms to investigate, not universally safe substitutes for cash. Zweig's own warning about short-run TIPS volatility limits the surrounding absolute-safety language; tax, legal and product examples remain dated.", "page": 70, "anchor": "volatile in the short run", "disposition": "qualify"}
+  ],
+  "assimilation": "Extend the value framework from quoted dollars to purchasing power and timing of liabilities. Refuse to infer an all-stock allocation merely from an inflation forecast. A business's pricing power, reinvestment needs and financing burden matter separately from a generic equity label. Keep inflation-linked contracts and real assets outside the VTI-only pilot's allowed actions unless a later policy explicitly expands scope.",
+  "adversarial_review": "The historical tables use different capital/profit measures and overlapping windows, not independent causal experiments. Graham's prospective 3% inflation and 8% stock-return illustrations were explicitly uncertain and must not become current inputs. The chart orders years by inflation rather than time, so it cannot be read as a chronological strategy. Claims about gold ownership law, taxation, utilities and particular funds require fresh primary verification before operational use. Contractual inflation adjustment does not guarantee a bond fund's market value or match every household's personal inflation.",
+  "memory_delta": "Separate nominal and real results, inspect inflation pass-through and capital intensity, and preserve near-term liquidity needs. Treat stocks and TIPS as conditional risk exposures rather than complete inflation insurance; no fixed current inflation forecast is learned.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [59, 63, 69],
+  "reading_provenance": "Read all PDF pages 57-70; rendered tables 2-1/2-2 and figure 2-1. Table/figure measures and historical ordering were checked, not reused as current forecasts."
+}

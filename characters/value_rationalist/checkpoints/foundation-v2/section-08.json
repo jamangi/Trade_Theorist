@@ -1,0 +1,21 @@
+{
+  "number": 8,
+  "title": "Chapter 7: Enterprising Policy, Positive Side; Zweig commentary",
+  "pdf_start": 154,
+  "pdf_end": 182,
+  "claims": [
+    {"text": "A successful enterprise does not automatically make its stock attractive: the paid multiple can capitalize more growth than the business ultimately delivers. Large-company growth projections need base-rate and scale checks.", "page": 176, "anchor": "if you pay too much", "disposition": "accept"},
+    {"text": "Low-multiple and neglected-company screens are hypotheses requiring prospective validation. The source reports both profitable later periods and an unprofitable earlier period, so retain failures rather than selecting a favorable regime.", "page": 160, "anchor": "this approach proved unprofitable", "disposition": "qualify"},
+    {"text": "A price substantially below appraised value is an investigation threshold, not a guarantee; the appraisal must account for earnings sustainability, realizable assets, obligations and the investor's lack of control.", "page": 162, "anchor": "facts established by analysis", "disposition": "qualify"},
+    {"text": "The net-current-asset example selects 85 available records from roughly 150 names and buys one share each. Its result is conditional on selection, weighting and dates; it cannot establish an invariably safe and profitable rule.", "page": 165, "anchor": "one share of each of the 85 companies", "disposition": "qualify"},
+    {"text": "Reject certainty of profits from a basket of apparent net-net bargains. Accounting assets may not be recoverable, operating losses may consume them and diversification cannot eliminate shared impairment or liquidity risk.", "page": 181, "anchor": "certain to make money", "disposition": "reject"},
+    {"text": "Diversification should consider employment, currency and home-market exposure as well as ticker count. The Japan example illustrates concentration risk without proving a universally optimal foreign allocation.", "page": 182, "anchor": "multilayered bet on the U.S. economy", "disposition": "qualify"}
+  ],
+  "assimilation": "Investigate unpopular businesses using normalized earnings and realizable assets, and distinguish a low price from an adequately supported discount to value. Record unsuccessful historical intervals, selection rules and minority-control limitations before treating a screen as testable. The source's examples enlarge the research vocabulary without expanding the pilot's VTI-only instrument authority.",
+  "adversarial_review": "A cyclical stock can have its lowest multiple at peak earnings; current P/E alone is unreliable. Table 7-2's favorable selected intervals do not erase 1917-1933 or the subsequently described 1968-1971 failures. Table 7-4's available-record subset and one-share weighting are not an investable equal-dollar backtest. Concentrated fortunes are survivor-selected; Forbes-list attrition alone also does not establish each family's investment return or prove concentration caused every departure. The commentary's fundamental-law and profit-certainty wording is too strong. Figure 7-2 prints Sun Microsystems at $38.72 on both endpoints despite the surrounding collapse narrative; quarantine this apparent transcription error rather than importing it as price data. Source deal examples do not eliminate nonconsummation, timing and financing risks.",
+  "memory_delta": "Require a causal valuation case, normalized earnings and realistic asset recovery behind a bargain screen. Preserve adverse periods and all selection/weighting decisions. Reject certainty language and treat printed numerical inconsistencies as unqualified data.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [158,160,162,165,176,177],
+  "reading_provenance": "Read every PDF page 154-182, including commentary, and visually inspected tables 7-1 through 7-4 and figures 7-1 and 7-2. Original authored analysis; no current-data or forward-performance claim."
+}

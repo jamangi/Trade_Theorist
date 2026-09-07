@@ -1,0 +1,21 @@
+{
+  "number": 13,
+  "title": "Chapter 12: Things to Consider About Per-Share Earnings; Zweig commentary",
+  "pdf_start": 289,
+  "pdf_end": 305,
+  "claims": [
+    {"text": "Do not annualize one quarter or accept a headline EPS figure before checking dilution and special charges; alternative definitions can produce materially different apparent valuation multiples.", "page": 290, "anchor": "there were actually four", "disposition": "accept"},
+    {"text": "Repeated business closures, contract losses and restructuring costs cannot disappear from economic earnings simply by being called special items. Reconcile when costs were recognized and when cash is paid.", "page": 292, "anchor": "include only its profitable contracts and operations", "disposition": "accept"},
+    {"text": "Separate sustainable taxed earning power from the finite value of loss-related tax benefits, and account for contingent dilution when valuing each common share.", "page": 295, "anchor": "important but temporary tax exemption", "disposition": "qualify"},
+    {"text": "A multiyear earnings history should include special losses and gains and show recent figures alongside averages. Averages can reduce cycle noise but cannot cure changed business economics or inconsistent accounting.", "page": 296, "anchor": "They should be included in the average earnings", "disposition": "qualify"},
+    {"text": "Compare accounting policies across years and peers, including revenue recognition, capitalization, inventories and pension assumptions. Changes and nonrecurring labels prompt investigation rather than an automatic accusation.", "page": 305, "anchor": "all mean that you need to investigate further", "disposition": "accept"},
+    {"text": "Reject automatic dismissal of every pro forma figure; use a complete bridge to reported results and preserve excluded real costs. The source itself describes legitimate uses before its categorical instruction.", "page": 300, "anchor": "the only thing you should do", "disposition": "reject"}
+  ],
+  "assimilation": "Carry defined, reconciled per-share earnings inputs into valuation. Preserve actual charges, dilution assumptions and the finite life of special tax benefits. Use a multi-period view without laundering inconvenient losses out of the average. When allocation of a charge is unknown, record the uncertainty rather than invent a precise normalized figure.",
+  "adversarial_review": "The ALCOA example explicitly admits that true normalized 1970 earnings cannot be determined from the supplied disclosure. A finite pension return cannot be certified from a selected historical decade or Buffett's reputation. PDF 303 says $1.4 billion is 13% of $7.2 billion, an arithmetic inconsistency; do not ingest that percentage. Recognizing revenue before installment cash collection is not automatically improper: performance and collectibility matter. Capitalization is also not inherently abusive. Table 12-1 assigns three-fifths of a special charge as an illustrative compromise, not an observed economic allocation. No historical accounting or tax treatment is asserted as a current rule.",
+  "memory_delta": "Require EPS-definition and cash-flow reconciliation, including charges, tax benefits and dilution. Treat unknown normalization as an uncertainty interval, and test accounting-policy changes against business substance and comparable firms.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [297,303],
+  "reading_provenance": "Read all PDF pages 289-305 and inspected table 12-1 and figure 12-1, including the special-charge allocation footnote and repeated inventory write-downs."
+}

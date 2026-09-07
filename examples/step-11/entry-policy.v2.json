@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "policy_id": "pilot-readiness:vti-daily-v2",
+  "recorded_at": "2026-09-07T09:48:44.009543Z",
+  "scope": "Participant learning eligibility for the intended three-Character private VTI delayed-daily shadow pilot; not execution or performance approval.",
+  "opportunity_set": [
+    "VTI"
+  ],
+  "data_controls_only": [
+    "QQQ",
+    "SPY"
+  ],
+  "decision_rule": "Every intended participant must pass its named foundation and evidence checks. No replacement by a fixture or omission of an unready participant.",
+  "shared_criteria": [
+    "Validated nonfixture source, immutable Character, frozen prior and exact pinned curriculum in original order.",
+    "Reviewed coverage agrees with ordered checkpoints, citations, dispositions, objections, memory and saved theories; retain partial material and hindsight contamination.",
+    "A version pins the reviewed constitution and exact knowledge ancestry; foundation readiness supplies no prospective performance evidence.",
+    "Apply only the scoped role below. Abstain when supporting data, a preregistered decision rule or independent risk policy is absent. Daily observation does not require daily trading."
+  ],
+  "participants": [
+    {
+      "character_id": "index_steward",
+      "source_id": "book:9781119404521",
+      "required_scope": "full_book",
+      "role": "Initial council lead and independent broad-fund baseline reasoning, subject to independent policy; Bogle-grounded costs, diversification, long horizons and explicit abstention.",
+      "entry_rationale": "The completed Bogle foundation covers this limited role. Books 2–4 and an active timing edge are not required for this participant-learning gate.",
+      "scope_citations": [
+        "characters/index_steward/constitution.v1.md",
+        "characters/index_steward/checkpoints/bogle-2017-reading-review.json#sections/1",
+        "characters/index_steward/checkpoints/bogle-2017-reading-review.json#sections/16"
+      ],
+      "excluded_claims": "The S&P 500 mutual-fund cost theory is not a VTI daily signal or evaluated result. Current fees, taxes, prices and fund properties need qualified current evidence."
+    },
+    {
+      "character_id": "value_rationalist",
+      "source_id": "book:9780061745171",
+      "required_scope": "full_book",
+      "role": "Independent price-versus-value and margin-of-safety critique; abstain when a broad ETF's daily bars cannot support a valuation claim.",
+      "entry_rationale": "Complete the pinned Graham foundation, including its later margin-of-safety argument and qualifications. The introduction alone explicitly lacks those methods. Books 2–4 are not this gate.",
+      "scope_citations": [
+        "characters/value_rationalist/constitution.md",
+        "characters/value_rationalist/checkpoints/foundation-reading-review.json#sections/1"
+      ],
+      "excluded_claims": "Daily VTI bars alone do not establish business value or margin of safety. No forced active opinion."
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "source_id": "book:9780071509466",
+      "required_scope": "full_book",
+      "role": "Independent trend-system research in shadow mode; require a preregistered entry, sizing, exit and invalidation rule before any active signal, otherwise abstain.",
+      "entry_rationale": "Complete the pinned Faith foundation to cover the system beyond its opening market-participant chapter. Books 2–4 and earned council leadership are not this gate.",
+      "scope_citations": [
+        "characters/systematic_trend_operator/constitution.md",
+        "characters/systematic_trend_operator/checkpoints/foundation-reading-review.json#sections/1"
+      ],
+      "excluded_claims": "Historical futures and execution anecdotes do not validate transfer to an unleveraged VTI daily system or establish current trading costs."
+    }
+  ],
+  "step_11_prerequisites": [
+    "All three participants pass this learning gate; keep the intended roster unchanged.",
+    "Implement and review real-source v2 forward integration, including immutable Character/knowledge ancestry and eligibility enforcement; current shared integration accepts fixtures only.",
+    "Qualify the dividend/split evidence needed for total-return comparisons.",
+    "Preregister future dates, horizons, decision and abstention rules, runtime/model/prompt/usage pins and finite risk policy before outcomes; preserve independent memories and equal snapshots."
+  ],
+  "authority": "Owner explicitly requested completion of both Value and Trend foundations followed by Step 11. Both complete pinned books were reviewed in this Codex task; this gate reconciles their new immutable checkpoints. No performance or broker-operation approval is implied.",
+  "predecessor_hash": "d0f541f98551e779a4e08d24787dec27abd4e1f793d3c01c04fd902d94eb84ee"
+}

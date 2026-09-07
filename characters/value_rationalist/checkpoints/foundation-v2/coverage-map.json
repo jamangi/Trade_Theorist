@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "source_id": "book:9780061745171",
+  "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+  "scope": "full_book",
+  "pdf_pages": 660,
+  "sections": [
+    {
+      "number": 1,
+      "pdf_start": 17,
+      "pdf_end": 31
+    },
+    {
+      "number": 2,
+      "pdf_start": 32,
+      "pdf_end": 56
+    },
+    {
+      "number": 3,
+      "pdf_start": 57,
+      "pdf_end": 70
+    },
+    {
+      "number": 4,
+      "pdf_start": 71,
+      "pdf_end": 92
+    },
+    {
+      "number": 5,
+      "pdf_start": 93,
+      "pdf_end": 115
+    },
+    {
+      "number": 6,
+      "pdf_start": 116,
+      "pdf_end": 134
+    },
+    {
+      "number": 7,
+      "pdf_start": 135,
+      "pdf_end": 153
+    },
+    {
+      "number": 8,
+      "pdf_start": 154,
+      "pdf_end": 182
+    },
+    {
+      "number": 9,
+      "pdf_start": 183,
+      "pdf_end": 214
+    },
+    {
+      "number": 10,
+      "pdf_start": 215,
+      "pdf_end": 240
+    },
+    {
+      "number": 11,
+      "pdf_start": 241,
+      "pdf_end": 262
+    },
+    {
+      "number": 12,
+      "pdf_start": 263,
+      "pdf_end": 288
+    },
+    {
+      "number": 13,
+      "pdf_start": 289,
+      "pdf_end": 305
+    },
+    {
+      "number": 14,
+      "pdf_start": 306,
+      "pdf_end": 320
+    },
+    {
+      "number": 15,
+      "pdf_start": 321,
+      "pdf_end": 345
+    },
+    {
+      "number": 16,
+      "pdf_start": 346,
+      "pdf_end": 371
+    },
+    {
+      "number": 17,
+      "pdf_start": 372,
+      "pdf_end": 390
+    },
+    {
+      "number": 18,
+      "pdf_start": 391,
+      "pdf_end": 411
+    },
+    {
+      "number": 19,
+      "pdf_start": 412,
+      "pdf_end": 447
+    },
+    {
+      "number": 20,
+      "pdf_start": 448,
+      "pdf_end": 466
+    },
+    {
+      "number": 21,
+      "pdf_start": 467,
+      "pdf_end": 483
+    },
+    {
+      "number": 22,
+      "pdf_start": 484,
+      "pdf_end": 487
+    },
+    {
+      "number": 23,
+      "pdf_start": 488,
+      "pdf_end": 525
+    },
+    {
+      "number": 24,
+      "pdf_start": 526,
+      "pdf_end": 550
+    },
+    {
+      "number": 25,
+      "pdf_start": 599,
+      "pdf_end": 614
+    },
+    {
+      "number": 26,
+      "pdf_start": 615,
+      "pdf_end": 630
+    },
+    {
+      "number": 27,
+      "pdf_start": 631,
+      "pdf_end": 646
+    },
+    {
+      "number": 28,
+      "pdf_start": 647,
+      "pdf_end": 660
+    }
+  ],
+  "front_matter": [
+    1,
+    16
+  ],
+  "back_matter": [
+    551,
+    598
+  ],
+  "notes": "Sections 1-21 are introduction plus chapters 1-20 with their commentary; 22 is postscript/commentary; 23 all seven appendices; 24 endnotes; 25-28 appended notes in supplied PDF order. Full material availability is distinct from completed reading. Metadata, acknowledgments and index are inspected separately.",
+  "reading_status": "read_pending_import",
+  "completed_at": "2026-09-07T09:22:47.744207Z",
+  "coverage_attestation": "Front matter 1-16 read; 17-31 remains attributed replay of the original opening; all new body, appendices and notes 32-550 and 599-660 read in source order. Acknowledgments, index and publishing metadata 551-598 inspected. Chapter tables and figures inspected as identified in each review. No unread section is counted complete; full learning import and readiness audit remain pending."
+}

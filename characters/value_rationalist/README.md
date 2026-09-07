@@ -1,7 +1,9 @@
 # Value Rationalist
 
-Status: **partial foundation**. The supplied revised edition of *The Intelligent Investor* has been identified and its introduction plus Jason Zweig's accompanying commentary (PDF pages 17-31) produced one real, cited checkpoint. The rest of that book and curriculum positions 2-4 remain unread. No performance trial has run.
+Status: **foundation complete; 1 of 4 books read**. The supplied edition of *The Intelligent Investor* has been read in source order, reviewed through 28 substantive units and imported into an immutable checkpoint chain. Curriculum positions 2–4 remain unread. Theory evaluation has not run; hindsight and shared authoring-context limitations remain explicit.
 
-This Character is not ready for real or historical-qualified recommendations. It may produce clearly labeled fixture opinions while learning continues. See the [status record](checkpoints/foundation-status.json), [bounded review](checkpoints/foundation-reading-review.json), [consolidated memory](memory/foundation-consolidated.json), and [validated bundle](checkpoints/foundation.bundle.json).
+The scoped eligible version is `character:value_rationalist-pilot-foundation-v2`. See the [completion record](checkpoints/foundation-v2/completion.json), [coverage map](checkpoints/foundation-v2/coverage-map.json), [reading review](checkpoints/foundation-v2/reading-review.json), [checkpoint bundle](checkpoints/foundation-v2/bundle.json), [consolidated memory](memory/foundation-v2-consolidated.json), and [eligible bundle](versions/pilot-foundation-v2.bundle.json).
 
-Fresh tasks load [constitution.md](constitution.md), then the consolidated memory and checkpoint status. They must retain the distinction between the untrained design prior and claims actually grounded in the source.
+Fresh tasks load [constitution.foundation-v2.md](constitution.foundation-v2.md), the new consolidated memory, and [Step 11's guide](../../docs/step-11-forward-observation.md). The three-participant learning gate now passes. Forward observations remain subject to their actual elapsed window and cannot establish skill from reading alone.
+
+The original one-section sample, `constitution.md`, `checkpoints/foundation-status.json` and prior memory remain unchanged historical records. Their partial status describes that earlier version.

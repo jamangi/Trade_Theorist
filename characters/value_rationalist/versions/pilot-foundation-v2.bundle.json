@@ -1,0 +1,67 @@
+[
+  {
+    "access": "user_supplied",
+    "authors": [
+      "Benjamin Graham",
+      "Jason Zweig (commentary)"
+    ],
+    "blocker": "Only the introduction at PDF pages 17-31 has been reviewed; the remaining book is unread.",
+    "checked_at": "2026-09-06T00:27:31.881216Z",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:27:31.881216Z",
+    "edition": "Revised edition; Graham's 1973 fourth revised text with 2003 Jason Zweig commentary; EPUB rendered as PDF",
+    "experiment_id": null,
+    "id": "book:9780061745171",
+    "ingestion_status": "partial",
+    "isbn": "9780061745171",
+    "locator": "owner-library://The_intelligent_investor_-_Benjamin_Graham.pdf",
+    "next_check_at": "2027-09-06T00:27:31.881216Z",
+    "private_locator": "owner-library/The_intelligent_investor_-_Benjamin_Graham.pdf",
+    "publication_eligibility": "derived_permitted",
+    "publisher": "HarperCollins",
+    "record_type": "source",
+    "retrieved_at": "2026-09-06T00:27:31.881216Z",
+    "rights": {
+      "evidence": [
+        "Owner supplied the local file and explicitly requested TASK-005 analysis; public export is limited to original notes and citation hashes."
+      ],
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "reading": "permitted",
+      "redistribution": "denied"
+    },
+    "schema_version": 1,
+    "title": "The Intelligent Investor"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "learning_session",
+    "id": "learning-session:value_rationalist-pilot-foundation-v2",
+    "experiment_id": "learning-session:value_rationalist-pilot-foundation-v2",
+    "created_at": "2026-09-07T09:48:44.009543Z",
+    "contamination": "hindsight-contaminated",
+    "mode": "learning",
+    "character_versions": [
+      "character:value_rationalist-pilot-foundation-v2"
+    ],
+    "source_ids": [
+      "book:9780061745171"
+    ],
+    "authorization": "Owner explicitly requested completion of both Value and Trend foundations followed by Step 11. Both complete pinned books were reviewed in this Codex task; this gate reconciles their new immutable checkpoints. No performance or broker-operation approval is implied.",
+    "provenance": "Completed foundation reconciliation. Exact immutable learning ancestry is pinned in examples/step-11/readiness-register.v2.json"
+  },
+  {
+    "character_id": "value_rationalist",
+    "constitution_hash": "e0bffd7242b97b98e53429489464f9242338a057ee49158056235a852a72244f",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-07T09:48:44.009543Z",
+    "curriculum_hash": "e0b94a79b3f4ac8991b724a8a01e3f8ff0f56f962b1771567a8eebb4794a61e7",
+    "experiment_id": "learning-session:value_rationalist-pilot-foundation-v2",
+    "foundation_source_id": "book:9780061745171",
+    "id": "character:value_rationalist-pilot-foundation-v2",
+    "readiness": "ready",
+    "record_type": "character",
+    "schema_version": 1,
+    "version": "pilot-foundation-v2"
+  }
+]

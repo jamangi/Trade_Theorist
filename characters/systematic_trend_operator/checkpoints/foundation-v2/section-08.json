@@ -1,0 +1,21 @@
+{
+  "number": 8,
+  "title": "Chapter 7: By What Measure?",
+  "pdf_start": 87,
+  "pdf_end": 103,
+  "claims": [
+    {"text": "Risk includes drawdowns, inadequate returns, shocks and permanent strategy deterioration. No single historical statistic captures all of them.", "page": 88, "anchor": "four primary risks", "disposition": "accept"},
+    {"text": "Gaps and locked markets can prevent exit. Historical maximum drawdown is an observed result, not a bound on the next loss.", "page": 94, "anchor": "no chance to exit", "disposition": "accept"},
+    {"text": "Smooth historical returns can conceal leverage, illiquidity or short-option tail exposure. Investigate positions and failure scenarios rather than treating smoothness as safety.", "page": 100, "anchor": "Very risky investments can offer smooth returns", "disposition": "accept"},
+    {"text": "Sampling frequency changes measured drawdown. State daily versus month-end conventions and retain duration as well as peak-to-trough depth.", "page": 102, "anchor": "understates the true drawdown", "disposition": "accept"},
+    {"text": "Reject labeling a CAGR-minus-risk-free calculation as the standard Sharpe ratio. Use the mean of consistently sampled excess returns over their standard deviation, with explicit annualization assumptions.", "page": 98, "anchor": "differential return, which is the CAGR", "disposition": "reject"},
+    {"text": "Capacity and crowded positions can change a strategy's future returns and liquidation risk. Keep historical ratios conditional rather than projecting them unchanged.", "page": 103, "anchor": "continue to maintain that ratio", "disposition": "accept"}
+  ],
+  "assimilation": "Review full marked equity, cash needs, drawdown duration and stress exposure alongside comparable return statistics. A high historical Sharpe or MAR cannot certify liquidity, tail survival or future model validity. Distinguish simulated results from the author's actual account testimony.",
+  "adversarial_review": "The chapter's Donchian examples shift from 43.7% CAGR/38% drawdown through May to 27.38% CAGR/27.58% daily drawdown through June without a reconciled configuration; do not merge them into one verified run. Figure 7-5's displayed horizontal extent reaches late 2006 despite its June caption. CAGR is geometric; page 92's 5%, 5%, 100% sequence approximates 30% annually but is neither exactly equal nor 30% per trade. Log versus linear axes emphasize different scales; a fixed percentage decline is directly comparable on a log scale. Month-end MAR can miss intramonth losses, and R-squared smoothness requires a specified fitted series. Rolling-year returns overlap and are not independent observations. A permanent system failure can occur even with good initial testing. Withdrawals from trend funds do not guarantee imminent profitability. Leverage and positions, rather than the mere futures label, determine exposure; shock risk also exists in unleveraged stock funds. Giving back unrealized gains remains an economic drawdown.",
+  "memory_delta": "Use matched return definitions and full drawdown paths, then examine liquidity, leverage, crowding and tail shocks. Keep historical maxima and smoothness in their proper role as observations, not safety guarantees. Flag inconsistent test configurations and metric formulas.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [89,91,93,95,98],
+  "reading_provenance": "Read all PDF pages 87-103 and inspected figures 7-1 through 7-5, including log/linear scales, shock gaps and caption/date differences."
+}

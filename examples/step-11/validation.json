@@ -1,0 +1,53 @@
+{
+  "full_suite": {
+    "result": "passed",
+    "modules": 35,
+    "tests": 342
+  },
+  "field_classification": {
+    "result": "passed",
+    "fields": 1983
+  },
+  "installed_package": {
+    "result": "passed",
+    "evidence_hash": "2edfe83b0bc235091c610c86e8263f5bc0389678e3668b29cce091c70224279d",
+    "network_access": false
+  },
+  "foundations": {
+    "index_sections": 21,
+    "value_sections": 28,
+    "trend_sections": 17,
+    "participant_gate": "passed",
+    "books_per_participant": 1
+  },
+  "real_trial": {
+    "manifest_hash": "7329f2a3c468ff419014250997a90fa20fe0c0938b2a40727d268520d9dc2b8a",
+    "snapshot_hash": "3be8509e4ab989c063f01ada33e1560f11dfd228ac6d02d6062bb64be24ca72b",
+    "round_status": "decided",
+    "independent_opinions": 3,
+    "council_opinions": 1,
+    "common_snapshot": true,
+    "pre_outcome_commitments": true,
+    "expected_instrument_sessions": 22,
+    "observed_instrument_sessions": 22,
+    "initial_requests": 1,
+    "replay_added_transport_attempts": 0,
+    "replay_added_opinions": 0,
+    "replay_added_orders": 0,
+    "completed_sessions": 0,
+    "matured_forecasts": 0,
+    "immature_forecasts": 1,
+    "broker_orders": 0,
+    "external_model_calls": 0
+  },
+  "qualification": {
+    "corporate_action_requests": 2,
+    "dividend_controls": "passed",
+    "split_control": "passed"
+  },
+  "limitations": [
+    "Offline outcome tests use an explicit test-only clock/transport seam; they are not real elapsed evidence.",
+    "Real trial uses fixed foundation-informed rules, not new LLM deliberation. Observation window in progress.",
+    "Initial installation attempt used an outdated wheel cache; the current existing wheelhouse passed offline."
+  ]
+}

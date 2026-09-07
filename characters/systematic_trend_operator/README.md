@@ -1,7 +1,9 @@
 # Systematic Trend Operator
 
-Status: **partial foundation**. The supplied 2007 edition of *Way of the Turtle* has been identified and chapter 1 (PDF pages 25-32) produced one real, cited checkpoint. The rest of that book and curriculum positions 2-4 remain unread. No performance trial has run.
+Status: **foundation complete; 1 of 4 books read**. The supplied edition of *Way of the Turtle* has been read in source order, reviewed through 17 substantive units and imported into an immutable checkpoint chain. Curriculum positions 2–4 remain unread. Theory evaluation has not run; hindsight and shared authoring-context limitations remain explicit.
 
-This Character is not ready for real or historical-qualified recommendations. It may produce clearly labeled fixture opinions while learning continues. See the [status record](checkpoints/foundation-status.json), [bounded review](checkpoints/foundation-reading-review.json), [consolidated memory](memory/foundation-consolidated.json), and [validated bundle](checkpoints/foundation.bundle.json).
+The scoped eligible version is `character:systematic_trend_operator-pilot-foundation-v2`. See the [completion record](checkpoints/foundation-v2/completion.json), [coverage map](checkpoints/foundation-v2/coverage-map.json), [reading review](checkpoints/foundation-v2/reading-review.json), [checkpoint bundle](checkpoints/foundation-v2/bundle.json), [consolidated memory](memory/foundation-v2-consolidated.json), and [eligible bundle](versions/pilot-foundation-v2.bundle.json).
 
-Fresh tasks load [constitution.md](constitution.md), then the consolidated memory and checkpoint status. They must not infer that chapter 1 supplies the later Turtle entry, exit, or sizing system.
+Fresh tasks load [constitution.foundation-v2.md](constitution.foundation-v2.md), the new consolidated memory, and [Step 11's guide](../../docs/step-11-forward-observation.md). The three-participant learning gate now passes. Forward observations remain subject to their actual elapsed window and cannot establish skill from reading alone.
+
+The original one-section sample, `constitution.md`, `checkpoints/foundation-status.json` and prior memory remain unchanged historical records. Their partial status describes that earlier version.

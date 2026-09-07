@@ -1,0 +1,22 @@
+{
+  "number": 21,
+  "title": "Chapter 20: Margin of Safety as the Central Concept of Investment; Zweig commentary",
+  "pdf_start": 467,
+  "pdf_end": 483,
+  "claims": [
+    {"text": "A margin of safety is a buffer against estimation error and adverse outcomes. Stress debt service, asset claims and earning power rather than requiring a precise favorable forecast.", "page": 468, "anchor": "rendering unnecessary an accurate estimate", "disposition": "qualify"},
+    {"text": "Evaluate earning power through unfavorable conditions; recent prosperity and high reported coverage can conceal cyclical fragility.", "page": 470, "anchor": "subnormal business", "disposition": "accept"},
+    {"text": "Price and conservative assumptions jointly determine a valuation margin; growth businesses are not inherently incompatible with this principle.", "page": 471, "anchor": "price paid", "disposition": "accept"},
+    {"text": "Diversification complements valuation discipline but cannot manufacture positive expected value or eliminate correlated losses. Market payoffs do not have roulette's known, fixed probabilities.", "page": 472, "anchor": "Theory of Diversification", "disposition": "qualify"},
+    {"text": "A margin must be supported by evidence and reasoning, with explicit uncertainty; a precise calculation does not make estimated value or future success certain.", "page": 473, "anchor": "There is no guarantee", "disposition": "accept"},
+    {"text": "Evaluate both the likelihood and consequence of being wrong, including concentration, liquidity, costs and the investor's likely behavior under loss.", "page": 482, "anchor": "probabilities and consequences", "disposition": "accept"},
+    {"text": "Reject the claim that permanent diversification ensures mistakes can never be catastrophic. Common shocks, leverage and liabilities can overwhelm a diversified portfolio.", "page": 483, "anchor": "will never be catastrophic", "disposition": "reject"}
+  ],
+  "assimilation": "Express margin of safety as explicit conservative scenarios, price sensitivity and loss capacity. Distinguish contractually enforceable claims from equity expectations. Size investments to withstand errors, use independent evidence to update confidence, and retain a defensive default when analysis cannot justify a differentiated decision.",
+  "adversarial_review": "Historical coverage and market capitalization are imperfect proxies for future cash and realizable collateral. Equity lacks bond seniority and payment rights even at an attractive price. An earnings-yield minus bond-yield spread is not a realized cash return, and adding annual spreads does not produce a guaranteed ten-year buffer. Diversification needs dependence and loss-severity analysis; positive expected payoff does not imply a greater-than-half chance of profit. Two-thirds of appraised value is a heuristic with uncertain appraisal. The late acceptance of possibly investable warrants qualifies the earlier categorical warrant condemnation. Risk is partly behavioral but also objectively embedded in instruments. A binary theological analogy cannot justify assigning equal probabilities to unknown events. Loss-recovery calculations omit inflation, taxes and alternative opportunity cost unless explicitly added.",
+  "memory_delta": "Require evidence for conservative earning power, a price-dependent buffer and survivable downside; expose correlated risks and estimation error. Maintain calibration and behavior controls. No valuation formula, security label or diversification policy guarantees recovery or safety.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [479,480],
+  "reading_provenance": "Read all PDF pages 467-483; visual loss and recovery figures inspected separately before import."
+}

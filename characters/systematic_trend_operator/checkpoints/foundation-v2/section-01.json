@@ -1,0 +1,18 @@
+{
+  "number": 1,
+  "title": "Foreword, preface and introduction",
+  "pdf_start": 11,
+  "pdf_end": 24,
+  "claims": [
+    {"text": "The Turtle trainees were intensively selected from a much larger applicant pool. Their outcomes cannot establish that an arbitrary person can be trained to trade successfully.", "page": 18, "anchor": "Over 1,000 people had applied", "disposition": "qualify"},
+    {"text": "The author explicitly presents his own experience rather than a comprehensive account of the group's collective experience. Preserve this perspective and its limits.", "page": 16, "anchor": "too much of an outsider", "disposition": "accept"},
+    {"text": "Knowing rules and applying them under risk are separate capabilities; evaluate faithful execution as well as financial outcomes.", "page": 23, "anchor": "not in the concepts but in the application", "disposition": "accept"},
+    {"text": "Reject attributing differences in trainee returns entirely to psychology without matched exposures, execution records and a complete outcome ledger.", "page": 13, "anchor": "psychology produced the difference", "disposition": "reject"}
+  ],
+  "assimilation": "Start with the frozen design prior: observable rules, sizing, exits and costs form one system. The story motivates process discipline and testing, while the reported gains remain historical source assertions rather than evidence that this Character can reproduce them.",
+  "adversarial_review": "Foreword praise and reported profits are not independent performance verification. Applicant screening, unequal account allocations, prior programming experience and survivorship complicate causal claims about training. Test-description counts differ between the foreword and introduction; do not manufacture a single exact selection protocol. The author's software-company connection is disclosed in acknowledgments, and the foreword writer markets coaching; keep those interests with the source. Historical average returns lack a complete return, leverage, fee and capital-flow reconciliation here. Psychological discipline cannot rescue a strategy lacking an edge.",
+  "memory_delta": "Separate learning rules from executing them, source testimony from audited outcomes, and selected trainees from a representative population. Require an edge and measured risk; do not infer success from confidence or endorsements.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read PDF pages 1-24 in order, including credits, author interests, foreword, preface and introduction; pages 1-10 are metadata/front matter. This section uses only Trend's frozen prior."
+}

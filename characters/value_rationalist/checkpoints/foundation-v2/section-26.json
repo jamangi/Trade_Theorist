@@ -1,0 +1,20 @@
+{
+  "number": 26,
+  "title": "Appended notes, second sequence",
+  "pdf_start": 615,
+  "pdf_end": 630,
+  "claims": [
+    {"text": "Sector safety changes with regulation, technology and capital requirements; historical utility stability cannot be assumed permanent.", "page": 616, "anchor": "financial havoc", "disposition": "accept"},
+    {"text": "Reject dividing per-share working capital by shares outstanding a second time. Calculate company-level assets less the specified liabilities and divide once, distinguishing working capital from net current asset value.", "page": 619, "anchor": "current assets per share", "disposition": "reject"},
+    {"text": "Reject evaluating a convertible bond's recovery of cost solely through coupons and conversion. Contractual principal repayment, credit risk and call terms are essential to its valuation even if conversion is unlikely.", "page": 620, "anchor": "payback period", "disposition": "reject"},
+    {"text": "A price can remain above estimated value for a long time; valuation alone does not identify when a short position can profit or whether it can survive interim losses.", "page": 626, "anchor": "stay overvalued", "disposition": "accept"},
+    {"text": "Preserve differing fiscal windows and acquisition adjustments when comparing companies. A deliberately chosen nine-month result cannot be compared as if it were a full year.", "page": 628, "anchor": "nine-month period", "disposition": "accept"},
+    {"text": "The editor explicitly disputes the claimed special economic benefit of stock dividends; corporate-action unit changes do not create wealth by themselves.", "page": 629, "anchor": "argument is no longer valid", "disposition": "accept"}
+  ],
+  "assimilation": "Use the notes to correct mechanics and preserve the limits of comparative examples. Corporate-action adjustments, principal redemption, source publication and fiscal coverage are part of evidence integrity. Keep dated legal and market descriptions outside current execution rules.",
+  "adversarial_review": "The bond-discount note speculates that LTV bought discounted bonds; it does not establish this from accounting disclosures, and an asset worth less than estimated does not thereby become a liability. Acquisition-failure generalizations omit successful acquirers. A quiet Y2K transition after costly remediation does not establish that the original risk was imaginary. The dividend and shareholder-voting discussion switches between share ownership percentages and numbers of people; it cannot infer an exact fraction of individuals who abstain. Hypothetical convertible-index returns exclude fees, and a blanket two-point haircut is an estimate. A stock above zero before bankruptcy does not prove bankruptcy was unforeseeable. Printed prices, returns and market capitalization may use different split conventions; do not mix them. Historical research favoring value is not a guarantee of future dominance or a substitute for this Character's test.",
+  "memory_delta": "Check units once, include contractual redemption, preserve fiscal and split conventions, and separate per-person from per-share statistics. Valuation does not supply short-sale timing, past sector stability is conditional, and acquiring businesses is not inherently destructive.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read all PDF pages 615-630."
+}

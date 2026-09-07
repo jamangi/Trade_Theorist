@@ -76,11 +76,16 @@ def query(value):
         raise ContractError("A market query is required")
     for field in ("start", "end", "freshness_after", "information_cutoff"):
         value[field] = stamp(utc(value[field]).timestamp())
-    value["symbols"].sort(); value["expected_sessions"].sort()
+    value["symbols"].sort()
+    if 'expected_sessions' in value: value["expected_sessions"].sort()
     return value
 
 
 def compatibility(value):
+    if value['endpoint'] == 'corporate_actions':
+        # Process-date results include revisions and absences. Reuse exact queries
+        # only; do not stitch partial corporate-action coverage like bar windows.
+        return digest(value)
     return digest({k: v for k, v in value.items() if k not in {"symbols", "start", "end", "expected_sessions", "page_limit"}})
 
 
@@ -185,6 +190,8 @@ class Coordinator:
         self.store.connection.execute("UPDATE market_work SET body=? WHERE id=?", (canonical(work), identifier))
 
     def _missing(self, value):
+        if value['endpoint'] == 'corporate_actions':
+            return [dict(start=value['start'], end=value['end'], symbols=value['symbols'])]
         batches = {}
         for symbol in value["symbols"]:
             cursor, end = value["start"], value["end"]
@@ -210,7 +217,7 @@ class Coordinator:
             raise ContractError("Use an explicit UTC completion deadline")
         if value["sharing_scope"] not in self.policy["sharing_scopes"] or value["rights_ref"] != self.policy["rights_ref"]:
             raise ContractError("Query sharing/rights differ from the reviewed policy")
-        delay = self.policy["feed_delays"][value["feed"]]
+        delay = self.policy["feed_delays"][value["feed"]] if value['endpoint'] == 'stock_bars' else 0
         if delay is None or utc(value["end"]).timestamp() > self.clock.wall() - delay:
             raise ContractError("Explicit feed/window entitlement is not established; no fallback")
         identifier = "work:" + digest(value)
@@ -242,7 +249,7 @@ class Coordinator:
                 deadline=deadline, deadline_logical=now + max(0, deadline_time - self.clock.wall()),
                 pages=0, subscribers=1, cache_hits=0 if segments else 1, wait_seconds=0, not_before=None,
                 segments=segments, segment=0, token=None, page_number=0, page_retries=0, seen_tokens=[],
-                record_ids=[], coverage_expected=len(value["symbols"]) * len(value["expected_sessions"]), coverage_observed=0)
+                record_ids=[], coverage_expected=len(value["symbols"]) * len(value.get("expected_sessions", [])), coverage_observed=0)
             self.store.connection.execute("INSERT INTO market_work VALUES(?,?,?,?)", (identifier, digest(value), canonical(value), canonical(work)))
             if deadline_time <= self.clock.wall():
                 work.update(status="expired", reason="deadline"); self._save(identifier, work)
@@ -254,6 +261,12 @@ class Coordinator:
         rows = self.store.connection.execute("SELECT id,symbol,event_at,received_at FROM market_observations WHERE compatibility=? ORDER BY symbol,event_at,id", (compatibility(value),))
         rows = [r for r in rows if r["symbol"] in value["symbols"] and value["start"] <= r["event_at"] <= value["end"] and (allowed_ids is None or r["id"] in allowed_ids)]
         work["record_ids"] = [r["id"] for r in rows]
+        if value['endpoint'] == 'corporate_actions':
+            # Terminal pagination is retrieval completeness, not proof that no
+            # late action exists. Event count is separate from session coverage.
+            work.update(status='complete', reason='none', not_before=None,
+                        coverage_expected=0, coverage_observed=0)
+            return
         observed = {(r["symbol"], r["event_at"][:10]) for r in rows if r["event_at"][:10] in value["expected_sessions"]}
         work["coverage_observed"] = len(observed)
         work["status"] = "complete" if len(observed) == work["coverage_expected"] else "incomplete"
@@ -298,7 +311,7 @@ class Coordinator:
             q, work = self._work(identifier)
             if work["status"] != "complete":
                 raise ContractError("Only complete shared evidence can enter experiment ingestion")
-            if q["adjustment"] != "raw" or csv_adapter.capability["feed"] != q["feed"]:
+            if q['endpoint'] != 'stock_bars' or q["adjustment"] != "raw" or csv_adapter.capability["feed"] != q["feed"]:
                 raise ContractError("Revision ingestion requires raw bars and the pinned source feed")
             if not csv_adapter.capability["storage_retention"] or not csv_adapter.capability["internal_replay"]:
                 raise ContractError("Experiment ingestion requires reviewed storage and replay rights")
@@ -364,6 +377,7 @@ class Coordinator:
 
     def run(self, identifier, *, resume=None, value=None, max_pages=100, before_commit=None):
         from .adapters.alpaca_market_data import AlpacaBarsAdapter, Response
+        from .adapters.alpaca_market_data import actions
         if type(max_pages) is not int or max_pages < 1:
             raise ContractError("Use a finite page bound")
         if resume is not None and resume != self.resume(identifier) or value is not None and digest(query(value)) != self.resume(identifier)["query_hash"]:
@@ -419,22 +433,28 @@ class Coordinator:
                             return self.telemetry(identifier)
                         with self.store.transaction(): self._save(identifier, work)
                     segment = work["segments"][work["segment"]]
-                    params = dict(symbols=",".join(segment["symbols"]), start=segment["start"], end=segment["end"],
-                        timeframe=q["timeframe"], limit=str(q["page_limit"]), adjustment=q["adjustment"], feed=q["feed"], sort="asc")
-                    if q["asof"] is not None: params["asof"] = q["asof"]
+                    is_action = q['endpoint'] == 'corporate_actions'
+                    endpoint = actions.URL if is_action else AlpacaBarsAdapter.BASE_URL
+                    if is_action:
+                        params = dict(symbols=','.join(segment['symbols']), start=segment['start'][:10], end=segment['end'][:10],
+                            limit=str(q['page_limit']), sort='asc', data_quality=q['data_quality'], region=q['region'])
+                    else:
+                        params = dict(symbols=",".join(segment["symbols"]), start=segment["start"], end=segment["end"],
+                            timeframe=q["timeframe"], limit=str(q["page_limit"]), adjustment=q["adjustment"], feed=q["feed"], sort="asc")
+                        if q["asof"] is not None: params["asof"] = q["asof"]
                     if work["token"]: params["page_token"] = work["token"]
-                attempt_id, wait_left = self._admit(identifier, digest([AlpacaBarsAdapter.BASE_URL, params]), wait_left)
+                attempt_id, wait_left = self._admit(identifier, digest([endpoint, params]), wait_left)
                 if attempt_id is None:
                     raise Deferred()
                 response = None
                 try:
-                    response = self.transport("GET", AlpacaBarsAdapter.BASE_URL, dict(params))
+                    response = self.transport("GET", endpoint, dict(params))
                 except Exception:
                     pass  # An ambiguous outbound attempt remains charged; no exception payload is persisted.
                 with self.db, self.store.transaction():
                     q, work = self._work(identifier); now = self._time()
                     status = response.status if isinstance(response, Response) and type(response.status) is int and isinstance(response.headers, dict) else 0
-                    adapter = AlpacaBarsAdapter(lambda *_: None, feed=q["feed"], offline=True, delay_cap=self.policy["fallback_cap_seconds"], jitter=self.jitter)
+                    adapter = AlpacaBarsAdapter(lambda *_: None, feed=q.get("feed", 'iex'), offline=True, delay_cap=self.policy["fallback_cap_seconds"], jitter=self.jitter)
                     headers = {str(k).lower(): str(v) for k, v in response.headers.items()} if status else {}
                     if self.policy["verified_rate_headers"]:
                         try:
@@ -468,18 +488,22 @@ class Coordinator:
                         self._save(identifier, work)
                     else:
                         try:
-                            bars, token = AlpacaBarsAdapter.parse_page(response, segment["symbols"], seen=work["seen_tokens"])
+                            parser = actions.parse_page if is_action else AlpacaBarsAdapter.parse_page
+                            bars, token = parser(response, segment["symbols"], seen=work["seen_tokens"])
                             receipt = stamp(utc(response.received_at).timestamp())
                             if not q["freshness_after"] <= receipt <= q["information_cutoff"]:
                                 raise ContractError("Receipt outside frozen information bounds")
                             records = []
                             for bar in bars:
-                                event = stamp(utc(bar["t"]).timestamp())
+                                event = stamp(utc(bar['process_date'] + 'T00:00:00Z' if is_action else bar['t']).timestamp())
                                 if not segment["start"] <= event <= segment["end"] or event > receipt:
                                     raise ContractError("Observation outside query or receipt")
                                 canonical(bar)
+                                payload = {('action' if is_action else 'bar'): bar, 'received_at': receipt, 'request_hash': digest([endpoint, params])}
+                                if is_action:
+                                    payload['published_at'] = None
                                 records.append(("observation:" + digest([compatibility(q), bar]), compatibility(q), bar["symbol"], event, receipt,
-                                    canonical(dict(bar=bar, received_at=receipt, request_hash=digest([AlpacaBarsAdapter.BASE_URL, params])))))
+                                    canonical(payload)))
                         except (ContractError, KeyError, TypeError, ValueError):
                             work.update(status="failed", reason="response"); self._save(identifier, work)
                             continue

@@ -1,0 +1,1555 @@
+{
+  "schema_version": 1,
+  "source_id": "book:9780061745171",
+  "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+  "reviewed_at": "2026-09-07T09:42:44.045555Z",
+  "scope": "full_book",
+  "sections": [
+    {
+      "number": 1,
+      "title": "Introduction and 2003 commentary",
+      "pdf_start": 17,
+      "pdf_end": 31,
+      "claims": [
+        {
+          "text": "Graham distinguishes a defensive investor by avoidance of serious error and frequent decisions, while an enterprising investor accepts sustained analytical work for a possible better average result.",
+          "page": 21,
+          "anchor": "avoidance of serious mistakes or losses",
+          "disposition": "accept"
+        },
+        {
+          "text": "An industry's obvious physical growth does not by itself imply attractive investor profits because price, capacity, competition and already-shared expectations intervene.",
+          "page": 22,
+          "anchor": "Obvious prospects for physical growth in a business do not translate into obvious profits for investors.",
+          "disposition": "accept"
+        },
+        {
+          "text": "The introduction treats relating price paid to value offered as a central habit rather than treating a favorable business story as sufficient.",
+          "page": 23,
+          "anchor": "habit of relating what is paid to what is being offered",
+          "disposition": "accept"
+        },
+        {
+          "text": "The introduction's simple defensive policy and warnings about active failure establish a burden of proof for activity, but its dated asset examples and performance assertions are not current executable rules.",
+          "page": 24,
+          "anchor": "to improve this easily attainable standard requires much application and more than a trace of wisdom",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Adopt price-versus-value, explicit temperament and a defensive default as formative constraints. The Character may investigate active opportunities, but must state why the expected margin after costs and error is worth departing from a simpler alternative.",
+      "adversarial_review": "This bounded reading covers only the introduction and Zweig commentary, not Graham's full argument or the later margin-of-safety chapter. Historical airline, fund and market examples are selected and dated. The text's criticism of trend following is an asserted outside challenge for the Trend Character, not decisive empirical evidence here.",
+      "memory_delta": "A compelling growth story is not an investment case until price, embedded expectations, downside and the owner's capacity are specified. Abstention is preferable to activity that lacks a defensible margin for error.",
+      "reading_provenance": "Attributed replay of original opening review; not newly generated or independent reading.",
+      "replay_origin": {
+        "path": "checkpoints/foundation-reading-review.json",
+        "review_hash": "08094b472e72d7ef9d141a6f813cc0266d553c1c234c1743aa18405d70296080",
+        "section_number": 1,
+        "reviewed_at": "2026-09-06T00:29:00Z"
+      }
+    },
+    {
+      "number": 2,
+      "title": "Chapter 1: Investment versus Speculation; Zweig commentary",
+      "pdf_start": 32,
+      "pdf_end": 56,
+      "claims": [
+        {
+          "text": "Graham defines investment by an analyzed operation's protection of principal and adequate expected return, not by the security label, recent gains or the trader calling himself an investor; even representative shares retain speculative uncertainty.",
+          "page": 34,
+          "anchor": "speculative factor",
+          "disposition": "accept"
+        },
+        {
+          "text": "Keep a speculative allocation and its reasoning separate from investment capital; the book's suggested allocation percentages and 1972 yields are dated author policy examples, not permission to change this project's capital limits.",
+          "page": 35,
+          "anchor": "separate fund",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A correct business forecast can still produce a poor investment if other participants already capitalized that forecast in the purchase price; analytical error and competition both constrain active selection.",
+          "page": 42,
+          "anchor": "already fully reflect",
+          "disposition": "accept"
+        },
+        {
+          "text": "Graham acknowledges that duration losses on high-quality bonds were insufficiently emphasized in his earlier analysis; safety of contractual repayment does not make quoted principal stable or remove purchasing-power risk.",
+          "page": 37,
+          "anchor": "insufficiently stressed",
+          "disposition": "accept"
+        },
+        {
+          "text": "Backtested formula performance needs an economic rationale, independent prospective evaluation, transaction costs and attention to crowding. Zweig's particular failed formulas and short fund comparison illustrate those risks but do not prove that every systematic strategy must fail.",
+          "page": 55,
+          "anchor": "patterns will emerge",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the commentary's categorical implication that following investment rules makes loss impossible; prudent process changes the distribution of outcomes without guaranteeing eventual wealth.",
+          "page": 47,
+          "anchor": "cannot lose in the end",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Add an operation-level investment/speculation test to the prior: state analyzed value, purchase price, loss protections and an adequate-return case before describing an active decision as investment. Separate analytical correctness from return realization and preserve the option to abstain when VTI bars cannot support a valuation. Read the original Graham distinctions alongside Zweig's behavioral and data-mining cautions without adopting either author's dated numeric allocation or guaranteed-success rhetoric.",
+      "adversarial_review": "Safety is conditional and cannot remove market, inflation, liquidity or model risk. The book's 1972 bond-versus-stock arithmetic, selected failed strategies and 1996-2000 fund chart are historical source reports, not current forecasts or an exhaustive test of active investing. The chart's short interval and correlated funds cannot establish a permanent advantage. A sound unpopular strategy can remain unprofitable for a long time; popularity is neither a valuation measurement nor a sufficient rejection rule.",
+      "memory_delta": "Require a value-versus-price case with explicit uncertainty; classify unsupported timing as speculation, preserve separate budgets, and evaluate after costs out of sample. Reject guaranteed success and retain the author's admitted duration-risk forecasting error.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        49,
+        53
+      ],
+      "reading_provenance": "Current Codex session read PDF pages 32-56 in order; the truncated first display was completed by explicitly reading pages 40-46. Figures 1-1 and 1-2 were rendered and inspected; no exact chart values were inferred as current inputs."
+    },
+    {
+      "number": 3,
+      "title": "Chapter 2: The Investor and Inflation; Zweig commentary",
+      "pdf_start": 57,
+      "pdf_end": 70,
+      "claims": [
+        {
+          "text": "A stock cannot be preferable to a bond at every purchase price and yield; inflation exposure must be evaluated together with valuation, liabilities and the investor's horizon.",
+          "page": 57,
+          "anchor": "under all conditions",
+          "disposition": "accept"
+        },
+        {
+          "text": "Nominal profit can coexist with a purchasing-power loss. Compare real as well as nominal outcomes, using an explicit measured inflation series and compatible time intervals rather than the book's dated numerical assumptions.",
+          "page": 67,
+          "anchor": "how much you keep after inflation",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Stocks are an imperfect inflation hedge: the commentary reports inflation shortfalls in some overlapping five-year windows, and short/intermediate drawdowns can affect an investor before any long-run protection materializes.",
+          "page": 68,
+          "anchor": "impressive, but imperfect",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the statement that inflation can raise stock values only by raising the rate of earnings on capital as a complete valuation identity; changing nominal earnings, discount rates, accounting measurements and repricing complicate that inference.",
+          "page": 61,
+          "anchor": "The only way that inflation",
+          "disposition": "reject"
+        },
+        {
+          "text": "Inflation-linked bonds and property exposure are mechanisms to investigate, not universally safe substitutes for cash. Zweig's own warning about short-run TIPS volatility limits the surrounding absolute-safety language; tax, legal and product examples remain dated.",
+          "page": 70,
+          "anchor": "volatile in the short run",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Extend the value framework from quoted dollars to purchasing power and timing of liabilities. Refuse to infer an all-stock allocation merely from an inflation forecast. A business's pricing power, reinvestment needs and financing burden matter separately from a generic equity label. Keep inflation-linked contracts and real assets outside the VTI-only pilot's allowed actions unless a later policy explicitly expands scope.",
+      "adversarial_review": "The historical tables use different capital/profit measures and overlapping windows, not independent causal experiments. Graham's prospective 3% inflation and 8% stock-return illustrations were explicitly uncertain and must not become current inputs. The chart orders years by inflation rather than time, so it cannot be read as a chronological strategy. Claims about gold ownership law, taxation, utilities and particular funds require fresh primary verification before operational use. Contractual inflation adjustment does not guarantee a bond fund's market value or match every household's personal inflation.",
+      "memory_delta": "Separate nominal and real results, inspect inflation pass-through and capital intensity, and preserve near-term liquidity needs. Treat stocks and TIPS as conditional risk exposures rather than complete inflation insurance; no fixed current inflation forecast is learned.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        59,
+        63,
+        69
+      ],
+      "reading_provenance": "Read all PDF pages 57-70; rendered tables 2-1/2-2 and figure 2-1. Table/figure measures and historical ordering were checked, not reused as current forecasts."
+    },
+    {
+      "number": 4,
+      "title": "Chapter 3: Stock-Market History and Early-1972 Valuation; Zweig commentary",
+      "pdf_start": 71,
+      "pdf_end": 92,
+      "claims": [
+        {
+          "text": "Historical market appreciation must be separated from earnings, dividends and changes in valuation multiples; a long price advance is not itself a repeatable expected-return estimate.",
+          "page": 75,
+          "anchor": "change in the price/earnings ratios",
+          "disposition": "accept"
+        },
+        {
+          "text": "Graham's own record includes overly cautious valuation judgments and uncertain timing; he judges consistent controlled exposure more useful than his market-level forecasts, which limits the use of valuation as a daily timing rule.",
+          "page": 80,
+          "anchor": "doubtful if they have been as useful",
+          "disposition": "accept"
+        },
+        {
+          "text": "Early index histories can omit failed firms and splice unlike series. Treat Zweig's pre-1871 survivorship objection as a warning to audit historical population construction, not as an independently reproduced return estimate.",
+          "page": 87,
+          "anchor": "survivorship bias",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Returns at superficially similar historical valuation levels vary widely; the selected, overlapping ten-year observations in figure 3-1 do not establish a precise forecast or a trading threshold.",
+          "page": 91,
+          "anchor": "sometimes done very well",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The note under figure 3-1 describes earnings divided by index value while labeling the measure price/earnings; preserve this apparent inversion and do not implement the printed wording as a validated formula.",
+          "page": 91,
+          "anchor": "divided by December 31 index value",
+          "disposition": "reject"
+        },
+        {
+          "text": "Reject an unconditional rule that higher share prices always mean greater investment risk: the useful comparison is price relative to changed business value, financing, alternatives and uncertainty, holding other determinants explicit.",
+          "page": 85,
+          "anchor": "It always has been",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Use valuation history to set a range of plausible outcomes and stress scenarios, not to infer the date of a reversal. Add a history-quality checklist covering universe changes, failed firms, dividends, inflation basis, overlapping windows and ratio definitions. Preserve Graham's mixed forecasting record alongside the commentary's favorable retrospective selection.",
+      "adversarial_review": "Zweig calls Graham prophetic after observing 1973-1974, but Graham listed multiple paths and acknowledged unhelpful prior caution. That is not clean forecast scoring. The early series use different index populations, and the selected P/E table conditions on a small number of correlated historical windows. Its descriptive ratio note is visibly inverted relative to its label; a source can be faithfully cited and still contain a technical error. Neither the historical 6% illustration nor fixed P/E cutoffs become current VTI inputs.",
+      "memory_delta": "Evaluate price against changing value and alternatives; distinguish a cautious valuation stance from a timed signal. Keep all prior forecasts, failed firms and overlapping windows visible, and verify ratio definitions before implementing them.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        72,
+        74,
+        76,
+        82,
+        91
+      ],
+      "reading_provenance": "Read all PDF pages 71-92 and inspected the rendered historical swing/earnings/yield tables, price chart and figure 3-1. The ratio-note inconsistency was confirmed on the source page."
+    },
+    {
+      "number": 5,
+      "title": "Chapter 4: Defensive Portfolio Policy; Zweig commentary",
+      "pdf_start": 93,
+      "pdf_end": 115,
+      "claims": [
+        {
+          "text": "Portfolio policy depends on the owner's circumstances, cash needs and capacity for research and emotional discipline; age or a security's category alone cannot determine a suitable exposure.",
+          "page": 107,
+          "anchor": "fundamental circumstances of your life",
+          "disposition": "accept"
+        },
+        {
+          "text": "Graham explicitly lacks reliable rules for shifting between his proposed stock-allocation extremes. A fixed rebalancing discipline can constrain exposure drift without claiming a market-turning forecast, but his percentages are examples rather than this project's risk policy.",
+          "page": 95,
+          "anchor": "no reliable rules",
+          "disposition": "qualify"
+        },
+        {
+          "text": "More research effort does not ensure a greater realized return. Treat the chapter's ranking of passive and enterprising returns as an aspiration conditional on skill, opportunity and costs, limited by the prior chapter's competition warning.",
+          "page": 93,
+          "anchor": "maximum intelligence and skill",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A bond's yield must be evaluated with duration, credit, liquidity, tax treatment and call rights. A call can cap favorable price participation while leaving the holder exposed to unfavorable rate changes.",
+          "page": 101,
+          "anchor": "Call Provisions",
+          "disposition": "accept"
+        },
+        {
+          "text": "Legal security form and contract terms matter: preferred stock, ordinary debt and income bonds have different payment obligations, priority, participation and maturity features, including exceptions to their usual forms.",
+          "page": 103,
+          "anchor": "innumerable departures",
+          "disposition": "accept"
+        },
+        {
+          "text": "Do not accept the figure's bank-location-based insurance statement as executable product protection. It appears to mix money-market fund and deposit concepts; exact instrument and coverage terms require independent primary verification before use.",
+          "page": 112,
+          "anchor": "if purchased at an FDIC-member bank",
+          "disposition": "reject"
+        },
+        {
+          "text": "A high dividend yield is not a sufficient purchase thesis: the business must remain sound and the price reasonable. Income labels do not replace analysis of loss exposure.",
+          "page": 114,
+          "anchor": "dividend income alone",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Make investor constraints an input to valuation-based policy rather than an afterthought. Separate contractual cash-flow safety, quoted-price variation and after-tax purchasing power. Research preferences may help choose a workflow, but do not entitle Value to take larger risks or claim a return advantage. Treat rebalancing as adherence to a predeclared allocation, not opportunistic reinterpretation of the latest prices.",
+      "adversarial_review": "The chapter and commentary contain dated 1972/2003 yields, tax brackets, product minimums and named-fund recommendations. The source's categorical municipal-bond advice ignores the need to compare actual after-tax yields and risk; preferred-stock rhetoric is broader than its own contract-specific discussion. The figure's insurance wording and the pooled mortgage-agency guarantees are quarantined for independent product/legal verification. Its age examples and six-month rebalancing suggestion are illustrations, not universal criteria or an authorized VTI pilot allocation.",
+      "memory_delta": "Bind exposure to liabilities and predeclared policy; analyze payment rights, call asymmetry and income quality. Do not equate effort with realized alpha, yield with safety, or a familiar institution with verified instrument protection.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        112
+      ],
+      "reading_provenance": "Read all PDF pages 93-115 and visually inspected figure 4-1 and its footnotes. Current product, tax and insurance claims were not operationally qualified."
+    },
+    {
+      "number": 6,
+      "title": "Chapter 5: Defensive Common-Stock Investing; Zweig commentary",
+      "pdf_start": 116,
+      "pdf_end": 134,
+      "claims": [
+        {
+          "text": "Growth can improve a business while an excessive purchase multiple makes its stock vulnerable; defensive selection therefore combines diversification, financial strength and a price constraint rather than choosing growth narratives alone.",
+          "page": 118,
+          "anchor": "provided the price paid is not excessive",
+          "disposition": "accept"
+        },
+        {
+          "text": "Familiarity is a starting point for investigation, not a valuation advantage by itself; product enthusiasm and employment in a business do not replace financial-statement research or diversification.",
+          "page": 128,
+          "anchor": "The next step is doing the research",
+          "disposition": "accept"
+        },
+        {
+          "text": "Distinguish contractual default and business impairment from temporary quotation changes, while retaining liquidity and forced-sale risk. Reject using the absence of a sale or a later recovery to erase intervening portfolio drawdown and risk.",
+          "page": 123,
+          "anchor": "unlikely to be forced to sell",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A fixed contribution schedule can support disciplined exposure, but the source's dollar-cost-averaging examples compare different investment timing and cumulative contributions; they do not by themselves prove superior flow-adjusted returns or guaranteed recovery.",
+          "page": 133,
+          "anchor": "total outlay of $6,600",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Do not seek a poorly understood high yield simply to fill a spending shortfall; investment competence, capital needs and the consequences of loss must constrain the attempted solution.",
+          "page": 121,
+          "anchor": "risk half of it",
+          "disposition": "accept"
+        },
+        {
+          "text": "Index funds can reduce selection and monitoring work, but reject the implication that a long unattended holding is unlikely to cause any suffering or surprises; simplicity does not remove market losses, changing liabilities or product risks.",
+          "page": 131,
+          "anchor": "any suffering or surprises",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Strengthen the value prior with the purchase-multiple constraint and the danger of mistaking familiar products for known business value. Accept disciplined diversified contributions as a possible implementation policy while keeping the contribution schedule outside measured investment return. Translate Graham's economic-loss distinction into separate impairment, mark-to-market drawdown and forced-sale analyses rather than discarding any of them.",
+      "adversarial_review": "Graham's size, dividend and earnings-multiple thresholds are dated heuristics with acknowledged arbitrariness. The commentary's 1929 and 1999-2002 contribution illustrations do not match exposure timing or account for an alternative use of initially available cash, and the chart juxtaposes account value with an index level. Reported recovery periods concern prices unless distributions are explicitly included. Historical profession/gender examples do not establish an individual's competence. A diversified portfolio can still suffer lasting impairment; refusing to sell does not make risk disappear.",
+      "memory_delta": "Require research beyond familiarity, preserve valuation discipline even for strong growth businesses, and distinguish impairment from drawdown without suppressing either. Measure contributions separately and reject automatic-success claims for averaging or index ownership.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        133,
+        134
+      ],
+      "reading_provenance": "Read all PDF pages 116-134 and inspected figure 5-1, including its cumulative-account-value and index-level labels."
+    },
+    {
+      "number": 7,
+      "title": "Chapter 6: Enterprising Policy, Negative Approach; Zweig commentary",
+      "pdf_start": 135,
+      "pdf_end": 153,
+      "claims": [
+        {
+          "text": "An enterprising investor starts with the same sound base as a defensive investor and needs a reasoned, competence-matched justification for each departure; additional activity is not an obligation.",
+          "page": 135,
+          "anchor": "well-reasoned justification",
+          "disposition": "accept"
+        },
+        {
+          "text": "Buying a weak senior security merely for extra income can expose principal to losses disproportionate to the yield increment. Price, earnings coverage, recovery value and diversification determine whether taking that credit risk has a defensible reward.",
+          "page": 138,
+          "anchor": "loss of a substantial part of his principal",
+          "disposition": "accept"
+        },
+        {
+          "text": "New offerings require scrutiny of seller incentives and a sufficiently long business record; a favorable issuance market can be favorable to the issuer rather than the purchaser.",
+          "page": 140,
+          "anchor": "favorable for the seller",
+          "disposition": "accept"
+        },
+        {
+          "text": "Trading costs include adverse execution and market impact as well as visible commissions. The cited broker-account study illustrates a gap between gross and net returns, but does not establish that every active strategy must lose.",
+          "page": 149,
+          "anchor": "after trading costs",
+          "disposition": "qualify"
+        },
+        {
+          "text": "IPO performance measured from an underwriting allocation cannot be assumed available to someone buying later in public trading; allocation access, capacity and the actual entry price are necessary parts of the experiment.",
+          "page": 151,
+          "anchor": "before the stock begins public trading",
+          "disposition": "accept"
+        },
+        {
+          "text": "Do not treat the commentary's proposed high-yield-fund hedge for a financial-sector employee as established protection. Joint credit, rates and employment stress must be measured before describing it as a counterweight.",
+          "page": 146,
+          "anchor": "counterweight in your 401(k)",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Make rejection of an inadequately supported opportunity a constructive part of the research process. For a security with contractual seniority, inspect issuer coverage and the price-dependent loss/recovery distribution rather than calling its coupon safe income. For any historical strategy claim, bind accessible entry prices and net execution assumptions before comparing returns. None of the broader instruments discussed expands the VTI-only pilot.",
+      "adversarial_review": "The source's default histories, foreign-bond generalizations and IPO cases are selected and dated; they motivate diligence rather than universal exclusion laws. A 30% discount to par is not itself margin of safety when recovery value is lower. Diversifying a high-yield fund reduces name concentration but need not hedge a recession or employment shock. The brokerage study's activity groups are observational and differ from a preregistered strategy; categorical claims that all short-horizon participants are doomed exceed the displayed evidence. Source tax rates and transaction-cost percentages are not current policy inputs.",
+      "memory_delta": "Require an explicit advantage for departures from the sound base; evaluate credit reward relative to recovery risk, inspect issuance incentives, and use prices actually accessible to the experiment. Keep market impact and adverse selection visible without converting selected failures into a universal ban on testing.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        151,
+        153
+      ],
+      "reading_provenance": "Read all PDF pages 135-153 and inspected figures 6-1 and 6-2, distinguishing underwriting price, public price and before/after-cost returns."
+    },
+    {
+      "number": 8,
+      "title": "Chapter 7: Enterprising Policy, Positive Side; Zweig commentary",
+      "pdf_start": 154,
+      "pdf_end": 182,
+      "claims": [
+        {
+          "text": "A successful enterprise does not automatically make its stock attractive: the paid multiple can capitalize more growth than the business ultimately delivers. Large-company growth projections need base-rate and scale checks.",
+          "page": 176,
+          "anchor": "if you pay too much",
+          "disposition": "accept"
+        },
+        {
+          "text": "Low-multiple and neglected-company screens are hypotheses requiring prospective validation. The source reports both profitable later periods and an unprofitable earlier period, so retain failures rather than selecting a favorable regime.",
+          "page": 160,
+          "anchor": "this approach proved unprofitable",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A price substantially below appraised value is an investigation threshold, not a guarantee; the appraisal must account for earnings sustainability, realizable assets, obligations and the investor's lack of control.",
+          "page": 162,
+          "anchor": "facts established by analysis",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The net-current-asset example selects 85 available records from roughly 150 names and buys one share each. Its result is conditional on selection, weighting and dates; it cannot establish an invariably safe and profitable rule.",
+          "page": 165,
+          "anchor": "one share of each of the 85 companies",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject certainty of profits from a basket of apparent net-net bargains. Accounting assets may not be recoverable, operating losses may consume them and diversification cannot eliminate shared impairment or liquidity risk.",
+          "page": 181,
+          "anchor": "certain to make money",
+          "disposition": "reject"
+        },
+        {
+          "text": "Diversification should consider employment, currency and home-market exposure as well as ticker count. The Japan example illustrates concentration risk without proving a universally optimal foreign allocation.",
+          "page": 182,
+          "anchor": "multilayered bet on the U.S. economy",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Investigate unpopular businesses using normalized earnings and realizable assets, and distinguish a low price from an adequately supported discount to value. Record unsuccessful historical intervals, selection rules and minority-control limitations before treating a screen as testable. The source's examples enlarge the research vocabulary without expanding the pilot's VTI-only instrument authority.",
+      "adversarial_review": "A cyclical stock can have its lowest multiple at peak earnings; current P/E alone is unreliable. Table 7-2's favorable selected intervals do not erase 1917-1933 or the subsequently described 1968-1971 failures. Table 7-4's available-record subset and one-share weighting are not an investable equal-dollar backtest. Concentrated fortunes are survivor-selected; Forbes-list attrition alone also does not establish each family's investment return or prove concentration caused every departure. The commentary's fundamental-law and profit-certainty wording is too strong. Figure 7-2 prints Sun Microsystems at $38.72 on both endpoints despite the surrounding collapse narrative; quarantine this apparent transcription error rather than importing it as price data. Source deal examples do not eliminate nonconsummation, timing and financing risks.",
+      "memory_delta": "Require a causal valuation case, normalized earnings and realistic asset recovery behind a bargain screen. Preserve adverse periods and all selection/weighting decisions. Reject certainty language and treat printed numerical inconsistencies as unqualified data.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        158,
+        160,
+        162,
+        165,
+        176,
+        177
+      ],
+      "reading_provenance": "Read every PDF page 154-182, including commentary, and visually inspected tables 7-1 through 7-4 and figures 7-1 and 7-2. Original authored analysis; no current-data or forward-performance claim."
+    },
+    {
+      "number": 9,
+      "title": "Chapter 8: The Investor and Market Fluctuations; Zweig commentary",
+      "pdf_start": 183,
+      "pdf_end": 214,
+      "claims": [
+        {
+          "text": "Distinguish appraising purchase value from forecasting the next quotation. Waiting for a better entry has foregone income and opportunity costs, which must enter any comparison.",
+          "page": 185,
+          "anchor": "offset his loss of dividend income",
+          "disposition": "accept"
+        },
+        {
+          "text": "Retrospective trading formulas can fail as conditions or participation change; a published theoretical record may differ from decisions actually available in real time.",
+          "page": 186,
+          "anchor": "new conditions which the old formula no longer fits",
+          "disposition": "accept"
+        },
+        {
+          "text": "A low price relative to book value still requires earnings support, financial strength and a credible continuing business; a fallen former bargain can become a permanently weaker enterprise.",
+          "page": 192,
+          "anchor": "does not become a sound investment merely",
+          "disposition": "accept"
+        },
+        {
+          "text": "Treat a quotation as an available transaction price and information to examine, while forming an independent valuation from business reports. The option to wait depends on actual cash needs, financing and risk limits.",
+          "page": 196,
+          "anchor": "operations and financial position",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the suggestion that a held stock has suffered no loss merely because an investor believes intrinsic value unchanged. Mark-to-market loss, liquidity capacity and opportunity cost remain real and must be reported separately from the valuation thesis.",
+          "page": 195,
+          "anchor": "as long as he held on to his shares he suffered no loss",
+          "disposition": "reject"
+        },
+        {
+          "text": "High credit quality does not remove bond duration risk; convertibles additionally combine stock exposure and credit risk with interest-rate exposure.",
+          "page": 201,
+          "anchor": "three different factors",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject unconditional claims that steadily buying through falling prices necessarily produces more wealth in the end. Such outcomes depend on future cash flows, survival, purchase capacity and horizon.",
+          "page": 212,
+          "anchor": "the more money you will make in the end",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Separate business appraisal, observable liquidation price and portfolio accounting. A decline initiates a thesis and liquidity review; it is neither proof of impairment nor proof of a bargain. Keep costs, risk limits and behavioral rules controllable, but acknowledge that return outcomes remain uncertain. Preregister the rules and retain failed signals rather than reconstructing them from hindsight.",
+      "adversarial_review": "The A&P sequel itself shows that a former strong business can deteriorate. An investor's ability to ignore quotations is conditional, not a defining privilege everyone possesses. Seven-year bonds can have material price risk. Book value need not capture productive intangibles or realizable asset value. The Inktomi narrative cannot identify mood as the only cause of repricing from revenue alone; acquisition price includes control and synergies. Figure 8-1 is a selected reversal sample, not a prospective rule. A Fahrenheit percentage analogy lacks an absolute zero. The tax-loss example assumes a repurchase price, oversimplifies tax circumstances, and does not create wealth equal to the lower new cost basis. No dated tax limits, medical mechanisms, guaranteed recovery or categorical ban on tested price signals is adopted as current fact.",
+      "memory_delta": "Preserve market-value losses in accounting even when the investment thesis survives. Review operations and liabilities after price shocks; control costs and forced-sale exposure. Treat historical formula failures and changing businesses as reasons for prospective evidence and thesis invalidation rules.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        200,
+        206,
+        207
+      ],
+      "reading_provenance": "Read all PDF pages 183-214, including the owner-contract example, and inspected table 8-1 and figure 8-1. No source tax or neuroscience assertion is certified as current."
+    },
+    {
+      "number": 10,
+      "title": "Chapter 9: Investing in Investment Funds; Zweig commentary",
+      "pdf_start": 215,
+      "pdf_end": 240,
+      "claims": [
+        {
+          "text": "A diversified fund can provide convenience and protection from poorly researched individual selections even when its aggregate return does not exceed the market. Evaluate service value separately from investment alpha.",
+          "page": 217,
+          "anchor": "served a useful purpose",
+          "disposition": "qualify"
+        },
+        {
+          "text": "High past returns may reflect speculative exposure rather than repeatable skill. Compare comparable exposures and adverse periods, with the complete eligible population and accessible returns.",
+          "page": 220,
+          "anchor": "taking undue speculative risks",
+          "disposition": "accept"
+        },
+        {
+          "text": "Do not mark restricted shares at an unrestricted public quote without reflecting transfer restrictions and realizable exit value.",
+          "page": 223,
+          "anchor": "illusory profit",
+          "disposition": "accept"
+        },
+        {
+          "text": "A closed-end discount increases underlying assets obtained per dollar, but its investment merit depends on expenses, asset quality, leverage, liquidity and the future discount. The chapter's advantage calculation assumes equal portfolio performance and distributions.",
+          "page": 225,
+          "anchor": "Both sets of shares earn and pay",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Separate an incumbent manager's skill from changing personnel, growing assets and an incubated or temporarily fee-waived track record; each can break the continuity implied by a fund's name.",
+          "page": 232,
+          "anchor": "test-driving them privately",
+          "disposition": "accept"
+        },
+        {
+          "text": "Use observable recurring expenses and strategy adherence as review inputs before performance rankings. Manager ownership and capacity discipline are incentive clues, not sufficient evidence of skill.",
+          "page": 236,
+          "anchor": "expenses are far more predictable",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the suggestion that an out-of-favor investment style has an inevitable recovery. Patience requires a still-valid thesis and risk budget; a fixed holding period cannot guarantee vindication.",
+          "page": 238,
+          "anchor": "inevitable recovery",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Make fees, actual trading frictions, capacity, personnel and strategy drift explicit when evaluating delegated portfolios. A low-cost broad fund is a demanding baseline because it buys diversification economically; this cost argument is distinct from a promise about future returns. Separate time-weighted manager results from each investor's contribution and withdrawal experience.",
+      "adversarial_review": "Table 9-1 selects the largest funds at the end of the interval and weights one share each; this is not an unbiased investable cohort. Table 9-2 prints the 1967 S&P return as 23% while nearby prose says 11%; quarantine the conflict. Table 9-3 averages annual figures, which is not compound wealth. Figure 9-2 changes eligible counts across lookback lengths and does not itself isolate expense causality or include dissolved funds. Closed-end discounts can widen or persist, and NAV can be unreliable. The sample arithmetic ignores the timing/reinvestment of distributions. Low costs are a mechanical advantage conditional on comparable gross exposure, not an insurmountable proof every active fund loses. The source's expense caps, product availability, transaction commissions and legal thresholds are dated and not adopted as current inputs. A past worst quarter is no maximum-loss bound.",
+      "memory_delta": "Require continuity of manager, mandate, capacity and fee terms before relying on a historical fund record. Carry all ownership and execution costs; report investor cash-flow effects separately. Treat discount-to-NAV and ranking screens as conditional research inputs, retaining selection bias and failure cases.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        218,
+        221,
+        225,
+        226,
+        227,
+        228,
+        230
+      ],
+      "reading_provenance": "Read every PDF page 215-240 and visually inspected tables 9-1 through 9-5 and figure 9-1; figure 9-2's complete counts are in the read text."
+    },
+    {
+      "number": 11,
+      "title": "Chapter 10: The Investor and His Advisers; Zweig commentary",
+      "pdf_start": 241,
+      "pdf_end": 262,
+      "claims": [
+        {
+          "text": "Advice can earn its cost by preventing mistakes and supporting a suitable plan; paying for advice does not establish a right to excess returns or prove the adviser can deliver them.",
+          "page": 241,
+          "anchor": "protect his clients against mistakes",
+          "disposition": "accept"
+        },
+        {
+          "text": "Evaluate recommendations in relation to current price and long-term earning power, rather than treating favorable near-term business prospects as a sufficient purchase signal.",
+          "page": 244,
+          "anchor": "regardless of the current price",
+          "disposition": "accept"
+        },
+        {
+          "text": "Identify the compensation and commercial role behind advice. Commission incentives and an underwriter's seller role can conflict with the purchaser's interests even when the intermediary is reputable.",
+          "page": 250,
+          "anchor": "salesman to the prospective buyer",
+          "disposition": "accept"
+        },
+        {
+          "text": "Retain responsibility for understanding the recommendation, its evidence and its fit to the mandate; outside suggestions are inputs to judgment rather than automatic trade authority.",
+          "page": 252,
+          "anchor": "recommendations explained in detail",
+          "disposition": "accept"
+        },
+        {
+          "text": "Verify professional records independently and continue monitoring after selection. A referral, credential or comfortable conversation is not a substitute for the underlying disclosure record.",
+          "page": 257,
+          "anchor": "independently obtain your own complete copy",
+          "disposition": "accept"
+        },
+        {
+          "text": "An explicit mutually agreed investment policy, allocation and financial plan can make advice auditable and reduce impulsive departures; reporting must let the client understand progress and actual dollar fees.",
+          "page": 261,
+          "anchor": "an investment policy statement",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "For this Character, advice must retain provenance, incentive context and a stated reason for agreement or disagreement. Initial independent judgment precedes bounded advice; an adviser cannot expand the mandate. Explain expected service value, costs and review triggers without promising superior returns. Preserve owner authority through a readable policy and reports.",
+      "adversarial_review": "The source's praise of brokerage ethics and institutional competence is not diligence evidence. Its banking custody procedure, registrations, fee ceiling and expected-return range are historical and require current verification before operational use. Warning phrases are prompts for scrutiny, not a fraud classifier: options, commodities or monthly reporting are not intrinsically fraudulent. An automatic refusal of every timing approach or every sale after a weak year would replace analysis with a label. The proper question is whether the rule was supported, preregistered and within risk limits. References can be selected; credentials do not prove integrity. No external adviser is hired and no order authority is granted by assimilating this chapter.",
+      "memory_delta": "Require intelligible advice, independent evidence, incentive disclosure and mandate fit. Value error prevention separately from alpha. Keep initial opinions independent and record whether later advice changes them and why.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [],
+      "reading_provenance": "Read all PDF pages 241-262, including both adviser/client interview lists and the warning-phrase sidebar. This chapter contains no numerical figure requiring image extraction."
+    },
+    {
+      "number": 12,
+      "title": "Chapter 11: Security Analysis, General Approach; Zweig commentary",
+      "pdf_start": 263,
+      "pdf_end": 288,
+      "claims": [
+        {
+          "text": "Detailed mathematics does not make uncertain long-range assumptions reliable. Show how much estimated value depends on forecasts rather than observed earning power.",
+          "page": 264,
+          "anchor": "more vulnerable it becomes to possible miscalculation",
+          "disposition": "accept"
+        },
+        {
+          "text": "Debt analysis should combine earnings coverage with financial structure, operating resilience and realistic asset recovery; the source's numerical thresholds are conventions, not uniquely determined safety boundaries.",
+          "page": 265,
+          "anchor": "tests are at bottom arbitrary",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Avoid counting management quality repeatedly in historical profitability, forecast growth and a separate valuation premium.",
+          "page": 273,
+          "anchor": "count it still another time",
+          "disposition": "accept"
+        },
+        {
+          "text": "The growth-multiple formula is illustrative and is not certified as a reliable valuation model. Any present-value estimate needs explicit interest-rate, duration, reinvestment and terminal assumptions.",
+          "page": 277,
+          "anchor": "supplied for illustrative purposes only",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Preserve a valuation based on observed history separately from modifications for expected changes, with reasons and timestamps for every modification. Even a transparent process needs outcome validation.",
+          "page": 279,
+          "anchor": "both the original valuation and the modified one",
+          "disposition": "accept"
+        },
+        {
+          "text": "Read multiple annual reports for sources of growth, financing dependence, customer concentration, executive promises and repeated adjustments rather than relying on the latest headline earnings.",
+          "page": 282,
+          "anchor": "What makes this company grow",
+          "disposition": "accept"
+        },
+        {
+          "text": "Use the owner-cash concept with a reconciled calculation rather than mechanically applying the commentary's abbreviated formula; maintenance investment, working capital, option economics and already-recognized charges must not be omitted or counted twice.",
+          "page": 286,
+          "anchor": "owner earnings",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Maintain an auditable base valuation and a separately reasoned scenario adjustment. Inputs carry source dates and uncertainty, and future revisions must not overwrite prior forecasts. Use cash generation, liabilities and governance evidence to test the story. A completed foundation permits bounded research; the chapter explicitly does not certify independent security-selection competence.",
+      "adversarial_review": "Past debt coverage cannot guarantee future solvency; the source's near-impossibility of utility failure is too strong. Aggregate forecast errors can cancel and conceal large name-level errors. The stated infinite value at 8% growth depends on a discount-rate convention and indefinite growth; 8% is not a universal mathematical boundary. Table 11-5 is an illustrative selected comparison, not out-of-sample certification. Historical pretax growth does not convert to a lower after-tax growth rate merely by multiplying by a constant tax rate. Owner earnings require working-capital and maintenance-capex analysis; subtracting extraordinary charges already in net income could double count. Option overhang is contingent and exercise brings proceeds; adding all options unconditionally overstates dilution. A record-high repurchase price need not exceed intrinsic value, and price underperformance alone does not prove retained capital was misused. None of the dated thresholds becomes an execution rule.",
+      "memory_delta": "Expose valuation sensitivity and avoid duplicate quality premiums. Preserve base estimates and dated scenario overrides. Reconcile reported earnings to cash and dilution without double counting; distinguish confidence in a business from confidence in the price paid.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        266,
+        271,
+        273,
+        276
+      ],
+      "reading_provenance": "Read all PDF pages 263-288 and inspected tables 11-1 through 11-5, including coverage exclusions, split adjustments and forecast/actual date labels."
+    },
+    {
+      "number": 13,
+      "title": "Chapter 12: Things to Consider About Per-Share Earnings; Zweig commentary",
+      "pdf_start": 289,
+      "pdf_end": 305,
+      "claims": [
+        {
+          "text": "Do not annualize one quarter or accept a headline EPS figure before checking dilution and special charges; alternative definitions can produce materially different apparent valuation multiples.",
+          "page": 290,
+          "anchor": "there were actually four",
+          "disposition": "accept"
+        },
+        {
+          "text": "Repeated business closures, contract losses and restructuring costs cannot disappear from economic earnings simply by being called special items. Reconcile when costs were recognized and when cash is paid.",
+          "page": 292,
+          "anchor": "include only its profitable contracts and operations",
+          "disposition": "accept"
+        },
+        {
+          "text": "Separate sustainable taxed earning power from the finite value of loss-related tax benefits, and account for contingent dilution when valuing each common share.",
+          "page": 295,
+          "anchor": "important but temporary tax exemption",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A multiyear earnings history should include special losses and gains and show recent figures alongside averages. Averages can reduce cycle noise but cannot cure changed business economics or inconsistent accounting.",
+          "page": 296,
+          "anchor": "They should be included in the average earnings",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Compare accounting policies across years and peers, including revenue recognition, capitalization, inventories and pension assumptions. Changes and nonrecurring labels prompt investigation rather than an automatic accusation.",
+          "page": 305,
+          "anchor": "all mean that you need to investigate further",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject automatic dismissal of every pro forma figure; use a complete bridge to reported results and preserve excluded real costs. The source itself describes legitimate uses before its categorical instruction.",
+          "page": 300,
+          "anchor": "the only thing you should do",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Carry defined, reconciled per-share earnings inputs into valuation. Preserve actual charges, dilution assumptions and the finite life of special tax benefits. Use a multi-period view without laundering inconvenient losses out of the average. When allocation of a charge is unknown, record the uncertainty rather than invent a precise normalized figure.",
+      "adversarial_review": "The ALCOA example explicitly admits that true normalized 1970 earnings cannot be determined from the supplied disclosure. A finite pension return cannot be certified from a selected historical decade or Buffett's reputation. PDF 303 says $1.4 billion is 13% of $7.2 billion, an arithmetic inconsistency; do not ingest that percentage. Recognizing revenue before installment cash collection is not automatically improper: performance and collectibility matter. Capitalization is also not inherently abusive. Table 12-1 assigns three-fifths of a special charge as an illustrative compromise, not an observed economic allocation. No historical accounting or tax treatment is asserted as a current rule.",
+      "memory_delta": "Require EPS-definition and cash-flow reconciliation, including charges, tax benefits and dilution. Treat unknown normalization as an uncertainty interval, and test accounting-policy changes against business substance and comparable firms.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        297,
+        303
+      ],
+      "reading_provenance": "Read all PDF pages 289-305 and inspected table 12-1 and figure 12-1, including the special-charge allocation footnote and repeated inventory write-downs."
+    },
+    {
+      "number": 14,
+      "title": "Chapter 13: A Comparison of Four Listed Companies; Zweig commentary",
+      "pdf_start": 306,
+      "pdf_end": 320,
+      "claims": [
+        {
+          "text": "Compare profitability, stability, growth, financial position, dividends and price on compatible definitions; business quality and the price demanded for it are distinct dimensions.",
+          "page": 308,
+          "anchor": "vary much more widely than their operating performance",
+          "disposition": "accept"
+        },
+        {
+          "text": "A strong past growth rate beginning from a tiny base need not be sustainable at larger scale. Competition and industry arrangements must enter the forward appraisal.",
+          "page": 310,
+          "anchor": "started quite small",
+          "disposition": "accept"
+        },
+        {
+          "text": "A valuation preference does not forecast near-term relative performance. The source allows continued momentum in expensive shares and disappointment in apparently cheap ones.",
+          "page": 312,
+          "anchor": "There was no reason to expect",
+          "disposition": "accept"
+        },
+        {
+          "text": "Separate acquired revenue from growth of existing operations, using consistent acquisition dates and comparable periods before treating headline expansion as organic growth.",
+          "page": 317,
+          "anchor": "existing businesses",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A stock split changes the share count and unit price without itself increasing aggregate ownership value. Financing receipts likewise must not be mistaken for operating cash generation.",
+          "page": 318,
+          "anchor": "doubles the number of its shares and halves their price",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Use a comparison matrix to expose the operating assumptions implicit in different multiples, then explain the selected preference without promising a time to convergence. Separate corporate actions and external financing from economic gains. Historical company cases remain source illustrations and never become prospective recommendations.",
+      "adversarial_review": "Alphabetical adjacency is not randomized sampling. High-to-low historical price ranges assume impossible entry/exit knowledge and omit dividends and costs. A fine past record does not guarantee Emery access to cash. The 1999 comparison uses full-year results reported later, so it is hindsight-contaminated rather than an as-of decision dataset. Figure 13-1 reports EMC diluted EPS of $0.53 while prose says $0.92; preserve the definition conflict rather than mixing the figure with the 103-times multiple. Acquisition subtraction needs matched inclusion periods. The sequel includes a successful richly priced Expeditors outcome as well as failures, preventing a simplistic high-P/E-always-loses conclusion. Fixed statistical screens do not establish permanent protection.",
+      "memory_delta": "Compare operating quality and price separately, normalize definitions and distinguish organic growth, financing and splits. A value preference requires a declared horizon and uncertainty; selected historical sequels cannot certify future performance.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        306,
+        307,
+        315,
+        316,
+        319,
+        320
+      ],
+      "reading_provenance": "Read all PDF pages 306-320 and inspected tables 13-1 and 13-2 and figure 13-1, including diluted earnings and subsequent-report timing."
+    },
+    {
+      "number": 15,
+      "title": "Chapter 14: Stock Selection for the Defensive Investor; Zweig commentary",
+      "pdf_start": 321,
+      "pdf_end": 345,
+      "claims": [
+        {
+          "text": "A defensive screen combines business quality and financial resilience with earnings and assets obtained per dollar. The stated size, coverage and valuation cutoffs are conventional and require context-specific validation.",
+          "page": 322,
+          "anchor": "minimum figures must be arbitrary",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The combined P/E and price-to-book ceiling is an initial screen, not a valuation proof; both denominators must be meaningful, consistently defined and supported by available statements.",
+          "page": 323,
+          "anchor": "As a rule of thumb",
+          "disposition": "qualify"
+        },
+        {
+          "text": "An aggregate portfolio can meet a criterion while individual constituents fail it. Record whether eligibility is tested per instrument or on portfolio totals and do not switch that basis silently.",
+          "page": 324,
+          "anchor": "in the aggregate, but not for every company",
+          "disposition": "accept"
+        },
+        {
+          "text": "Favor a margin capable of absorbing adverse developments over a purchase that requires precise optimistic forecasts, while acknowledging that even a protective appraisal contains assumptions about survival and realizable value.",
+          "page": 334,
+          "anchor": "absorb unfavorable developments in the future",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Broad diversification can reduce dependence on identifying rare winning firms in advance. A separately bounded experimental sleeve is a possible policy choice, not authority to expand this pilot.",
+          "page": 337,
+          "anchor": "experiment around the edges",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the commentary's blanket statement that goodwill and other intangibles are excluded from standard book value. Distinguish total equity from tangible equity and determine recognition from the actual statements.",
+          "page": 344,
+          "anchor": "excluded from the standard definition of book value",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Keep eligibility tests explicit at the instrument and portfolio levels, including exceptional treatment by industry. Compare the evidence burden of individual selection with broad diversification. Source ratios can guide questions but require definition checks, current inputs and prospective evaluation before becoming executable policy.",
+      "adversarial_review": "Table 14-3 notes that Swift had a deficit within the purported no-deficit period; preserve the exception rather than asserting all five pass a strict rule. The 1970 discussion and September 1971 tables use different dates. Utilities' financing availability and regulated returns are not guarantees, and a long dividend record did not protect Penn Central. Earnings yield is not contractually equivalent to a bond coupon. A sampled index does not literally own every future winner from inception. Figure 14-1 includes names whose debt exceeds working capital, so a high current ratio alone does not pass every test. Forward P/E can be a transparently conditional estimate; the defect is presenting uncertain forecasts as observed earnings. A 60% institutional-ownership threshold is not proof of overownership. Dated company lists, statutes and thresholds are not current recommendations.",
+      "memory_delta": "Separate screen qualification from investment judgment; preserve exact definitions, dates, aggregation levels and exceptions. Diversification reduces name-selection dependence, while a protective valuation still requires business and liquidity stress review.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        340,
+        342,
+        343
+      ],
+      "reading_provenance": "Read all PDF pages 321-345 and visually inspected tables 14-1 through 14-7 and figures 14-1 and 14-2, including image-only PDF pages 325 and 342."
+    },
+    {
+      "number": 16,
+      "title": "Chapter 15: Stock Selection for the Enterprising Investor; Zweig commentary",
+      "pdf_start": 346,
+      "pdf_end": 371,
+      "claims": [
+        {
+          "text": "Skill, effort and access to analysts do not make excess returns easy. A proposed selection advantage needs evidence against an appropriate broad baseline after costs.",
+          "page": 347,
+          "anchor": "in fact extremely difficult",
+          "disposition": "accept"
+        },
+        {
+          "text": "Record outcomes by strategy class, including discontinued approaches; evaluate dependable net results and operational burden instead of retaining only successes.",
+          "page": 350,
+          "anchor": "We kept close track of the results",
+          "disposition": "accept"
+        },
+        {
+          "text": "Retain evidence contrary to the preferred value thesis. The source acknowledges that its expensive goodwill-giant group outperformed in the selected interval.",
+          "page": 357,
+          "anchor": "must not be ignored",
+          "disposition": "accept"
+        },
+        {
+          "text": "A merger spread or liquidation discount has failure, renegotiation and delay risk. Completion probability alone is insufficient; expected downside and capital tied up also matter.",
+          "page": 361,
+          "anchor": "risks of nonconsummation and to the time element",
+          "disposition": "accept"
+        },
+        {
+          "text": "Practice with a complete prospective decision ledger and a matched baseline before treating a technique as investable. Retaining losing choices prevents selective memory, but one good year is not sufficient proof of durable skill.",
+          "page": 364,
+          "anchor": "tracking the outcome of all your stock picks",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the implication that diversified net-current-asset purchases avoid serious risk merely through patience. Recoverable assets, losses during the wait, liquidity and common shocks can defeat the thesis.",
+          "page": 360,
+          "anchor": "without taking a serious risk",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Make the full trial ledger central to learning: initial selection, rejected opportunities, failed deals, costs and outcomes all remain visible. Test value hypotheses against a consistent baseline while preserving contrary evidence. A historical valuation technique is a research candidate, not automatic trading authority; workouts, hedges and individual stocks remain outside this VTI pilot.",
+      "adversarial_review": "The random-stock comparison excludes 19 vanished names, uses first-line selection and one-share weighting, and shifts reference dates; it is not a survivorship-free randomized total-return experiment. Multiple screens were examined on one short interval without a holdout. The source excludes 1930-1932 when praising net-net experience, which must remain visible. A 47% noncompounded annual return is not CAGR. The failed Kayser-Roth deal and revised Aurora terms contradict any risk-free interpretation of spreads. A 20% successful-deal yield and 80% completion estimate do not determine expected return without failure severity. ROIC definitions and maintenance-capex estimates need reconciliation, and acquisition comparables include control/synergy and cycle effects. A one-year shadow success cannot demonstrate durable alpha or replicate real execution/emotional costs.",
+      "memory_delta": "Keep all strategy outcomes and contrary evidence, normalize benchmark weighting and returns, and model failure severity as well as probability. Prospective shadow practice is necessary evidence collection; it does not become proof of skill merely because a short sample succeeds.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        355,
+        359,
+        367
+      ],
+      "reading_provenance": "Read every PDF page 346-371, including the ROIC and Buffett sidebars, and inspected tables 15-1 and 15-2."
+    },
+    {
+      "number": 17,
+      "title": "Chapter 16: Convertible Issues and Warrants; Zweig commentary",
+      "pdf_start": 372,
+      "pdf_end": 390,
+      "claims": [
+        {
+          "text": "A convertible exchanges some yield or other terms for an equity option. Its legal form alone determines neither attractiveness nor safety; evaluate the actual price, credit, conversion and call terms.",
+          "page": 373,
+          "anchor": "form itself guarantees neither attractiveness nor unattractiveness",
+          "disposition": "accept"
+        },
+        {
+          "text": "After conversion the holder loses the senior claim and retains common-equity exposure. A call requires a deliberate decision using the actual contract and available sale/conversion values.",
+          "page": 377,
+          "anchor": "once you convert you have lost",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Acquisition-related convertibles and warrants can enlarge potential common claims even when reported EPS initially rises. Model the complete capital structure and exercise proceeds consistently.",
+          "page": 379,
+          "anchor": "actual dilution of the current and future earnings",
+          "disposition": "accept"
+        },
+        {
+          "text": "Warrant exercise is ordinarily optional, so potential proceeds cannot be booked as assured future funding.",
+          "page": 382,
+          "anchor": "require the warrant-holders to exercise their rights",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject categorical claims that warrants have no legitimate economic purpose. They transfer contingent rights whose value and dilution should be disclosed and priced; misleading packaging does not make every warrant fraudulent.",
+          "page": 382,
+          "anchor": "serve no purpose",
+          "disposition": "reject"
+        },
+        {
+          "text": "Reject describing a covered call premium as a protective floor. The premium cushions loss and caps upside, but the underlying can still fall nearly to zero; suitability and expected results depend on price and terms.",
+          "page": 390,
+          "anchor": "floor under your losses",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Decompose hybrid securities into contractual cash flows, contingent equity rights, priority and costs before judging them. Separate economic dilution from headline accretion and distinguish optional financing from committed cash. Any such instruments remain outside the pilot; this learning strengthens risk and accounting review only.",
+      "adversarial_review": "The historical samples differ in credit, issue timing and index weighting, and report prices rather than complete total returns. The commentary documents structural changes and counterexamples to Graham's original generalizations. Never-convert is not a universal instruction when a call would otherwise extinguish valuable optionality; conversion versus sale requires terms and costs. Frictionless conversion parity is not a guarantee about every observed quote. A preferred at a different price need not always have less principal-loss risk than common. The suggestion that only the broker benefits from covered calls is unsupported; at $110 the printed $95 stock/$10 premium/$100 strike example yields $15 before costs, equal to the unhedged $15 gain at that endpoint. The downside remains $85 if the stock becomes worthless. Claimed fraud probabilities in the notes are rhetorical, not calibrated evidence. No dated market-size, legal or product claim is adopted as current.",
+      "memory_delta": "Inspect contractual payoffs and contingent share claims rather than trusting safety labels. Optional exercise is not guaranteed funding, and premium income is not a protective floor. Preserve changes in instrument structure when comparing historical evidence.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        373,
+        374,
+        375,
+        380,
+        383,
+        389
+      ],
+      "reading_provenance": "Read all PDF pages 372-390, including embedded editorial notes and the covered-call sidebar, and inspected tables 16-1 through 16-4."
+    },
+    {
+      "number": 18,
+      "title": "Chapter 17: Four Extremely Instructive Case Histories; Zweig commentary",
+      "pdf_start": 391,
+      "pdf_end": 411,
+      "claims": [
+        {
+          "text": "Basic debt coverage, liquidity and operating comparisons can expose weaknesses obscured by size, reputation or a long dividend record. Perform these checks before elaborate forecasts.",
+          "page": 394,
+          "anchor": "do their elementary jobs",
+          "disposition": "accept"
+        },
+        {
+          "text": "Acquisition-driven expansion can increase sales while weakening the equity cushion and debt-service capacity; lending or underwriting by a prominent institution is not evidence that the capital structure is sound.",
+          "page": 396,
+          "anchor": "interest charges did not meet conservative standards",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reconcile a takeover's economic equity, new obligations, warrants and accounting adjustments before interpreting accretion or a low displayed P/E.",
+          "page": 399,
+          "anchor": "did not allow for the large dilution factor",
+          "disposition": "accept"
+        },
+        {
+          "text": "Customer financing can concentrate both sales and credit exposure. Examine loans and guarantees when reported growth depends on counterparties that may not pay.",
+          "page": 406,
+          "anchor": "What if they ran out of cash to pay their debts",
+          "disposition": "accept"
+        },
+        {
+          "text": "Repeated acquisition and restructuring charges belong in the economic assessment of a serial acquirer's business model. Keep originally reported numbers and later restatements separately dated.",
+          "page": 408,
+          "anchor": "retroactively added",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject treating later-published year-end results as if they were public knowledge at the year-end quote. A historical warning analysis must enforce the actual availability dates.",
+          "page": 402,
+          "anchor": "year-end figures had not been published",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Use these failures to develop auditable questions about leverage, cash conversion, acquisition economics and earnings definitions. Keep publication dates with every fact: hindsight can teach a diagnostic but cannot create a historical decision. Separate share-sale proceeds paid to insiders from capital actually entering the business.",
+      "adversarial_review": "These are explicitly extreme failures selected after their outcomes, so they do not establish calibrated default probabilities or the false-positive rate of a screen. Similar annual bond-price ranges do not prove a costless simultaneous switch was executable. Paying no income tax can have legitimate explanations and does not alone prove false earnings. Software capitalization and goodwill require accounting and economic investigation, not categorical condemnation. Debt-financed buybacks may be poor capital allocation without being inherently fraudulent. Asset and revenue size alone do not determine fair merger ownership. Reserved options are contingent rather than certain future dilution. Accounting impairment is not necessarily a contemporaneous cash outflow. The authorial certainty about avoidable failures remains qualified by the information then available. Figure 17-2 on PDF page 407 prints a 2000 MORON row of 4175 that does not reconcile with its total of 2510; the caption units also conflict with the prose scale. Quarantine the printed row and units without silently correcting them.",
+      "memory_delta": "Prioritize debt service, liquidity, customer credit and complete acquisition claims. Preserve original disclosures and dated restatements. Learn diagnostic questions from failures without importing hindsight, unsupported fraud labels or certainty about future default.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        395,
+        405,
+        407,
+        410
+      ],
+      "reading_provenance": "Read all PDF pages 391-411 and inspected table 17-1 and figures 17-1 through 17-3, including the units and original-reporting labels."
+    },
+    {
+      "number": 19,
+      "title": "Chapter 18: A Comparison of Eight Pairs of Companies; Zweig commentary",
+      "pdf_start": 412,
+      "pdf_end": 447,
+      "claims": [
+        {
+          "text": "The selected comparisons illustrate valuation questions, not an unbiased test of a stock-selection strategy. Preserve the deliberate selection of cases when using their outcomes.",
+          "page": 432,
+          "anchor": "malice aforethought",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A strong business can be too expensive and a low-priced business too weak; comparing two stocks does not require buying either.",
+          "page": 423,
+          "anchor": "earnings",
+          "disposition": "accept"
+        },
+        {
+          "text": "Normalize unusually favorable conditions before capitalizing earnings, including profits supported by temporary military demand.",
+          "page": 428,
+          "anchor": "war work",
+          "disposition": "accept"
+        },
+        {
+          "text": "Low valuation does not prevent large interim drawdowns. Position sizing and liquidity must survive adverse prices while the underlying thesis is rechecked.",
+          "page": 433,
+          "anchor": "large declines",
+          "disposition": "accept"
+        },
+        {
+          "text": "Distinguish accounting growth financed with richly valued shares from durable cash generation; acquisition currency can create a reinforcing price and deal cycle.",
+          "page": 442,
+          "anchor": "money merry-go-round",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the categorical prediction that buying on rising prices must always end in regret. Selected hindsight examples do not establish that every price-based strategy fails.",
+          "page": 447,
+          "anchor": "It is a certainty",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Compare complete claims, earnings quality, capital requirements and price without forcing a trade between arbitrary peers. Preserve successful expensive businesses and unsuccessful cheap ones as counterevidence. Treat anticipated spin-off distributions and takeover values as contingent claims with execution and financing constraints.",
+      "adversarial_review": "The cases were chosen after results and mix industries, fiscal years, calendar-year returns and different investment horizons. Ball's July 25 earnings disclosure cannot support a July 23 decision. Table 18-1A's 1960 no-dividend entry conflicts with the claimed uninterrupted record; the Air Reduction profitability sentence conflicts with its table. Table 18-4's printed net income, share count and EPS do not reconcile. Cisco's stated decade gain does not imply the stated 217% annual growth. Quarantine these figures instead of silently repairing them. Table 18-10 explicitly uses prices unadjusted for splits; do not compute investment returns from it. Higher revenue need not proportionately deepen losses when margins and fixed costs change. A Palm/3Com apparent arbitrage requires distribution certainty, borrowing availability and financing costs; later prices alone do not demonstrate executable profit. Index inclusion does not guarantee a price rise. Growth and value are neither permanent winners nor mutually exclusive quality categories.",
+      "memory_delta": "Require both business resilience and price discipline, allow neither-candidate decisions, normalize temporary profits, include dilution and contingent claims, and plan for interim drawdowns. Selected comparisons teach questions, not calibrated return probabilities or universal failure of other strategies.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        414,
+        415,
+        417,
+        419,
+        421,
+        423,
+        425,
+        428,
+        430,
+        431,
+        433,
+        434,
+        438,
+        439,
+        442,
+        447
+      ],
+      "reading_provenance": "Read all PDF pages 412-447 and inspected tables 18-1 through 18-10 and commentary figures 18-1 through 18-4."
+    },
+    {
+      "number": 20,
+      "title": "Chapter 19: Shareholders and Managements: Dividend Policy; Zweig commentary",
+      "pdf_start": 448,
+      "pdf_end": 466,
+      "claims": [
+        {
+          "text": "Monitor management's operating performance and treatment of outside owners after purchase, using comparable businesses and proxy disclosures rather than reputation alone.",
+          "page": 457,
+          "anchor": "reasonably efficient",
+          "disposition": "accept"
+        },
+        {
+          "text": "Retained earnings need a credible capital-allocation case; payout ratios should reflect reinvestment opportunities, financial resilience and shareholder needs rather than a universal two-thirds rule.",
+          "page": 452,
+          "anchor": "reinvested profits",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Stock dividends and splits change units and accounting presentation without inherently increasing an owner's economic share. Selling new shares reduces that ownership just as selling old shares does.",
+          "page": 454,
+          "anchor": "ownership interest",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Inspect related-party transactions for incompatible incentives and verify oversight; reported growth does not resolve a conflict between an executive as buyer and as the seller's representative.",
+          "page": 458,
+          "anchor": "personal income",
+          "disposition": "accept"
+        },
+        {
+          "text": "Evaluate repurchases using price relative to value, net dilution, compensation and funding. Higher EPS after a buyback alone does not establish value creation.",
+          "page": 463,
+          "anchor": "shares are cheap",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject attributing a corporate collapse solely to an investor's failure to read the proxy. Disclosure review can reduce avoidable mistakes but cannot eliminate hidden fraud or business risk.",
+          "page": 459,
+          "anchor": "only person you should blame",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Ownership requires continued governance and capital-allocation review. Track reinvestment outcomes per diluted share, payouts, net buybacks, related parties and incentive terms. Treat historic tax treatment and market practices as dated descriptions requiring qualification before present use.",
+      "adversarial_review": "The decline in dividend payers includes changing firm composition; correlation between payout and later profits is not proof that forcing dividends causes better profits. Disastrous acquisitions are selected examples, and accounting impairments are not all cash spent that year. Excess cash can have insurance and option value. Stock dividends do not guarantee unchanged future per-share cash dividends. Repurchases may offset compensation dilution without being categorically sinister. The printed Oracle 484 million divided by 127 million shares does not yield 3.53; quarantine the inconsistent example. Option incentives depend on strike, vesting, holding and dividend protection: the assertion that dividends work only by dampening volatility is incomplete. Three-percent grants and five-year peer tests are policy proposals, not validated universal thresholds. Limited voting power, differing share classes and corporate liabilities constrain the rhetoric that each shareholder controls all company cash.",
+      "memory_delta": "Continue diligence after purchase. Require a reasoned choice among reinvestment, dividends and repurchases, measured per diluted share and against alternative uses. Inspect conflicts and compensation without assuming payouts, buybacks or proxy reading guarantee success.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        461
+      ],
+      "reading_provenance": "Read all PDF pages 448-466 and inspected figure 19-1, including payer/former-payer/never-paid categories."
+    },
+    {
+      "number": 21,
+      "title": "Chapter 20: Margin of Safety as the Central Concept of Investment; Zweig commentary",
+      "pdf_start": 467,
+      "pdf_end": 483,
+      "claims": [
+        {
+          "text": "A margin of safety is a buffer against estimation error and adverse outcomes. Stress debt service, asset claims and earning power rather than requiring a precise favorable forecast.",
+          "page": 468,
+          "anchor": "rendering unnecessary an accurate estimate",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Evaluate earning power through unfavorable conditions; recent prosperity and high reported coverage can conceal cyclical fragility.",
+          "page": 470,
+          "anchor": "subnormal business",
+          "disposition": "accept"
+        },
+        {
+          "text": "Price and conservative assumptions jointly determine a valuation margin; growth businesses are not inherently incompatible with this principle.",
+          "page": 471,
+          "anchor": "price paid",
+          "disposition": "accept"
+        },
+        {
+          "text": "Diversification complements valuation discipline but cannot manufacture positive expected value or eliminate correlated losses. Market payoffs do not have roulette's known, fixed probabilities.",
+          "page": 472,
+          "anchor": "Theory of Diversification",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A margin must be supported by evidence and reasoning, with explicit uncertainty; a precise calculation does not make estimated value or future success certain.",
+          "page": 473,
+          "anchor": "There is no guarantee",
+          "disposition": "accept"
+        },
+        {
+          "text": "Evaluate both the likelihood and consequence of being wrong, including concentration, liquidity, costs and the investor's likely behavior under loss.",
+          "page": 482,
+          "anchor": "probabilities and consequences",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject the claim that permanent diversification ensures mistakes can never be catastrophic. Common shocks, leverage and liabilities can overwhelm a diversified portfolio.",
+          "page": 483,
+          "anchor": "will never be catastrophic",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Express margin of safety as explicit conservative scenarios, price sensitivity and loss capacity. Distinguish contractually enforceable claims from equity expectations. Size investments to withstand errors, use independent evidence to update confidence, and retain a defensive default when analysis cannot justify a differentiated decision.",
+      "adversarial_review": "Historical coverage and market capitalization are imperfect proxies for future cash and realizable collateral. Equity lacks bond seniority and payment rights even at an attractive price. An earnings-yield minus bond-yield spread is not a realized cash return, and adding annual spreads does not produce a guaranteed ten-year buffer. Diversification needs dependence and loss-severity analysis; positive expected payoff does not imply a greater-than-half chance of profit. Two-thirds of appraised value is a heuristic with uncertain appraisal. The late acceptance of possibly investable warrants qualifies the earlier categorical warrant condemnation. Risk is partly behavioral but also objectively embedded in instruments. A binary theological analogy cannot justify assigning equal probabilities to unknown events. Loss-recovery calculations omit inflation, taxes and alternative opportunity cost unless explicitly added.",
+      "memory_delta": "Require evidence for conservative earning power, a price-dependent buffer and survivable downside; expose correlated risks and estimation error. Maintain calibration and behavior controls. No valuation formula, security label or diversification policy guarantees recovery or safety.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        479,
+        480
+      ],
+      "reading_provenance": "Read all PDF pages 467-483; visual loss and recovery figures inspected separately before import."
+    },
+    {
+      "number": 22,
+      "title": "Postscript and Zweig commentary",
+      "pdf_start": 484,
+      "pdf_end": 487,
+      "claims": [
+        {
+          "text": "A single exceptional holding can dominate a long investment record. Preserve this concentration and outcome dependence when assessing the evidence for a broader method.",
+          "page": 485,
+          "anchor": "single investment decision",
+          "disposition": "accept"
+        },
+        {
+          "text": "Distinguishing skill from luck in an exceptional result is difficult; preparation can improve opportunity handling without promising a repeatable windfall.",
+          "page": 485,
+          "anchor": "one lucky break",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject treating an estimated liquidation value equal to purchase cost as proof that a concentrated holding carried very little financial risk. Realization, liabilities and adverse change remain uncertain.",
+          "page": 486,
+          "anchor": "very little financial risk",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Retain the GEICO example as a disclosed exception to mechanical selling and broad diversification, not a newly validated concentration rule. Attribute outcomes to their actual sources and keep appraisal uncertainty visible even when an investment later succeeds.",
+      "adversarial_review": "The main text says roughly one-fifth of fund assets while commentary says 25%; retain the discrepancy pending source reconciliation. A negotiated half-interest with influence is not equivalent to an ordinary retail position. Exceptional eventual gains cannot certify initial risk, and holding after apparent overvaluation complicates a simple buy-cheap/sell-at-value interpretation. The book itself declines to promise a similar result to every disciplined investor.",
+      "memory_delta": "Audit performance concentration and distinguish accessible decisions from privileged deals. Do not retrofit a lucky or skillful outlier into a universal rule; retain exceptions and uncertainty alongside the core process.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read all PDF pages 484-487."
+    },
+    {
+      "number": 23,
+      "title": "Appendices 1-7: investor records, dated taxation, valuation, and accounting cases",
+      "pdf_start": 488,
+      "pdf_end": 525,
+      "claims": [
+        {
+          "text": "Investigating a cluster of successful managers requires prior identification, the complete eligible population and independence analysis; a shared intellectual origin is a hypothesis, not itself a proof of skill.",
+          "page": 489,
+          "anchor": "pre-identified",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Different holdings do not establish statistically independent investment outcomes. Shared exposures, selection, costs, capacity and differing reporting periods still require analysis.",
+          "page": 494,
+          "anchor": "overlap among these portfolios",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the inference that a large appraised discount and several holdings create essentially no risk. Value realization, governance and appraisal remain uncertain.",
+          "page": 498,
+          "anchor": "essentially no risk",
+          "disposition": "reject"
+        },
+        {
+          "text": "The tax appendices are dated historical material; neither the 1972 rules nor the update labeled 2003 can be used as current tax instructions.",
+          "page": 508,
+          "anchor": "historical purposes only",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Precise valuation formulas can conceal highly uncertain growth and terminal assumptions. Audit the inputs and sensitivity rather than equating mathematical precision with dependable value.",
+          "page": 512,
+          "anchor": "highly imprecise assumptions",
+          "disposition": "accept"
+        },
+        {
+          "text": "Acquisition consideration must reconcile bonds at market value, warrants, tax deductions and accounting credits; reported accretion can differ from economic value creation.",
+          "page": 524,
+          "anchor": "amortization of the huge bond discount",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject assuming the unobserved or delisted members of a name-selected technology sample necessarily performed worse. Missing outcomes require investigation and cannot be assigned a convenient loss.",
+          "page": 525,
+          "anchor": "virtually certain",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Use the manager records as historically attributed evidence worth examining, with separate gross/limited-partner returns, actual intervals, reinvested distributions and comparison universes. A successful method still needs a prospective test for this Character. Retain flexible business valuation while excluding obsolete tax parameters from executable policy.",
+      "adversarial_review": "Buffett's asserted prior selection and audits are source claims, not independently verified registry evidence here. Low stock overlap does not eliminate common value exposure or dependence; one of four original employees is untraced. The tables include severe 1973-74 losses for Munger and Pacific Partners, qualifying the assertion of uniformly low risk. Sequoia's gross return adds an approximate annual fee, while other tables show partner allocations; pension records mix bonds and equities and use differing survey universes. Partial years and dividend conventions differ. Price declines do not mechanically increase beta. The dollar-bill analogy assumes the very value certainty an appraisal must establish. The IBM missed opportunity qualifies rigid tangible-asset screening. Reject categorical dismissal of calculus: model assumptions and evidence determine reliability. Higher earnings multipliers need not imply a squared-earnings valuation unless a particular functional relation is assumed. An extreme IPO failure and company-name prefix sample cannot establish a general probability of technology losses. Do not import the historical public-offering, tax or accounting rules as current law.",
+      "memory_delta": "Demand complete prior selection, comparable net returns, dependence analysis and accessible execution before attributing skill. Inspect valuation sensitivity and full acquisition consideration. Preserve counterexamples to rigid book-value rules, exclude dated tax rules from operations, and leave missing outcomes unknown.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        499,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        522,
+        523,
+        525
+      ],
+      "reading_provenance": "Read all PDF pages 488-525; visually inspected all nine Superinvestors tables, including rotated pension and Perlmeter tables, and the Aetna and technology sample tables."
+    },
+    {
+      "number": 24,
+      "title": "Endnotes to introduction, chapters, postscript and appendices",
+      "pdf_start": 526,
+      "pdf_end": 550,
+      "claims": [
+        {
+          "text": "An observed past growth classification is distinct from a forecast that a company will thrive; retain the measurement period and do not label future winners in advance.",
+          "page": 534,
+          "anchor": "wishful thinking",
+          "disposition": "accept"
+        },
+        {
+          "text": "The illustrative growth formula explicitly does not estimate true value. Its resemblance to elaborate calculations does not validate those calculations or their assumptions.",
+          "page": 538,
+          "anchor": "approximates the results",
+          "disposition": "accept"
+        },
+        {
+          "text": "The defensive screen's own later underperformance is counterevidence to guaranteed superiority and must remain attached to its assessment.",
+          "page": 542,
+          "anchor": "poorer than that of the DJIA",
+          "disposition": "accept"
+        },
+        {
+          "text": "High business profitability can attract competition and erode future margins; evaluate barriers and competitive responses rather than extrapolating early success indefinitely.",
+          "page": 546,
+          "anchor": "new competition",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The postscript acknowledges that an enormous later gain depended on a small disputed accounting amount and luck; this weakens any inference that the original valuation precisely captured the outcome.",
+          "page": 549,
+          "anchor": "By dumb luck",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Attach these qualifications to the related chapters rather than treating notes as dispensable bibliography. Maintain publication chronology, split adjustments, tax assumptions and the difference between a quotation convention and an investable calculation.",
+      "adversarial_review": "The notes mix original historical writing with later editorial outcomes. A later correct forecast is not a calibrated forecasting record; successful recent Dow signals also qualify categorical dismissal of that method. Prospectus availability does not ensure completeness of economic truth or investor comprehension. Source references and missing extracted titles have not been independently retrieved. Claims about worse unlisted outcomes remain unverified. The phrase that screening guarantees money's worth remains too certain given appraisal risk. Competition can erode returns but defensible advantages can persist; neither direction is automatic.",
+      "memory_delta": "Keep explanatory notes, counterexamples and explicit formula limits linked to core claims. Separate measured growth from predicted growth, preserve failed screens, and treat competition and luck as unresolved sources of outcome variation.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read all PDF pages 526-550, including sparse note pages and the postscript qualification."
+    },
+    {
+      "number": 25,
+      "title": "Appended notes, first sequence",
+      "pdf_start": 599,
+      "pdf_end": 614,
+      "claims": [
+        {
+          "text": "Graham's cited average return apparently excludes management fees, and the GEICO distribution went to shareholders. Preserve those accounting boundaries before comparing the fund or its investors with a benchmark.",
+          "page": 600,
+          "anchor": "management fees",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Do not score a forecast using a horizon supplied retrospectively by an editor. Freeze horizon, nominal or real measure and baseline before observing outcomes.",
+          "page": 601,
+          "anchor": "did not specify the time period",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject a blanket claim that inflation-linked bonds immunize every investor against inflation losses. Purchase price, real yields, holding horizon, taxation and the investor's inflation basket matter.",
+          "page": 602,
+          "anchor": "effectively immunizing",
+          "disposition": "reject"
+        },
+        {
+          "text": "Reject interpreting brokerage protection as an unconditional guarantee of every account's full value. Applicable protections, eligibility, limits and the nature of losses must be established separately.",
+          "page": 606,
+          "anchor": "full account values",
+          "disposition": "reject"
+        },
+        {
+          "text": "A price discrepancy is useful only after execution costs and taxes; the displayed quote is not a guaranteed transaction price.",
+          "page": 612,
+          "anchor": "exact price currently quoted",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject the note's inverted pension-return calculation. Investment gain divided by the appropriate capital base is a return; capital divided by gain is not.",
+          "page": 613,
+          "anchor": "Returns are approximated",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "These notes materially qualify performance, protection and accounting claims. Keep financial gains, fees, distributions and publication dates explicit. Quarantine dimensional errors and overly broad guarantees instead of allowing them into quantitative policy.",
+      "adversarial_review": "A mean across stocks in successive years need not describe a single unchanged investable portfolio. The 15%-versus-14% growth example also changes the terminal multiple from 35 to 20, so its large price difference cannot be attributed solely to the growth change. The notes disclose Zweig's employment and options in AOL Time Warner; retain that author-interest context without treating it as automatic disproof. Negative operating cash and positive financing cash prompt investigation but can occur during rational investment. The mere legitimacy of an accounting method does not settle economic quality; Global Crossing's capitalization change needs timing and comparability review. The claims that most analysts merely guess and accounting footnotes are intentionally unreadable are rhetorical generalizations. Dates, credentials, tax carryforwards, service minimums and market counts are historical, not current operating specifications.",
+      "memory_delta": "Freeze forecast horizons and return definitions; identify gross versus net and fund versus distributed holdings. Include execution and tax friction, verify protection boundaries, and reject inverted calculations. Preserve author interests and mixed-assumption sensitivities.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read all PDF pages 599-614; pages 605-609 were reread after a tool output truncation."
+    },
+    {
+      "number": 26,
+      "title": "Appended notes, second sequence",
+      "pdf_start": 615,
+      "pdf_end": 630,
+      "claims": [
+        {
+          "text": "Sector safety changes with regulation, technology and capital requirements; historical utility stability cannot be assumed permanent.",
+          "page": 616,
+          "anchor": "financial havoc",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject dividing per-share working capital by shares outstanding a second time. Calculate company-level assets less the specified liabilities and divide once, distinguishing working capital from net current asset value.",
+          "page": 619,
+          "anchor": "current assets per share",
+          "disposition": "reject"
+        },
+        {
+          "text": "Reject evaluating a convertible bond's recovery of cost solely through coupons and conversion. Contractual principal repayment, credit risk and call terms are essential to its valuation even if conversion is unlikely.",
+          "page": 620,
+          "anchor": "payback period",
+          "disposition": "reject"
+        },
+        {
+          "text": "A price can remain above estimated value for a long time; valuation alone does not identify when a short position can profit or whether it can survive interim losses.",
+          "page": 626,
+          "anchor": "stay overvalued",
+          "disposition": "accept"
+        },
+        {
+          "text": "Preserve differing fiscal windows and acquisition adjustments when comparing companies. A deliberately chosen nine-month result cannot be compared as if it were a full year.",
+          "page": 628,
+          "anchor": "nine-month period",
+          "disposition": "accept"
+        },
+        {
+          "text": "The editor explicitly disputes the claimed special economic benefit of stock dividends; corporate-action unit changes do not create wealth by themselves.",
+          "page": 629,
+          "anchor": "argument is no longer valid",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Use the notes to correct mechanics and preserve the limits of comparative examples. Corporate-action adjustments, principal redemption, source publication and fiscal coverage are part of evidence integrity. Keep dated legal and market descriptions outside current execution rules.",
+      "adversarial_review": "The bond-discount note speculates that LTV bought discounted bonds; it does not establish this from accounting disclosures, and an asset worth less than estimated does not thereby become a liability. Acquisition-failure generalizations omit successful acquirers. A quiet Y2K transition after costly remediation does not establish that the original risk was imaginary. The dividend and shareholder-voting discussion switches between share ownership percentages and numbers of people; it cannot infer an exact fraction of individuals who abstain. Hypothetical convertible-index returns exclude fees, and a blanket two-point haircut is an estimate. A stock above zero before bankruptcy does not prove bankruptcy was unforeseeable. Printed prices, returns and market capitalization may use different split conventions; do not mix them. Historical research favoring value is not a guarantee of future dominance or a substitute for this Character's test.",
+      "memory_delta": "Check units once, include contractual redemption, preserve fiscal and split conventions, and separate per-person from per-share statistics. Valuation does not supply short-sale timing, past sector stability is conditional, and acquiring businesses is not inherently destructive.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read all PDF pages 615-630."
+    },
+    {
+      "number": 27,
+      "title": "Appended notes, third sequence",
+      "pdf_start": 631,
+      "pdf_end": 646,
+      "claims": [
+        {
+          "text": "The number of dividend-paying companies can fall while aggregate real dividends rise. Identify the denominator and composition before drawing conclusions from a payout trend.",
+          "page": 631,
+          "anchor": "total dollar amount of dividends",
+          "disposition": "accept"
+        },
+        {
+          "text": "Acquisition outcomes vary by target type and consideration. The cited positive results for private-company and subsidiary purchases contradict categorical condemnation of acquisitions.",
+          "page": 631,
+          "anchor": "positive stock returns",
+          "disposition": "accept"
+        },
+        {
+          "text": "Earnings yield is earnings divided by price, while earning power per share is a currency amount estimated from sustainable operations. An inverse P/E does not by itself estimate per-share earning power.",
+          "page": 636,
+          "anchor": "inverse of its price/earnings ratio",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the claim that the worst company must be worth buying at some sufficiently low positive stock price. Residual equity can be worth zero and some claims can carry further obligations.",
+          "page": 637,
+          "anchor": "worst company is worth buying",
+          "disposition": "reject"
+        },
+        {
+          "text": "Historical index evidence may exclude failed companies and periods when a retail index investment was unavailable. Preserve survivorship and implementation limits.",
+          "page": 638,
+          "anchor": "survivorship bias",
+          "disposition": "accept"
+        },
+        {
+          "text": "Dividends materially change long-horizon results, but comparisons must also account for distributed cash rather than treating spent dividends as a nonexistent return.",
+          "page": 641,
+          "anchor": "spent all your dividends",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Commission alone is an incomplete measure of trading friction; spreads, impact and execution shortfall can remain substantial.",
+          "page": 646,
+          "anchor": "brokerage costs are invisible",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Keep denominators, currency units, total returns and accessible investment vehicles explicit. Follow the notes' counterevidence, including Graham's inflation error and the mixed results of acquisitions, without turning either successes or failures into universal laws.",
+      "adversarial_review": "The corporate-dividend tax example on page 639 contradicts its own 70% deduction and 35% rate: the printed 24.50 tax is not their arithmetic consequence. Quarantine it along with all obsolete tax parameters. Gold-mining equities are not equivalent to bullion, a small position can still reduce returns, and suggested age-based percentages are unvalidated here. General bond-versus-municipal volatility claims require matched duration and credit. A changing dividend policy need not cause the profitability differences of firms selecting it. The note's statement that high interest rates reduce present value assumes a fixed cash-flow projection and appropriate discount rate. Broad claims of guaranteed survival or permanent superiority remain unsupported. The index example's pre-1976 implementation gap is explicitly admitted on page 643; it remains a hypothetical historical illustration.",
+      "memory_delta": "Use the correct denominators and total-return boundaries, acknowledge unavailable vehicles and missing firms, and retain changes in regime. A low price cannot rescue zero residual value, and correlation of payout or acquisition type with outcomes is not a universal causal rule.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read all PDF pages 631-646."
+    },
+    {
+      "number": 28,
+      "title": "Appended notes, final sequence",
+      "pdf_start": 647,
+      "pdf_end": 660,
+      "claims": [
+        {
+          "text": "Value funds as well as growth funds can underperform after costs. Preserve both results rather than treating a value label as evidence of skill.",
+          "page": 647,
+          "anchor": "also underperformed",
+          "disposition": "accept"
+        },
+        {
+          "text": "Multi-year earnings reduce dependence on a favorable single year but still require an assessment of structural change and sustainable profitability.",
+          "page": 647,
+          "anchor": "multiyear average",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Historical market-timing comparisons must include dividends, subscription fees, transaction costs and taxes consistently on both sides.",
+          "page": 650,
+          "anchor": "annual subscription fees",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject treating book value, tangible book value and net asset value as universally interchangeable. Record the specific balance-sheet definition and intangible adjustments used.",
+          "page": 652,
+          "anchor": "all synonyms",
+          "disposition": "reject"
+        },
+        {
+          "text": "A tax-loss illustration depends on its stated tax year, realized gains and dividend treatment; do not reuse its numbers outside those assumptions.",
+          "page": 654,
+          "anchor": "did not reinvest any Coke dividends",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Observed poor results after a manager leaves do not establish what the same fund would have earned had that manager stayed.",
+          "page": 656,
+          "anchor": "all we can be sure",
+          "disposition": "accept"
+        },
+        {
+          "text": "Never infer that an industry's exciting prospects make it certain to outperform. Technology adoption, business profitability and investor returns are separate outcomes.",
+          "page": 660,
+          "anchor": "industry will outperform",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Close the foundation with a defensive process: audited definitions, conservative but revisable business estimates, costs, diversification and explicit uncertainty. Separate source observations from counterfactual claims and forecasts. The reading supplies hypotheses and error checks; it does not establish this Character's market performance.",
+      "adversarial_review": "A long sample is not sufficient by itself: structural change, selection and dependence can defeat a 50-year backtest. The suggested 35-year bubble cycle and vigilance around 2030 are speculative, not an executable calendar rule. A stable industry does not imply stable equity value under leverage or accounting surprises. Infinite-growth valuation depends on growth relative to discount rates, not growth alone. A fund closing to new money can manage capacity without guaranteeing maximal future returns. Historical legal restrictions and market access descriptions remain dated. A 20-year fund result cannot automatically be attributed to one manager without matching tenure. The inheritance argument about lower cost is not a sound general reason to keep falling shares; tax basis, estate treatment and the owner's needs must be separately established. The end of one restricted-stock marking abuse does not eliminate all valuation risk. Retain failed and vanished funds rather than silently assuming their returns.",
+      "memory_delta": "A style label is not skill. Require consistent dividends and full costs, explicit accounting definitions, dated tax assumptions and honest counterfactual limits. Discard bubble-calendar and guaranteed-survival rhetoric; treat the complete foundation as hindsight learning pending prospective evidence.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read all PDF pages 647-660, completing the supplied edition's appended notes."
+    }
+  ],
+  "provenance": "Original Codex source review in the current shared conversation, with explicit replay of the previously reviewed opening. Formative inputs are the Character own prior and ordered source deltas; shared context/background knowledge remains a contamination limitation. No independent model replication is claimed.",
+  "authoring_usage": "Exact model snapshot, tokens, dollar cost and sampling unavailable. Zero usage in import records describes deterministic local import only.",
+  "prior_freeze_hash": "064c5bd03495d78f9a15cd39514616273bd9c83a70a7ec71def411751fa51b41",
+  "coverage_hash": "ba75ee67a6bb4b1e7faa3549867a50688f5e99631ad6b06a1b3f693fb03f85ed"
+}

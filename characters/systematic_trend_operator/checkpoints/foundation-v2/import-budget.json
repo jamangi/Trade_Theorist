@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-09-07T09:42:44.053084Z",
+  "max_calls": 17,
+  "max_tokens": 5000000,
+  "max_output_tokens": 6000,
+  "max_cost_usd": "0.00",
+  "scope": "Finite deterministic transcript import only; conservative byte reservations including cumulative prior memory. No external generation or provider calls.",
+  "model_id": "recorded-codex-source-review-v2",
+  "prompt_version": "learning-section-only-v2",
+  "review_hash": "fd3d2f81a2de99d92dc7e04dd75536d2f03e31830c57a02836cc550c80537142"
+}

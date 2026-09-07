@@ -1,0 +1,21 @@
+{
+  "number": 4,
+  "title": "Chapter 3: The First $2 Million Is the Toughest",
+  "pdf_start": 44,
+  "pdf_end": 57,
+  "claims": [
+    {"text": "A favorable expectation can coexist with ruin when positions are too large. Size for the ability to continue through adverse sequences rather than maximizing a single favorable bet.", "page": 46, "anchor": "lose all your money", "disposition": "accept"},
+    {"text": "Volatility-normalized units seek comparable dollar movement across markets. Their risk remains conditional on the volatility estimate, contract multiplier, correlation and executable exits.", "page": 46, "anchor": "approximately the same dollar amount", "disposition": "qualify"},
+    {"text": "Limit orders constrain execution price but may not fill. Compare savings with missed trades and adverse selection rather than assuming every desired better price is available.", "page": 47, "anchor": "limit orders", "disposition": "qualify"},
+    {"text": "Estimate net expectancy over a complete sequence and assess decisions independently of one outcome; a historical estimate is not proof that the same edge persists.", "page": 50, "anchor": "analyzing a system's historical trades", "disposition": "qualify"},
+    {"text": "Reject the gold-position risk calculation as printed: a 30-dollar move times ten contracts times 100 ounces equals 30,000 dollars, not 3,000, before slippage and fees.", "page": 50, "anchor": "a total of $3,000", "disposition": "reject"},
+    {"text": "Trading records should capture the signal, sizing, execution and exit reason. Futures expiry and delivery requirements can override a generic trend exit and must be represented explicitly.", "page": 54, "anchor": "did not want to take delivery", "disposition": "accept"}
+  ],
+  "assimilation": "Tie entry, volatility units, exits and contract lifecycle into one predeclared system. The heating-oil story illustrates the cost of discretionary signal skipping and profit-taking, but a favorable realized trend does not independently establish expected profitability or the optimal allocation.",
+  "adversarial_review": "A positive-expectation game is not merely one in which winning is possible. A stop-distance risk estimate is not a guaranteed maximum loss; gaps and unavailable liquidity can exceed it. Mean profit divided by mean initial risk differs from the mean of trade-level R multiples when sizes vary. Losing periods need not be followed by profitable periods. The practice accounts used fixed contracts rather than the normal volatility allocations, so their results cannot be scaled without stating assumptions. The chapter calls the long breakout 60 days; retain this exact source description for reconciliation against the later complete rules. Figure 3-1 marks an expiry-driven exit near the high, not a generic channel exit; it omits the full sequence of added units and cash flows. The stated 0.04 heating-oil decline and approximate 1,200-dollar contract loss lack a multiplier reconciliation here. Psychological attribution and one-month capital promotion are source testimony with selection and outcome bias risks.",
+  "memory_delta": "Require survivable sizing, correctly dimensioned dollar risk, net expectancy, fill uncertainty and contract-lifecycle rules. Log every eligible signal and exit reason. A selected large win and consistent execution do not certify a persistent edge.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [55],
+  "reading_provenance": "Read all PDF pages 44-57 and inspected figure 3-1's entry, initial stop, exit and dates."
+}

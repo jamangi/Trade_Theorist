@@ -1,0 +1,21 @@
+{
+  "number": 5,
+  "title": "Chapter 4: Think Like a Turtle",
+  "pdf_start": 58,
+  "pdf_end": 69,
+  "claims": [
+    {"text": "The author acknowledges unsuccessful trainees and removals from the program. Preserve these outcomes when assessing the training story, without inferring that psychology is the sole cause.", "page": 58, "anchor": "dropped from the program", "disposition": "qualify"},
+    {"text": "A trend system may lose repeatedly in one market before a large winner. Review the complete portfolio and signal history rather than selecting or abandoning a market solely from a short sequence.", "page": 60, "anchor": "17 losing trades in a row", "disposition": "qualify"},
+    {"text": "Use distributions and conditional probabilities to describe uncertain outcomes, while keeping their historical origin and possible change explicit.", "page": 61, "anchor": "possibilities and probabilities", "disposition": "accept"},
+    {"text": "R multiples scale a trade's profit or loss by its initial planned risk. They allow comparisons but do not bound realized losses or guarantee rare large wins will recur.", "page": 67, "anchor": "amount risked on a trade", "disposition": "accept"},
+    {"text": "Reject the insurance-pricing explanation as printed: charging less than expected claims does not create a positive underwriting margin before costs.", "page": 62, "anchor": "less than the probable cost", "disposition": "reject"},
+    {"text": "Reject describing the increasing cumulative distribution as the probability of being at least a given height. It represents probability at or below the threshold; density also differs from a point probability.", "page": 63, "anchor": "at least a particular height", "disposition": "reject"}
+  ],
+  "assimilation": "Judge execution using contemporaneous rules and treat distributions as empirical, revisable evidence. Record losing sequences, tail losses and dependence. Avoid making personal identity depend on each trade, while investigating genuine model decay or external failures.",
+  "adversarial_review": "Ten consecutive losses are not necessarily just bad luck; data failure, execution error or regime change can invalidate a plan. The claim that human psychology makes price behavior invariant is unsupported. A campus sample is not automatically representative of all women, and market returns need not be normal. The test period is described as 20 years and then 22; quarantine the mismatch. Figure 4-4 explicitly includes losses above 2R, contradicting a hard stop-loss bound. The ten-week long breakout description differs from chapter 3's 60-day description and requires reconciliation against the complete rules. Historical cocoa gains include added units and a selected period, not independent uniformly sized wins. The confidentiality duration differs between foreword and text. Personal responsibility does not erase broker misconduct or systemic risk; neither consistent process nor absence of observed collusion guarantees success.",
+  "memory_delta": "Keep unsuccessful trainees and full losing sequences, use empirical distributions without assuming stationarity or normality, and distinguish planned R from actual losses. Correct probability direction and underwriting arithmetic. Investigate failures without reflexive self-blame or outcome-based rule changes.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [61,63,65,66],
+  "reading_provenance": "Read all PDF pages 58-69 and inspected table 4-1 and figures 4-1 through 4-4, including separate winning/losing histogram scales and tail buckets."
+}

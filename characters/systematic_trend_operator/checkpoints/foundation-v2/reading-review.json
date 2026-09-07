@@ -1,0 +1,906 @@
+{
+  "schema_version": 1,
+  "source_id": "book:9780071509466",
+  "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+  "reviewed_at": "2026-09-07T09:42:44.052137Z",
+  "scope": "full_book",
+  "sections": [
+    {
+      "number": 1,
+      "title": "Foreword, preface and introduction",
+      "pdf_start": 11,
+      "pdf_end": 24,
+      "claims": [
+        {
+          "text": "The Turtle trainees were intensively selected from a much larger applicant pool. Their outcomes cannot establish that an arbitrary person can be trained to trade successfully.",
+          "page": 18,
+          "anchor": "Over 1,000 people had applied",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The author explicitly presents his own experience rather than a comprehensive account of the group's collective experience. Preserve this perspective and its limits.",
+          "page": 16,
+          "anchor": "too much of an outsider",
+          "disposition": "accept"
+        },
+        {
+          "text": "Knowing rules and applying them under risk are separate capabilities; evaluate faithful execution as well as financial outcomes.",
+          "page": 23,
+          "anchor": "not in the concepts but in the application",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject attributing differences in trainee returns entirely to psychology without matched exposures, execution records and a complete outcome ledger.",
+          "page": 13,
+          "anchor": "psychology produced the difference",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Start with the frozen design prior: observable rules, sizing, exits and costs form one system. The story motivates process discipline and testing, while the reported gains remain historical source assertions rather than evidence that this Character can reproduce them.",
+      "adversarial_review": "Foreword praise and reported profits are not independent performance verification. Applicant screening, unequal account allocations, prior programming experience and survivorship complicate causal claims about training. Test-description counts differ between the foreword and introduction; do not manufacture a single exact selection protocol. The author's software-company connection is disclosed in acknowledgments, and the foreword writer markets coaching; keep those interests with the source. Historical average returns lack a complete return, leverage, fee and capital-flow reconciliation here. Psychological discipline cannot rescue a strategy lacking an edge.",
+      "memory_delta": "Separate learning rules from executing them, source testimony from audited outcomes, and selected trainees from a representative population. Require an edge and measured risk; do not infer success from confidence or endorsements.",
+      "theory": null,
+      "test": null,
+      "reading_provenance": "Read PDF pages 1-24 in order, including credits, author interests, foreword, preface and introduction; pages 1-10 are metadata/front matter. This section uses only Trend's frozen prior."
+    },
+    {
+      "number": 2,
+      "title": "Chapter 1: Risk Junkies",
+      "pdf_start": 25,
+      "pdf_end": 32,
+      "claims": [
+        {
+          "text": "Faith frames traders as participants who assume or transfer price and liquidity risk rather than as owners whose case rests on business value.",
+          "page": 25,
+          "anchor": "Traders care about price; essentially they buy and sell risk.",
+          "disposition": "accept"
+        },
+        {
+          "text": "The bid-ask spread is an immediate execution cost and compensation for liquidity provision, so a visible last price is not necessarily an executable price.",
+          "page": 27,
+          "anchor": "difference between these two prices is known as the spread",
+          "disposition": "accept"
+        },
+        {
+          "text": "The chapter describes price movement as emerging from changing willingness of heterogeneous buyers and sellers, including hedgers, scalpers and speculators.",
+          "page": 30,
+          "anchor": "Price movement is a function of the collective perception of buyers and sellers in a market",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The claim that electronic execution lowers costs and enables more frequent trading is historically plausible but requires current, instrument-specific spread, fee, impact and latency evidence.",
+          "page": 31,
+          "anchor": "Execution costs are lower, and this creates opportunities to trade using strategies that trade more frequently.",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Make risk transfer, executable bid/ask prices and participant heterogeneity part of the Character's foundation. Treat the market mechanism as context for later trend rules, not as a signal by itself.",
+      "adversarial_review": "This chapter is conceptual and anecdotal; it does not yet state or validate the Turtle entry, exit or sizing rules. Pit-era examples and the Southwest hedge are historical illustrations, not evidence of a current edge. Collective perception is not directly observable and can become an unfalsifiable explanation unless tied to predeclared price/volume measures.",
+      "memory_delta": "A trading thesis must identify which risk is being assumed, the executable spread and the participant/time horizon it expects to outlast. Price movement alone is an observation, not yet a complete trend system.",
+      "reading_provenance": "Attributed replay of original opening review; not newly generated or independent reading.",
+      "replay_origin": {
+        "path": "checkpoints/foundation-reading-review.json",
+        "review_hash": "211a0aff7cbedd01fcff86dbf29ed9267552f8fdb8785a8bf1be184c35b3f3ec",
+        "section_number": 1,
+        "reviewed_at": "2026-09-06T00:29:30Z"
+      }
+    },
+    {
+      "number": 3,
+      "title": "Chapter 2: Taming the Turtle Mind",
+      "pdf_start": 33,
+      "pdf_end": 43,
+      "claims": [
+        {
+          "text": "Loss aversion, sunk costs, anchoring, recency and outcome bias can interfere with a predeclared trading process. Record decisions using information available at the time and review rule adherence separately from outcomes.",
+          "page": 37,
+          "anchor": "quality of the decision",
+          "disposition": "accept"
+        },
+        {
+          "text": "A short winning or losing sequence is weak evidence of durable strategy quality. Evaluate sample size and dependence before changing confidence.",
+          "page": 38,
+          "anchor": "law of small numbers",
+          "disposition": "accept"
+        },
+        {
+          "text": "Trend strategies can have many small losses and give back open profits at reversals; capital and position sizing must accommodate both drawdown depth and duration.",
+          "page": 40,
+          "anchor": "both their length",
+          "disposition": "accept"
+        },
+        {
+          "text": "Market state descriptions require observable definitions and can overlap or change. Do not label a regime using its future path or assume a currently favorable state will persist.",
+          "page": 43,
+          "anchor": "vary over time",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the assertion that mastering emotions is sufficient to succeed or that behavioral biases ensure the Turtle approach continues to work. Net positive expectancy must be established for the actual rules and market.",
+          "page": 34,
+          "anchor": "works and continues to work",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Treat behavioral controls as safeguards for executing a tested system. Admit alternative strategy types and distinguish their horizons and exposure. Maintain an explicit process for reassessing invalid rules so consistency does not become stubborn adherence to a broken model.",
+      "adversarial_review": "A missed hypothetical gain and an actual cash loss are not identical wealth changes absent a specified counterfactual. Risk preferences need not be irrational merely because losses are painful. The two-to-one psychological comparison is not a universal calibration parameter. Recency can be informative under regime change; a long sample may also be unrepresentative. Drawdown approximately equal to annual return is a heuristic, not a risk bound. High volatility does not automatically create profitable swing opportunities after costs. A claim to avoid prediction still embeds an expectation about future conditional payoffs. Scalping and cross-market arbitrage require fill, contract-equivalence and leg-risk analysis.",
+      "memory_delta": "Audit rule adherence, beware biased confidence updates, and expect losing clusters and profit giveback. Define regimes without future data. Discipline and behavioral stories support execution but cannot establish an edge or guarantee survival.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        42
+      ],
+      "reading_provenance": "Read all PDF pages 33-43 and inspected the four-market-states figure before import."
+    },
+    {
+      "number": 4,
+      "title": "Chapter 3: The First $2 Million Is the Toughest",
+      "pdf_start": 44,
+      "pdf_end": 57,
+      "claims": [
+        {
+          "text": "A favorable expectation can coexist with ruin when positions are too large. Size for the ability to continue through adverse sequences rather than maximizing a single favorable bet.",
+          "page": 46,
+          "anchor": "lose all your money",
+          "disposition": "accept"
+        },
+        {
+          "text": "Volatility-normalized units seek comparable dollar movement across markets. Their risk remains conditional on the volatility estimate, contract multiplier, correlation and executable exits.",
+          "page": 46,
+          "anchor": "approximately the same dollar amount",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Limit orders constrain execution price but may not fill. Compare savings with missed trades and adverse selection rather than assuming every desired better price is available.",
+          "page": 47,
+          "anchor": "limit orders",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Estimate net expectancy over a complete sequence and assess decisions independently of one outcome; a historical estimate is not proof that the same edge persists.",
+          "page": 50,
+          "anchor": "analyzing a system's historical trades",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the gold-position risk calculation as printed: a 30-dollar move times ten contracts times 100 ounces equals 30,000 dollars, not 3,000, before slippage and fees.",
+          "page": 50,
+          "anchor": "a total of $3,000",
+          "disposition": "reject"
+        },
+        {
+          "text": "Trading records should capture the signal, sizing, execution and exit reason. Futures expiry and delivery requirements can override a generic trend exit and must be represented explicitly.",
+          "page": 54,
+          "anchor": "did not want to take delivery",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Tie entry, volatility units, exits and contract lifecycle into one predeclared system. The heating-oil story illustrates the cost of discretionary signal skipping and profit-taking, but a favorable realized trend does not independently establish expected profitability or the optimal allocation.",
+      "adversarial_review": "A positive-expectation game is not merely one in which winning is possible. A stop-distance risk estimate is not a guaranteed maximum loss; gaps and unavailable liquidity can exceed it. Mean profit divided by mean initial risk differs from the mean of trade-level R multiples when sizes vary. Losing periods need not be followed by profitable periods. The practice accounts used fixed contracts rather than the normal volatility allocations, so their results cannot be scaled without stating assumptions. The chapter calls the long breakout 60 days; retain this exact source description for reconciliation against the later complete rules. Figure 3-1 marks an expiry-driven exit near the high, not a generic channel exit; it omits the full sequence of added units and cash flows. The stated 0.04 heating-oil decline and approximate 1,200-dollar contract loss lack a multiplier reconciliation here. Psychological attribution and one-month capital promotion are source testimony with selection and outcome bias risks.",
+      "memory_delta": "Require survivable sizing, correctly dimensioned dollar risk, net expectancy, fill uncertainty and contract-lifecycle rules. Log every eligible signal and exit reason. A selected large win and consistent execution do not certify a persistent edge.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        55
+      ],
+      "reading_provenance": "Read all PDF pages 44-57 and inspected figure 3-1's entry, initial stop, exit and dates."
+    },
+    {
+      "number": 5,
+      "title": "Chapter 4: Think Like a Turtle",
+      "pdf_start": 58,
+      "pdf_end": 69,
+      "claims": [
+        {
+          "text": "The author acknowledges unsuccessful trainees and removals from the program. Preserve these outcomes when assessing the training story, without inferring that psychology is the sole cause.",
+          "page": 58,
+          "anchor": "dropped from the program",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A trend system may lose repeatedly in one market before a large winner. Review the complete portfolio and signal history rather than selecting or abandoning a market solely from a short sequence.",
+          "page": 60,
+          "anchor": "17 losing trades in a row",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Use distributions and conditional probabilities to describe uncertain outcomes, while keeping their historical origin and possible change explicit.",
+          "page": 61,
+          "anchor": "possibilities and probabilities",
+          "disposition": "accept"
+        },
+        {
+          "text": "R multiples scale a trade's profit or loss by its initial planned risk. They allow comparisons but do not bound realized losses or guarantee rare large wins will recur.",
+          "page": 67,
+          "anchor": "amount risked on a trade",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject the insurance-pricing explanation as printed: charging less than expected claims does not create a positive underwriting margin before costs.",
+          "page": 62,
+          "anchor": "less than the probable cost",
+          "disposition": "reject"
+        },
+        {
+          "text": "Reject describing the increasing cumulative distribution as the probability of being at least a given height. It represents probability at or below the threshold; density also differs from a point probability.",
+          "page": 63,
+          "anchor": "at least a particular height",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Judge execution using contemporaneous rules and treat distributions as empirical, revisable evidence. Record losing sequences, tail losses and dependence. Avoid making personal identity depend on each trade, while investigating genuine model decay or external failures.",
+      "adversarial_review": "Ten consecutive losses are not necessarily just bad luck; data failure, execution error or regime change can invalidate a plan. The claim that human psychology makes price behavior invariant is unsupported. A campus sample is not automatically representative of all women, and market returns need not be normal. The test period is described as 20 years and then 22; quarantine the mismatch. Figure 4-4 explicitly includes losses above 2R, contradicting a hard stop-loss bound. The ten-week long breakout description differs from chapter 3's 60-day description and requires reconciliation against the complete rules. Historical cocoa gains include added units and a selected period, not independent uniformly sized wins. The confidentiality duration differs between foreword and text. Personal responsibility does not erase broker misconduct or systemic risk; neither consistent process nor absence of observed collusion guarantees success.",
+      "memory_delta": "Keep unsuccessful trainees and full losing sequences, use empirical distributions without assuming stationarity or normality, and distinguish planned R from actual losses. Correct probability direction and underwriting arithmetic. Investigate failures without reflexive self-blame or outcome-based rule changes.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        61,
+        63,
+        65,
+        66
+      ],
+      "reading_provenance": "Read all PDF pages 58-69 and inspected table 4-1 and figures 4-1 through 4-4, including separate winning/losing histogram scales and tail buckets."
+    },
+    {
+      "number": 6,
+      "title": "Chapter 5: Trading with an Edge",
+      "pdf_start": 70,
+      "pdf_end": 77,
+      "claims": [
+        {
+          "text": "An exploitable advantage must survive all relevant costs, including commissions, slippage, data and computing, over the intended horizon.",
+          "page": 70,
+          "anchor": "costs of trading",
+          "disposition": "accept"
+        },
+        {
+          "text": "Market eligibility, entry and exit rules interact; assess the complete strategy rather than optimizing a single attractive signal independently.",
+          "page": 71,
+          "anchor": "three components",
+          "disposition": "accept"
+        },
+        {
+          "text": "The E-ratio compares mean volatility-normalized favorable and adverse excursions over a fixed horizon. It is an exploratory path statistic, not realized return or a probability of winning.",
+          "page": 73,
+          "anchor": "average volatility-adjusted MFE",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Entry behavior can differ by horizon. Freeze the evaluation interval before testing rather than selecting whichever later interval makes a signal look favorable.",
+          "page": 74,
+          "anchor": "over the time frame",
+          "disposition": "accept"
+        },
+        {
+          "text": "The 50/300-day trend filter's historical improvement is a candidate hypothesis requiring independent validation, comparable eligible observations and complete trading costs.",
+          "page": 75,
+          "anchor": "from 1.20 to 1.33",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Evaluate exits by their effect on the entire system, including risk, capital reuse and subsequent entries; a realized trade does not capture every portfolio consequence of exiting.",
+          "page": 77,
+          "anchor": "performance of the entire system",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Use excursion diagnostics to investigate a predeclared entry and its horizon. Keep entry-time ATR and filter values available before action; then test actual fills, stops, exits, costs and capital constraints. A high E-ratio is not permission to trade without a full expected-payoff case.",
+      "adversarial_review": "An average MFE exceeding average MAE does not prove a profitable executable strategy because extrema may occur in an unfavorable sequence and costs remain. Random balanced long/short directions yield a symmetry baseline; that does not establish that market prices themselves have equally likely upward and downward outcomes. Repeating 70,000 entries over the same historical paths does not create 70,000 independent market samples. Selected high-volume futures, overlapping horizons and repeated parameter tests require selection and dependence controls. Include only post-entry prices when computing entry-day excursions; an intraday entry cannot use earlier daily highs/lows as its subsequent path. Handle zero ATR and zero mean adverse excursion explicitly. Filter improvement may reflect changed exposure, and a smoother curve is not a confidence interval. The author's testing-platform role is a disclosed commercial interest. Post-exit prices can matter to opportunity cost and future trades even though they do not change the closed trade's P&L.",
+      "memory_delta": "Treat excursion ratios as diagnostics, fix horizons and lag all inputs, preserve sample dependence, and require a complete net-payoff strategy. Evaluate filters and exits through actual portfolio behavior with comparable exposure and explicit missing-data handling.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        72,
+        75,
+        76
+      ],
+      "reading_provenance": "Read all PDF pages 70-77 and inspected figures 5-1 through 5-3, including excursion definitions and the different vertical axis scales."
+    },
+    {
+      "number": 7,
+      "title": "Chapter 6: Falling Off the Edge",
+      "pdf_start": 78,
+      "pdf_end": 86,
+      "claims": [
+        {
+          "text": "Anchoring, recency and disposition effects are candidate explanations for reactions near prior highs and lows; price charts alone cannot establish the participants' motives.",
+          "page": 79,
+          "anchor": "three cognitive biases",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Support and resistance are conditional descriptions, not guaranteed barriers. Specify levels, tolerances, observation windows and failure rules before trading.",
+          "page": 81,
+          "anchor": "loose construct",
+          "disposition": "accept"
+        },
+        {
+          "text": "Adding to a losing position increases exposure even when each additional entry looks cheaper. Recompute total dollar risk using actual contract sizes and aggregate quantities.",
+          "page": 83,
+          "anchor": "42,000 gallons",
+          "disposition": "accept"
+        },
+        {
+          "text": "Trend entries and exits can use breaks of different lookback levels. A small distance to a planned invalidation point does not ensure a small executable loss.",
+          "page": 85,
+          "anchor": "small price difference",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject treating the selected chart as proof of statistically significant continuation after a break. The claim requires a defined universe, complete sample, null comparison and uncertainty estimate.",
+          "page": 84,
+          "anchor": "statistically significant tendency",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Turn visual descriptions into measurable candidate signals with dated inputs and explicit invalidation. Keep the distinction between a hypothesized mechanism and demonstrated net expectancy. Control aggregate exposure when a price approaches or crosses an observed level.",
+      "adversarial_review": "Support levels are labeled after the displayed paths are known, creating hindsight risk. Figure 6-2's horizontal axis says 2000 while the prose identifies a December 2006 heating-oil contract; quarantine this date conflict. The story that there are no buyers below a level cannot be literal for completed trades. A price may cross a level and later reverse, so breakout-versus-bounce is not a timeless binary event. Crowded stops and gaps can make execution worst where nominal invalidation distances look small. Behavioral explanations are not exhaustive: fundamentals, hedging and liquidity can produce similar paths. Loss estimates at 1.80 do not represent losses at the later 1.73 low. No universal trading edge follows from an asserted irrationality of other participants.",
+      "memory_delta": "Predeclare measurable levels and failure horizons, do not infer motives from chart shapes, and size additions against total exposure. Preserve date conflicts and test continuation independently; a nearby stop is not a guaranteed risk cap.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        79,
+        82
+      ],
+      "reading_provenance": "Read all PDF pages 78-86 and inspected figures 6-1 and 6-2, including chart dates and price units."
+    },
+    {
+      "number": 8,
+      "title": "Chapter 7: By What Measure?",
+      "pdf_start": 87,
+      "pdf_end": 103,
+      "claims": [
+        {
+          "text": "Risk includes drawdowns, inadequate returns, shocks and permanent strategy deterioration. No single historical statistic captures all of them.",
+          "page": 88,
+          "anchor": "four primary risks",
+          "disposition": "accept"
+        },
+        {
+          "text": "Gaps and locked markets can prevent exit. Historical maximum drawdown is an observed result, not a bound on the next loss.",
+          "page": 94,
+          "anchor": "no chance to exit",
+          "disposition": "accept"
+        },
+        {
+          "text": "Smooth historical returns can conceal leverage, illiquidity or short-option tail exposure. Investigate positions and failure scenarios rather than treating smoothness as safety.",
+          "page": 100,
+          "anchor": "Very risky investments can offer smooth returns",
+          "disposition": "accept"
+        },
+        {
+          "text": "Sampling frequency changes measured drawdown. State daily versus month-end conventions and retain duration as well as peak-to-trough depth.",
+          "page": 102,
+          "anchor": "understates the true drawdown",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject labeling a CAGR-minus-risk-free calculation as the standard Sharpe ratio. Use the mean of consistently sampled excess returns over their standard deviation, with explicit annualization assumptions.",
+          "page": 98,
+          "anchor": "differential return, which is the CAGR",
+          "disposition": "reject"
+        },
+        {
+          "text": "Capacity and crowded positions can change a strategy's future returns and liquidation risk. Keep historical ratios conditional rather than projecting them unchanged.",
+          "page": 103,
+          "anchor": "continue to maintain that ratio",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Review full marked equity, cash needs, drawdown duration and stress exposure alongside comparable return statistics. A high historical Sharpe or MAR cannot certify liquidity, tail survival or future model validity. Distinguish simulated results from the author's actual account testimony.",
+      "adversarial_review": "The chapter's Donchian examples shift from 43.7% CAGR/38% drawdown through May to 27.38% CAGR/27.58% daily drawdown through June without a reconciled configuration; do not merge them into one verified run. Figure 7-5's displayed horizontal extent reaches late 2006 despite its June caption. CAGR is geometric; page 92's 5%, 5%, 100% sequence approximates 30% annually but is neither exactly equal nor 30% per trade. Log versus linear axes emphasize different scales; a fixed percentage decline is directly comparable on a log scale. Month-end MAR can miss intramonth losses, and R-squared smoothness requires a specified fitted series. Rolling-year returns overlap and are not independent observations. A permanent system failure can occur even with good initial testing. Withdrawals from trend funds do not guarantee imminent profitability. Leverage and positions, rather than the mere futures label, determine exposure; shock risk also exists in unleveraged stock funds. Giving back unrealized gains remains an economic drawdown.",
+      "memory_delta": "Use matched return definitions and full drawdown paths, then examine liquidity, leverage, crowding and tail shocks. Keep historical maxima and smoothness in their proper role as observations, not safety guarantees. Flag inconsistent test configurations and metric formulas.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        89,
+        91,
+        93,
+        95,
+        98
+      ],
+      "reading_provenance": "Read all PDF pages 87-103 and inspected figures 7-1 through 7-5, including log/linear scales, shock gaps and caption/date differences."
+    },
+    {
+      "number": 9,
+      "title": "Chapter 8: Risk and Money Management",
+      "pdf_start": 104,
+      "pdf_end": 113,
+      "claims": [
+        {
+          "text": "Position size and aggregate exposure must respect financial and behavioral loss capacity. An instrument's minimum contract size can make zero contracts the appropriate position.",
+          "page": 106,
+          "anchor": "this amount may be zero",
+          "disposition": "accept"
+        },
+        {
+          "text": "Volatility-normalized sizing avoids treating one contract in each market as equivalent risk; use contract value, observed volatility and account capital with explicit units.",
+          "page": 111,
+          "anchor": "1 percent of our account size",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Stop distance alone cannot control gap exposure. A tighter stop must not mechanically authorize a much larger position without independent exposure limits.",
+          "page": 110,
+          "anchor": "gapped through our stops",
+          "disposition": "accept"
+        },
+        {
+          "text": "Instrument, correlated-group and directional limits are integral strategy rules. They also affect which signals are admitted and therefore must appear in any faithful test.",
+          "page": 111,
+          "anchor": "unit limits were an integral",
+          "disposition": "accept"
+        },
+        {
+          "text": "Stress both known historical shocks and more severe plausible scenarios; a buffer above historical drawdown reduces vulnerability without bounding future losses.",
+          "page": 112,
+          "anchor": "something even worse",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject the assurance that a positive-expectation method eventually makes its user rich. Estimation error, changing markets, finite capital and time, costs and ruin remain.",
+          "page": 109,
+          "anchor": "eventually will make you rich",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Make sizing and portfolio admission deterministic and external to confidence. Equalize estimated movement only within explicit exposure, correlation and liquidity constraints. Permit abstention when capital or data is inadequate, and test shocks beyond the source history.",
+      "adversarial_review": "Half of one's assumed tolerable historical drawdown is an arbitrary buffer, not a calibrated safety level. Volatility estimates lag and correlations change in crises. A graph capped at 100% does not show potential deficits beyond starting capital. Page 110 visibly prints a one-and-a-half ATR stop while calling it one-quarter of 2 ATR and implying fourfold sizing; quarantine the contradictory stop value without silently substituting one-half. Claimed savings of more than 100 million and the claim that later signals lose more are unverified counterfactuals. Source unit limits are historical system parameters, not approved risk limits for this project. Low volatility can invite excessive notional size unless a separate cap exists. Anecdotes about doctors and dentists do not establish occupational causes of trading failure. Risk preferences are individual, but calculation errors and ignoring liabilities remain objectively testable mistakes.",
+      "memory_delta": "Allow zero positions, normalize carefully, impose independent aggregate limits and stress gaps beyond history. A tight stop is not a license for leverage; lagged volatility is not a loss cap. Preserve contradictory source parameters pending reconciliation and reject guaranteed-wealth language.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        106,
+        110
+      ],
+      "reading_provenance": "Read all PDF pages 104-113; inspected figure 8-1 and the visually printed conflicting stop fraction on page 110."
+    },
+    {
+      "number": 10,
+      "title": "Chapter 9: Turtle-Style Building Blocks",
+      "pdf_start": 114,
+      "pdf_end": 119,
+      "claims": [
+        {
+          "text": "Indicators identify conditional opportunities; none reliably detects every trend or its end.",
+          "page": 114,
+          "anchor": "no building blocks that work all the time",
+          "disposition": "accept"
+        },
+        {
+          "text": "Breakout lookback length controls responsiveness and must be specified before testing, with the observation window ending before the decision.",
+          "page": 115,
+          "anchor": "highest high or the lowest low",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Moving averages and volatility channels are reproducible price transformations; their complexity alone is not evidence of a better strategy.",
+          "page": 117,
+          "anchor": "greater potential for curve fitting",
+          "disposition": "accept"
+        },
+        {
+          "text": "A fixed holding period is a legitimate exit candidate to compare with price-dependent exits, but does not guarantee less drawdown.",
+          "page": 117,
+          "anchor": "simple time-based exit",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Prefer explicit, simple transformations and freeze lookbacks, initialization, volatility definitions and decision timing. Compare complete systems, not attractive indicators alone.",
+      "adversarial_review": "Selected charts cannot establish prospective edge. Page 117 describes the same crossover as both mid-June and early June; require dated observations rather than that prose. A moving average describes observed prices, not a verified latent market state. Time exits may miss trends or leave large interim losses. Different building blocks need not have equivalent turnover or risk even when tuned to similar responsiveness. The text promises simple lookbacks in chapter 10, which needs checking against actual listed systems.",
+      "memory_delta": "Use simple, explicitly lagged signals; indicator names do not specify executable strategies. Entry, exit, initialization and risk rules require joint evaluation.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        116,
+        118
+      ],
+      "reading_provenance": "Read all PDF pages 114-119 and inspected both indicator charts."
+    },
+    {
+      "number": 11,
+      "title": "Chapter 10: Turtle-Style Trading Step by Step",
+      "pdf_start": 120,
+      "pdf_end": 135,
+      "claims": [
+        {
+          "text": "Compare systems on a common data universe, period and sizing policy, and disclose residual differences in exposure, costs and execution.",
+          "page": 123,
+          "anchor": "common portfolio of markets",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Signals from a completed close should execute only at a later available price, with gaps and costs accounted for.",
+          "page": 124,
+          "anchor": "previous day's close exceeded",
+          "disposition": "accept"
+        },
+        {
+          "text": "Treat the chapter's six systems as distinct historical specifications rather than interchangeable descriptions of the original Turtle rules.",
+          "page": 126,
+          "anchor": "simplified version of the system",
+          "disposition": "qualify"
+        },
+        {
+          "text": "A simpler system or time exit can outperform a more complex alternative in a particular sample; this challenges universal complexity and exit claims but does not isolate all profit to entry.",
+          "page": 131,
+          "anchor": "entire profitability of a system",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the implication that historical no-stop superiority establishes that stops are universally unnecessary. Loss capacity and gap exposure require independent limits.",
+          "page": 132,
+          "anchor": "better for all the metrics",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Small extensions of the historical window can materially change ranking and maximum drawdown; lock evaluation horizons before seeing results.",
+          "page": 135,
+          "anchor": "50 percent increase",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Specify a complete executable variant before testing. Historical rankings remain hypotheses. Retain portfolio constraints and compare costs, exposure and drawdown across predeclared periods, including periods when earlier winners fail.",
+      "adversarial_review": "The 27 named markets differ from the earlier 28-market account. Chapter 5's 50/300 moving-average filter becomes 25/350 here. The ATR channel prose specifies +7/-3 ATR while figure 10-1 looks roughly symmetric; do not silently repair it. ATR lookback and several execution details remain unspecified. No-stop systems still have exits, and entry loss can contribute to drawdown despite page 133's categorical denial. A time exit still contributes to returns; its success cannot attribute all profitability to entry. The tables do not disclose costs, roll rules or survivorship controls sufficiently for replication. Historical Sharpe values inherit the earlier questionable definition. Table 10-3's 48.4% drawdown increase is approximately 50%, while unchanged rounded time-exit drawdown does not mean unchanged performance. The June-to-November extension is author-observed hindsight, not this project's holdout. Common sizing does not equal common risk. The chapter does not actually specify the promised simple price-lookback system. Reject the epigraph's assertion that simple methods beat complicated methods every time.",
+      "memory_delta": "Freeze a fully specified system, not a book label. Preserve parameter inconsistencies. Historical no-stop results and changing rankings support sensitivity testing, not removal of risk controls or forecasts of replicated returns.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        125,
+        126,
+        127,
+        129,
+        130,
+        131,
+        133,
+        134,
+        135
+      ],
+      "reading_provenance": "Read all PDF pages 120-135 and inspected all six charts and three performance tables, including table 10-3 continued on page 135."
+    },
+    {
+      "number": 12,
+      "title": "Chapter 11: Lies, Damn Lies, and Backtests",
+      "pdf_start": 136,
+      "pdf_end": 156,
+      "claims": [
+        {
+          "text": "Crowding, chance, parameter selection and data-specific rules can all separate simulated returns from later experience.",
+          "page": 137,
+          "anchor": "four major sources",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject fake orders intended to mislead other participants; the author's anecdote is not an accepted execution practice.",
+          "page": 140,
+          "anchor": "send fake orders",
+          "disposition": "reject"
+        },
+        {
+          "text": "Track-record dispersion can arise from random entries and selection, so a winning record alone does not establish superior skill.",
+          "page": 142,
+          "anchor": "random effects play a large role",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Parameter sensitivity analysis is useful, but selecting a historical optimum does not guarantee improved future performance.",
+          "page": 145,
+          "anchor": "proper optimization is always desirable",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Discontinuous performance under small parameter changes is a warning to investigate dependence on particular trades and state transitions.",
+          "page": 153,
+          "anchor": "Traders call this phenomenon a cliff",
+          "disposition": "accept"
+        },
+        {
+          "text": "Count instances of the specific rule and disclose the entire search, rather than presenting one favorable result among thousands as independent evidence.",
+          "page": 155,
+          "anchor": "4,000 tests",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Keep a search ledger, distinguish selected historical results from untouched observations, inspect parameter neighborhoods and dependent samples, and account for liquidity and crowding without deceptive orders.",
+      "adversarial_review": "The hypothetical stop-triggering profit is not guaranteed: orders can disappear, prices move adversely and fills fail. The unnamed system's decline is not causal proof of front-running. Random simulations require seeds, complete distributions and identical policies; the filtered random-entry example includes a trend filter with purported edge, so page 142's subsequent no-edge wording is misleading. The population of excellent traders and their probabilities are assumed, not measured; assessing personalities does not remove uncertainty. Regression toward the mean is a conditional statistical tendency, not a deterministic law of inherited traits. Optimization can overfit even with few parameters, and arbitrary unoptimized parameters need not provide unbiased estimates. The symmetric horizontal-shift story is an assumption; real surfaces may change shape. Page 150 reverses the effects of shifting a curve right/left at an ascending point. Figure 11-6 caption mentions moving-average days although its axis is drawdown threshold. The 41.4%/56% base result differs from the prior chapter's reported test, with no reconciliation. A risk reduction rule's rare activation is not itself proof it is useless; the demonstrated data-dependent selection and recovery trap are the issue. No particular sample count alone establishes statistical usefulness.",
+      "memory_delta": "Do not infer skill or future returns from a selected track record. Audit all trials, parameter sensitivity, rule-specific sample counts and recovery behavior. Separate useful sensitivity analysis from claims that optimized peaks are predictively superior. Exclude deceptive order tactics.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        146,
+        148,
+        149,
+        150,
+        151,
+        154
+      ],
+      "reading_provenance": "Read all PDF pages 136-156 and inspected figures 11-1 through 11-6, checking actual chart pages rather than caption-only pages."
+    },
+    {
+      "number": 13,
+      "title": "Chapter 12: On Solid Ground",
+      "pdf_start": 157,
+      "pdf_end": 177,
+      "claims": [
+        {
+          "text": "Both sample size and representativeness matter; thousands of dependent trades may offer little evidence for a rarely activated rule or a different regime.",
+          "page": 158,
+          "anchor": "degree to which the sample is representative",
+          "disposition": "accept"
+        },
+        {
+          "text": "Inspect sensitivity to start and end dates, while retaining actual returns and losses as outcomes even when a smoother statistic changes less.",
+          "page": 160,
+          "anchor": "sensitive to the start and end dates",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Regressed return and the author's drawdown-duration ratio may supplement standard measures if precisely defined, but are not interchangeable with realized CAGR or Sharpe.",
+          "page": 164,
+          "anchor": "robust risk/reward ratio",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Walk-forward evaluation must fit only earlier data and evaluate frozen parameters on subsequent untouched observations.",
+          "page": 171,
+          "anchor": "data available only up to that point",
+          "disposition": "accept"
+        },
+        {
+          "text": "Resampling should preserve relevant simultaneous exposures and loss clustering; independent trade reordering can understate aggregate drawdown.",
+          "page": 175,
+          "anchor": "bad days tend to cluster",
+          "disposition": "accept"
+        },
+        {
+          "text": "Monte Carlo scenarios inherit the biases and omissions of the underlying historical test and do not convert it into a validated forecast.",
+          "page": 176,
+          "anchor": "does not make a poor test better",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Retain standard realized outcomes, augment them with clearly labeled diagnostics, and use frozen chronological holdouts and dependence-aware stress tests. Report uncertainty conditional on the sampled data and assumptions.",
+      "adversarial_review": "A representative poll of 500 does not automatically yield a 2% margin; confidence level and design matter. More old data can be less representative, and all-data research must preserve an untouched evaluation set. Least-squares slope on log equity is not itself a universally robust estimator and can obscure terminal losses. R-cubed needs nonoverlapping drawdown episode definitions, treatment of fewer than five events, unrecovered episodes and zero denominators; severity and duration averages may concern different episodes. The modified Sharpe omits risk-free subtraction and changes its numerator. Page 161 correctly calls standard Sharpe's numerator average return, conflicting with chapter 7. Table 12-1 visibly prints RAR 4.9% beside 54.7% and claims 0.4% change; table 12-2 prints Donchian Time 4% beside 47.2% and claims -0.4%. Quarantine these values. Other table values differ from chapter 10 and nearby prose without disclosed specification changes. R-cubed columns use R to the fourth and sixth powers inconsistently. Rolling-window prose alternates two years and one subsequent year; table 'Actual' remains a historical simulation, not live execution, and 1997-2006 subsequent outcome is N/A. Twenty-day blocks do not preserve all dependence or generate unseen shocks. Simulation survival probabilities are conditional empirical frequencies, not calibrated future confidence. A stable metric is not necessarily a better forecast, and favorable recent results do not imply a compensating bad period. Historical physics attribution is outside the trading inference and unverified.",
+      "memory_delta": "Separate smoother diagnostics from actual investor outcomes. Require representative rule-level evidence, predeclared walk-forward splits, explicit resampling dependence and honest conditional uncertainty. Preserve source table errors rather than repairing them invisibly.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        162,
+        163,
+        165,
+        166,
+        167,
+        172,
+        177
+      ],
+      "reading_provenance": "Read all PDF pages 157-177 and inspected figures 12-1 through 12-3 and tables 12-1 through 12-4, including continued tables."
+    },
+    {
+      "number": 14,
+      "title": "Chapter 13: Bulletproof Systems",
+      "pdf_start": 178,
+      "pdf_end": 189,
+      "claims": [
+        {
+          "text": "A historical ranking can depend on the mixture of market conditions; too few regime transitions cannot establish a reliable cycle forecast.",
+          "page": 179,
+          "anchor": "do not have enough data",
+          "disposition": "accept"
+        },
+        {
+          "text": "Diversity of economically distinct exposures and simple adaptable rules can reduce dependence on a particular historical regime, subject to costs and changing correlations.",
+          "page": 181,
+          "anchor": "diversity and simplicity",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Liquidity constraints can rationally exclude a market even when a later selected trade would have been highly profitable on paper.",
+          "page": 184,
+          "anchor": "very rational one",
+          "disposition": "accept"
+        },
+        {
+          "text": "A small order can still fail to execute during a liquidity vacuum; small account size does not eliminate market-wide fill risk.",
+          "page": 185,
+          "anchor": "no traders to take the other side",
+          "disposition": "accept"
+        },
+        {
+          "text": "Evaluate complementary strategies jointly with a common capital and exposure budget rather than selecting each solely by standalone return.",
+          "page": 187,
+          "anchor": "benefits of diversification",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject the assurance that acknowledging uncertainty guarantees a program anticipates whatever happens or performs well in every future condition.",
+          "page": 180,
+          "anchor": "you are assured",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Diversify within executable liquidity and capital constraints; test the combined portfolio and stressed dependence. Accept missed hindsight gains when they follow a defensible predeclared risk limit.",
+      "adversarial_review": "The three-class taxonomy and claims that members trade identically are broad untested assertions; fundamental and speculative forces coexist. Aggregation does not preclude persistent trends, and ETF applicability cannot be inferred from an old futures opinion. The dated minimum-capital and software-platform claims are not current specifications. The coffee counterfactual assumes fills, sizing and exit history despite admitted capacity concerns; the displayed chart exits after 65 bars, so it is not an independently specified original-rule result. Its initial stop differs from twice the prose N and equal profit per pyramided contract is an approximation. The combined long/short RAR exceeds either component without a clear shared capital normalization; do not read this as a free diversification gain. More systems bring operational costs and can all fail together. Source dating of the famous gold/silver peak is unverified and not accepted as a trading input. Ecological analogies do not prove that every simple strategy is robust.",
+      "memory_delta": "Diversification requires distinct exposures, feasible fills and normalized capital. Missed profits do not invalidate liquidity limits. No system is bulletproof; regime uncertainty and crowding remain even with simple rules.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        184
+      ],
+      "reading_provenance": "Read all PDF pages 178-189 and inspected the coffee counterfactual chart."
+    },
+    {
+      "number": 15,
+      "title": "Chapter 14: Mastering Your Demons",
+      "pdf_start": 190,
+      "pdf_end": 197,
+      "claims": [
+        {
+          "text": "Audit execution against a predeclared plan; a plan that cannot be followed consistently does not describe actual trading.",
+          "page": 195,
+          "anchor": "execute your plan",
+          "disposition": "accept"
+        },
+        {
+          "text": "Humility supports acknowledging uncertainty and separating a losing outcome from personal worth, without forbidding explicit probabilistic forecasts.",
+          "page": 194,
+          "anchor": "future as something that is unknowable",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Historical research and paper practice can expose mistakes but do not recreate the experience or execution of risking real money.",
+          "page": 196,
+          "anchor": "not the same as practicing or paper trading",
+          "disposition": "accept"
+        },
+        {
+          "text": "The author explicitly limits his psychological expertise and says trend following is unsuitable for many people; treat his selected anecdotes accordingly.",
+          "page": 196,
+          "anchor": "not an expert in trading psychology",
+          "disposition": "accept"
+        },
+        {
+          "text": "Reject the claim that the Turtle story proves consistently following those principles will result in profitable trading for later users.",
+          "page": 190,
+          "anchor": "would result in profitable trading",
+          "disposition": "reject"
+        }
+      ],
+      "assimilation": "Make process adherence measurable and maintain risk limits, explicit uncertainty and predeclared revision criteria. Use practice to uncover failures rather than to certify readiness for real capital.",
+      "adversarial_review": "A ping-pong result and retrospective attribution do not establish another person's psychology or cause of trading failure. Claimed immunity to bias is self-report. Discretionary traders can use disciplined processes, and systematic strategy selection itself involves judgment. Confidence from a famous teacher is authority-based, not independent validation. Consistent execution of a negative or decayed edge consistently loses money; revisions at scheduled checkpoints can be appropriate. The reported aggregate Turtle profit is not independently audited here. Do not substitute moral judgments about ego for checking data, costs, rule violations and market change.",
+      "memory_delta": "Measure compliance without equating confidence, humility or consistency with positive expectancy. Paper experience has limits; review assumptions and failures with explicit evidence rather than personality stories.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [],
+      "reading_provenance": "Read all PDF pages 190-197; chapter contains narrative and concluding principles, no data figures."
+    },
+    {
+      "number": 16,
+      "title": "Epilogue: When All Is Said and Done",
+      "pdf_start": 198,
+      "pdf_end": 204,
+      "claims": [
+        {
+          "text": "Evaluate a changed course by future consequences rather than sunk expenditure, while accounting for remaining obligations and transition costs.",
+          "page": 202,
+          "anchor": "sunk cost effect",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Concentrated illiquid wealth can fail to fund expenses when prices fall; distinguish quoted value from cash accessible under stress.",
+          "page": 203,
+          "anchor": "market was very thin",
+          "disposition": "accept"
+        },
+        {
+          "text": "Failures can inform a bounded learning process, but persistence alone does not guarantee success or justify escalating risk.",
+          "page": 204,
+          "anchor": "learn from that failure",
+          "disposition": "qualify"
+        }
+      ],
+      "assimilation": "Carry forward the practical lessons about liquidity reserves, prospective choices and learning from documented mistakes. Keep personal aspirations separate from evidence about strategy returns.",
+      "adversarial_review": "The author's life story is selected retrospective testimony. The claim that he would have been richer by continuing trading is an unknowable counterfactual. Fear is not the only reason for career choices or differences in language learning; biological, financial and social constraints remain. Failure is not logically required for every kind of learning. The liquidity crisis is material counterevidence to interpreting earlier trading success as general financial invulnerability. Do not generalize the author's subjective experience of poverty or fulfillment to others, or turn the closing exhortation into an order recommendation.",
+      "memory_delta": "Maintain accessible reserves and recognize concentrated illiquid wealth as fragile. Revise decisions using future costs and evidence; bounded learning does not require unlimited persistence or financial risk.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [],
+      "reading_provenance": "Read all PDF pages 198-204; personal epilogue has no quantitative figures."
+    },
+    {
+      "number": 17,
+      "title": "Bonus: Original Turtle Trading Rules",
+      "pdf_start": 205,
+      "pdf_end": 231,
+      "claims": [
+        {
+          "text": "A complete trading specification covers universe, size, entry, loss exits, profitable exits and execution tactics.",
+          "page": 206,
+          "anchor": "Tactics: How to buy or sell",
+          "disposition": "accept"
+        },
+        {
+          "text": "Volatility sizing requires true range, its initialization and smoothing, contract multipliers and whole-contract truncation; equal estimated volatility does not equal identical loss distributions.",
+          "page": 210,
+          "anchor": "20-day simple average",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Portfolio limits include instrument, correlated-group and directional exposure; they reduce exposure but cannot enforce a maximum loss during gaps.",
+          "page": 214,
+          "anchor": "40 to 60 percent",
+          "disposition": "qualify"
+        },
+        {
+          "text": "The appendix specifies 20-day and 55-day breakout systems using preceding days and intraday triggers, distinct from close-to-next-open demonstration systems.",
+          "page": 216,
+          "anchor": "preceding 20 days",
+          "disposition": "accept"
+        },
+        {
+          "text": "The shorter system's prior-breakout filter tracks skipped hypothetical trades as well as executed trades and includes a longer-breakout fallback; state must be maintained causally.",
+          "page": 217,
+          "anchor": "actually taken or was skipped",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Pyramiding uses actual fills and explicit stop updates; ambiguous printed fractions must be reconciled before any implementation.",
+          "page": 218,
+          "anchor": "actual fill price",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Reject literal assurances that preset stop distances cap realized trade or portfolio loss; gaps, nonfills and repeated entries can exceed those budgets.",
+          "page": 223,
+          "anchor": "total risk would never exceed 2 percent",
+          "disposition": "reject"
+        },
+        {
+          "text": "Exit rules interact with entries and sizing; the appendix specifies 10-day exits for System 1 and 20-day exits for System 2.",
+          "page": 226,
+          "anchor": "System 2 exit was a 20-day low",
+          "disposition": "accept"
+        },
+        {
+          "text": "Limit orders trade price control for execution uncertainty; fast-market delays require explicit handling and cannot be assumed to improve every fill.",
+          "page": 227,
+          "anchor": "simply will not get filled",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Simultaneous signal selection, contract-month choice and rollover are strategy decisions that require deterministic definitions and liquidity checks.",
+          "page": 229,
+          "anchor": "Rolling Over Expiring Contracts",
+          "disposition": "qualify"
+        },
+        {
+          "text": "Inspect the actual trade and equity history and independently test a fully specified policy before relying on someone else's summarized results.",
+          "page": 231,
+          "anchor": "look at the daily equity logs",
+          "disposition": "accept"
+        }
+      ],
+      "assimilation": "Treat the appendix as a historical family of related rules, not a turnkey approved strategy. Preserve causal windows, fill-dependent state, portfolio limits, skipped-signal state and roll handling, and reject hard-loss guarantees. Require reconciliation and independent evaluation before adoption.",
+      "adversarial_review": "The appendix calls the system wholly mechanical but grants discretion over markets, strategy allocation, strength measures, annual sizing and fast-market timing. Its 55-day long breakout differs from earlier 60-day and 10-week descriptions. N's displayed recurrence uses weight 1/20, not the common EMA span-20 weight 2/21. Page 212's November 6 true range prints .0130 although previous close .6923 and low .6800 imply .0123. Page 213 uses December 4 N for December 6 without explaining the intervening day. Pages 218 and 221 visibly print 1-and-a-half N where surrounding prose and worked tables imply half N; preserve the conflict. Page 223 visibly prints half N stops with one-and-a-half percent risk, inconsistent with 1% per N and its half-N table. Account reductions say each 10% of original equity but the example compounds the reduced base, and starting February 1983 conflicts with the earlier 1984 chronology. The 2% trade-risk language does not mean a four-unit position has at most 2% cumulative entry loss; the standard example has unequal distances to a common stop. Moving-average exits are implicit exit rules, not guaranteed bounded losses. Waiting for stabilization conflicts with immediate stop execution and may worsen losses. Bid/ask liquidity is not present at all times and displayed prices can disappear. Claims about strongest contracts almost always outperforming and failure being solely noncompliance are unproven. Independent testing must include costs, slippage, delivery deadlines and all attempted variants. Bibliography 232-234 discloses author-linked commercial resources; inspected index 235-257 and blank/end matter 258-259 add navigation, not independent evidence or additional books read.",
+      "memory_delta": "Specify and independently test one unambiguous variant before use. Historical Turtle rules include state, discretion and inconsistent printed numbers. Volatility targets and stops do not cap realized loss; causal timing, actual fills, constraints and roll mechanics are essential.",
+      "theory": null,
+      "test": null,
+      "visual_checks": [
+        210,
+        211,
+        212,
+        213,
+        218,
+        219,
+        221,
+        222,
+        223,
+        224
+      ],
+      "reading_provenance": "Read all PDF pages 205-231, inspected all displayed formulas and worked sizing/stop tables. Separately inspected bibliography/index/end matter 232-259; no linked books or sites counted as read."
+    }
+  ],
+  "provenance": "Original Codex source review in the current shared conversation, with explicit replay of the previously reviewed opening. Formative inputs are the Character own prior and ordered source deltas; shared context/background knowledge remains a contamination limitation. No independent model replication is claimed.",
+  "authoring_usage": "Exact model snapshot, tokens, dollar cost and sampling unavailable. Zero usage in import records describes deterministic local import only.",
+  "prior_freeze_hash": "0ed870d878ccee01fb95f960f7c829dc98ae0954c712746aac25d2304ef3f3bf",
+  "coverage_hash": "8f2105b18623a5ff3b5472f09c8bb2ea7b6c48fc3ff3d7669638543885955c3e"
+}

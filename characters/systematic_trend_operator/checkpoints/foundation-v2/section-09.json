@@ -1,0 +1,21 @@
+{
+  "number": 9,
+  "title": "Chapter 8: Risk and Money Management",
+  "pdf_start": 104,
+  "pdf_end": 113,
+  "claims": [
+    {"text": "Position size and aggregate exposure must respect financial and behavioral loss capacity. An instrument's minimum contract size can make zero contracts the appropriate position.", "page": 106, "anchor": "this amount may be zero", "disposition": "accept"},
+    {"text": "Volatility-normalized sizing avoids treating one contract in each market as equivalent risk; use contract value, observed volatility and account capital with explicit units.", "page": 111, "anchor": "1 percent of our account size", "disposition": "qualify"},
+    {"text": "Stop distance alone cannot control gap exposure. A tighter stop must not mechanically authorize a much larger position without independent exposure limits.", "page": 110, "anchor": "gapped through our stops", "disposition": "accept"},
+    {"text": "Instrument, correlated-group and directional limits are integral strategy rules. They also affect which signals are admitted and therefore must appear in any faithful test.", "page": 111, "anchor": "unit limits were an integral", "disposition": "accept"},
+    {"text": "Stress both known historical shocks and more severe plausible scenarios; a buffer above historical drawdown reduces vulnerability without bounding future losses.", "page": 112, "anchor": "something even worse", "disposition": "accept"},
+    {"text": "Reject the assurance that a positive-expectation method eventually makes its user rich. Estimation error, changing markets, finite capital and time, costs and ruin remain.", "page": 109, "anchor": "eventually will make you rich", "disposition": "reject"}
+  ],
+  "assimilation": "Make sizing and portfolio admission deterministic and external to confidence. Equalize estimated movement only within explicit exposure, correlation and liquidity constraints. Permit abstention when capital or data is inadequate, and test shocks beyond the source history.",
+  "adversarial_review": "Half of one's assumed tolerable historical drawdown is an arbitrary buffer, not a calibrated safety level. Volatility estimates lag and correlations change in crises. A graph capped at 100% does not show potential deficits beyond starting capital. Page 110 visibly prints a one-and-a-half ATR stop while calling it one-quarter of 2 ATR and implying fourfold sizing; quarantine the contradictory stop value without silently substituting one-half. Claimed savings of more than 100 million and the claim that later signals lose more are unverified counterfactuals. Source unit limits are historical system parameters, not approved risk limits for this project. Low volatility can invite excessive notional size unless a separate cap exists. Anecdotes about doctors and dentists do not establish occupational causes of trading failure. Risk preferences are individual, but calculation errors and ignoring liabilities remain objectively testable mistakes.",
+  "memory_delta": "Allow zero positions, normalize carefully, impose independent aggregate limits and stress gaps beyond history. A tight stop is not a license for leverage; lagged volatility is not a loss cap. Preserve contradictory source parameters pending reconciliation and reject guaranteed-wealth language.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [106,110],
+  "reading_provenance": "Read all PDF pages 104-113; inspected figure 8-1 and the visually printed conflicting stop fraction on page 110."
+}

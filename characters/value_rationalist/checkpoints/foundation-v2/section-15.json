@@ -1,0 +1,21 @@
+{
+  "number": 15,
+  "title": "Chapter 14: Stock Selection for the Defensive Investor; Zweig commentary",
+  "pdf_start": 321,
+  "pdf_end": 345,
+  "claims": [
+    {"text": "A defensive screen combines business quality and financial resilience with earnings and assets obtained per dollar. The stated size, coverage and valuation cutoffs are conventional and require context-specific validation.", "page": 322, "anchor": "minimum figures must be arbitrary", "disposition": "qualify"},
+    {"text": "The combined P/E and price-to-book ceiling is an initial screen, not a valuation proof; both denominators must be meaningful, consistently defined and supported by available statements.", "page": 323, "anchor": "As a rule of thumb", "disposition": "qualify"},
+    {"text": "An aggregate portfolio can meet a criterion while individual constituents fail it. Record whether eligibility is tested per instrument or on portfolio totals and do not switch that basis silently.", "page": 324, "anchor": "in the aggregate, but not for every company", "disposition": "accept"},
+    {"text": "Favor a margin capable of absorbing adverse developments over a purchase that requires precise optimistic forecasts, while acknowledging that even a protective appraisal contains assumptions about survival and realizable value.", "page": 334, "anchor": "absorb unfavorable developments in the future", "disposition": "qualify"},
+    {"text": "Broad diversification can reduce dependence on identifying rare winning firms in advance. A separately bounded experimental sleeve is a possible policy choice, not authority to expand this pilot.", "page": 337, "anchor": "experiment around the edges", "disposition": "qualify"},
+    {"text": "Reject the commentary's blanket statement that goodwill and other intangibles are excluded from standard book value. Distinguish total equity from tangible equity and determine recognition from the actual statements.", "page": 344, "anchor": "excluded from the standard definition of book value", "disposition": "reject"}
+  ],
+  "assimilation": "Keep eligibility tests explicit at the instrument and portfolio levels, including exceptional treatment by industry. Compare the evidence burden of individual selection with broad diversification. Source ratios can guide questions but require definition checks, current inputs and prospective evaluation before becoming executable policy.",
+  "adversarial_review": "Table 14-3 notes that Swift had a deficit within the purported no-deficit period; preserve the exception rather than asserting all five pass a strict rule. The 1970 discussion and September 1971 tables use different dates. Utilities' financing availability and regulated returns are not guarantees, and a long dividend record did not protect Penn Central. Earnings yield is not contractually equivalent to a bond coupon. A sampled index does not literally own every future winner from inception. Figure 14-1 includes names whose debt exceeds working capital, so a high current ratio alone does not pass every test. Forward P/E can be a transparently conditional estimate; the defect is presenting uncertain forecasts as observed earnings. A 60% institutional-ownership threshold is not proof of overownership. Dated company lists, statutes and thresholds are not current recommendations.",
+  "memory_delta": "Separate screen qualification from investment judgment; preserve exact definitions, dates, aggregation levels and exceptions. Diversification reduces name-selection dependence, while a protective valuation still requires business and liquidity stress review.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [325,326,327,328,329,330,331,340,342,343],
+  "reading_provenance": "Read all PDF pages 321-345 and visually inspected tables 14-1 through 14-7 and figures 14-1 and 14-2, including image-only PDF pages 325 and 342."
+}

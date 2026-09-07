@@ -1,0 +1,21 @@
+{
+  "number": 6,
+  "title": "Chapter 5: Defensive Common-Stock Investing; Zweig commentary",
+  "pdf_start": 116,
+  "pdf_end": 134,
+  "claims": [
+    {"text": "Growth can improve a business while an excessive purchase multiple makes its stock vulnerable; defensive selection therefore combines diversification, financial strength and a price constraint rather than choosing growth narratives alone.", "page": 118, "anchor": "provided the price paid is not excessive", "disposition": "accept"},
+    {"text": "Familiarity is a starting point for investigation, not a valuation advantage by itself; product enthusiasm and employment in a business do not replace financial-statement research or diversification.", "page": 128, "anchor": "The next step is doing the research", "disposition": "accept"},
+    {"text": "Distinguish contractual default and business impairment from temporary quotation changes, while retaining liquidity and forced-sale risk. Reject using the absence of a sale or a later recovery to erase intervening portfolio drawdown and risk.", "page": 123, "anchor": "unlikely to be forced to sell", "disposition": "qualify"},
+    {"text": "A fixed contribution schedule can support disciplined exposure, but the source's dollar-cost-averaging examples compare different investment timing and cumulative contributions; they do not by themselves prove superior flow-adjusted returns or guaranteed recovery.", "page": 133, "anchor": "total outlay of $6,600", "disposition": "qualify"},
+    {"text": "Do not seek a poorly understood high yield simply to fill a spending shortfall; investment competence, capital needs and the consequences of loss must constrain the attempted solution.", "page": 121, "anchor": "risk half of it", "disposition": "accept"},
+    {"text": "Index funds can reduce selection and monitoring work, but reject the implication that a long unattended holding is unlikely to cause any suffering or surprises; simplicity does not remove market losses, changing liabilities or product risks.", "page": 131, "anchor": "any suffering or surprises", "disposition": "reject"}
+  ],
+  "assimilation": "Strengthen the value prior with the purchase-multiple constraint and the danger of mistaking familiar products for known business value. Accept disciplined diversified contributions as a possible implementation policy while keeping the contribution schedule outside measured investment return. Translate Graham's economic-loss distinction into separate impairment, mark-to-market drawdown and forced-sale analyses rather than discarding any of them.",
+  "adversarial_review": "Graham's size, dividend and earnings-multiple thresholds are dated heuristics with acknowledged arbitrariness. The commentary's 1929 and 1999-2002 contribution illustrations do not match exposure timing or account for an alternative use of initially available cash, and the chart juxtaposes account value with an index level. Reported recovery periods concern prices unless distributions are explicitly included. Historical profession/gender examples do not establish an individual's competence. A diversified portfolio can still suffer lasting impairment; refusing to sell does not make risk disappear.",
+  "memory_delta": "Require research beyond familiarity, preserve valuation discipline even for strong growth businesses, and distinguish impairment from drawdown without suppressing either. Measure contributions separately and reject automatic-success claims for averaging or index ownership.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [133, 134],
+  "reading_provenance": "Read all PDF pages 116-134 and inspected figure 5-1, including its cumulative-account-value and index-level labels."
+}

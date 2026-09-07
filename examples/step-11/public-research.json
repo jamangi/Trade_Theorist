@@ -1,0 +1,20 @@
+[
+  {
+    "source_id": "source:vanguard-vti-role",
+    "url": "https://advisors.vanguard.com/investments/products/vti/vanguard-total-stock-market-etf",
+    "published_at": null,
+    "ingested_at": "2026-09-07T10:12:22.688847Z",
+    "availability_evidence": "Official Vanguard search-index content retrieved in this task on 2026-09-07. Page publication time unknown; availability begins at this receipt. Current rendered page requires JavaScript. Index naming differs across vintages; trial relies only on broad-fund role and dated expense ratio.",
+    "text": "VTI provides broad U.S. equity index exposure. Vanguard lists an expense ratio of 0.03% as of 2026-04-28. No prices, performance statistics or precise current benchmark identity are supplied to the trial.",
+    "payload_hash": "49e00d7d6fa6dd9d8f9b0215c0d0323d81d78db5a83f6d9f2915814bbfb1cd19"
+  },
+  {
+    "source_id": "source:nyse-2026-calendar",
+    "url": "https://www.nyse.com/trade/hours-calendars",
+    "published_at": null,
+    "ingested_at": "2026-09-07T10:28:34.009595Z",
+    "availability_evidence": "Official NYSE 2026 holiday and trading-hours page inspected on 2026-09-07. Publication timestamp unknown; this is the first trial receipt.",
+    "text": "NYSE Arca core trading hours are 9:30 a.m. to 4:00 p.m. Eastern. September 7, 2026 is the Labor Day market holiday. The fixed trial uses September 8, 9, 10, 11 and 14 as its five future sessions.",
+    "payload_hash": "09861e685076d65c18056f10cdf7aadcce70c3e27b3888eb76e34a8ed28fb3ff"
+  }
+]

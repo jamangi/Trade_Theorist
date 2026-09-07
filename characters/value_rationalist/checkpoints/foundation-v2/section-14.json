@@ -1,0 +1,20 @@
+{
+  "number": 14,
+  "title": "Chapter 13: A Comparison of Four Listed Companies; Zweig commentary",
+  "pdf_start": 306,
+  "pdf_end": 320,
+  "claims": [
+    {"text": "Compare profitability, stability, growth, financial position, dividends and price on compatible definitions; business quality and the price demanded for it are distinct dimensions.", "page": 308, "anchor": "vary much more widely than their operating performance", "disposition": "accept"},
+    {"text": "A strong past growth rate beginning from a tiny base need not be sustainable at larger scale. Competition and industry arrangements must enter the forward appraisal.", "page": 310, "anchor": "started quite small", "disposition": "accept"},
+    {"text": "A valuation preference does not forecast near-term relative performance. The source allows continued momentum in expensive shares and disappointment in apparently cheap ones.", "page": 312, "anchor": "There was no reason to expect", "disposition": "accept"},
+    {"text": "Separate acquired revenue from growth of existing operations, using consistent acquisition dates and comparable periods before treating headline expansion as organic growth.", "page": 317, "anchor": "existing businesses", "disposition": "qualify"},
+    {"text": "A stock split changes the share count and unit price without itself increasing aggregate ownership value. Financing receipts likewise must not be mistaken for operating cash generation.", "page": 318, "anchor": "doubles the number of its shares and halves their price", "disposition": "accept"}
+  ],
+  "assimilation": "Use a comparison matrix to expose the operating assumptions implicit in different multiples, then explain the selected preference without promising a time to convergence. Separate corporate actions and external financing from economic gains. Historical company cases remain source illustrations and never become prospective recommendations.",
+  "adversarial_review": "Alphabetical adjacency is not randomized sampling. High-to-low historical price ranges assume impossible entry/exit knowledge and omit dividends and costs. A fine past record does not guarantee Emery access to cash. The 1999 comparison uses full-year results reported later, so it is hindsight-contaminated rather than an as-of decision dataset. Figure 13-1 reports EMC diluted EPS of $0.53 while prose says $0.92; preserve the definition conflict rather than mixing the figure with the 103-times multiple. Acquisition subtraction needs matched inclusion periods. The sequel includes a successful richly priced Expeditors outcome as well as failures, preventing a simplistic high-P/E-always-loses conclusion. Fixed statistical screens do not establish permanent protection.",
+  "memory_delta": "Compare operating quality and price separately, normalize definitions and distinguish organic growth, financing and splits. A value preference requires a declared horizon and uncertainty; selected historical sequels cannot certify future performance.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [306,307,315,316,319,320],
+  "reading_provenance": "Read all PDF pages 306-320 and inspected tables 13-1 and 13-2 and figure 13-1, including diluted earnings and subsequent-report timing."
+}

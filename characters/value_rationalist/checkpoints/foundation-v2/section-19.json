@@ -1,0 +1,21 @@
+{
+  "number": 19,
+  "title": "Chapter 18: A Comparison of Eight Pairs of Companies; Zweig commentary",
+  "pdf_start": 412,
+  "pdf_end": 447,
+  "claims": [
+    {"text": "The selected comparisons illustrate valuation questions, not an unbiased test of a stock-selection strategy. Preserve the deliberate selection of cases when using their outcomes.", "page": 432, "anchor": "malice aforethought", "disposition": "qualify"},
+    {"text": "A strong business can be too expensive and a low-priced business too weak; comparing two stocks does not require buying either.", "page": 423, "anchor": "earnings", "disposition": "accept"},
+    {"text": "Normalize unusually favorable conditions before capitalizing earnings, including profits supported by temporary military demand.", "page": 428, "anchor": "war work", "disposition": "accept"},
+    {"text": "Low valuation does not prevent large interim drawdowns. Position sizing and liquidity must survive adverse prices while the underlying thesis is rechecked.", "page": 433, "anchor": "large declines", "disposition": "accept"},
+    {"text": "Distinguish accounting growth financed with richly valued shares from durable cash generation; acquisition currency can create a reinforcing price and deal cycle.", "page": 442, "anchor": "money merry-go-round", "disposition": "qualify"},
+    {"text": "Reject the categorical prediction that buying on rising prices must always end in regret. Selected hindsight examples do not establish that every price-based strategy fails.", "page": 447, "anchor": "It is a certainty", "disposition": "reject"}
+  ],
+  "assimilation": "Compare complete claims, earnings quality, capital requirements and price without forcing a trade between arbitrary peers. Preserve successful expensive businesses and unsuccessful cheap ones as counterevidence. Treat anticipated spin-off distributions and takeover values as contingent claims with execution and financing constraints.",
+  "adversarial_review": "The cases were chosen after results and mix industries, fiscal years, calendar-year returns and different investment horizons. Ball's July 25 earnings disclosure cannot support a July 23 decision. Table 18-1A's 1960 no-dividend entry conflicts with the claimed uninterrupted record; the Air Reduction profitability sentence conflicts with its table. Table 18-4's printed net income, share count and EPS do not reconcile. Cisco's stated decade gain does not imply the stated 217% annual growth. Quarantine these figures instead of silently repairing them. Table 18-10 explicitly uses prices unadjusted for splits; do not compute investment returns from it. Higher revenue need not proportionately deepen losses when margins and fixed costs change. A Palm/3Com apparent arbitrage requires distribution certainty, borrowing availability and financing costs; later prices alone do not demonstrate executable profit. Index inclusion does not guarantee a price rise. Growth and value are neither permanent winners nor mutually exclusive quality categories.",
+  "memory_delta": "Require both business resilience and price discipline, allow neither-candidate decisions, normalize temporary profits, include dilution and contingent claims, and plan for interim drawdowns. Selected comparisons teach questions, not calibrated return probabilities or universal failure of other strategies.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [414,415,417,419,421,423,425,428,430,431,433,434,438,439,442,447],
+  "reading_provenance": "Read all PDF pages 412-447 and inspected tables 18-1 through 18-10 and commentary figures 18-1 through 18-4."
+}

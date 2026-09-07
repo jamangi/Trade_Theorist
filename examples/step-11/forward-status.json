@@ -1,0 +1,33 @@
+{
+  "status": "in_progress",
+  "manifest_id": "forward:step11-20260907",
+  "manifest_hash": "7329f2a3c468ff419014250997a90fa20fe0c0938b2a40727d268520d9dc2b8a",
+  "as_of": "2026-09-07T10:34:36.472111Z",
+  "elapsed_sessions": 0,
+  "completed_real_sessions": 0,
+  "matured_forecasts": 0,
+  "immature_forecasts": 1,
+  "unscorable_forecasts": 0,
+  "broker_orders": 0,
+  "external_model_calls": 0,
+  "promotion_eligible": false,
+  "evidence_grade": "forward-insufficient",
+  "review_at": "2026-09-15T00:20:01Z",
+  "stop_at": "2026-09-15T22:00:00Z",
+  "limitations": [
+    "One preregistered five-session trial; not the 60-session/30-forecast paper-review evidence floor.",
+    "Deterministic foundation-informed rules, not new model deliberation or validated skill. Council equals its fixed lead rule; no advice alpha inference.",
+    "Daily-close simulated fills applied after receipt to precommitted orders; these are not contemporaneously available live fills.",
+    "Provider does not guarantee timely corporate-action creation. Terminal pagination does not certify absence; total-return vintages remain provisional.",
+    "Unknown local operating and one-time authoring costs keep full economics net unavailable. No unattended continuation."
+  ],
+  "round_status": "decided",
+  "round_reason": "none",
+  "snapshot_hash": "3be8509e4ab989c063f01ada33e1560f11dfd228ac6d02d6062bb64be24ca72b",
+  "initial_market_requests": 1,
+  "participant_count": 4,
+  "eligible_foundations": 3,
+  "private_report_hash": "42f562929aa5913c701d6c77c5f6ee44b2d21c9475646de66ead48c873cfb9fb",
+  "source_gaps": 0,
+  "automatic_continuation": false
+}

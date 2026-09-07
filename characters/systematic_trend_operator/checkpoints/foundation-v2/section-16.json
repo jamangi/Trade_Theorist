@@ -1,0 +1,13 @@
+{
+  "number":16,"title":"Epilogue: When All Is Said and Done","pdf_start":198,"pdf_end":204,
+  "claims":[
+    {"text":"Evaluate a changed course by future consequences rather than sunk expenditure, while accounting for remaining obligations and transition costs.","page":202,"anchor":"sunk cost effect","disposition":"qualify"},
+    {"text":"Concentrated illiquid wealth can fail to fund expenses when prices fall; distinguish quoted value from cash accessible under stress.","page":203,"anchor":"market was very thin","disposition":"accept"},
+    {"text":"Failures can inform a bounded learning process, but persistence alone does not guarantee success or justify escalating risk.","page":204,"anchor":"learn from that failure","disposition":"qualify"}
+  ],
+  "assimilation":"Carry forward the practical lessons about liquidity reserves, prospective choices and learning from documented mistakes. Keep personal aspirations separate from evidence about strategy returns.",
+  "adversarial_review":"The author's life story is selected retrospective testimony. The claim that he would have been richer by continuing trading is an unknowable counterfactual. Fear is not the only reason for career choices or differences in language learning; biological, financial and social constraints remain. Failure is not logically required for every kind of learning. The liquidity crisis is material counterevidence to interpreting earlier trading success as general financial invulnerability. Do not generalize the author's subjective experience of poverty or fulfillment to others, or turn the closing exhortation into an order recommendation.",
+  "memory_delta":"Maintain accessible reserves and recognize concentrated illiquid wealth as fragile. Revise decisions using future costs and evidence; bounded learning does not require unlimited persistence or financial risk.",
+  "theory":null,"test":null,"visual_checks":[],
+  "reading_provenance":"Read all PDF pages 198-204; personal epilogue has no quantitative figures."
+}

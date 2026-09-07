@@ -1,0 +1,21 @@
+{
+  "number": 27,
+  "title": "Appended notes, third sequence",
+  "pdf_start": 631,
+  "pdf_end": 646,
+  "claims": [
+    {"text": "The number of dividend-paying companies can fall while aggregate real dividends rise. Identify the denominator and composition before drawing conclusions from a payout trend.", "page": 631, "anchor": "total dollar amount of dividends", "disposition": "accept"},
+    {"text": "Acquisition outcomes vary by target type and consideration. The cited positive results for private-company and subsidiary purchases contradict categorical condemnation of acquisitions.", "page": 631, "anchor": "positive stock returns", "disposition": "accept"},
+    {"text": "Earnings yield is earnings divided by price, while earning power per share is a currency amount estimated from sustainable operations. An inverse P/E does not by itself estimate per-share earning power.", "page": 636, "anchor": "inverse of its price/earnings ratio", "disposition": "qualify"},
+    {"text": "Reject the claim that the worst company must be worth buying at some sufficiently low positive stock price. Residual equity can be worth zero and some claims can carry further obligations.", "page": 637, "anchor": "worst company is worth buying", "disposition": "reject"},
+    {"text": "Historical index evidence may exclude failed companies and periods when a retail index investment was unavailable. Preserve survivorship and implementation limits.", "page": 638, "anchor": "survivorship bias", "disposition": "accept"},
+    {"text": "Dividends materially change long-horizon results, but comparisons must also account for distributed cash rather than treating spent dividends as a nonexistent return.", "page": 641, "anchor": "spent all your dividends", "disposition": "qualify"},
+    {"text": "Commission alone is an incomplete measure of trading friction; spreads, impact and execution shortfall can remain substantial.", "page": 646, "anchor": "brokerage costs are invisible", "disposition": "accept"}
+  ],
+  "assimilation": "Keep denominators, currency units, total returns and accessible investment vehicles explicit. Follow the notes' counterevidence, including Graham's inflation error and the mixed results of acquisitions, without turning either successes or failures into universal laws.",
+  "adversarial_review": "The corporate-dividend tax example on page 639 contradicts its own 70% deduction and 35% rate: the printed 24.50 tax is not their arithmetic consequence. Quarantine it along with all obsolete tax parameters. Gold-mining equities are not equivalent to bullion, a small position can still reduce returns, and suggested age-based percentages are unvalidated here. General bond-versus-municipal volatility claims require matched duration and credit. A changing dividend policy need not cause the profitability differences of firms selecting it. The note's statement that high interest rates reduce present value assumes a fixed cash-flow projection and appropriate discount rate. Broad claims of guaranteed survival or permanent superiority remain unsupported. The index example's pre-1976 implementation gap is explicitly admitted on page 643; it remains a hypothetical historical illustration.",
+  "memory_delta": "Use the correct denominators and total-return boundaries, acknowledge unavailable vehicles and missing firms, and retain changes in regime. A low price cannot rescue zero residual value, and correlation of payout or acquisition type with outcomes is not a universal causal rule.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read all PDF pages 631-646."
+}

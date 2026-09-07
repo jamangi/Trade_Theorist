@@ -69,6 +69,9 @@
       "$ref": "#/$defs/performance_result"
     },
     {
+      "$ref": "#/$defs/forward_audit"
+    },
+    {
       "$ref": "#/$defs/forward_manifest"
     },
     {
@@ -82,6 +85,9 @@
     },
     {
       "$ref": "#/$defs/forward_result"
+    },
+    {
+      "$ref": "#/$defs/forward_opinion"
     },
     {
       "$ref": "#/$defs/ledger_event"
@@ -4445,6 +4451,110 @@
       ],
       "additionalProperties": false
     },
+    "forward_audit": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_audit"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "manifest_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "purpose": {
+          "enum": [
+            "request",
+            "allocations",
+            "settled",
+            "observation_attempt"
+          ]
+        },
+        "payload_json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "manifest_ref",
+        "snapshot_ref",
+        "purpose",
+        "payload_json",
+        "payload_hash"
+      ],
+      "additionalProperties": false
+    },
     "forward_manifest": {
       "type": "object",
       "properties": {
@@ -4976,10 +5086,516 @@
           "const": false
         },
         "evidence_grade": {
-          "const": "fixture"
+          "enum": [
+            "fixture",
+            "forward-insufficient"
+          ]
         },
         "promotion_eligible": {
           "const": false
+        },
+        "real_context": {
+          "type": "object",
+          "properties": {
+            "readiness_register_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "ancestry": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "local_character_ref": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "character_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "eligible_version_id": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "eligible_version_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "learning_version_id": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "learning_version_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "knowledge_id": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "knowledge_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "constitution_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "curriculum_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "foundation_completed_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  }
+                },
+                "required": [
+                  "local_character_ref",
+                  "character_id",
+                  "eligible_version_id",
+                  "eligible_version_hash",
+                  "learning_version_id",
+                  "learning_version_hash",
+                  "knowledge_id",
+                  "knowledge_hash",
+                  "constitution_hash",
+                  "curriculum_hash",
+                  "foundation_completed_at"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 3,
+              "uniqueItems": true
+            },
+            "bars_qualification_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "actions_qualification_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "action_receipts_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "runtime_id": {
+              "const": "foundation-rules-v1"
+            },
+            "runtime_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "information_tools": {
+              "const": []
+            },
+            "public_facts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source_id": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                  },
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "published_at": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time",
+                        "pattern": "Z$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "ingested_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  },
+                  "availability_evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "payload_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                },
+                "required": [
+                  "source_id",
+                  "url",
+                  "published_at",
+                  "ingested_at",
+                  "availability_evidence",
+                  "text",
+                  "payload_hash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "advice_policy": {
+              "const": "independent-initials-then-three-bounded-messages-index-leads"
+            },
+            "calendar": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "session": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "open_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  },
+                  "close_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  }
+                },
+                "required": [
+                  "session",
+                  "open_at",
+                  "close_at"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "forecast": {
+              "type": "object",
+              "properties": {
+                "horizon_sessions": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "resolves_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "event": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "probability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "horizon_sessions",
+                "resolves_at",
+                "event",
+                "probability"
+              ],
+              "additionalProperties": false
+            },
+            "order_expiry": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "allocation_fraction": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+            },
+            "observation_policy": {
+              "type": "object",
+              "properties": {
+                "review_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "max_total_attempts": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "queries": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "schema_version": {
+                            "const": 1
+                          },
+                          "record_type": {
+                            "const": "market_query"
+                          },
+                          "provider": {
+                            "const": "alpaca"
+                          },
+                          "endpoint": {
+                            "const": "stock_bars"
+                          },
+                          "sharing_scope": {
+                            "type": "string",
+                            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                          },
+                          "rights_ref": {
+                            "type": "string",
+                            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                          },
+                          "feed": {
+                            "enum": [
+                              "iex",
+                              "sip"
+                            ]
+                          },
+                          "symbols": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                          },
+                          "timeframe": {
+                            "const": "1Day"
+                          },
+                          "start": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "end": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "adjustment": {
+                            "enum": [
+                              "raw",
+                              "split",
+                              "dividend",
+                              "all"
+                            ]
+                          },
+                          "asof": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "date",
+                                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "revision_policy": {
+                            "type": "string",
+                            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                          },
+                          "freshness_after": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "information_cutoff": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "expected_sessions": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "format": "date"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                          },
+                          "page_limit": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 10000
+                          }
+                        },
+                        "required": [
+                          "schema_version",
+                          "record_type",
+                          "provider",
+                          "endpoint",
+                          "sharing_scope",
+                          "rights_ref",
+                          "feed",
+                          "symbols",
+                          "timeframe",
+                          "start",
+                          "end",
+                          "adjustment",
+                          "asof",
+                          "revision_policy",
+                          "freshness_after",
+                          "information_cutoff",
+                          "expected_sessions",
+                          "page_limit"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "schema_version": {
+                            "const": 1
+                          },
+                          "record_type": {
+                            "const": "market_query"
+                          },
+                          "provider": {
+                            "const": "alpaca"
+                          },
+                          "endpoint": {
+                            "const": "corporate_actions"
+                          },
+                          "sharing_scope": {
+                            "type": "string",
+                            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                          },
+                          "rights_ref": {
+                            "type": "string",
+                            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                          },
+                          "symbols": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                          },
+                          "start": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "end": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "revision_policy": {
+                            "type": "string",
+                            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                          },
+                          "freshness_after": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "information_cutoff": {
+                            "type": "string",
+                            "format": "date-time",
+                            "pattern": "Z$"
+                          },
+                          "data_quality": {
+                            "const": "all"
+                          },
+                          "region": {
+                            "const": "us"
+                          },
+                          "page_limit": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1000
+                          }
+                        },
+                        "required": [
+                          "schema_version",
+                          "record_type",
+                          "provider",
+                          "endpoint",
+                          "sharing_scope",
+                          "rights_ref",
+                          "symbols",
+                          "start",
+                          "end",
+                          "revision_policy",
+                          "freshness_after",
+                          "information_cutoff",
+                          "data_quality",
+                          "region",
+                          "page_limit"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "minItems": 2,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "review_at",
+                "max_total_attempts",
+                "queries"
+              ],
+              "additionalProperties": false
+            },
+            "trend_lookback": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "operating_cost_policy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "external_flow_policy": {
+              "const": "initial-funding-only"
+            },
+            "trial_variant": {
+              "const": "one-fixed-policy-no-tuning"
+            }
+          },
+          "required": [
+            "readiness_register_hash",
+            "ancestry",
+            "bars_qualification_hash",
+            "actions_qualification_hash",
+            "action_receipts_hash",
+            "runtime_id",
+            "runtime_hash",
+            "information_tools",
+            "public_facts",
+            "advice_policy",
+            "calendar",
+            "forecast",
+            "order_expiry",
+            "allocation_fraction",
+            "observation_policy",
+            "trend_lookback",
+            "operating_cost_policy",
+            "external_flow_policy",
+            "trial_variant"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
@@ -5975,7 +6591,10 @@
           "const": "private-owner-v2"
         },
         "evidence_grade": {
-          "const": "fixture"
+          "enum": [
+            "fixture",
+            "forward-insufficient"
+          ]
         },
         "promotion_eligible": {
           "const": false
@@ -6007,6 +6626,184 @@
         "evidence_grade",
         "promotion_eligible",
         "broker_orders"
+      ],
+      "additionalProperties": false
+    },
+    "forward_opinion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_opinion"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "manifest_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "portfolio_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "character_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "knowledge_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "knowledge_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "phase": {
+          "enum": [
+            "independent",
+            "council"
+          ]
+        },
+        "action": {
+          "enum": [
+            "buy",
+            "sell",
+            "hold",
+            "abstain"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "request_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "advice_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "allocation_fraction": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,8})?$"
+        },
+        "forecast_probability": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "forecast_resolves_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "model_calls": {
+          "const": 0
+        },
+        "runtime_id": {
+          "const": "foundation-rules-v1"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "manifest_ref",
+        "snapshot_ref",
+        "snapshot_hash",
+        "portfolio_ref",
+        "character_ref",
+        "knowledge_id",
+        "knowledge_hash",
+        "phase",
+        "action",
+        "rationale",
+        "request_hash",
+        "advice_refs",
+        "allocation_fraction",
+        "forecast_probability",
+        "forecast_resolves_at",
+        "model_calls",
+        "runtime_id"
       ],
       "additionalProperties": false
     },

@@ -1,0 +1,21 @@
+{
+  "number": 16,
+  "title": "Chapter 15: Stock Selection for the Enterprising Investor; Zweig commentary",
+  "pdf_start": 346,
+  "pdf_end": 371,
+  "claims": [
+    {"text": "Skill, effort and access to analysts do not make excess returns easy. A proposed selection advantage needs evidence against an appropriate broad baseline after costs.", "page": 347, "anchor": "in fact extremely difficult", "disposition": "accept"},
+    {"text": "Record outcomes by strategy class, including discontinued approaches; evaluate dependable net results and operational burden instead of retaining only successes.", "page": 350, "anchor": "We kept close track of the results", "disposition": "accept"},
+    {"text": "Retain evidence contrary to the preferred value thesis. The source acknowledges that its expensive goodwill-giant group outperformed in the selected interval.", "page": 357, "anchor": "must not be ignored", "disposition": "accept"},
+    {"text": "A merger spread or liquidation discount has failure, renegotiation and delay risk. Completion probability alone is insufficient; expected downside and capital tied up also matter.", "page": 361, "anchor": "risks of nonconsummation and to the time element", "disposition": "accept"},
+    {"text": "Practice with a complete prospective decision ledger and a matched baseline before treating a technique as investable. Retaining losing choices prevents selective memory, but one good year is not sufficient proof of durable skill.", "page": 364, "anchor": "tracking the outcome of all your stock picks", "disposition": "qualify"},
+    {"text": "Reject the implication that diversified net-current-asset purchases avoid serious risk merely through patience. Recoverable assets, losses during the wait, liquidity and common shocks can defeat the thesis.", "page": 360, "anchor": "without taking a serious risk", "disposition": "reject"}
+  ],
+  "assimilation": "Make the full trial ledger central to learning: initial selection, rejected opportunities, failed deals, costs and outcomes all remain visible. Test value hypotheses against a consistent baseline while preserving contrary evidence. A historical valuation technique is a research candidate, not automatic trading authority; workouts, hedges and individual stocks remain outside this VTI pilot.",
+  "adversarial_review": "The random-stock comparison excludes 19 vanished names, uses first-line selection and one-share weighting, and shifts reference dates; it is not a survivorship-free randomized total-return experiment. Multiple screens were examined on one short interval without a holdout. The source excludes 1930-1932 when praising net-net experience, which must remain visible. A 47% noncompounded annual return is not CAGR. The failed Kayser-Roth deal and revised Aurora terms contradict any risk-free interpretation of spreads. A 20% successful-deal yield and 80% completion estimate do not determine expected return without failure severity. ROIC definitions and maintenance-capex estimates need reconciliation, and acquisition comparables include control/synergy and cycle effects. A one-year shadow success cannot demonstrate durable alpha or replicate real execution/emotional costs.",
+  "memory_delta": "Keep all strategy outcomes and contrary evidence, normalize benchmark weighting and returns, and model failure severity as well as probability. Prospective shadow practice is necessary evidence collection; it does not become proof of skill merely because a short sample succeeds.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [355,359,367],
+  "reading_provenance": "Read every PDF page 346-371, including the ROIC and Buffett sidebars, and inspected tables 15-1 and 15-2."
+}

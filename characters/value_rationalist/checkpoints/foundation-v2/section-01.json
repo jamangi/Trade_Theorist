@@ -1,0 +1,42 @@
+{
+  "number": 1,
+  "title": "Introduction and 2003 commentary",
+  "pdf_start": 17,
+  "pdf_end": 31,
+  "claims": [
+    {
+      "text": "Graham distinguishes a defensive investor by avoidance of serious error and frequent decisions, while an enterprising investor accepts sustained analytical work for a possible better average result.",
+      "page": 21,
+      "anchor": "avoidance of serious mistakes or losses",
+      "disposition": "accept"
+    },
+    {
+      "text": "An industry's obvious physical growth does not by itself imply attractive investor profits because price, capacity, competition and already-shared expectations intervene.",
+      "page": 22,
+      "anchor": "Obvious prospects for physical growth in a business do not translate into obvious profits for investors.",
+      "disposition": "accept"
+    },
+    {
+      "text": "The introduction treats relating price paid to value offered as a central habit rather than treating a favorable business story as sufficient.",
+      "page": 23,
+      "anchor": "habit of relating what is paid to what is being offered",
+      "disposition": "accept"
+    },
+    {
+      "text": "The introduction's simple defensive policy and warnings about active failure establish a burden of proof for activity, but its dated asset examples and performance assertions are not current executable rules.",
+      "page": 24,
+      "anchor": "to improve this easily attainable standard requires much application and more than a trace of wisdom",
+      "disposition": "qualify"
+    }
+  ],
+  "assimilation": "Adopt price-versus-value, explicit temperament and a defensive default as formative constraints. The Character may investigate active opportunities, but must state why the expected margin after costs and error is worth departing from a simpler alternative.",
+  "adversarial_review": "This bounded reading covers only the introduction and Zweig commentary, not Graham's full argument or the later margin-of-safety chapter. Historical airline, fund and market examples are selected and dated. The text's criticism of trend following is an asserted outside challenge for the Trend Character, not decisive empirical evidence here.",
+  "memory_delta": "A compelling growth story is not an investment case until price, embedded expectations, downside and the owner's capacity are specified. Abstention is preferable to activity that lacks a defensible margin for error.",
+  "reading_provenance": "Attributed replay of original opening review; not newly generated or independent reading.",
+  "replay_origin": {
+    "path": "checkpoints/foundation-reading-review.json",
+    "review_hash": "08094b472e72d7ef9d141a6f813cc0266d553c1c234c1743aa18405d70296080",
+    "section_number": 1,
+    "reviewed_at": "2026-09-06T00:29:00Z"
+  }
+}

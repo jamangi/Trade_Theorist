@@ -1,0 +1,22 @@
+{
+  "number": 23,
+  "title": "Appendices 1-7: investor records, dated taxation, valuation, and accounting cases",
+  "pdf_start": 488,
+  "pdf_end": 525,
+  "claims": [
+    {"text": "Investigating a cluster of successful managers requires prior identification, the complete eligible population and independence analysis; a shared intellectual origin is a hypothesis, not itself a proof of skill.", "page": 489, "anchor": "pre-identified", "disposition": "qualify"},
+    {"text": "Different holdings do not establish statistically independent investment outcomes. Shared exposures, selection, costs, capacity and differing reporting periods still require analysis.", "page": 494, "anchor": "overlap among these portfolios", "disposition": "qualify"},
+    {"text": "Reject the inference that a large appraised discount and several holdings create essentially no risk. Value realization, governance and appraisal remain uncertain.", "page": 498, "anchor": "essentially no risk", "disposition": "reject"},
+    {"text": "The tax appendices are dated historical material; neither the 1972 rules nor the update labeled 2003 can be used as current tax instructions.", "page": 508, "anchor": "historical purposes only", "disposition": "qualify"},
+    {"text": "Precise valuation formulas can conceal highly uncertain growth and terminal assumptions. Audit the inputs and sensitivity rather than equating mathematical precision with dependable value.", "page": 512, "anchor": "highly imprecise assumptions", "disposition": "accept"},
+    {"text": "Acquisition consideration must reconcile bonds at market value, warrants, tax deductions and accounting credits; reported accretion can differ from economic value creation.", "page": 524, "anchor": "amortization of the huge bond discount", "disposition": "accept"},
+    {"text": "Reject assuming the unobserved or delisted members of a name-selected technology sample necessarily performed worse. Missing outcomes require investigation and cannot be assigned a convenient loss.", "page": 525, "anchor": "virtually certain", "disposition": "reject"}
+  ],
+  "assimilation": "Use the manager records as historically attributed evidence worth examining, with separate gross/limited-partner returns, actual intervals, reinvested distributions and comparison universes. A successful method still needs a prospective test for this Character. Retain flexible business valuation while excluding obsolete tax parameters from executable policy.",
+  "adversarial_review": "Buffett's asserted prior selection and audits are source claims, not independently verified registry evidence here. Low stock overlap does not eliminate common value exposure or dependence; one of four original employees is untraced. The tables include severe 1973-74 losses for Munger and Pacific Partners, qualifying the assertion of uniformly low risk. Sequoia's gross return adds an approximate annual fee, while other tables show partner allocations; pension records mix bonds and equities and use differing survey universes. Partial years and dividend conventions differ. Price declines do not mechanically increase beta. The dollar-bill analogy assumes the very value certainty an appraisal must establish. The IBM missed opportunity qualifies rigid tangible-asset screening. Reject categorical dismissal of calculus: model assumptions and evidence determine reliability. Higher earnings multipliers need not imply a squared-earnings valuation unless a particular functional relation is assumed. An extreme IPO failure and company-name prefix sample cannot establish a general probability of technology losses. Do not import the historical public-offering, tax or accounting rules as current law.",
+  "memory_delta": "Demand complete prior selection, comparable net returns, dependence analysis and accessible execution before attributing skill. Inspect valuation sensitivity and full acquisition consideration. Preserve counterexamples to rigid book-value rules, exclude dated tax rules from operations, and leave missing outcomes unknown.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [499,500,501,502,503,504,505,506,507,522,523,525],
+  "reading_provenance": "Read all PDF pages 488-525; visually inspected all nine Superinvestors tables, including rotated pension and Perlmeter tables, and the Aetna and technology sample tables."
+}

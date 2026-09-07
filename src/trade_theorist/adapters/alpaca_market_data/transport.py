@@ -9,6 +9,7 @@ import time
 from urllib.parse import urlencode
 
 from . import AlpacaError, AlpacaBarsAdapter, Response
+from .actions import URL as ACTION_URL
 
 
 class SingleAttemptTransport:
@@ -26,14 +27,15 @@ class SingleAttemptTransport:
         return deepcopy(list(self._attempts))
 
     def __call__(self, method, url, params):
-        if method != "GET" or url != AlpacaBarsAdapter.BASE_URL:
-            raise AlpacaError("Transport only permits the pinned historical bars endpoint")
+        paths = {AlpacaBarsAdapter.BASE_URL: '/v2/stocks/bars', ACTION_URL: '/v1/corporate-actions'}
+        if method != "GET" or url not in paths:
+            raise AlpacaError("Transport only permits pinned bars and corporate-action read endpoints")
         connection = HTTPSConnection("data.alpaca.markets", timeout=self.timeout)
         attempt = dict(started_monotonic=time.monotonic(), completed_monotonic=None,
                        http_status=None, rate_headers={})
         self._attempts.append(attempt)
         try:
-            connection.request("GET", "/v2/stocks/bars?" + urlencode(params), headers=self._headers)
+            connection.request("GET", paths[url] + '?' + urlencode(params), headers=self._headers)
             result = connection.getresponse()
             attempt["http_status"] = result.status
             headers = dict(result.getheaders())

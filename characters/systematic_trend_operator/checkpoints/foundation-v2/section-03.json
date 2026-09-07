@@ -1,0 +1,20 @@
+{
+  "number": 3,
+  "title": "Chapter 2: Taming the Turtle Mind",
+  "pdf_start": 33,
+  "pdf_end": 43,
+  "claims": [
+    {"text": "Loss aversion, sunk costs, anchoring, recency and outcome bias can interfere with a predeclared trading process. Record decisions using information available at the time and review rule adherence separately from outcomes.", "page": 37, "anchor": "quality of the decision", "disposition": "accept"},
+    {"text": "A short winning or losing sequence is weak evidence of durable strategy quality. Evaluate sample size and dependence before changing confidence.", "page": 38, "anchor": "law of small numbers", "disposition": "accept"},
+    {"text": "Trend strategies can have many small losses and give back open profits at reversals; capital and position sizing must accommodate both drawdown depth and duration.", "page": 40, "anchor": "both their length", "disposition": "accept"},
+    {"text": "Market state descriptions require observable definitions and can overlap or change. Do not label a regime using its future path or assume a currently favorable state will persist.", "page": 43, "anchor": "vary over time", "disposition": "qualify"},
+    {"text": "Reject the assertion that mastering emotions is sufficient to succeed or that behavioral biases ensure the Turtle approach continues to work. Net positive expectancy must be established for the actual rules and market.", "page": 34, "anchor": "works and continues to work", "disposition": "reject"}
+  ],
+  "assimilation": "Treat behavioral controls as safeguards for executing a tested system. Admit alternative strategy types and distinguish their horizons and exposure. Maintain an explicit process for reassessing invalid rules so consistency does not become stubborn adherence to a broken model.",
+  "adversarial_review": "A missed hypothetical gain and an actual cash loss are not identical wealth changes absent a specified counterfactual. Risk preferences need not be irrational merely because losses are painful. The two-to-one psychological comparison is not a universal calibration parameter. Recency can be informative under regime change; a long sample may also be unrepresentative. Drawdown approximately equal to annual return is a heuristic, not a risk bound. High volatility does not automatically create profitable swing opportunities after costs. A claim to avoid prediction still embeds an expectation about future conditional payoffs. Scalping and cross-market arbitrage require fill, contract-equivalence and leg-risk analysis.",
+  "memory_delta": "Audit rule adherence, beware biased confidence updates, and expect losing clusters and profit giveback. Define regimes without future data. Discipline and behavioral stories support execution but cannot establish an edge or guarantee survival.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [42],
+  "reading_provenance": "Read all PDF pages 33-43 and inspected the four-market-states figure before import."
+}

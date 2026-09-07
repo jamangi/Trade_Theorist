@@ -1,0 +1,21 @@
+{
+  "number": 7,
+  "title": "Chapter 6: Enterprising Policy, Negative Approach; Zweig commentary",
+  "pdf_start": 135,
+  "pdf_end": 153,
+  "claims": [
+    {"text": "An enterprising investor starts with the same sound base as a defensive investor and needs a reasoned, competence-matched justification for each departure; additional activity is not an obligation.", "page": 135, "anchor": "well-reasoned justification", "disposition": "accept"},
+    {"text": "Buying a weak senior security merely for extra income can expose principal to losses disproportionate to the yield increment. Price, earnings coverage, recovery value and diversification determine whether taking that credit risk has a defensible reward.", "page": 138, "anchor": "loss of a substantial part of his principal", "disposition": "accept"},
+    {"text": "New offerings require scrutiny of seller incentives and a sufficiently long business record; a favorable issuance market can be favorable to the issuer rather than the purchaser.", "page": 140, "anchor": "favorable for the seller", "disposition": "accept"},
+    {"text": "Trading costs include adverse execution and market impact as well as visible commissions. The cited broker-account study illustrates a gap between gross and net returns, but does not establish that every active strategy must lose.", "page": 149, "anchor": "after trading costs", "disposition": "qualify"},
+    {"text": "IPO performance measured from an underwriting allocation cannot be assumed available to someone buying later in public trading; allocation access, capacity and the actual entry price are necessary parts of the experiment.", "page": 151, "anchor": "before the stock begins public trading", "disposition": "accept"},
+    {"text": "Do not treat the commentary's proposed high-yield-fund hedge for a financial-sector employee as established protection. Joint credit, rates and employment stress must be measured before describing it as a counterweight.", "page": 146, "anchor": "counterweight in your 401(k)", "disposition": "reject"}
+  ],
+  "assimilation": "Make rejection of an inadequately supported opportunity a constructive part of the research process. For a security with contractual seniority, inspect issuer coverage and the price-dependent loss/recovery distribution rather than calling its coupon safe income. For any historical strategy claim, bind accessible entry prices and net execution assumptions before comparing returns. None of the broader instruments discussed expands the VTI-only pilot.",
+  "adversarial_review": "The source's default histories, foreign-bond generalizations and IPO cases are selected and dated; they motivate diligence rather than universal exclusion laws. A 30% discount to par is not itself margin of safety when recovery value is lower. Diversifying a high-yield fund reduces name concentration but need not hedge a recession or employment shock. The brokerage study's activity groups are observational and differ from a preregistered strategy; categorical claims that all short-horizon participants are doomed exceed the displayed evidence. Source tax rates and transaction-cost percentages are not current policy inputs.",
+  "memory_delta": "Require an explicit advantage for departures from the sound base; evaluate credit reward relative to recovery risk, inspect issuance incentives, and use prices actually accessible to the experiment. Keep market impact and adverse selection visible without converting selected failures into a universal ban on testing.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [151, 153],
+  "reading_provenance": "Read all PDF pages 135-153 and inspected figures 6-1 and 6-2, distinguishing underwriting price, public price and before/after-cost returns."
+}

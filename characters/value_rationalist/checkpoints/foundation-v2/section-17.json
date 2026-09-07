@@ -1,0 +1,21 @@
+{
+  "number": 17,
+  "title": "Chapter 16: Convertible Issues and Warrants; Zweig commentary",
+  "pdf_start": 372,
+  "pdf_end": 390,
+  "claims": [
+    {"text": "A convertible exchanges some yield or other terms for an equity option. Its legal form alone determines neither attractiveness nor safety; evaluate the actual price, credit, conversion and call terms.", "page": 373, "anchor": "form itself guarantees neither attractiveness nor unattractiveness", "disposition": "accept"},
+    {"text": "After conversion the holder loses the senior claim and retains common-equity exposure. A call requires a deliberate decision using the actual contract and available sale/conversion values.", "page": 377, "anchor": "once you convert you have lost", "disposition": "qualify"},
+    {"text": "Acquisition-related convertibles and warrants can enlarge potential common claims even when reported EPS initially rises. Model the complete capital structure and exercise proceeds consistently.", "page": 379, "anchor": "actual dilution of the current and future earnings", "disposition": "accept"},
+    {"text": "Warrant exercise is ordinarily optional, so potential proceeds cannot be booked as assured future funding.", "page": 382, "anchor": "require the warrant-holders to exercise their rights", "disposition": "accept"},
+    {"text": "Reject categorical claims that warrants have no legitimate economic purpose. They transfer contingent rights whose value and dilution should be disclosed and priced; misleading packaging does not make every warrant fraudulent.", "page": 382, "anchor": "serve no purpose", "disposition": "reject"},
+    {"text": "Reject describing a covered call premium as a protective floor. The premium cushions loss and caps upside, but the underlying can still fall nearly to zero; suitability and expected results depend on price and terms.", "page": 390, "anchor": "floor under your losses", "disposition": "reject"}
+  ],
+  "assimilation": "Decompose hybrid securities into contractual cash flows, contingent equity rights, priority and costs before judging them. Separate economic dilution from headline accretion and distinguish optional financing from committed cash. Any such instruments remain outside the pilot; this learning strengthens risk and accounting review only.",
+  "adversarial_review": "The historical samples differ in credit, issue timing and index weighting, and report prices rather than complete total returns. The commentary documents structural changes and counterexamples to Graham's original generalizations. Never-convert is not a universal instruction when a call would otherwise extinguish valuable optionality; conversion versus sale requires terms and costs. Frictionless conversion parity is not a guarantee about every observed quote. A preferred at a different price need not always have less principal-loss risk than common. The suggestion that only the broker benefits from covered calls is unsupported; at $110 the printed $95 stock/$10 premium/$100 strike example yields $15 before costs, equal to the unhedged $15 gain at that endpoint. The downside remains $85 if the stock becomes worthless. Claimed fraud probabilities in the notes are rhetorical, not calibrated evidence. No dated market-size, legal or product claim is adopted as current.",
+  "memory_delta": "Inspect contractual payoffs and contingent share claims rather than trusting safety labels. Optional exercise is not guaranteed funding, and premium income is not a protective floor. Preserve changes in instrument structure when comparing historical evidence.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [373,374,375,380,383,389],
+  "reading_provenance": "Read all PDF pages 372-390, including embedded editorial notes and the covered-call sidebar, and inspected tables 16-1 through 16-4."
+}

@@ -1,0 +1,21 @@
+{
+  "number": 28,
+  "title": "Appended notes, final sequence",
+  "pdf_start": 647,
+  "pdf_end": 660,
+  "claims": [
+    {"text": "Value funds as well as growth funds can underperform after costs. Preserve both results rather than treating a value label as evidence of skill.", "page": 647, "anchor": "also underperformed", "disposition": "accept"},
+    {"text": "Multi-year earnings reduce dependence on a favorable single year but still require an assessment of structural change and sustainable profitability.", "page": 647, "anchor": "multiyear average", "disposition": "qualify"},
+    {"text": "Historical market-timing comparisons must include dividends, subscription fees, transaction costs and taxes consistently on both sides.", "page": 650, "anchor": "annual subscription fees", "disposition": "accept"},
+    {"text": "Reject treating book value, tangible book value and net asset value as universally interchangeable. Record the specific balance-sheet definition and intangible adjustments used.", "page": 652, "anchor": "all synonyms", "disposition": "reject"},
+    {"text": "A tax-loss illustration depends on its stated tax year, realized gains and dividend treatment; do not reuse its numbers outside those assumptions.", "page": 654, "anchor": "did not reinvest any Coke dividends", "disposition": "qualify"},
+    {"text": "Observed poor results after a manager leaves do not establish what the same fund would have earned had that manager stayed.", "page": 656, "anchor": "all we can be sure", "disposition": "accept"},
+    {"text": "Never infer that an industry's exciting prospects make it certain to outperform. Technology adoption, business profitability and investor returns are separate outcomes.", "page": 660, "anchor": "industry will outperform", "disposition": "accept"}
+  ],
+  "assimilation": "Close the foundation with a defensive process: audited definitions, conservative but revisable business estimates, costs, diversification and explicit uncertainty. Separate source observations from counterfactual claims and forecasts. The reading supplies hypotheses and error checks; it does not establish this Character's market performance.",
+  "adversarial_review": "A long sample is not sufficient by itself: structural change, selection and dependence can defeat a 50-year backtest. The suggested 35-year bubble cycle and vigilance around 2030 are speculative, not an executable calendar rule. A stable industry does not imply stable equity value under leverage or accounting surprises. Infinite-growth valuation depends on growth relative to discount rates, not growth alone. A fund closing to new money can manage capacity without guaranteeing maximal future returns. Historical legal restrictions and market access descriptions remain dated. A 20-year fund result cannot automatically be attributed to one manager without matching tenure. The inheritance argument about lower cost is not a sound general reason to keep falling shares; tax basis, estate treatment and the owner's needs must be separately established. The end of one restricted-stock marking abuse does not eliminate all valuation risk. Retain failed and vanished funds rather than silently assuming their returns.",
+  "memory_delta": "A style label is not skill. Require consistent dividends and full costs, explicit accounting definitions, dated tax assumptions and honest counterfactual limits. Discard bubble-calendar and guaranteed-survival rhetoric; treat the complete foundation as hindsight learning pending prospective evidence.",
+  "theory": null,
+  "test": null,
+  "reading_provenance": "Read all PDF pages 647-660, completing the supplied edition's appended notes."
+}

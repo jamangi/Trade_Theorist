@@ -1,0 +1,21 @@
+{
+  "number": 11,
+  "title": "Chapter 10: The Investor and His Advisers; Zweig commentary",
+  "pdf_start": 241,
+  "pdf_end": 262,
+  "claims": [
+    {"text": "Advice can earn its cost by preventing mistakes and supporting a suitable plan; paying for advice does not establish a right to excess returns or prove the adviser can deliver them.", "page": 241, "anchor": "protect his clients against mistakes", "disposition": "accept"},
+    {"text": "Evaluate recommendations in relation to current price and long-term earning power, rather than treating favorable near-term business prospects as a sufficient purchase signal.", "page": 244, "anchor": "regardless of the current price", "disposition": "accept"},
+    {"text": "Identify the compensation and commercial role behind advice. Commission incentives and an underwriter's seller role can conflict with the purchaser's interests even when the intermediary is reputable.", "page": 250, "anchor": "salesman to the prospective buyer", "disposition": "accept"},
+    {"text": "Retain responsibility for understanding the recommendation, its evidence and its fit to the mandate; outside suggestions are inputs to judgment rather than automatic trade authority.", "page": 252, "anchor": "recommendations explained in detail", "disposition": "accept"},
+    {"text": "Verify professional records independently and continue monitoring after selection. A referral, credential or comfortable conversation is not a substitute for the underlying disclosure record.", "page": 257, "anchor": "independently obtain your own complete copy", "disposition": "accept"},
+    {"text": "An explicit mutually agreed investment policy, allocation and financial plan can make advice auditable and reduce impulsive departures; reporting must let the client understand progress and actual dollar fees.", "page": 261, "anchor": "an investment policy statement", "disposition": "accept"}
+  ],
+  "assimilation": "For this Character, advice must retain provenance, incentive context and a stated reason for agreement or disagreement. Initial independent judgment precedes bounded advice; an adviser cannot expand the mandate. Explain expected service value, costs and review triggers without promising superior returns. Preserve owner authority through a readable policy and reports.",
+  "adversarial_review": "The source's praise of brokerage ethics and institutional competence is not diligence evidence. Its banking custody procedure, registrations, fee ceiling and expected-return range are historical and require current verification before operational use. Warning phrases are prompts for scrutiny, not a fraud classifier: options, commodities or monthly reporting are not intrinsically fraudulent. An automatic refusal of every timing approach or every sale after a weak year would replace analysis with a label. The proper question is whether the rule was supported, preregistered and within risk limits. References can be selected; credentials do not prove integrity. No external adviser is hired and no order authority is granted by assimilating this chapter.",
+  "memory_delta": "Require intelligible advice, independent evidence, incentive disclosure and mandate fit. Value error prevention separately from alpha. Keep initial opinions independent and record whether later advice changes them and why.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [],
+  "reading_provenance": "Read all PDF pages 241-262, including both adviser/client interview lists and the warning-phrase sidebar. This chapter contains no numerical figure requiring image extraction."
+}

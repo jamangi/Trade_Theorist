@@ -1,0 +1,66 @@
+[
+  {
+    "access": "user_supplied",
+    "authors": [
+      "Curtis M. Faith"
+    ],
+    "blocker": "Only chapter 1 at PDF pages 25-32 has been reviewed; the remaining book is unread.",
+    "checked_at": "2026-09-06T00:27:31.881216Z",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-06T00:27:31.881216Z",
+    "edition": "2007 McGraw-Hill ebook rendered as PDF",
+    "experiment_id": null,
+    "id": "book:9780071509466",
+    "ingestion_status": "partial",
+    "isbn": "9780071509466",
+    "locator": "owner-library://Way_of_the_Turtle_-_Curtis_Faith.pdf",
+    "next_check_at": "2027-09-06T00:27:31.881216Z",
+    "private_locator": "owner-library/Way_of_the_Turtle_-_Curtis_Faith.pdf",
+    "publication_eligibility": "derived_permitted",
+    "publisher": "McGraw-Hill",
+    "record_type": "source",
+    "retrieved_at": "2026-09-06T00:27:31.881216Z",
+    "rights": {
+      "evidence": [
+        "Owner supplied the local file and explicitly requested TASK-005 analysis; public export is limited to original notes and citation hashes."
+      ],
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "reading": "permitted",
+      "redistribution": "denied"
+    },
+    "schema_version": 1,
+    "title": "Way of the Turtle"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "learning_session",
+    "id": "learning-session:systematic_trend_operator-pilot-foundation-v2",
+    "experiment_id": "learning-session:systematic_trend_operator-pilot-foundation-v2",
+    "created_at": "2026-09-07T09:48:44.009543Z",
+    "contamination": "hindsight-contaminated",
+    "mode": "learning",
+    "character_versions": [
+      "character:systematic_trend_operator-pilot-foundation-v2"
+    ],
+    "source_ids": [
+      "book:9780071509466"
+    ],
+    "authorization": "Owner explicitly requested completion of both Value and Trend foundations followed by Step 11. Both complete pinned books were reviewed in this Codex task; this gate reconciles their new immutable checkpoints. No performance or broker-operation approval is implied.",
+    "provenance": "Completed foundation reconciliation. Exact immutable learning ancestry is pinned in examples/step-11/readiness-register.v2.json"
+  },
+  {
+    "character_id": "systematic_trend_operator",
+    "constitution_hash": "3834e3f90caf6264b11969aa107ee8868edd02fe04102b2d318aa32b81f0f56e",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-07T09:48:44.009543Z",
+    "curriculum_hash": "84358bc168e0700340330a6df8d34cad5091fae478217776e0bca7968c9ea87e",
+    "experiment_id": "learning-session:systematic_trend_operator-pilot-foundation-v2",
+    "foundation_source_id": "book:9780071509466",
+    "id": "character:systematic_trend_operator-pilot-foundation-v2",
+    "readiness": "ready",
+    "record_type": "character",
+    "schema_version": 1,
+    "version": "pilot-foundation-v2"
+  }
+]

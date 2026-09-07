@@ -25,6 +25,8 @@ Relevant implementation and validation paths:
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
 | Cited pilot participant readiness | `learn/readiness.py`, `scripts/review_step_10.py` | `test_pilot_readiness`; [scope, versions and next learning units](step-10-pilot-readiness.md) |
 | Shared v2 forward integration | `forward/shared.py`, `forward/validation.py`, `forward/schema.py` | `test_forward_shared`; [bounded handoff](step-07-forward-integration.md) |
+| Foundation continuations and real forward trial | `learn/continuation.py`, `forward/prospective.py`, `forward/trial.py`, `forward/observe.py` | `test_foundation_continuations`, `test_prospective_trial`; [Step 11 handoff](step-11-forward-observation.md) |
+| Private corporate-action requests | `adapters/alpaca_market_data/actions.py`, `market_requests.py`, `request_contracts.py` | `test_corporate_actions`, `test_market_requests`, `test_live_qualification` |
 | Independent shared-path preflight | `tests/preflight_support.py`, `tests/preflight_worker.py`, `scripts/run_step_08_preflight.py` | `test_request_preflight`; [findings and concise reproduction](step-08-offline-preflight.md) |
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
 | Metrics/forecast review | `src/trade_theorist/evaluate/` | `test_evaluation` |

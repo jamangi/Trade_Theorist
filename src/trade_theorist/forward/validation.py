@@ -26,10 +26,13 @@ def participant(lookup, portfolio_id, plan_id, segment_id):
     policy = get(lookup, p["policy_id"], "policy")
     exp = get(lookup, p["experiment_id"], "experiment")
     rights = get(lookup, p["provenance"]["rights_id"], "source_rights")
-    if p["execution_basis"] != "simulated" or p["initialization"] != "new" or p["contamination"] != "fixture" or owner["readiness"] != "fixture_only":
-        raise ContractError("Step 07 requires eligible original simulated fixture identities")
-    if rights["origin"] != "original_synthetic" or any(rights[k] != "permitted" for k in ("private_storage", "private_replay", "private_read_model")):
-        raise ContractError("Forward fixture rights are unresolved")
+    fixture = p['contamination'] == 'fixture'
+    if p["execution_basis"] != "simulated" or p["initialization"] != "new" or owner["readiness"] != ('fixture_only' if fixture else 'ready'):
+        raise ContractError("Forward participant has invalid execution basis or readiness")
+    if not fixture and (p['contamination'] != 'forward-insufficient' or exp['regime'] != 'forward_shadow'):
+        raise ContractError('Real participant must remain forward-insufficient shadow evidence')
+    if rights["origin"] != ('original_synthetic' if fixture else 'licensed') or any(rights[k] != "permitted" for k in ("private_storage", "private_replay", "private_read_model")):
+        raise ContractError("Forward rights are unresolved")
     if any(r["experiment_id"] != p["experiment_id"] for r in (plan, segment, owner, policy, rights)) or plan["portfolio_id"] != p["id"] or segment["portfolio_id"] != p["id"] or segment["owner_character_version"] != p["owner_character_version"]:
         raise ContractError("Forward participant has mismatched ownership or accounting scope")
     if owner["id"] not in exp["character_versions"] or any(p[k] != exp[k] for k in ("mode", "execution_basis", "policy_id")):
@@ -41,10 +44,17 @@ def participant(lookup, portfolio_id, plan_id, segment_id):
 
 
 def validate_forward(record, lookup):
-    if record["contamination"] != "fixture":
-        raise ContractError("Step 07 integration cannot certify real forward evidence")
+    if record["contamination"] not in {'fixture','forward-insufficient'}:
+        raise ContractError("Forward integration cannot certify reviewed performance")
     kind = record["record_type"]
     if kind == "forward_manifest":
+        if record['evidence_grade'] != record['contamination']:
+            raise ContractError('Forward evidence grade differs')
+        if record['contamination'] == 'fixture' and 'real_context' in record:
+            raise ContractError('Fixture cannot carry real eligibility')
+        if record['contamination'] != 'fixture':
+            from .prospective import validate_real_context
+            validate_real_context(record, lookup)
         q = query(record["query"])
         policy = validate_request(record["quota_policy"])
         if q != record["query"] or digest(q) != record["query_hash"] or digest(policy) != record["quota_policy_hash"] or record["work_ref"] != "work:" + digest(q):
@@ -103,6 +113,20 @@ def validate_forward(record, lookup):
     snapshot_id = record["id"] if kind == "forward_snapshot" else record["snapshot_ref"]
     if snapshot_id != manifest["snapshot_ref"]:
         raise ContractError("Paired snapshot identity differs")
+    if record['contamination'] != manifest['contamination']:
+        raise ContractError('Forward evidence regime differs')
+    if kind == 'forward_audit':
+        import json
+        from ..contracts import canonical
+        try: payload=json.loads(record['payload_json'])
+        except (ValueError,TypeError) as exc: raise ContractError('Invalid private audit payload') from exc
+        if canonical(payload)!=record['payload_json'] or digest(payload)!=record['payload_hash']:
+            raise ContractError('Private audit payload changed')
+        return
+    if kind == 'forward_opinion':
+        from .prospective import validate_opinion
+        validate_opinion(record,manifest,lookup)
+        return
     if kind == "forward_snapshot":
         q = manifest["query"]
         if record["work_ref"] != manifest["work_ref"] or record["query_hash"] != manifest["query_hash"] or record["decision_at"] != manifest["decision_at"]:
@@ -121,6 +145,11 @@ def validate_forward(record, lookup):
                 raise ContractError("Observation is outside frozen information bounds")
             if b["symbol"] not in q["symbols"] or b["t"][:10] not in q["expected_sessions"] or utc(item["received_at"]) > utc(record["created_at"]):
                 raise ContractError("Snapshot contains unavailable or unrequested evidence")
+            if manifest['contamination'] != 'fixture':
+                calendar = {s['session']:s for s in manifest['real_context']['calendar']}
+                session = calendar.get(b['t'][:10])
+                if session is None or utc(item['received_at']) < utc(session['close_at']):
+                    raise ContractError('Daily bar was not observed after its session closed')
             observed.add((b["symbol"], b["t"][:10]))
         if record["coverage_expected"] != len(expected) or record["coverage_observed"] != len(observed & expected):
             raise ContractError("Snapshot coverage counts differ")
@@ -147,6 +176,8 @@ def validate_forward(record, lookup):
             if snapshot["status"] != "ready" or record["calls_reserved"] != len(manifest["participants"]) or record["calls_reserved"] > manifest["model_budget"]["max_calls"] or record["tokens_reserved"] != manifest["model_budget"]["max_tokens"]:
                 raise ContractError("Invalid finite Character reservation")
         else:
+            if record['evidence_grade'] != manifest['evidence_grade']:
+                raise ContractError('Result evidence grade differs from manifest')
             if record["status"] == "abstained" and record["reason"] == "none":
                 raise ContractError("A shared abstention requires an explicit reason")
             if record["snapshot_hash"] != digest(snapshot) or len(record["outcomes"]) != len(manifest["participants"]):

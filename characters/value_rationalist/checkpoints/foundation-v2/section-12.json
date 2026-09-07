@@ -1,0 +1,22 @@
+{
+  "number": 12,
+  "title": "Chapter 11: Security Analysis, General Approach; Zweig commentary",
+  "pdf_start": 263,
+  "pdf_end": 288,
+  "claims": [
+    {"text": "Detailed mathematics does not make uncertain long-range assumptions reliable. Show how much estimated value depends on forecasts rather than observed earning power.", "page": 264, "anchor": "more vulnerable it becomes to possible miscalculation", "disposition": "accept"},
+    {"text": "Debt analysis should combine earnings coverage with financial structure, operating resilience and realistic asset recovery; the source's numerical thresholds are conventions, not uniquely determined safety boundaries.", "page": 265, "anchor": "tests are at bottom arbitrary", "disposition": "qualify"},
+    {"text": "Avoid counting management quality repeatedly in historical profitability, forecast growth and a separate valuation premium.", "page": 273, "anchor": "count it still another time", "disposition": "accept"},
+    {"text": "The growth-multiple formula is illustrative and is not certified as a reliable valuation model. Any present-value estimate needs explicit interest-rate, duration, reinvestment and terminal assumptions.", "page": 277, "anchor": "supplied for illustrative purposes only", "disposition": "qualify"},
+    {"text": "Preserve a valuation based on observed history separately from modifications for expected changes, with reasons and timestamps for every modification. Even a transparent process needs outcome validation.", "page": 279, "anchor": "both the original valuation and the modified one", "disposition": "accept"},
+    {"text": "Read multiple annual reports for sources of growth, financing dependence, customer concentration, executive promises and repeated adjustments rather than relying on the latest headline earnings.", "page": 282, "anchor": "What makes this company grow", "disposition": "accept"},
+    {"text": "Use the owner-cash concept with a reconciled calculation rather than mechanically applying the commentary's abbreviated formula; maintenance investment, working capital, option economics and already-recognized charges must not be omitted or counted twice.", "page": 286, "anchor": "owner earnings", "disposition": "qualify"}
+  ],
+  "assimilation": "Maintain an auditable base valuation and a separately reasoned scenario adjustment. Inputs carry source dates and uncertainty, and future revisions must not overwrite prior forecasts. Use cash generation, liabilities and governance evidence to test the story. A completed foundation permits bounded research; the chapter explicitly does not certify independent security-selection competence.",
+  "adversarial_review": "Past debt coverage cannot guarantee future solvency; the source's near-impossibility of utility failure is too strong. Aggregate forecast errors can cancel and conceal large name-level errors. The stated infinite value at 8% growth depends on a discount-rate convention and indefinite growth; 8% is not a universal mathematical boundary. Table 11-5 is an illustrative selected comparison, not out-of-sample certification. Historical pretax growth does not convert to a lower after-tax growth rate merely by multiplying by a constant tax rate. Owner earnings require working-capital and maintenance-capex analysis; subtracting extraordinary charges already in net income could double count. Option overhang is contingent and exercise brings proceeds; adding all options unconditionally overstates dilution. A record-high repurchase price need not exceed intrinsic value, and price underperformance alone does not prove retained capital was misused. None of the dated thresholds becomes an execution rule.",
+  "memory_delta": "Expose valuation sensitivity and avoid duplicate quality premiums. Preserve base estimates and dated scenario overrides. Reconcile reported earnings to cash and dilution without double counting; distinguish confidence in a business from confidence in the price paid.",
+  "theory": null,
+  "test": null,
+  "visual_checks": [266,271,273,276],
+  "reading_provenance": "Read all PDF pages 263-288 and inspected tables 11-1 through 11-5, including coverage exclusions, split adjustments and forecast/actual date labels."
+}
