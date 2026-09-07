@@ -12,7 +12,7 @@ A data service cannot make an untrained Character ready. Expose this existing pr
 
 ## Starting evidence
 
-Immutable versions are supported. Intended participants and their criteria must fit Step 09's qualified data. Authorized reading may occur earlier.
+Immutable versions are supported. [Step 09 delivered a blocked qualification decision](../../docs/step-09-vendor-qualification.md); no new real sample passed. Readiness review may proceed independently against saved learning and the proposed VTI/daily scope, retaining conditional data requirements. Participant readiness cannot clear the data blocker or authorize Step 11. Authorized reading may occur earlier.
 
 ## Finished state
 

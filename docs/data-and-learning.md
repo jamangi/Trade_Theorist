@@ -11,7 +11,7 @@ Ordinary scripts perform downloads, pagination, retries, normalization, hashing,
 | Candidate / source | Useful role | Limitation or decision still needed |
 | --- | --- | --- |
 | Permitted CSV and synthetic fixtures | Immediate deterministic development | Fixtures demonstrate mechanics, not an edge; real CSV needs provenance and rights |
-| Alpaca market-data API | Candidate for a small forward-data pilot; delayed SIP daily-bar sample passed | Current SIP, complete coverage, shared request control, storage and display rights remain unresolved |
+| Alpaca market-data API | Candidate for a small forward-data pilot; delayed SIP daily-bar sample passed | Shared control passed Steps 06–08; complete coverage and applicable storage/replay/model/reporting rights remain unresolved in Step 09 |
 | Alpaca paper environment | Optional later execution-adapter validation | Separate simulation, not a substitute for internal per-Character ledgers or evidence of real fills |
 | SEC EDGAR APIs | Primary company filings and financial facts for Value/Event research | Preserve filing vintages; this does not provide stock prices or House/Senate transaction reports |
 | Broader licensed archival vendor, to be selected | Delistings, historical membership, corporate actions, quote coverage | Obtain a requirements-matched sample and rights record before choosing or paying |
@@ -29,6 +29,13 @@ The [shared request-budget contract](market-data-request-budget.md) adds a requi
 Validate duplicate identity, timestamp timezone, expected sessions, nonnegative prices/volume, OHLC consistency, instrument mapping, splits/dividends, and unexpected gaps. Distinguish exchange closure from missing records. Quality failure blocks only the affected universe when the experiment policy explicitly permits partial coverage; otherwise abstain for the run. A backfill is a new revision, not an invisible repair of a published experiment.
 
 Each source needs a capability checklist: event/publication/ingestion times; point-in-time revisions; corporate actions and dividends; delisted instruments; historical constituents when needed; feed venue and quote coverage; storage retention; automated access; internal replay; derived-results publication; and raw redistribution. Missing capability narrows experiment claims or blocks that use. Public access and an API key do not prove publication rights. Export no vendor raw data by default, and withhold derived fields until their intended display is permitted.
+
+[Step 09's current qualification review](step-09-vendor-qualification.md) delivers
+the blocked-use decision and concrete bounded sample proposal. Shared admission
+and independent preflight are complete; source rights and actual sample evidence
+remain open. The quality helper now requires an explicit instrument/session grid,
+blocks quarantine and mismatched rows, and defaults to unverified sample authority.
+Its coverage result is not a permission or production-promotion decision.
 
 ## A library that distinguishes availability from permission
 

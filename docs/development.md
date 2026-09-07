@@ -20,6 +20,7 @@ Relevant implementation and validation paths:
 | Market evidence | `src/trade_theorist/ingest/market.py` | `test_ingest` |
 | Shared admission/cache/recovery | `market_requests.py`, `request_contracts.py`, `request_operations.py` | `test_market_requests`; [bounded handoff](step-06-shared-requests.md) |
 | Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
+| Per-instrument qualification quality | `quality_report` in the Alpaca adapter; `examples/step-09/` | `test_quality_qualification`; [bounded rights/quality handoff](step-09-vendor-qualification.md) |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
 | Shared v2 forward integration | `forward/shared.py`, `forward/validation.py`, `forward/schema.py` | `test_forward_shared`; [bounded handoff](step-07-forward-integration.md) |
 | Independent shared-path preflight | `tests/preflight_support.py`, `tests/preflight_worker.py`, `scripts/run_step_08_preflight.py` | `test_request_preflight`; [findings and concise reproduction](step-08-offline-preflight.md) |

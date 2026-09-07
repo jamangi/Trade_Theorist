@@ -52,7 +52,7 @@ from successful API access.
 | Requirement | Current conclusion |
 | --- | --- |
 | Explicit feed, bars, automation, pagination | Documented; adapter implemented |
-| Shared request-rate enforcement | Not implemented; required TASK-014 follow-up and TASK-016 offline preflight before forward operation |
+| Shared request-rate enforcement | Subsequently implemented and independently verified offline in Steps 06–08; real account headroom remains unmeasured |
 | Delayed historical SIP daily bars | Authorized sample passed for VTI, SPY and QQQ over five sessions |
 | Current/latest SIP | HTTP 403 in the authorized check; not entitled |
 | SIP whole-market coverage | Product capability documented; the small sample does not establish complete coverage |
@@ -86,3 +86,26 @@ records the exact successful scope. Raw returned bars remain outside Git.
 ## Subsequent architecture decision (2026-09-06)
 
 [ADR-004](ADR-004-local-observatory.md) supersedes public-hosting assumptions with a private local owner interface and versioned accounting repairs. It preserves this record's historical decisions and qualification evidence. The [rights matrix](../../docs/data-rights-matrix.md) keeps provider permission questions explicit; private deployment does not select a vendor or authorize account operations.
+
+## Step 09 decision update (2026-09-07 UTC)
+
+**Retain Alpaca as candidate; do not select production use yet.**
+[The current review](../../docs/step-09-vendor-qualification.md) distinguishes
+documented delayed-SIP fit from unknown current account access and applicable use
+rights. General personal-use language supports that use; it does not by itself
+resolve the proposed retention/replay/model-processing scope under all applicable
+agreements. The source register records the customer PDF's V26.2026.07 footer and
+the linked subscriber PDFs' retrieval failures.
+
+Promotion gate 1 above is now satisfied offline by Steps 06–08. Gates 3–5 remain
+unfulfilled; a paid/current SIP plan is unnecessary for the proposed older daily
+window and was not purchased. The new [quality/workload decision](../../examples/step-09/qualification.json)
+contains explicit nulls for unmeasured real metrics. The [sample proposal](../../examples/step-09/sample-plan.json)
+has 12 total attempts and requires applicable storage/replay rights plus specific
+authority before execution. No account sample ran in Step 09. Historical access
+and initial blocked pilot artifacts remain unchanged.
+
+Raw-bar ETF returns also require qualified distribution/action evidence; endpoint
+availability is insufficient. Current forward integration remains fixture-only.
+Step 10 may independently establish participant readiness, but neither its result
+nor this review clears Step 11's data and real-integration requirements.

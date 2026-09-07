@@ -1,0 +1,100 @@
+{
+  "report_kind": "step-09-public-source-review",
+  "retrieval_note": "Public pages reviewed during this task on 2026-09-07 UTC / 2026-09-06 America/Chicago. No authenticated account or market-data API used.",
+  "raw_source_content_committed": false,
+  "sources": [
+    {
+      "id": "terms",
+      "url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+      "status": "reviewed",
+      "version": "Four-page PDF; no revision date established",
+      "locator": "Personal and Non-Commercial Usage; Content; Data Plans",
+      "finding": "Supports personal noncommercial access/use, restricts publication/distribution/commercial copying, and incorporates other applicable agreements. Does not specify this project's retention schedule or external model processing.",
+      "applicability": "General service/API terms; additional agreements must be matched to the owner's actual account and use."
+    },
+    {
+      "id": "customer",
+      "url": "https://files.alpaca.markets/disclosures/library/AcctAppMarginAndCustAgmt.pdf",
+      "status": "reviewed",
+      "version": "V26.2026.07 in page footers; 33 pages; document metadata title still mentions v25",
+      "locator": "Introduction; section 30, printed page 16",
+      "finding": "Incorporates exchange subscriber agreements when applicable and restricts reproduction, distribution, sale and commercial exploitation without written consent.",
+      "applicability": "Public current brokerage agreement, not evidence of which terms a paper-only user accepted. Reconcile its reproduction clause with the intended stored replay before treating retention as permitted."
+    },
+    {
+      "id": "nasdaq-linked",
+      "url": "https://files.alpaca.markets/disclosures/library/NASDAQ%2BOMX%2BGlobal%2BSubscriber%2BAgreement.pdf",
+      "status": "retrieval_blocked_403",
+      "version": null,
+      "locator": "NASDAQ OMX Global Subscriber Agreement link on https://alpaca.markets/disclosures",
+      "finding": "Linked agreement identified but its contents were not retrieved; no clause or permission inferred.",
+      "applicability": "Obtain the applicable accepted version; a similarly titled search result is not substituted."
+    },
+    {
+      "id": "nyse-linked",
+      "url": "https://files.alpaca.markets/disclosures/library/NYSE%2BMarket%2BData%2BDisplay%2BServices%2BAgreement.pdf",
+      "status": "retrieval_blocked_403",
+      "version": null,
+      "locator": "NYSE Market Data Display Services Agreement link on https://alpaca.markets/disclosures",
+      "finding": "Linked agreement identified but its contents were not retrieved; no clause or permission inferred.",
+      "applicability": "Display/non-display classification and actual subscriber applicability remain unresolved."
+    },
+    {
+      "id": "plans",
+      "url": "https://docs.alpaca.markets/us/docs/about-market-data-api",
+      "status": "reviewed",
+      "version": "Current web table; no immutable revision ID supplied",
+      "locator": "Individual-user equities Basic plan",
+      "finding": "US stocks/ETFs, real-time IEX, history since 2016, latest 15 minutes excluded, 200 historical API calls/minute.",
+      "applicability": "Product capability only; retain the existing 180 operating / 200 hard ceiling. Neither broker-partner tiers nor higher paid limits are applied."
+    },
+    {
+      "id": "faq",
+      "url": "https://docs.alpaca.markets/us/docs/market-data-faq",
+      "status": "reviewed",
+      "version": "Current web FAQ; no immutable revision ID supplied",
+      "locator": "Stocks: IEX/SIP and historical endpoint discussion",
+      "finding": "Historical SIP queries without a subscription require end at least 15 minutes old; latest SIP requires subscription. Feed defaults depend on entitlement.",
+      "applicability": "Pin sip and an older end explicitly. Successful delayed history does not imply latest access."
+    },
+    {
+      "id": "bars",
+      "url": "https://docs.alpaca.markets/us/reference/stockbars",
+      "status": "reviewed",
+      "version": "Current v2/stocks/bars reference; no immutable documentation revision ID",
+      "locator": "Result ordering; timeframe, adjustment, asof, feed and page_token",
+      "finding": "Multi-symbol results sort by symbol then time; follow all pages. Raw and adjusted bars differ. asof maps symbol identities; it is not a historical revision-knowledge cutoff.",
+      "applicability": "Use raw daily bars, frozen symbols/asof and full-query-bound resume; no inferred split/dividend or point-in-time revision qualification."
+    },
+    {
+      "id": "actions",
+      "url": "https://docs.alpaca.markets/us/reference/corporateactions-1",
+      "status": "reviewed",
+      "version": "v1/corporate-actions reference; displayed Updated 3 months ago",
+      "locator": "Availability warning; data_quality; process_date ordering",
+      "finding": "Action creation time is not guaranteed. Provider/processing delays are possible; default filtering can omit incomplete unprocessed events.",
+      "applicability": "Endpoint existence does not qualify timely dividends/splits. The current production transport admits bars only, so action collection needs a separately scoped extension."
+    },
+    {
+      "id": "redistribution",
+      "url": "https://alpaca.markets/support/redistribute-alpaca-api",
+      "status": "reviewed",
+      "version": "November 2022 article",
+      "locator": "Can I redistribute Alpaca API data via my platform?",
+      "finding": "The support answer disallows redistribution.",
+      "applicability": "No raw bars or reconstructable derived market series enter Git/public output; any exception needs applicable evidence."
+    },
+    {
+      "id": "calendar",
+      "url": "https://www.nyse.com/trade/hours-calendars",
+      "status": "reviewed",
+      "version": "Displayed 2026â€“2028 calendar",
+      "locator": "2026 holiday table and core session hours",
+      "finding": "September 7, 2026 is Labor Day closure; no listed holiday falls within August 24â€“September 4. Normal core session ends at 16:00 Eastern.",
+      "applicability": "Supports the proposed ten-session sample calendar; daily API aggregates are not thereby certified as regular-session-only bars."
+    }
+  ],
+  "content_sha256": null,
+  "hash_note": "The web reader supplied extracted text, not a stable raw-byte capture. Do not present hashes of authored summaries as hashes of provider documents. Displayed versions, URLs and locators are retained.",
+  "retrieved_on_utc": "2026-09-07"
+}

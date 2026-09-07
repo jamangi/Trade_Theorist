@@ -42,3 +42,21 @@ The support page's full article was visible in the official search result, while
 The server must reject non-loopback binding, unexpected Host/Origin, directory traversal, symlink/junction escape and requests outside the exact bundle allowlist; use no wildcard CORS, external assets, service worker or telemetry. `Cache-Control: no-store` and origin checks reduce unintended exposure but do not protect against a malicious process running as the same OS user. No blanket raw-data deletion or backup removal is authorized; retention decisions must preserve necessary lawful auditability and respect the actual agreement.
 
 Possible later public summaries need a separate field-level reconstruction review and written permission where required. Redacting tickers or keys is insufficient if quantities, values or sequences reconstruct licensed data. No such public real-data export is enabled by this review.
+
+## Step 09 update (2026-09-07 UTC)
+
+[The vendor/rights decision](step-09-vendor-qualification.md) and its
+[source register](../examples/step-09/sources.json) supersede the earlier review's
+unversioned current-customer-agreement reference: the retrieved 33-page PDF has
+footer **V26.2026.07**, with the relevant market-data clause in section 30.
+The general Terms support personal noncommercial access/use. Unresolved retention,
+replay and model-processing scope is not a blanket finding that private use is
+prohibited. Determine the accepted agreement set and its applicability before
+requiring additional permission. Linked exchange agreements could not be retrieved
+(HTTP 403); no contents or applicable versions were inferred.
+
+Step 09 records each use separately and proposes a 30-day private sample retention
+scope for review. Collection/storage/replay rights are needed for its durable
+sample; external model use is excluded and remains a later, distinct question.
+No rights flag was elevated and no real sample or provider contact occurred. The
+private UI and published-data restrictions remain unchanged.

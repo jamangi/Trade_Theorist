@@ -1,0 +1,55 @@
+{
+  "source_commit": "2ce976dfc208bca08fd0ad02b7fc370c93e84bf8",
+  "inputs": "Original minimal normalized rows; no vendor observations",
+  "cases": [
+    {
+      "defect": "No per-instrument scope; first instrument alone fills aggregate sessions",
+      "before": "qualified",
+      "required": "blocked for missing second instrument"
+    },
+    {
+      "defect": "Quarantined rows do not block qualification",
+      "before": "qualified",
+      "required": "blocked"
+    },
+    {
+      "defect": "Generator consumed before revision count",
+      "before": 0,
+      "required": 1
+    }
+  ],
+  "after": [
+    {
+      "case": 1,
+      "status": "blocked",
+      "missing_pairs": [
+        [
+          "instrument:second",
+          "2099-01-02"
+        ],
+        [
+          "instrument:second",
+          "2099-01-03"
+        ]
+      ]
+    },
+    {
+      "case": 2,
+      "status": "blocked",
+      "quarantine_count": 1
+    },
+    {
+      "case": 3,
+      "status": "qualified",
+      "revision_count": 1
+    }
+  ],
+  "verified_at": "2026-09-07T02:22:19.691727Z",
+  "validation": {
+    "focused_modules": 5,
+    "new_tests": 6,
+    "full_suite_tests": 309,
+    "full_suite_modules": 30,
+    "full_suite_seconds": 87.2
+  }
+}

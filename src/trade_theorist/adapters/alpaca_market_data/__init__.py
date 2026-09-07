@@ -65,6 +65,8 @@ class QualityReport:
     quarantine_count: int
     coverage_status: str
     blockers: tuple
+    expected_instruments: tuple = ()
+    missing_pairs: tuple = ()
 
     def as_dict(self):
         return {name: list(value) if isinstance(value, tuple) else value
@@ -273,21 +275,40 @@ class AlpacaBarsAdapter:
 
 
 def quality_report(*, feed, expected_sessions, normalized, quarantine=(),
-                   sample_kind="authorized_account"):
-    """Report gaps/revisions; a fixture can validate mechanics but not coverage."""
+                   sample_kind="unverified", expected_instruments=()):
+    """Check declared raw-bar coverage, not vendor rights or forward readiness.
+
+    An explicit sample label records the caller's evidence classification; it is
+    not proof of authority. Real promotion additionally requires reviewed rights
+    and coordinator-backed workload evidence. Missing scope never qualifies.
+    """
     expected = tuple(expected_sessions)
-    observed = tuple(sorted({item.payload["session"] for item in normalized
-                             if item.payload["kind"] == "bar"}))
+    instruments = tuple(expected_instruments)
+    records, rejected = tuple(normalized), tuple(quarantine)
+    bars = [item for item in records if item.payload["kind"] == "bar"]
+    scoped = [item for item in bars if item.payload["feed"] == feed and item.payload["adjustment"] == "raw"
+              and item.payload["session"] in expected and item.payload["instrument_id"] in instruments]
+    # Retain the legacy session summary, but base qualification on the full grid.
+    observed = tuple(sorted({item.payload["session"] for item in bars
+                             if item.payload["feed"] == feed and item.payload["adjustment"] == "raw"}))
     missing = tuple(sorted(set(expected) - set(observed)))
-    revisions = sum(1 for item in normalized if item.observation["revision"] > 1)
+    present = {(item.payload["instrument_id"], item.payload["session"]) for item in scoped}
+    missing_pairs = tuple(sorted({(instrument, session) for instrument in instruments for session in expected} - present))
+    revisions = sum(1 for item in records if item.observation["revision"] > 1)
     blockers = []
     if sample_kind != "authorized_account":
         blockers.append("No account-authorized Alpaca sample was supplied; fixture evidence cannot qualify required coverage.")
-    if missing:
-        blockers.append("Expected market sessions are missing; no bars were synthesized.")
+    if not expected or not instruments or len(set(expected)) != len(expected) or len(set(instruments)) != len(instruments):
+        blockers.append("Declare a nonempty, unique instrument and session scope before qualification.")
+    if missing or missing_pairs:
+        blockers.append("Expected instrument/session coverage is missing; no bars were synthesized.")
+    if len(scoped) != len(records):
+        blockers.append("Sample contains observations outside the declared feed, raw adjustment, instruments or sessions.")
+    if rejected:
+        blockers.append("Quarantined observations require resolution before qualification.")
     return QualityReport(sample_kind, feed, expected, observed, missing, revisions,
-                         len(tuple(quarantine)), "qualified" if not blockers else "blocked",
-                         tuple(blockers))
+                         len(rejected), "qualified" if not blockers else "blocked",
+                         tuple(blockers), instruments, missing_pairs)
 
 
 __all__ = ["AlpacaBarsAdapter", "AlpacaError", "EntitlementDenied", "Page",
