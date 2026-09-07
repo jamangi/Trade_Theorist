@@ -2,6 +2,33 @@
 
 This register holds choices that materially affect product behavior, financial risk, legal exposure, or the meaning of an experiment.
 
+## Standing Alpaca authorization — 2026-09-07
+
+The owner explicitly pre-approved **any free use of the Alpaca account**, including
+obtaining data and engaging in paper trades at the agent's discretion, particularly
+within Alpaca's rate limits. This supersedes earlier per-sample/per-paper-action
+permission gates in this register and active task briefs. Do not ask again for
+the same authorization. Agents choose and document finite workloads and paper-risk
+parameters appropriate to the task; keep shared quota enforcement and attribution.
+This approval does not spend real capital or purchase paid plans/services, and does
+not itself launch a paper strategy or create recurring work.
+
+The owner also explicitly directs the project to assume private local storage,
+reuse and experiments are permitted, citing Alpaca's personal-use Terms and the
+owner's interpretation, unless decisive contrary evidence is found. The follow-up
+[Step 09 rights decision](../docs/step-09-vendor-qualification.md) records the public
+research/backtesting documentation supporting that interpretation. Record this as
+an owner-approved operating interpretation, not a separately negotiated provider
+licence. Do not repeatedly gate ordinary private local use on the same unresolved
+general wording. Reopen the question only for material new evidence or expanded use.
+Public redistribution and transfer of market data to external model services are
+outside this private-local decision. No automatic data purge is authorized.
+
+The Step 09 bounded historical SIP sample is covered now. Paper trading is likewise
+owner-authorized; the roadmap's remaining implementation, readiness and quota
+verification work describes engineering prerequisites, not another request for
+owner permission. Paid subscriptions and live-capital actions remain separate.
+
 **Owner decision recorded 2026-09-05:** the owner explicitly approved all recommended defaults in the original register, including the Lead Character default, and requested the additional research-system design and task backlog. Checked items below record that approval. Where the default was to defer a selection or require a later gate, the approved action is that deferral/gate—not an invented vendor, broker, budget, or live authorization. Items with no concrete recommended value remain open. See [ADR-001](records/ADR-001-research-observatory.md).
 
 New numerical suggestions in the [architecture](../docs/architecture.md), discussion caps, and evaluation sample floors are proposals introduced after that approval. They are not silently included in it. Design and fixture implementation may proceed; actual paper trading requires the numeric policy and operating responsibilities below to be recorded.
@@ -33,10 +60,10 @@ New numerical suggestions in the [architecture](../docs/architecture.md), discus
   - Recommended default: store catalog metadata, page-level citations, original analysis, and short necessary quotations in the repository; keep licensed source files in access-controlled storage outside Git and respect license/copyright terms.
 - [x] **External research policy.** Approved the source-quality and provenance policy below.
   - Recommended default: primary filings, exchange/broker specifications, official statistics, and peer-reviewed work outrank commentary; every derived claim retains provenance and retrieval time.
-- [x] **Market-data vendor and license.** Approved deferring selection until requirements exist, under the default below. No vendor selected; qualification and the actual decision are tracked in [TASK-014](../tasks/TASK-014-high-Sol.md).
+- [x] **Market-data vendor and license.** The original deferral below is superseded for Alpaca private delayed daily SIP by the [completed Step 09 decision](../docs/step-09-vendor-qualification.md). Broader requirements still need matching qualification.
   - Recommended default: postpone selection until schemas and evaluation needs are defined; require corporate actions, delistings, historical constituents, quotes, and publication timestamps where applicable.
 - [x] **Alpaca account-backed sample.** On 2026-09-06 the owner supplied regenerated paper credentials and authorized a bounded read-only check. Authentication and a small delayed historical SIP daily-bar sample passed; no order was submitted and no credential or account identifier was retained. [ADR-003](records/ADR-003-alpaca-market-data-qualification.md) records the exact scope.
-- [ ] **Alpaca data rights and final selection.** Confirm the intended plan and contract cover private storage, internal replay, and derived reporting before selecting Alpaca for production. Successful API access is not a retention or redistribution grant.
+- [x] **Alpaca private data use and scoped selection.** The standing 2026-09-07 owner interpretation covers private local storage, replay, experiments and owner reporting. Step 09 selected Alpaca for the bounded delayed daily SIP scope after six successful metered requests. Public redistribution is outside this decision; successful access alone was not the rights basis.
 - [ ] **Paid market-data subscription.** Authorize a specific plan and price before any purchase or paid SIP request. No subscription or spend is authorized by prior market-data deferral.
 
 ## Public-official analysis
@@ -54,10 +81,8 @@ New numerical suggestions in the [architecture](../docs/architecture.md), discus
   - Recommended default: historical replay and paper trading only until that approval.
 - [x] **Human authorization model.** Approved the human-confirmation default below; no live pilot or automation is authorized by this entry.
   - Recommended default: human confirmation for a tiny-capital pilot; automation is a later, separate approval with independent kill switch and daily/position loss caps.
-- [ ] **Risk limits.** Approve maximum deployed capital, position size, sector exposure, daily loss, total drawdown, turnover, order frequency, and stale-data thresholds before paper trading.
-  - No numeric default existed in the original register. The [proposed pilot parameters](../docs/architecture.md#proposed-pilot-parameters) give a concrete starting point; record approved values and policy version in TASK-016 before paper runs. Fictional demo fixtures are not that approval.
-- [ ] **Secrets and operational ownership.** Choose who may access brokerage credentials, activate the kill switch, reconcile the ledger, and respond to incidents.
-  - No named assignment existed in the original register. Record owner/operator access and recovery responsibilities at paper readiness; live credentials remain outside this phase.
+- [x] **Paper-risk policy authority.** The standing approval delegates selection of finite free-paper workloads and risk parameters to the agent. Record deployed paper capital, exposure, loss/drawdown, turnover, order-frequency and freshness settings before the run; no repeated owner confirmation is required. The [proposed pilot parameters](../docs/architecture.md#proposed-pilot-parameters) are a starting point, not measured performance. Live-capital limits remain unapproved.
+- [x] **Free-account operator authority.** The owner authorizes agents to use the configured account for free data and paper activity. Document kill-switch, reconciliation and recovery responsibilities when implementing paper operation; protect credentials and retain owner control. This is an implementation duty, not a renewed permission gate.
 
 ## Additional owner-requested direction
 

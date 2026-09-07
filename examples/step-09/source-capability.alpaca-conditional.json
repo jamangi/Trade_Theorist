@@ -2,7 +2,7 @@
   "source_id": "source:alpaca-market-data",
   "feed": "sip",
   "instruments": "Pilot scope VTI; proposed QQQ/SPY controls not added trading opportunities",
-  "sessions": "Proposed ten-session calendar 2026-08-24 through 2026-09-04; new sample not run",
+  "sessions": "Verified ten-session sample 2026-08-24 through 2026-09-04, 30 instrument/session pairs per retrieval",
   "intervals": "Historical bars with explicit timeframe",
   "event_timestamps": true,
   "publication_timestamps": false,
@@ -13,11 +13,11 @@
   "delisted_instruments": false,
   "historical_constituents": false,
   "venue_coverage": true,
-  "storage_retention": false,
+  "storage_retention": true,
   "automated_access": true,
-  "internal_replay": false,
+  "internal_replay": true,
   "derived_publication": false,
   "raw_redistribution": false,
-  "evidence": "Step 09 public-source review: docs/step-09-vendor-qualification.md and examples/step-09/sources.json. Historic delayed SIP access preserved separately. False means unavailable or unverified for this use; endpoint existence does not qualify timing/rights.",
-  "checked_at": "2026-09-07T02:22:19.691727Z"
+  "evidence": "Owner standing authorization and private-local operating interpretation recorded in decisions/APPROVALS.md on 2026-09-07, supported by Alpaca personal-use Terms and official research/backtesting guidance; no decisive contrary evidence found. Not a negotiated licence or public redistribution grant. Actual sample passed; see examples/step-09/account-sample.json. Corporate-action endpoint existence does not qualify its timing or ingestion.",
+  "checked_at": "2026-09-07T03:04:33.550657Z"
 }

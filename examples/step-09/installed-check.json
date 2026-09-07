@@ -1,0 +1,39 @@
+{
+  "installation": "fresh venv and built wheel outside checkout",
+  "network": "socket trap and pip --no-index",
+  "versions": {
+    "1": {
+      "demo": "passed",
+      "resume": "passed",
+      "evaluate": "passed",
+      "export": "passed",
+      "doctor": "passed",
+      "validate": "passed",
+      "model_calls": 0
+    },
+    "2": {
+      "demo": "passed",
+      "resume": "passed",
+      "evaluate": "passed",
+      "export": "passed",
+      "doctor": "passed",
+      "validate": "passed",
+      "model_calls": 0,
+      "protected_serve_stop": "passed"
+    }
+  },
+  "shared_requests": {
+    "collector": "passed",
+    "cache": "passed",
+    "physical_recorded_attempts": 2,
+    "account_calls": 0,
+    "migration": "006",
+    "settlement": "passed"
+  },
+  "forward_integration": {
+    "scenarios": 4,
+    "fixture_only": true,
+    "result": "passed",
+    "account_calls": 0
+  }
+}

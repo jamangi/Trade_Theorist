@@ -12,7 +12,7 @@ A data service cannot make an untrained Character ready. Expose this existing pr
 
 ## Starting evidence
 
-Immutable versions are supported. [Step 09 delivered a blocked qualification decision](../../docs/step-09-vendor-qualification.md); no new real sample passed. Readiness review may proceed independently against saved learning and the proposed VTI/daily scope, retaining conditional data requirements. Participant readiness cannot clear the data blocker or authorize Step 11. Authorized reading may occur earlier.
+Immutable versions are supported. [Step 09 qualified private delayed daily SIP](../../docs/step-09-vendor-qualification.md): two complete 30-pair retrievals passed under standing owner authorization. Review saved learning against the declared VTI/daily pilot scope; QQQ/SPY were data controls. Before Step 11, real-source forward integration and dividend/split evidence required for total-return comparisons still need implementation/qualification. These engineering requirements do not reopen private-use permission. Authorized reading may occur earlier.
 
 ## Finished state
 

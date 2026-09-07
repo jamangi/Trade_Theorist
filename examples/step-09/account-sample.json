@@ -1,0 +1,141 @@
+{
+  "report_kind": "step-09-authorized-account-metadata",
+  "status": "qualified_scoped_daily_bars",
+  "started_at": "2026-09-07T03:04:30.881307Z",
+  "completed_at": "2026-09-07T03:04:33.550657Z",
+  "source": "Actual delayed SIP responses through production Coordinator and SingleAttemptTransport",
+  "authorization_ref": "decisions/APPROVALS.md",
+  "rights_basis": "Owner-approved private-local operating interpretation; no decisive contrary evidence found",
+  "feed": "sip",
+  "adjustment": "raw",
+  "sample_symbols": [
+    "QQQ",
+    "SPY",
+    "VTI"
+  ],
+  "expected_sessions": 10,
+  "expected_symbol_session_pairs": 30,
+  "physical_attempts": 6,
+  "http_statuses": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "actual_http_dispatch_times_utc": [
+    "2026-09-07T03:04:31.030282Z",
+    "2026-09-07T03:04:31.512786Z",
+    "2026-09-07T03:04:32.011576Z",
+    "2026-09-07T03:04:32.496454Z",
+    "2026-09-07T03:04:32.979465Z",
+    "2026-09-07T03:04:33.464615Z"
+  ],
+  "dispatch_gaps_seconds": [
+    0.48250379995442927,
+    0.49879000009968877,
+    0.48487799998838454,
+    0.4830109999747947,
+    0.4851500999648124
+  ],
+  "minimum_dispatch_gap_seconds": 0.48250379995442927,
+  "peak_dispatches_in_rolling_60_seconds": 6,
+  "observed_rate_headers": [
+    {
+      "x-ratelimit-limit": "200",
+      "x-ratelimit-remaining": "199",
+      "x-ratelimit-reset": "1788750272"
+    },
+    {
+      "x-ratelimit-limit": "200",
+      "x-ratelimit-remaining": "199",
+      "x-ratelimit-reset": "1788750272"
+    },
+    {
+      "x-ratelimit-limit": "200",
+      "x-ratelimit-remaining": "199",
+      "x-ratelimit-reset": "1788750273"
+    },
+    {
+      "x-ratelimit-limit": "200",
+      "x-ratelimit-remaining": "199",
+      "x-ratelimit-reset": "1788750273"
+    },
+    {
+      "x-ratelimit-limit": "200",
+      "x-ratelimit-remaining": "199",
+      "x-ratelimit-reset": "1788750274"
+    },
+    {
+      "x-ratelimit-limit": "200",
+      "x-ratelimit-remaining": "199",
+      "x-ratelimit-reset": "1788750274"
+    }
+  ],
+  "rate_header_semantics": "Reported values only; remaining=199 on all six responses is not established account-wide headroom. verified_rate_headers remains false.",
+  "configured_limits": {
+    "operating_per_60s": 180,
+    "hard_per_60s": 200,
+    "combined_attempt_budget": 12
+  },
+  "runs": [
+    {
+      "initial_status": "deferred",
+      "status": "complete",
+      "pages": 5,
+      "attempts": 5,
+      "retries": 0,
+      "throttles": 0,
+      "wait_seconds": 1.3252863000379875,
+      "queue_seconds": 2.1443363999715075,
+      "coverage_expected": 30,
+      "coverage_observed": 30,
+      "missing_pairs_count": 0,
+      "quality_status": "qualified",
+      "quarantined": 0,
+      "new_normalized": 30,
+      "duplicate_normalized": 0,
+      "cache_added_attempts": 0,
+      "resume_bound": true
+    },
+    {
+      "initial_status": "complete",
+      "status": "complete",
+      "pages": 1,
+      "attempts": 1,
+      "retries": 0,
+      "throttles": 0,
+      "wait_seconds": 0.3030519000021741,
+      "queue_seconds": 0.4507041999604553,
+      "coverage_expected": 30,
+      "coverage_observed": 30,
+      "missing_pairs_count": 0,
+      "quality_status": "qualified",
+      "quarantined": 0,
+      "new_normalized": 30,
+      "duplicate_normalized": 0,
+      "cache_added_attempts": 0,
+      "resume_bound": true
+    }
+  ],
+  "restored_replay_added_observations": 0,
+  "restored_replay_quarantined": 0,
+  "changed_bar_pairs": 0,
+  "normalized_receipt_records": 60,
+  "revision_note": "Second retrieval created new receipt/provenance observations; changed bar values are counted separately. No historical point-in-time revision completeness claim.",
+  "orders": 0,
+  "external_model_calls": 0,
+  "paid_requests": 0,
+  "public_raw_data": false,
+  "promotion_eligible": false,
+  "cooperating_callers_only": true,
+  "outside_account_traffic": "unknown",
+  "account_capacity_at_configured_ceiling": "not_load_tested",
+  "implementation_sha256": {
+    "scripts/qualify_step_09.py": "cd0c3b559e5e2918d74f2f82914d7884b235be0c4fa438d8c070b09327425b8c",
+    "src/trade_theorist/adapters/alpaca_market_data/transport.py": "12b69dd6e115a96958aadff6d1245658a8ad7d86bca7a99fe53a498a5a35f223",
+    "src/trade_theorist/ingest/market.py": "fbe57d31186556e037ae5472892c5ccf71f9e90bd720f67587c347de60085fa6",
+    "src/trade_theorist/market_requests.py": "d69d6d60a05695f629245ebc1a6db0be838acabbda9060ad5a27b3e69a8e1c9e"
+  }
+}

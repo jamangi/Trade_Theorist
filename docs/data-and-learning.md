@@ -1,6 +1,6 @@
 # Data acquisition and the learning library
 
-Status (2026-09-06): catalog, ordered learning and permitted-CSV point-in-time ingestion are implemented. The [current inventory](../library/catalog/INVENTORY_REPORT.md) records 30 PDFs and two transcripts covering all 31 active positions. Index Steward's Bogle foundation is complete; Value and Trend each have one partial opening checkpoint and remain ineligible for real recommendations. The owner adopted the limited Harris draft and five papers for Microstructure; missing original books are retired targets. No market-data vendor or subscription is selected. A bounded account-authorized check returned delayed historical SIP daily bars for VTI, SPY and QQQ; this does not select Alpaca or establish current SIP or data rights. See [tasks 014–015 evidence](task-014-015-implementation.md).
+Status (2026-09-07 UTC): catalog, ordered learning and permitted-CSV point-in-time ingestion are implemented. The [current inventory](../library/catalog/INVENTORY_REPORT.md) records 30 PDFs and two transcripts covering all 31 active positions. Index Steward's Bogle foundation is complete; Value and Trend each have one partial opening checkpoint and remain ineligible for real recommendations. The owner adopted the limited Harris draft and five papers for Microstructure; missing original books are retired targets. Alpaca is selected for private delayed daily SIP under the owner-approved local storage/reuse interpretation. Step 09 verified two complete 30-pair retrievals in six requests and idempotent persisted replay. No paid subscription or current SIP entitlement is claimed. See [the current qualification](step-09-vendor-qualification.md); [tasks 014–015 evidence](task-014-015-implementation.md) is historical.
 
 ## A cheap data path
 
@@ -11,7 +11,7 @@ Ordinary scripts perform downloads, pagination, retries, normalization, hashing,
 | Candidate / source | Useful role | Limitation or decision still needed |
 | --- | --- | --- |
 | Permitted CSV and synthetic fixtures | Immediate deterministic development | Fixtures demonstrate mechanics, not an edge; real CSV needs provenance and rights |
-| Alpaca market-data API | Candidate for a small forward-data pilot; delayed SIP daily-bar sample passed | Shared control passed Steps 06–08; complete coverage and applicable storage/replay/model/reporting rights remain unresolved in Step 09 |
+| Alpaca market-data API | Selected for private delayed daily SIP; two complete 30-pair retrievals passed | Standing approval covers free account use and private local storage/replay; real forward integration and required dividend/split evidence remain before Step 11. External model data transfer/public redistribution are outside this scope. |
 | Alpaca paper environment | Optional later execution-adapter validation | Separate simulation, not a substitute for internal per-Character ledgers or evidence of real fills |
 | SEC EDGAR APIs | Primary company filings and financial facts for Value/Event research | Preserve filing vintages; this does not provide stock prices or House/Senate transaction reports |
 | Broader licensed archival vendor, to be selected | Delistings, historical membership, corporate actions, quote coverage | Obtain a requirements-matched sample and rights record before choosing or paying |
@@ -30,10 +30,10 @@ Validate duplicate identity, timestamp timezone, expected sessions, nonnegative 
 
 Each source needs a capability checklist: event/publication/ingestion times; point-in-time revisions; corporate actions and dividends; delisted instruments; historical constituents when needed; feed venue and quote coverage; storage retention; automated access; internal replay; derived-results publication; and raw redistribution. Missing capability narrows experiment claims or blocks that use. Public access and an API key do not prove publication rights. Export no vendor raw data by default, and withhold derived fields until their intended display is permitted.
 
-[Step 09's current qualification review](step-09-vendor-qualification.md) delivers
-the blocked-use decision and concrete bounded sample proposal. Shared admission
-and independent preflight are complete; source rights and actual sample evidence
-remain open. The quality helper now requires an explicit instrument/session grid,
+[Step 09's completed qualification](step-09-vendor-qualification.md) records
+the scoped selection, standing authority, actual sample and private continuation path. Shared admission
+and independent preflight are complete; scoped private-use interpretation and
+actual sample evidence now pass. Broader capabilities require matching evidence. The quality helper now requires an explicit instrument/session grid,
 blocks quarantine and mismatched rows, and defaults to unverified sample authority.
 Its coverage result is not a permission or production-promotion decision.
 

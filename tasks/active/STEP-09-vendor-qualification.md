@@ -1,6 +1,6 @@
 # Step 09: Qualify permitted data and a bounded workload
 
-- Status: review delivered 2026-09-07 UTC; real qualification blocked with explicit evidence and next actions below
+- Status: completed 2026-09-07 UTC; private delayed daily SIP qualified
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-014](../TASK-014-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
@@ -12,7 +12,7 @@ Offline controls are proven; now establish whether rights, entitlement and cover
 
 ## Starting evidence
 
-[Step 08 passed offline](../../docs/step-08-offline-preflight.md), with [independent final evidence](../../examples/step-08/preflight.json). Live Trading quota verification remains a Step 13 blocker, outside this Market Data qualification. Applicable rights and explicit authorization are required before each dependent real use or bounded account sample.
+[Step 08 passed offline](../../docs/step-08-offline-preflight.md), with [independent final evidence](../../examples/step-08/preflight.json). Live Trading quota verification remains a Step 13 blocker, outside this Market Data qualification. The [standing owner decision](../../decisions/APPROVALS.md) now covers free account calls and private local storage/replay; repeated sample-specific permission is unnecessary.
 
 ## Finished state
 
@@ -22,7 +22,7 @@ A vendor/rights decision and bounded quality/workload report establish actual su
 
 Recheck official provider terms and capability requirements for the intended universe, cadence, time window and use. Save retrieval dates, versions and applicability. Distinguish authentication from entitlement and each storage/replay/model-processing/reporting right. Local reporting is not permission by itself.
 
-Establish applicable rights before dependent use; obtain specific bounded sample authority before calls. Route all sample requests through Step 06 with Step 08 preflight evidence. Measure attempts, retries/pages, waits, coverage, gaps, revisions, resume and actual headroom under the existing 180/200 policy. No silent SIP/IEX, timeframe or universe substitution.
+Record applicable rights and finite sample scope before dependent use; standing owner authorization now covers this sample and later free private account use. Route all sample requests through Step 06 with Step 08 preflight evidence. Measure attempts, retries/pages, waits, coverage, gaps, revisions, resume and actual headroom under the existing 180/200 policy. No silent SIP/IEX, timeframe or universe substitution.
 
 Deliver a vendor decision, capability/quality report and nonsecret workload evidence. Reingestion must be idempotent. Demonstrate required coverage or mark the experiment blocked. The prior tiny delayed SIP sample is historical evidence, not comprehensive qualification. Paid plans, alternate vendors and provider communication retain separate authority gates.
 
@@ -34,46 +34,51 @@ Use the [focused validation workflow](../../docs/development.md). Record changed
 
 Stop at this step's finished state. The default next item is [Step 10](STEP-10-pilot-readiness.md); do not start it automatically. Follow the queue's blocker rule for independent work. Preserve historical completion claims. No account call, order, paid subscription, public market-data deployment or recurring work is authorized merely by this task brief.
 
-## Delivered review and blocked-use outcome
+## Completed qualification and handoff
 
-The permitted blocked finished state is delivered on 2026-09-07 UTC / September 6
-America/Chicago. **Real vendor qualification has not passed.** Read the
-[bounded guide](../../docs/step-09-vendor-qualification.md) before opening evidence:
+Completed 2026-09-07 UTC under the owner's standing free-account authorization
+and private-local storage/reuse interpretation. The earlier blocked review is
+preserved in [dated evidence](../../examples/step-09/qualification.blocked-review.json),
+not an outstanding permission request.
 
-- [Current decision and quality/workload report](../../examples/step-09/qualification.json):
-  candidate retained; each right is distinguished; zero new account calls, with
-  unmeasured coverage/retries/waits/revisions/headroom recorded as null.
-- [Official-source review](../../examples/step-09/sources.json): ten sources,
-  displayed versions/locators and retrieval date; current customer footer
-  V26.2026.07, general personal-use language and two unavailable linked agreements.
-- [Concrete proposed sample](../../examples/step-09/sample-plan.json): ten sessions,
-  QQQ/SPY/VTI historical raw daily SIP, at most 12 total attempts through the same
-  coordinator and one ten-minute deadline. Not authorized or executed; VTI remains
-  the pilot opportunity set. Storage/replay scope is proposed for 30 days.
-- [Current conditional capability](../../examples/step-09/source-capability.alpaca-conditional.json)
-  and [original quality regression evidence](../../examples/step-09/quality-regression.json).
-  Historical access, initial pilot and Step 08 acceptance artifacts are preserved.
+Start with the [compact implementation guide](../../docs/step-09-vendor-qualification.md).
+It contains the scope, measured results, private-store location, reproducible
+commands and remaining engineering work. Evidence:
 
-Code repair: the Alpaca adapter module's `quality_report` now checks each instrument/session
-pair, blocks missing scope/quarantine/mixed data, retains generator revision counts,
-and defaults sample authority to unverified. Six new tests reproduce the issues;
-existing ingestion proves original duplicate/revision handling (1 initial, 0
-duplicate, 1 changed revision). This is not real-source reingestion evidence.
+- [Current selection](../../examples/step-09/qualification.json): Alpaca selected
+  for private delayed raw daily SIP, VTI pilot with QQQ/SPY qualification controls.
+- [Actual operational evidence](../../examples/step-09/account-sample.json): six
+  HTTP 200 requests, first retrieval five pages with resume, second one page;
+  30/30 expected instrument/session pairs each, zero retries/429s/quarantine.
+  Exact caching made no additional calls; persisted replay added no duplicates.
+  Minimum actual send gap 0.4825 seconds; rolling-minute peak six under 180/200.
+  Header remaining=199 is recorded but does not establish account-wide headroom.
+- [Executed protocol](../../examples/step-09/sample-plan.json): ten sessions,
+  August 24–September 4, 2026, fixed SIP/raw/1Day scope, 12-attempt maximum and
+  one ten-minute deadline. Actual use was six attempts. Raw data remains private
+  outside Git under the same durable quota owner; no automatic purge was imposed.
+- [Source review](../../examples/step-09/sources.json): twelve official sources,
+  dates/versions and historical retrieval limitations. Personal-use terms and
+  research/backtesting guidance support the recorded owner interpretation;
+  no decisive contrary evidence for private local use was found.
+- [Scoped capability](../../examples/step-09/source-capability.alpaca-conditional.json)
+  now enables private storage/replay. Broader unqualified capabilities remain
+  explicit. Public redistribution/external model data transfer are outside scope.
 
-Validation: focused quality/adapter/ingestion/coordinator/forward tests passed;
-full suite passed once, **309 tests across 30 modules in 87.2 seconds**. Existing
-field inventory check passed (**1,869 declared fields**; unknown fields denied).
-No package/dependency/migration/UI changes required a new installed or browser check.
+The rehearsal exposed duplicate additions when replaying an older receipt after
+a newer one. `RevisionBook.append` now recognizes every previously seen exact
+payload in a series. Real persisted replay verified zero additions; the second
+retrieval retained 30 new receipt/provenance records with zero changed bar values.
+Transport diagnostics are bounded and expose only timing/status/rate headers.
+Earlier per-instrument quality fixes and regression evidence remain preserved.
 
-Remaining concrete blockers: match accepted account/subscriber terms to private
-storage/replay and the proposed retention, authorize the exact sample after those
-rights are established, and measure real quality/workload. AI processing and public
-reporting have separate unresolved scopes. Raw-price ETF total-return claims also
-need qualified actions/dividends, and the fixture-only forward path needs reviewed
-real integration before Step 11. No provider was contacted and no permission was
-inferred from absent documentation or an unanswered clarification.
+Validation: **311 tests across 31 modules passed in 90.8 seconds**, field inventory
+passed for **1,869 fields**, and the clean installed v1/v2, collector, forward and
+protected local serving checks passed ([evidence](../../examples/step-09/installed-check.json)).
+No orders, paid subscriptions, provider messages or external model calls occurred.
 
-Next independent task is Step 10's saved-evidence readiness review; it may retain
-conditional data criteria. Step 11 stays blocked. Neither the sample nor Step 10
-was started. README/queue, ADR-003, rights matrix and development map now point here,
-so continuation does not depend on conversation history.
+Next is Step 10 participant readiness; it was not started. Before Step 11, qualify
+required dividend/split evidence for raw-price ETF total returns and implement the
+reviewed real-source forward path (currently fixture-only). Step 13 still needs
+Trading quota/adapter and attribution implementation. These are engineering and
+experiment requirements, not renewed owner-authorization gates.

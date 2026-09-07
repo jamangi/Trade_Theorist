@@ -1,9 +1,13 @@
 {
   "report_kind": "step-09-proposed-bounded-sample",
-  "status": "proposal_not_authorized_or_executed",
+  "status": "owner_authorized_protocol",
   "endpoint": "https://data.alpaca.markets/v2/stocks/bars",
   "method": "GET",
-  "symbols": ["QQQ", "SPY", "VTI"],
+  "symbols": [
+    "QQQ",
+    "SPY",
+    "VTI"
+  ],
   "pilot_symbol": "VTI",
   "feed": "sip",
   "timeframe": "1Day",
@@ -11,11 +15,30 @@
   "asof": "2026-09-04",
   "start": "2026-08-24T00:00:00Z",
   "end": "2026-09-05T00:00:00Z",
-  "expected_sessions": ["2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04"],
+  "expected_sessions": [
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04"
+  ],
   "expected_instrument_session_pairs": 30,
   "minimum_end_delay_seconds": 1200,
-  "query_1": {"page_limit": 7, "max_attempts": 8, "procedure": "Commit one page, retain full-query resume, then complete the same work. Estimate five pages, not a guaranteed bound."},
-  "query_2": {"page_limit": 100, "max_attempts": 4, "procedure": "Within the same authorized run, use a separately frozen later freshness/cutoff to force a re-observation of the same window. Keep both revisions; absence of a change proves only this sample."},
+  "query_1": {
+    "page_limit": 7,
+    "max_attempts": 8,
+    "procedure": "Commit one page, retain full-query resume, then complete the same work. Estimate five pages, not a guaranteed bound."
+  },
+  "query_2": {
+    "page_limit": 100,
+    "max_attempts": 4,
+    "procedure": "Within the same authorized run, use a separately frozen later freshness/cutoff to force a re-observation of the same window. Keep both revisions; absence of a change proves only this sample."
+  },
   "total_physical_attempts_including_all_pages_retries_and_ambiguities": 12,
   "max_retries_per_page": 1,
   "hard_rolling_60s_limit": 200,
@@ -25,11 +48,20 @@
   "deadline_note": "Freeze both work deadlines before calls. Preserve longer server cooldowns and stop/defer when the bound cannot finish; HTTP I/O timeout is not a strict wall-time cancellation guarantee.",
   "cache_checks": "Repeat each completed exact query and run normalization twice; require zero extra HTTP attempts and zero duplicate normalized observations.",
   "owner_binding": "Reuse one stable private quota principal/root for all cooperating callers; never mint a new principal to obtain fresh allowance.",
-  "rights_prerequisite": "Review personal collection, private persistent cache, replay and proposed 30-day sample retention including backups. Model processing is excluded from this sample and remains a separate forward-use gate.",
-  "storage": "Raw responses, observation revisions and detailed reports outside Git. Proposed retention: 30 calendar days, subject to actual terms; no deletion policy is executed by this proposal.",
+  "rights_prerequisite": "Satisfied by owner-approved private-local operating interpretation; reopen only on decisive contrary evidence or expanded use.",
+  "storage": "Private local storage/reuse authorized by the owner; raw observations and detailed reports outside Git. No automatic purge or externally shared data.",
   "publish": "Only separately reviewed nonsecret operational metadata may enter Git; no raw/reconstructable bars, account IDs, credentials or request tokens.",
   "acceptance": "All 30 scoped pairs, valid OHLC/volume/time fields, no unresolved quarantine, receipt/cutoff preserved, resume/cache/reingestion idempotent, actual attempts reconciled and cooldowns respected. Missing or incomplete evidence blocks qualification.",
   "headroom_claim": "This is a small workload check. Do not extrapolate tested capacity to 180 or 200 RPM or claim control over outside callers.",
-  "excluded": ["latest/current SIP", "quotes/trades", "corporate-action endpoint", "Trading/account/order endpoints", "paid plans", "external models", "recurring collection", "retroactive forward decisions"],
-  "account_calls": 0
+  "excluded": [
+    "latest/current SIP",
+    "quotes/trades",
+    "corporate-action endpoint",
+    "Trading/account/order endpoints",
+    "paid plans",
+    "external models",
+    "recurring collection",
+    "retroactive forward decisions"
+  ],
+  "authorization_ref": "decisions/APPROVALS.md#standing-alpaca-authorization--2026-09-07"
 }

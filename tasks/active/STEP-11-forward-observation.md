@@ -12,7 +12,7 @@ Commit real decisions prospectively after software, data and participants are re
 
 ## Starting evidence
 
-Steps 07 through 10 pass for the intended experiment, with a permitted finite run and budget.
+Steps 07 through 10 pass for the intended experiment, with a recorded finite run and budget. Step 09 now qualifies private delayed daily SIP under [standing free-account/private-use authority](../../decisions/APPROVALS.md). Implement reviewed real-source forward integration and qualify required dividend/split evidence for total-return comparisons; the current forward path is fixture-only. Account permission need not be requested again; model spend and recurring work are distinct.
 
 ## Finished state
 

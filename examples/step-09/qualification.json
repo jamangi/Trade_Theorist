@@ -2,13 +2,16 @@
   "report_kind": "step-09-vendor-rights-quality-workload",
   "review_date": "2026-09-07",
   "review_timezone": "UTC",
-  "decision": "candidate_retained_real_use_blocked",
+  "decision": "selected_for_private_local_delayed_daily_bars",
   "vendor": "Alpaca",
   "feed": "sip",
-  "step_finished_state": "Review and blocked-use report delivered; live qualification not passed",
-  "production_selected": false,
+  "step_finished_state": "Completed: owner authorization/interpretation documented and actual bounded sample passed",
+  "production_selected": true,
+  "selection_scope": "Private local delayed daily raw bars for the declared VTI pilot; QQQ/SPY are qualification controls",
   "scope": {
-    "pilot_opportunity_set": ["VTI"],
+    "pilot_opportunity_set": [
+      "VTI"
+    ],
     "pilot_basis": "Historical blocked pilot-candidate lists VTI only; SPY/QQQ are sample controls, not added trading opportunities.",
     "cadence": "daily_session",
     "adjustment": "raw",
@@ -16,60 +19,115 @@
     "historical_backtest_claim": false,
     "old_trial_dates_authorized": false
   },
+  "authorization_ref": "decisions/APPROVALS.md",
+  "rights_basis": "Owner-approved operating interpretation of personal/noncommercial use, supported by official research/backtesting documentation; no decisive contrary evidence found. Not a negotiated provider exception.",
   "rights": {
-    "personal_noncommercial_access": {"status": "supported_by_public_terms", "sources": ["terms"]},
-    "account_agreement_applicability": {"status": "unresolved", "sources": ["customer", "nasdaq-linked", "nyse-linked"]},
-    "persistent_storage_and_backups": {"status": "unresolved_for_requested_retention", "sources": ["terms", "customer"]},
-    "private_replay": {"status": "unresolved_for_this_use", "sources": ["customer", "nasdaq-linked", "nyse-linked"]},
-    "local_model_processing": {"status": "unresolved_for_this_use", "sources": ["terms", "customer", "nasdaq-linked", "nyse-linked"]},
-    "external_model_transfer_training_or_retention": {"status": "not_authorized", "sources": ["terms", "redistribution"]},
-    "owner_only_derived_reporting": {"status": "conditional_on_applicable_use_rights", "sources": ["terms", "customer"]},
-    "public_derived_reporting": {"status": "unapproved", "sources": ["terms", "redistribution"]},
-    "raw_redistribution": {"status": "restricted_absent_applicable_permission", "sources": ["redistribution", "customer"]}
+    "personal_noncommercial_access": {
+      "status": "owner_approved_private_local_operating_interpretation",
+      "sources": [
+        "terms",
+        "historical-research-guide",
+        "agent-workflows"
+      ]
+    },
+    "persistent_storage_and_backups": {
+      "status": "owner_approved_private_local_operating_interpretation",
+      "sources": [
+        "terms",
+        "historical-research-guide",
+        "agent-workflows"
+      ]
+    },
+    "private_replay": {
+      "status": "owner_approved_private_local_operating_interpretation",
+      "sources": [
+        "terms",
+        "historical-research-guide",
+        "agent-workflows"
+      ]
+    },
+    "local_model_processing": {
+      "status": "owner_approved_private_local_operating_interpretation",
+      "sources": [
+        "terms",
+        "historical-research-guide",
+        "agent-workflows"
+      ]
+    },
+    "owner_only_derived_reporting": {
+      "status": "owner_approved_private_local_operating_interpretation",
+      "sources": [
+        "terms",
+        "historical-research-guide",
+        "agent-workflows"
+      ]
+    },
+    "external_model_transfer_training_or_retention": {
+      "status": "outside_private_local_authorization"
+    },
+    "public_derived_reporting": {
+      "status": "requires_separate_use_review"
+    },
+    "raw_redistribution": {
+      "status": "not_authorized"
+    }
   },
   "historical_access": {
     "evidence": "../ingest/alpaca-account-access.2026-09-06.json",
     "status": "historical_scope_only_not_retested",
-    "delayed_sip_daily_symbols": ["QQQ", "SPY", "VTI"],
+    "delayed_sip_daily_symbols": [
+      "QQQ",
+      "SPY",
+      "VTI"
+    ],
     "sessions_per_symbol": 5,
     "latest_sip_http_status": 403,
     "current_authentication_or_entitlement": null
   },
   "completed_engineering": {
-    "shared_requests": "Steps 06–08 implemented and offline preflight passed",
+    "shared_requests": "Steps 06\u201308 implemented and offline preflight passed",
     "preflight_evidence": "../step-08/preflight.json",
     "per_instrument_quality_check": "Hardened in Step 09; original regression tests only",
-    "idempotent_ingestion": "Original Step 09 focused test reruns preserve 1 initial / 0 duplicate / 1 changed revision; no real-data claim"
+    "idempotent_ingestion": "Verified on actual privately stored observations, including persisted-book restoration; zero duplicate additions."
   },
   "live_quality_and_workload": {
-    "status": "not_run_blocked",
-    "account_calls_this_step": 0,
-    "attempts": null,
-    "retries": null,
-    "pages": null,
-    "throttles": null,
-    "wait_seconds": null,
-    "wire_gaps_seconds": null,
-    "coverage_pairs": null,
-    "missing_pairs": null,
-    "quarantined_rows": null,
-    "observed_revisions": null,
-    "resume_verified": null,
-    "reingestion_verified": null,
-    "observed_rate_headers": null,
-    "observed_headroom": null,
+    "status": "qualified_scoped_daily_bars",
+    "evidence": "account-sample.json",
+    "account_calls_this_followup": 6,
+    "attempts": 6,
+    "pages": 6,
+    "retries": 0,
+    "throttles": 0,
+    "coverage_pairs_per_retrieval": 30,
+    "missing_pairs": 0,
+    "quarantined_rows": 0,
+    "changed_bar_pairs": 0,
+    "receipt_observations": 60,
+    "resume_verified": true,
+    "reingestion_verified": true,
+    "observed_minimum_dispatch_gap_seconds": 0.48250379995442927,
+    "observed_rate_limit": 200,
+    "observed_remaining_header": 199,
+    "account_wide_headroom": "not established from reported headers",
     "outside_account_traffic": "unknown"
   },
-  "blockers": [
-    {"id": "rights", "blocks": "Persistent real-data collection/replay and dependent reporting/model use", "resolution": "Match accepted account/subscriber terms to the requested uses and retention; obtain specific clarification only where those terms do not resolve them."},
-    {"id": "bounded-sample-authority", "blocks": "New account calls", "resolution": "Authorize the concrete 12-attempt maximum sample in sample-plan.json after its collection/storage rights are established."},
-    {"id": "unmeasured-quality", "blocks": "Production vendor selection", "resolution": "Execute the permitted sample through the same coordinator and report actual per-symbol coverage, revisions, resume, counts and latency; do not infer capacity from configured ceilings."},
-    {"id": "corporate-action-provenance", "blocks": "A raw-price ETF return trial with unverified distributions/actions", "resolution": "Qualify permitted dividend/split evidence through shared admission, or explicitly narrow the experiment to price-only observations without total-return claims."},
-    {"id": "real-forward-integration", "blocks": "Real prospective operation even if a bars sample passes", "resolution": "The current ForwardRound is explicitly fixture-only. A separately reviewed real-source integration and eligible Step 10 participants precede Step 11 observations."}
+  "blockers_for_scoped_step_09": [],
+  "remaining_scope_limits": [
+    {
+      "id": "corporate-action-provenance",
+      "limit": "A raw-price ETF return trial with unverified distributions/actions",
+      "next_action": "Qualify permitted dividend/split evidence through shared admission, or explicitly narrow the experiment to price-only observations without total-return claims."
+    },
+    {
+      "id": "real-forward-integration",
+      "limit": "Real prospective operation even if a bars sample passes",
+      "next_action": "The current ForwardRound is explicitly fixture-only. A separately reviewed real-source integration and eligible Step 10 participants precede Step 11 observations."
+    }
   ],
   "orders": 0,
   "external_model_calls": 0,
   "subscriptions_changed": false,
   "provider_contacted": false,
-  "promotion_eligible": false
+  "promotion_eligible": false,
+  "prior_review": "qualification.blocked-review.json"
 }

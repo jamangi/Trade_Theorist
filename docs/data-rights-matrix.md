@@ -2,6 +2,21 @@
 
 Checked: 2026-09-06. Architecture policy: [ADR-004](../decisions/records/ADR-004-local-observatory.md). No account or credential was accessed in this review. Source review is evidence for engineering restrictions, not a legal opinion or an amendment to a provider agreement.
 
+## Current private-use decision (2026-09-07 UTC)
+
+[Standing owner authorization](../decisions/APPROVALS.md) resolves the earlier
+private-storage/replay gate: assume private local retention, reuse, experiments
+and owner reporting are permitted unless decisive contrary evidence emerges.
+[Step 09](step-09-vendor-qualification.md) records the personal-use terms and
+Alpaca research/backtesting guidance supporting this owner-approved interpretation,
+plus the successful six-request sample. This is not a negotiated provider licence.
+Do not repeatedly seek permission for the same free private use. No automatic
+purge or arbitrary 30-day retention limit was adopted. Public-data redistribution
+and external model data transfer remain outside this scope.
+
+The initial review below is historical where it describes unresolved private use;
+its private/public field separation and exporter controls still apply.
+
 ## Primary evidence and confidence
 
 | Evidence/version observed | What it establishes | What remains unknown |
@@ -21,7 +36,7 @@ The support page's full article was visible in the official search result, while
 | Fields / examples | Local raw/private storage | Private owner read model | Git/public default |
 | --- | --- | --- | --- |
 | Credentials, secrets, private source paths (`source.private_locator`) | Secret/config store only; outside Git | Never send credentials or unrestricted paths to browser | Deny; do not emit even in diagnostic failures |
-| Observation payloads, bars, quotes, trades, marks, feed/revision/time metadata | Quarantine/private only under the applicable rights policy; retention/replay confirmation remains open | Supply only necessary permitted fields after rights verification | Deny real data and reconstructable series |
+| Observation payloads, bars, quotes, trades, marks, feed/revision/time metadata | Private under applicable rights policy; Alpaca local retention/replay covered by the standing owner interpretation | Supply only necessary permitted fields under the recorded source-rights policy | Deny real data and reconstructable series |
 | Holdings quantity/value, lot basis, fills, dividend values, cash/equity time series | Private canonical ledger; source rights/provenance retained | Necessary for inspection, subject to private-use rights | Deny: combinations can reconstruct prices even without raw bars |
 | Returns, drawdown, benchmark differences, forecasts, confidence, operating cost | Private derived state | Display definitions, evidence status, timestamps and null reasons | Deny real-data summaries until separately approved field/use-specific evidence exists |
 | Broker client/order IDs, account state, mappings, updates, reconciliation differences | Private attribution store | Show only necessary opaque local references and aggregate status; never credentials | Deny identifiers and account-derived values |
@@ -29,7 +44,7 @@ The support page's full article was visible in the official search result, while
 | Schema definitions, source code, original arithmetic fixtures, authored architecture documents | Repository-safe when they contain no private values | Allowed | Allowed as project-authored artifacts; labels do not turn vendor observations into synthetic data |
 | Unknown keys, dynamic event payloads, unreviewed new summary fields | Private/unclassified | Omit from browser until typed and reviewed | Deny |
 
-“Keep private” is a conservative location decision, not a claim that perpetual retention or replay is permitted. Existing source permission gates remain active. Do not copy existing raw samples into this repository to fill the matrix. Open rights questions block the corresponding real-source storage/replay/reporting use; original synthetic development can continue.
+“Keep private” is a conservative location decision, not a claim that perpetual retention or replay is permitted. Existing source permission gates remain active. Do not copy existing raw samples into this repository to fill the matrix. For Alpaca private local use, the current owner interpretation above resolves this earlier gate; broader uses need matching evidence. Original synthetic development can continue.
 
 ## Enforced now versus pending
 
@@ -43,7 +58,7 @@ The server must reject non-loopback binding, unexpected Host/Origin, directory t
 
 Possible later public summaries need a separate field-level reconstruction review and written permission where required. Redacting tickers or keys is insufficient if quantities, values or sequences reconstruct licensed data. No such public real-data export is enabled by this review.
 
-## Step 09 update (2026-09-07 UTC)
+## Initial Step 09 review (2026-09-07 UTC; superseded for private use)
 
 [The vendor/rights decision](step-09-vendor-qualification.md) and its
 [source register](../examples/step-09/sources.json) supersede the earlier review's
@@ -55,8 +70,8 @@ prohibited. Determine the accepted agreement set and its applicability before
 requiring additional permission. Linked exchange agreements could not be retrieved
 (HTTP 403); no contents or applicable versions were inferred.
 
-Step 09 records each use separately and proposes a 30-day private sample retention
+The initial blocked review recorded each use separately and proposed a 30-day private sample retention
 scope for review. Collection/storage/replay rights are needed for its durable
 sample; external model use is excluded and remains a later, distinct question.
-No rights flag was elevated and no real sample or provider contact occurred. The
+At that initial review no rights flag was elevated and no real sample or provider contact occurred. The subsequent completed qualification elevated private storage/replay flags and ran the authorized sample; no provider contact occurred. The
 private UI and published-data restrictions remain unchanged.

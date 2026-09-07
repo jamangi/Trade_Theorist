@@ -1,10 +1,32 @@
-# ADR-003: Alpaca market-data qualification remains conditional
+# ADR-003: Alpaca selected for private delayed daily SIP
 
-- Date checked: 2026-09-06
-- Status: delayed historical SIP sample passed; vendor selection deferred
+- Date checked: 2026-09-07 UTC
+- Status: Step 09 scoped qualification passed; broader capabilities remain conditional
 - Decision owner: repository owner for any subscription or license acceptance
 
-## Decision
+## Current decision (2026-09-07 UTC)
+
+Select Alpaca for private delayed raw daily SIP, with VTI as the pilot opportunity
+set and QQQ/SPY as qualification controls. [Standing owner approval](../APPROVALS.md)
+covers free data/paper use and adopts private local storage/replay/experiments under
+the owner's interpretation of the personal-use terms. Alpaca's research database
+and backtesting guidance supports that interpretation; no decisive contrary evidence
+was found. No provider ruling, paid subscription or public redistribution is claimed.
+
+[Step 09's completed guide](../../docs/step-09-vendor-qualification.md) and
+[actual operational evidence](../../examples/step-09/account-sample.json) record
+six HTTP 200 requests, 30/30 pairs in each of two ten-session retrievals, resume,
+zero additional cache requests and zero duplicate additions on persisted replay.
+The 0.4825-second minimum send gap and six-request rolling-minute peak fit 180/200;
+this sample does not measure maximum capacity or unknown outside traffic.
+Remaining-header semantics are unverified, so header-derived headroom stays disabled.
+
+The scoped gate is satisfied; the historical blanket private-use uncertainty below
+is superseded by the explicit owner decision. Real-source forward integration,
+participant readiness and qualified dividend/split evidence for total returns remain
+before Step 11. Later free account uses do not require renewed owner permission.
+
+## Initial decision (2026-09-06; historical)
 
 Alpaca remains the first vendor candidate, but it is not selected as the production
 market-data source. The repository contains a feed-pinned, transport-injected bars
@@ -47,7 +69,7 @@ from successful API access.
   exploitation require permission. API functionality alone is not treated as private
   storage, internal replay or publication permission.
 
-## Capability conclusion
+## Initial capability conclusion (historical; current scope above)
 
 | Requirement | Current conclusion |
 | --- | --- |
@@ -67,7 +89,7 @@ from successful API access.
 No alternative vendor was evaluated or silently selected. Selecting another provider
 requires a new decision record using the same checklist.
 
-## Promotion gate
+## Original promotion gate (historical)
 
 Before status can change from conditional to selected:
 
@@ -87,10 +109,10 @@ records the exact successful scope. Raw returned bars remain outside Git.
 
 [ADR-004](ADR-004-local-observatory.md) supersedes public-hosting assumptions with a private local owner interface and versioned accounting repairs. It preserves this record's historical decisions and qualification evidence. The [rights matrix](../../docs/data-rights-matrix.md) keeps provider permission questions explicit; private deployment does not select a vendor or authorize account operations.
 
-## Step 09 decision update (2026-09-07 UTC)
+## Initial blocked Step 09 review (2026-09-07 UTC; superseded above)
 
 **Retain Alpaca as candidate; do not select production use yet.**
-[The current review](../../docs/step-09-vendor-qualification.md) distinguishes
+[The initial review](../../examples/step-09/qualification.blocked-review.json) distinguishes
 documented delayed-SIP fit from unknown current account access and applicable use
 rights. General personal-use language supports that use; it does not by itself
 resolve the proposed retention/replay/model-processing scope under all applicable
@@ -99,10 +121,10 @@ the linked subscriber PDFs' retrieval failures.
 
 Promotion gate 1 above is now satisfied offline by Steps 06–08. Gates 3–5 remain
 unfulfilled; a paid/current SIP plan is unnecessary for the proposed older daily
-window and was not purchased. The new [quality/workload decision](../../examples/step-09/qualification.json)
-contains explicit nulls for unmeasured real metrics. The [sample proposal](../../examples/step-09/sample-plan.json)
-has 12 total attempts and requires applicable storage/replay rights plus specific
-authority before execution. No account sample ran in Step 09. Historical access
+window and was not purchased. The new [blocked quality/workload decision](../../examples/step-09/qualification.blocked-review.json)
+contains explicit nulls for unmeasured real metrics. The original sample proposal had 12 total attempts and awaited private-use
+interpretation and sample authority. No account sample ran during this initial review.
+The current [protocol](../../examples/step-09/sample-plan.json) is authorized and executed. Historical access
 and initial blocked pilot artifacts remain unchanged.
 
 Raw-bar ETF returns also require qualified distribution/action evidence; endpoint

@@ -12,7 +12,7 @@ Exercise paper operation only after its stage decision; optional broker submissi
 
 ## Starting evidence
 
-Step 12 gates pass and the precise paper run is authorized. Broker submission requires separate selection and authority.
+Step 12 gates pass. The [standing owner authorization](../../decisions/APPROVALS.md#standing-alpaca-authorization--2026-09-07) already covers all free Alpaca paper activity and delegates finite workload/risk settings to the agent. Record the precise run and choose whether to exercise broker paper submission; do not request the same permission again. Trading quota enforcement, reconciliation and attribution remain engineering prerequisites.
 
 ## Finished state
 
@@ -20,9 +20,9 @@ The selected approved paper workflow has private manifests, comparable simulated
 
 ## Scope
 
-META-001 fixes the initial physical submission scope to **Monarchy only**, after separate order authorization. Individual portfolios remain independent internal simulations and never receive Alpaca client IDs. Use Steps 01 and 02's durable opaque mapping/outbox/update contracts. Do not encode local experiment/portfolio/Character IDs in `client_order_id`; resolve the opaque ID through the internal order to the final recommendation. Unknown submissions halt/reconcile instead of blind retry. Preserve partial fills through cancellation and reject unexplained aggregate account changes. Apply the [v2 performance contract](../../docs/portfolio-performance-v2.md) and [ADR-004](../../decisions/records/ADR-004-local-observatory.md), including a separately identified simulated Monarchy control for fair decision comparisons.
+META-001 fixes the initial physical submission scope to **Monarchy only**; the standing approval now supplies free paper-order authority. Individual portfolios remain independent internal simulations and never receive Alpaca client IDs. Use Steps 01 and 02's durable opaque mapping/outbox/update contracts. Do not encode local experiment/portfolio/Character IDs in `client_order_id`; resolve the opaque ID through the internal order to the final recommendation. Unknown submissions halt/reconcile instead of blind retry. Preserve partial fills through cancellation and reject unexplained aggregate account changes. Apply the [v2 performance contract](../../docs/portfolio-performance-v2.md) and [ADR-004](../../decisions/records/ADR-004-local-observatory.md), including a separately identified simulated Monarchy control for fair decision comparisons.
 
-Run both portfolio modes against fresh permitted data under the approved paper policy and preregistered fill assumptions. Optionally implement a paper-only broker adapter if separately selected and authorized; local simulated sleeves remain canonical for comparative experiments. Preserve distinct broker-versus-local results and reconciliation.
+Run both portfolio modes against fresh permitted data under the recorded paper policy and preregistered fill assumptions. Optionally implement a paper-only broker adapter under standing authority; local simulated sleeves remain canonical for comparative experiments. Preserve distinct broker-versus-local results and reconciliation.
 
 ## Deliverables
 

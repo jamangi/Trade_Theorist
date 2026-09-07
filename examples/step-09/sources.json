@@ -88,13 +88,33 @@
       "id": "calendar",
       "url": "https://www.nyse.com/trade/hours-calendars",
       "status": "reviewed",
-      "version": "Displayed 2026â€“2028 calendar",
+      "version": "Displayed 2026\u00e2\u20ac\u201c2028 calendar",
       "locator": "2026 holiday table and core session hours",
-      "finding": "September 7, 2026 is Labor Day closure; no listed holiday falls within August 24â€“September 4. Normal core session ends at 16:00 Eastern.",
+      "finding": "September 7, 2026 is Labor Day closure; no listed holiday falls within August 24\u00e2\u20ac\u201cSeptember 4. Normal core session ends at 16:00 Eastern.",
       "applicability": "Supports the proposed ten-session sample calendar; daily API aggregates are not thereby certified as regular-session-only bars."
+    },
+    {
+      "id": "historical-research-guide",
+      "url": "https://alpaca.markets/learn/fetch-historical-data",
+      "status": "reviewed",
+      "version": "Displayed February 27, 2021; current article content reviewed 2026-09-07",
+      "locator": "Opening and prerequisites",
+      "finding": "Alpaca describes historical-data use for research databases and backtesting, with paper accounts supported by its examples.",
+      "applicability": "Supports the owner private-research interpretation; product guidance is not a separately negotiated licence."
+    },
+    {
+      "id": "agent-workflows",
+      "url": "https://alpaca.markets/blog/alpaca-launches-skills-library-for-ai-agents/",
+      "status": "reviewed",
+      "version": "June 17, 2026; displayed updated August 26, 2026",
+      "locator": "Backtesting skill overview",
+      "finding": "Alpaca describes repeatable historical-data research runs, structured artifacts and reproducible reporting.",
+      "applicability": "Additional context for private experimental reuse; this task installs no plugin, invokes no provider skill and makes no external model call."
     }
   ],
   "content_sha256": null,
   "hash_note": "The web reader supplied extracted text, not a stable raw-byte capture. Do not present hashes of authored summaries as hashes of provider documents. Displayed versions, URLs and locators are retained.",
-  "retrieved_on_utc": "2026-09-07"
+  "retrieved_on_utc": "2026-09-07",
+  "followup_review_on_utc": "2026-09-07",
+  "owner_decision": "Private local storage/reuse is accepted under the owner interpretation unless decisive contrary evidence emerges; no such new evidence found."
 }

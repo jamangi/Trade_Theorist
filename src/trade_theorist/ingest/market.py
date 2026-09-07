@@ -90,8 +90,12 @@ class RevisionBook:
         key = self.key(payload)
         series = self._series.setdefault(key, [])
         payload_hash = digest(payload)
-        if series and series[-1].observation["payload_hash"] == payload_hash:
-            return series[-1], False
+        # Replaying an older saved receipt after a newer one is still a duplicate.
+        # Receipt/provenance fields are part of the hash, so a genuinely new
+        # observation (including a later return to an earlier price) is retained.
+        for existing in reversed(series):
+            if existing.observation["payload_hash"] == payload_hash:
+                return existing, False
         previous = series[-1].observation if series else None
         revision = len(series) + 1
         observation = dict(
