@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "policy_id": "pilot-readiness:vti-daily-v1",
+  "recorded_at": "2026-09-07T03:29:30Z",
+  "scope": "Participant learning eligibility for the intended three-Character private VTI delayed-daily shadow pilot; not execution or performance approval.",
+  "participants": [
+    {
+      "character_id": "index_steward",
+      "eligible": true,
+      "decision": "ready",
+      "character_version": "character:index-steward-pilot-foundation-v1",
+      "version_hash": "bb288abfdf01afcff0892bfae6f17e20b48cb8dce14036974f6033835ea5cfbf",
+      "learning_character_version": "character:index-steward-bogle-2017-v1",
+      "learning_character_hash": "8a77543824f9cbfc474fe3bedd87b36817a447880c2aba34ffe2af7062953854",
+      "knowledge_checkpoint": "checkpoint:0caa62cbb3f3fdd511c183443fee754c95ccb05f72c14ddb99640769e9032c4f",
+      "knowledge_hash": "27285e44a751f2d0b75a1349a295713ce107267c5eab9b7a0492d8c6e0e826c8",
+      "reviewed_constitution": "characters/index_steward/constitution.v1.md",
+      "reviewed_constitution_hash": "9759f2c723c9f9844c61793ec5a1b4460a402ab52899af1e264fdadd27fa1a28",
+      "source_id": "book:9781119404521",
+      "source_pdf_sha256": "b5c2c3136dc2fda5b24a584b3ad23ffbc7ae9ed46c750155badfe1303d5e68e3",
+      "edition": "10th anniversary, updated and revised, 2017, ePDF (second edition)",
+      "material_scope": "full_book",
+      "sections_reviewed": 21,
+      "reviewed_ranges": [
+        [
+          17,
+          34
+        ],
+        [
+          35,
+          42
+        ],
+        [
+          43,
+          58
+        ],
+        [
+          59,
+          72
+        ],
+        [
+          73,
+          86
+        ],
+        [
+          87,
+          98
+        ],
+        [
+          99,
+          106
+        ],
+        [
+          107,
+          118
+        ],
+        [
+          119,
+          126
+        ],
+        [
+          127,
+          144
+        ],
+        [
+          145,
+          160
+        ],
+        [
+          161,
+          172
+        ],
+        [
+          173,
+          186
+        ],
+        [
+          187,
+          200
+        ],
+        [
+          201,
+          212
+        ],
+        [
+          213,
+          228
+        ],
+        [
+          229,
+          242
+        ],
+        [
+          243,
+          256
+        ],
+        [
+          257,
+          270
+        ],
+        [
+          271,
+          292
+        ],
+        [
+          293,
+          302
+        ]
+      ],
+      "books_completed": 1,
+      "curriculum_complete": false,
+      "unread_positions": [
+        2,
+        3,
+        4
+      ],
+      "foundation_remaining": null,
+      "role": "Initial council lead and independent broad-fund baseline reasoning, subject to independent policy; Bogle-grounded costs, diversification, long horizons and explicit abstention.",
+      "limitations": "The S&P 500 mutual-fund cost theory is not a VTI daily signal or evaluated result. Current fees, taxes, prices and fund properties need qualified current evidence.",
+      "contamination": "hindsight-contaminated",
+      "evaluation_status": "not_run",
+      "theory_ids": [
+        "theory:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9"
+      ],
+      "registration_ids": [
+        "registration:c9e095e6441644abd2c97c6b2db3a74c5f136ca002fef45ce3529e31dfa844e9"
+      ],
+      "blockers": []
+    },
+    {
+      "character_id": "value_rationalist",
+      "eligible": false,
+      "decision": "unready",
+      "character_version": "character:value_rationalist-foundation-v1",
+      "version_hash": "f727f678cf7f1351e9a2682b91a163becddef296d03952f8e33324322e441933",
+      "learning_character_version": "character:value_rationalist-foundation-v1",
+      "learning_character_hash": "f727f678cf7f1351e9a2682b91a163becddef296d03952f8e33324322e441933",
+      "knowledge_checkpoint": "checkpoint:0f421a7357f60f4e97c7a1d317911c3cedb408de9932ae44204c6783a934e941",
+      "knowledge_hash": "db00239029e6920c37999a6a63b1141c2619662020ae263f05e5cd5efd69b219",
+      "reviewed_constitution": "characters/value_rationalist/constitution.md",
+      "reviewed_constitution_hash": "39b79c71b7ccb27130dc92ec97a81a0df7255efc661a0a1785f1fccdad14fb10",
+      "source_id": "book:9780061745171",
+      "source_pdf_sha256": "d1cfe51346ff4796c61d549da3b8837ec68a4ea4a791c5ea01b6be95a6ca3c4f",
+      "edition": "Revised edition; Graham's 1973 fourth revised text with 2003 Jason Zweig commentary; EPUB rendered as PDF",
+      "material_scope": "sample",
+      "sections_reviewed": 1,
+      "reviewed_ranges": [
+        [
+          17,
+          31
+        ]
+      ],
+      "books_completed": 0,
+      "curriculum_complete": false,
+      "unread_positions": [
+        2,
+        3,
+        4
+      ],
+      "foundation_remaining": "Only the introduction at PDF pages 17-31 has been reviewed; the remaining book is unread.",
+      "role": "Independent price-versus-value and margin-of-safety critique; abstain when a broad ETF's daily bars cannot support a valuation claim.",
+      "limitations": "Daily VTI bars alone do not establish business value or margin of safety. No forced active opinion.",
+      "contamination": "hindsight-contaminated",
+      "evaluation_status": "not_run",
+      "theory_ids": [],
+      "registration_ids": [],
+      "blockers": [
+        "Complete and review the remaining pinned foundation; append a reconciled version and rerun this gate."
+      ]
+    },
+    {
+      "character_id": "systematic_trend_operator",
+      "eligible": false,
+      "decision": "unready",
+      "character_version": "character:systematic_trend_operator-foundation-v1",
+      "version_hash": "2eb32ef5bab877004fffa92072481344e95b9cd78ddca062aec4e8d59d2b07af",
+      "learning_character_version": "character:systematic_trend_operator-foundation-v1",
+      "learning_character_hash": "2eb32ef5bab877004fffa92072481344e95b9cd78ddca062aec4e8d59d2b07af",
+      "knowledge_checkpoint": "checkpoint:ff717c6d4f751a4408a3e808d58dae46deb8faff616bc9c3215160771d8b2e53",
+      "knowledge_hash": "f9d71845cd736a056dfa62f9e389e9c197292255a40a47bb06015af02d09d2eb",
+      "reviewed_constitution": "characters/systematic_trend_operator/constitution.md",
+      "reviewed_constitution_hash": "2cdb8c27d584dc664a5dffa876096143f38ec021e31e442d2e0693e400f7b195",
+      "source_id": "book:9780071509466",
+      "source_pdf_sha256": "582d494f455b4b8430ccdbdce4e92b824fd488c902dbb5cade98d00136ef66cf",
+      "edition": "2007 McGraw-Hill ebook rendered as PDF",
+      "material_scope": "sample",
+      "sections_reviewed": 1,
+      "reviewed_ranges": [
+        [
+          25,
+          32
+        ]
+      ],
+      "books_completed": 0,
+      "curriculum_complete": false,
+      "unread_positions": [
+        2,
+        3,
+        4
+      ],
+      "foundation_remaining": "Only chapter 1 at PDF pages 25-32 has been reviewed; the remaining book is unread.",
+      "role": "Independent trend-system research in shadow mode; require a preregistered entry, sizing, exit and invalidation rule before any active signal, otherwise abstain.",
+      "limitations": "Historical futures and execution anecdotes do not validate transfer to an unleveraged VTI daily system or establish current trading costs.",
+      "contamination": "hindsight-contaminated",
+      "evaluation_status": "not_run",
+      "theory_ids": [],
+      "registration_ids": [],
+      "blockers": [
+        "Complete and review the remaining pinned foundation; append a reconciled version and rerun this gate."
+      ]
+    }
+  ],
+  "eligible_character_versions": [
+    "character:index-steward-pilot-foundation-v1"
+  ],
+  "participant_gate": "blocked",
+  "step_11_status": "blocked",
+  "step_11_prerequisites": [
+    "All three participants pass this learning gate; keep the intended roster unchanged.",
+    "Implement and review real-source v2 forward integration, including immutable Character/knowledge ancestry and eligibility enforcement; current shared integration accepts fixtures only.",
+    "Qualify the dividend/split evidence needed for total-return comparisons.",
+    "Preregister future dates, horizons, decision and abstention rules, runtime/model/prompt/usage pins and finite risk policy before outcomes; preserve independent memories and equal snapshots."
+  ],
+  "reconciled_bundle_path": "characters/index_steward/versions/pilot-foundation-v1.bundle.json",
+  "reconciled_bundle_hash": "dcd0b4e6dbfc7412f646b6b14e2ff40fc574dde09065169ded7abc69aa50bdce",
+  "evidence_hashes": {
+    "examples/step-10/entry-policy.v1.json": "1c285ec11951046cb2a09014c14bd7f20f928ba59a193408c88890acd6eafe87",
+    "characters/index_steward/checkpoints/bogle-2017-completion.json": "e7b9116a9422d5d34a1d104e1fdb213f7f78b4c0f573b8a98483c1174c229a8c",
+    "characters/index_steward/checkpoints/bogle-2017.bundle.json": "09a3cc3aa1213185f6237bd16198b2d72b68141aff34d0369abbbb9ec585148e",
+    "characters/index_steward/checkpoints/bogle-2017-prior.json": "24467a7b27f0f13fcd89e80bb133f80a7b3b395dfda8df51035faeaee2df9d7c",
+    "characters/index_steward/checkpoints/bogle-2017-reading-review.json": "25599dc2313f46710666f6008ff08e0854013adccef7ad548e8aca56f05e441e",
+    "characters/index_steward/curriculum.v1.json": "43d9c10524f86bc9de78ff6f8581d736777a559742e74a7f4a7b71d65a3505ee",
+    "characters/index_steward/memory/bogle-2017-consolidated.json": "d478e886b9fe15c81e817cc44a9863ee8af22f5c083982bef1df5259fe23e16e",
+    "characters/index_steward/constitution.v1.md": "9759f2c723c9f9844c61793ec5a1b4460a402ab52899af1e264fdadd27fa1a28",
+    "library/catalog/bogle-2017-acquisition.json": "fcade80f8b5b64fe62e08649f539f183fc72e57a8efc4745b48cc3f5598a0bff",
+    "characters/index_steward/memory/bogle-2017-deltas.json": "e37e55fb5ee292327e362c0d6229ab454bb6da1b38f73f461cf439d0dc8aa028",
+    "characters/index_steward/theories/bogle-2017.json": "e70a522f6359be31cb622ab0e9507cdba08301d7ffed8eb0fac9a73e21f3bcf5",
+    "characters/value_rationalist/checkpoints/foundation-status.json": "dc9a99c919e96377f2c2a65f9c3c71c773d0db24a24c0c66306fbe405ad03e50",
+    "characters/value_rationalist/checkpoints/foundation.bundle.json": "3fbebd546565662d2c1be0388dd23251c3c3ab29078365e1ea432f40dbd52667",
+    "characters/value_rationalist/checkpoints/foundation-prior.json": "d8aa00e0ab3e3caf0e138c1effb291e69d0134f6adcce79f96bdcc36d669ff99",
+    "characters/value_rationalist/checkpoints/foundation-reading-review.json": "08094b472e72d7ef9d141a6f813cc0266d553c1c234c1743aa18405d70296080",
+    "characters/value_rationalist/curriculum.v1.json": "e0b94a79b3f4ac8991b724a8a01e3f8ff0f56f962b1771567a8eebb4794a61e7",
+    "characters/value_rationalist/memory/foundation-consolidated.json": "9ea0a29a29a17b8ca197e1d5f2e0201e327cf79b89d51f938f2cdfca7a5abafb",
+    "characters/value_rationalist/constitution.md": "39b79c71b7ccb27130dc92ec97a81a0df7255efc661a0a1785f1fccdad14fb10",
+    "library/catalog/specialist-foundations-2026-09-05.json": "5543b7e4d76d9cbb3c7a9ac5baab55ff982e40c5599925605c67824ccccf5127",
+    "characters/systematic_trend_operator/checkpoints/foundation-status.json": "a6008d36d234fa6accb7d8ce3d2f5239b55f9410a4085ce3482d083975ccbff6",
+    "characters/systematic_trend_operator/checkpoints/foundation.bundle.json": "dd3df775251f5d51a5e2056bcc304e0649229a2176655a260e48ac15c7302d5c",
+    "characters/systematic_trend_operator/checkpoints/foundation-prior.json": "8182f4f7035c39fd4695833578bb9382b33046c8be5a44d7fa67fd4f51cf9d73",
+    "characters/systematic_trend_operator/checkpoints/foundation-reading-review.json": "211a0aff7cbedd01fcff86dbf29ed9267552f8fdb8785a8bf1be184c35b3f3ec",
+    "characters/systematic_trend_operator/curriculum.v1.json": "84358bc168e0700340330a6df8d34cad5091fae478217776e0bca7968c9ea87e",
+    "characters/systematic_trend_operator/memory/foundation-consolidated.json": "20897e15f8c942be40c3cbdfe3c5c4c767ae211481d99a3ad927afd3a198795e",
+    "characters/systematic_trend_operator/constitution.md": "2cdb8c27d584dc664a5dffa876096143f38ec021e31e442d2e0693e400f7b195"
+  },
+  "verification_limit": "Checks saved evidence and original attribution, not a fresh PDF passage verification or independent reading replication.",
+  "content_hash": "0582f9dc97682756d4b528a281f4373592a8c5f618087c33b82b60abfde9c040"
+}

@@ -1,6 +1,6 @@
 # Step 11: Run and mature the forward shadow trial
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: pending; blocked on Step 10's Value/Trend learning requirements and the real-integration work below (2026-09-07 UTC)
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-015](../TASK-015-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
@@ -12,7 +12,7 @@ Commit real decisions prospectively after software, data and participants are re
 
 ## Starting evidence
 
-Steps 07 through 10 pass for the intended experiment, with a recorded finite run and budget. Step 09 now qualifies private delayed daily SIP under [standing free-account/private-use authority](../../decisions/APPROVALS.md). Implement reviewed real-source forward integration and qualify required dividend/split evidence for total-return comparisons; the current forward path is fixture-only. Account permission need not be requested again; model spend and recurring work are distinct.
+Require Steps 07 through 10 to pass for the intended experiment, with a recorded finite run and budget. [Step 10's completed review](../../docs/step-10-pilot-readiness.md) identifies `character:index-steward-pilot-foundation-v1` as eligible for its scoped learning role, but Value and Trend remain unready; the three-participant gate has not passed. Finish those named foundations and append validated versions/readiness evidence without dropping participants. Step 09 qualifies private delayed daily SIP under [standing free-account/private-use authority](../../decisions/APPROVALS.md). Implement reviewed real-source forward integration, including explicit immutable Character/knowledge ancestry and full-roster eligibility checks, and qualify required dividend/split evidence for total-return comparisons; the current forward path is fixture-only and the recommendation adapter cannot directly consume inherited knowledge across version/experiment boundaries. Account permission need not be requested again; model spend and recurring work are distinct.
 
 ## Finished state
 

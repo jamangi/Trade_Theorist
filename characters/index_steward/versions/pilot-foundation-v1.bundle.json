@@ -1,0 +1,67 @@
+[
+  {
+    "access": "user_supplied",
+    "authors": [
+      "John C. Bogle"
+    ],
+    "blocker": null,
+    "checked_at": "2026-09-05T21:23:48.289201Z",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-05T21:23:48.289201Z",
+    "edition": "10th anniversary, updated and revised, 2017, ePDF (second edition)",
+    "experiment_id": null,
+    "id": "book:9781119404521",
+    "ingestion_status": "complete",
+    "isbn": "9781119404521",
+    "locator": "https://www.wiley-vch.de/en?isbn=9781119404507&option=com_eshop&view=product",
+    "next_check_at": "2026-09-12T21:23:48.289201Z",
+    "private_locator": "library/sources/private/bogle-2017-common-sense-investing.pdf",
+    "publication_eligibility": "derived_permitted",
+    "publisher": "John Wiley & Sons, Inc.",
+    "record_type": "source",
+    "retrieved_at": "2026-09-05T21:04:41.499286Z",
+    "rights": {
+      "evidence": [
+        "Owner supplied the PDF on 2026-09-05 and explicitly requested a local repository copy and completion of TASK-004. This authorizes this bounded analysis and private copy; it is not evidence of a publisher redistribution license.",
+        "Permission values describe the owner-authorized scope for the supplied content, not independently verified publisher licensing. Raw redistribution remains unestablished."
+      ],
+      "machine_ingestion": "permitted",
+      "private_storage": "permitted",
+      "reading": "permitted",
+      "redistribution": "unknown"
+    },
+    "schema_version": 1,
+    "title": "The Little Book of Common Sense Investing"
+  },
+  {
+    "schema_version": 1,
+    "record_type": "learning_session",
+    "id": "learning-session:index-steward-pilot-foundation-v1",
+    "experiment_id": "learning-session:index-steward-pilot-foundation-v1",
+    "created_at": "2026-09-07T03:29:30Z",
+    "contamination": "hindsight-contaminated",
+    "mode": "learning",
+    "character_versions": [
+      "character:index-steward-pilot-foundation-v1"
+    ],
+    "source_ids": [
+      "book:9781119404521"
+    ],
+    "authorization": "Owner requested Step 10 review; approved pilot roster and order in decisions/APPROVALS.md. This selects a bounded saved-evidence review, no new reading/model calls, account traffic or recurring work.",
+    "provenance": "Saved-evidence reconciliation only. Original checkpoints remain under character:index-steward-bogle-2017-v1; exact ancestry and scoped eligibility are in examples/step-10/readiness-register.v1.json. No new learning or performance."
+  },
+  {
+    "character_id": "index_steward",
+    "constitution_hash": "9759f2c723c9f9844c61793ec5a1b4460a402ab52899af1e264fdadd27fa1a28",
+    "contamination": "hindsight-contaminated",
+    "created_at": "2026-09-07T03:29:30Z",
+    "curriculum_hash": "43d9c10524f86bc9de78ff6f8581d736777a559742e74a7f4a7b71d65a3505ee",
+    "experiment_id": "learning-session:index-steward-pilot-foundation-v1",
+    "foundation_source_id": "book:9781119404521",
+    "id": "character:index-steward-pilot-foundation-v1",
+    "readiness": "ready",
+    "record_type": "character",
+    "schema_version": 1,
+    "version": "pilot-foundation-v1"
+  }
+]

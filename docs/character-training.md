@@ -1,6 +1,6 @@
 # When Character learning begins and finishes
 
-Updated 2026-09-06. Learning starts in **TASK-004**, which completed Index Steward's Bogle foundation. **TASK-005** has now started the Value and Trend pilot specialists with one bounded opening checkpoint each. Neither task automatically completes every Character's curriculum.
+Updated 2026-09-07 UTC after [Step 10's cited readiness review](step-10-pilot-readiness.md). Learning starts in **TASK-004**, which completed Index Steward's Bogle foundation. **TASK-005** started the Value and Trend pilot specialists with one bounded opening checkpoint each. Step 10 verified those records and appended a reconciled Index version; it performed no new source reading. Neither task automatically completes every Character's curriculum.
 
 Here, learning means source-grounded reading, critique, versioned constitution changes, cited memory and theory cards. It is not fine-tuning model weights. Reading also does not establish profitable trading or prospective evaluation readiness.
 
@@ -15,6 +15,15 @@ Here, learning means source-grounded reading, critique, versioned constitution c
 | Mean-Reversion Experimentalist | Not explicitly assigned a learning task | Later specialist expansion can be scoped through TASK-023 | 0 of 4 books |
 
 The [active queue](../tasks/README.md) exposes the real pilot readiness prerequisite in Step 10 and later Microstructure/Event scopes in Steps 16/17. The historical IDs above locate earlier evidence. Reading may continue earlier within its bounded authorization; Step 10 does not require all seven complete curricula.
+
+The [Step 10 register](../examples/step-10/readiness-register.v1.json) finds
+`character:index-steward-pilot-foundation-v1` eligible for the scoped Bogle-grounded
+participant-learning role. Value and Trend remain unready, so the three-participant
+gate and Step 11 remain blocked. Their next finite source units are Graham chapter 1
+with its commentary and Faith chapter 2. The [continuation guide](step-10-pilot-readiness.md#next-bounded-learning-work)
+pins editions, required outputs, usage authority and ceilings, and the fresh linked
+version needed to continue beyond an immutable one-section sample. Neither next
+unit alone completes a foundation. Historical learning artifacts are unchanged.
 
 ## Completing an entire curriculum
 

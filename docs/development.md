@@ -23,6 +23,7 @@ Relevant implementation and validation paths:
 | Per-instrument qualification quality | `quality_report` in the Alpaca adapter; `examples/step-09/` | `test_quality_qualification`; [bounded rights/quality handoff](step-09-vendor-qualification.md) |
 | Private account qualification and persisted replay | `scripts/qualify_step_09.py`; transport diagnostics; `RevisionBook` | `test_live_qualification`, `test_ingest`; [Step 09](step-09-vendor-qualification.md). Rehearsal is offline; live command prints counts only and keeps raw data outside Git. |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
+| Cited pilot participant readiness | `learn/readiness.py`, `scripts/review_step_10.py` | `test_pilot_readiness`; [scope, versions and next learning units](step-10-pilot-readiness.md) |
 | Shared v2 forward integration | `forward/shared.py`, `forward/validation.py`, `forward/schema.py` | `test_forward_shared`; [bounded handoff](step-07-forward-integration.md) |
 | Independent shared-path preflight | `tests/preflight_support.py`, `tests/preflight_worker.py`, `scripts/run_step_08_preflight.py` | `test_request_preflight`; [findings and concise reproduction](step-08-offline-preflight.md) |
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
