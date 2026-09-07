@@ -46,6 +46,33 @@ class ReceiverTests(unittest.TestCase):
     def put(self, **kwargs):
         return self.receiver.run(dict(action='put', **(self.meta | kwargs)), io.BytesIO(self.data), io.BytesIO())
 
+    def test_capsule_roundtrip_bounded_immutable_and_rejects_extra_secrets(self):
+        import base64
+        capsule = dict(schema_version=1, kind='fido2-wrapped-age-identity', recipient='public', keys=[])
+        for label in ('primary', 'spare'):
+            capsule['keys'].append(dict(header=dict(schema_version=1, label=label,
+                rp_id='trade-theorist-backup.localhost', recipient='public',
+                credential_id='public metadata', public_key='public metadata', salt='public metadata'),
+                nonce=base64.urlsafe_b64encode(b'n' * 12).decode(),
+                ciphertext=base64.urlsafe_b64encode(b'synthetic encrypted bytes' * 4).decode()))
+        data = json.dumps(capsule).encode()
+        h = hashlib.sha256(data).hexdigest()
+        put = dict(action='put_capsule', capsule_hash=h)
+        for _ in range(2):
+            self.assertEqual(self.receiver.handle(put, io.BytesIO(data), io.BytesIO())['capsule_hash'], h)
+        out = io.BytesIO()
+        self.receiver.handle(dict(action='get_capsule', capsule_hash=h), io.BytesIO(), out)
+        self.assertEqual(out.getvalue(), data)
+        with self.assertRaises(ValueError):
+            self.receiver.handle(put, io.BytesIO(data[:-1]), io.BytesIO())
+        capsule['private_identity'] = 'must not store an extra plaintext secret'
+        invalid = json.dumps(capsule).encode()
+        with self.assertRaises(ValueError):
+            self.receiver.handle(dict(action='put_capsule', capsule_hash=hashlib.sha256(invalid).hexdigest()),
+                                 io.BytesIO(invalid), io.BytesIO())
+        with self.assertRaises(ValueError):
+            self.receiver.handle(dict(action='get_capsule', capsule_hash='../escape'), io.BytesIO(), io.BytesIO())
+
     def test_publish_download_and_explicit_roundtrip_mark(self):
         self.assertEqual(self.put()['status'], 'uploaded_unverified')
         out = io.BytesIO()
@@ -164,6 +191,39 @@ class RemoteClientTests(unittest.TestCase):
 
 
 class AgeIntegrationTests(unittest.TestCase):
+    def test_full_local_protocol_roundtrip_and_retention_with_real_age(self):
+        import os
+        import test_private_backup as fixtures
+        binary = os.environ.get('TRADE_THEORIST_TEST_AGE')
+        if not binary:
+            self.skipTest('Set TRADE_THEORIST_TEST_AGE for actual encrypted round-trip testing')
+        case = fixtures.PrivateBackupTests()
+        case.setUp()
+        self.addCleanup(case.doCleanups)
+        bundle, manifest_hash = case.bundle()
+        keygen = Path(binary).with_name('age-keygen.exe' if os.name == 'nt' else 'age-keygen')
+        key, recipients = case.root / 'test-identity', case.root / 'test-recipients'
+        subprocess.run([str(keygen), '-o', str(key)], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        with recipients.open('wb') as out:
+            subprocess.run([str(keygen), '-y', str(key)], check=True, stdout=out, stderr=subprocess.DEVNULL)
+        config = dict(age_executable=binary, age_sha256=sha(Path(binary)),
+                      recipients_file=str(recipients), recipients_sha256=sha(recipients))
+        receiver = LocalReceiver(case.root / 'server')
+        local = case.root / 'client'
+        # The small accounting fixture has no real Step 11 knowledge ancestry.
+        # Every other byte/hash, cipher, ledger replay and transfer check is real.
+        with patch('trade_theorist.forward.prospective.check_runtime_inputs'), patch('socket.socket.connect', side_effect=AssertionError('No provider')):
+            for _ in range(2):
+                result = remote.publish_roundtrip(config, bundle, local, key,
+                    expected_hash=manifest_hash, synthetic=True, receiver=receiver)
+                self.assertEqual(result['database']['accounted_attempts'], 1)
+                self.assertEqual(result['database']['replayed_performance_results'], 1)
+            retained = remote.prune_remote(config, local, key, keep=1, synthetic=True, receiver=receiver)
+        self.assertEqual(retained['removed'], 1)
+        self.assertEqual(len(receiver.call(dict(action='list'))['objects']), 1)
+        self.assertFalse(list(local.rglob('research.sqlite3')))
+        self.assertFalse(list(local.rglob('*.tar.gz')))
+
     def test_real_encryption_wrong_identity_tamper_and_roundtrip(self):
         # A real age binary is needed for this explicit integration check. CI's
         # ordinary suite does not pretend a mocked cipher proves authentication.

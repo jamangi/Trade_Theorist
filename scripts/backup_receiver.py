@@ -88,7 +88,7 @@ class Receiver:
         self.root.mkdir(parents=True, exist_ok=True, mode=0o700)
         if os.name != 'nt' and (self.root.stat().st_uid != os.getuid() or self.root.stat().st_mode & 0o077):
             raise ValueError('Storage must be owner-only')
-        for name in ('objects', 'incoming', 'receipts', 'operations'):
+        for name in ('objects', 'incoming', 'receipts', 'operations', 'capsules'):
             path = self.root / name
             if path.is_symlink():
                 raise ValueError('Symlink directory forbidden')
@@ -117,6 +117,39 @@ class Receiver:
     def handle(self, request, source, output):
         action = request['action']
         with exclusive(self.root / 'receiver.lock'):
+            if action in ('put_capsule', 'get_capsule'):
+                h = hexhash(request['capsule_hash'])
+                path = self.root / 'capsules' / (h + '.json')
+                if path.is_symlink():
+                    raise ValueError('Symlink capsule forbidden')
+                if action == 'put_capsule':
+                    data = source.read(65537)
+                    if len(data) > 65536 or hashlib.sha256(data).hexdigest() != h:
+                        raise ValueError('Capsule size or digest differs')
+                    capsule = json.loads(data)
+                    if (set(capsule) != {'schema_version', 'kind', 'recipient', 'keys'}
+                            or capsule['schema_version'] != 1 or capsule['kind'] != 'fido2-wrapped-age-identity'
+                            or len(capsule['keys']) != 2):
+                        raise ValueError('Expected a two-key encrypted recovery capsule')
+                    for entry in capsule['keys']:
+                        if (set(entry) != {'header', 'nonce', 'ciphertext'}
+                                or set(entry['header']) != {'schema_version', 'label', 'rp_id', 'recipient', 'credential_id', 'public_key', 'salt'}
+                                or not 32 <= len(base64.urlsafe_b64decode(entry['ciphertext'])) <= 2048
+                                or len(base64.urlsafe_b64decode(entry['nonce'])) != 12):
+                            raise ValueError('Unrecognized encrypted capsule entry')
+                    if path.exists():
+                        if checksum(path) != h:
+                            raise ValueError('Existing capsule corrupt')
+                    else:
+                        temporary = self.root / 'incoming' / (h + '.' + uuid.uuid4().hex + '.partial')
+                        with temporary.open('xb') as out:
+                            out.write(data); out.flush(); os.fsync(out.fileno())
+                        os.replace(temporary, path)
+                    return dict(capsule_hash=h, bytes=len(data))
+                if checksum(path) != h or path.stat().st_size > 65536:
+                    raise ValueError('Stored capsule corrupt')
+                output.write(path.read_bytes()); output.flush()
+                return None
             if action == 'list':
                 objects = []
                 for p in sorted((self.root / 'receipts').glob('backup-*.json')):

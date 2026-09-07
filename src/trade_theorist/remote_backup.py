@@ -77,8 +77,21 @@ def run_age(config, arguments, *, interactive=False):
             if Path(name).name != name or sha(Path(config['plugin_directory']) / name) != expected:
                 raise ContractError('Hardware plugin changed')
         env['PATH'] = config['plugin_directory'] + os.pathsep + env.get('PATH', '')
+    arguments = list(arguments)
+    secret_input = None
+    hardware = config.get('identity_mode') == 'fido2_envelope' and '--decrypt' in arguments
+    if hardware:
+        from .hardware_recovery import unlock
+        if not interactive:
+            raise ContractError('FIDO recovery requires an interactive PIN-and-touch session')
+        capsule = Path(arguments[arguments.index('--identity') + 1])
+        if sha(capsule) != config['capsule_sha256']:
+            raise ContractError('Recovery capsule differs from independent pin')
+        secret_input = unlock(read(capsule), config['hardware_key_label'])
+        arguments[arguments.index('--identity') + 1] = '-'
+    input_options = dict(input=secret_input) if hardware else dict(stdin=None if interactive else subprocess.DEVNULL)
     result = subprocess.run([config['age_executable'], *arguments],
-        stdin=None if interactive else subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+        **input_options, stdout=subprocess.DEVNULL,
         stderr=None if interactive else subprocess.DEVNULL, env=env, timeout=180)
     if result.returncode:
         raise ContractError('Encryption or authenticated decryption failed')
@@ -177,7 +190,8 @@ def publish_roundtrip(config, bundle, root, identity, *, expected_hash, interact
             atomic(root / 'verified-remote' / (identifier + '.json'), marked)
             return dict(result, remote_id=identifier, ciphertext_hash=metadata['ciphertext_hash'],
                         ciphertext_bytes=metadata['bytes'], remote_recovery_verified=True,
-                        hardware_custody_verified=False, restored_account_activation_allowed=False)
+                        hardware_custody_verified=config.get('identity_mode') == 'fido2_envelope',
+                        restored_account_activation_allowed=False)
     return logged(root, 'remote_roundtrip', operation)
 
 
