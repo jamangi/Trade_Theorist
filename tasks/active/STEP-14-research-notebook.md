@@ -20,6 +20,12 @@ Private event-derived timelines, postcards, owner questions and notebook views t
 
 ## Scope
 
+This step can proceed with stored evidence during Step 11's wait once its own UI
+prerequisites hold. Read [11A/11B receipts](../../docs/step-11-automation.md) to explain
+last start/end, incomplete evidence and required action. Keep execution status
+distinct from scientific success. Rendering a status or notebook must not trigger
+incidental provider/model calls or start a schedule.
+
 Build event-derived belief timelines, unresolved-question views, decision postcards, useful-exchange views, owner questions, and a concise lab notebook. Use cached authored summaries with provenance; retain dissent and distinguish owner intervention from independent trials.
 
 ## Deliverables

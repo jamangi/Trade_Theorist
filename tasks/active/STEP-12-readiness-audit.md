@@ -14,6 +14,14 @@ The real forward trial supplies evidence the offline preflight could not; audit 
 
 Step 11's preregistered window has matured; rights, engineering evidence and proposed numeric paper policy are available.
 
+Inspect [11A/11B operational receipts](../../docs/step-11-automation.md) alongside
+immutable scientific reports. Audit missed/overlapping/interrupted runs, actual
+observation time, preserved account attempts and the original stop window. A
+successful task or saved report alone does not establish maturity. Include 11C
+restore evidence if available; otherwise record that operational gap. Neither
+automation nor a five-session trial waives the paper evidence floors. After review,
+disable/remove the expired 11B tasks.
+
 ## Finished state
 
 A reproduced final audit records defects, uncertainty, operational responsibilities and the exact paper-policy/stage decision or blockers. It distinguishes engineering readiness from evidence of an edge.

@@ -20,6 +20,13 @@ The selected approved paper workflow has private manifests, comparable simulated
 
 ## Scope
 
+Reuse [11A's receipts and 11B's operational handoff](../../docs/step-11-automation.md)
+for the selected manual workflow. Distinguish successful execution, complete
+evidence and approval to advance. Reuse shared request ownership; do not apply
+data-download retries to broker submissions. Define order identity, reconciliation
+and cancellation recovery here before Step 15 automates the workflow. The existing
+finite Step 11 tasks submit no broker orders.
+
 META-001 fixes the initial physical submission scope to **Monarchy only**; the standing approval now supplies free paper-order authority. Individual portfolios remain independent internal simulations and never receive Alpaca client IDs. Use Steps 01 and 02's durable opaque mapping/outbox/update contracts. Do not encode local experiment/portfolio/Character IDs in `client_order_id`; resolve the opaque ID through the internal order to the final recommendation. Unknown submissions halt/reconcile instead of blind retry. Preserve partial fills through cancellation and reject unexplained aggregate account changes. Apply the [v2 performance contract](../../docs/portfolio-performance-v2.md) and [ADR-004](../../decisions/records/ADR-004-local-observatory.md), including a separately identified simulated Monarchy control for fair decision comparisons.
 
 Run both portfolio modes against fresh permitted data under the recorded paper policy and preregistered fill assumptions. Optionally implement a paper-only broker adapter under standing authority; local simulated sleeves remain canonical for comparative experiments. Preserve distinct broker-versus-local results and reconciliation.

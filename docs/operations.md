@@ -1,5 +1,12 @@
 # Running and maintaining the future application
 
+**Current finite automation (2026-09-07):** [11A/11B](step-11-automation.md) now add
+private start/end logs, verified outcome receipts and installed Windows tasks for
+the existing Step 11 observation. Read that handoff for exact times, private-path
+binding, rehearsal evidence and sign-in/power requirements. The generic manual-first
+design below remains applicable to future workflows. General recurrence stays in
+Step 15; private backup/restore is the pending Step 11C brief.
+
 Steps 01–04 now implement explicit v2 accounting, private read models and offline
 commands. See [Step 04 commands](step-04-commands.md) for the current version/path
 contract and diagnostics. The design below includes future acquisition and trading

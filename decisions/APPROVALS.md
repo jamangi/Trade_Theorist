@@ -86,6 +86,22 @@ New numerical suggestions in the [architecture](../docs/architecture.md), discus
 
 ## Additional owner-requested direction
 
+- [x] **Finite Step 11 automation (2026-09-07).** The owner requested task briefs,
+  roadmap updates, implementation of 11A/11B and pushing the finished work to
+  online main. This authorizes the named Windows observation task at September 15,
+  00:30 UTC with a 13:00 UTC fallback, plus a 17:00 UTC local deadline check, within
+  the original 00:20:01–22:00 UTC window. Local failure warnings and zero-request
+  scheduled rehearsal are included. These finite jobs run as the normal owner
+  using interactive sign-in without stored Windows passwords. Existing budgets,
+  inputs and stopping rules remain fixed. This supplements the standing exclusion
+  of recurring work for this finite schedule only; it does not authorize weekly
+  trials, new model spend, broker orders or general Step 15 recurrence.
+- [x] **Private backup planning (2026-09-07).** Add Step 11C's backup/restore brief
+  and connect it to Steps 12/15. The owner has a private server described as
+  “lightrail” and proposed backups under the existing non-public-use interpretation.
+  No exact endpoint/login, remote transfer or recurring backup configuration is
+  established by this entry. Local restore design can precede server access.
+
 - [x] Adopt the supplied five-paper Microstructure replacement sequence, retain the supplied Harris draft excerpts as the limited foundation, and use the two supplied OCR transcripts. No further material search is required for this revised plan. [ADR-002](records/ADR-002-microstructure-reading-scope.md) records exact order, scope and the distinction between material availability and completed learning.
 
 - [x] Preserve the council and plan a separate mode where each Character controls a fictional portfolio.

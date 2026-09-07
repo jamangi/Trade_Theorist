@@ -23,14 +23,14 @@ Date: 2026-09-06. Baseline: b60f301, completed META-001. This is an execution-pl
 | [017](TASK-017-high-Sol.md) | [13](active/STEP-13-paper-portfolios.md) | Remaining scope carried forward |
 | [018](TASK-018-medium-Sol.md) | [05](active/STEP-05-local-package.md) | Remaining scope carried forward |
 | [019](TASK-019-medium-Sol.md) | [14](active/STEP-14-research-notebook.md) | Remaining scope carried forward |
-| [020](TASK-020-medium-Sol.md) | [15](active/STEP-15-scheduler.md) | Remaining scope carried forward |
+| [020](TASK-020-medium-Sol.md) | [11A](active/STEP-11A-run-observability.md), [11B](active/STEP-11B-observation-schedule.md), [11C](active/STEP-11C-private-backups.md), [15](active/STEP-15-scheduler.md) | September 7 supplement: observability, finite Step 11 scheduling and backup/restore moved earlier; general recurrence and its gates remain in 15 |
 | [021](TASK-021-high-Astra.md) | [16](active/STEP-16-microstructure.md) | Remaining scope carried forward |
 | [022](TASK-022-high-Astra.md) | [17](active/STEP-17-disclosures.md) | Remaining scope carried forward |
 | [023](TASK-023-high-Astra.md) | [18](active/STEP-18-governance-review.md) | Remaining scope carried forward |
 | [024](TASK-024-high-Sol.md) | [01](active/STEP-01-contracts.md) | Remaining scope carried forward |
 | [025](TASK-025-high-Astra.md) | [02](active/STEP-02-accounting.md) | Remaining scope carried forward |
 
-There are 18 active steps, each containing its remaining implementation and acceptance brief. Sequence numbers are separate from historical task identities. Existing filenames, links and completion evidence remain valid. The former 24 → 25 → 12 → 13 → 18 is now 01 → 02 → 03 → 04 → 05.
+There are 18 numbered steps plus three September 7 supplemental briefs (11A, 11B, 11C), each with implementation and acceptance scope. Sequence numbers are separate from historical task identities. Existing filenames, links and completion evidence remain valid. The former 24 → 25 → 12 → 13 → 18 is now 01 → 02 → 03 → 04 → 05. The original validation below describes the September 6 baseline; supplemental implementation evidence is in the [automation handoff](../docs/step-11-automation.md).
 
 The later chain explicitly separates shared controls, consumer integration, preflight, authorized qualification, participant readiness, real observation, final audit and paper operation. These were existing obligations; separating them neither expands authority nor weakens gates. Step 10 adds no universal book count or all-seven-curricula requirement. Optional broker submission and scheduling remain optional.
 

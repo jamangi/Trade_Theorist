@@ -2,7 +2,7 @@
   "status": "in_progress",
   "manifest_id": "forward:step11-20260907",
   "manifest_hash": "7329f2a3c468ff419014250997a90fa20fe0c0938b2a40727d268520d9dc2b8a",
-  "as_of": "2026-09-07T10:34:36.472111Z",
+  "as_of": "2026-09-07T13:13:26.750099Z",
   "elapsed_sessions": 0,
   "completed_real_sessions": 0,
   "matured_forecasts": 0,
@@ -27,7 +27,7 @@
   "initial_market_requests": 1,
   "participant_count": 4,
   "eligible_foundations": 3,
-  "private_report_hash": "42f562929aa5913c701d6c77c5f6ee44b2d21c9475646de66ead48c873cfb9fb",
+  "private_report_hash": "d50af4f26f71d31e2029caad4c88cdd7ca31eeabf0ff9e2ac48845db77db0684",
   "source_gaps": 0,
   "automatic_continuation": false
 }

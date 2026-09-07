@@ -8,6 +8,13 @@ examples can be rebuilt and validated without reading their complete JSON output
 
 Relevant implementation and validation paths:
 
+Finite observation operations: `src/trade_theorist/observation_job.py`,
+`scripts/run_step_11_job.py`, `scripts/install_step_11_tasks.ps1` and
+`test_observation_job`; [11A/11B handoff](step-11-automation.md).
+Preserve Step 11's frozen runtime files while its window is active. The launcher
+lives outside that hash set. The native Windows scheduled rehearsal is a separate
+read-only deployment check; passing unit tests does not prove account/path binding.
+
 | Work | Implementation | Tests |
 | --- | --- | --- |
 | Simulation/accounting | `src/trade_theorist/adapters/trader_user_sim/` | `test_simulation` |

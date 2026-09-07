@@ -1,6 +1,6 @@
 # Step 15: Add optional bounded scheduling and recovery
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: pending; general recurrence remains here after the 2026-09-07 11A/11B/11C split
 - Recommended model / effort: Sol / medium
 - Historical coverage: [TASK-020](../TASK-020-medium-Sol.md)
 - Queue: [ordered remaining work](../README.md)
@@ -9,6 +9,13 @@
 ## Why this position
 
 Automate repetition only after manual operation and its failure handling are reviewed.
+
+The owner separately requested early [11A observability](STEP-11A-run-observability.md),
+[11B finite observation scheduling](STEP-11B-observation-schedule.md), and an
+[11C backup/restore brief](STEP-11C-private-backups.md). 11A/11B are implemented;
+11C is pending. Reuse their receipts, locking, checked report semantics,
+private-path binding and restore evidence. Their finite authorization does not
+authorize general recurrence or waive this step's starting evidence.
 
 ## Starting evidence
 
@@ -23,6 +30,19 @@ Disabled-by-default scheduling passes overlap, quota, queue, recovery and backup
 Add an optional private scheduler aligned to market sessions, with overlap prevention, catch-up rules, usage ceilings, backups, and meaningful-change notifications. Preserve manual heartbeat controls. Configure recurring work only when explicitly requested; implementation alone must not start an unattended service.
 
 ## Deliverables
+
+Extend the early Windows installation with reviewed logged-out/reboot recovery,
+holiday/session-aware recurrence, independent missed-run monitoring, notification
+delivery and recurring private backups. Establish service identity and actual
+network/credential access. Test power/reboot behavior; 11B's interactive-token
+rehearsal does not prove it. Configure recurring operation only when requested.
+
+The current trial uses deterministic rules and zero external models. A future AI
+runtime is a separate scoped deliverable: record model/version, prompts, pinned
+knowledge, permitted tools, per-run/daily token and cost ceilings, usage telemetry
+and prospective validation before enabling scheduled AI decisions. No agent is
+needed to poll every second or wait for data/quota. Successful scheduling cannot
+substitute for scientific maturity or paper-stage approval.
 
 scheduler integration, recovery/backup runbook, disabled-by-default example schedule.
 
@@ -39,7 +59,6 @@ Acceptance: simultaneous manual and scheduled triggers preserve the combined rol
 ## Private architecture requirements
 
 Package scheduled results through Step 05's local/private boundary. Scheduling does not grant publication, account-call or order authority. Preserve shared quotas, job leases, recorded delays and bounded cost; do not invent missed decisions retrospectively.
-md).
 
 ## Validation and handoff
 

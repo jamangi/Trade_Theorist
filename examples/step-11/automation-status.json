@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "installed_rehearsed_observation_pending",
+  "as_of": "2026-09-07T13:22:53.4066264+00:00",
+  "config_hash": "937905ab9abe8811dc505ddef8d2a7a29468eb65abf4addec432af24f761b0bf",
+  "scheduled_rehearsal": {
+    "verified_at": "2026-09-07T08:13:27.3884326-05:00",
+    "run_id": "676813f10c0640629f5032ba74171c73",
+    "last_task_result": 0,
+    "logon_type": "InteractiveToken",
+    "status": "report_only",
+    "config_hash": "937905ab9abe8811dc505ddef8d2a7a29468eb65abf4addec432af24f761b0bf",
+    "transport_attempts": 0
+  },
+  "tasks": [
+    {
+      "name": "Step11-20260907-DeadlineCheck",
+      "state": "Ready",
+      "logon_type": "Interactive",
+      "run_level": "Limited",
+      "wake_to_run": true,
+      "start_when_available": true,
+      "multiple_instances": "IgnoreNew",
+      "execution_time_limit": "PT12M",
+      "triggers": [
+        {
+          "start_at": "2026-09-15T17:00:00.0000000+00:00",
+          "end_at": "2026-09-15T22:00:00.0000000+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Step11-20260907-Observe",
+      "state": "Ready",
+      "logon_type": "Interactive",
+      "run_level": "Limited",
+      "wake_to_run": true,
+      "start_when_available": true,
+      "multiple_instances": "IgnoreNew",
+      "execution_time_limit": "PT12M",
+      "triggers": [
+        {
+          "start_at": "2026-09-15T00:30:00.0000000+00:00",
+          "end_at": "2026-09-15T22:00:00.0000000+00:00"
+        },
+        {
+          "start_at": "2026-09-15T13:00:00.0000000+00:00",
+          "end_at": "2026-09-15T22:00:00.0000000+00:00"
+        }
+      ]
+    }
+  ],
+  "external_model_calls": 0,
+  "broker_orders": 0,
+  "general_recurrence_enabled": false,
+  "backup_service_installed": false,
+  "limitations": [
+    "Requires owner Windows sign-in; locked screen supported",
+    "Wake requested; physical sleep/wake and power-off recovery not tested",
+    "Local warnings only; no off-machine monitor",
+    "Step 11 maturity and Step 12 remain pending",
+    "Verification ran against the working tree published with this artifact"
+  ],
+  "validation": {
+    "focused_observation_tests": 21,
+    "full_suite_tests": 363,
+    "full_suite_modules": 36,
+    "full_suite_passed": true,
+    "classified_fields": 1983,
+    "changed_document_local_links": 245,
+    "clean_offline_installed_check": "passed",
+    "frozen_trial_inputs": "unchanged"
+  }
+}

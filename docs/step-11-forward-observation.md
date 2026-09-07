@@ -113,7 +113,9 @@ Future sessions are September 8, 9, 10, 11 and 14. One explicitly uncalibrated
 close; an intervening split makes it unscorable. This is a small process trial,
 well below the 60-session/30-forecast paper-review evidence floors.
 
-Observation is manual, once the window has elapsed. Its fixed review begins
+Observation runs once the window has elapsed, through the finite Windows schedule
+or the logged manual launcher described in the [11A/11B handoff](step-11-automation.md).
+Its fixed review begins
 **September 15 at 00:20:01 UTC (September 14 at 7:20:01 p.m. Chicago time)**.
 Two fixed outcome queries have four attempts each. Initial decision retrieval
 has four attempts, so the entire trial has at most twelve account attempts,
@@ -144,15 +146,18 @@ outside Git. Public status is a counts/times/hashes allowlist only.
 
 ```powershell
 .venv/Scripts/python.exe scripts/review_foundation_continuations.py
-.venv/Scripts/python.exe scripts/run_step_11.py report
+.venv/Scripts/python.exe scripts/run_step_11_job.py report
 # Manually, during the review window above:
-.venv/Scripts/python.exe scripts/run_step_11.py observe
+.venv/Scripts/python.exe scripts/run_step_11_job.py observe
 ```
 
 `start` registers/runs the one named trial and is resumable; it never creates a
 replacement window. Use `report` for inspection. Preserve the frozen runtime
 files until observation completes: a changed implementation hash blocks replay
-rather than silently changing assumptions. No scheduler or wake-up was created.
+rather than silently changing assumptions. The later owner-authorized 11B supplement
+installed two finite Windows tasks and requested wake/catch-up settings. See the
+[automation handoff](step-11-automation.md) for the actual private-path binding,
+rehearsal evidence and sign-in requirements. General recurrence is not enabled.
 
 Focused tests cover immutable ancestry, roster and tool barriers; independent
 opinions and bounded council advice; equal snapshots; late-order rejection;

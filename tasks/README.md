@@ -1,8 +1,25 @@
 # Ordered remaining work
 
-Updated 2026-09-07 UTC for Step 11. **All three pilot foundations now pass the scoped learning gate. Step 11's real-data integration is implemented; its finite September 8–14 observation window remains in progress.** Read the [Step 11 guide](../docs/step-11-forward-observation.md), [actual run status](../examples/step-11/forward-status.json), and [active brief](active/STEP-11-forward-observation.md). The owner requested completion of both Value/Trend foundations before proceeding. Their new versions preserve all original partial records and the historical Step 10 blocked register.
+## September 7 automation supplement
 
-Steps 01–08 retain their offline acceptance. Step 09 qualified private delayed daily SIP. Step 11 adds actual dividend/split qualification, immutable knowledge ancestry, full-roster admission, independent opinions and bounded council advice on shared real snapshots. No elapsed evidence, paper approval, broker orders or unattended continuation is implied. Manual outcome observation begins September 15 at 00:20:01 UTC and stops September 15 at 22:00 UTC.
+The owner requested early [11A run observability](active/STEP-11A-run-observability.md)
+and [11B finite Windows scheduling](active/STEP-11B-observation-schedule.md), both now
+implemented and rehearsed. [11C private backup/restore](active/STEP-11C-private-backups.md)
+is a pending brief. [The operational handoff](../docs/step-11-automation.md) records
+the installed jobs, timings, actual verification, private paths and human duties.
+This supplement supersedes the original manual-only handoff below; it does not
+change the trial, its evidence gates or Step 15's general recurring-work scope.
+
+Primary observation: September 15, 00:30 UTC; fallback 13:00 UTC; deadline check
+17:00 UTC. The original 00:20:01–22:00 UTC observation window is unchanged.
+11C and eligible Step 14 work can proceed during Step 11's wait. Step 12 still
+requires actual matured evidence and retains its paper gates. New AI runtime
+work requires its own version, prompt, knowledge/tool boundaries, spend ceilings
+and prospective validation before Step 15 may schedule AI decisions.
+
+Updated 2026-09-07 UTC for Step 11 and its automation supplements. **All three pilot foundations now pass the scoped learning gate. Step 11's real-data integration is implemented; its finite September 8–14 observation window remains in progress.** Read the [Step 11 guide](../docs/step-11-forward-observation.md), [actual run status](../examples/step-11/forward-status.json), and [active brief](active/STEP-11-forward-observation.md). The owner requested completion of both Value/Trend foundations before proceeding. Their new versions preserve all original partial records and the historical Step 10 blocked register.
+
+Steps 01–08 retain their offline acceptance. Step 09 qualified private delayed daily SIP. Step 11 adds actual dividend/split qualification, immutable knowledge ancestry, full-roster admission, independent opinions and bounded council advice on shared real snapshots. No elapsed evidence, paper approval or broker orders are implied. Outcome observation opens September 15 at 00:20:01 UTC and stops September 15 at 22:00 UTC; the finite 11B jobs operate within that window.
 
 ## From the present state to the intended destination
 
@@ -25,6 +42,9 @@ This sequence reaches the same destination as the previous remaining scopes: ver
 | [09](active/STEP-09-vendor-qualification.md) | Qualify permitted data and a bounded workload | Offline controls are proven; now establish whether rights, entitlement and coverage support the intended experiment. | 014 |
 | [10](active/STEP-10-pilot-readiness.md) | Verify eligible Character versions for the pilot (historical review complete; learning gaps resolved in Step 11) | A data service cannot make an untrained Character ready. Expose this existing prerequisite before a real experiment. | 004, 005, 015 |
 | [11](active/STEP-11-forward-observation.md) | Run and mature the forward shadow trial | Commit real decisions prospectively after software, data and participants are ready; then let horizons elapse. | 015 |
+| [11A](active/STEP-11A-run-observability.md) | Record starts, ends and verified outcomes (implemented) | Expose failure and incomplete results before the observation window. | 020, early observability |
+| [11B](active/STEP-11B-observation-schedule.md) | Schedule the existing finite observation (installed and rehearsed) | Remove the need to remember the manual window without extending the trial. | 020, finite scheduling |
+| [11C](active/STEP-11C-private-backups.md) | Prove private backup and restore (pending) | Protect evidence during the wait; configure the private server when its destination/access are established. | 020, recovery |
 | [12](active/STEP-12-readiness-audit.md) | Decide whether evidence supports a paper stage | The real forward trial supplies evidence the offline preflight could not; audit the whole chain before paper operation. | 016 |
 | [13](active/STEP-13-paper-portfolios.md) | Operate attributable paper portfolios | Exercise paper operation only after its stage decision; optional broker submission follows Monarchy-only attribution. | 017 |
 | [14](active/STEP-14-research-notebook.md) | Explain learning and decisions through stored evidence | Enrich explanation after the useful pilot path without making these extra views delay its first observations. | 019 |

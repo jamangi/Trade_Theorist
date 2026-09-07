@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "manifest_id": "forward:step11-20260907",
+  "manifest_hash": "7329f2a3c468ff419014250997a90fa20fe0c0938b2a40727d268520d9dc2b8a",
+  "review_at": "2026-09-15T00:20:01Z",
+  "stop_at": "2026-09-15T22:00:00Z",
+  "observe_at": ["2026-09-15T00:30:00Z", "2026-09-15T13:00:00Z"],
+  "check_at": "2026-09-15T17:00:00Z",
+  "child_timeout_seconds": 600,
+  "task_path": "\\TradeTheorist\\",
+  "task_prefix": "Step11-20260907",
+  "logon_type": "InteractiveToken"
+}
