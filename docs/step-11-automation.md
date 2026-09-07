@@ -154,8 +154,10 @@ Final validation passed: **363 tests across 36 modules**, including 21 launcher
 tests; 1,983 classified schema fields; 245 changed-document local file links;
 and the clean offline installed-package check. The frozen trial runtime, knowledge
 and qualification inputs are unchanged. The dated automation-status artifact
-records the same evidence. [11C](../tasks/active/STEP-11C-private-backups.md) remains a pending private
-backup/restore task; no server login, upload or recurring backup is configured.
+records the same evidence. [11C](step-11-private-backups.md) now provides a verified
+local snapshot and isolated offline restore with preserved quotas and reconciled
+accounting. Remote recovery remains pending; no server login, upload or recurring
+backup is configured.
 Step 14 may work with stored evidence during the wait. Step 12 still requires real
 outcomes and retains its paper gates. Steps 13/15 reuse these receipts and request
 controls; Step 15 owns general repetition, holiday/session handling, service

@@ -1,6 +1,6 @@
 # Step 11C: Build and prove private backup and restore
 
-- Status: pending; brief only, no backup service or remote transfer installed.
+- Status: local backup/restore implemented and rehearsed 2026-09-07; remote disaster recovery blocked on destination/access and encrypted round-trip verification. No recurring backup service installed.
 - Recommended model / effort: Sol / high.
 - Queue: [ordered roadmap](../README.md); early recovery part of [TASK-020](../TASK-020-medium-Sol.md).
 - Starting evidence: existing private SQLite storage, [11A](STEP-11A-run-observability.md) receipts and the owner's available private server (described as “lightrail”; exact hosting/service details remain to be established).
@@ -46,3 +46,24 @@ with reconciled accounting. Document recovery time and recovery-point loss actua
 measured. Feed evidence into Step 12 and Step 15; backup success cannot substitute
 for forward maturity or paper-stage approval. Step 15 reuses this implementation
 and separately authorizes any recurring backup schedule.
+
+## September 7 implementation evidence
+
+[Implementation and recovery runbook](../../docs/step-11-private-backups.md),
+[backup module](../../src/trade_theorist/private_backup.py),
+[finite commands](../../scripts/run_step_11_backup.py), and
+[tests](../../tests/test_private_backup.py) deliver the local scope outside the
+frozen runtime. [Actual acceptance metadata](../../examples/step-11/backup-status.json)
+records a 4.772-second backup and 6.395-second network-blocked restore: 458 files,
+six reports, 177 v2 records, nine spent requests and 30 reconciled performance
+records. No observed record/attempt loss; no provider/model calls or activation.
+
+Validation passed: twelve focused recovery tests and 375 tests across 37 modules,
+1,983 field classifications, and the clean offline installation. Read-only native
+Windows inspection reconfirmed both installed 11B jobs and their finite settings.
+Local copy interruption and retention are
+tested; remote transfer interruption, independent key recovery and an actual
+download/decrypt/restore remain pending. The private server hostname/service,
+destination, access profile and storage/access terms were requested but are not
+configured. This is a partial Step 11C completion, not disaster-recovery acceptance.
+11A/11B remain implemented; Step 12 and recurring Step 15 work retain their gates.

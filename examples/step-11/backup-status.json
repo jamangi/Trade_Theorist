@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-09-07T13:43:15.081137+00:00",
+  "status": "local_backup_and_offline_restore_verified",
+  "manifest_hash": "7e00b52d246e3027f6fc090b5e53352a006f4441de04f8c879285d3ad71b3811",
+  "files": 458,
+  "immutable_reports": 6,
+  "backup_seconds": 4.772,
+  "restore_seconds": 6.395,
+  "stored_v2_records": 177,
+  "accounted_attempts": 9,
+  "replayed_performance_results": 30,
+  "request_state_hashes_preserved": true,
+  "live_evidence_equal_after_rehearsal": true,
+  "observed_record_loss": 0,
+  "observed_attempt_loss": 0,
+  "provider_calls": 0,
+  "model_calls": 0,
+  "restored_account_activation_allowed": false,
+  "remote_recovery_verified": false,
+  "limitation": "Same-machine local rehearsal. No remote transfer, independently recovered key or machine-loss recovery tested."
+}
