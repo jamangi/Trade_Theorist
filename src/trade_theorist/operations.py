@@ -146,7 +146,7 @@ def ingest_csv(store, experiment_id, path, capability, sessions):
                 reasons=sorted({q.reason for q in quarantined}), resume="Correct quarantined input rows, then repeat ingest with the same source")
 
 
-def doctor(data_root=None, *, synthetic=False, policy_path=None):
+def doctor(data_root=None, *, synthetic=False, policy_path=None, quota_root=None, quota_policy_path=None):
     checks = [dict(name="Runtime", status="ready", action=f"Python {sys.version_info.major}.{sys.version_info.minor}; contract schema version 1"),
               dict(name="Optional model credentials", status="configured" if os.environ.get("OPENAI_API_KEY") else "not_configured",
                    action="The offline demo needs no credentials; no live model provider is enabled")]
@@ -176,7 +176,9 @@ def doctor(data_root=None, *, synthetic=False, policy_path=None):
         dict(name="Offline demo", status="ready", action="Run trade-theorist demo; no accounts or external model needed"),
         dict(name="Real execution", status="blocked", action="Complete later forward-shadow and paper-readiness reviews; no live endpoint exists"),
     ])
-    return dict(status="real_work_blocked", schema_version=1, checks=checks, secrets="Credential values are never inspected or printed")
+    from .request_operations import status as request_status
+    return dict(status="real_work_blocked", schema_version=1, checks=checks, secrets="Credential values are never inspected or printed",
+                market_requests=request_status(quota_root, quota_policy_path, fixture=synthetic))
 
 
 def learn_plan(path, data_root, *, synthetic=False, expected_character=None):

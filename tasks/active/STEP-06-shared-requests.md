@@ -1,9 +1,10 @@
 # Step 06: Implement one shared market-data request budget
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: implemented and verified offline, 2026-09-06
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-014](../TASK-014-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
+- Implementation guide: [Step 06 API, reproduction and recovery](../../docs/step-06-shared-requests.md)
 - Design inputs: [Shared request budget](../../docs/market-data-request-budget.md)
 
 ## Why this position
@@ -31,6 +32,38 @@ Bind resume state to the full canonical query, atomically checkpoint accepted pa
 Complete this step with recorded-transport tests of the implemented coordinator and adapter. Step 07 integrates the forward consumer; Step 08 then performs the independent adversarial preflight. Passing Step 08 is required before Step 09's account-backed sample, not before this engineering step can finish. The prior small credential check does not establish rate behavior, complete coverage or rights.
 
 ## Validation and handoff
+
+Completed 2026-09-06. The [implementation guide](../../docs/step-06-shared-requests.md)
+is the bounded handoff for a fresh task: exact APIs, commands, field meanings,
+owner recovery, sharing semantics and the file/test map. The
+[original recorded fixtures and validation evidence](../../examples/step-06/validation.json)
+contain no account data.
+
+- Added request policy/query/telemetry contracts, additive migration 005, durable
+  quota ownership and admission, shared cache/in-flight work, atomic page resume
+  and coverage. Production uses one HTTP attempt per admission; all adapter retry
+  paths are either coordinated or explicitly offline.
+- Extended adapter and revision-ingestion entry points, heartbeat preparation,
+  v1/v2 doctor, nonsecret config and `market-recorded --fixture`. Updated schema
+  export, field classification, installed-package check, READMEs and the active queue.
+- Focused coordinator/adapter checks passed; the coordinator module has 24 tests.
+  Related operation, heartbeat and ingestion checks also passed. Final full suite:
+  **271 tests, 27/27 modules, 80.8 seconds**. It was repeated after the final compatible
+  subset-sharing fix; quiet complete logs remain under `.local/test-logs/`.
+- Clean wheel installation passed v1/v2 workflows, protected serving, migration 005,
+  recorded collection and zero-call cache reuse with external sockets trapped.
+  The recorded collector used two cumulative physical fixture attempts. Logs are
+  under `.local/installed-logs/`; portable evidence is linked above.
+- Schema generation and the **1,623-field** classification check passed; the diff
+  whitespace check passed. No account calls, model calls, orders or recurring jobs
+  were used. No real market coverage, rights or account capacity is claimed.
+
+Next: **Step 07 only when requested**. Bind the existing shared-work references,
+budgets, deadlines and expected coverage into forward manifests and experiment
+snapshots. Step 08 independent preflight and Step 09 account-backed qualification
+remain pending. A stopped owner/missing policy is reported separately from the
+readiness of the private saved-data UI. Preserve quota registry and store together;
+never create a fresh principal to bypass recovery or an exhausted work budget.
 
 Use the [focused validation workflow](../../docs/development.md). Record changed files, actual checks, evidence artifacts and remaining blockers here. For code changes, run relevant tests and the full suite once after focused checks pass; for UI changes, verify keyboard and narrow/wide layouts too. Original synthetic acceptance never substitutes for required real-source or elapsed-time evidence.
 

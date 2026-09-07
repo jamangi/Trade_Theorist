@@ -62,7 +62,7 @@ class ReadOnlyV2(V2Store):
             expected = {int(p.name.split('_')[0]): digest(p.read_text(encoding="utf-8")) for p in files("trade_theorist").joinpath("migrations").iterdir() if p.name.endswith(".sql")}
             if any(v not in expected or expected[v] != checksum for v, checksum in installed.items()):
                 raise Prerequisite("migration_integrity", "Use the package version matching this database and review migration checksums before retrying; doctor never repairs or migrates it.")
-            if set(installed) != set(range(1, self.schema_ceiling + 1)):
+            if not set(range(1, self.schema_ceiling + 1)) <= set(installed):
                 raise Prerequisite("missing_migrations", "Migrations 001–004 are required. Use an explicitly reviewed V2Store initialization for an existing v2 store, or migrate-v2 --synthetic for a separate supported v1 fixture copy; then repeat doctor.")
         except BaseException:
             self.connection.close()
@@ -73,8 +73,10 @@ class ReadOnlyV2(V2Store):
         yield self.connection
 
 
-def doctor(root, output=None, *, fixture=False):
+def doctor(root, output=None, *, fixture=False, quota_root=None, quota_policy_path=None):
     """Inspect local prerequisites without writes, raw records or credential values."""
+    from .request_operations import status as request_status
+    requests = request_status(quota_root, quota_policy_path, fixture=fixture)
     try:
         root = absolute_root(root, fixture=fixture, purpose="data_root")
         destination = bundle_root(output, root, fixture=fixture) if output is not None else None
@@ -118,14 +120,14 @@ def doctor(root, output=None, *, fixture=False):
                     issues.append(dict(code="read_model_invalid", resume="Review source rights, projection lineage and saved evaluation integrity before repeating export. No raw evidence or exception text is printed."))
             hard = {"missing_rights", "missing_output_root", "private_path_inside_git", "read_model_invalid"}
             return dict(status="blocked" if any(i["code"] in hard for i in issues) else "ready_with_gaps" if issues else "ready",
-                        projection_version=2, migrations="001–004 verified", records=integrity["records"],
+                        projection_version=2, migrations="001–004 verified", records=integrity["records"], market_requests=requests,
                         rights_records=len(rights), rights_unresolved=missing_rights, saved_evaluations=len(reports), paper_portfolios=len(paper),
                         reconciliation_incomplete=unreconciled, issues=issues, account_calls=0, model_calls=0,
                         serving="Not started; use serve --projection-version 2 with both roots to validate and launch a fixed private snapshot.")
     except Prerequisite as exc:
-        return blocked(exc.code, exc.resume)
+        return blocked(exc.code, exc.resume) | dict(market_requests=requests)
     except (ContractError, sqlite3.Error, OSError, ValueError):
-        return blocked("store_integrity", "Check local database access, migration integrity and the v2 record chain; restore verified evidence before repeating doctor. No database was repaired.")
+        return blocked("store_integrity", "Check local database access, migration integrity and the v2 record chain; restore verified evidence before repeating doctor. No database was repaired.") | dict(market_requests=requests)
 
 
 def run_demo(root, output):
@@ -182,7 +184,7 @@ def operator_command(args, root, output, *, fixture):
             serve(root, output, fixture=fixture, host=args.host, port=args.port)
             return 0
         elif phase == "doctor":
-            result = doctor(root, output, fixture=fixture)
+            result = doctor(root, output, fixture=fixture, quota_root=args.quota_root, quota_policy_path=args.quota_policy)
         else:
             root = absolute_root(root, fixture=fixture, purpose="data_root")
             if not args.as_of:

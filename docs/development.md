@@ -18,6 +18,7 @@ Relevant implementation and validation paths:
 | Persistent v2 FIFO/TWR | `adapters/trader_user_sim/v2.py`, `evaluate/ledger_v2.py`, `evaluate/portfolio_v2.py` in the package | `test_accounting_v2` |
 | Offline v2 broker reconciliation | `adapters/trader_user_sim/broker_v2.py` in the package | `test_broker_v2` |
 | Market evidence | `src/trade_theorist/ingest/market.py` | `test_ingest` |
+| Shared admission/cache/recovery | `market_requests.py`, `request_contracts.py`, `request_operations.py` | `test_market_requests`; [bounded handoff](step-06-shared-requests.md) |
 | Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |

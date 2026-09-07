@@ -1,0 +1,42 @@
+[
+  {
+    "status": 200,
+    "headers": {},
+    "body": {
+      "bars": {
+        "AAPL": [
+          {
+            "t": "2020-01-02T20:00:00Z",
+            "o": 100,
+            "h": 102,
+            "l": 99,
+            "c": 101,
+            "v": 1000
+          }
+        ]
+      },
+      "next_page_token": "second-symbol"
+    },
+    "received_at": "2020-01-03T00:00:00Z"
+  },
+  {
+    "status": 200,
+    "headers": {},
+    "body": {
+      "bars": {
+        "MSFT": [
+          {
+            "t": "2020-01-02T20:00:00Z",
+            "o": 100,
+            "h": 102,
+            "l": 99,
+            "c": 101,
+            "v": 1000
+          }
+        ]
+      },
+      "next_page_token": null
+    },
+    "received_at": "2020-01-03T00:00:00Z"
+  }
+]

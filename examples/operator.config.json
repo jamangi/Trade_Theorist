@@ -4,5 +4,7 @@
   "data_root": null,
   "private_bundle_root": null,
   "fixture": true,
-  "policy_path": null
+  "policy_path": null,
+  "quota_root": null,
+  "quota_policy_path": null
 }

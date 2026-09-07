@@ -61,7 +61,7 @@ class AlpacaAdapterTests(unittest.TestCase):
             response({"bars": {"AAPL": [bar()]}, "next_page_token": "page-2"}),
             response({"bars": {"AAPL": []}, "next_page_token": None}),
         ])
-        adapter = AlpacaBarsAdapter(transport, feed="sip")
+        adapter = AlpacaBarsAdapter(transport, feed="sip", offline=True)
         first = next(adapter.pages(symbols=["AAPL"], start="2026-09-04T00:00:00Z",
                                    end="2026-09-06T00:00:00Z", max_pages=1))
         pages = list(adapter.pages(symbols=["AAPL"], start="2026-09-04T00:00:00Z",
@@ -77,13 +77,13 @@ class AlpacaAdapterTests(unittest.TestCase):
             response({}, 429, {"Retry-After": "7"}),
             response({"bars": {}, "next_page_token": None}),
         ])
-        adapter = AlpacaBarsAdapter(transport, feed="sip", sleeper=delays.append)
+        adapter = AlpacaBarsAdapter(transport, feed="sip", offline=True, sleeper=delays.append)
         list(adapter.pages(symbols=["AAPL"], start="2026-09-04T00:00:00Z",
                            end="2026-09-06T00:00:00Z"))
         self.assertEqual(delays, [7.0])
         denied = Transport([response({}, 403)])
         with self.assertRaisesRegex(EntitlementDenied, "no fallback"):
-            list(AlpacaBarsAdapter(denied, feed="sip").pages(
+            list(AlpacaBarsAdapter(denied, feed="sip", offline=True).pages(
                 symbols=["AAPL"], start="2026-09-04T00:00:00Z",
                 end="2026-09-06T00:00:00Z"))
         self.assertEqual([r[2]["feed"] for r in denied.requests], ["sip"])
@@ -91,7 +91,7 @@ class AlpacaAdapterTests(unittest.TestCase):
     def test_idempotence_revisions_and_gaps_are_preserved(self):
         book = RevisionBook()
         normalizer = self.normalizer(book)
-        adapter = AlpacaBarsAdapter(lambda *_: None, feed="sip")
+        adapter = AlpacaBarsAdapter(lambda *_: None, feed="sip", offline=True)
         page = response({}).received_at
         from trade_theorist.adapters.alpaca_market_data import Page
         original = Page(1, "sip", "a" * 64, page, ({**bar(), "symbol": "AAPL"},), None)
@@ -114,10 +114,10 @@ class AlpacaAdapterTests(unittest.TestCase):
             response({"bars": {}, "next_page_token": "same"}),
         ])
         with self.assertRaisesRegex(AlpacaError, "repeated"):
-            list(AlpacaBarsAdapter(transport, feed="sip").pages(
+            list(AlpacaBarsAdapter(transport, feed="sip", offline=True).pages(
                 symbols=["AAPL"], start="2026-09-04T00:00:00Z",
                 end="2026-09-06T00:00:00Z"))
-        adapter = AlpacaBarsAdapter(lambda *_: None, feed="sip")
+        adapter = AlpacaBarsAdapter(lambda *_: None, feed="sip", offline=True)
         from trade_theorist.adapters.alpaca_market_data import Page
         accepted, rejected = adapter.ingest_page(
             Page(1, "sip", "c" * 64, "2026-09-04T20:01:00Z",

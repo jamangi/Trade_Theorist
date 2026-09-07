@@ -1,6 +1,6 @@
 # Shared market-data requests and the Basic-plan budget
 
-Status: required follow-up design, 2026-09-06. The current adapter does **not** implement this shared admission control. TASK-014 owns implementation, TASK-015 owns forward integration, and TASK-016 owns adversarial verification. The owner separately authorized a handful of read-only calls that proved paper authentication and delayed historical SIP access; that check did not change runtime behavior, vendor selection or quota readiness.
+Status: [Step 06 control implementation](step-06-shared-requests.md) is complete and verified offline, 2026-09-06. Step 07 owns forward integration, Step 08 independent offline preflight, and Step 09 separately authorized account qualification. Historical TASK-014/015/016 ownership below is preserved; the active step queue governs release order. The owner separately authorized a handful of read-only calls that proved paper authentication and delayed historical SIP access; that check did not change runtime behavior, vendor selection or quota readiness.
 
 ## Limit, feed, and quota scope
 
@@ -10,7 +10,7 @@ Apply the owner's 200/min maximum to the pilot's Market Data REST requests, cons
 
 Market Data and Trading API quotas are separate, as explained by [Alpaca staff](https://forum.alpaca.markets/t/429-rate-limit-exceeded-when-creating-orders/14120). Paper orders, account/assets queries, reconciliation and cancellations use the Trading API policy when that optional adapter exists. Verify its scope separately; do not assume a market-data plan changes it. The partner **Broker API** is a different product, not the personal paper Trading API. Do not infer quota independence merely from different hostnames or credentials.
 
-## Proposed operating policy
+## Implemented operating policy
 
 - Provider/owner maximum: **200 attempts in 60 seconds** for the pilot Market Data pool; any lower verified constraint wins.
 - Initial operating ceiling: **180 attempts in any rolling 60 seconds**, paced at no more than three dispatches/second with no accumulated idle burst. This is a starting engineering setting, not measured account capacity.
@@ -50,9 +50,9 @@ Record dispatched attempts, cooldown deadlines, queue/work IDs, query hashes and
 
 Persist completion/deferred/failed status and distinguish waiting for quota from stale data, no observations and entitlement failure. Waiting does not revise the original evidence cutoff. If the complete snapshot cannot arrive before its deadline, abstain/defer for affected decisions under the existing completeness policy; never give later Characters additional observations within the same comparison or backdate delayed decisions.
 
-## Retry behavior to correct
+## Historical retry defect and implemented requirements
 
-Inspection of the adapter at commit `29238ee` found bounded retry counts and page checkpoints, but `_request` has no proactive shared admission, `sleeper` defaults to a no-op, and `_delay` takes the minimum of a numeric `Retry-After` and a 30-second cap. Thus “honors Retry-After” is only true for the tested small value, not for long server cooldowns. HTTP-date values, case-insensitive lookup, nonfinite numbers, jitter and cross-caller cooldown behavior are not established by the current tests. The resume record also lacks validation against the full query identity.
+Inspection of the adapter at commit `29238ee` found bounded retry counts and page checkpoints, but `_request` has no proactive shared admission, `sleeper` defaults to a no-op, and `_delay` takes the minimum of a numeric `Retry-After` and a 30-second cap. Thus “honors Retry-After” is only true for the tested small value, not for long server cooldowns. HTTP-date values, case-insensitive lookup, nonfinite numbers, jitter and cross-caller cooldown behavior were not established by those historical tests. The old resume record also lacked validation against the full query identity.
 
 TASK-014 must provide a real production wait/defer path; fake clocks/sleepers are explicit offline-test dependencies. Normalize header names. Accept valid finite nonnegative numeric and HTTP-date `Retry-After` values and relevant reset headers where verified for the endpoint; invalid values use bounded exponential backoff with jitter. Do not assume Broker API header guarantees apply to Market Data.
 

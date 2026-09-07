@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "request_policy": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "request_policy"
+        },
+        "quota_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "provider": {
+          "const": "alpaca"
+        },
+        "api": {
+          "const": "market_data"
+        },
+        "hard_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "operating_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 180
+        },
+        "max_work_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "max_retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "max_wait_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fallback_cap_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 60
+        },
+        "entitlement_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "feed_delays": {
+          "type": "object",
+          "properties": {
+            "iex": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "sip": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "iex",
+            "sip"
+          ],
+          "additionalProperties": false
+        },
+        "sharing_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "rights_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "private_storage": {
+          "const": true
+        },
+        "internal_replay": {
+          "const": true
+        },
+        "cooperating_callers_only": {
+          "const": true
+        },
+        "verified_rate_headers": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "schema_version",
+        "record_type",
+        "quota_id",
+        "provider",
+        "api",
+        "hard_limit",
+        "operating_limit",
+        "max_work_attempts",
+        "max_retries",
+        "max_wait_seconds",
+        "fallback_cap_seconds",
+        "entitlement_ref",
+        "feed_delays",
+        "sharing_scopes",
+        "rights_ref",
+        "private_storage",
+        "internal_replay",
+        "cooperating_callers_only",
+        "verified_rate_headers"
+      ],
+      "additionalProperties": false
+    },
+    "market_query": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "market_query"
+        },
+        "provider": {
+          "const": "alpaca"
+        },
+        "endpoint": {
+          "const": "stock_bars"
+        },
+        "sharing_scope": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "rights_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "feed": {
+          "enum": [
+            "iex",
+            "sip"
+          ]
+        },
+        "symbols": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "timeframe": {
+          "const": "1Day"
+        },
+        "start": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "adjustment": {
+          "enum": [
+            "raw",
+            "split",
+            "dividend",
+            "all"
+          ]
+        },
+        "asof": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revision_policy": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "freshness_after": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "information_cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expected_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "page_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        }
+      },
+      "required": [
+        "schema_version",
+        "record_type",
+        "provider",
+        "endpoint",
+        "sharing_scope",
+        "rights_ref",
+        "feed",
+        "symbols",
+        "timeframe",
+        "start",
+        "end",
+        "adjustment",
+        "asof",
+        "revision_policy",
+        "freshness_after",
+        "information_cutoff",
+        "expected_sessions",
+        "page_limit"
+      ],
+      "additionalProperties": false
+    },
+    "request_telemetry": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "record_type": {
+          "const": "request_telemetry"
+        },
+        "quota_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "work_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "shared_work_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "query_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status": {
+          "enum": [
+            "queued",
+            "fetching",
+            "waiting",
+            "deferred",
+            "complete",
+            "incomplete",
+            "expired",
+            "failed"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "none",
+            "quota",
+            "cooldown",
+            "recovery",
+            "page_limit",
+            "attempt_budget",
+            "deadline",
+            "entitlement",
+            "retry_limit",
+            "transport",
+            "response",
+            "coverage",
+            "busy"
+          ]
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "throttles": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cache_hits": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "subscribers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "wait_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "queue_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "remaining_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_expected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_observed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_before": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cooperating_callers_only": {
+          "const": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "record_type",
+        "quota_id",
+        "work_id",
+        "shared_work_id",
+        "query_hash",
+        "status",
+        "reason",
+        "attempts",
+        "retries",
+        "throttles",
+        "pages",
+        "cache_hits",
+        "subscribers",
+        "wait_seconds",
+        "queue_seconds",
+        "remaining_attempts",
+        "coverage_expected",
+        "coverage_observed",
+        "not_before",
+        "cooperating_callers_only"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/request_policy"
+    },
+    {
+      "$ref": "#/$defs/market_query"
+    },
+    {
+      "$ref": "#/$defs/request_telemetry"
+    }
+  ]
+}

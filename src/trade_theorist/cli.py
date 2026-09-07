@@ -24,18 +24,20 @@ def operator_command(args):
     from .evaluate import Evaluator
     from .export import export_dashboard
     config = read(args.config) if args.config else {}
-    if not isinstance(config, dict) or set(config) - {"schema_version", "projection_version", "data_root", "private_bundle_root", "fixture", "policy_path"} or type(config.get("schema_version", 1)) is not int or config.get("schema_version", 1) != 1:
+    if not isinstance(config, dict) or set(config) - {"schema_version", "projection_version", "data_root", "private_bundle_root", "fixture", "policy_path", "quota_root", "quota_policy_path"} or type(config.get("schema_version", 1)) is not int or config.get("schema_version", 1) != 1:
         raise ContractError("Unsupported operating configuration")
     if not isinstance(config.get("fixture", False), bool):
         raise ContractError("Fixture flag must be boolean")
     if type(config.get("projection_version", 1)) is not int or config.get("projection_version", 1) not in (1, 2):
         raise ContractError("Projection version must be 1 or 2")
-    if any(config.get(k) is not None and not isinstance(config[k], str) for k in ("data_root", "private_bundle_root", "policy_path")):
+    if any(config.get(k) is not None and not isinstance(config[k], str) for k in ("data_root", "private_bundle_root", "policy_path", "quota_root", "quota_policy_path")):
         raise ContractError("Configured paths must be strings or null")
     root = args.data_root or config.get("data_root") or os.environ.get("TRADE_THEORIST_DATA_ROOT")
     fixture = args.fixture or config.get("fixture", False) or args.command == "demo"
     version = args.projection_version or config.get("projection_version", 1)
     output = args.output_root or config.get("private_bundle_root") or os.environ.get("TRADE_THEORIST_PRIVATE_BUNDLE_ROOT")
+    args.quota_root = getattr(args, "quota_root", None) or config.get("quota_root")
+    args.quota_policy = getattr(args, "quota_policy", None) or config.get("quota_policy_path")
     if version == 2:
         from .operations_v2 import operator_command as operator_v2
         return operator_v2(args, root, output, fixture=fixture)
@@ -46,7 +48,7 @@ def operator_command(args):
         print("Blocked: --output-root, --portfolio and --receipt-cutoff require --projection-version 2. V1 export remains under data-root/public.")
         return 2
     if args.command == "doctor":
-        result = doctor(root, synthetic=fixture, policy_path=args.policy or config.get("policy_path"))
+        result = doctor(root, synthetic=fixture, policy_path=args.policy or config.get("policy_path"), quota_root=args.quota_root, quota_policy_path=args.quota_policy)
         print(json.dumps(result, indent=2))
         return 2 if result["status"] == "real_work_blocked" else 0
     if args.command == "demo":
@@ -171,6 +173,8 @@ def main(argv=None):
         command.add_argument("--output-root", help="Absolute private v2 bundle directory, separate from the database")
         if name == "doctor":
             command.add_argument("--policy")
+            command.add_argument("--quota-root")
+            command.add_argument("--quota-policy")
         if name == "demo":
             command.add_argument("--serve", action="store_true", help="Serve only the local public report on loopback")
             command.add_argument("--port", type=int, default=8765)
@@ -190,6 +194,14 @@ def main(argv=None):
             command.add_argument("--csv")
             command.add_argument("--capability")
             command.add_argument("--sessions")
+    market = commands.add_parser("market-recorded", help="Original-fixture collector through shared admission; no network transport")
+    market.add_argument("--quota-root", required=True)
+    market.add_argument("--quota-policy", required=True)
+    market.add_argument("--query", required=True)
+    market.add_argument("--responses", required=True)
+    market.add_argument("--max-attempts", type=int, required=True)
+    market.add_argument("--deadline", required=True)
+    market.add_argument("--fixture", action="store_true", required=True)
     v2_export = commands.add_parser("export-v2-schema", help="Write operational v2 JSON Schema; no database is opened")
     v2_export.add_argument("output")
     v2_migrate = commands.add_parser("migrate-v2", help="Preview an explicitly selected synthetic v1 database")
@@ -199,6 +211,12 @@ def main(argv=None):
     v2_migrate.add_argument("--apply", action="store_true", help="Explicitly write a side-by-side copy")
     args = parser.parse_args(argv)
     try:
+        if args.command == "market-recorded":
+            from .request_operations import recorded_collect
+            result = recorded_collect(args.quota_root, args.quota_policy, args.query, args.responses,
+                max_attempts=args.max_attempts, deadline=args.deadline)
+            print(json.dumps(result, indent=2))
+            return 0 if result["status"] == "complete" else 2
         if args.command == "export-v2-schema":
             from .schema_v2 import schema as v2_schema
             Path(args.output).write_text(json.dumps(v2_schema(), indent=2) + "\n", encoding="utf-8", newline="\n")

@@ -36,3 +36,10 @@ Source citations contain source ID, actual section locator and passage hash. The
 ## Declared source completion
 
 The additive checkpoint scopes `full_paper` and `approved_excerpt` support the owner-adopted Microstructure curriculum. `reading_status: complete` means completion of the declared material scope; it is not synonymous with a full published book. Scope and excerpt authority are enforced against the pinned curriculum when learning starts. The engine requires reviewed declared coverage and exact predecessor source/scope completion. `sample` and `fixture` remain ineligible for completed reading. Existing full-book records and frozen Bogle artifacts are unchanged.
+# Shared Market Data contracts
+
+`market-requests-v1.json` contains the strict nonsecret request policy, canonical
+query and work telemetry schemas. Generate it with `python scripts/export_request_schemas.py`.
+`contracts.validate` also enforces cross-field operating limits and information
+windows. These contracts do not change v1/v2 accounting records or certify rights.
+See [Step 06](../docs/step-06-shared-requests.md) for API and private field handling.

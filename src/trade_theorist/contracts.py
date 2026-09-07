@@ -27,6 +27,9 @@ def utc(value):
 
 
 def validate(record):
+    if isinstance(record, dict) and record.get("record_type") in {"request_policy", "market_query", "request_telemetry"}:
+        from .request_contracts import validate as validate_request
+        return validate_request(record)
     if isinstance(record, dict) and record.get("schema_version") == 2:
         from .contracts_v2 import validate as validate_v2
         return validate_v2(record)

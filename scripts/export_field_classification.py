@@ -8,6 +8,7 @@ from trade_theorist.schema import schema
 from trade_theorist.schema_v2 import schema as schema_v2
 from trade_theorist.export import DASHBOARD_SCHEMA
 from trade_theorist.export_v2 import PRIVATE_SCHEMA
+from trade_theorist.request_contracts import SCHEMAS as REQUEST_SCHEMAS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,10 +33,18 @@ def inventory():
         fields.update("contracts-v1/" + kind + path for path in paths(definition))
     for kind, definition in schema_v2()["$defs"].items():
         fields.update("contracts-v2/" + kind + path for path in paths(definition))
+    for kind, definition in REQUEST_SCHEMAS.items():
+        fields.update("market-requests-v1/" + kind + path for path in paths(definition))
     for table, columns in {
         "v2_records": ("sequence", "id", "record_type", "experiment_id", "portfolio_id", "body", "previous_hash", "content_hash"),
         "v2_broker_bindings": ("mapping_id", "broker_order_id"),
         "v2_quarantine": ("content_hash", "reason", "observed_at"),
+        "market_quota": ("id", "policy", "logical", "cooldown", "next_dispatch", "effective_limit"),
+        "market_work": ("id", "query_hash", "query", "body"),
+        "market_attempts": ("sequence", "work_id", "dispatched", "request_hash", "outcome"),
+        "market_pages": ("work_id", "segment", "number", "body"),
+        "market_observations": ("id", "compatibility", "symbol", "event_at", "received_at", "body"),
+        "market_windows": ("compatibility", "symbol", "start", "end"),
     }.items():
         fields.update("storage-v2/" + table + "/" + column for column in columns)
     fields.update("dashboard-v1" + path for path in paths(DASHBOARD_SCHEMA))
@@ -52,7 +61,7 @@ def inventory():
             category = "private_attribution"
         elif key in {"price", "value", "quantity", "equity", "history", "holdings", "cash", "basis", "lots", "income", "fees", "metrics", "cumulative_notional", "cumulative_quantity"}:
             category = "private_reconstructable"
-        elif "/observation/" in path or "/snapshot/" in path or "/source_rights/" in path:
+        elif "/observation/" in path or "/snapshot/" in path or "/source_rights/" in path or "market_" in path or "market-requests" in path:
             category = "private_market_provenance"
         else:
             category = "private_strategy"

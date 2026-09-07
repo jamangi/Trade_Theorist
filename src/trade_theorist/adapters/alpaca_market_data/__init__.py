@@ -7,6 +7,10 @@ chooses a replacement feed after a denial.
 
 from dataclasses import dataclass
 from decimal import InvalidOperation
+from email.utils import parsedate_to_datetime
+import math
+import random
+import time
 
 from ...contracts import canonical, digest, utc
 from ...ingest.market import IngestionError, Quarantine
@@ -36,11 +40,13 @@ class Page:
     received_at: str
     bars: tuple
     next_page_token: str | None
+    query_hash: str | None = None
 
     @property
     def resume(self):
         return {
-            "version": "alpaca-bars-resume-v1",
+            "version": "alpaca-bars-resume-v2",
+            "query_hash": self.query_hash,
             "next_page_token": self.next_page_token,
             "completed_pages": self.number,
             "last_request_hash": self.request_hash,
@@ -72,28 +78,34 @@ class AlpacaBarsAdapter:
     FEEDS = frozenset({"iex", "sip", "otc", "boats"})
     RETRYABLE = frozenset({429, 500, 502, 503, 504})
 
-    def __init__(self, transport, *, feed, sleeper=lambda _: None,
-                 max_retries=3, delay_cap=30):
+    def __init__(self, transport, *, feed, sleeper=None,
+                 max_retries=3, delay_cap=30, offline=False, jitter=None):
         if feed not in self.FEEDS:
             raise AlpacaError("An explicit supported Alpaca feed is required")
         if max_retries < 0 or delay_cap <= 0:
             raise AlpacaError("Retry bounds must be positive")
         self.transport = transport
         self.feed = feed
-        self.sleeper = sleeper
+        self.sleeper = sleeper or time.sleep
+        self.offline = offline
+        self.jitter = jitter or random.random
         self.max_retries = max_retries
         self.delay_cap = delay_cap
 
     def pages(self, *, symbols, start, end, timeframe="1Day", limit=10000,
-              resume=None, max_pages=100):
+              resume=None, max_pages=100, adjustment="raw", asof=None):
+        if not self.offline:
+            raise AlpacaError("Market Data transport requires the shared Coordinator; pages is an explicit offline fixture API")
         symbols = tuple(sorted(set(symbols)))
         if not symbols or not (1 <= limit <= 10000) or max_pages < 1:
             raise AlpacaError("Symbols, page size and page bound are required")
         utc(start); utc(end)
+        query_hash = digest([self.BASE_URL, dict(symbols=symbols, start=start, end=end, timeframe=timeframe,
+            limit=limit, adjustment=adjustment, asof=asof, feed=self.feed, sort="asc")])
         token, page_number = None, 0
         if resume:
-            if resume.get("version") != "alpaca-bars-resume-v1" or resume.get("feed") != self.feed:
-                raise AlpacaError("Resume state belongs to a different adapter or feed")
+            if resume.get("version") != "alpaca-bars-resume-v2" or resume.get("feed") != self.feed or resume.get("query_hash") != query_hash:
+                raise AlpacaError("Resume state belongs to a different full query or feed")
             token = resume.get("next_page_token")
             page_number = int(resume.get("completed_pages", 0))
             if token is None:
@@ -103,30 +115,19 @@ class AlpacaBarsAdapter:
             params = {
                 "symbols": ",".join(symbols), "start": start, "end": end,
                 "timeframe": timeframe, "limit": str(limit),
-                "adjustment": "raw", "feed": self.feed, "sort": "asc",
+                "adjustment": adjustment, "feed": self.feed, "sort": "asc",
             }
+            if asof is not None: params["asof"] = asof
             if token:
                 params["page_token"] = token
             request_hash = digest([self.BASE_URL, params])
             response = self._request(params)
-            body = response.body
-            if not isinstance(body, dict) or not isinstance(body.get("bars", {}), dict):
-                raise AlpacaError("Alpaca bars response has an unexpected shape")
-            flattened = []
-            for symbol, bars in sorted(body.get("bars", {}).items()):
-                if symbol not in symbols or not isinstance(bars, list):
-                    raise AlpacaError("Alpaca response contains an unrequested symbol")
-                flattened.extend(dict(item, symbol=symbol) for item in bars)
-            next_token = body.get("next_page_token")
-            if next_token is not None and (not isinstance(next_token, str) or not next_token):
-                raise AlpacaError("Invalid pagination token")
-            if next_token in seen:
-                raise AlpacaError("Alpaca repeated a pagination token")
+            flattened, next_token = self.parse_page(response, symbols, seen=seen)
             if next_token:
                 seen.add(next_token)
             page_number += 1
             yield Page(page_number, self.feed, request_hash, response.received_at,
-                       tuple(flattened), next_token)
+                       tuple(flattened), next_token, query_hash)
             if next_token is None:
                 return
             token = next_token
@@ -135,6 +136,8 @@ class AlpacaBarsAdapter:
         return
 
     def _request(self, params):
+        if not self.offline:
+            raise AlpacaError("Use shared quota admission for every transport attempt")
         for attempt in range(self.max_retries + 1):
             response = self.transport("GET", self.BASE_URL, dict(params))
             if not isinstance(response, Response):
@@ -151,16 +154,74 @@ class AlpacaBarsAdapter:
             self.sleeper(self._delay(response.headers, attempt))
         raise AssertionError("unreachable")
 
-    def _delay(self, headers, attempt):
-        # Retry-After is authoritative when it is a bounded numeric delay.  A
-        # missing/invalid header uses deterministic capped exponential backoff.
+    def _delay(self, headers, attempt, *, now=None, verified_reset=False):
+        headers = {str(k).lower(): str(v) for k, v in headers.items()}
+        now = time.time() if now is None else now
+        delays = []
         try:
-            delay = float(headers.get("Retry-After", ""))
-            if delay < 0:
+            delay = float(headers.get("retry-after", ""))
+            if delay < 0 or not math.isfinite(delay):
                 raise ValueError
+            delays.append(delay)
         except (TypeError, ValueError):
-            delay = 2 ** attempt
-        return min(delay, self.delay_cap)
+            try:
+                date = parsedate_to_datetime(headers.get("retry-after", ""))
+                if date.tzinfo is None: raise ValueError
+                delays.append(max(0, date.timestamp() - now))
+            except (TypeError, ValueError, OverflowError):
+                pass
+        if verified_reset:
+            try:
+                reset = float(headers.get("x-ratelimit-reset", ""))
+                if math.isfinite(reset) and reset >= now: delays.append(reset - now)
+            except (TypeError, ValueError):
+                pass
+        if delays:
+            return max(delays)  # Never truncate an authoritative server cooldown.
+        jitter = self.jitter()
+        if not math.isfinite(jitter) or not 0 <= jitter <= 1:
+            raise AlpacaError("Invalid fallback jitter")
+        return min(self.delay_cap, 2 ** min(attempt, 10) + jitter)
+
+    @staticmethod
+    def parse_page(response, symbols, *, seen=()):
+        body = response.body
+        if not isinstance(response.received_at, str) or not response.received_at.endswith("Z"):
+            raise AlpacaError("Response requires an actual UTC receipt timestamp")
+        utc(response.received_at)
+        if not isinstance(body, dict) or not isinstance(body.get("bars"), dict):
+            raise AlpacaError("Alpaca bars response has an unexpected shape")
+        flattened = []
+        for symbol, bars in sorted(body["bars"].items()):
+            if symbol not in symbols or not isinstance(bars, list) or any(not isinstance(item, dict) for item in bars):
+                raise AlpacaError("Alpaca response contains an unrequested symbol or invalid bars")
+            for item in bars:
+                if not {"t", "o", "h", "l", "c", "v"} <= set(item) or set(item) - {"t", "o", "h", "l", "c", "v", "n", "vw"}:
+                    raise AlpacaError("Bar has missing or unexpected fields")
+                if not isinstance(item["t"], str) or not item["t"].endswith("Z"):
+                    raise AlpacaError("Bar requires a UTC timestamp")
+                utc(item["t"])
+                if any(type(item[k]) not in (int, float) or not math.isfinite(item[k]) or item[k] <= 0 for k in ("o", "h", "l", "c")) or type(item["v"]) is not int or item["v"] < 0:
+                    raise AlpacaError("Bar prices/volume are invalid")
+                if item["h"] < max(item["o"], item["c"], item["l"]) or item["l"] > min(item["o"], item["c"], item["h"]):
+                    raise AlpacaError("Bar range is invalid")
+                if "n" in item and (type(item["n"]) is not int or item["n"] < 0):
+                    raise AlpacaError("Bar trade count is invalid")
+                if "vw" in item and (type(item["vw"]) not in (int, float) or not math.isfinite(item["vw"]) or item["vw"] <= 0):
+                    raise AlpacaError("Bar volume-weighted price is invalid")
+            flattened.extend(dict(item, symbol=symbol) for item in bars)
+        token = body.get("next_page_token")
+        if token is not None and (not isinstance(token, str) or not token):
+            raise AlpacaError("Invalid pagination token")
+        if token is not None and token in seen:
+            raise AlpacaError("Alpaca repeated a pagination token")
+        return flattened, token
+
+    def fetch_shared(self, coordinator, value, *, consumer, max_attempts, deadline, **run_options):
+        if value["feed"] != self.feed:
+            raise AlpacaError("Shared query must retain the adapter's explicit feed")
+        work = coordinator.submit(value, consumer=consumer, max_attempts=max_attempts, deadline=deadline)
+        return coordinator.run(work, **run_options)
 
     def ingest_page(self, page, csv_adapter):
         """Normalize a page through the shared revision engine without filling gaps."""

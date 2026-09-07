@@ -14,6 +14,11 @@ Integrate metered data with deadlines and identical opportunity sets before adve
 
 Step 06 controls, Step 02 accounting and existing forward fixtures pass.
 
+Step 06 is implemented. Start with its [bounded API and recovery guide](../../docs/step-06-shared-requests.md),
+then `heartbeat.prepare_market_data` and `Coordinator.normalize`. Compatible subset
+work references `shared_work_id`; attribute transport once to that parent and inspect
+the subscriber's own deadline/coverage status before freezing experiment evidence.
+
 ## Finished state
 
 Offline forward orchestration consumes the shared data service, freezes equal eligible snapshots and records finite budgets, deadlines and truthful defer/abstention outcomes.

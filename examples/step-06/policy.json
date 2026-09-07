@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "record_type": "request_policy",
+  "quota_id": "quota:original-fixture",
+  "provider": "alpaca",
+  "api": "market_data",
+  "hard_limit": 200,
+  "operating_limit": 180,
+  "max_work_attempts": 30,
+  "max_retries": 3,
+  "max_wait_seconds": 2,
+  "fallback_cap_seconds": 30,
+  "entitlement_ref": "review:original-fixture",
+  "feed_delays": {
+    "iex": 0,
+    "sip": 900
+  },
+  "sharing_scopes": [
+    "scope:original-fixture"
+  ],
+  "rights_ref": "rights:original-fixture",
+  "private_storage": true,
+  "internal_replay": true,
+  "cooperating_callers_only": true,
+  "verified_rate_headers": false
+}

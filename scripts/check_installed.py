@@ -34,6 +34,7 @@ def main():
             "socket.socket.connect = local_connect\nsocket.socket.connect_ex = forbidden\n")
         env = {k: v for k, v in os.environ.items() if not k.startswith(("TRADE_THEORIST_", "PYTHON", "PIP_"))}
         env.update(PYTHONPATH=str(guard), PYTHONNOUSERSITE="1", PIP_NO_INDEX="1", PIP_DISABLE_PIP_VERSION_CHECK="1")
+        env["LOCALAPPDATA"] = str(root / "appdata")  # Isolate the original-fixture quota registry.
         def run(name, command, expected=0, cwd=root):
             log = logs / (name + ".log")
             with log.open("w", encoding="utf-8") as output:
@@ -100,8 +101,15 @@ print("Installed protected launch, all assets, and stop passed")
 ''', encoding="utf-8")
                 run("v2-serve-stop", [python, launch_check, root / "data-v2", root / "bundle-v2"])
                 evidence["versions"]["2"]["protected_serve_stop"] = "passed"
+        collector = [cli, "market-recorded", "--fixture", "--quota-root", root / "quota", "--quota-policy", repo / "examples/step-06/policy.json",
+                     "--query", repo / "examples/step-06/query.json", "--responses", repo / "examples/step-06/responses.json", "--max-attempts", "5", "--deadline", "2099-01-01T00:00:00Z"]
+        for name in ("market-collect", "market-cache"):
+            result = json.loads(run(name, collector).read_text())
+            if result["status"] != "complete" or result["usage"]["physical_attempts"] != 2 or result["account_calls"] != 0:
+                raise RuntimeError("Installed shared collector or cache failed")
+        evidence["shared_requests"] = dict(collector="passed", cache="passed", physical_recorded_attempts=2, account_calls=0, migration="005")
         (logs / "evidence.json").write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
-    print(f"PASS clean installed v1/v2 workflows, offline. Evidence and logs: {logs}")
+    print(f"PASS clean installed v1/v2 and shared-request workflows, offline. Evidence and logs: {logs}")
 
 
 if __name__ == "__main__":

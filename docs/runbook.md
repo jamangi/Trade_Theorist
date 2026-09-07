@@ -10,6 +10,13 @@ existing database read-only. [Step 05](step-05-local-package.md) implements prot
 `demo --serve`. Use a bundle outside Git, open the printed address, stop with Ctrl+C.
 Export and restart for new evidence; the running snapshot never reloads disk.
 
+[Step 06](step-06-shared-requests.md) adds the account-free `market-recorded --fixture`
+collector and shared quota diagnostics. Configure `quota_root` and `quota_policy_path`,
+or pass `doctor --quota-root <path> --quota-policy <path>`. Its `market_requests`
+section distinguishes missing policy/state and a stopped owner from private
+saved-data readiness. All collectors and heartbeat preparation share one owner;
+independent processes fail closed. Preserve the bound quota store and registry.
+
 All commands below run locally. `demo` is the complete no-account recipe. `doctor`
 explains readiness; it does not grant it. An exit code of 0 means success, 2 means a
 named prerequisite is missing, and 1 means a failed operation with a safe retry
