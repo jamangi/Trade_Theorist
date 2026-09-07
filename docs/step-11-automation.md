@@ -156,7 +156,8 @@ and the clean offline installed-package check. The frozen trial runtime, knowled
 and qualification inputs are unchanged. The dated automation-status artifact
 records the same evidence. [11C](step-11-private-backups.md) now provides a verified
 local snapshot and isolated offline restore with preserved quotas and reconciled
-accounting. Remote recovery remains pending; no server login, upload or recurring
+accounting. [Remote recovery](step-11-remote-recovery.md) is also verified using
+the existing Lightsail server and both PIN-and-touch FIDO keys. No recurring
 backup is configured.
 Step 14 may work with stored evidence during the wait. Step 12 still requires real
 outcomes and retains its paper gates. Steps 13/15 reuse these receipts and request

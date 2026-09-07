@@ -25,14 +25,23 @@ SSH_OPTIONS = ['-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=yes',
                '-o', 'ServerAliveInterval=15', '-o', 'ServerAliveCountMax=3', '-T']
 
 
-def load_config(path):
-    c = read(Path(path))
+def validate_destination(c):
     if (c['schema_version'] != 1 or c['profile'] != 'crcs-lab'
             or not re.fullmatch('[0-9a-f]{64}', c['receiver_sha256'])
             or c['receiver_path'] != '/home/ubuntu/.local/lib/trade-theorist-backups/' + c['receiver_sha256'] + '/backup_receiver.py'
-            or sha(Path(c['age_executable'])) != c['age_sha256']
-            or sha(Path(c['recipients_file'])) != c['recipients_sha256']
             or not c['storage_terms_recorded']):
+        raise ContractError('Remote destination configuration differs')
+
+
+def load_config(path, *, capsule_only=False):
+    c = read(Path(path))
+    validate_destination(c)
+    if capsule_only:
+        if not re.fullmatch('[0-9a-f]{64}', c['capsule_sha256']):
+            raise ContractError('Invalid capsule pin')
+        return c
+    if (sha(Path(c['age_executable'])) != c['age_sha256']
+            or sha(Path(c['recipients_file'])) != c['recipients_sha256']):
         raise ContractError('Remote destination, tool or recipient configuration differs')
     return c
 

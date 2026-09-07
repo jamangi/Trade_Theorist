@@ -19,7 +19,9 @@ Private backups: `src/trade_theorist/private_backup.py`,
 `scripts/run_step_11_backup.py`, and `test_private_backup` cover online SQLite
 capture, content verification, isolated offline ledger replay and retention.
 See the [11C recovery runbook](step-11-private-backups.md) for measured local
-acceptance and the still-pending encrypted remote round trip. Keep recovery code
+acceptance and [encrypted remote recovery](step-11-remote-recovery.md). The remote
+transport, receiver and optional FIDO environment have separate tests
+(`test_remote_backup`, `test_hardware_recovery`). Keep recovery code
 outside the frozen runtime and never activate a restored quota owner in a test.
 
 | Work | Implementation | Tests |

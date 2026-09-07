@@ -5,8 +5,8 @@
 The owner requested early [11A run observability](active/STEP-11A-run-observability.md)
 and [11B finite Windows scheduling](active/STEP-11B-observation-schedule.md), both now
 implemented and rehearsed. [11C private backup/restore](active/STEP-11C-private-backups.md)
-now has [verified local backup/restore](../docs/step-11-private-backups.md); remote
-recovery awaits server details and an encrypted round trip. [The operational handoff](../docs/step-11-automation.md) records
+now has [verified local backup/restore](../docs/step-11-private-backups.md) and
+[encrypted remote recovery with both FIDO keys](../docs/step-11-remote-recovery.md). [The operational handoff](../docs/step-11-automation.md) records
 the installed jobs, timings, actual verification, private paths and human duties.
 This supplement supersedes the original manual-only handoff below; it does not
 change the trial, its evidence gates or Step 15's general recurring-work scope.
@@ -45,7 +45,7 @@ This sequence reaches the same destination as the previous remaining scopes: ver
 | [11](active/STEP-11-forward-observation.md) | Run and mature the forward shadow trial | Commit real decisions prospectively after software, data and participants are ready; then let horizons elapse. | 015 |
 | [11A](active/STEP-11A-run-observability.md) | Record starts, ends and verified outcomes (implemented) | Expose failure and incomplete results before the observation window. | 020, early observability |
 | [11B](active/STEP-11B-observation-schedule.md) | Schedule the existing finite observation (installed and rehearsed) | Remove the need to remember the manual window without extending the trial. | 020, finite scheduling |
-| [11C](active/STEP-11C-private-backups.md) | Prove private backup and restore (local verified; remote pending) | Local recovery preserves evidence and spent quotas; configure and verify the private server when destination/access are established. | 020, recovery |
+| [11C](active/STEP-11C-private-backups.md) | Prove private backup and restore (local and remote verified) | Encrypted Lightsail round trip, both FIDO keys, offline accounting replay and conservative retention verified; recurrence remains in Step 15. | 020, recovery |
 | [12](active/STEP-12-readiness-audit.md) | Decide whether evidence supports a paper stage | The real forward trial supplies evidence the offline preflight could not; audit the whole chain before paper operation. | 016 |
 | [13](active/STEP-13-paper-portfolios.md) | Operate attributable paper portfolios | Exercise paper operation only after its stage decision; optional broker submission follows Monarchy-only attribution. | 017 |
 | [14](active/STEP-14-research-notebook.md) | Explain learning and decisions through stored evidence | Enrich explanation after the useful pilot path without making these extra views delay its first observations. | 019 |

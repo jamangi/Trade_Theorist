@@ -1,9 +1,9 @@
 # Step 11C: Build and prove private backup and restore
 
-- Status: local backup/restore implemented and rehearsed 2026-09-07; remote disaster recovery blocked on destination/access and encrypted round-trip verification. No recurring backup service installed.
+- Status: local and encrypted remote backup/restore verified 2026-09-07, including both physical FIDO keys, interrupted/corrupt transfer rejection and conservative remote retention. No recurring backup service installed.
 - Recommended model / effort: Sol / high.
 - Queue: [ordered roadmap](../README.md); early recovery part of [TASK-020](../TASK-020-medium-Sol.md).
-- Starting evidence: existing private SQLite storage, [11A](STEP-11A-run-observability.md) receipts and the owner's available private server (described as “lightrail”; exact hosting/service details remain to be established).
+- Starting evidence: existing private SQLite storage, [11A](STEP-11A-run-observability.md) receipts and the owner's available private server (originally described as “lightrail”; now verified as Lightsail below).
 
 ## Purpose and finished state
 
@@ -36,7 +36,9 @@ The owner's stated assumption is that private server backups fit the existing
 private-use interpretation when data is not distributed publicly. Record the
 actual destination and applicable storage/access terms when configuring transfer;
 this brief makes no new legal conclusion or public-distribution allowance. Do not
-request credentials in tracked files. No server endpoint or login is configured yet.
+request credentials in tracked files. The verified destination is the owner's
+`crcs-lab` Amazon Lightsail server in `us-east-2`; private configuration records
+its directory, operator profile and applicable storage/access terms.
 
 ## Acceptance and handoff
 
@@ -61,9 +63,29 @@ records. No observed record/attempt loss; no provider/model calls or activation.
 Validation passed: twelve focused recovery tests and 375 tests across 37 modules,
 1,983 field classifications, and the clean offline installation. Read-only native
 Windows inspection reconfirmed both installed 11B jobs and their finite settings.
-Local copy interruption and retention are
-tested; remote transfer interruption, independent key recovery and an actual
-download/decrypt/restore remain pending. The private server hostname/service,
-destination, access profile and storage/access terms were requested but are not
-configured. This is a partial Step 11C completion, not disaster-recovery acceptance.
+This original local evidence is supplemented by the completed remote acceptance
+below; its former destination/key-recovery blockers are resolved.
 11A/11B remain implemented; Step 12 and recurring Step 15 work retain their gates.
+
+## September 7 remote acceptance
+
+[Remote runbook](../../docs/step-11-remote-recovery.md) and
+[actual public metadata](../../examples/step-11/remote-backup-status.json)
+record encrypted upload, separate download/decrypt/offline restore, and independent
+primary/spare Security Key C NFC recovery with PIN and touch. The separate
+encrypted recovery capsule was retrieved from the server for the spare rehearsal;
+no plaintext age identity file was written. Files: 466; reports: 6;
+v2 records: 177; spent requests: 9; replayed performance results: 30.
+Observed record/attempt loss against the unchanged source was zero; provider/model
+calls and restored account activations were zero. Spare recovery took
+44.26 seconds including human interaction and server access.
+
+Actual interrupted/corrupt uploads were rejected before publication. Retention
+freshly recovered the survivor, removed 1 older verified object and retained
+1 verified object. Software checks also prove age authentication failure,
+capsule tamper rejection, interrupted enrollment resume and missing-device gates.
+394 tests across 39 modules, 1,983 field classifications and the clean offline
+installed workflow passed. The receiver is an explicit bounded SSH command;
+no service or recurrence was added. This is a finite attended recovery rehearsal,
+not a guaranteed future RTO/RPO or a physical workstation rebuild.
+Step 12 retains scientific gates and Step 15 owns recurring backup/monitoring.

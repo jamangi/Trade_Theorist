@@ -1,10 +1,10 @@
 # Step 11C private backup and recovery
 
-Local snapshot/recovery is implemented outside Step 11's frozen runtime. Remote
-disaster recovery remains pending: the brief names a private server as “lightrail”
-but supplies no hostname, service, storage terms or access profile. Nothing is
-uploaded, and no recurring backup job is installed. Step 11 maturity and the
-Step 12 paper gate are unchanged.
+Local snapshot/recovery and [encrypted remote recovery](step-11-remote-recovery.md)
+are implemented and rehearsed outside Step 11's frozen runtime. The owner's
+Lightsail server stores ciphertext, and both FIDO keys independently recover the
+encryption identity with PIN and touch. No recurring backup job is installed.
+Step 11 maturity and the Step 12 paper gate are unchanged.
 
 ## What is protected
 
@@ -97,34 +97,16 @@ Only after an explicit owner reconciliation may a reviewed recovery procedure
 rebind the single installation and separately reprovision credentials. That
 activation procedure is not implemented or exercised here.
 
-## Remote design and outstanding gate
+## Remote recovery
 
-When the destination is known, record its actual service/hostname, region, private
-directory, account, provider storage/access terms and authorized readers in
-private configuration. The owner's private-use assumption is carried forward;
-this implementation makes no new legal finding or redistribution allowance.
+The [remote runbook](step-11-remote-recovery.md) records the verified Lightsail
+destination, SSH/permissions, encrypted transfer and separate FIDO-wrapped key
+custody, exact finite commands, fresh-workstation recovery steps and actual
+acceptance metadata. Remote retention re-downloads/decrypts/restores its survivor
+before deletion and never removes the last verified backup. Step 15 separately
+authorizes any recurring schedule and monitoring.
 
-Use recipient-based authenticated encryption (for example, an owner-held age
-identity) before transfer. Keep the private decryption identity outside Git and
-the backup payload, with a separately recoverable offline copy. The server needs
-only ciphertext and a restricted SSH/SFTP account. Pin the SSH host key through a
-trusted channel, require key authentication, restrict the remote directory to the
-backup account, and give it no application or broker credentials. Do not invent an
-endpoint, accept unknown host keys automatically, or place keys in shell arguments.
-
-The future transport should upload a unique `.partial` ciphertext, verify its
-length/hash, and atomically rename it. Only a separately downloaded, authenticated,
-decrypted and locally restored copy earns remote-verified status. Exercise network
-interruption before publication, corruption/authentication failure, loss of the
-original machine's key copy, and conservative remote retention that never deletes
-the last round-trip-verified backup. Preserve independent manifest hashes/receipts
-with the offline recovery material. These remote tests have **not** run; the local
-interrupted-copy test is not evidence of interrupted network-transfer recovery.
-
-Measure capture-to-restorable-copy time and recovery-point loss on that actual
-round trip. Step 15 separately authorizes any recurring schedule and monitoring.
-
-## Acceptance
+## Original local acceptance
 
 The September 7, 13:43 UTC actual rehearsal passed with network connections trapped:
 458 files, six immutable reports, 177 v2 records, nine accounted requests and 30
@@ -145,8 +127,9 @@ Twelve focused tests cover WAL/concurrent-write snapshot consistency, bounded
 snapshot timeout, read-only ledger replay and quota preservation with network
 trapped, byte/manifest/report corruption, interrupted copy publication, abrupt
 process death, credential/path rejection, overlap, isolated destination checks,
-and retention with corrupt and partial backups. Remote destination,
-encryption-key recovery and download/decrypt/restore remain pending.
+and retention with corrupt and partial backups. The subsequent
+[remote acceptance](step-11-remote-recovery.md) completes destination,
+encryption-key recovery and download/decrypt/restore verification.
 
 Final checks passed: 375 tests across 37 modules, all 1,983 schema-field
 classifications, and the clean offline installed-package workflow. The existing

@@ -133,6 +133,21 @@ class ReceiverTests(unittest.TestCase):
 
 
 class RemoteClientTests(unittest.TestCase):
+    def test_capsule_bootstrap_has_no_local_key_or_recipient_dependency(self):
+        with tempfile.TemporaryDirectory() as temp:
+            config = Path(temp) / 'bootstrap.json'
+            c = dict(schema_version=1, profile='crcs-lab', receiver_sha256='a' * 64,
+                     receiver_path='/home/ubuntu/.local/lib/trade-theorist-backups/' + 'a' * 64 + '/backup_receiver.py',
+                     capsule_sha256='b' * 64, storage_terms_recorded=True)
+            atomic(config, c)
+            self.assertEqual(remote.load_config(config, capsule_only=True), c)
+            c['profile'] = 'other-host'; atomic(config, c)
+            with self.assertRaises(ContractError):
+                remote.load_config(config, capsule_only=True)
+            c['profile'] = 'crcs-lab'; c['capsule_sha256'] = '../escape'; atomic(config, c)
+            with self.assertRaises(ContractError):
+                remote.load_config(config, capsule_only=True)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

@@ -223,7 +223,7 @@ def _snapshot(repo, source, registry, destination, *, keep, synthetic):
         allowed = {'src', 'scripts', 'schemas', 'characters', 'config', 'examples', 'library', 'docs', 'decisions', 'tasks'}
         for name in filter(None, names):
             p = PurePosixPath(name)
-            if p.parts[0] in allowed or name in ('README.md', 'pyproject.toml', 'requirements.lock'):
+            if p.parts[0] in allowed or name in ('README.md', 'pyproject.toml', 'requirements.lock', 'requirements-hardware-recovery.txt'):
                 copy_file(inside(repo, name), payload / 'repository' / name)
         revision = subprocess.check_output(command + ['rev-parse', 'HEAD'], text=True).strip()
         manifest = dict(schema_version=1, backup_id=destination.name.removesuffix('.partial'),
@@ -235,7 +235,7 @@ def _snapshot(repo, source, registry, destination, *, keep, synthetic):
                 source_books='Original PDFs are not needed for stored ledger replay. Recover separately from the owner Investing-Books/books library; source identity and hashes are in the included catalog/checkpoints.',
                 credentials='Excluded. Reprovision separately only after single-owner reconciliation.',
                 activation='No runnable research.sqlite3 or quota registry is installed. Disable all original jobs, reconcile spent attempts/checkpoints with the newest surviving store and binding, and review ownership before manual activation.',
-                remote='Pending concrete private destination, storage/access terms and encrypted download/restore rehearsal'))
+                remote='This local manifest does not certify replication. Independently pinned remote receipts and the separate encrypted recovery capsule are required; see docs/step-11-remote-recovery.md.'))
         atomic(destination / 'backup.json', manifest)
     return verify_bundle(destination, expected_hash=digest(manifest))
 
