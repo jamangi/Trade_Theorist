@@ -1,5 +1,6 @@
 """Single-owner durable Market Data admission. Transport injection never grants account rights."""
 from contextlib import contextmanager
+from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 import json
 import math
@@ -58,7 +59,7 @@ def owner_lock(path, *, create=True):
 
 
 class RequestStore(V2Store):
-    schema_ceiling = 5
+    schema_ceiling = 6
 
     def __init__(self, root, *, synthetic=False):
         super().__init__(root, synthetic=synthetic)
@@ -91,7 +92,7 @@ class Coordinator:
     Registry/clock overrides are only available for explicitly synthetic tests.
     """
     def __init__(self, root, policy, transport, *, synthetic=False, registry_root=None, clock=None, jitter=None):
-        self.policy = json.loads(canonical(validate(policy)))
+        self._policy = json.loads(canonical(validate(policy)))
         if policy["record_type"] != "request_policy":
             raise ContractError("A request policy is required")
         if not synthetic and any(x is not None for x in (registry_root, clock, jitter)):
@@ -153,6 +154,11 @@ class Coordinator:
 
     def __exit__(self, *_):
         self.close()
+
+    @property
+    def policy(self):
+        """Expose the reviewed policy without granting mutation of active limits/rights."""
+        return deepcopy(self._policy)
 
     def close(self):
         with self.dispatch, self.db:
@@ -325,7 +331,7 @@ class Coordinator:
                     work.update(status="failed", reason="retry_limit"); self._save(identifier, work)
                     return None, wait_left
                 state = self.store.connection.execute("SELECT * FROM market_quota WHERE id=1").fetchone()
-                recent = [r[0] for r in self.store.connection.execute("SELECT dispatched FROM market_attempts WHERE dispatched>? ORDER BY dispatched", (now - 60,))]
+                recent = [r[0] for r in self.store.connection.execute("SELECT COALESCE(settled,dispatched) AS charged_at FROM market_attempts WHERE COALESCE(settled,dispatched)>? ORDER BY charged_at", (now - 60,))]
                 limit = min(self.policy["hard_limit"], self.policy["operating_limit"], state["effective_limit"])
                 ceiling = recent[-limit] + 60 if len(recent) >= limit else now
                 when = max(now, self.recovery, state["cooldown"], state["next_dispatch"], ceiling)
@@ -433,14 +439,21 @@ class Coordinator:
                     if self.policy["verified_rate_headers"]:
                         try:
                             hint = int(headers.get("x-ratelimit-limit", ""))
-                            if hint > 0:
+                            if 0 < hint < self.policy["operating_limit"]:
                                 self.store.connection.execute("UPDATE market_quota SET effective_limit=MIN(effective_limit,?) WHERE id=1", (hint,))
                         except ValueError:
                             pass
                         if headers.get("x-ratelimit-remaining") == "0":
                             delay = adapter._delay(headers, max(0, work["page_retries"] - 1), now=self.clock.wall(), verified_reset=True)
                             self.store.connection.execute("UPDATE market_quota SET cooldown=MAX(cooldown,?) WHERE id=1", (now + delay,))
-                    self.store.connection.execute("UPDATE market_attempts SET outcome=? WHERE sequence=?", (str(status) if status else "ambiguous", attempt_id))
+                    # Admission can precede the actual send by an arbitrary OS pause.
+                    # Receipt/exception is a conservative upper bound on that send:
+                    # retain its rolling charge and pace the next attempt from here.
+                    # A crash before this transaction remains charged and recovers
+                    # behind the full persisted restart window.
+                    self.store.connection.execute("UPDATE market_attempts SET outcome=?,settled=? WHERE sequence=?", (str(status) if status else "ambiguous", now, attempt_id))
+                    limit = self.store.connection.execute("SELECT effective_limit FROM market_quota WHERE id=1").fetchone()[0]
+                    self.store.connection.execute("UPDATE market_quota SET next_dispatch=MAX(next_dispatch,?) WHERE id=1", (now + max(1 / 3, 60 / limit),))
                     if status == 429:
                         work["throttles"] += 1
                     if status in AlpacaBarsAdapter.RETRYABLE or status == 0:

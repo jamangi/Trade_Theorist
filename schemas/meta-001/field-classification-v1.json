@@ -1836,6 +1836,7 @@
     "storage-v2/market_attempts/outcome": "private_market_provenance",
     "storage-v2/market_attempts/request_hash": "private_market_provenance",
     "storage-v2/market_attempts/sequence": "private_market_provenance",
+    "storage-v2/market_attempts/settled": "private_market_provenance",
     "storage-v2/market_attempts/work_id": "private_market_provenance",
     "storage-v2/market_observations/body": "private_market_provenance",
     "storage-v2/market_observations/compatibility": "private_market_provenance",

@@ -12,7 +12,7 @@ Offline controls are proven; now establish whether rights, entitlement and cover
 
 ## Starting evidence
 
-Step 08 passed. Applicable rights and explicit authorization are required before each dependent real use or bounded account sample.
+[Step 08 passed offline](../../docs/step-08-offline-preflight.md), with [independent final evidence](../../examples/step-08/preflight.json). Live Trading quota verification remains a Step 13 blocker, outside this Market Data qualification. Applicable rights and explicit authorization are required before each dependent real use or bounded account sample.
 
 ## Finished state
 

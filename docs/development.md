@@ -22,6 +22,7 @@ Relevant implementation and validation paths:
 | Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
 | Shared v2 forward integration | `forward/shared.py`, `forward/validation.py`, `forward/schema.py` | `test_forward_shared`; [bounded handoff](step-07-forward-integration.md) |
+| Independent shared-path preflight | `tests/preflight_support.py`, `tests/preflight_worker.py`, `scripts/run_step_08_preflight.py` | `test_request_preflight`; [findings and concise reproduction](step-08-offline-preflight.md) |
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
 | Metrics/forecast review | `src/trade_theorist/evaluate/` | `test_evaluation` |
 | Sanitized dashboard exports | `src/trade_theorist/export.py`, `dashboard/` | `test_export` |
@@ -84,3 +85,9 @@ current decisions, files, exact next action and checks already run. Replace it w
 the final task evidence before delivery. Keep the queue and root README's next step
 current, and push authorized completed work so a fresh task can reproduce it from
 main. Historical TASK files retain evidence; they need not be reread as a transcript.
+
+Step 08 adds a separate quiet audit command:
+`python scripts/run_step_08_preflight.py --output .local/preflight-logs/recheck.json`.
+It prints one result per case; independent transport traces go to the JSON and
+tracebacks to ignored logs. Preserve the committed baseline and final artifacts.
+Use the guide's finding table and case map before opening any large trace.

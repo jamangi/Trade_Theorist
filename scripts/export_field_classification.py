@@ -41,7 +41,7 @@ def inventory():
         "v2_quarantine": ("content_hash", "reason", "observed_at"),
         "market_quota": ("id", "policy", "logical", "cooldown", "next_dispatch", "effective_limit"),
         "market_work": ("id", "query_hash", "query", "body"),
-        "market_attempts": ("sequence", "work_id", "dispatched", "request_hash", "outcome"),
+        "market_attempts": ("sequence", "work_id", "dispatched", "request_hash", "outcome", "settled"),
         "market_pages": ("work_id", "segment", "number", "body"),
         "market_observations": ("id", "compatibility", "symbol", "event_at", "received_at", "body"),
         "market_windows": ("compatibility", "symbol", "start", "end"),

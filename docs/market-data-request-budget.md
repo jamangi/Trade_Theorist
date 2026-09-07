@@ -89,3 +89,20 @@ Use fake clocks and recorded transports rather than rate-limit stress against Al
 8. Separate Market Data and paper Trading policies are exercised without accidental double budgets for one real quota. Export/notebook/review fixtures reject any attempted Alpaca transport access.
 
 The coordinator-backed sample later checks observed headers, small-workload throughput and headroom under the limiter beyond the already established delayed-SIP endpoint access. It is a bounded validation sample, not a load test. Record measurements and remaining external-caller uncertainty before claiming account-ready operation.
+
+## Step 08 evidence and retained boundary (2026-09-06)
+
+The [independent preflight](step-08-offline-preflight.md) passes for the implemented
+Market Data and paired fixture paths. It records actual transport-entry timings,
+real-sleep mocked HTTP timings and forcibly terminated workers; the baseline
+preserves four resolved defects. Migration 006 conservatively charges completed
+attempts from receipt/exception settlement and paces subsequent sends from there.
+Admission timestamps alone cannot establish actual wire pacing.
+
+Requirement 8 is only partially implementable today: Market Data rejects Trading
+policies and endpoints, and result readers add no requests. Live paper Trading has
+no transport or executable quota policy to exercise. Its verification remains
+explicitly blocked until Step 13 implements separate admission after the stage
+decision. This is not a live Trading pass and does not block Step 09 Market Data
+rights/quality qualification. Account headroom and unknown outside traffic remain
+unmeasured; all preflight evidence is offline.

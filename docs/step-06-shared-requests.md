@@ -1,7 +1,7 @@
 # Step 06: one durable request owner
 
 Implemented offline on 2026-09-06. Start here after the [queue](../tasks/README.md)
-and [Step 06 brief](../tasks/active/STEP-06-shared-requests.md). [Step 07 integration](step-07-forward-integration.md) is now implemented; the queue continues with Step 08. No conversation history
+and [Step 06 brief](../tasks/active/STEP-06-shared-requests.md). [Step 07 integration](step-07-forward-integration.md) and [Step 08 independent preflight](step-08-offline-preflight.md) are now implemented; the queue continues with Step 09. No conversation history
 or large fixture dump is needed.
 
 ## What to use
@@ -10,7 +10,7 @@ or large fixture dump is needed.
 | --- | --- |
 | `market_requests.Coordinator` | One account-principal owner; `submit`, `run`, `resume`, `telemetry`, `observations`, `normalize`, `usage` |
 | `request_contracts.py`; `schemas/market-requests-v1.json` | Strict version-1 policy, full query and nonsecret work telemetry; accounting versions remain separate |
-| `RequestStore`; migration `005_market_requests.sql` | Additive SQLite quota, attempts, work, immutable observations, windows and atomic page checkpoints |
+| `RequestStore`; migrations 005 and 006 | Additive SQLite quota, attempts, work, observations, windows and atomic checkpoints; Step 08 adds conservative receipt/exception settlement for pacing and rolling charges |
 | `AlpacaBarsAdapter.fetch_shared` | Explicit-feed adapter entry through the owner |
 | `heartbeat.prepare_market_data` | Preparation callback before a heartbeat transaction; Step 07 owns decisions and snapshot eligibility |
 | `Coordinator.normalize` | Complete raw downloads through existing CSV revision ingestion; requires matching feed and storage/replay rights |

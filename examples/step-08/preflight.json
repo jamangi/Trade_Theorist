@@ -1,0 +1,3753 @@
+{
+  "version": "step-08-independent-preflight-v1",
+  "recorded_at": "2026-09-07T02:02:38.266439+00:00",
+  "source_base_commit": "5e7140e53f9cedc6539fe4795ae569502e14253d",
+  "source_sha256": {
+    "src/trade_theorist/__init__.py": "bd24259d6754b739034794abaa8a0bc0e7d2f669d552c3e6eff2fd37b303b1fd",
+    "src/trade_theorist/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/trade_theorist/adapters/__init__.py": "6abf0e31d62b572a013a444fe39f44a1ac3abac1d3cffc1c06d6952e37a18ed9",
+    "src/trade_theorist/adapters/alpaca_market_data/__init__.py": "22f0a59614c3357208a96056f50caf723c0c4fa306fd495d920f259613079d0e",
+    "src/trade_theorist/adapters/alpaca_market_data/transport.py": "d73307abc3cd7de50debf8136fac2a75d1d5573ad4374ad51dfc0c8bcbdf1c70",
+    "src/trade_theorist/adapters/trader_user_sim/__init__.py": "2e9be3952fa2ce76fce0a2c95a71af285f37e14c35149c1b18892c1dc23addc6",
+    "src/trade_theorist/adapters/trader_user_sim/broker_v2.py": "035694ac9c48fbe9355a24f219e6744c5c5decd1e71fe579b9adfd1213b9ca65",
+    "src/trade_theorist/adapters/trader_user_sim/v2.py": "51df8b2e687162593d4e1715a843344c6c7383358f61d8cdd42dbd3bb6280552",
+    "src/trade_theorist/cli.py": "2defd8a05f72dceb9c23698d0a6fd6fbbbbc4690d5c25b57383dbb29e3821a23",
+    "src/trade_theorist/contracts.py": "8e819412b7f873775337c32dd05182cb63c7d4ef60cd5ba133baf0452ff48fa9",
+    "src/trade_theorist/contracts_v2.py": "97529e3fa0c5b22be7303fa08fbac5b9dff5418614552f557c93956c199ce5be",
+    "src/trade_theorist/council/__init__.py": "f5ce8bcec763d283ffcbcdc86bfaa5ca4d9e6955bb11a38b5cfe7ac6dc95ed7c",
+    "src/trade_theorist/council/mail.py": "81faa741e4e4f0eb307813bb1eaeb3b55a97bc91e17f467081bd39e77cacb52d",
+    "src/trade_theorist/evaluate/__init__.py": "5012b36070d5022e3c427b08b1cf3c15680c25d1dd783935afff52cca2df9048",
+    "src/trade_theorist/evaluate/ledger_v2.py": "775b5fe362f0a1b4f5a1c131d36ffdc68b7afb9f4f763de1f04e4da364f58dab",
+    "src/trade_theorist/evaluate/portfolio_v2.py": "6571c399c5ff886cac0050a60770db7e1b714b2baad434a82987eb6795c92dd3",
+    "src/trade_theorist/export.py": "729921d26abdcd4b969da01271adf8b641a01b270b4475893cadfbeed1eab42c",
+    "src/trade_theorist/export_v2.py": "dc35d3a39a29541c56ca02184d8f133124df101dfdbebb965c36c517f95a1819",
+    "src/trade_theorist/fixtures.py": "bcd502348f2515f6ca5ffb961da617cb67caffc977660f606b01f85590012c2c",
+    "src/trade_theorist/fixtures_accounting_v2.py": "fc3a2e6a8197a6a3f57ce406a20bec083d9fdbe1a32ff1605e89ea19f2dbe796",
+    "src/trade_theorist/fixtures_dashboard_v2.py": "095051d0106a05fc11a8149230243b543e0db4ab88c96dc4ae29ed7d998f9877",
+    "src/trade_theorist/fixtures_v2.py": "a4a9650898a7e39e6d3f906856fda1dd4b06968087b5ae06db31cbd1620b21a0",
+    "src/trade_theorist/forward/__init__.py": "ffdee544ed3424ad93c971e3834146f46511cf2d1266036286e2f16d8354828d",
+    "src/trade_theorist/forward/fixtures.py": "81c8453344ac29a1d4dd97a02cdf78ac39e670e43de827c0b7d5713a1e285706",
+    "src/trade_theorist/forward/schema.py": "5c1327c465a72a026fb0c190100af54709e15073210789205807edfcea9a6dcb",
+    "src/trade_theorist/forward/shared.py": "8e1c7a2803ea6168dd91bdf7da46439c23336015a155b25a7aa4ffe03c25adb5",
+    "src/trade_theorist/forward/validation.py": "2e7edf535aed2c28e5e0b679b72c95e3e907a0219dbeead94337c7617a9db4a2",
+    "src/trade_theorist/heartbeat/__init__.py": "db055f96cf293084cef659e1b9af870248f342e55af706140b43991d57b47d5f",
+    "src/trade_theorist/heartbeat/fixture.py": "7d88b1b0c0ed46611f5b928b3fc8822a9f6ea91b954cb8345d82543d9d56af78",
+    "src/trade_theorist/heartbeat/orchestrator.py": "c35841cde23d38482eb9b1e8b60799efca6548d64552ee7b0c5be1a6cddaa5f0",
+    "src/trade_theorist/ingest/__init__.py": "c8cce97de1107ba00a03f03128b8893229efbdda99f2ab00d57f28a8108487a3",
+    "src/trade_theorist/ingest/market.py": "12074214eb277a9a4e9191da18874ba6848d88e8ca2061a81384e96bfa0cf28c",
+    "src/trade_theorist/ingest/tool_policy.py": "77a7723d7e90ac45c58b3d051ac8e6114de473e3508425e33f1e8bf85daf3680",
+    "src/trade_theorist/inventory.py": "9d977bb24c128cb27b41507511582efd7f2cb70f0621c08d4010818e9ae8e1fb",
+    "src/trade_theorist/learn/__init__.py": "7b5b3d6c9eb9306f17f66e3a32a983db25ff68ae93d5b7ee05ca50be7c439fcb",
+    "src/trade_theorist/learn/engine.py": "d7a154088b9cfe952c4c5d12f5b41a4c94d950404bebeb7eb07d0563c8a718e2",
+    "src/trade_theorist/learn/model.py": "5c7566dba1005fa6c46c701acaf348602be3bb79623ba4e057917741a1e2d039",
+    "src/trade_theorist/learn/reviewed.py": "2403241885098887d09be683ad3049f4cb6595f960c89689cf3eaa3084769489",
+    "src/trade_theorist/library.py": "76bb5b4c039a6b8ed7cff9b60e0fd47ddb72a606aa828609487b722d3bdff5d4",
+    "src/trade_theorist/local_server.py": "af5d1ff74e4e8a69c408a7d6ce09c5b683cc4c24c4eee6d229eb84f4681f5794",
+    "src/trade_theorist/logging.py": "5949b3eaf671220577d5357edddf35a504327d5389ec19d7e6f8469bbd47c6ca",
+    "src/trade_theorist/market_requests.py": "d69d6d60a05695f629245ebc1a6db0be838acabbda9060ad5a27b3e69a8e1c9e",
+    "src/trade_theorist/migrate_v2.py": "c662f82c955dd0da635c75f61c0948224bec8fa8623f120eadceb086553a198e",
+    "src/trade_theorist/operations.py": "3af29edbaf380914e1da5bb1cb22535aea889ee9810890877245554706465d5a",
+    "src/trade_theorist/operations_v2.py": "09eb21f68f2ca8e776e8f2016afbbdb8dc92bd1d795c3da473b19a9706810d0c",
+    "src/trade_theorist/private_bundle.py": "394d727b200374c1d5f964b4ec9aba9fb653560ebf869fc5d24c2a321655c0c2",
+    "src/trade_theorist/request_contracts.py": "a1fd0d1445f116e513887633221d91b1f3bc5bebaa68d508d700efddad07ffe9",
+    "src/trade_theorist/request_operations.py": "65c128471027b8f09ddaed969419adb21235df72ef2e89a65aed131173b27527",
+    "src/trade_theorist/risk.py": "ab40b2f1f166b2325b92c98f756ab178855d44edc35fde987f8777f62b4fcd64",
+    "src/trade_theorist/schema.py": "272dcc325c2a8369d037a24399703c08254fe5c5cd2a953bfb4a2dc3d9b12223",
+    "src/trade_theorist/schema_v2.py": "5618abf1de442d34b19f4a2a407f7ce3fa119ef33084e3330725bcdf10b3f6e5",
+    "src/trade_theorist/storage.py": "1ebb2145365b7f5d4fe8fc16c41bc3e26c439cc64f34b19324ab2000438da3c7",
+    "src/trade_theorist/storage_v2.py": "7f653dfbd02f80bea09e164912d0788f04fd7c3df9b4bcef006c5853e4c35a76",
+    "src/trade_theorist/theorize/__init__.py": "052590681dff6a58670074e3d5abd85353d704ca669357285a98b34af89c0ef4",
+    "src/trade_theorist/theorize/recommend.py": "4775910b26b14c1da959a7c82e50d6c2b4441272094712dce86c7f6ec476de7a",
+    "src/trade_theorist/migrations/001_initial.sql": "22de4f8f42601e74525efbae26de1bb992aa631dfe5159b51c0d26b8638fb518",
+    "src/trade_theorist/migrations/002_library_checks.sql": "a0b27d32eb26dd3bb3beb727d8ff34eb55a34d4ef0c9737d79d115bf8d28e5d8",
+    "src/trade_theorist/migrations/003_portfolio_v2.sql": "5a9f7b3d9cef0c521af013709326025c5c716a86fc53caf4c734178326bf0bde",
+    "src/trade_theorist/migrations/004_v2_projections.sql": "45023beb2ea9a72f6bead0c9e46a75aeaa191853f1226dce02cd439830a437ec",
+    "src/trade_theorist/migrations/005_market_requests.sql": "48bc2972b9ac91224453c248f795cdb8a0b1ddce9e6f5d53d39bf488ad3c0f1f",
+    "src/trade_theorist/migrations/006_market_settlement.sql": "719664f642badfc5a70026b96900ea83b8e9911369a5f21042b9f6d9514f8284",
+    "tests/preflight_support.py": "a6e8e4a61ae2cd76370a600b80d823c7d7f0855cc3fa994f60bff32639861426",
+    "tests/preflight_worker.py": "0f9265d6dec5480b1893c378671c57cb0dacdcf04415e6d16e723befe928a2cf",
+    "tests/test_request_preflight.py": "18f33e94469c8e45abcae8794781dcffa069e522f8564c8578578901788b873c",
+    "scripts/run_step_08_preflight.py": "bf26ec4713e4f1c869f5f013c032bc783f499f3dd587c29fd7a6661739b6b009"
+  },
+  "status": "pass",
+  "tests": [
+    {
+      "test": "test_01_rolling_boundaries_idle_and_lower_ceiling",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "runs": [
+          {
+            "dispatches": 370,
+            "minimum_gap": 0.3333333333333144,
+            "peak_rolling_60s": 180,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 0.3333333333333333,
+                "wall": 4071124800.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "1"
+              },
+              {
+                "at": 0.6666666666666666,
+                "wall": 4071124800.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "2"
+              },
+              {
+                "at": 1.0,
+                "wall": 4071124801.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "3"
+              },
+              {
+                "at": 1.3333333333333333,
+                "wall": 4071124801.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "4"
+              },
+              {
+                "at": 1.6666666666666665,
+                "wall": 4071124801.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "5"
+              },
+              {
+                "at": 1.9999999999999998,
+                "wall": 4071124802.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "6"
+              },
+              {
+                "at": 2.333333333333333,
+                "wall": 4071124802.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "7"
+              },
+              {
+                "at": 2.6666666666666665,
+                "wall": 4071124802.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "8"
+              },
+              {
+                "at": 3.0,
+                "wall": 4071124803.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "9"
+              },
+              {
+                "at": 3.3333333333333335,
+                "wall": 4071124803.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "10"
+              },
+              {
+                "at": 3.666666666666667,
+                "wall": 4071124803.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "11"
+              },
+              {
+                "at": 4.0,
+                "wall": 4071124804.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "12"
+              },
+              {
+                "at": 4.333333333333333,
+                "wall": 4071124804.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "13"
+              },
+              {
+                "at": 4.666666666666666,
+                "wall": 4071124804.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "14"
+              },
+              {
+                "at": 4.999999999999999,
+                "wall": 4071124805.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "15"
+              },
+              {
+                "at": 5.333333333333332,
+                "wall": 4071124805.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "16"
+              },
+              {
+                "at": 5.666666666666665,
+                "wall": 4071124805.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "17"
+              },
+              {
+                "at": 5.999999999999998,
+                "wall": 4071124806.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "18"
+              },
+              {
+                "at": 6.333333333333331,
+                "wall": 4071124806.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "19"
+              },
+              {
+                "at": 6.666666666666664,
+                "wall": 4071124806.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "20"
+              },
+              {
+                "at": 6.999999999999997,
+                "wall": 4071124807.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "21"
+              },
+              {
+                "at": 7.33333333333333,
+                "wall": 4071124807.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "22"
+              },
+              {
+                "at": 7.666666666666663,
+                "wall": 4071124807.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "23"
+              },
+              {
+                "at": 7.9999999999999964,
+                "wall": 4071124808.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "24"
+              },
+              {
+                "at": 8.33333333333333,
+                "wall": 4071124808.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "25"
+              },
+              {
+                "at": 8.666666666666664,
+                "wall": 4071124808.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "26"
+              },
+              {
+                "at": 8.999999999999998,
+                "wall": 4071124809.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "27"
+              },
+              {
+                "at": 9.333333333333332,
+                "wall": 4071124809.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "28"
+              },
+              {
+                "at": 9.666666666666666,
+                "wall": 4071124809.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "29"
+              },
+              {
+                "at": 10.0,
+                "wall": 4071124810.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "30"
+              },
+              {
+                "at": 10.333333333333334,
+                "wall": 4071124810.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "31"
+              },
+              {
+                "at": 10.666666666666668,
+                "wall": 4071124810.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "32"
+              },
+              {
+                "at": 11.000000000000002,
+                "wall": 4071124811.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "33"
+              },
+              {
+                "at": 11.333333333333336,
+                "wall": 4071124811.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "34"
+              },
+              {
+                "at": 11.66666666666667,
+                "wall": 4071124811.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "35"
+              },
+              {
+                "at": 12.000000000000004,
+                "wall": 4071124812.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "36"
+              },
+              {
+                "at": 12.333333333333337,
+                "wall": 4071124812.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "37"
+              },
+              {
+                "at": 12.666666666666671,
+                "wall": 4071124812.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "38"
+              },
+              {
+                "at": 13.000000000000005,
+                "wall": 4071124813.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "39"
+              },
+              {
+                "at": 13.33333333333334,
+                "wall": 4071124813.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "40"
+              },
+              {
+                "at": 13.666666666666673,
+                "wall": 4071124813.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "41"
+              },
+              {
+                "at": 14.000000000000007,
+                "wall": 4071124814.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "42"
+              },
+              {
+                "at": 14.333333333333341,
+                "wall": 4071124814.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "43"
+              },
+              {
+                "at": 14.666666666666675,
+                "wall": 4071124814.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "44"
+              },
+              {
+                "at": 15.000000000000009,
+                "wall": 4071124815.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "45"
+              },
+              {
+                "at": 15.333333333333343,
+                "wall": 4071124815.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "46"
+              },
+              {
+                "at": 15.666666666666677,
+                "wall": 4071124815.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "47"
+              },
+              {
+                "at": 16.00000000000001,
+                "wall": 4071124816.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "48"
+              },
+              {
+                "at": 16.333333333333343,
+                "wall": 4071124816.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "49"
+              },
+              {
+                "at": 16.666666666666675,
+                "wall": 4071124816.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "50"
+              },
+              {
+                "at": 17.000000000000007,
+                "wall": 4071124817.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "51"
+              },
+              {
+                "at": 17.33333333333334,
+                "wall": 4071124817.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "52"
+              },
+              {
+                "at": 17.66666666666667,
+                "wall": 4071124817.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "53"
+              },
+              {
+                "at": 18.000000000000004,
+                "wall": 4071124818.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "54"
+              },
+              {
+                "at": 18.333333333333336,
+                "wall": 4071124818.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "55"
+              },
+              {
+                "at": 18.666666666666668,
+                "wall": 4071124818.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "56"
+              },
+              {
+                "at": 19.0,
+                "wall": 4071124819.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "57"
+              },
+              {
+                "at": 19.333333333333332,
+                "wall": 4071124819.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "58"
+              },
+              {
+                "at": 19.666666666666664,
+                "wall": 4071124819.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "59"
+              },
+              {
+                "at": 19.999999999999996,
+                "wall": 4071124820.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "60"
+              },
+              {
+                "at": 20.33333333333333,
+                "wall": 4071124820.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "61"
+              },
+              {
+                "at": 20.66666666666666,
+                "wall": 4071124820.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "62"
+              },
+              {
+                "at": 20.999999999999993,
+                "wall": 4071124821.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "63"
+              },
+              {
+                "at": 21.333333333333325,
+                "wall": 4071124821.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "64"
+              },
+              {
+                "at": 21.666666666666657,
+                "wall": 4071124821.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "65"
+              },
+              {
+                "at": 21.99999999999999,
+                "wall": 4071124822.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "66"
+              },
+              {
+                "at": 22.33333333333332,
+                "wall": 4071124822.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "67"
+              },
+              {
+                "at": 22.666666666666654,
+                "wall": 4071124822.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "68"
+              },
+              {
+                "at": 22.999999999999986,
+                "wall": 4071124823.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "69"
+              },
+              {
+                "at": 23.333333333333318,
+                "wall": 4071124823.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "70"
+              },
+              {
+                "at": 23.66666666666665,
+                "wall": 4071124823.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "71"
+              },
+              {
+                "at": 23.999999999999982,
+                "wall": 4071124824.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "72"
+              },
+              {
+                "at": 24.333333333333314,
+                "wall": 4071124824.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "73"
+              },
+              {
+                "at": 24.666666666666647,
+                "wall": 4071124824.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "74"
+              },
+              {
+                "at": 24.99999999999998,
+                "wall": 4071124825.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "75"
+              },
+              {
+                "at": 25.33333333333331,
+                "wall": 4071124825.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "76"
+              },
+              {
+                "at": 25.666666666666643,
+                "wall": 4071124825.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "77"
+              },
+              {
+                "at": 25.999999999999975,
+                "wall": 4071124826.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "78"
+              },
+              {
+                "at": 26.333333333333307,
+                "wall": 4071124826.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "79"
+              },
+              {
+                "at": 26.66666666666664,
+                "wall": 4071124826.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "80"
+              },
+              {
+                "at": 26.99999999999997,
+                "wall": 4071124827.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "81"
+              },
+              {
+                "at": 27.333333333333304,
+                "wall": 4071124827.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "82"
+              },
+              {
+                "at": 27.666666666666636,
+                "wall": 4071124827.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "83"
+              },
+              {
+                "at": 27.999999999999968,
+                "wall": 4071124828.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "84"
+              },
+              {
+                "at": 28.3333333333333,
+                "wall": 4071124828.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "85"
+              },
+              {
+                "at": 28.666666666666632,
+                "wall": 4071124828.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "86"
+              },
+              {
+                "at": 28.999999999999964,
+                "wall": 4071124829.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "87"
+              },
+              {
+                "at": 29.333333333333297,
+                "wall": 4071124829.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "88"
+              },
+              {
+                "at": 29.66666666666663,
+                "wall": 4071124829.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "89"
+              },
+              {
+                "at": 29.99999999999996,
+                "wall": 4071124830.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "90"
+              },
+              {
+                "at": 30.333333333333293,
+                "wall": 4071124830.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "91"
+              },
+              {
+                "at": 30.666666666666625,
+                "wall": 4071124830.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "92"
+              },
+              {
+                "at": 30.999999999999957,
+                "wall": 4071124831.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "93"
+              },
+              {
+                "at": 31.33333333333329,
+                "wall": 4071124831.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "94"
+              },
+              {
+                "at": 31.66666666666662,
+                "wall": 4071124831.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "95"
+              },
+              {
+                "at": 31.999999999999954,
+                "wall": 4071124832.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "96"
+              },
+              {
+                "at": 32.333333333333286,
+                "wall": 4071124832.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "97"
+              },
+              {
+                "at": 32.66666666666662,
+                "wall": 4071124832.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "98"
+              },
+              {
+                "at": 32.99999999999996,
+                "wall": 4071124833.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "99"
+              },
+              {
+                "at": 33.33333333333329,
+                "wall": 4071124833.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "100"
+              },
+              {
+                "at": 33.66666666666663,
+                "wall": 4071124833.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "101"
+              },
+              {
+                "at": 33.999999999999964,
+                "wall": 4071124834.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "102"
+              },
+              {
+                "at": 34.3333333333333,
+                "wall": 4071124834.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "103"
+              },
+              {
+                "at": 34.666666666666636,
+                "wall": 4071124834.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "104"
+              },
+              {
+                "at": 34.99999999999997,
+                "wall": 4071124835.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "105"
+              },
+              {
+                "at": 35.33333333333331,
+                "wall": 4071124835.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "106"
+              },
+              {
+                "at": 35.66666666666664,
+                "wall": 4071124835.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "107"
+              },
+              {
+                "at": 35.99999999999998,
+                "wall": 4071124836.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "108"
+              },
+              {
+                "at": 36.333333333333314,
+                "wall": 4071124836.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "109"
+              },
+              {
+                "at": 36.66666666666665,
+                "wall": 4071124836.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "110"
+              },
+              {
+                "at": 36.999999999999986,
+                "wall": 4071124837.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "111"
+              },
+              {
+                "at": 37.33333333333332,
+                "wall": 4071124837.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "112"
+              },
+              {
+                "at": 37.66666666666666,
+                "wall": 4071124837.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "113"
+              },
+              {
+                "at": 37.99999999999999,
+                "wall": 4071124838.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "114"
+              },
+              {
+                "at": 38.33333333333333,
+                "wall": 4071124838.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "115"
+              },
+              {
+                "at": 38.666666666666664,
+                "wall": 4071124838.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "116"
+              },
+              {
+                "at": 39.0,
+                "wall": 4071124839.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "117"
+              },
+              {
+                "at": 39.333333333333336,
+                "wall": 4071124839.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "118"
+              },
+              {
+                "at": 39.66666666666667,
+                "wall": 4071124839.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "119"
+              },
+              {
+                "at": 40.00000000000001,
+                "wall": 4071124840.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "120"
+              },
+              {
+                "at": 40.33333333333334,
+                "wall": 4071124840.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "121"
+              },
+              {
+                "at": 40.66666666666668,
+                "wall": 4071124840.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "122"
+              },
+              {
+                "at": 41.000000000000014,
+                "wall": 4071124841.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "123"
+              },
+              {
+                "at": 41.33333333333335,
+                "wall": 4071124841.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "124"
+              },
+              {
+                "at": 41.666666666666686,
+                "wall": 4071124841.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "125"
+              },
+              {
+                "at": 42.00000000000002,
+                "wall": 4071124842.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "126"
+              },
+              {
+                "at": 42.33333333333336,
+                "wall": 4071124842.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "127"
+              },
+              {
+                "at": 42.66666666666669,
+                "wall": 4071124842.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "128"
+              },
+              {
+                "at": 43.00000000000003,
+                "wall": 4071124843.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "129"
+              },
+              {
+                "at": 43.333333333333364,
+                "wall": 4071124843.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "130"
+              },
+              {
+                "at": 43.6666666666667,
+                "wall": 4071124843.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "131"
+              },
+              {
+                "at": 44.000000000000036,
+                "wall": 4071124844.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "132"
+              },
+              {
+                "at": 44.33333333333337,
+                "wall": 4071124844.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "133"
+              },
+              {
+                "at": 44.66666666666671,
+                "wall": 4071124844.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "134"
+              },
+              {
+                "at": 45.00000000000004,
+                "wall": 4071124845.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "135"
+              },
+              {
+                "at": 45.33333333333338,
+                "wall": 4071124845.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "136"
+              },
+              {
+                "at": 45.666666666666714,
+                "wall": 4071124845.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "137"
+              },
+              {
+                "at": 46.00000000000005,
+                "wall": 4071124846.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "138"
+              },
+              {
+                "at": 46.333333333333385,
+                "wall": 4071124846.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "139"
+              },
+              {
+                "at": 46.66666666666672,
+                "wall": 4071124846.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "140"
+              },
+              {
+                "at": 47.00000000000006,
+                "wall": 4071124847.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "141"
+              },
+              {
+                "at": 47.33333333333339,
+                "wall": 4071124847.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "142"
+              },
+              {
+                "at": 47.66666666666673,
+                "wall": 4071124847.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "143"
+              },
+              {
+                "at": 48.000000000000064,
+                "wall": 4071124848.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "144"
+              },
+              {
+                "at": 48.3333333333334,
+                "wall": 4071124848.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "145"
+              },
+              {
+                "at": 48.666666666666735,
+                "wall": 4071124848.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "146"
+              },
+              {
+                "at": 49.00000000000007,
+                "wall": 4071124849.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "147"
+              },
+              {
+                "at": 49.33333333333341,
+                "wall": 4071124849.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "148"
+              },
+              {
+                "at": 49.66666666666674,
+                "wall": 4071124849.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "149"
+              },
+              {
+                "at": 50.00000000000008,
+                "wall": 4071124850.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "150"
+              },
+              {
+                "at": 50.333333333333414,
+                "wall": 4071124850.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "151"
+              },
+              {
+                "at": 50.66666666666675,
+                "wall": 4071124850.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "152"
+              },
+              {
+                "at": 51.000000000000085,
+                "wall": 4071124851.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "153"
+              },
+              {
+                "at": 51.33333333333342,
+                "wall": 4071124851.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "154"
+              },
+              {
+                "at": 51.66666666666676,
+                "wall": 4071124851.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "155"
+              },
+              {
+                "at": 52.00000000000009,
+                "wall": 4071124852.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "156"
+              },
+              {
+                "at": 52.33333333333343,
+                "wall": 4071124852.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "157"
+              },
+              {
+                "at": 52.666666666666764,
+                "wall": 4071124852.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "158"
+              },
+              {
+                "at": 53.0000000000001,
+                "wall": 4071124853.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "159"
+              },
+              {
+                "at": 53.333333333333435,
+                "wall": 4071124853.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "160"
+              },
+              {
+                "at": 53.66666666666677,
+                "wall": 4071124853.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "161"
+              },
+              {
+                "at": 54.00000000000011,
+                "wall": 4071124854.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "162"
+              },
+              {
+                "at": 54.33333333333344,
+                "wall": 4071124854.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "163"
+              },
+              {
+                "at": 54.66666666666678,
+                "wall": 4071124854.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "164"
+              },
+              {
+                "at": 55.000000000000114,
+                "wall": 4071124855.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "165"
+              },
+              {
+                "at": 55.33333333333345,
+                "wall": 4071124855.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "166"
+              },
+              {
+                "at": 55.666666666666785,
+                "wall": 4071124855.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "167"
+              },
+              {
+                "at": 56.00000000000012,
+                "wall": 4071124856.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "168"
+              },
+              {
+                "at": 56.33333333333346,
+                "wall": 4071124856.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "169"
+              },
+              {
+                "at": 56.66666666666679,
+                "wall": 4071124856.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "170"
+              },
+              {
+                "at": 57.00000000000013,
+                "wall": 4071124857.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "171"
+              },
+              {
+                "at": 57.333333333333464,
+                "wall": 4071124857.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "172"
+              },
+              {
+                "at": 57.6666666666668,
+                "wall": 4071124857.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "173"
+              },
+              {
+                "at": 58.000000000000135,
+                "wall": 4071124858.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "174"
+              },
+              {
+                "at": 58.33333333333347,
+                "wall": 4071124858.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "175"
+              },
+              {
+                "at": 58.666666666666806,
+                "wall": 4071124858.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "176"
+              },
+              {
+                "at": 59.00000000000014,
+                "wall": 4071124859.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "177"
+              },
+              {
+                "at": 59.33333333333348,
+                "wall": 4071124859.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "178"
+              },
+              {
+                "at": 59.66666666666681,
+                "wall": 4071124859.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "179"
+              },
+              {
+                "at": 60.00000000000015,
+                "wall": 4071124860.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "180"
+              },
+              {
+                "at": 60.333333333333485,
+                "wall": 4071124860.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "181"
+              },
+              {
+                "at": 60.66666666666682,
+                "wall": 4071124860.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "182"
+              },
+              {
+                "at": 61.000000000000156,
+                "wall": 4071124861.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "183"
+              },
+              {
+                "at": 61.33333333333349,
+                "wall": 4071124861.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "184"
+              },
+              {
+                "at": 61.66666666666683,
+                "wall": 4071124861.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "185"
+              },
+              {
+                "at": 62.00000000000016,
+                "wall": 4071124862.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "186"
+              },
+              {
+                "at": 62.3333333333335,
+                "wall": 4071124862.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "187"
+              },
+              {
+                "at": 62.666666666666835,
+                "wall": 4071124862.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "188"
+              },
+              {
+                "at": 63.00000000000017,
+                "wall": 4071124863.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "189"
+              },
+              {
+                "at": 63.333333333333506,
+                "wall": 4071124863.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "190"
+              },
+              {
+                "at": 63.66666666666684,
+                "wall": 4071124863.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "191"
+              },
+              {
+                "at": 64.00000000000017,
+                "wall": 4071124864.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "192"
+              },
+              {
+                "at": 64.3333333333335,
+                "wall": 4071124864.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "193"
+              },
+              {
+                "at": 64.66666666666683,
+                "wall": 4071124864.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "194"
+              },
+              {
+                "at": 65.00000000000016,
+                "wall": 4071124865.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "195"
+              },
+              {
+                "at": 65.33333333333348,
+                "wall": 4071124865.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "196"
+              },
+              {
+                "at": 65.66666666666681,
+                "wall": 4071124865.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "197"
+              },
+              {
+                "at": 66.00000000000014,
+                "wall": 4071124866.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "198"
+              },
+              {
+                "at": 66.33333333333347,
+                "wall": 4071124866.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "199"
+              },
+              {
+                "at": 66.6666666666668,
+                "wall": 4071124866.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "200"
+              },
+              {
+                "at": 67.00000000000013,
+                "wall": 4071124867.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "201"
+              },
+              {
+                "at": 67.33333333333346,
+                "wall": 4071124867.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "202"
+              },
+              {
+                "at": 67.66666666666679,
+                "wall": 4071124867.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "203"
+              },
+              {
+                "at": 68.00000000000011,
+                "wall": 4071124868.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "204"
+              },
+              {
+                "at": 68.33333333333344,
+                "wall": 4071124868.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "205"
+              },
+              {
+                "at": 68.66666666666677,
+                "wall": 4071124868.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "206"
+              },
+              {
+                "at": 69.0000000000001,
+                "wall": 4071124869.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "207"
+              },
+              {
+                "at": 69.33333333333343,
+                "wall": 4071124869.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "208"
+              },
+              {
+                "at": 69.66666666666676,
+                "wall": 4071124869.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "209"
+              },
+              {
+                "at": 70.00000000000009,
+                "wall": 4071124870.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "210"
+              },
+              {
+                "at": 70.33333333333341,
+                "wall": 4071124870.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "211"
+              },
+              {
+                "at": 70.66666666666674,
+                "wall": 4071124870.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "212"
+              },
+              {
+                "at": 71.00000000000007,
+                "wall": 4071124871.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "213"
+              },
+              {
+                "at": 71.3333333333334,
+                "wall": 4071124871.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "214"
+              },
+              {
+                "at": 71.66666666666673,
+                "wall": 4071124871.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "215"
+              },
+              {
+                "at": 72.00000000000006,
+                "wall": 4071124872.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "216"
+              },
+              {
+                "at": 72.33333333333339,
+                "wall": 4071124872.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "217"
+              },
+              {
+                "at": 72.66666666666671,
+                "wall": 4071124872.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "218"
+              },
+              {
+                "at": 73.00000000000004,
+                "wall": 4071124873.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "219"
+              },
+              {
+                "at": 73.33333333333337,
+                "wall": 4071124873.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "220"
+              },
+              {
+                "at": 73.6666666666667,
+                "wall": 4071124873.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "221"
+              },
+              {
+                "at": 74.00000000000003,
+                "wall": 4071124874.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "222"
+              },
+              {
+                "at": 74.33333333333336,
+                "wall": 4071124874.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "223"
+              },
+              {
+                "at": 74.66666666666669,
+                "wall": 4071124874.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "224"
+              },
+              {
+                "at": 75.00000000000001,
+                "wall": 4071124875.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "225"
+              },
+              {
+                "at": 75.33333333333334,
+                "wall": 4071124875.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "226"
+              },
+              {
+                "at": 75.66666666666667,
+                "wall": 4071124875.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "227"
+              },
+              {
+                "at": 76.00000000000001,
+                "wall": 4071124876.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "228"
+              },
+              {
+                "at": 76.33333333333334,
+                "wall": 4071124876.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "229"
+              },
+              {
+                "at": 76.66666666666667,
+                "wall": 4071124876.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "230"
+              },
+              {
+                "at": 77.0,
+                "wall": 4071124877.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "231"
+              },
+              {
+                "at": 77.33333333333334,
+                "wall": 4071124877.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "232"
+              },
+              {
+                "at": 77.66666666666667,
+                "wall": 4071124877.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "233"
+              },
+              {
+                "at": 78.0,
+                "wall": 4071124878.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "234"
+              },
+              {
+                "at": 78.33333333333334,
+                "wall": 4071124878.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "235"
+              },
+              {
+                "at": 78.66666666666667,
+                "wall": 4071124878.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "236"
+              },
+              {
+                "at": 79.0,
+                "wall": 4071124879.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "237"
+              },
+              {
+                "at": 79.33333333333333,
+                "wall": 4071124879.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "238"
+              },
+              {
+                "at": 79.66666666666666,
+                "wall": 4071124879.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "239"
+              },
+              {
+                "at": 80.0,
+                "wall": 4071124880.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "240"
+              },
+              {
+                "at": 80.33333333333333,
+                "wall": 4071124880.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "241"
+              },
+              {
+                "at": 80.66666666666666,
+                "wall": 4071124880.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "242"
+              },
+              {
+                "at": 81.0,
+                "wall": 4071124881.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "243"
+              },
+              {
+                "at": 81.33333333333333,
+                "wall": 4071124881.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "244"
+              },
+              {
+                "at": 81.66666666666666,
+                "wall": 4071124881.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "245"
+              },
+              {
+                "at": 81.99999999999999,
+                "wall": 4071124882.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "246"
+              },
+              {
+                "at": 82.33333333333331,
+                "wall": 4071124882.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "247"
+              },
+              {
+                "at": 82.66666666666666,
+                "wall": 4071124882.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "248"
+              },
+              {
+                "at": 82.99999999999999,
+                "wall": 4071124883.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "249"
+              },
+              {
+                "at": 83.33333333333331,
+                "wall": 4071124883.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "250"
+              },
+              {
+                "at": 83.66666666666666,
+                "wall": 4071124883.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "251"
+              },
+              {
+                "at": 83.99999999999999,
+                "wall": 4071124884.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "252"
+              },
+              {
+                "at": 84.33333333333331,
+                "wall": 4071124884.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "253"
+              },
+              {
+                "at": 84.66666666666664,
+                "wall": 4071124884.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "254"
+              },
+              {
+                "at": 84.99999999999997,
+                "wall": 4071124885.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "255"
+              },
+              {
+                "at": 85.33333333333331,
+                "wall": 4071124885.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "256"
+              },
+              {
+                "at": 85.66666666666664,
+                "wall": 4071124885.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "257"
+              },
+              {
+                "at": 85.99999999999997,
+                "wall": 4071124886.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "258"
+              },
+              {
+                "at": 86.33333333333331,
+                "wall": 4071124886.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "259"
+              },
+              {
+                "at": 86.66666666666664,
+                "wall": 4071124886.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "260"
+              },
+              {
+                "at": 86.99999999999997,
+                "wall": 4071124887.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "261"
+              },
+              {
+                "at": 87.3333333333333,
+                "wall": 4071124887.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "262"
+              },
+              {
+                "at": 87.66666666666663,
+                "wall": 4071124887.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "263"
+              },
+              {
+                "at": 87.99999999999997,
+                "wall": 4071124888.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "264"
+              },
+              {
+                "at": 88.3333333333333,
+                "wall": 4071124888.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "265"
+              },
+              {
+                "at": 88.66666666666663,
+                "wall": 4071124888.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "266"
+              },
+              {
+                "at": 88.99999999999997,
+                "wall": 4071124889.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "267"
+              },
+              {
+                "at": 89.3333333333333,
+                "wall": 4071124889.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "268"
+              },
+              {
+                "at": 89.66666666666663,
+                "wall": 4071124889.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "269"
+              },
+              {
+                "at": 89.99999999999996,
+                "wall": 4071124890.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "270"
+              },
+              {
+                "at": 90.33333333333329,
+                "wall": 4071124890.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "271"
+              },
+              {
+                "at": 90.66666666666663,
+                "wall": 4071124890.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "272"
+              },
+              {
+                "at": 90.99999999999996,
+                "wall": 4071124891.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "273"
+              },
+              {
+                "at": 91.33333333333329,
+                "wall": 4071124891.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "274"
+              },
+              {
+                "at": 91.66666666666663,
+                "wall": 4071124891.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "275"
+              },
+              {
+                "at": 91.99999999999996,
+                "wall": 4071124892.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "276"
+              },
+              {
+                "at": 92.33333333333329,
+                "wall": 4071124892.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "277"
+              },
+              {
+                "at": 92.66666666666663,
+                "wall": 4071124892.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "278"
+              },
+              {
+                "at": 92.99999999999996,
+                "wall": 4071124893.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "279"
+              },
+              {
+                "at": 93.33333333333329,
+                "wall": 4071124893.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "280"
+              },
+              {
+                "at": 93.66666666666663,
+                "wall": 4071124893.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "281"
+              },
+              {
+                "at": 93.99999999999997,
+                "wall": 4071124894.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "282"
+              },
+              {
+                "at": 94.3333333333333,
+                "wall": 4071124894.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "283"
+              },
+              {
+                "at": 94.66666666666663,
+                "wall": 4071124894.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "284"
+              },
+              {
+                "at": 94.99999999999997,
+                "wall": 4071124895.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "285"
+              },
+              {
+                "at": 95.33333333333331,
+                "wall": 4071124895.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "286"
+              },
+              {
+                "at": 95.66666666666664,
+                "wall": 4071124895.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "287"
+              },
+              {
+                "at": 95.99999999999997,
+                "wall": 4071124896.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "288"
+              },
+              {
+                "at": 96.33333333333331,
+                "wall": 4071124896.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "289"
+              },
+              {
+                "at": 96.66666666666666,
+                "wall": 4071124896.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "290"
+              },
+              {
+                "at": 96.99999999999999,
+                "wall": 4071124897.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "291"
+              },
+              {
+                "at": 97.33333333333331,
+                "wall": 4071124897.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "292"
+              },
+              {
+                "at": 97.66666666666666,
+                "wall": 4071124897.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "293"
+              },
+              {
+                "at": 98.0,
+                "wall": 4071124898.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "294"
+              },
+              {
+                "at": 98.33333333333333,
+                "wall": 4071124898.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "295"
+              },
+              {
+                "at": 98.66666666666666,
+                "wall": 4071124898.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "296"
+              },
+              {
+                "at": 99.0,
+                "wall": 4071124899.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "297"
+              },
+              {
+                "at": 99.33333333333334,
+                "wall": 4071124899.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "298"
+              },
+              {
+                "at": 99.66666666666667,
+                "wall": 4071124899.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "299"
+              },
+              {
+                "at": 100.0,
+                "wall": 4071124900.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "300"
+              },
+              {
+                "at": 100.33333333333334,
+                "wall": 4071124900.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "301"
+              },
+              {
+                "at": 100.66666666666669,
+                "wall": 4071124900.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "302"
+              },
+              {
+                "at": 101.00000000000001,
+                "wall": 4071124901.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "303"
+              },
+              {
+                "at": 101.33333333333334,
+                "wall": 4071124901.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "304"
+              },
+              {
+                "at": 101.66666666666669,
+                "wall": 4071124901.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "305"
+              },
+              {
+                "at": 102.00000000000003,
+                "wall": 4071124902.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "306"
+              },
+              {
+                "at": 102.33333333333336,
+                "wall": 4071124902.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "307"
+              },
+              {
+                "at": 102.66666666666669,
+                "wall": 4071124902.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "308"
+              },
+              {
+                "at": 103.00000000000003,
+                "wall": 4071124903.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "309"
+              },
+              {
+                "at": 103.33333333333337,
+                "wall": 4071124903.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "310"
+              },
+              {
+                "at": 103.6666666666667,
+                "wall": 4071124903.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "311"
+              },
+              {
+                "at": 104.00000000000003,
+                "wall": 4071124904.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "312"
+              },
+              {
+                "at": 104.33333333333337,
+                "wall": 4071124904.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "313"
+              },
+              {
+                "at": 104.66666666666671,
+                "wall": 4071124904.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "314"
+              },
+              {
+                "at": 105.00000000000004,
+                "wall": 4071124905.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "315"
+              },
+              {
+                "at": 105.33333333333337,
+                "wall": 4071124905.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "316"
+              },
+              {
+                "at": 105.66666666666671,
+                "wall": 4071124905.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "317"
+              },
+              {
+                "at": 106.00000000000006,
+                "wall": 4071124906.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "318"
+              },
+              {
+                "at": 106.33333333333339,
+                "wall": 4071124906.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "319"
+              },
+              {
+                "at": 106.66666666666671,
+                "wall": 4071124906.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "320"
+              },
+              {
+                "at": 107.00000000000006,
+                "wall": 4071124907.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "321"
+              },
+              {
+                "at": 107.3333333333334,
+                "wall": 4071124907.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "322"
+              },
+              {
+                "at": 107.66666666666673,
+                "wall": 4071124907.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "323"
+              },
+              {
+                "at": 108.00000000000006,
+                "wall": 4071124908.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "324"
+              },
+              {
+                "at": 108.3333333333334,
+                "wall": 4071124908.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "325"
+              },
+              {
+                "at": 108.66666666666674,
+                "wall": 4071124908.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "326"
+              },
+              {
+                "at": 109.00000000000007,
+                "wall": 4071124909.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "327"
+              },
+              {
+                "at": 109.3333333333334,
+                "wall": 4071124909.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "328"
+              },
+              {
+                "at": 109.66666666666674,
+                "wall": 4071124909.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "329"
+              },
+              {
+                "at": 110.00000000000009,
+                "wall": 4071124910.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "330"
+              },
+              {
+                "at": 110.33333333333341,
+                "wall": 4071124910.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "331"
+              },
+              {
+                "at": 110.66666666666674,
+                "wall": 4071124910.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "332"
+              },
+              {
+                "at": 111.00000000000009,
+                "wall": 4071124911.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "333"
+              },
+              {
+                "at": 111.33333333333343,
+                "wall": 4071124911.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "334"
+              },
+              {
+                "at": 111.66666666666676,
+                "wall": 4071124911.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "335"
+              },
+              {
+                "at": 112.00000000000009,
+                "wall": 4071124912.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "336"
+              },
+              {
+                "at": 112.33333333333343,
+                "wall": 4071124912.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "337"
+              },
+              {
+                "at": 112.66666666666677,
+                "wall": 4071124912.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "338"
+              },
+              {
+                "at": 113.0000000000001,
+                "wall": 4071124913.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "339"
+              },
+              {
+                "at": 113.33333333333343,
+                "wall": 4071124913.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "340"
+              },
+              {
+                "at": 113.66666666666677,
+                "wall": 4071124913.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "341"
+              },
+              {
+                "at": 114.00000000000011,
+                "wall": 4071124914.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "342"
+              },
+              {
+                "at": 114.33333333333344,
+                "wall": 4071124914.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "343"
+              },
+              {
+                "at": 114.66666666666677,
+                "wall": 4071124914.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "344"
+              },
+              {
+                "at": 115.00000000000011,
+                "wall": 4071124915.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "345"
+              },
+              {
+                "at": 115.33333333333346,
+                "wall": 4071124915.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "346"
+              },
+              {
+                "at": 115.66666666666679,
+                "wall": 4071124915.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "347"
+              },
+              {
+                "at": 116.00000000000011,
+                "wall": 4071124916.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "348"
+              },
+              {
+                "at": 116.33333333333346,
+                "wall": 4071124916.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "349"
+              },
+              {
+                "at": 116.6666666666668,
+                "wall": 4071124916.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "350"
+              },
+              {
+                "at": 117.00000000000013,
+                "wall": 4071124917.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "351"
+              },
+              {
+                "at": 117.33333333333346,
+                "wall": 4071124917.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "352"
+              },
+              {
+                "at": 117.6666666666668,
+                "wall": 4071124917.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "353"
+              },
+              {
+                "at": 118.00000000000014,
+                "wall": 4071124918.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "354"
+              },
+              {
+                "at": 118.33333333333347,
+                "wall": 4071124918.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "355"
+              },
+              {
+                "at": 118.6666666666668,
+                "wall": 4071124918.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "356"
+              },
+              {
+                "at": 119.00000000000014,
+                "wall": 4071124919.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "357"
+              },
+              {
+                "at": 119.33333333333348,
+                "wall": 4071124919.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "358"
+              },
+              {
+                "at": 119.66666666666681,
+                "wall": 4071124919.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "359"
+              },
+              {
+                "at": 120.00000000000014,
+                "wall": 4071124920.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "360"
+              },
+              {
+                "at": 120.33333333333348,
+                "wall": 4071124920.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "361"
+              },
+              {
+                "at": 120.66666666666683,
+                "wall": 4071124920.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "362"
+              },
+              {
+                "at": 121.00000000000016,
+                "wall": 4071124921.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "363"
+              },
+              {
+                "at": 121.33333333333348,
+                "wall": 4071124921.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "364"
+              },
+              {
+                "at": 421.3333333333335,
+                "wall": 4071125221.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "365"
+              },
+              {
+                "at": 421.6666666666668,
+                "wall": 4071125221.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "366"
+              },
+              {
+                "at": 422.0000000000001,
+                "wall": 4071125222.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "367"
+              },
+              {
+                "at": 422.3333333333334,
+                "wall": 4071125222.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "368"
+              },
+              {
+                "at": 422.66666666666674,
+                "wall": 4071125222.6666665,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "369"
+              }
+            ]
+          },
+          {
+            "dispatches": 25,
+            "minimum_gap": 8.571428571428555,
+            "peak_rolling_60s": 7,
+            "ceiling": 7,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 8.571428571428571,
+                "wall": 4071124808.571429,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "1"
+              },
+              {
+                "at": 17.142857142857142,
+                "wall": 4071124817.142857,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "2"
+              },
+              {
+                "at": 25.714285714285715,
+                "wall": 4071124825.714286,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "3"
+              },
+              {
+                "at": 34.285714285714285,
+                "wall": 4071124834.285714,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "4"
+              },
+              {
+                "at": 42.857142857142854,
+                "wall": 4071124842.857143,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "5"
+              },
+              {
+                "at": 51.42857142857142,
+                "wall": 4071124851.428571,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "6"
+              },
+              {
+                "at": 60.0,
+                "wall": 4071124860.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "7"
+              },
+              {
+                "at": 68.57142857142857,
+                "wall": 4071124868.571429,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "8"
+              },
+              {
+                "at": 77.14285714285714,
+                "wall": 4071124877.142857,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "9"
+              },
+              {
+                "at": 85.71428571428572,
+                "wall": 4071124885.714286,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "10"
+              },
+              {
+                "at": 94.28571428571429,
+                "wall": 4071124894.285714,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "11"
+              },
+              {
+                "at": 102.85714285714286,
+                "wall": 4071124902.857143,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "12"
+              },
+              {
+                "at": 111.42857142857143,
+                "wall": 4071124911.428571,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "13"
+              },
+              {
+                "at": 120.0,
+                "wall": 4071124920.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "14"
+              },
+              {
+                "at": 128.57142857142858,
+                "wall": 4071124928.571429,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "15"
+              },
+              {
+                "at": 137.14285714285717,
+                "wall": 4071124937.142857,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "16"
+              },
+              {
+                "at": 145.71428571428575,
+                "wall": 4071124945.714286,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "17"
+              },
+              {
+                "at": 154.28571428571433,
+                "wall": 4071124954.285714,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "18"
+              },
+              {
+                "at": 162.85714285714292,
+                "wall": 4071124962.857143,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "19"
+              },
+              {
+                "at": 462.8571428571429,
+                "wall": 4071125262.857143,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "20"
+              },
+              {
+                "at": 471.42857142857144,
+                "wall": 4071125271.428571,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "21"
+              },
+              {
+                "at": 480.0,
+                "wall": 4071125280.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "22"
+              },
+              {
+                "at": 488.57142857142856,
+                "wall": 4071125288.571429,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "23"
+              },
+              {
+                "at": 497.1428571428571,
+                "wall": 4071125297.142857,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "24"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_02_pause_between_admission_and_send_cannot_burst",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 4,
+        "minimum_gap": 0.3333333333333339,
+        "peak_rolling_60s": 4,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 10.0,
+            "wall": 4071124810.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 10.333333333333334,
+            "wall": 4071124810.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "1"
+          },
+          {
+            "at": 10.666666666666668,
+            "wall": 4071124810.6666665,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "2"
+          },
+          {
+            "at": 11.000000000000002,
+            "wall": 4071124811.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "3"
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_03_concurrent_manual_scheduler_and_adapter_instances_share",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 2,
+        "minimum_gap": 0.3333333333333333,
+        "peak_rolling_60s": 2,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 0.0,
+            "wall": 4071124800.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 0.3333333333333333,
+            "wall": 4071124800.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "later-symbol"
+          }
+        ],
+        "subscribers": 4,
+        "cache_added_calls": 0
+      }
+    },
+    {
+      "test": "test_04_query_isolation_and_full_resume_binding",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 6,
+        "minimum_gap": 0.33333333333333326,
+        "peak_rolling_60s": 6,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 0.0,
+            "wall": 4071124800.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 0.3333333333333333,
+            "wall": 4071124800.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "pending"
+          },
+          {
+            "at": 0.6666666666666666,
+            "wall": 4071124800.6666665,
+            "feed": "iex",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 1.0,
+            "wall": 4071124801.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 1.3333333333333333,
+            "wall": 4071124801.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 1.6666666666666665,
+            "wall": 4071124801.6666665,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_05_retry_ambiguity_and_page_budget_charge_each_wire_attempt",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 3,
+        "minimum_gap": 1.5,
+        "peak_rolling_60s": 3,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 0.0,
+            "wall": 4071124800.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 1.5,
+            "wall": 4071124801.5,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 4.0,
+            "wall": 4071124804.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          }
+        ],
+        "usage": {
+          "schema_version": 1,
+          "record_type": "request_telemetry",
+          "quota_id": "quota:step08-independent",
+          "work_id": "work:6b40343805192afe4e52eb2ba2bc42af74e7ad447489709b57c579d982fd80d7",
+          "query_hash": "6b40343805192afe4e52eb2ba2bc42af74e7ad447489709b57c579d982fd80d7",
+          "cooperating_callers_only": true,
+          "shared_work_id": null,
+          "remaining_attempts": 0,
+          "queue_seconds": 4.0,
+          "status": "deferred",
+          "reason": "attempt_budget",
+          "attempts": 3,
+          "retries": 2,
+          "throttles": 0,
+          "pages": 1,
+          "subscribers": 1,
+          "cache_hits": 0,
+          "wait_seconds": 4.0,
+          "coverage_expected": 2,
+          "coverage_observed": 0,
+          "not_before": null
+        }
+      }
+    },
+    {
+      "test": "test_06_server_wait_formats_final_retry_and_fallback",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "runs": [
+          {
+            "header": "120",
+            "required_delay": 120,
+            "dispatches": 2,
+            "minimum_gap": 120.00999999999999,
+            "peak_rolling_60s": 1,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 120.00999999999999,
+                "wall": 4071124920.01,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          },
+          {
+            "header": "http-date",
+            "required_delay": 120,
+            "dispatches": 2,
+            "minimum_gap": 120.00999999999999,
+            "peak_rolling_60s": 1,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 120.00999999999999,
+                "wall": 4071124920.01,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          },
+          {
+            "header": null,
+            "required_delay": 1.5,
+            "dispatches": 2,
+            "minimum_gap": 1.51,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 1.51,
+                "wall": 4071124801.51,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          },
+          {
+            "header": "broken",
+            "required_delay": 1.5,
+            "dispatches": 2,
+            "minimum_gap": 1.51,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 1.51,
+                "wall": 4071124801.51,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          },
+          {
+            "header": "NaN",
+            "required_delay": 1.5,
+            "dispatches": 2,
+            "minimum_gap": 1.51,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 1.51,
+                "wall": 4071124801.51,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          },
+          {
+            "header": "Infinity",
+            "required_delay": 1.5,
+            "dispatches": 2,
+            "minimum_gap": 1.51,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 1.51,
+                "wall": 4071124801.51,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          },
+          {
+            "header": "-1",
+            "required_delay": 1.5,
+            "dispatches": 2,
+            "minimum_gap": 1.51,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 1.51,
+                "wall": 4071124801.51,
+                "feed": "sip",
+                "symbols": "OTHER",
+                "token": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_07_oversized_verified_hint_cannot_erase_429_cooldown",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 2,
+        "minimum_gap": 120.0,
+        "peak_rolling_60s": 1,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 0.0,
+            "wall": 4071124800.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 120.0,
+            "wall": 4071124920.0,
+            "feed": "sip",
+            "symbols": "OTHER",
+            "token": null
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_08_real_process_death_and_recovery",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "runs": [
+          {
+            "boundary": "dispatch",
+            "terminated_exit_code": 1,
+            "minimum_recovery": 60,
+            "wall_jump": 3600,
+            "accounted_attempts": 3,
+            "dispatches": 3,
+            "minimum_gap": 0.3333333333333357,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 60.0,
+                "wall": 4071128460.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 60.333333333333336,
+                "wall": 4071128460.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "later-symbol"
+              }
+            ]
+          },
+          {
+            "boundary": "commit",
+            "terminated_exit_code": 1,
+            "minimum_recovery": 60,
+            "wall_jump": -3600,
+            "accounted_attempts": 3,
+            "dispatches": 3,
+            "minimum_gap": 0.3333333333333357,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 60.0,
+                "wall": 4071121260.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 60.333333333333336,
+                "wall": 4071121260.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "later-symbol"
+              }
+            ]
+          },
+          {
+            "boundary": "page",
+            "terminated_exit_code": 1,
+            "minimum_recovery": 60,
+            "wall_jump": -3600,
+            "accounted_attempts": 2,
+            "dispatches": 2,
+            "minimum_gap": 60.0,
+            "peak_rolling_60s": 1,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 60.0,
+                "wall": 4071121260.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "later-symbol"
+              }
+            ]
+          },
+          {
+            "boundary": "wait",
+            "terminated_exit_code": 1,
+            "minimum_recovery": 120,
+            "wall_jump": 3600,
+            "accounted_attempts": 3,
+            "dispatches": 3,
+            "minimum_gap": 0.3333333333333286,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 120.0,
+                "wall": 4071128520.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 120.33333333333333,
+                "wall": 4071128520.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "later-symbol"
+              }
+            ]
+          },
+          {
+            "boundary": "owner",
+            "terminated_exit_code": 1,
+            "minimum_recovery": 60,
+            "wall_jump": -3600,
+            "accounted_attempts": 2,
+            "dispatches": 2,
+            "minimum_gap": 0.3333333333333357,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 60.0,
+                "wall": 4071121260.0,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": null
+              },
+              {
+                "at": 60.333333333333336,
+                "wall": 4071121260.3333335,
+                "feed": "sip",
+                "symbols": "AAA,ZZZ",
+                "token": "later-symbol"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_09_wall_jumps_and_frozen_policy",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 9,
+        "minimum_gap": 0.33333333333333326,
+        "peak_rolling_60s": 9,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 0.0,
+            "wall": 4071124800.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 0.3333333333333333,
+            "wall": 4071124800.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "1"
+          },
+          {
+            "at": 0.6666666666666666,
+            "wall": 4071124800.6666665,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "2"
+          },
+          {
+            "at": 1.0,
+            "wall": 4071128401.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "3"
+          },
+          {
+            "at": 1.3333333333333333,
+            "wall": 4071128401.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "4"
+          },
+          {
+            "at": 1.6666666666666665,
+            "wall": 4071128401.6666665,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "5"
+          },
+          {
+            "at": 1.9999999999999998,
+            "wall": 4071121202.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "6"
+          },
+          {
+            "at": 2.333333333333333,
+            "wall": 4071121202.3333335,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "7"
+          },
+          {
+            "at": 2.6666666666666665,
+            "wall": 4071121202.6666665,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "8"
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_10_production_clock_http_attempts_and_api_separation",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "real_monotonic_dispatches": [
+          738030.7217405,
+          738031.0574981
+        ],
+        "minimum_gap": 0.3357576000271365,
+        "production_wait": "time.sleep",
+        "http_requests": 2,
+        "outside_socket_calls": 0,
+        "trading_policy": "rejected by Market Data schema; live Trading adapter remains unavailable"
+      }
+    },
+    {
+      "test": "test_11_paired_merged_misses_cutoff_and_result_only_readers",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "runs": [
+          {
+            "condition": "complete",
+            "initial": "deferred",
+            "final": "decided",
+            "reason": "none",
+            "snapshot_hash": "8945189fe833118666d39e340fa8ec0c8ac840a3b25647e43860b22522cd002b",
+            "cutoff": "2099-01-03T12:05:00.000000Z",
+            "consumers": 2,
+            "recorded_callbacks": 2,
+            "result_reader_added_calls": 0,
+            "dispatches": 2,
+            "minimum_gap": 1.0,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": null
+              },
+              {
+                "at": 1.0,
+                "wall": 4071124801.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": "last-symbol"
+              }
+            ]
+          },
+          {
+            "condition": "deadline",
+            "initial": "deferred",
+            "final": "abstained",
+            "reason": "deadline",
+            "snapshot_hash": "a8ce2c46ce504cc03349d0856569ef6ee2eeddce9b2272d0e297206ded16f3ae",
+            "cutoff": "2099-01-03T12:05:00.000000Z",
+            "consumers": 2,
+            "recorded_callbacks": 0,
+            "result_reader_added_calls": 0,
+            "dispatches": 1,
+            "minimum_gap": null,
+            "peak_rolling_60s": 1,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": null
+              }
+            ]
+          },
+          {
+            "condition": "late-receipt",
+            "initial": "deferred",
+            "final": "abstained",
+            "reason": "response",
+            "snapshot_hash": "878287eeb05e1a4d2516625fb50caaebd9a42102ac590a91869ff7ed654dbf3f",
+            "cutoff": "2099-01-03T12:05:00.000000Z",
+            "consumers": 2,
+            "recorded_callbacks": 0,
+            "result_reader_added_calls": 0,
+            "dispatches": 2,
+            "minimum_gap": 1.0,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": null
+              },
+              {
+                "at": 1.0,
+                "wall": 4071124801.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": "last-symbol"
+              }
+            ]
+          },
+          {
+            "condition": "budget",
+            "initial": "deferred",
+            "final": "abstained",
+            "reason": "attempt_budget",
+            "snapshot_hash": "85be4b95f90dcdf1f8cc77fc7e3e0658b86c78f065e4e21fc47bb3a3bbd13672",
+            "cutoff": "2099-01-03T12:05:00.000000Z",
+            "consumers": 2,
+            "recorded_callbacks": 0,
+            "result_reader_added_calls": 0,
+            "dispatches": 1,
+            "minimum_gap": null,
+            "peak_rolling_60s": 1,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": null
+              }
+            ]
+          },
+          {
+            "condition": "reserved",
+            "initial": "deferred",
+            "final": "abstained",
+            "reason": "execution_ambiguous",
+            "snapshot_hash": "0520444f89c143f3f6365d789e2d04ba0ff8f7e895a797155a55a6bf6bee4b3c",
+            "cutoff": "2099-01-03T12:05:00.000000Z",
+            "consumers": 2,
+            "recorded_callbacks": 0,
+            "result_reader_added_calls": 0,
+            "dispatches": 2,
+            "minimum_gap": 1.0,
+            "peak_rolling_60s": 2,
+            "ceiling": 180,
+            "trace": [
+              {
+                "at": 0.0,
+                "wall": 4071124800.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": null
+              },
+              {
+                "at": 1.0,
+                "wall": 4071124801.0,
+                "feed": "sip",
+                "symbols": "FIXTURE,SECOND",
+                "token": "last-symbol"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_12_forward_manifest_is_a_frozen_copy",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "frozen_manifest_hash": "b4258eb0c4fbfbc2690f4bc340e9733b3902990c3e293be3c0b7825b2de95700",
+        "external_mutations_applied": false
+      }
+    },
+    {
+      "test": "test_13_verified_headers_only_reduce_capacity_and_reset_is_shared",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "dispatches": 4,
+        "minimum_gap": 30.0,
+        "peak_rolling_60s": 2,
+        "ceiling": 2,
+        "trace": [
+          {
+            "at": 0.0,
+            "wall": 4071124800.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          },
+          {
+            "at": 30.0,
+            "wall": 4071124830.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "1"
+          },
+          {
+            "at": 150.0,
+            "wall": 4071124950.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "2"
+          },
+          {
+            "at": 180.0,
+            "wall": 4071124980.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": "3"
+          }
+        ]
+      }
+    },
+    {
+      "test": "test_14_upgrade_preserves_ambiguous_charge_and_v1_v2_readers",
+      "status": "pass",
+      "failure": null,
+      "evidence": {
+        "previous_migrations_unchanged": true,
+        "old_ambiguous_attempts": 1,
+        "final_attempts": 2,
+        "reader_versions": [
+          1,
+          2
+        ],
+        "dispatches": 1,
+        "minimum_gap": null,
+        "peak_rolling_60s": 1,
+        "ceiling": 180,
+        "trace": [
+          {
+            "at": 60.0,
+            "wall": 4071124860.0,
+            "feed": "sip",
+            "symbols": "AAA,ZZZ",
+            "token": null
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Original synthetic inputs and transport-side timestamps; socket networking forbidden. Production HTTP boundary mocked with real waiting.",
+  "guarantee": "Cooperating callers only; unknown outside account traffic is not measured.",
+  "remaining_gates": [
+    "Step 09 real-source qualification and rights",
+    "Step 12 final audit",
+    "Step 13 separate live paper Trading adapter/quota policy"
+  ],
+  "retained_blockers": [
+    {
+      "id": "live-trading-quota-unimplemented",
+      "status": "not_implemented",
+      "blocks": "Live paper Trading quota verification and operation; Market Data rejects Trading policies and URLs.",
+      "next_owner": "Step 13, after its stage decision; does not block Step 09 Market Data qualification."
+    }
+  ],
+  "account_calls": 0,
+  "orders": 0,
+  "promotion_eligible": false
+}

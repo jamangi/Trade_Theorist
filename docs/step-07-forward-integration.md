@@ -115,8 +115,9 @@ Character execution fails. Reports retain both facts. Saved reports never trigge
 catch-up downloads, revise information cutoffs, infer matured forecasts or count
 synthetic clock advances as real sessions. Promotion remains false.
 
-Step 08 independently challenges this integrated path before Step 09 account/rights
-qualification. Steps 10–11 establish actual eligible participants and prospective
+[Step 08 independent preflight](step-08-offline-preflight.md) now passes for this
+integrated path; it also makes returned manifest/policy dictionaries defensive
+copies. Step 09 account/rights qualification remains pending. Steps 10–11 establish actual eligible participants and prospective
 observations; Step 12 audits real evidence. Do not enable a production provider or
 broker by changing fixture labels. Multi-round scheduling, real model adapters,
 paper execution and performance claims are outside this step.

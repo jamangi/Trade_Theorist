@@ -70,13 +70,18 @@ class ForwardRound:
             raise ContractError("Step 07 is original-fixture integration only")
         self.owner, self.store = coordinator, coordinator.store
         with coordinator.db:
-            self.manifest = self.store.v2_record(manifest_id)
+            self._manifest = self.store.v2_record(manifest_id)
             if self.manifest["record_type"] != "forward_manifest": raise ContractError("Expected forward manifest")
             validate_references(self.manifest, self.store.v2_record)
             if digest(coordinator.policy) != self.manifest["quota_policy_hash"]:
                 raise ContractError("Shared owner differs from frozen quota policy")
             if not hasattr(coordinator, "_forward_locks"): coordinator._forward_locks = {}
             self.lock = coordinator._forward_locks.setdefault(manifest_id, RLock())
+
+    @property
+    def manifest(self):
+        """Return a copy of the validated, frozen participant and budget contract."""
+        return deepcopy(self._manifest)
 
     def _existing(self, identifier):
         with self.owner.db:

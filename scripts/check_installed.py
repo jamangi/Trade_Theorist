@@ -107,7 +107,8 @@ print("Installed protected launch, all assets, and stop passed")
             result = json.loads(run(name, collector).read_text())
             if result["status"] != "complete" or result["usage"]["physical_attempts"] != 2 or result["account_calls"] != 0:
                 raise RuntimeError("Installed shared collector or cache failed")
-        evidence["shared_requests"] = dict(collector="passed", cache="passed", physical_recorded_attempts=2, account_calls=0, migration="005")
+        run("market-schema", [python, "-c", "import sqlite3,sys; c=sqlite3.connect(sys.argv[1]); assert c.execute('SELECT MAX(version) FROM schema_migrations').fetchone()[0] == 6; assert c.execute('SELECT COUNT(*) FROM market_attempts WHERE settled IS NOT NULL').fetchone()[0] == 2", root / "quota" / "research.sqlite3"])
+        evidence["shared_requests"] = dict(collector="passed", cache="passed", physical_recorded_attempts=2, account_calls=0, migration="006", settlement="passed")
         run("forward-fixture", [cli, "forward-fixture", "--output-root", root / "forward-fixture"])
         forward = json.loads((root / "forward-fixture/acceptance.json").read_text())
         if forward["scenarios"]["complete"]["physical_recorded_attempts"] != 2 or forward["scenarios"]["deadline"]["reason"] != "deadline":
