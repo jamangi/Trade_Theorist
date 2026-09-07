@@ -1,0 +1,53 @@
+{
+  "contamination": "fixture",
+  "coverage_expected": 2,
+  "coverage_observed": 2,
+  "created_at": "2099-01-03T21:00:00.333333Z",
+  "decision_at": "2099-01-03T21:10:00Z",
+  "experiment_id": "experiment:v2-fixture-forward-index",
+  "field_class": "private_market_provenance",
+  "id": "snapshot:forward-cfa9f778e7f576666feb317921e0949792e930321e94695bb4eb8348b7c76abe",
+  "manifest_ref": "forward:original-paired-round",
+  "observations": [
+    {
+      "bar": {
+        "c": 101,
+        "h": 102,
+        "l": 99,
+        "o": 100,
+        "symbol": "FIXTURE",
+        "t": "2099-01-02T21:00:00Z",
+        "v": 1000
+      },
+      "id": "observation:5e795c50e59cf3d401762e33610666241ef968e7a92f4d9b7d66b240e4f1799e",
+      "received_at": "2099-01-03T21:00:00.000000Z",
+      "request_hash": "fab1e658bafc925eb616a949ae10d4adbae21351f7f31e3d22b75eee7f0eb79c"
+    },
+    {
+      "bar": {
+        "c": 101,
+        "h": 102,
+        "l": 99,
+        "o": 100,
+        "symbol": "SECOND",
+        "t": "2099-01-02T21:00:00Z",
+        "v": 1000
+      },
+      "id": "observation:88efcf08e879c6f56abe3458caac9d5a1994397209810fefeead5dcd84e3b034",
+      "received_at": "2099-01-03T21:00:00.000000Z",
+      "request_hash": "a1cc8d265c72411d9cc1ec18fc30e8fdb9360220160af9ccea30ddcc2c56069d"
+    }
+  ],
+  "provenance": {
+    "rights_id": "rights:v2-fixture-forward-index",
+    "source_event_ids": [],
+    "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+  },
+  "publication_class": "private-owner-v2",
+  "query_hash": "35c428bdb8620c76044fcfb5abb5c6c2c5beb71b32161308fa7c993ec2189e9e",
+  "reason": "none",
+  "record_type": "forward_snapshot",
+  "schema_version": 2,
+  "status": "ready",
+  "work_ref": "work:35c428bdb8620c76044fcfb5abb5c6c2c5beb71b32161308fa7c993ec2189e9e"
+}

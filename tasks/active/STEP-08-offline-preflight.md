@@ -14,6 +14,12 @@ Both limiter and consumer exist; verify actual dispatch and deadline behavior be
 
 Steps 06 and 07 pass focused checks. Use fake clocks and recorded transports.
 
+Start with the [Step 07 bounded handoff](../../docs/step-07-forward-integration.md)
+and its [original acceptance evidence](../../examples/step-07/acceptance.json).
+The integrated path is `ForwardRound.prepare/execute`, reached through
+`heartbeat.run_forward_round`; inspect Step 06 admission separately. Write a new
+independent preflight artifact rather than relabeling those implementation tests.
+
 ## Finished state
 
 A dated preflight report verifies actual transport timestamps, concurrent/restarted callers, retries, pagination, shared snapshots and cutoff behavior, with blocking failures resolved or explicitly retained.

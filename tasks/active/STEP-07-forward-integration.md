@@ -1,9 +1,10 @@
 # Step 07: Connect forward decisions to shared snapshots
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: implemented and verified offline, 2026-09-06
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-015](../TASK-015-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
+- Implementation guide: [Step 07 API, reproduction and recovery](../../docs/step-07-forward-integration.md)
 - Design inputs: [Shared request budget](../../docs/market-data-request-budget.md), [evaluation](../../docs/evaluation.md)
 
 ## Why this position
@@ -34,6 +35,38 @@ Acceptance: identical Character/mode requests share one fetch sequence; subseque
 Use v2 execution-basis and portfolio identities and private reports. Validate frozen Character versions, baseline/cost/flow policies and stopping-rule fields with original synthetic records. This is offline integration; real eligibility and prospective observations remain Steps 10 and 11.
 
 ## Validation and handoff
+
+Completed 2026-09-06. The [bounded implementation guide](../../docs/step-07-forward-integration.md)
+contains exact API/command entry points, immutable-state meanings and recovery rules.
+Start there in a fresh task; no conversation history or large JSON read is needed.
+The [four original acceptance scenarios](../../examples/step-07/acceptance.json)
+and [final validation record](../../examples/step-07/validation.json) preserve portable evidence.
+
+- Added `forward/shared.py`, `forward/schema.py`, `forward/validation.py` and original
+  fixture generation. Five additive v2 records use the existing immutable store.
+  Paired Character, portfolio, segment, baseline, risk, cost and flow identities are
+  validated before shared preparation and recorded execution.
+- Extended coordinator evidence access, the v2 heartbeat entry, strict schema and
+  field inventory, `forward-fixture`, record validation and the installed-package
+  check. Existing v1 forward/heartbeat interfaces and accounting/UI projections remain.
+- Verified shared multi-symbol pagination and eligible cache reuse, common snapshot
+  IDs/hashes, uniform budget/deadline/coverage abstention, immutable cutoff/revision
+  selection, finite independent Character usage, crash recovery and private reports.
+  A larger pre-existing shared work budget cannot override the round's frozen cap.
+- Focused integration: **18 tests passed**; related forward, request, contract,
+  storage, heartbeat and v2 operation checks passed. Final full suite:
+  **289 tests, 28/28 modules, 84.1 seconds**. Complete quiet logs are in `.local/test-logs/`.
+- Clean wheel installation passed existing v1/v2 workflows, shared collection and
+  four forward scenarios with external sockets trapped. Schema export and the
+  **1,868-field** classification check passed. Installed logs are in `.local/installed-logs/`.
+- No account, external model, broker, recurring job or real elapsed session was
+  used. Opinions are original recorded fixtures; unknown interrupted usage is
+  explicit, and no forward performance or promotion eligibility is claimed.
+
+Next is **Step 08, when requested**: independently challenge this integrated path
+and write a distinct preflight artifact. Step 09 qualification, Steps 10–11 real
+eligibility/observation and Step 12 final audit remain pending. This handoff does
+not authorize provider activation or an account-backed sample.
 
 Use the [focused validation workflow](../../docs/development.md). Record changed files, actual checks, evidence artifacts and remaining blockers here. For code changes, run relevant tests and the full suite once after focused checks pass; for UI changes, verify keyboard and narrow/wide layouts too. Original synthetic acceptance never substitutes for required real-source or elapsed-time evidence.
 

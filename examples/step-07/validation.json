@@ -1,0 +1,70 @@
+{
+  "step": "07",
+  "checked_at": "2026-09-06",
+  "evidence_kind": "original_synthetic_offline",
+  "full_suite": {
+    "command": "python scripts/check.py",
+    "result": "passed",
+    "modules": 28,
+    "tests": 289,
+    "seconds": 84.1
+  },
+  "focused_integration": {
+    "module": "test_forward_shared",
+    "tests": 18,
+    "result": "passed"
+  },
+  "installed": {
+    "command": "python scripts/check_installed.py --wheelhouse .local/wheelhouse",
+    "network": "socket trap and pip --no-index",
+    "versions": {
+      "1": {
+        "demo": "passed",
+        "resume": "passed",
+        "evaluate": "passed",
+        "export": "passed",
+        "doctor": "passed",
+        "validate": "passed",
+        "model_calls": 0
+      },
+      "2": {
+        "demo": "passed",
+        "resume": "passed",
+        "evaluate": "passed",
+        "export": "passed",
+        "doctor": "passed",
+        "validate": "passed",
+        "model_calls": 0,
+        "protected_serve_stop": "passed"
+      }
+    },
+    "shared_requests": {
+      "collector": "passed",
+      "cache": "passed",
+      "physical_recorded_attempts": 2,
+      "account_calls": 0,
+      "migration": "005"
+    },
+    "forward_integration": {
+      "scenarios": 4,
+      "fixture_only": true,
+      "result": "passed",
+      "account_calls": 0
+    }
+  },
+  "field_classification": {
+    "command": "python scripts/export_field_classification.py --check",
+    "fields": 1868,
+    "result": "passed"
+  },
+  "account_calls": 0,
+  "external_model_calls": 0,
+  "broker_orders": 0,
+  "next_step": "08",
+  "remaining_gates": [
+    "independent offline preflight",
+    "separately authorized source/account qualification",
+    "real participant eligibility",
+    "prospective elapsed evidence and final readiness audit"
+  ]
+}

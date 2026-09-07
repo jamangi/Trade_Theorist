@@ -21,6 +21,7 @@ Relevant implementation and validation paths:
 | Shared admission/cache/recovery | `market_requests.py`, `request_contracts.py`, `request_operations.py` | `test_market_requests`; [bounded handoff](step-06-shared-requests.md) |
 | Alpaca qualification | `src/trade_theorist/adapters/alpaca_market_data/` | `test_alpaca_adapter` |
 | Prospective evidence gate | `src/trade_theorist/forward/`, `ingest/tool_policy.py` | `test_forward_shadow` |
+| Shared v2 forward integration | `forward/shared.py`, `forward/validation.py`, `forward/schema.py` | `test_forward_shared`; [bounded handoff](step-07-forward-integration.md) |
 | Mail/heartbeat | `src/trade_theorist/council/`, `heartbeat/` | `test_council`, `test_heartbeat` |
 | Metrics/forecast review | `src/trade_theorist/evaluate/` | `test_evaluation` |
 | Sanitized dashboard exports | `src/trade_theorist/export.py`, `dashboard/` | `test_export` |

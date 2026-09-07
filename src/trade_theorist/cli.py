@@ -194,6 +194,8 @@ def main(argv=None):
             command.add_argument("--csv")
             command.add_argument("--capability")
             command.add_argument("--sessions")
+    forward = commands.add_parser("forward-fixture", help="Verify four original paired forward scenarios; no accounts or model calls")
+    forward.add_argument("--output-root", required=True, help="Directory for original fixture reports; no private source data is read")
     market = commands.add_parser("market-recorded", help="Original-fixture collector through shared admission; no network transport")
     market.add_argument("--quota-root", required=True)
     market.add_argument("--quota-policy", required=True)
@@ -211,6 +213,10 @@ def main(argv=None):
     v2_migrate.add_argument("--apply", action="store_true", help="Explicitly write a side-by-side copy")
     args = parser.parse_args(argv)
     try:
+        if args.command == "forward-fixture":
+            from .forward.fixtures import build_evidence
+            print(json.dumps(build_evidence(args.output_root), indent=2))
+            return 0
         if args.command == "market-recorded":
             from .request_operations import recorded_collect
             result = recorded_collect(args.quota_root, args.quota_policy, args.query, args.responses,
@@ -230,6 +236,10 @@ def main(argv=None):
             return operator_command(args)
         if args.command == "validate":
             value = read(args.path)
+            if isinstance(value, dict) and str(value.get("record_type", "")).startswith("forward_"):
+                validate(value)
+                print("Valid v2 forward record structure; use its store or bundle to verify frozen references.")
+                return 0
             if isinstance(value, dict) and value.get("publication_class") == "private-owner-v2":
                 from .export_v2 import validate_private
                 validate_private(value)

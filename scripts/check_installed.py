@@ -108,6 +108,11 @@ print("Installed protected launch, all assets, and stop passed")
             if result["status"] != "complete" or result["usage"]["physical_attempts"] != 2 or result["account_calls"] != 0:
                 raise RuntimeError("Installed shared collector or cache failed")
         evidence["shared_requests"] = dict(collector="passed", cache="passed", physical_recorded_attempts=2, account_calls=0, migration="005")
+        run("forward-fixture", [cli, "forward-fixture", "--output-root", root / "forward-fixture"])
+        forward = json.loads((root / "forward-fixture/acceptance.json").read_text())
+        if forward["scenarios"]["complete"]["physical_recorded_attempts"] != 2 or forward["scenarios"]["deadline"]["reason"] != "deadline":
+            raise RuntimeError("Installed shared forward integration failed")
+        evidence["forward_integration"] = dict(scenarios=4, fixture_only=True, result="passed", account_calls=0)
         (logs / "evidence.json").write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
     print(f"PASS clean installed v1/v2 and shared-request workflows, offline. Evidence and logs: {logs}")
 

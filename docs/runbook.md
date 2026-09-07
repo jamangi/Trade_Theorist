@@ -22,6 +22,11 @@ explains readiness; it does not grant it. An exit code of 0 means success, 2 mea
 named prerequisite is missing, and 1 means a failed operation with a safe retry
 instruction. Commands do not echo exception payloads or credential values.
 
+Use `forward-fixture --output-root <directory>` for Step 07's four original paired
+forward scenarios and saved private evidence. The [forward guide](step-07-forward-integration.md)
+explains deferred snapshots, uniform abstention, budget reservation and recovery.
+This command uses recorded data/opinions and temporary stores; it starts no real trial.
+
 | Command | Available behavior |
 | --- | --- |
 | `doctor --data-root <absolute path> [--fixture] [--policy <JSON>]` | Runtime, writable storage, schema, optional credential presence and explicit source/policy/real-operation blockers |

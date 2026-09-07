@@ -124,7 +124,11 @@ FIELDS = {
         baseline_result_hash=nullable(HASH), operating_expense_ids=array(ID), definitions=array(S, 1)),
 }
 
+from .forward.schema import FIELDS as FORWARD_FIELDS
+FIELDS.update(FORWARD_FIELDS)
+
 FIELD_CLASSES = {k: "private_strategy" for k in FIELDS}
+FIELD_CLASSES["forward_snapshot"] = "private_market_provenance"
 FIELD_CLASSES.update(source_rights="private_market_provenance", ledger_event="private_reconstructable",
                      lot="private_reconstructable", lot_relief="private_reconstructable", projection="private_reconstructable",
                      submission_mapping="private_attribution", outbox="private_attribution", broker_update="private_attribution")

@@ -21,3 +21,12 @@ def prepare_market_data(coordinator, value, *, consumer, max_attempts, deadline,
 
 
 __all__.append("prepare_market_data")
+
+
+def run_forward_round(coordinator, manifest_id, recorded_provider, **options):
+    """V2 paired preparation/decision entry; it owns no separate request budget."""
+    from ..forward.shared import ForwardRound
+    return ForwardRound(coordinator, manifest_id).execute(recorded_provider, **options)
+
+
+__all__.append("run_forward_round")

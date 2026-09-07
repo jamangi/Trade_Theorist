@@ -1,0 +1,142 @@
+{
+  "experiment_id": "experiment:v2-fixture-forward-index",
+  "contamination": "fixture",
+  "provenance": {
+    "rights_id": "rights:v2-fixture-forward-index",
+    "source_event_ids": [],
+    "source_hash": "ac539615778840a54f0564930c30ac4d46fb44bd4610be3d0d723c2bed692f7a"
+  },
+  "schema_version": 2,
+  "record_type": "forward_manifest",
+  "id": "forward:original-paired-round",
+  "created_at": "2099-01-01T21:01:00.000000Z",
+  "field_class": "private_strategy",
+  "start_at": "2099-01-02T00:00:00Z",
+  "end_at": "2099-01-20T00:00:00Z",
+  "data_deadline": "2099-01-03T21:05:00Z",
+  "decision_at": "2099-01-03T21:10:00Z",
+  "snapshot_ref": "snapshot:forward-cfa9f778e7f576666feb317921e0949792e930321e94695bb4eb8348b7c76abe",
+  "work_ref": "work:35c428bdb8620c76044fcfb5abb5c6c2c5beb71b32161308fa7c993ec2189e9e",
+  "query": {
+    "adjustment": "raw",
+    "asof": null,
+    "end": "2099-01-03T00:00:00.000000Z",
+    "endpoint": "stock_bars",
+    "expected_sessions": [
+      "2099-01-02"
+    ],
+    "feed": "sip",
+    "freshness_after": "2099-01-02T21:00:00.000000Z",
+    "information_cutoff": "2099-01-03T21:05:00.000000Z",
+    "page_limit": 1,
+    "provider": "alpaca",
+    "record_type": "market_query",
+    "revision_policy": "revision:original-fixture",
+    "rights_ref": "rights:original-fixture",
+    "schema_version": 1,
+    "sharing_scope": "scope:original-fixture",
+    "start": "2099-01-02T00:00:00.000000Z",
+    "symbols": [
+      "FIXTURE",
+      "SECOND"
+    ],
+    "timeframe": "1Day"
+  },
+  "query_hash": "35c428bdb8620c76044fcfb5abb5c6c2c5beb71b32161308fa7c993ec2189e9e",
+  "quota_policy": {
+    "api": "market_data",
+    "cooperating_callers_only": true,
+    "entitlement_ref": "review:original-fixture",
+    "fallback_cap_seconds": 30,
+    "feed_delays": {
+      "iex": 0,
+      "sip": 900
+    },
+    "hard_limit": 200,
+    "internal_replay": true,
+    "max_retries": 3,
+    "max_wait_seconds": 2,
+    "max_work_attempts": 30,
+    "operating_limit": 180,
+    "private_storage": true,
+    "provider": "alpaca",
+    "quota_id": "quota:original-fixture",
+    "record_type": "request_policy",
+    "rights_ref": "rights:original-fixture",
+    "schema_version": 1,
+    "sharing_scopes": [
+      "scope:original-fixture"
+    ],
+    "verified_rate_headers": false
+  },
+  "quota_policy_hash": "689519b405527a6012bf2cb35e1f92655f762263815582874bfd521f856281b8",
+  "max_request_attempts": 10,
+  "estimated_pages": 2,
+  "estimated_attempts_with_retries": 8,
+  "estimate_is_bound": false,
+  "partial_coverage": "require_complete",
+  "revision_rule": "latest_received_before_cutoff",
+  "participants": [
+    {
+      "portfolio_ref": "portfolio:v2-fixture-forward-index",
+      "segment_ref": "segment:v2-fixture-forward-index",
+      "character_ref": "character:v2-fixture-forward-index",
+      "plan_ref": "plan:forward-index",
+      "portfolio_hash": "725df40d7eda72cbb5a39f404276c483fe4bc5cfc67bb8750ffb637012abd4ad",
+      "segment_hash": "d9cb49222a242e59496e8bedb3c37a6d6a92eec28d32265ad4ec2e0c135c69a5",
+      "character_hash": "38730d4a430ca9128207d43120fd4190b58ba804d00fd9f56449240f7f393e76",
+      "plan_hash": "0a4c137df3b1d31ae63d9007d49b2f7d76dbe55bc30df3a8144afb221d4b9afe",
+      "policy_hash": "459d19e749602bcf0471d5e2a3979f35357116ff9f9a123d0ab3aaf9fd76f31e",
+      "mode": "character_portfolio",
+      "execution_basis": "simulated"
+    },
+    {
+      "portfolio_ref": "portfolio:v2-fixture-forward-trend",
+      "segment_ref": "segment:v2-fixture-forward-trend",
+      "character_ref": "character:v2-fixture-forward-trend",
+      "plan_ref": "plan:forward-trend",
+      "portfolio_hash": "9a16cb82928749fcce95ad273c48ebc037a173355669100cac914ff5c31e7773",
+      "segment_hash": "9ad24cb1331838440c8b3ee21c3bea38a51b8d4b4de58b90d08ec76c1ea748b0",
+      "character_hash": "569161216f756587498924dcac0b87a1795f457d04fcabf5560867792a13ce0b",
+      "plan_hash": "9028e96154fddedac121af7814f035e55bde9e7bfe1ddf744411225f39371bd8",
+      "policy_hash": "20cab3230eeb3bd7e99c12a4609449bd22d88e41ba11e9a5e9a56fe79db046c5",
+      "mode": "character_portfolio",
+      "execution_basis": "simulated"
+    },
+    {
+      "portfolio_ref": "portfolio:v2-fixture-forward-council",
+      "segment_ref": "segment:v2-fixture-forward-council",
+      "character_ref": "character:v2-fixture-forward-council",
+      "plan_ref": "plan:forward-council",
+      "portfolio_hash": "3aaa35b276d4a6b7c1511af6b1addaeffb0d4243957cb23ef77aec53beccf887",
+      "segment_hash": "a7cf112bfe1b4ddea62a7ec23c65557dc31fe92b8fcdb67d0c960548cc43ddd2",
+      "character_hash": "68acb8db0ee9c11129872e89e8bbee6df35e083b1975067f2544c297830977a9",
+      "plan_hash": "303bed4aa0019930e8f83a3cf8a6b750353665ae48d78dbec4273a933782333e",
+      "policy_hash": "01aff05cf4df9eebf89b0a9fc32b1f007c9098fbfb1dd699b025beedf2fcc47f",
+      "mode": "council",
+      "execution_basis": "simulated"
+    }
+  ],
+  "baseline_ref": "portfolio:v2-fixture-forward-baseline",
+  "baseline_plan_ref": "plan:forward-baseline",
+  "baseline_hash": "bf8a82004f93f867b239a5468d00836907234d529cffed39e4b1626632814a53",
+  "baseline_plan_hash": "0ca153ebe0c0426b23443621e33e43c94e236a00f77f408db9262891b86892d3",
+  "comparison_hash": "98a7e5064439d692dc4f6e33b63885b0923d5d63592b1fdde5d7c109a249b797",
+  "model_budget": {
+    "model_ref": "model:recorded-fixture",
+    "max_calls": 3,
+    "max_tokens": 100,
+    "max_output_tokens": 20
+  },
+  "stopping_rule": {
+    "horizon_sessions": 5,
+    "min_completed_sessions": 5,
+    "min_matured_forecasts": 30,
+    "stop_at": "2099-01-20T00:00:00Z",
+    "stop_on_data_failure": true
+  },
+  "publication_class": "private-owner-v2",
+  "broker_orders_allowed": false,
+  "evidence_grade": "fixture",
+  "promotion_eligible": false
+}

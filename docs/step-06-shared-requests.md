@@ -1,8 +1,7 @@
 # Step 06: one durable request owner
 
 Implemented offline on 2026-09-06. Start here after the [queue](../tasks/README.md)
-and [Step 06 brief](../tasks/active/STEP-06-shared-requests.md). Next is
-[Step 07](../tasks/active/STEP-07-forward-integration.md). No conversation history
+and [Step 06 brief](../tasks/active/STEP-06-shared-requests.md). [Step 07 integration](step-07-forward-integration.md) is now implemented; the queue continues with Step 08. No conversation history
 or large fixture dump is needed.
 
 ## What to use
@@ -136,7 +135,7 @@ the same work's attempts once per subscriber; `usage()` reconciles actual attemp
 Query hashes and tokens belong in private state; raw pages and credentials never
 enter public exports. Schema and field classification deny unknown public fields.
 
-Step 07 must bind this work to frozen run manifests and shared experiment snapshots,
+[Step 07](step-07-forward-integration.md) now binds this work to frozen run manifests and shared experiment snapshots,
 including original deadlines, budgets, expected coverage and abstention behavior.
 Step 08 independently challenges the integrated path; Step 09 then qualifies a
 separately authorized, bounded account workload. This engineering evidence does

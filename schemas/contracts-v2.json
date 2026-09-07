@@ -69,6 +69,21 @@
       "$ref": "#/$defs/performance_result"
     },
     {
+      "$ref": "#/$defs/forward_manifest"
+    },
+    {
+      "$ref": "#/$defs/forward_snapshot"
+    },
+    {
+      "$ref": "#/$defs/forward_progress"
+    },
+    {
+      "$ref": "#/$defs/forward_reservation"
+    },
+    {
+      "$ref": "#/$defs/forward_result"
+    },
+    {
       "$ref": "#/$defs/ledger_event"
     }
   ],
@@ -4427,6 +4442,1571 @@
         "baseline_result_hash",
         "operating_expense_ids",
         "definitions"
+      ],
+      "additionalProperties": false
+    },
+    "forward_manifest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_manifest"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "start_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "decision_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "data_deadline": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "work_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "query": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "record_type": {
+              "const": "market_query"
+            },
+            "provider": {
+              "const": "alpaca"
+            },
+            "endpoint": {
+              "const": "stock_bars"
+            },
+            "sharing_scope": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "rights_ref": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "feed": {
+              "enum": [
+                "iex",
+                "sip"
+              ]
+            },
+            "symbols": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9.]{0,15}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "timeframe": {
+              "const": "1Day"
+            },
+            "start": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "end": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "adjustment": {
+              "enum": [
+                "raw",
+                "split",
+                "dividend",
+                "all"
+              ]
+            },
+            "asof": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "revision_policy": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "freshness_after": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "information_cutoff": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "expected_sessions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "page_limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10000
+            }
+          },
+          "required": [
+            "schema_version",
+            "record_type",
+            "provider",
+            "endpoint",
+            "sharing_scope",
+            "rights_ref",
+            "feed",
+            "symbols",
+            "timeframe",
+            "start",
+            "end",
+            "adjustment",
+            "asof",
+            "revision_policy",
+            "freshness_after",
+            "information_cutoff",
+            "expected_sessions",
+            "page_limit"
+          ],
+          "additionalProperties": false
+        },
+        "query_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "quota_policy": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "record_type": {
+              "const": "request_policy"
+            },
+            "quota_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "provider": {
+              "const": "alpaca"
+            },
+            "api": {
+              "const": "market_data"
+            },
+            "hard_limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200
+            },
+            "operating_limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 180
+            },
+            "max_work_attempts": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10000
+            },
+            "max_retries": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "max_wait_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "fallback_cap_seconds": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 60
+            },
+            "entitlement_ref": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "feed_delays": {
+              "type": "object",
+              "properties": {
+                "iex": {
+                  "anyOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "sip": {
+                  "anyOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "iex",
+                "sip"
+              ],
+              "additionalProperties": false
+            },
+            "sharing_scopes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "rights_ref": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "private_storage": {
+              "const": true
+            },
+            "internal_replay": {
+              "const": true
+            },
+            "cooperating_callers_only": {
+              "const": true
+            },
+            "verified_rate_headers": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "schema_version",
+            "record_type",
+            "quota_id",
+            "provider",
+            "api",
+            "hard_limit",
+            "operating_limit",
+            "max_work_attempts",
+            "max_retries",
+            "max_wait_seconds",
+            "fallback_cap_seconds",
+            "entitlement_ref",
+            "feed_delays",
+            "sharing_scopes",
+            "rights_ref",
+            "private_storage",
+            "internal_replay",
+            "cooperating_callers_only",
+            "verified_rate_headers"
+          ],
+          "additionalProperties": false
+        },
+        "quota_policy_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "max_request_attempts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "estimated_pages": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "estimated_attempts_with_retries": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "estimate_is_bound": {
+          "const": false
+        },
+        "partial_coverage": {
+          "const": "require_complete"
+        },
+        "revision_rule": {
+          "const": "latest_received_before_cutoff"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "portfolio_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "segment_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "character_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "plan_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "portfolio_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "segment_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "character_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "plan_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "policy_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "mode": {
+                "enum": [
+                  "character_portfolio",
+                  "council"
+                ]
+              },
+              "execution_basis": {
+                "const": "simulated"
+              }
+            },
+            "required": [
+              "portfolio_ref",
+              "segment_ref",
+              "character_ref",
+              "plan_ref",
+              "portfolio_hash",
+              "segment_hash",
+              "character_hash",
+              "plan_hash",
+              "policy_hash",
+              "mode",
+              "execution_basis"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "baseline_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "baseline_plan_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "baseline_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "baseline_plan_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "comparison_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "model_budget": {
+          "type": "object",
+          "properties": {
+            "model_ref": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "max_calls": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_output_tokens": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "model_ref",
+            "max_calls",
+            "max_tokens",
+            "max_output_tokens"
+          ],
+          "additionalProperties": false
+        },
+        "stopping_rule": {
+          "type": "object",
+          "properties": {
+            "horizon_sessions": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min_completed_sessions": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min_matured_forecasts": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "stop_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "stop_on_data_failure": {
+              "const": true
+            }
+          },
+          "required": [
+            "horizon_sessions",
+            "min_completed_sessions",
+            "min_matured_forecasts",
+            "stop_at",
+            "stop_on_data_failure"
+          ],
+          "additionalProperties": false
+        },
+        "publication_class": {
+          "const": "private-owner-v2"
+        },
+        "broker_orders_allowed": {
+          "const": false
+        },
+        "evidence_grade": {
+          "const": "fixture"
+        },
+        "promotion_eligible": {
+          "const": false
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "start_at",
+        "end_at",
+        "decision_at",
+        "data_deadline",
+        "snapshot_ref",
+        "work_ref",
+        "query",
+        "query_hash",
+        "quota_policy",
+        "quota_policy_hash",
+        "max_request_attempts",
+        "estimated_pages",
+        "estimated_attempts_with_retries",
+        "estimate_is_bound",
+        "partial_coverage",
+        "revision_rule",
+        "participants",
+        "baseline_ref",
+        "baseline_plan_ref",
+        "baseline_hash",
+        "baseline_plan_hash",
+        "comparison_hash",
+        "model_budget",
+        "stopping_rule",
+        "publication_class",
+        "broker_orders_allowed",
+        "evidence_grade",
+        "promotion_eligible"
+      ],
+      "additionalProperties": false
+    },
+    "forward_snapshot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_snapshot"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_market_provenance"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "manifest_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "work_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "query_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "decision_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "status": {
+          "enum": [
+            "ready",
+            "abstained"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "none",
+            "quota",
+            "cooldown",
+            "recovery",
+            "page_limit",
+            "attempt_budget",
+            "deadline",
+            "entitlement",
+            "retry_limit",
+            "transport",
+            "response",
+            "coverage",
+            "busy",
+            "model_budget",
+            "execution_ambiguous",
+            "execution_failed"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "bar": {
+                "type": "object",
+                "properties": {
+                  "symbol": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "t": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "Z$"
+                  },
+                  "o": {
+                    "type": "number"
+                  },
+                  "h": {
+                    "type": "number"
+                  },
+                  "l": {
+                    "type": "number"
+                  },
+                  "c": {
+                    "type": "number"
+                  },
+                  "v": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "n": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "vw": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "symbol",
+                  "t",
+                  "o",
+                  "h",
+                  "l",
+                  "c",
+                  "v"
+                ],
+                "additionalProperties": false
+              },
+              "received_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "request_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "id",
+              "bar",
+              "received_at",
+              "request_hash"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "coverage_expected": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "coverage_observed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "publication_class": {
+          "const": "private-owner-v2"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "manifest_ref",
+        "work_ref",
+        "query_hash",
+        "decision_at",
+        "status",
+        "reason",
+        "observations",
+        "coverage_expected",
+        "coverage_observed",
+        "publication_class"
+      ],
+      "additionalProperties": false
+    },
+    "forward_progress": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_progress"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "manifest_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "status": {
+          "enum": [
+            "deferred",
+            "ready",
+            "abstained"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "none",
+            "quota",
+            "cooldown",
+            "recovery",
+            "page_limit",
+            "attempt_budget",
+            "deadline",
+            "entitlement",
+            "retry_limit",
+            "transport",
+            "response",
+            "coverage",
+            "busy",
+            "model_budget",
+            "execution_ambiguous",
+            "execution_failed"
+          ]
+        },
+        "work_usage": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "record_type": {
+              "const": "request_telemetry"
+            },
+            "quota_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "work_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "shared_work_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "query_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "fetching",
+                "waiting",
+                "deferred",
+                "complete",
+                "incomplete",
+                "expired",
+                "failed"
+              ]
+            },
+            "reason": {
+              "enum": [
+                "none",
+                "quota",
+                "cooldown",
+                "recovery",
+                "page_limit",
+                "attempt_budget",
+                "deadline",
+                "entitlement",
+                "retry_limit",
+                "transport",
+                "response",
+                "coverage",
+                "busy"
+              ]
+            },
+            "attempts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "retries": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "throttles": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pages": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cache_hits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "subscribers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "wait_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "queue_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "remaining_attempts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "coverage_expected": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "coverage_observed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "not_before": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "cooperating_callers_only": {
+              "const": true
+            }
+          },
+          "required": [
+            "schema_version",
+            "record_type",
+            "quota_id",
+            "work_id",
+            "shared_work_id",
+            "query_hash",
+            "status",
+            "reason",
+            "attempts",
+            "retries",
+            "throttles",
+            "pages",
+            "cache_hits",
+            "subscribers",
+            "wait_seconds",
+            "queue_seconds",
+            "remaining_attempts",
+            "coverage_expected",
+            "coverage_observed",
+            "not_before",
+            "cooperating_callers_only"
+          ],
+          "additionalProperties": false
+        },
+        "physical_usage": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "record_type": {
+              "const": "request_telemetry"
+            },
+            "quota_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "work_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "shared_work_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "query_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "fetching",
+                "waiting",
+                "deferred",
+                "complete",
+                "incomplete",
+                "expired",
+                "failed"
+              ]
+            },
+            "reason": {
+              "enum": [
+                "none",
+                "quota",
+                "cooldown",
+                "recovery",
+                "page_limit",
+                "attempt_budget",
+                "deadline",
+                "entitlement",
+                "retry_limit",
+                "transport",
+                "response",
+                "coverage",
+                "busy"
+              ]
+            },
+            "attempts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "retries": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "throttles": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pages": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cache_hits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "subscribers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "wait_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "queue_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "remaining_attempts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "coverage_expected": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "coverage_observed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "not_before": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "cooperating_callers_only": {
+              "const": true
+            }
+          },
+          "required": [
+            "schema_version",
+            "record_type",
+            "quota_id",
+            "work_id",
+            "shared_work_id",
+            "query_hash",
+            "status",
+            "reason",
+            "attempts",
+            "retries",
+            "throttles",
+            "pages",
+            "cache_hits",
+            "subscribers",
+            "wait_seconds",
+            "queue_seconds",
+            "remaining_attempts",
+            "coverage_expected",
+            "coverage_observed",
+            "not_before",
+            "cooperating_callers_only"
+          ],
+          "additionalProperties": false
+        },
+        "physical_work_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "estimated_pages": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "estimated_attempts_with_retries": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "incomplete_pages": {
+          "type": "boolean"
+        },
+        "deadline_missed": {
+          "type": "boolean"
+        },
+        "shared_consumers": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "publication_class": {
+          "const": "private-owner-v2"
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "manifest_ref",
+        "snapshot_ref",
+        "status",
+        "reason",
+        "work_usage",
+        "physical_usage",
+        "physical_work_ref",
+        "estimated_pages",
+        "estimated_attempts_with_retries",
+        "incomplete_pages",
+        "deadline_missed",
+        "shared_consumers",
+        "publication_class"
+      ],
+      "additionalProperties": false
+    },
+    "forward_reservation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_reservation"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "manifest_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "calls_reserved": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tokens_reserved": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "manifest_ref",
+        "snapshot_ref",
+        "calls_reserved",
+        "tokens_reserved"
+      ],
+      "additionalProperties": false
+    },
+    "forward_result": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "record_type": {
+          "const": "forward_result"
+        },
+        "experiment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "contamination": {
+          "enum": [
+            "fixture",
+            "hindsight-contaminated",
+            "historical-qualified",
+            "forward-insufficient",
+            "forward-reviewed"
+          ]
+        },
+        "field_class": {
+          "const": "private_strategy"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "rights_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+            },
+            "source_event_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "rights_id",
+            "source_event_ids",
+            "source_hash"
+          ],
+          "additionalProperties": false
+        },
+        "manifest_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+        },
+        "snapshot_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status": {
+          "enum": [
+            "decided",
+            "abstained"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "none",
+            "quota",
+            "cooldown",
+            "recovery",
+            "page_limit",
+            "attempt_budget",
+            "deadline",
+            "entitlement",
+            "retry_limit",
+            "transport",
+            "response",
+            "coverage",
+            "busy",
+            "model_budget",
+            "execution_ambiguous",
+            "execution_failed"
+          ]
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "portfolio_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "character_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "snapshot_ref": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_.:-]{2,127}$"
+              },
+              "snapshot_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "action": {
+                "enum": [
+                  "hold",
+                  "buy",
+                  "sell",
+                  "abstain"
+                ]
+              },
+              "reason": {
+                "enum": [
+                  "none",
+                  "quota",
+                  "cooldown",
+                  "recovery",
+                  "page_limit",
+                  "attempt_budget",
+                  "deadline",
+                  "entitlement",
+                  "retry_limit",
+                  "transport",
+                  "response",
+                  "coverage",
+                  "busy",
+                  "model_budget",
+                  "execution_ambiguous",
+                  "execution_failed"
+                ]
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "portfolio_ref",
+              "character_ref",
+              "snapshot_ref",
+              "snapshot_hash",
+              "action",
+              "reason",
+              "rationale"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "model_calls": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "model_tokens": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "calls_reserved": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tokens_reserved": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "publication_class": {
+          "const": "private-owner-v2"
+        },
+        "evidence_grade": {
+          "const": "fixture"
+        },
+        "promotion_eligible": {
+          "const": false
+        },
+        "broker_orders": {
+          "const": 0
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "created_at",
+        "contamination",
+        "field_class",
+        "provenance",
+        "manifest_ref",
+        "snapshot_ref",
+        "snapshot_hash",
+        "status",
+        "reason",
+        "outcomes",
+        "model_calls",
+        "model_tokens",
+        "calls_reserved",
+        "tokens_reserved",
+        "publication_class",
+        "evidence_grade",
+        "promotion_eligible",
+        "broker_orders"
       ],
       "additionalProperties": false
     },

@@ -1,6 +1,6 @@
 # Shared market-data requests and the Basic-plan budget
 
-Status: [Step 06 control implementation](step-06-shared-requests.md) is complete and verified offline, 2026-09-06. Step 07 owns forward integration, Step 08 independent offline preflight, and Step 09 separately authorized account qualification. Historical TASK-014/015/016 ownership below is preserved; the active step queue governs release order. The owner separately authorized a handful of read-only calls that proved paper authentication and delayed historical SIP access; that check did not change runtime behavior, vendor selection or quota readiness.
+Status: [Step 06 control implementation](step-06-shared-requests.md) is complete and verified offline, 2026-09-06. [Step 07 forward integration](step-07-forward-integration.md) is also implemented offline. Step 08 owns independent offline preflight, and Step 09 separately authorized account qualification. Historical TASK-014/015/016 ownership below is preserved; the active step queue governs release order. The owner separately authorized a handful of read-only calls that proved paper authentication and delayed historical SIP access; that check did not change runtime behavior, vendor selection or quota readiness.
 
 ## Limit, feed, and quota scope
 

@@ -4,6 +4,9 @@ For the new account-free shared market-data collector, use the short
 [Step 06 reproduction guide](step-06-shared-requests.md#reproduce-without-an-account).
 The observatory demo below remains the starting point for inspecting saved results.
 
+[Step 07](step-07-forward-integration.md) adds `forward-fixture --output-root <directory>`
+to reproduce paired decisions and shared abstentions with no accounts or external models.
+
 From the repository root on Windows, use Python 3.14 (3.11 is also checked in CI):
 
 ```powershell

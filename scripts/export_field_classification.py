@@ -61,7 +61,7 @@ def inventory():
             category = "private_attribution"
         elif key in {"price", "value", "quantity", "equity", "history", "holdings", "cash", "basis", "lots", "income", "fees", "metrics", "cumulative_notional", "cumulative_quantity"}:
             category = "private_reconstructable"
-        elif "/observation/" in path or "/snapshot/" in path or "/source_rights/" in path or "market_" in path or "market-requests" in path:
+        elif "/observation/" in path or "/snapshot/" in path or "/forward_snapshot/" in path or "/source_rights/" in path or "market_" in path or "market-requests" in path:
             category = "private_market_provenance"
         else:
             category = "private_strategy"

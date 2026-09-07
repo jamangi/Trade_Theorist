@@ -275,6 +275,12 @@ class Coordinator:
             _, work = self._work(identifier)
             return [json.loads(self.store.connection.execute("SELECT body FROM market_observations WHERE id=?", (i,)).fetchone()[0]) for i in work["record_ids"]]
 
+    def evidence(self, identifier):
+        """Private immutable identities plus bodies for experiment snapshot freezing."""
+        with self.db:
+            _, work = self._work(identifier)
+            return [dict(id=i, **body) for i, body in zip(work["record_ids"], self.observations(identifier))]
+
     def normalize(self, identifier, csv_adapter):
         """Hand only a complete immutable download to existing revision ingestion.
 

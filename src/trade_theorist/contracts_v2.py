@@ -138,6 +138,9 @@ def validate_references(record, lookup):
         raise ContractError("Private storage rights are not established")
     if rights["origin"] == "original_synthetic" and record["contamination"] != "fixture":
         raise ContractError("Synthetic rights cannot establish real evidence")
+    if kind.startswith("forward_"):
+        from .forward.validation import validate_forward
+        validate_forward(record, lookup)
     if kind == "experiment":
         policy = ref(record["policy_id"], "policy")
         if set(record["instrument_ids"]) != {i["instrument_id"] for i in policy["universe"]}:
