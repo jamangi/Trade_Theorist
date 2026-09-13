@@ -1,6 +1,6 @@
 # Step 12: Decide whether evidence supports a paper stage
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: pending; awaiting Step 11's scheduled outcome retrieval. Schedule rechecked against installed Windows tasks on 2026-09-13.
 - Recommended model / effort: Astra / high
 - Historical coverage: [TASK-016](../TASK-016-high-Astra.md)
 - Queue: [ordered remaining work](../README.md)
@@ -12,7 +12,51 @@ The real forward trial supplies evidence the offline preflight could not; audit 
 
 ## Starting evidence
 
-Step 11's preregistered window has matured; rights, engineering evidence and proposed numeric paper policy are available.
+Before the final readiness decision, require Step 11's preregistered window to
+have matured and its outcomes to have been retrieved and verified. Rights,
+engineering evidence and proposed numeric paper policy are inputs to the audit;
+this brief does not assert that the scheduled observation has already completed.
+
+## Data collection prerequisite and exact schedule
+
+The frozen trial `forward:step11-20260907` covers five trading sessions:
+**September 8, 9, 10, 11 and 14, 2026**. September 13 is not its final session
+or a scheduled collection date. The plan retrieves completed VTI daily SIP bars
+and corporate-action outcomes after the five-session window, rather than running
+a daily collection job throughout that week. See the
+[frozen trial and observation plan](../../docs/step-11-forward-observation.md#frozen-trial).
+
+The installed tasks under `\TradeTheorist\` use this finite schedule. Chicago
+times below are CDT (UTC−05:00); the
+[checked configuration](../../config/step-11-jobs.json) records UTC instants.
+
+| Event | Chicago date and time | UTC date and time | Purpose |
+| --- | --- | --- | --- |
+| Earliest permitted observation | September 14, 7:20:01 p.m. | September 15, 00:20:01 | Original window opens; not a task trigger |
+| `Step11-20260907-Observe` | September 14, 7:30 p.m. | September 15, 00:30 | Retrieve and evaluate outcomes for the existing trial |
+| Same task, fallback | September 15, 8 a.m. | September 15, 13:00 | Skip verified completion or resume permitted unfinished work |
+| `Step11-20260907-DeadlineCheck` | September 15, noon | September 15, 17:00 | Check saved completion and warn locally if unfinished |
+| Original hard stop | September 15, 5 p.m. | September 15, 22:00 | Stop incomplete if necessary; do not extend dates or budgets |
+
+A read-only Windows Task Scheduler inspection on September 13 found both tasks
+enabled and Ready, with the next runs and fallback matching the table. Neither
+production task had run yet. This confirms the installed schedule, not successful
+future collection. The owner must keep the PC available and remain signed into
+Windows; a locked screen is supported. Codex and the dashboard need not be open.
+Wake/catch-up is requested but does not guarantee execution while powered off or
+logged out. The [11A/11B handoff](../../docs/step-11-automation.md) records the
+operational limits, private paths and recovery commands.
+
+After collection, inspect the fresh immutable scientific report and operational
+receipts. Require five completed real sessions, matured forecast evidence and
+no unresolved source gaps or unscorable/immature forecasts before treating the
+observation as complete. A successful scheduler exit alone is insufficient.
+If retrieval fails, record the failure and preserved attempts; use only the
+existing bounded fallback/manual window. Do not start a replacement trial.
+This five-session process trial remains below the 60-session/30-forecast
+paper-review evidence floors; its completion does not itself permit promotion.
+
+## Audit inputs after observation
 
 Inspect [11A/11B operational receipts](../../docs/step-11-automation.md) alongside
 immutable scientific reports. Audit missed/overlapping/interrupted runs, actual
