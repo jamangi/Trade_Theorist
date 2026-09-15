@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-15",
+  "kind": "readiness_policy_decision_not_a_runtime_manifest",
+  "authority": "decisions/APPROVALS.md: Standing Alpaca authorization — 2026-09-07",
+  "selected_by": "agent_under_recorded_owner_delegation",
+  "policy_status": "selected_for_future_implementation_not_deployed",
+  "stage_decision": "hold_forward_shadow",
+  "promotion_eligible": false,
+  "stage_blockers": [
+    "5 completed forward sessions below the 60-session review floor",
+    "1 matured forecast below the 30-forecast review floor",
+    "New paper run needs frozen dates, eligible runtime, session-aware controls and reconciliation verification"
+  ],
+  "evidence_review": {
+    "minimum_forward_sessions": 60,
+    "minimum_matured_preregistered_forecasts": 30,
+    "completed_declared_window_required": true,
+    "automatic_promotion_at_floors": false,
+    "independent_variant_and_dependence_review_required": true
+  },
+  "paper_limits": {
+    "universe": ["VTI"],
+    "initial_fictional_cash_usd_per_portfolio": "10000.00",
+    "maximum_deployed_capital_usd_per_portfolio": "10000.00",
+    "long_only": true,
+    "cash_only": true,
+    "fractional_shares": false,
+    "company_weight": "0.20",
+    "sector_weight": "0.40",
+    "diversified_unleveraged_broad_market_etf_weight": "1.00",
+    "gross_exposure": "1.00",
+    "daily_equity_loss_halt": "0.02",
+    "peak_drawdown_halt": "0.10",
+    "one_way_turnover_per_session": "0.20",
+    "new_orders_per_portfolio_per_session": 1,
+    "max_executable_quote_age_seconds": 60,
+    "max_executable_spread_bps": "10",
+    "mark_age_outer_bound_seconds": 345600,
+    "latest_completed_exchange_session_required": true,
+    "max_stale_sessions": 0,
+    "delayed_sip_query_margin_seconds": 1200,
+    "missing_or_conflicting_data": "halt_new_risk_for_all_paired_portfolios",
+    "simulated_slippage_bps": "5",
+    "simulated_full_spread_bps": "2",
+    "simulated_commission_usd": "0.00",
+    "external_model_calls": 0,
+    "incremental_paid_services_usd": "0.00"
+  },
+  "execution_conditions": [
+    "Daily completed-bar research remains distinct from executable quotes and broker-paper fills",
+    "Reserve pending buys and modeled costs before admission; buys must meet the 20% turnover ceiling",
+    "Matched simulated Individual, Monarchy and market control series use identical capital, clocks, costs and opportunity sets",
+    "Zero-interest cash is an explicit baseline assumption, not an available Treasury yield",
+    "Halts persist across restarts and cash flows; no automatic reset or forced liquidation at an invented price",
+    "Reductions remain subject to cash, position, price, freshness and turnover controls",
+    "An optional Monarchy-only broker adapter needs separately qualified free quotes, Trading quota, opaque durable order IDs, ambiguous-submit reconciliation and cancellation recovery",
+    "Exact dates and finite data/work budgets must be preregistered before any future run; none are activated by this decision"
+  ],
+  "responsibilities": {
+    "operator": "Owner initiates a reviewed finite run; an authorized agent checks entry conditions and receipts",
+    "kill_switch": "Owner retains stop authority; implementation must durably halt new risk and reconcile any pending submissions",
+    "reconciliation": "Running agent compares orders, partial fills, cash, holdings and corporate actions after each session; unexplained differences halt and go to owner",
+    "incident_recovery": "Owner resolves ambiguous account state; agent preserves spent budgets and never activates a second quota owner",
+    "backup": "Owner controls private storage and attended FIDO recovery; update and verify observation-inclusive backups before relying on recovery",
+    "halt_reset": "Owner records review and an explicit restart decision; never reset through a deposit or a new run ID"
+  },
+  "live_capital_authorized": false,
+  "recurring_work_started": false,
+  "step_13_started": false
+}

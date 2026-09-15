@@ -1,17 +1,26 @@
 # Ordered remaining work
 
-## September 15 next task: Step 12 readiness audit
+## September 15: Step 12 complete; Step 13 blocked
 
-Step 11's scheduled observation completed successfully on September 14 at
-19:30 Chicago, and its saved evidence was verified September 15. Five real
-sessions and one matured forecast are available with zero source gaps.
-**Continue with [Step 12](active/STEP-12-readiness-audit.md), starting from the
-[self-contained handoff](../docs/step-12-audit-handoff.md).** It covers Windows
-tasks, exact private paths, safe checks and the outstanding audit/policy decision.
-[Public completion evidence](../examples/step-11/observation-completion.json)
-records the original run and independent verification. No paper promotion is
-implied. The remaining September 15 fallback/check should skip collection if
-completion still verifies; their future success has not been assumed.
+The [Step 12 audit](../docs/step-12-readiness-audit.md) verified the completed
+five-session observation, all 35 saved accounting results, seven immutable reports,
+four matched controls and original request/learning ancestry. All 401 distinct
+tests passed across the base and optional recovery environments; the independent
+14-case preflight and clean offline install passed. See [validation](../examples/step-12/validation.json).
+
+**Paper promotion is held:** 5/60 forward sessions and 1/30 matured forecasts.
+The [policy decision](../examples/step-12/paper-policy-decision.json) uses standing
+owner authority; permission is not the blocker. A future finite forward programme
+needs new preregistration and a subsequent readiness review. Preserve the original
+trial. Step 13 also needs its paper-controller/reconciliation implementation.
+The [two finite Windows jobs are disabled](../examples/step-12/scheduler-disposition.json);
+original receipts remain. Observation-inclusive backup recovery is still unverified.
+
+The next dependent stage is [Step 13](active/STEP-13-paper-portfolios.md), blocked.
+[Step 14](active/STEP-14-research-notebook.md) is eligible for independent fixture
+work under the blocker rule: its stated Steps 02–05 and learning/mail inputs exist,
+and it requires no paper result. Neither later step was started by this audit.
+The [original handoff](../docs/step-12-audit-handoff.md) still locates private evidence.
 
 ## September 7 automation supplement (historical)
 
@@ -27,17 +36,17 @@ change the trial, its evidence gates or Step 15's general recurring-work scope.
 Primary observation: September 15, 00:30 UTC; fallback 13:00 UTC; deadline check
 17:00 UTC. The original 00:20:01–22:00 UTC observation window is unchanged.
 11C was completed during the wait. Step 11 has since supplied matured evidence;
-Step 12 remains the next audit and retains its paper gates. New AI runtime
+Step 12 subsequently completed with a stage hold and retained its paper gates. New AI runtime
 work requires its own version, prompt, knowledge/tool boundaries, spend ceilings
 and prospective validation before Step 15 may schedule AI decisions.
 
-Updated 2026-09-15 UTC. **All three pilot foundations pass the scoped learning gate. Step 11's finite September 8–14 observation is complete and verified; Step 12 is ready to audit.** Read the [Step 11 guide](../docs/step-11-forward-observation.md), [actual run status](../examples/step-11/forward-status.json), and [active brief](active/STEP-11-forward-observation.md). The owner requested completion of both Value/Trend foundations before proceeding. Their new versions preserve all original partial records and the historical Step 10 blocked register.
+Updated 2026-09-15 UTC. **All three pilot foundations pass the scoped learning gate. Step 11's finite September 8–14 observation is complete and verified; Step 12 is complete with a hold decision; Step 13 is blocked.** Read the [Step 11 guide](../docs/step-11-forward-observation.md), [actual run status](../examples/step-11/forward-status.json), and [active brief](active/STEP-11-forward-observation.md). The owner requested completion of both Value/Trend foundations before proceeding. Their new versions preserve all original partial records and the historical Step 10 blocked register.
 
 Steps 01–08 retain their offline acceptance. Step 09 qualified private delayed daily SIP. Step 11 adds actual dividend/split qualification, immutable knowledge ancestry, full-roster admission, independent opinions and bounded council advice on shared real snapshots. The elapsed outcomes are now available; no paper approval or broker orders are implied. Outcome observation opens September 15 at 00:20:01 UTC and stops September 15 at 22:00 UTC; the finite 11B jobs operate within that window.
 
 ## From the present state to the intended destination
 
-The v1 offline observatory, learning interfaces, base Alpaca adapter and forward-control fixtures exist. META-001 delivered the private architecture, reference accounting tests and a fixture-only export guard. Step 01 adds production v2 contracts, explicit storage, private attribution identities and a checked synthetic migration boundary. Step 02 adds persistent FIFO, exact flow-adjusted performance, private result records and offline broker reconciliation, verified against the golden vector while preserving v1. Step 03 adds the private read model and accessible Individual/Monarchy views, with separate execution bases and saved evidence. Step 04 adds explicit v1/v2 commands, read-only diagnostics, atomic resumable fixtures and a clean offline installation check. Step 05 adds protected loopback serving from verified manifests, fixed snapshots, atomic publication and conservative retention. Step 06 adds durable shared request admission, full cooldowns, cache/batching and query-bound checkpoints with recorded-transport evidence. Step 07 connects that owner to preregistered v2 paired rounds, immutable complete snapshots and uniform defer/abstention outcomes. Step 08 independently verifies recorded dispatch times, killed-process recovery and equal snapshots; four defects are fixed, and all 14 audit cases pass. Step 09 selects Alpaca for private delayed daily SIP under the owner-approved storage/replay interpretation. Six metered requests returned all 30 expected instrument/session pairs in each of two retrievals. Exact caching added no requests; restored replay added no duplicate observations. Per-instrument quality and replay repairs pass 311 tests across 31 modules. The subsequent Step 11 supplied qualified forward observations; paper operation remains pending. Step 10 validates the saved Bogle foundation and reconciles Index Steward into a scoped eligible participant version. At that historical review, Value/Trend remained partial and the gate blocked. The owner-requested Step 11 continuation subsequently completed both first books and appended eligible versions. The current three-participant gate passes, and the five-session forward window has matured; the full Step 12 audit remains pending.
+The v1 offline observatory, learning interfaces, base Alpaca adapter and forward-control fixtures exist. META-001 delivered the private architecture, reference accounting tests and a fixture-only export guard. Step 01 adds production v2 contracts, explicit storage, private attribution identities and a checked synthetic migration boundary. Step 02 adds persistent FIFO, exact flow-adjusted performance, private result records and offline broker reconciliation, verified against the golden vector while preserving v1. Step 03 adds the private read model and accessible Individual/Monarchy views, with separate execution bases and saved evidence. Step 04 adds explicit v1/v2 commands, read-only diagnostics, atomic resumable fixtures and a clean offline installation check. Step 05 adds protected loopback serving from verified manifests, fixed snapshots, atomic publication and conservative retention. Step 06 adds durable shared request admission, full cooldowns, cache/batching and query-bound checkpoints with recorded-transport evidence. Step 07 connects that owner to preregistered v2 paired rounds, immutable complete snapshots and uniform defer/abstention outcomes. Step 08 independently verifies recorded dispatch times, killed-process recovery and equal snapshots; four defects are fixed, and all 14 audit cases pass. Step 09 selects Alpaca for private delayed daily SIP under the owner-approved storage/replay interpretation. Six metered requests returned all 30 expected instrument/session pairs in each of two retrievals. Exact caching added no requests; restored replay added no duplicate observations. Per-instrument quality and replay repairs pass 311 tests across 31 modules. The subsequent Step 11 supplied qualified forward observations; paper operation remains pending. Step 10 validates the saved Bogle foundation and reconciles Index Steward into a scoped eligible participant version. At that historical review, Value/Trend remained partial and the gate blocked. The owner-requested Step 11 continuation subsequently completed both first books and appended eligible versions. The current three-participant gate passes, and the five-session forward window has matured; the full Step 12 audit is complete with paper promotion held.
 
 This sequence reaches the same destination as the previous remaining scopes: versioned accounting; an inspectable private Individual/Monarchy UI; shared qualified data; eligible Characters and prospective shadow evidence; a reviewed paper stage; then notebook, optional scheduling, specialist/disclosure research and governance review. It does not complete every curriculum, mandate optional broker submission, promise profit or authorize live capital.
 
@@ -59,8 +68,8 @@ This sequence reaches the same destination as the previous remaining scopes: ver
 | [11A](active/STEP-11A-run-observability.md) | Record starts, ends and verified outcomes (implemented) | Expose failure and incomplete results before the observation window. | 020, early observability |
 | [11B](active/STEP-11B-observation-schedule.md) | Schedule the existing finite observation (installed and rehearsed) | Remove the need to remember the manual window without extending the trial. | 020, finite scheduling |
 | [11C](active/STEP-11C-private-backups.md) | Prove private backup and restore (local and remote verified) | Encrypted Lightsail round trip, both FIDO keys, offline accounting replay and conservative retention verified; recurrence remains in Step 15. | 020, recovery |
-| [12](active/STEP-12-readiness-audit.md) | Decide whether evidence supports a paper stage (next; data ready) | The real forward trial supplies evidence the offline preflight could not; audit the whole chain before paper operation. | 016 |
-| [13](active/STEP-13-paper-portfolios.md) | Operate attributable paper portfolios | Exercise paper operation only after its stage decision; optional broker submission follows Monarchy-only attribution. | 017 |
+| [12](active/STEP-12-readiness-audit.md) | Decide whether evidence supports a paper stage (complete; promotion held) | The real forward trial supplies evidence the offline preflight could not; audit the whole chain before paper operation. | 016 |
+| [13](active/STEP-13-paper-portfolios.md) | Operate attributable paper portfolios (blocked by Step 12) | Exercise paper operation only after its stage decision; optional broker submission follows Monarchy-only attribution. | 017 |
 | [14](active/STEP-14-research-notebook.md) | Explain learning and decisions through stored evidence | Enrich explanation after the useful pilot path without making these extra views delay its first observations. | 019 |
 | [15](active/STEP-15-scheduler.md) | Add optional bounded scheduling and recovery | Automate repetition only after manual operation and its failure handling are reviewed. | 020 |
 | [16](active/STEP-16-microstructure.md) | Extend execution and risk research | Use the daily pilot's limitations to justify finer data and execution research rather than presuming more data is better. | 021 |

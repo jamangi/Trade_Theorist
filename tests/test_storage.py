@@ -7,6 +7,7 @@ import subprocess
 import sys
 from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 from trade_theorist.contracts import ContractError, digest
 from trade_theorist.fixtures import base_records, EXP
@@ -21,6 +22,35 @@ class StorageTests(unittest.TestCase):
         self.store = Store(self.temp.name, synthetic=True)
         self.addCleanup(self.store.close)
         self.store.put_records(base_records())
+
+    def test_failed_connection_setup_closes_handle_and_preserves_existing_store(self):
+        before = self.store.verify()
+        connect = sqlite3.connect
+        for pragma in ('foreign_keys', 'journal_mode', 'synchronous'):
+            connections = []
+            class SetupFailure(sqlite3.Connection):
+                def execute(self, sql, *args, **kwargs):
+                    if sql.startswith('PRAGMA '+pragma):
+                        raise sqlite3.OperationalError('injected setup I/O failure')
+                    return super().execute(sql, *args, **kwargs)
+            def open_connection(*args, **kwargs):
+                connection = connect(*args, factory=SetupFailure, **kwargs)
+                connections.append(connection)
+                return connection
+            try:
+                with self.subTest(pragma=pragma), patch('trade_theorist.storage.sqlite3.connect', open_connection):
+                    with self.assertRaisesRegex(sqlite3.OperationalError, 'injected setup'):
+                        Store(self.temp.name, synthetic=True)
+                    # Even while the failed constructor/traceback is retained,
+                    # its real connection must already be closed, not await GC.
+                    with self.assertRaises(sqlite3.ProgrammingError):
+                        connections[0].execute('SELECT 1')
+            finally:
+                for connection in connections:
+                    connection.close()
+        self.assertEqual(self.store.verify(), before)
+        with Store(self.temp.name, synthetic=True) as reopened:
+            self.assertEqual(reopened.verify(), before)
 
     def test_replay_dedup_and_backup_restore(self):
         for number, amount in enumerate(("0.10", "0.20", "-0.05")):

@@ -1,6 +1,6 @@
 # Step 12: Decide whether evidence supports a paper stage
 
-- Status: ready to audit; Step 11's scheduled outcome retrieval completed and was independently verified 2026-09-15. The full Step 12 audit and policy/stage decision remain pending.
+- Status: complete 2026-09-15; reproduced audit holds paper promotion at forward shadow. Five sessions and one matured forecast remain below the 60/30 review floors. Step 13 is blocked, not started.
 - Recommended model / effort: Astra / high
 - Historical coverage: [TASK-016](../TASK-016-high-Astra.md)
 - Queue: [ordered remaining work](../README.md)
@@ -9,6 +9,46 @@
 ## Why this position
 
 The real forward trial supplies evidence the offline preflight could not; audit the whole chain before paper operation.
+
+## Completed audit and handoff
+
+Read the [final audit](../../docs/step-12-readiness-audit.md),
+[read-only evidence verification](../../examples/step-12/evidence-verification.json),
+[validation](../../examples/step-12/validation.json),
+[numeric policy/stage decision](../../examples/step-12/paper-policy-decision.json)
+and [scheduler disposition](../../examples/step-12/scheduler-disposition.json).
+All 35 stored performance results were replayed with expanded metric/history
+checks; 7 immutable reports and 4 matched baseline comparisons verified. The trial
+used 3 of 12 account attempts; audit provider/model/order counts are zero.
+
+Validation: 401 tests discovered in 40 modules; 394 passed and 7 optional recovery
+tests skipped in the base environment. Supplemental recovery runs passed all
+19 tests in those two modules, including the 7 skipped cases, using the pinned
+age binary and optional environment. All 401 distinct tests are therefore covered.
+All 14 independent rate-preflight cases, 1,983 field classifications and the clean
+offline installed-package check passed. No UI or file in the explicit frozen trial
+runtime hash set was changed.
+
+One full-suite run exposed intermittent Windows WAL opening failure after worker
+termination. Its log is preserved by hash in validation. A separately reproduced
+storage constructor leak is fixed: failed setup now closes the connection before
+raising; all three injected setup failures failed before the fix and pass afterward.
+The transient I/O cause remains uncertain. `storage.py` is outside the original
+frozen runtime hash set; the broader audit source inventory pins this change.
+
+Added `readiness_audit.py`, `run_step_12_audit.py`, `test_readiness_audit.py`, the
+audit guide and public counts/hashes/policy/validation artifacts. Root README,
+queue, approvals, Step 13 status and operational handoffs now link the decision.
+The new audit detects false rehashed metrics and source/history/halt changes,
+rejects an injected broker tool, and verifies split-crossing forecast abstention.
+
+The existing standing owner authority delegates numeric free-paper settings;
+selection is recorded without another permission request. Paper execution remains
+blocked by evidence and future-run engineering prerequisites. September 7 backups
+predate the observation; refresh/recovery remains a documented operational gap.
+Both finite Windows tasks were idle and disabled September 15 at 10:18 UTC,
+before the redundant fallback/noon triggers. Definitions and receipts remain.
+Stop here; do not extend the original trial or start Step 13 automatically.
 
 ## Starting evidence
 
@@ -24,8 +64,8 @@ freshness limits and the steps for a new task to begin this audit.
 
 Before the final readiness decision, require Step 11's preregistered window to
 have matured and its outcomes to have been retrieved and verified. Rights,
-engineering evidence and proposed numeric paper policy are inputs to the audit;
-this brief does not assert that the scheduled observation has already completed.
+engineering evidence and numeric paper policy are inputs to the audit;
+the dated completion evidence above establishes the observation prerequisite.
 
 ## Data collection prerequisite and exact schedule
 
@@ -85,7 +125,7 @@ A reproduced final audit records defects, uncertainty, operational responsibilit
 
 META-001 extends the final audit to Steps 01 and 02 migration integrity, FIFO/flow-neutral metrics, dividend receivables, execution-basis separation, opaque Monarchy-only mapping, private field classifications and local server boundaries. Require production replay of the golden vector, not just META-001's reference tests. Preserve the earlier offline rate preflight as a narrow partial gate that can use fixture code before real forward evidence. A private deployment is not a license grant, and reference-account arithmetic is not evidence of profit.
 
-Review the completed implementation against clock barriers, simulated accounting, source rights, public exports, model usage, crash recovery, hard limits, and baseline fairness. Review the proposed numeric paper policy and obtain a recorded owner decision before paper execution. Distinguish engineering readiness from statistical evidence.
+Review the completed implementation against clock barriers, simulated accounting, source rights, public exports, model usage, crash recovery, hard limits, and baseline fairness. Review and record the numeric paper policy under the standing owner delegation; do not request the same permission again. Distinguish engineering readiness from statistical evidence.
 
 Use adversarial cases spanning publication lag, revised filings, splits, stale quotes, repeated runs, unavailable sources, and injected instructions. Record all unresolved limitations. No paper promotion solely because the dashboard looks complete.
 

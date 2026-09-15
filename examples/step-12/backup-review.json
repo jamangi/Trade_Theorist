@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-09-15T10:23:23.843469+00:00",
+  "status": "original_local_bundle_reverified",
+  "local_bundles": [
+    {
+      "manifest_hash": "33de899539067d0c3748af2737dbc0f7829018d8e88c27ad69937d97d7d0d491",
+      "snapshot_finished_at": "2026-09-07T14:50:28.209849+00:00",
+      "records": 177,
+      "attempts": 9
+    },
+    {
+      "manifest_hash": "7e00b52d246e3027f6fc090b5e53352a006f4441de04f8c879285d3ad71b3811",
+      "snapshot_finished_at": "2026-09-07T13:42:14.344198+00:00",
+      "records": 177,
+      "attempts": 9
+    }
+  ],
+  "original_bundle_manifest_hash": "7e00b52d246e3027f6fc090b5e53352a006f4441de04f8c879285d3ad71b3811",
+  "original_bundle_files": 458,
+  "original_bundle_reports": 6,
+  "original_bundle_records": 177,
+  "original_bundle_attempts": 9,
+  "current_records": 248,
+  "current_attempts": 11,
+  "records_since_original_backup": 71,
+  "attempts_since_original_backup": 2,
+  "remote_refresh_verified": false,
+  "remote_status_basis": "dated September 7 acceptance only; no remote contact or FIDO ceremony",
+  "new_backup_created": false,
+  "provider_calls": 0
+}

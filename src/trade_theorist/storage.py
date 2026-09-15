@@ -40,12 +40,14 @@ class Store:
         self.synthetic = synthetic
         self.path = self.root / "research.sqlite3"
         self.connection = sqlite3.connect(self.path, timeout=15, isolation_level=None)
-        self.connection.row_factory = sqlite3.Row
-        self.connection.execute("PRAGMA foreign_keys=ON")
-        self.connection.execute("PRAGMA journal_mode=WAL")
-        self.connection.execute("PRAGMA synchronous=FULL")
         self._depth = 0
         try:
+            # A failed PRAGMA can retain the live handle through its traceback.
+            # Close setup failures as well as migration failures before reraising.
+            self.connection.row_factory = sqlite3.Row
+            self.connection.execute("PRAGMA foreign_keys=ON")
+            self.connection.execute("PRAGMA journal_mode=WAL")
+            self.connection.execute("PRAGMA synchronous=FULL")
             self._migrate()
         except BaseException:
             self.close()

@@ -1,5 +1,11 @@
 # Step 11 automation and fresh-session handoff
 
+> **September 15 disposition:** the [Step 12 audit](step-12-readiness-audit.md)
+> verified completion and disabled both idle finite tasks at 10:18 UTC, before
+> their remaining fallback/noon triggers. Definitions and original receipts remain.
+> [Disposition evidence](../examples/step-12/scheduler-disposition.json) supersedes
+> the installed/enabled status below. No general recurrence was installed.
+
 **September 15 update:** the primary observation ran September 14 at 19:30
 Chicago and completed successfully at 19:31:03. The
 [verified completion evidence](../examples/step-11/observation-completion.json)

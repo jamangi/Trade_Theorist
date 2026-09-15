@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-15T10:33:11.946027+00:00",
+  "source_base_commit": "51f5ea8e4fdccc54ebb80acae9654fe9e88f4350",
+  "status": "pass",
+  "full_suite": {
+    "tests": 401,
+    "skipped": 7,
+    "modules": 40,
+    "duration_seconds": 130.7,
+    "results": [
+      {
+        "module": "test_accounting_v2",
+        "tests": 20,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "47e6b58e0891b4c68df5f129ecab39386b5fc8bfe381b44ac9f4666604a693fc"
+      },
+      {
+        "module": "test_alpaca_adapter",
+        "tests": 5,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "09528d78e51b8e3f376dfed6ec2f12323b20c111181432a7f8f449d6d65a13d3"
+      },
+      {
+        "module": "test_broker_v2",
+        "tests": 7,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "b06245a8c70776e6bb051173d67944ee8cccd45c47acc5235b2dc07cd7650495"
+      },
+      {
+        "module": "test_contracts",
+        "tests": 13,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "e489e8d3215e2058d51100cf76b7f6a452ad830c5a1f6c96c2a0acd5c43d2d05"
+      },
+      {
+        "module": "test_contracts_v2",
+        "tests": 10,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "a0b50940936f40c828b055cfcaccefa3c0580ce3468ebd5567d3cdc23fce1a3b"
+      },
+      {
+        "module": "test_corporate_actions",
+        "tests": 6,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "778af43097cfbbb9dbfda4e6ffd63f6e322bae67f9f5607b5b3f3ac9473afca6"
+      },
+      {
+        "module": "test_council",
+        "tests": 6,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "555f42d61dfcb3ed621748b8fe2f8c9f303e7a75305b68db4b56afc775d2549d"
+      },
+      {
+        "module": "test_evaluation",
+        "tests": 13,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "8c96d6740f1f6862a93199ea6e9e78c0dd07f4c66c94958b42d78b6df0f09fc1"
+      },
+      {
+        "module": "test_export",
+        "tests": 8,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "f2adac8c00c4bffb2a04fa401caedc494302a3e5c222171ad0024fa6230c8eb9"
+      },
+      {
+        "module": "test_export_v2",
+        "tests": 12,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "dd5bf8e516d49226809a2da0354ea7cdf2e79299c23ef2389d4584f0f85b7b4c"
+      },
+      {
+        "module": "test_forward_shadow",
+        "tests": 4,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "081f7262095eea78d4913c40c143888341c937dc8868daaba5318fee29f38023"
+      },
+      {
+        "module": "test_forward_shared",
+        "tests": 18,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "6f61f1d76d3b0de94069fbf6e2b5c503dadfd7c9579d145b65b9e6f089b5c69d"
+      },
+      {
+        "module": "test_foundation_continuations",
+        "tests": 8,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "4d709fde8b838864953d2dee72c14721a15df17143566da893fbd64fe8625848"
+      },
+      {
+        "module": "test_hardware_recovery",
+        "tests": 5,
+        "skipped": 5,
+        "status": "pass",
+        "log_sha256": "03f4e69396cded48952cd4bd7820d91dd888cca928f282346aab48a42e72851f"
+      },
+      {
+        "module": "test_heartbeat",
+        "tests": 6,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "039277ef0c5cb25a2f2792d51ece1ad3cc0ea1e7f7a743b1f634cbda5c1fdbfd"
+      },
+      {
+        "module": "test_ingest",
+        "tests": 5,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "8bc5fe4495dacea860c8d66534249c78c31e82b736198b914ea2fd20d72384b8"
+      },
+      {
+        "module": "test_inventory",
+        "tests": 6,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "07e2e2d9d2a87f1fa426d9fdf8d1c580a2aa103b27793f963b3b443bef26cbf2"
+      },
+      {
+        "module": "test_learning",
+        "tests": 15,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "1779d1409a30ea0986720ddc508b9358cd5ae38aafc30488f913218593202b24"
+      },
+      {
+        "module": "test_library",
+        "tests": 4,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "638298e4cede135d2c92fde4243777f25e4728f356eca7fe1407575bb7827be4"
+      },
+      {
+        "module": "test_live_qualification",
+        "tests": 2,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "a93cd0f5f3ced3023bc134f65841abafa72802ebe663d21cd439391071c8301f"
+      },
+      {
+        "module": "test_local_server",
+        "tests": 16,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "0633f1699299101cfcd4ca37da3ea293b150e166142dca650c5d5e4da4cd21ec"
+      },
+      {
+        "module": "test_market_requests",
+        "tests": 24,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "4023fe4475f3632d130ef67ef02b543ea2a4183c3a82a9f39e9e2a72da55721e"
+      },
+      {
+        "module": "test_meta_contracts",
+        "tests": 8,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "4ef8819a17a6d9bed818bfb8849e0b270d2a0f7d8c3e3c0257aa68f951218f96"
+      },
+      {
+        "module": "test_observation_job",
+        "tests": 21,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "f11cf1ebacad37daace113291d145874092902e83593779f25d9bf765dee2dcf"
+      },
+      {
+        "module": "test_operations",
+        "tests": 7,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "c1b231dec2c03fee9ac9b1a0b68f106ffe86c7d77a373ca35f7809ca02c75c58"
+      },
+      {
+        "module": "test_operations_v2",
+        "tests": 14,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "b99632aea1f8c1cf83ca20e9da9e5bf15669fd3269a158c4e59b9431ec1442f0"
+      },
+      {
+        "module": "test_pilot_readiness",
+        "tests": 10,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "780af92faa01330df779075fe5e80665897a7a8a3976843f826f6f73438f1cf1"
+      },
+      {
+        "module": "test_private_backup",
+        "tests": 12,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "162cc04b0dd71877ebf575f66dc512cbc47d82912bb46bb88c9fc2ab8b92e577"
+      },
+      {
+        "module": "test_prospective_trial",
+        "tests": 7,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "9f671759974ce156ee2b1b7a44d63745d569ba1ea4218a378d8499b5a7cacc0c"
+      },
+      {
+        "module": "test_quality_qualification",
+        "tests": 6,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "b27a4ec3d3e3bd591a597c144a4355d3bb4e7aec9a2c467a526c6db2ba42bde6"
+      },
+      {
+        "module": "test_readiness_audit",
+        "tests": 6,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "3ba909eb198bca3973f879114454f93c2dc2e671806c3a12b0f9107154957026"
+      },
+      {
+        "module": "test_remote_backup",
+        "tests": 14,
+        "skipped": 2,
+        "status": "pass",
+        "log_sha256": "3f6cea423e9c8ee08ac773dfe743a907ce11697803efbf9b86f5a93d1ed676e0"
+      },
+      {
+        "module": "test_request_preflight",
+        "tests": 14,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "924a0368da3bc84be8581f60ba793fc77cfc739ef87f4272e0569bd28a6e3a44"
+      },
+      {
+        "module": "test_reviewed_learning",
+        "tests": 9,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "1e87f302254f571408df0c493f95cdba12a9219e98efadb1ac485b925a49fee1"
+      },
+      {
+        "module": "test_risk",
+        "tests": 10,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "5de54409564345910959225cf2dad123707904ccd7b7309ed48b1c3910ca36ff"
+      },
+      {
+        "module": "test_simulation",
+        "tests": 18,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "85c339f476b1d7a0d25a2a8bc638db4db77ba3723782605b2bf4fc2807311f6a"
+      },
+      {
+        "module": "test_specialist_learning",
+        "tests": 2,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "f883f045b223628d16ddd3765e89f4f894a193890502b50c3ecc93edd534b464"
+      },
+      {
+        "module": "test_storage",
+        "tests": 12,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "0ad0a226ed1518cf49b59ea32017244332a6582370a6c85b4d81c95b946c7bf8"
+      },
+      {
+        "module": "test_storage_v2",
+        "tests": 14,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "6b3f62ba824feeb219bd8cefcdbe2a06564b24b8c18e1c106136fb32a9727335"
+      },
+      {
+        "module": "test_theorize",
+        "tests": 4,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "a2e8c8bf5c915d05528a4e77e51efa740bb36071726d3908ff0f4de4056abcc9"
+      }
+    ]
+  },
+  "optional_recovery_checks": {
+    "environment": "existing optional ykman environment",
+    "age_sha256": "2821a4ed191da07372acd302e5f6feae7a7985e285e1417765ebe74025af45f0",
+    "results": [
+      {
+        "module": "test_hardware_recovery",
+        "tests": 5,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "329668fdd062ebf21de0c4b4c58cc8bca7e897105c24bf0e98822220940977cc"
+      },
+      {
+        "module": "test_remote_backup",
+        "tests": 14,
+        "skipped": 0,
+        "status": "pass",
+        "log_sha256": "8bf5b483299d8ef3048c67829f964a731b86144cebfaabd8863a7500b6d82301"
+      }
+    ],
+    "actual_remote_contact": false,
+    "actual_fido_ceremony": false
+  },
+  "distinct_tests_passed_across_environments": 401,
+  "independent_preflight": {
+    "status": "pass",
+    "cases": 14,
+    "case_results": [
+      {
+        "test": "test_01_rolling_boundaries_idle_and_lower_ceiling",
+        "status": "pass"
+      },
+      {
+        "test": "test_02_pause_between_admission_and_send_cannot_burst",
+        "status": "pass"
+      },
+      {
+        "test": "test_03_concurrent_manual_scheduler_and_adapter_instances_share",
+        "status": "pass"
+      },
+      {
+        "test": "test_04_query_isolation_and_full_resume_binding",
+        "status": "pass"
+      },
+      {
+        "test": "test_05_retry_ambiguity_and_page_budget_charge_each_wire_attempt",
+        "status": "pass"
+      },
+      {
+        "test": "test_06_server_wait_formats_final_retry_and_fallback",
+        "status": "pass"
+      },
+      {
+        "test": "test_07_oversized_verified_hint_cannot_erase_429_cooldown",
+        "status": "pass"
+      },
+      {
+        "test": "test_08_real_process_death_and_recovery",
+        "status": "pass"
+      },
+      {
+        "test": "test_09_wall_jumps_and_frozen_policy",
+        "status": "pass"
+      },
+      {
+        "test": "test_10_production_clock_http_attempts_and_api_separation",
+        "status": "pass"
+      },
+      {
+        "test": "test_11_paired_merged_misses_cutoff_and_result_only_readers",
+        "status": "pass"
+      },
+      {
+        "test": "test_12_forward_manifest_is_a_frozen_copy",
+        "status": "pass"
+      },
+      {
+        "test": "test_13_verified_headers_only_reduce_capacity_and_reset_is_shared",
+        "status": "pass"
+      },
+      {
+        "test": "test_14_upgrade_preserves_ambiguous_charge_and_v1_v2_readers",
+        "status": "pass"
+      }
+    ],
+    "artifact_sha256": "5fcf19b265c8af984b8a673c6b3322305c46495dec522a01a9af3688db847626"
+  },
+  "earlier_run_findings": [
+    {
+      "id": "S12-08",
+      "status": "fixed_and_regression_verified",
+      "test": "test_failed_connection_setup_closes_handle_and_preserves_existing_store",
+      "baseline": "failed all three setup-pragma subcases before fix",
+      "baseline_log_sha256": "0259ac035d5b0352bd568a8fdb075168761f0d93df9ad347c001ae12aae2fae5",
+      "fix": "Close database connection on setup exceptions before propagating original failure"
+    },
+    {
+      "id": "S12-09",
+      "status": "intermittent_underlying_windows_io_cause_unresolved",
+      "test": "test_08_real_process_death_and_recovery",
+      "observed": "One full-suite run failed with SQLite disk I/O error and locked-file cleanup after worker termination; focused, independent and final full-suite runs passed",
+      "failure_log_sha256": "df25359039f33b51458bcf0f9ffca7cf2b705476f8e6ded57edc129c6d5c32a8"
+    }
+  ],
+  "field_classification": {
+    "status": "pass",
+    "classified_fields": 1983,
+    "unknown_fields": "denied"
+  },
+  "installed_check": {
+    "installation": "fresh venv and built wheel outside checkout",
+    "network": "socket trap and pip --no-index",
+    "versions": {
+      "1": {
+        "demo": "passed",
+        "resume": "passed",
+        "evaluate": "passed",
+        "export": "passed",
+        "doctor": "passed",
+        "validate": "passed",
+        "model_calls": 0
+      },
+      "2": {
+        "demo": "passed",
+        "resume": "passed",
+        "evaluate": "passed",
+        "export": "passed",
+        "doctor": "passed",
+        "validate": "passed",
+        "model_calls": 0,
+        "protected_serve_stop": "passed"
+      }
+    },
+    "shared_requests": {
+      "collector": "passed",
+      "cache": "passed",
+      "physical_recorded_attempts": 2,
+      "account_calls": 0,
+      "migration": "006",
+      "settlement": "passed"
+    },
+    "forward_integration": {
+      "scenarios": 4,
+      "fixture_only": true,
+      "result": "passed",
+      "account_calls": 0
+    }
+  },
+  "document_links": {
+    "status": "pass",
+    "checked": 188
+  },
+  "frozen_runtime_hash_set_modified": false,
+  "storage_startup_cleanup_modified": true,
+  "ui_modified": false,
+  "scope": "Offline regression and installed-package checks; actual private verification recorded separately",
+  "promotion_eligible": false
+}

@@ -1,5 +1,10 @@
 # Step 12 handoff after scheduled collection
 
+> **Superseded by the [completed Step 12 audit](step-12-readiness-audit.md),
+> September 15, 2026.** Paper promotion is held; the finite tasks were disabled
+> after review at 10:18 UTC, before their redundant remaining triggers. The
+> original handoff below preserves the evidence locations and earlier status.
+
 Verified September 15, 2026, at approximately 04:55 Chicago time. **Step 11's
 data collection is complete. Step 12, the readiness audit, is the next task.**
 Read [the active Step 12 brief](../tasks/active/STEP-12-readiness-audit.md) for its

@@ -8,6 +8,12 @@ examples can be rebuilt and validated without reading their complete JSON output
 
 Relevant implementation and validation paths:
 
+Step 12 audit: `readiness_audit.py`, `scripts/run_step_12_audit.py` and
+`test_readiness_audit`; [decision, reproduction and blockers](step-12-readiness-audit.md).
+The audit is outside the frozen runtime and only reads the existing private store.
+Its expanded ledger replay does not call the cached evaluation path. Keep public
+output to the constructed count/hash allowlist; never print raw private failures.
+
 Finite observation operations: `src/trade_theorist/observation_job.py`,
 `scripts/run_step_11_job.py`, `scripts/install_step_11_tasks.ps1` and
 `test_observation_job`; [11A/11B handoff](step-11-automation.md).

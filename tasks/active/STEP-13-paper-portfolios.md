@@ -1,6 +1,6 @@
 # Step 13: Operate attributable paper portfolios
 
-- Status: pending; remaining scope as of 2026-09-06
+- Status: blocked after the 2026-09-15 Step 12 audit; 5/60 sessions and 1/30 matured forecasts. No paper run started. See the [audit decision](../../docs/step-12-readiness-audit.md).
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-017](../TASK-017-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
@@ -11,6 +11,13 @@
 Exercise paper operation only after its stage decision; optional broker submission follows Monarchy-only attribution.
 
 ## Starting evidence
+
+The [Step 12 policy selection](../../examples/step-12/paper-policy-decision.json)
+records delegated numeric settings, ownership and the stage hold. It is not a
+runtime manifest. Preserve the finished Step 11 trial; a new forward programme
+needs separately frozen dates/budgets and a later readiness review. Engineering
+work for an actual paper controller must verify session-aware freshness/loss
+limits, durable halts and reconciliation; broker-paper remains a distinct option.
 
 Step 12 gates pass. The [standing owner authorization](../../decisions/APPROVALS.md#standing-alpaca-authorization--2026-09-07) already covers all free Alpaca paper activity and delegates finite workload/risk settings to the agent. Record the precise run and choose whether to exercise broker paper submission; do not request the same permission again. Trading quota enforcement, reconciliation and attribution remain engineering prerequisites.
 

@@ -2,6 +2,24 @@
 
 This register holds choices that materially affect product behavior, financial risk, legal exposure, or the meaning of an experiment.
 
+## Step 12 delegated policy and stage decision — 2026-09-15
+
+The agent completed the [readiness audit](../docs/step-12-readiness-audit.md) under
+the standing September 7 delegation below. The [numeric policy selection](../examples/step-12/paper-policy-decision.json)
+records future paper settings and operating responsibilities: USD10,000 fictional
+cash per portfolio, VTI only, 2% daily loss and 10% peak drawdown halts, 20%
+one-way turnover, one new order/session, no borrowing/shorting, session-aware
+marks and separately qualified fresh executable quotes if broker-paper is selected.
+This is an agent decision within recorded owner authority, not a claim of a new
+owner message or approval. The policy is not deployed.
+
+**Stage decision: hold at forward shadow.** The observed 5 sessions and 1 matured
+forecast fail the retained 60/30 review floors. Free-paper permission remains in
+force, but evidence and implementation prerequisites block Step 13. No new trial,
+broker order, recurring schedule or live-capital authority is created. Both idle
+finite Step 11 tasks were disabled after completed-evidence review; definitions
+and receipts remain. A fresh remote backup still requires attended FIDO recovery.
+
 ## Standing Alpaca authorization — 2026-09-07
 
 The owner explicitly pre-approved **any free use of the Alpaca account**, including

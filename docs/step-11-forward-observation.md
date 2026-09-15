@@ -168,5 +168,5 @@ opinions and bounded council advice; equal snapshots; late-order rejection;
 zero-call replay; actual horizon gating; delayed fill receipts; dividend
 entitlements/payment; action gaps; deadline expiry; shared throttling/recovery;
 and inclusive corporate-action dates. The task brief records the final full-suite
-and installed-package checks. Step 12's full audit has not started; its data
-prerequisite is now verified and its handoff is ready.
+and installed-package checks. [Step 12's full audit](step-12-readiness-audit.md) is now complete: saved evidence
+verified, paper promotion held, and the completed finite jobs disabled.
