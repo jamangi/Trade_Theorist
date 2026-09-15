@@ -1,9 +1,18 @@
 # Step 11 automation and fresh-session handoff
 
-Updated September 7, 2026. The owner requested repository briefs, roadmap updates,
+**September 15 update:** the primary observation ran September 14 at 19:30
+Chicago and completed successfully at 19:31:03. The
+[verified completion evidence](../examples/step-11/observation-completion.json)
+confirms five real sessions, one matured forecast and no source gaps. Start the
+[Step 12 audit handoff](step-12-audit-handoff.md) next. At the 04:55 Chicago
+inspection, the 08:00 fallback and noon check remained scheduled; neither was
+claimed as already run. Successful completion should make them skip collection.
+The task definitions and original stop time are unchanged.
+
+Original September 7 implementation record follows. The owner requested repository briefs, roadmap updates,
 implementation of 11A/11B and publication to main. 11A and 11B are implemented;
 the two finite Windows tasks are installed and a real scheduled report rehearsal
-passed. Step 11 remains in progress with zero completed future sessions. See
+passed. At that time Step 11 was in progress with zero completed future sessions. See
 [trial status](../examples/step-11/forward-status.json),
 [automation status](../examples/step-11/automation-status.json), and
 [the roadmap](../tasks/README.md). Saved status files are dated evidence, not a live

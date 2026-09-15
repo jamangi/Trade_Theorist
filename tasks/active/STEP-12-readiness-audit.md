@@ -1,6 +1,6 @@
 # Step 12: Decide whether evidence supports a paper stage
 
-- Status: pending; awaiting Step 11's scheduled outcome retrieval. Schedule rechecked against installed Windows tasks on 2026-09-13.
+- Status: ready to audit; Step 11's scheduled outcome retrieval completed and was independently verified 2026-09-15. The full Step 12 audit and policy/stage decision remain pending.
 - Recommended model / effort: Astra / high
 - Historical coverage: [TASK-016](../TASK-016-high-Astra.md)
 - Queue: [ordered remaining work](../README.md)
@@ -11,6 +11,16 @@
 The real forward trial supplies evidence the offline preflight could not; audit the whole chain before paper operation.
 
 ## Starting evidence
+
+Start with the [self-contained audit handoff](../../docs/step-12-audit-handoff.md)
+and [verified scheduled-completion evidence](../../examples/step-11/observation-completion.json).
+The September 14, 19:30 Chicago observation succeeded: five completed real
+sessions, one matured forecast and zero source gaps. The September 15 check
+verified its immutable report, original launcher receipt, frozen inputs and
+35 stored accounting results without provider/model calls. The data prerequisite
+is satisfied; paper promotion remains false. The handoff gives exact private-file
+locations, safe verification commands, remaining scheduler triggers, backup
+freshness limits and the steps for a new task to begin this audit.
 
 Before the final readiness decision, require Step 11's preregistered window to
 have matured and its outcomes to have been retrieved and verified. Rights,
@@ -38,10 +48,11 @@ times below are CDT (UTC−05:00); the
 | `Step11-20260907-DeadlineCheck` | September 15, noon | September 15, 17:00 | Check saved completion and warn locally if unfinished |
 | Original hard stop | September 15, 5 p.m. | September 15, 22:00 | Stop incomplete if necessary; do not extend dates or budgets |
 
-A read-only Windows Task Scheduler inspection on September 13 found both tasks
+The earlier read-only Windows Task Scheduler inspection on September 13 found both tasks
 enabled and Ready, with the next runs and fallback matching the table. Neither
 production task had run yet. This confirms the installed schedule, not successful
-future collection. The owner must keep the PC available and remain signed into
+future collection; the September 15 evidence above records the subsequent successful
+Observe run. The owner must keep the PC available and remain signed into
 Windows; a locked screen is supported. Codex and the dashboard need not be open.
 Wake/catch-up is requested but does not guarantee execution while powered off or
 logged out. The [11A/11B handoff](../../docs/step-11-automation.md) records the

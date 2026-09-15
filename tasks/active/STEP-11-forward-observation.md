@@ -1,6 +1,6 @@
 # Step 11: Run and mature the forward shadow trial
 
-- Status: implementation complete; finite real forward observation window in progress (2026-09-07 UTC)
+- Status: complete; all five real sessions observed by the scheduled job, with one matured forecast and no source gaps. Completion independently verified 2026-09-15; Step 12 audit is next.
 - Recommended model / effort: Sol / high
 - Historical coverage: [TASK-015](../TASK-015-high-Sol.md)
 - Queue: [ordered remaining work](../README.md)
@@ -40,7 +40,19 @@ Use the [focused validation workflow](../../docs/development.md). Record changed
 
 Stop at this step's finished state. The default next item is [Step 12](STEP-12-readiness-audit.md); do not start it automatically. Follow the queue's blocker rule for independent work. Preserve historical completion claims. No account call, order, paid subscription, public market-data deployment or recurring work is authorized merely by this task brief.
 
-## Implementation evidence and current handoff
+## September 15 completion and current handoff
+
+The primary Windows task ran September 14 at 19:30 Chicago and completed in
+62.312 seconds with two transport attempts. The immutable report records five
+completed real sessions, one matured forecast, no immature/unscorable forecasts
+and no source gaps. The [completion verification](../../examples/step-11/observation-completion.json)
+checked its hash, original successful receipt, frozen inputs and database
+accounting without new provider/model calls. No broker orders were sent.
+The [self-contained Step 12 handoff](../../docs/step-12-audit-handoff.md) identifies
+the private evidence, scheduler state and remaining audit. Paper promotion remains
+false; a five-session process trial does not satisfy the longer evidence floors.
+
+## Original September 7 implementation evidence
 
 - All three foundations are eligible for their scoped roles. Value/Trend each read one of four books; later curricula and theory evaluation remain pending. Value's import stopped after two units and resumed the remaining 26; immutable old artifacts remain unchanged.
 - New production paths: `learn/continuation.py`, `forward/prospective.py`, `forward/trial.py`, `forward/observe.py`, corporate-action receipt parsing and the shared bars/actions request contract. Existing fixture behavior remains tested.
@@ -51,6 +63,6 @@ Stop at this step's finished state. The default next item is [Step 12](STEP-12-r
 
 Validation: **342 tests across 35 modules passed**, plus schema field-classification checks (1,983 fields) and the clean offline installed-package check. An initial installed check used the old Step 04 wheel cache and could not find the currently pinned `attrs` version; rerunning with the existing current `.local/wheelhouse` passed without downloading anything. Focused tests include tool/future-information barriers, original ancestry, full roster, shared snapshots, independent advice, deadline rejection, replay, outcome maturity, delayed simulation receipts, dividend accounting, action gaps, inclusive dates and cross-endpoint cooldown persistence.
 
-Private execution and portfolio reports belong to the existing `TradeTheorist/alpaca-market-data/step-11-forward` store. The later owner-authorized [11A/11B supplement](../../docs/step-11-automation.md) supersedes this implementation's original manual-only handoff: dated logs and verified receipts are implemented, finite Windows jobs are installed and a real zero-request scheduled report passed. The handoff records exact times, the resolved private root and sign-in requirements. Use the logged `run_step_11_job.py report` / `observe` entry point for manual work. Original scientific inputs, dates and budgets are unchanged. Do not call immature outcomes complete or start Step 12 automatically. [11C backup/restore](STEP-11C-private-backups.md) remains pending; eligible Step 14 work may proceed during the wait.
+Private execution and portfolio reports belong to the existing `TradeTheorist/alpaca-market-data/step-11-forward` store. The later owner-authorized [11A/11B supplement](../../docs/step-11-automation.md) supersedes this implementation's original manual-only handoff: dated logs and verified receipts are implemented, finite Windows jobs are installed and a real zero-request scheduled report passed. The handoff records exact times, the resolved private root and sign-in requirements. Use the logged `run_step_11_job.py report` / `observe` entry point for manual work. Original scientific inputs, dates and budgets are unchanged. Do not call immature outcomes complete or start Step 12 automatically. [11C backup/restore](STEP-11C-private-backups.md) was subsequently completed September 7, including remote recovery. Those dated snapshots predate the newly collected outcomes; see the current audit handoff for backup freshness.
 
-Actual run: initial round decided on September 7 at 10:33 UTC, with 22 of 22 expected VTI sessions in one shared snapshot and one physical request. A real replay added zero transport attempts, opinions or orders. All opinions, the final result and simulated orders preceded the decision deadline. There are zero elapsed/observed future sessions, zero matured forecasts and one immature forecast.
+Original run: initial round decided on September 7 at 10:33 UTC, with 22 of 22 expected VTI sessions in one shared snapshot and one physical request. A real replay added zero transport attempts, opinions or orders. All opinions, the final result and simulated orders preceded the decision deadline. At that time there were zero elapsed/observed future sessions, zero matured forecasts and one immature forecast; the September 15 completion above supersedes that status.

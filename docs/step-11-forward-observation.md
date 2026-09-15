@@ -2,10 +2,14 @@
 
 The owner explicitly requested completion of both remaining foundations, then
 Step 11 and publication of the code to main. The participant-learning gate now
-passes for Index, Value and Trend. Step 11's observation window remains **in
-progress**, until actual future sessions and outcome retrieval establish otherwise.
+passes for Index, Value and Trend. Step 11's observation window is **complete**:
+the scheduled September 14, 19:30 Chicago collection retrieved all five sessions
+and matured the forecast. The September 15
+[completion verification](../examples/step-11/observation-completion.json) checked
+the private report, frozen inputs, original receipt and stored accounting.
 The machine-readable [forward status](../examples/step-11/forward-status.json)
-records the actual latest run. No paper-stage approval is implied.
+records the actual latest run. The [Step 12 audit handoff](step-12-audit-handoff.md)
+is the next entry point. No paper-stage approval is implied.
 
 ## Completed foundations
 
@@ -164,4 +168,5 @@ opinions and bounded council advice; equal snapshots; late-order rejection;
 zero-call replay; actual horizon gating; delayed fill receipts; dividend
 entitlements/payment; action gaps; deadline expiry; shared throttling/recovery;
 and inclusive corporate-action dates. The task brief records the final full-suite
-and installed-package checks. Step 12 has not started.
+and installed-package checks. Step 12's full audit has not started; its data
+prerequisite is now verified and its handoff is ready.

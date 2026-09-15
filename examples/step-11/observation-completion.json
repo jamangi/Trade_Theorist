@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-09-15T04:54:03.971667-05:00",
+  "status": "scheduled_observation_verified_step12_ready_to_audit",
+  "manifest_id": "forward:step11-20260907",
+  "manifest_hash": "7329f2a3c468ff419014250997a90fa20fe0c0938b2a40727d268520d9dc2b8a",
+  "report": {
+    "status": "window_observed",
+    "as_of": "2026-09-15T00:31:03.279016Z",
+    "completed_real_sessions": 5,
+    "matured_forecasts": 1,
+    "immature_forecasts": 0,
+    "unscorable_forecasts": 0,
+    "report_hash": "3b1ac67d54883585bae5de4e1f309313eb7c56362243430e0971ea0e1f6f10fc",
+    "source_gaps": 0,
+    "complete": true
+  },
+  "original_observation": {
+    "run_id": "274a4dbb95cc4ee49da4fbe1ee914b71",
+    "started_at": "2026-09-14T19:30:01.570343-05:00",
+    "ended_at": "2026-09-14T19:31:03.882539-05:00",
+    "duration_seconds": 62.312,
+    "status": "observed",
+    "exit_code": 0,
+    "child_exit_code": 0,
+    "transport_attempts": 2,
+    "previous_unfinished_runs": []
+  },
+  "database": {
+    "stored_v2_records": 248,
+    "accounted_attempts": 11,
+    "replayed_performance_results": 35,
+    "integrity_and_hash_chains_verified": true,
+    "report_accounting_matches_store": true
+  },
+  "frozen_inputs_verified": true,
+  "verification_provider_calls": 0,
+  "verification_model_calls": 0,
+  "broker_orders": 0,
+  "external_model_calls": 0,
+  "promotion_eligible": false,
+  "evidence_grade": "forward-insufficient",
+  "remaining_work": "Step 12 full readiness audit and policy/stage decision; no Step 13 or live-capital approval.",
+  "scheduler_checked_at": "2026-09-15T09:54:49.3082123Z",
+  "scheduled_tasks": [
+    {
+      "name": "Step11-20260907-DeadlineCheck",
+      "state": "Ready",
+      "last_run_at": "1999-11-30T06:00:00.0000000Z",
+      "next_run_at": "2026-09-15T17:00:00.0000000Z",
+      "last_result": 267011,
+      "triggers": [
+        {
+          "StartBoundary": "2026-09-15T12:00:00-05:00",
+          "EndBoundary": "2026-09-15T17:00:00-05:00",
+          "Enabled": true
+        }
+      ]
+    },
+    {
+      "name": "Step11-20260907-Observe",
+      "state": "Ready",
+      "last_run_at": "2026-09-15T00:30:00.0000000Z",
+      "next_run_at": "2026-09-15T13:00:00.0000000Z",
+      "last_result": 0,
+      "triggers": [
+        {
+          "StartBoundary": "2026-09-14T19:30:00-05:00",
+          "EndBoundary": "2026-09-15T17:00:00-05:00",
+          "Enabled": true
+        },
+        {
+          "StartBoundary": "2026-09-15T08:00:00-05:00",
+          "EndBoundary": "2026-09-15T17:00:00-05:00",
+          "Enabled": true
+        }
+      ]
+    }
+  ]
+}
